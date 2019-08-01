@@ -5,17 +5,16 @@ keywords: Azure, Java, API, informazioni di riferimento, note, aggiornamenti, de
 author: bmitchell287
 manager: douge
 ms.assetid: 1f128cf9-f747-4344-84e1-f9964709deb8
-ms.service: Azure
+ms.service: azure
 ms.devlang: java
 ms.topic: reference
-ms.technology: Azure
 ms.date: 3/06/2016
-ms.openlocfilehash: d0f93f4ccba3f85676b34cd1275a6a0682b82753
-ms.sourcegitcommit: 2efdb9d8a8f8a2c1914bd545a8c22ae6fe0f463b
+ms.openlocfilehash: 199244f27bec8ffe6956303c83da93a581680344
+ms.sourcegitcommit: f799dd4590dc5a5e646d7d50c9604a9975dadeb1
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68284672"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68691903"
 ---
 # <a name="release-notes"></a>Note sulla versione 
 

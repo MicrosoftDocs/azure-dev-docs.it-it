@@ -1,19 +1,19 @@
 ---
 title: Esercitazioni su Internet delle cose (IoT) e messaggistica di Azure con Node.js
 description: Esercitazioni per l'uso della messaggistica di Azure e di Internet delle cose (IoT) con Node.js.
-author: KarlErickson
+author: karlerickson
 manager: douge
 ms.devlang: nodejs
 ms.topic: article
 ms.service: azure-nodejs
 ms.date: 06/17/2017
 ms.author: karler
-ms.openlocfilehash: 191fb3a2ef080e4ad17e183af3f1e2a1ba663581
-ms.sourcegitcommit: 4cc7f5e1e4601065bfcb4c2eeb7d47ad0bec61f8
+ms.openlocfilehash: d13c6615fc4db2ac9c7582aef3fc8d29b540c942
+ms.sourcegitcommit: f799dd4590dc5a5e646d7d50c9604a9975dadeb1
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68429067"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68690751"
 ---
 # <a name="azure-messaging-and-internet-of-things-iot-with-nodejs-tutorials"></a>Esercitazioni su Internet delle cose (IoT) e messaggistica di Azure con Node.js
 

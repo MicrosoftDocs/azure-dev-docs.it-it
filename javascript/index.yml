@@ -69,7 +69,7 @@ sections:
           - href: 'https://azure.microsoft.com/en-us/resources/samples/?sort=0&platform=nodejs'
             html: <p>Repository GitHub di esempio per l'SDK di Azure</p>
             image:
-              src: /common/i_code-samples.svg
+              src: /media/common/i_code-samples.svg
             title: Esempi di SDK
   - title: Distribuzione continua e DevOps
     items:
@@ -89,7 +89,7 @@ sections:
             image:
               src: /media/logos/logo_octokitty.svg
           - title: Integrazione continua
-            href: /azure/devops-project/azure-devops-project-nodejs?toc=/azure/javascript/toc.json&bc=/azure/javascript/breadcrumb/toc.json
+            href: /vsts/build-release/apps/cd/azure/azure-devops-project-nodejs?toc=/azure/javascript/toc.json&bc=/azure/javascript/breadcrumb/toc.json
             html: '<p>Aggiunta di Jenkins, CircleCI o Travis per gestire le build</p>'
             image:
               src: /media/common/i_scrum.svg
@@ -176,7 +176,7 @@ sections:
         className: cardsM
         columns: 3
         items:
-          - href: /azure/active-directory/develop/active-directory-devquickstarts-webapi-nodejs?toc=/azure/javascript/toc.json&bc=/azure/javascript/breadcrumb/toc.json
+          - href: /azure/active-directory/develop/quickstart-v1-nodejs-webapi?toc=/azure/javascript/toc.json&bc=/azure/javascript/breadcrumb/toc.json
             html: <p>Autenticazione degli utenti con strategie Passport</p>
             image:
               src: /azure/media/index/ActiveDirectory.svg
@@ -186,7 +186,7 @@ sections:
             image:
               src: /azure/media/index/KeyVault.svg
             title: Key Vault
-          - href: /azure/active-directory-b2c/active-directory-b2c-devquickstarts-web-node?toc=/azure/javascript/toc.json&bc=/azure/javascript/breadcrumb/toc.json
+          - href: /azure/active-directory-b2c/active-directory-b2c-tutorials-spa?toc=/azure/javascript/toc.json&bc=/azure/javascript/breadcrumb/toc.json
             html: '<p>Uso di Passport e Azure AD per aggiungere l''accesso a Facebook, Twitter o GitHub all''app Web</p>'
             image:
               src: /azure/media/index/ActiveDirectory.svg
@@ -198,17 +198,17 @@ sections:
         className: cardsM
         columns: 3
         items:
-          - href: /azure/application-insights/app-insights-nodejs-quick-start?toc=/azure/javascript/toc.json&bc=/azure/javascript/breadcrumb/toc.json
+          - href: /azure/azure-monitor/learn/nodejs-quick-start?toc=/azure/javascript/toc.json&bc=/azure/javascript/breadcrumb/toc.json
             html: <p>Monitoraggio delle richieste e identificazione degli errori nell'applicazione</p>
             image:
               src: /azure/media/index/ApplicationInsights.svg
             title: Application Insights
-          - href: /azure/log-analytics/log-analytics-quick-collect-linux-computer?toc=/azure/javascript/toc.json&bc=/azure/javascript/breadcrumb/toc.json
+          - href: /azure/azure-monitor/learn/quick-collect-linux-computer?toc=/azure/javascript/toc.json&bc=/azure/javascript/breadcrumb/toc.json
             html: <p>Revisione dei dati sull'ambiente in un'unica posizione</p>
             image:
               src: /azure/media/index/operationsmanagementsuite.svg
             title: Log Analytics
-          - href: /azure/monitoring-and-diagnostics?toc=/azure/javascript/toc.json&bc=/azure/javascript/breadcrumb/toc.json
+          - href: /azure/azure-monitor/?toc=/azure/javascript/toc.json&bc=/azure/javascript/breadcrumb/toc.json
             html: <p>Dettagli su prestazioni e dati di utilizzo</p>
             image:
               src: /azure/media/index/AzureMonitoring.svg
@@ -242,12 +242,12 @@ sections:
         className: cardsM
         columns: 3
         items:
-          - href: /azure/iot-hub/iot-hub-node-node-getstarted?toc=/azure/javascript/toc.json&bc=/azure/javascript/breadcrumb/toc.json
+          - href: /azure/iot-hub/quickstart-control-device-node?toc=/azure/javascript/toc.json&bc=/azure/javascript/breadcrumb/toc.json
             html: <p>Gestione di migliaia di dispositivi con hub IoT</p>
             image:
               src: /azure/media/index/IOT_edge_50.svg
             title: Connessione e gestione dei dispositivi IoT
-          - href: /azure/iot-hub/iot-hub-node-node-getstarted?toc=/azure/javascript/toc.json&bc=/azure/javascript/breadcrumb/toc.json
+          - href: /azure/iot-hub/quickstart-send-telemetry-node?toc=/azure/javascript/toc.json&bc=/azure/javascript/breadcrumb/toc.json
             html: <p>Uso dell'hub eventi per accogliere miliardi di punti dati</p>
             image:
               src: /azure/media/index/EventHubs.svg

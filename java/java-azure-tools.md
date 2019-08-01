@@ -1,21 +1,21 @@
 ---
-title: Strumenti per sviluppatori Java per Azure | Microsoft Docs
+title: Strumenti di Azure per gli sviluppatori Java
 description: Integrazioni dell'IDE, emulatori, strumenti per l'esplorazione delle risorse e interfacce della riga di comando per gli sviluppatori Java in Azure.
 author: rloutlaw
 manager: douge
 ms.assetid: b55923b7-d60a-460d-b77c-af5fac67f1cc
 ms.devlang: java
 ms.topic: article
-ms.service: Azure
-ms.technology: Azure
+ms.service: azure
 ms.date: 11/13/2018
 ms.author: brendm
-ms.openlocfilehash: 3040ded2cb20025cc00ed6c0cf691536f71387a2
-ms.sourcegitcommit: 2efdb9d8a8f8a2c1914bd545a8c22ae6fe0f463b
+ms.custom: seo-java-july2019
+ms.openlocfilehash: 88e587bf28c33c0499667aae89b6b44cd0fa919e
+ms.sourcegitcommit: f799dd4590dc5a5e646d7d50c9604a9975dadeb1
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68284742"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68691962"
 ---
 # <a name="azure-tools-for-java-developers"></a>Strumenti di Azure per gli sviluppatori Java
 

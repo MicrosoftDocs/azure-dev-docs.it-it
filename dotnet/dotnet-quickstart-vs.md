@@ -2,12 +2,13 @@
 title: Distribuire in Azure da Visual Studio
 description: Questa esercitazione illustrerà in modo dettagliato la creazione e la distribuzione di un'applicazione Microsoft Azure con Visual Studio e .NET.
 ms.date: 06/20/2017
-ms.openlocfilehash: 2744e4836f9967e74d3eadb96af0c52c6292010e
-ms.sourcegitcommit: 2efdb9d8a8f8a2c1914bd545a8c22ae6fe0f463b
+ms.topic: quickstart
+ms.openlocfilehash: 60dbdedca91c972b68298ad94b5a8b373a37c561
+ms.sourcegitcommit: f799dd4590dc5a5e646d7d50c9604a9975dadeb1
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68280812"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68691237"
 ---
 # <a name="deploy-to-azure-from-visual-studio"></a>Distribuire in Azure da Visual Studio
 

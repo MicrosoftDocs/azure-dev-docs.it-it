@@ -10,16 +10,16 @@ ms.assetid: ''
 ms.author: dhdoshi
 ms.date: 12/19/2018
 ms.devlang: java
-ms.service: Azure Monitor
+ms.service: azure-monitor
 ms.tgt_pltfrm: application-insights
 ms.topic: article
 ms.workload: na
-ms.openlocfilehash: a6777e67216b1a5874c18b1ab98762b213148e9f
-ms.sourcegitcommit: 2efdb9d8a8f8a2c1914bd545a8c22ae6fe0f463b
+ms.openlocfilehash: 56f54ee2fefcdfb5cfdb694f41426913b4978344
+ms.sourcegitcommit: f799dd4590dc5a5e646d7d50c9604a9975dadeb1
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68283522"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68691168"
 ---
 # <a name="configure-a-spring-boot-initializer-app-to-use-application-insights"></a>Configurare un'app Spring Boot Initializer per l'uso di Application Insights
 
