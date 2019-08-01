@@ -8,13 +8,13 @@
         - name: Distribuire app Web
           items:
             - name: Windows ed Eclipse
-              href: /azure/app-service-web/app-service-web-get-started-java?toc=/azure/java/toc.json&bc=/azure/java/breadcrumb/toc.json
+              href: /azure/app-service/app-service-web-get-started-java?toc=/azure/java/toc.json&bc=/azure/java/breadcrumb/toc.json
             - name: Linux e Tomcat
               href: /azure/app-service/containers/quickstart-java?toc=/azure/java/toc.json&bc=/azure/java/breadcrumb/toc.json
             - name: Linux e Java SE
               href: spring-framework/deploy-spring-boot-java-app-with-maven-plugin.md?toc=/azure/java/toc.json&bc=/azure/java/breadcrumb/toc.json
         - name: Monitorare le app Web
-          href: /azure/application-insights/app-insights-java-quick-start?toc=/azure/java/toc.json&bc=/azure/java/breadcrumb/toc.json
+          href: /azure/azure-monitor/learn/java-quick-start?toc=/azure/java/toc.json&bc=/azure/java/breadcrumb/toc.json
         - name: Azure DevOps Projects
           href: /azure/devops-project/azure-devops-project-java?toc=/azure/java/toc.json&bc=/azure/java/breadcrumb/toc.json
         - name: Funzione serverless
@@ -42,7 +42,7 @@
         - name: BLOB di archiviazione
           href: /azure/storage/blobs/storage-quickstart-blobs-java-v10?toc=/azure/java/toc.json&bc=/azure/java/breadcrumb/toc.json
         - name: Cache Redis
-          href: /azure/redis-cache/cache-java-get-started?toc=/azure/java/toc.json&bc=/azure/java/breadcrumb/toc.json
+          href: /azure/azure-cache-for-redis/cache-java-get-started?toc=/azure/java/toc.json&bc=/azure/java/breadcrumb/toc.json
         - name: Service Fabric
           items:
             - name: Distribuire Spring Boot
@@ -60,11 +60,7 @@
                 - name: JMS e AMQP
                   href: /azure/service-bus-messaging/service-bus-java-how-to-use-jms-api-amqp?toc=/azure/java/toc.json&bc=/azure/java/breadcrumb/toc.json
             - name: Hub eventi
-              items:
-                - name: Invio di eventi
-                  href: /azure/event-hubs/event-hubs-java-get-started-send?toc=/azure/java/toc.json&bc=/azure/java/breadcrumb/toc.json
-                - name: Ricezione di eventi
-                  href: /azure/event-hubs/event-hubs-java-get-started-receive-eph?toc=/azure/java/toc.json&bc=/azure/java/breadcrumb/toc.json
+              href: /azure/event-hubs/event-hubs-java-get-started-send?toc=/azure/java/toc.json&bc=/azure/java/breadcrumb/toc.json
         - name: Hub IoT
           items:
             - name: Inviare dati di telemetria
@@ -119,7 +115,7 @@
               href: /java/api/overview/azure/maven/azure-functions-maven-plugin/README
         - name: CI/CD con Jenkins
           href: /azure/jenkins/
-        - name: Azure Pipelines
+        - name: Azure DevOps
           href: /azure/devops/java/
     - name: Concetti
       items:
@@ -129,10 +125,10 @@
       items:
         - name: Distribuire microservizi in Service Fabric
           href: /azure/service-fabric/service-fabric-tutorial-create-java-app?toc=/azure/java/toc.json&bc=/azure/java/breadcrumb/toc.json
-        - name: Spring Boot nel servizio app con MySQL
-          href: /azure/app-service-web/app-service-web-tutorial-java-mysql?toc=/azure/java/toc.json&bc=/azure/java/breadcrumb/toc.json
+        - name: Spring Boot nel servizio app con Cosmos DB
+          href: /azure/app-service/containers/tutorial-java-spring-cosmosdb?toc=/azure/java/toc.json&bc=/azure/java/breadcrumb/toc.json
         - name: Integrazione continua e distribuzione continua di Jenkins per il servizio app
-          href: /azure/jenkins/java-deploy-webapp-tutorial?toc=/azure/java/toc.json&bc=/azure/java/breadcrumb/toc.json
+          href: /azure/jenkins/tutorial-jenkins-deploy-web-app-azure-app-service?toc=/azure/java/toc.json&bc=/azure/java/breadcrumb/toc.json
         - name: Eseguire la distribuzione nel servizio app con Maven
           href: spring-framework/deploy-spring-boot-java-app-with-maven-plugin.md?toc=/azure/java/toc.json&bc=/azure/java/breadcrumb/toc.json
         - name: Distribuire i contenitori nel servizio app
