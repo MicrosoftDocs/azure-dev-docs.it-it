@@ -1,5 +1,5 @@
 ---
-title: Java Flight Recorder e Mission Control
+title: Esaminare i dati con Java Flight Recorder e Mission Control
 description: Istruzioni su come usare Java Flight Recorder e Mission Control per raccogliere e rivedere i dati delle app.
 author: bmitchell287
 manager: douge
@@ -7,13 +7,14 @@ ms.author: brendm
 ms.date: 04/09/2019
 ms.devlang: java
 ms.topic: conceptual
-ms.service: Azure
-ms.openlocfilehash: 29f144a17a1a45dc535961f97a4b0acdffd43d77
-ms.sourcegitcommit: 4cc7f5e1e4601065bfcb4c2eeb7d47ad0bec61f8
+ms.service: azure
+ms.custom: seo-java-july2019
+ms.openlocfilehash: 4e0ae7b66d625ea6aeeb5a7e40b9015e9ce59429
+ms.sourcegitcommit: f799dd4590dc5a5e646d7d50c9604a9975dadeb1
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68431065"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68691762"
 ---
 # <a name="using-java-flight-recorder-jfr-and-mission-control"></a>Uso di Java Flight Recorder (JFR) e Mission Control
 
@@ -102,8 +103,8 @@ Seguire la procedura seguente per installare Zulu Mission Control, connettersi a
 
 
 8.  Avviare una registrazione dei dati, se necessario
-    1.  Se in Flight Recorder viene visualizzato il messaggio "No Recordings" (Nessuna registrazione) avviare una registrazione facendo clic con il pulsante destro del mouse sulla riga Flight Recorder nella scheda JVM Browser e scegliendo **Start Flight Recording** (Avvia registrazione dei dati).
-    2.  Selezionare una registrazione a durata fissa oppure continua e una configurazione di profilatura (dettagliata) oppure continua (sovraccarico inferiore), quindi fare clic su **Finish** (Fine).
+    1.  Se in Flight Recorder viene visualizzato il messaggio "No Recordings" (Nessuna registrazione), avviare una registrazione facendo clic con il pulsante destro del mouse sulla riga Flight Recorder nella scheda JVM Browser e scegliendo **Start Flight Recording** (Avvia registrazione dei dati).
+    2.  Selezionare una registrazione a durata fissa oppure continua e una configurazione di profilatura (dettagliata) oppure continua (sovraccarico inferiore), quindi selezionare **Finish** (Fine).
 
     > [!div class="mx-imgBorder"]
     ](../media/jdk/azul-jfr-3.png)Avviare la registrazione dei dati![

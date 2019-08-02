@@ -1,5 +1,5 @@
 ---
-title: Come usare il plug-in Maven per App Web di Azure per distribuire un'app Spring Boot di Registro Azure Container nel servizio app di Azure
+title: Usare Maven per distribuire un'app Spring Boot in Registro Azure Container
 description: Questa esercitazione illustra in modo dettagliato la procedura per distribuire un'applicazione Spring Boot di Registro Azure Container nel servizio app di Azure usando un plug-in Maven.
 services: container-registry
 documentationcenter: java
@@ -14,12 +14,13 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
-ms.openlocfilehash: de13a8fa8c75bf237539565dd166f03c18991701
-ms.sourcegitcommit: 4cc7f5e1e4601065bfcb4c2eeb7d47ad0bec61f8
+ms.custom: seo-java-july2019
+ms.openlocfilehash: c2622da604e31b5cf2a2f1e7b3344b21338aa56d
+ms.sourcegitcommit: f799dd4590dc5a5e646d7d50c9604a9975dadeb1
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68430945"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68691131"
 ---
 # <a name="how-to-use-the-maven-plugin-for-azure-web-apps-to-deploy-a-spring-boot-app-in-azure-container-registry-to-azure-app-service"></a>Come usare il plug-in Maven per App Web di Azure per distribuire un'app Spring Boot di Registro Azure Container nel servizio app di Azure
 

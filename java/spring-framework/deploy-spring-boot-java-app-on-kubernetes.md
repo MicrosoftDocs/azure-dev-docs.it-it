@@ -15,12 +15,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: na
 ms.custom: mvc
-ms.openlocfilehash: f7bb539e59b8d9d6afcf736560348748d311b49a
-ms.sourcegitcommit: 4cc7f5e1e4601065bfcb4c2eeb7d47ad0bec61f8
+ms.openlocfilehash: 3363e1a4600328e012b99bd940cf88bb47e2ee57
+ms.sourcegitcommit: f799dd4590dc5a5e646d7d50c9604a9975dadeb1
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68430940"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68691719"
 ---
 # <a name="deploy-a-spring-boot-application-on-a-kubernetes-cluster-in-the-azure-kubernetes-service"></a>Distribuire un'applicazione Spring Boot in un cluster Kubernetes nel servizio Azure Kubernetes
 
@@ -228,7 +228,7 @@ Questa esercitazione distribuisce l'app usando `kubectl`, quindi consente di esp
 
    * Il nome del contenitore `gs-spring-boot-docker` viene specificato immediatamente dopo il comando `expose deployment`.
 
-   * Il parametro `--type` specifica che il cluster usa il bilanciamento del carico
+   * Il parametro `--type` specifica che il cluster usa il bilanciamento del carico.
 
    * Il parametro `--port` specifica la porta TCP pubblica, ovvero 80. Si accede all'app tramite questa porta.
 
@@ -253,7 +253,7 @@ Questa esercitazione distribuisce l'app usando `kubectl`, quindi consente di esp
    az aks browse --resource-group=wingtiptoys-kubernetes --name=wingtiptoys-akscluster
    ```
 
-1. All'apertura del sito Web di configurazione di Kubernetes nel browser, fare clic sul collegamento **deploy a containerized app** (Distribuire un'app inclusa in contenitori):
+1. All'apertura del sito Web di configurazione di Kubernetes nel browser, selezionare il collegamento per **distribuire un'app inclusa in contenitori**:
 
    ![Sito Web di configurazione di Kubernetes][KB01]
 
@@ -272,7 +272,7 @@ Questa esercitazione distribuisce l'app usando `kubectl`, quindi consente di esp
    ![Sito Web di configurazione di Kubernetes][KB02]
 
 
-1. Fare clic su **Deploy** (Distribuisci) per distribuire il contenitore.
+1. Selezionare **Deploy** (Distribuisci) per distribuire il contenitore.
 
    ![Distribuzione di Kubernetes][KB05]
 
@@ -280,7 +280,7 @@ Questa esercitazione distribuisce l'app usando `kubectl`, quindi consente di esp
 
    ![Servizi Kubernetes][KB06]
 
-1. Se si fa clic sul collegamento per **External endpoints** (Endpoint esterni), è possibile visualizzare l'applicazione Spring Boot in esecuzione in Azure.
+1. Se si seleziona il collegamento **External endpoints** (Endpoint esterni), è possibile visualizzare l'applicazione Spring Boot in esecuzione in Azure.
 
    ![Servizi Kubernetes][KB07]
 

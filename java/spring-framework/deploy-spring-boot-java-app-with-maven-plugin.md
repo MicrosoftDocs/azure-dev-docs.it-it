@@ -1,5 +1,5 @@
 ---
-title: Distribuire un'app Spring Boot basata su file JAR nel cloud con Maven e Azure
+title: Distribuire un'app Spring Boot basata su file JAR in Azure con Maven
 description: Informazioni su come distribuire un'app Spring Boot nel cloud con il plug-in Maven per app Web di Azure per Linux.
 services: app-service
 documentationcenter: java
@@ -11,12 +11,13 @@ ms.date: 12/19/2018
 ms.devlang: java
 ms.service: app-service
 ms.topic: article
-ms.openlocfilehash: 83bc65357f14b17ad60d0eb15adaac328dbc0386
-ms.sourcegitcommit: 2efdb9d8a8f8a2c1914bd545a8c22ae6fe0f463b
+ms.custom: seo-java-july2019
+ms.openlocfilehash: e4aec4beb141025d49afbe200a090a40e327a12c
+ms.sourcegitcommit: f799dd4590dc5a5e646d7d50c9604a9975dadeb1
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68281462"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68691094"
 ---
 # <a name="deploy-a-spring-boot-jar-file-web-app-to-azure-app-service-on-linux"></a>Distribuire un'app Web Spring Boot basata su file JAR nel servizio app di Azure in Linux
 
@@ -201,6 +202,14 @@ Dopo che è stata distribuita, l'app Web potrà essere gestita tramite il [porta
    ![Individuazione dell'URL dell'app Web][AP02]
 
 Verificare il completamento della distribuzione con lo stesso comando curl eseguito in precedenza, usando l'URL dell'app Web riportato nel portale invece di `localhost`. Dovrebbe essere visualizzato il messaggio **Greetings from Spring Boot!** 
+
+## <a name="clean-up-resources"></a>Pulire le risorse
+Quando non sono più necessarie, eseguire la pulizia delle risorse di Azure distribuite eliminando il gruppo di risorse.
+
+- Nel portale di Azure selezionare Gruppo di risorse nel menu a sinistra.
+- Immettere **gs-spring-boot-** nel campo **Filtra per nome**. Il gruppo di risorse creato in questa esercitazione dovrebbe avere questo prefisso.
+- Selezionare il gruppo di risorse creato in questa esercitazione.
+- Selezionare Elimina gruppo di risorse nel menu in alto.
 
 ## <a name="next-steps"></a>Passaggi successivi
 

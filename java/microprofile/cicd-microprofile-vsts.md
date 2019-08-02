@@ -10,20 +10,20 @@ ms.assetid: ''
 ms.author: ruyakubu
 ms.date: 09/14/2018
 ms.devlang: Java
-ms.service: Azure DevOps
+ms.service: devops
 ms.tgt_pltfrm: multiple
 ms.topic: tutorial
 ms.workload: web
-ms.openlocfilehash: 8ba4a880cb69948d396c3c81f2ddeafd54d68eb2
-ms.sourcegitcommit: 2efdb9d8a8f8a2c1914bd545a8c22ae6fe0f463b
+ms.openlocfilehash: 28a21bf0e1b4cb09ed4dc5e9f80f292c52eab103
+ms.sourcegitcommit: f799dd4590dc5a5e646d7d50c9604a9975dadeb1
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68284102"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68691778"
 ---
 # <a name="cicd-for-microprofile-applications-using-azure-devops"></a>CI/CD per applicazioni MicroProfile con Azure DevOps
 
-Questa esercitazione illustra come gli sviluppatori Java EE possono configurare facilmente un ciclo di rilascio CI/CD per distribuire le proprie applicazioni [MicroProfile](http://microprofile.io) in un'app Web per contenitori di Azure usando Azure DevOps (denominato formalmente VSTS).  In questo esempio si userà un'applicazione MicroProfile che usa un'immagine di base di [Payara Micro](https://www.payara.fish/payara_micro).   
+Questa esercitazione destinata a sviluppatori Java EE illustra come configurare facilmente un ciclo di rilascio CI/CD per distribuire le applicazioni [MicroProfile](http://microprofile.io) in un'app Web per contenitori di Azure usando Azure Pipelines (formalmente noto come VSTS).  In questo esempio si userà un'applicazione MicroProfile che usa un'immagine di base di [Payara Micro](https://www.payara.fish/payara_micro).   
 
 ```Dockerfile
 FROM payara/micro:5.182
