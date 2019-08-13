@@ -107,7 +107,7 @@ Seguire la procedura seguente per installare Zulu Mission Control, connettersi a
     2.  Selezionare una registrazione a durata fissa oppure continua e una configurazione di profilatura (dettagliata) oppure continua (sovraccarico inferiore), quindi selezionare **Finish** (Fine).
 
     > [!div class="mx-imgBorder"]
-    ](../media/jdk/azul-jfr-3.png)Avviare la registrazione dei dati![
+    ![Avviare la registrazione dei dati](../media/jdk/azul-jfr-3.png)
 
 9.  Eseguire il dump della registrazione dei dati
     1.  Sotto la riga Flight Recorder nella scheda JVM Browser dovrebbe essere visualizzata una registrazione. Fare clic con il pulsante destro del mouse sulla riga corrispondente e scegliere **Dump whole recording** (Dump dell'intera registrazione).
