@@ -14,7 +14,7 @@
               href: 'https://code.visualstudio.com/tutorials/functions-extension/getting-started'
             - name: Docker
               href: 'https://code.visualstudio.com/tutorials/docker-extension/getting-started'
-            - name: Kubernetes
+            - name: kubernetes
               href: /azure/aks/kubernetes-walkthrough?toc=/azure/javascript/toc.json&bc=/azure/javascript/breadcrumb/toc.json
             - name: Macchine virtuali di Linux
               href: /azure/virtual-machines/linux/quick-create-cli?toc=/azure/javascript/toc.json&bc=/azure/javascript/breadcrumb/toc.json
@@ -88,8 +88,22 @@
               href: /azure/cognitive-services/speech-service/get-started?toc=/azure/javascript/toc.json&bc=/azure/javascript/breadcrumb/toc.json
     - name: Guide alle procedure
       items:
-        - name: Eseguire la distribuzione con Visual Studio Code
+        - name: Sviluppo end-to-end in Node.js con VS Code
           href: node-howto-e2e.md
+        - name: Distribuire un'app Web
+          href: node-howto-deploy-web-app.md
+        - name: Distribuire contenitori
+          href: node-howto-deploy-containers.md
+        - name: Distribuire tramite recapito continuo
+          href: /azure/devops/pipelines/languages/javascript?toc=/azure/javascript/toc.json&bc=/azure/javascript/breadcrumb/toc.json
+        - name: Integrare con database
+          href: node-howto-integrate-databases.md
+        - name: Scrivere codice serverless
+          href: node-howto-write-serverless-code.md
+        - name: Creare un sito statico (JAMstack)
+          href: node-howto-create-static-site-jamstack.md
+        - name: Automatizzare il monitoraggio
+          href: /azure/azure-monitor/learn/nodejs-quick-start?toc=/azure/javascript/toc.json&bc=/azure/javascript/breadcrumb/toc.json
         - name: Creare un'API REST
           href: /azure/app-service/app-service-web-tutorial-rest-api?toc=/azure/javascript/toc.json&bc=/azure/javascript/breadcrumb/toc.json
     - name: Esempi
