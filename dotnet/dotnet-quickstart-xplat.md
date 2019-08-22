@@ -2,13 +2,15 @@
 title: Distribuire in Azure dalla riga di comando con .NET Core
 description: Questo articolo descrive come distribuire un'applicazione ASP.NET Core in un servizio app di Azure tramite gli strumenti da riga di comando.
 ms.date: 06/20/2017
+author: CamSoper
+ms.author: casoper
 ms.topic: quickstart
-ms.openlocfilehash: a9fcb465cf84ef3996cb072baf55a9a3eb23907a
-ms.sourcegitcommit: f799dd4590dc5a5e646d7d50c9604a9975dadeb1
+ms.openlocfilehash: 1c2f9ae75d26238514b525c7730dbcbbf49820b5
+ms.sourcegitcommit: 4eee7d9a484e35eb695248c011a63b27603d354b
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68691323"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69633110"
 ---
 # <a name="deploy-to-azure-from-the-command-line-with-net-core"></a>Distribuire in Azure dalla riga di comando con .NET Core
 

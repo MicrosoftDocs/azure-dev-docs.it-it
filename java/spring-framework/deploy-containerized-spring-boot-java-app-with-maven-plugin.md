@@ -1,5 +1,5 @@
 ---
-title: Usare Maven per app Web di Azure per distribuire un'app Spring Boot in Azure
+title: Distribuire un'app Spring Boot basata su file JAR nel cloud con Maven e Azure
 description: Informazioni su come usare il plug-in Maven per App Web di Azure per distribuire un'app Spring Boot in Azure.
 services: app-service
 documentationcenter: java
@@ -15,12 +15,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
 ms.custom: seo-java-july2019
-ms.openlocfilehash: a953289bcab2f00a06d6139620ce93013326da5b
-ms.sourcegitcommit: f799dd4590dc5a5e646d7d50c9604a9975dadeb1
+ms.openlocfilehash: 1bfe42d6778b08919d8ae118fcf6dfcbab7c118c
+ms.sourcegitcommit: 4eee7d9a484e35eb695248c011a63b27603d354b
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68691705"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69635099"
 ---
 # <a name="how-to-use-the-maven-plugin-for-azure-web-apps-to-deploy-a-containerized-spring-boot-app-to-azure"></a>Come usare il plug-in Maven per App Web di Azure per distribuire un'app Spring Boot in contenitore in Azure
 

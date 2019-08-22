@@ -2,14 +2,16 @@
 title: Eseguire la migrazione di un database SQL Server ad Azure
 description: Informazioni su come eseguire la migrazione di un database SQL Server da SQL Server locale ad Azure.
 ms.date: 11/15/2017
+author: CamSoper
+ms.author: casoper
 ms.service: sql-database
 ms.topic: conceptual
-ms.openlocfilehash: bfdfcf7de2530421ffebec92ba5a4067e77dec78
-ms.sourcegitcommit: f799dd4590dc5a5e646d7d50c9604a9975dadeb1
+ms.openlocfilehash: aec9c3e1b79887c74f0d4ad01a523add36782faf
+ms.sourcegitcommit: 4eee7d9a484e35eb695248c011a63b27603d354b
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68691218"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69633161"
 ---
 # <a name="migrate-a-sql-server-database-to-azure"></a>Eseguire la migrazione di un database SQL Server ad Azure
 
