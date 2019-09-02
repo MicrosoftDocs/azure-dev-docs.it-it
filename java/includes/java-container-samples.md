@@ -8,7 +8,7 @@ ms.locfileid: "68431108"
 ---
 |  |  |
 |---------|---------|
-| [Gestire i registri contenitori di Azure][1] | Creare un nuovo registro contenitori di Azure e aggiungere una nuova immagine. | 
+| [Gestire i registri contenitori di Azure][1] | Creare un nuovo Registro Azure Container e aggiungere una nuova immagine. | 
 | [Gestire il servizio Azure Container][2] | Creare un servizio Azure Container con orchestrazione Kubernetes. | 
 | [Distribuire un'immagine di Registro Azure Container in una nuova app Web Linux][3] | Distribuire un'immagine Docker che esegue Tomcat in una nuova app Web eseguita nel servizio app di Azure per Linux. | 
 

@@ -101,7 +101,7 @@ La procedura seguente illustra come creare un'applicazione Web di Spring Boot e 
    az group create --name=wingtiptoys-kubernetes --location=eastus
    ```
 
-1. Creare un registro contenitori privato di Azure nel gruppo di risorse. L'esercitazione effettua il push dell'app di esempio come immagine Docker in questo registro nei passaggi successivi. Sostituire `wingtiptoysregistry` con un nome univoco per il registro.
+1. Creare un Registro Azure Container privato nel gruppo di risorse. L'esercitazione effettua il push dell'app di esempio come immagine Docker in questo registro nei passaggi successivi. Sostituire `wingtiptoysregistry` con un nome univoco per il registro.
    ```azurecli
    az acr create --resource-group wingtiptoys-kubernetes --location eastus \
     --name wingtiptoysregistry --sku Basic

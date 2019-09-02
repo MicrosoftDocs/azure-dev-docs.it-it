@@ -155,7 +155,7 @@ In questa sezione si crea un'entità servizio di Azure che verrà usata dal plug
    ```
    Sostituire il valore `wingtiptoysresources` di questo esempio con un nome univoco per il gruppo di risorse.
 
-1. Creare un registro contenitori privato di Azure nel gruppo di risorse per l'app Spring Boot: 
+1. Creare un Registro Azure Container privato nel gruppo di risorse per l'app Spring Boot: 
    ```azurecli
    az acr create --admin-enabled --resource-group wingtiptoysresources --location westus --name wingtiptoysregistry --sku Basic
    ```
@@ -195,8 +195,8 @@ In questa sezione si crea un'entità servizio di Azure che verrà usata dal plug
 
    |   Elemento    |                                 DESCRIZIONE                                  |
    |--------------|------------------------------------------------------------------------------|
-   |    `<id>`    |         Contiene il nome del registro contenitori privato di Azure.          |
-   | `<username>` |         Contiene il nome del registro contenitori privato di Azure.          |
+   |    `<id>`    |         Contiene il nome del Registro Azure Container privato.          |
+   | `<username>` |         Contiene il nome del Registro Azure Container privato.          |
    | `<password>` | Contiene la password recuperata nella sezione precedente di questo articolo. |
 
 
@@ -246,8 +246,8 @@ In questa sezione si crea un'entità servizio di Azure che verrà usata dal plug
 
    |           Elemento           |                                                                       DESCRIZIONE                                                                       |
    |-----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------|
-   | `<azure.containerRegistry>` |                                              Specifica il nome del registro contenitori privato di Azure.                                               |
-   |   `<docker.image.prefix>`   | Specifica l'URL del registro contenitori privato di Azure, ottenuto accodando ".azurecr.io" al nome del registro contenitori privato. |
+   | `<azure.containerRegistry>` |                                              Specifica il nome del Registro Azure Container privato.                                               |
+   |   `<docker.image.prefix>`   | Specifica l'URL del Registro Azure Container privato, ottenuto accodando ".azurecr.io" al nome del registro contenitori privato. |
 
 
 3. Verificare che l'elemento `<plugin>` per il plug-in Docker nel file *pom.xml* contenga le proprietà corrette per l'indirizzo del server di accesso e il nome del registro dal passaggio precedente di questa esercitazione. Ad esempio:
@@ -276,11 +276,11 @@ In questa sezione si crea un'entità servizio di Azure che verrà usata dal plug
 
    |     Elemento     |                                       DESCRIZIONE                                       |
    |-----------------|-----------------------------------------------------------------------------------------|
-   |  `<serverId>`   |  Specifica la proprietà contenente il nome del registro contenitori privato di Azure.   |
-   | `<registryUrl>` | Specifica la proprietà contenente l'URL del registro contenitori privato di Azure. |
+   |  `<serverId>`   |  Specifica la proprietà contenente il nome del Registro Azure Container privato.   |
+   | `<registryUrl>` | Specifica la proprietà contenente l'URL del Registro Azure Container privato. |
 
 
-4. Passare alla directory del progetto completato per l'applicazione Spring Boot ed eseguire questo comando per ricompilare l'applicazione ed effettuare il push del contenitore nel registro contenitori di Azure:
+4. Passare alla directory del progetto completato per l'applicazione Spring Boot ed eseguire questo comando per ricompilare l'applicazione ed effettuare il push del contenitore nel Registro Azure Container:
 
    ```shell
    mvn package docker:build -DpushImage 

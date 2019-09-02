@@ -248,9 +248,9 @@ La procedura seguente illustra come creare un'applicazione Web di Spring Boot e 
    ```
 
 
-## <a name="create-a-private-azure-container-registry-using-the-azure-cli"></a>Creare un registro contenitori di Azure privato usando l'interfaccia della riga di comando di Azure
+## <a name="create-a-private-azure-container-registry-using-the-azure-cli"></a>Creare un Registro Azure Container privato usando l'interfaccia della riga di comando di Azure
 
-1. Creare un registro contenitori di Azure privato nel gruppo di risorse per ospitare l'immagine di Docker, ad esempio:
+1. Creare un Registro Azure Container privato nel gruppo di risorse per ospitare l'immagine di Docker, ad esempio:
    ```azurecli
    az acr create --admin-enabled --resource-group wingtiptoys-kubernetes --location westeurope --name wingtiptoysregistry --sku Basic
    ```
