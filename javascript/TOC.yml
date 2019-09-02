@@ -31,13 +31,11 @@
             - name: Log Analytics con Monitoraggio di Azure
               href: /azure/azure-monitor/learn/quick-collect-linux-computer?toc=/azure/javascript/toc.json&bc=/azure/javascript/breadcrumb/toc.json
             - name: Azioni di GitHub
-              href: 'https://css-tricks.com/introducing-github-actions/'
+              href: 'https://azure.microsoft.com/resources/videos/azure-friday-deploy-to-azure-using-github-actions'
         - name: Debug e diagnostica
           items:
             - name: Debug remoto per Servizio app di Azure
               href: 'https://code.visualstudio.com/docs/azure/remote-debugging'
-            - name: Punti di inserimento istruzione di registrazione in VS Code per Servizio app di Azure
-              href: 'https://code.visualstudio.com/blogs/2018/07/12/introducing-logpoints-and-auto-attach'
             - name: Debug delle app Node.js locali in VS Code
               href: 'https://code.visualstudio.com/docs/nodejs/nodejs-debugging'
         - name: Strumenti ed estensioni
