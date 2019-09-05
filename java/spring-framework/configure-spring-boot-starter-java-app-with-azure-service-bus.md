@@ -8,12 +8,12 @@ ms.date: 08/21/2019
 ms.devlang: java
 ms.service: azure-java
 ms.topic: article
-ms.openlocfilehash: f41486c7063a6b0fa26ca4055d5f10e625676e8a
-ms.sourcegitcommit: f519a1ee8017850b2fa37049af3bac1ea5ca5516
+ms.openlocfilehash: 58d8dd00deeb90b1a1b8935bcbbab471255328d4
+ms.sourcegitcommit: 9cd460ee16b637e701aa30078932878c0d0a7945
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69892375"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70181972"
 ---
 # <a name="how-to-use-the-spring-boot-starter-for-azure-service-bus-jms"></a>Come usare l'utilità di avvio Spring Boot per il JMS del bus di servizio di Azure
 
@@ -25,9 +25,6 @@ L'utilità di avvio Spring Boot per il JMS del bus di servizio di Azure fornisce
 
 Questo articolo illustra come usare l'utilità di avvio Spring Boot per il JMS del bus di servizio di Azure per inviare e ricevere messaggi da `queues` e `topics` del bus di servizio.
 
-> [!NOTE]
-> Attualmente in questo articolo viene usata la versione `SNAPSHOT` dell'utilità di avvio.
-
 ## <a name="prerequisites"></a>Prerequisiti
 
 Per questo articolo sono necessari i prerequisiti seguenti:
@@ -38,13 +35,13 @@ Per questo articolo sono necessari i prerequisiti seguenti:
 
 1. [Maven](http://maven.apache.org/) di Apache, versione 3.2 o successive.
 
-1. Se è già presente una coda o un argomento del bus di servizio configurato, assicurarsi che lo spazio dei nomi del bus di servizio soddisfi i requisiti seguenti:
+1. Se è già presente una coda o un argomento configurato del bus di servizio, assicurarsi che lo spazio dei nomi del bus di servizio soddisfi i requisiti seguenti:
 
     1. Consente l'accesso da tutte le reti
-    1. È una versione Premium (o successiva)
+    1. È una versione Premium (o superiore)
     1. Dispone di un criterio di accesso in lettura/scrittura per la coda e l'argomento
 
-1. Se non è presente una coda o un argomento del bus di servizio configurato, usare il portale di Azure per [creare una coda del bus di servizio](https://docs.microsoft.com/azure/service-bus-messaging/service-bus-quickstart-portal) o per [creare un argomento del bus di servizio](https://docs.microsoft.com/azure/service-bus-messaging/service-bus-quickstart-topics-subscriptions-portal). Verificare che lo spazio dei nomi soddisfi i requisiti specificati nel passaggio precedente. Prendere nota inoltre della stringa di connessione nello spazio dei nomi. Sarà necessaria per l'app di test di questa esercitazione.
+1. Se non è presente una coda o un argomento configurato del bus di servizio, usare il portale di Azure per [creare una coda del bus di servizio](https://docs.microsoft.com/azure/service-bus-messaging/service-bus-quickstart-portal) o per [creare un argomento del bus di servizio](https://docs.microsoft.com/azure/service-bus-messaging/service-bus-quickstart-topics-subscriptions-portal). Verificare che lo spazio dei nomi soddisfi i requisiti specificati nel passaggio precedente. Prendere nota inoltre della stringa di connessione nello spazio dei nomi. Sarà necessaria per l'app di test di questa esercitazione.
 
 1. Se non si dispone di un'applicazione Spring Boot, [creare un progetto **Maven** con Spring Initializr](https://start.spring.io/). Ricordarsi di selezionare **Maven Project** (Progetto Maven) e, in **Dependencies** (Dipendenze), aggiungere la dipendenza **Web**.
 
@@ -66,28 +63,11 @@ Per questo articolo sono necessari i prerequisiti seguenti:
     <dependency>
         <groupId>com.microsoft.azure</groupId>
         <artifactId>azure-servicebus-jms-spring-boot-starter</artifactId>
-        <version>2.1.7-SNAPSHOT</version>
+        <version>2.1.7</version>
     </dependency>
     ```
 
-    ![Aggiungere la sezione dependency al file pom.xml.](./media/configure-spring-boot-starter-java-app-with-azure-service-bus/add-dependency-section.png)
-
-1. Aggiungere la configurazione dei [repository Maven](https://maven.apache.org/settings.html#Repositories) per usare la versione SNAPSHOT:
-
-    ```xml
-    <repositories>
-        <repository>
-            <id>nexus-snapshots</id>
-            <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
-            <snapshots>
-            <enabled>true</enabled>
-            <updatePolicy>always</updatePolicy>
-            </snapshots>
-        </repository>
-    </repositories>
-    ```
-
-    ![Aggiungere la sezione repository al file pom.xml.](./media/configure-spring-boot-starter-java-app-with-azure-service-bus/add-repository-section.png)
+    ![Aggiungere la sezione dependency al file pom.xml.](./media/configure-spring-boot-starter-java-app-with-azure-service-bus/add-dependency-section-new.png)
 
 1. Salvare e chiudere il file *pom.xml*.
 
@@ -121,7 +101,7 @@ In questa sezione viene illustrato come configurare l'app per l'uso di una coda 
     | `spring.jms.servicebus.connection-string` | Specificare la stringa di connessione ottenuta nello spazio dei nomi del bus di servizio dal portale di Azure. |
     | `spring.jms.servicebus.idle-timeout`      | Specificare il timeout di inattività in millisecondi. Il valore consigliato per questa esercitazione è 1800000.   |
 
-3. Salvare e chiudere il file *application.properties*.
+1. Salvare e chiudere il file *application.properties*.
 
 ### <a name="use-service-bus-topic"></a>Usare l'argomento del bus di servizio
 
@@ -353,7 +333,7 @@ In questa sezione vengono create le classi Java necessarie per l'invio di messag
     mvn clean spring-boot:run
     ```
 
-3. Quando l'applicazione è in esecuzione, è possibile testarla usando *curl*:
+1. Quando l'applicazione è in esecuzione, è possibile testarla usando *curl*:
 
     ```shell
     curl -X POST localhost:8080/messages?message=hello

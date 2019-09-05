@@ -1,5 +1,5 @@
 ---
-title: ''
+title: Creare un'app Web Hello World per Azure con il toolkit legacy per Eclipse
 description: Questa esercitazione descrive come usare Azure Toolkit for Eclipse 3.0.6 (o versioni precedenti) per creare un'app Web Hello World per Azure.
 services: app-service
 documentationcenter: java
@@ -14,12 +14,12 @@ ms.service: app-service
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
-ms.openlocfilehash: 35133c9161e06699f72c5de604215bc655d69dcb
-ms.sourcegitcommit: 2efdb9d8a8f8a2c1914bd545a8c22ae6fe0f463b
+ms.openlocfilehash: 1284988d452832d8f8ed7faf692f56dc667c9118
+ms.sourcegitcommit: 9cd460ee16b637e701aa30078932878c0d0a7945
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68429601"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70181022"
 ---
 # <a name="create-a-hello-world-web-app-for-azure-using-the-legacy-toolkit-for-eclipse"></a>Creare un'app Web Hello World per Azure con il toolkit legacy per Eclipse
 
