@@ -8,14 +8,15 @@ ms.date: 04/09/2019
 ms.devlang: java
 ms.topic: conceptual
 ms.service: azure
-ms.openlocfilehash: aeda2d210e2e5d78de53b3f88a469b9a93bb8739
-ms.sourcegitcommit: f799dd4590dc5a5e646d7d50c9604a9975dadeb1
+ms.custom: seo-java-august2019
+ms.openlocfilehash: b91da6ad547743a31967838786a52ce4303fff1e
+ms.sourcegitcommit: 9cd460ee16b637e701aa30078932878c0d0a7945
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68691752"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70181933"
 ---
-# <a name="use-docker-with-a-jdk-for-azure"></a>Usare Docker con JDK per Azure 
+# <a name="use-docker-with-a-java-development-kit-jdk-for-azure"></a>Usare Docker con un JDK (Java Development Kit) per Azure 
 
 Le immagini Docker predefinite per Java 7, 8 e 11 sono disponibili tramite [Docker Hub](https://hub.docker.com/_/microsoft-java-se).
 

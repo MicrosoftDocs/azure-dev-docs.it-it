@@ -12,14 +12,14 @@ ms.devlang: java
 ms.service: app-service
 ms.topic: article
 ms.custom: seo-java-july2019, seo-java-august2019
-ms.openlocfilehash: 05d9fb7817eafea56e095667c260075c5e02c6da
-ms.sourcegitcommit: f519a1ee8017850b2fa37049af3bac1ea5ca5516
+ms.openlocfilehash: 415c0447cbe02a9514d38e3b79bbd57fad91a485
+ms.sourcegitcommit: 9cd460ee16b637e701aa30078932878c0d0a7945
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69889817"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70181969"
 ---
-# <a name="deploy-a-spring-boot-web-app-to-azure-app-service-on-linux"></a>Distribuire un'app Web Spring Boot nel servizio app di Azure in Linux
+# <a name="deploy-a-spring-boot-jar-file-app-to-azure-app-service-with-maven-and-azure-on-linux"></a>Distribuire un'app Spring Boot basata su file JAR nel servizio app di Azure con Maven e Azure in Linux
 
 Questo articolo illustra l'uso del [plug-in Maven per app Web del servizio app di Azure](/java/api/overview/azure/maven/azure-webapp-maven-plugin/readme) per distribuire un'applicazione Spring Boot inserita in un pacchetto JAR Java SE nel [servizio app di Azure in Linux](/azure/app-service/containers/). Preferire la distribuzione con Java SE a [Tomcat e file WAR](/azure/app-service/containers/quickstart-java) quando si vogliono consolidare le dipendenze, il runtime e la configurazione dell'app in un singolo artefatto distribuibile.
 

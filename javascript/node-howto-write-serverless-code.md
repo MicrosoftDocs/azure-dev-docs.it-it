@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: azure-nodejs
 ms.date: 08/19/2019
 ms.author: kraigb
-ms.openlocfilehash: 0917da975f29d392944ba2351e894de640182eb9
-ms.sourcegitcommit: f519a1ee8017850b2fa37049af3bac1ea5ca5516
+ms.openlocfilehash: a5ed7d5d99009593845966969217f8a5081da4c4
+ms.sourcegitcommit: 9cd460ee16b637e701aa30078932878c0d0a7945
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69892495"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70181950"
 ---
 # <a name="how-to-write-serverless-nodejs-code-on-azure"></a>Come scrivere codice Node.js serverless in Azure
 
@@ -45,7 +45,9 @@ Da qui è possibile accedere a molte altre risorse che consentono di esplorare u
 
 - [Archiviare dati non strutturati usando Funzioni di Azure e Azure Cosmos DB](/azure/azure-functions/functions-integrate-store-unstructured-data-cosmosdb.md?tabs=javascript). Per informazioni su altri database, vedere [Come integrare i database di Azure in codice Node.js](node-howto-integrate-databases.md)
 
-- [Codificare e testare Funzioni di Azure in locale](/azure/azure-functions/functions-develop-local) insieme a [Strategie per il test del codice in Funzioni di Azure](/azure/azure-functions/functions-test-a-function) e [Gestione degli errori](/azure/azure-functions/functions-bindings-error-pages)
+- [Scrivere codici per Funzioni di Azure e testarle in locale](/azure/azure-functions/functions-develop-local)
+
+- [Strategie per il test del codice in Funzioni di Azure](/azure/azure-functions/functions-test-a-function) e [Gestione degli errori](/azure/azure-functions/functions-bindings-error-pages)
 
 - [Configurare l'autenticazione con Azure Active Directory](/azure/app-service/configure-authentication-provider-aad.md?toc=%2fazure%2fazure-functions%2ftoc.json)
 

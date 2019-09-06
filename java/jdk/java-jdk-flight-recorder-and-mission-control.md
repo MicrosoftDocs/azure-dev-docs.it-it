@@ -8,15 +8,15 @@ ms.date: 04/09/2019
 ms.devlang: java
 ms.topic: conceptual
 ms.service: azure
-ms.custom: seo-java-july2019
-ms.openlocfilehash: 4e0ae7b66d625ea6aeeb5a7e40b9015e9ce59429
-ms.sourcegitcommit: f799dd4590dc5a5e646d7d50c9604a9975dadeb1
+ms.custom: seo-java-july2019, seo-java-august2019
+ms.openlocfilehash: 2b60d420b810a739277134e88238332f978e38b9
+ms.sourcegitcommit: 9cd460ee16b637e701aa30078932878c0d0a7945
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68691762"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70181993"
 ---
-# <a name="using-java-flight-recorder-jfr-and-mission-control"></a>Uso di Java Flight Recorder (JFR) e Mission Control
+# <a name="monitor-and-manage-java-workloads-with-java-flight-recorder-jfr-and-zulu-mission-control"></a>Monitorare e gestire i carichi di lavoro Java con Java Flight Recorder (JFR) e Zulu Mission Control
 
 Zulu Mission Control è una build di JDK Mission Control completamente testata, resa disponibile come open source da Oracle nel 2018 e gestita come progetto nell'ambiente OpenJDK. Insieme a Flight Recorder, Mission Control offre funzionalità interattive di monitoraggio e gestione con sovraccarico ridotto per i carichi di lavoro Java.
 
