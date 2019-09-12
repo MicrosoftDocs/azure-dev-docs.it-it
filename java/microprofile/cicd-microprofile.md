@@ -77,7 +77,7 @@ La pipeline di compilazione di integrazione continua in Azure Pipelines esegue a
 
 Azure Pipelines usa un Dockerfile con un'immagine di base Payara Micro per creare un'immagine Docker.  
 
-1. Selezionare la scheda **Attività** e quindi fare clic sul segno più **** + accanto a **Processo agente 1** per aggiungere un'attività.
+1. Selezionare la scheda **Attività** e quindi fare clic sul segno più **+** accanto a **Processo agente 1** per aggiungere un'attività.
    
    ![Aggiungere una nuova attività](media/cicd-microprofile/add-task.png)
    
