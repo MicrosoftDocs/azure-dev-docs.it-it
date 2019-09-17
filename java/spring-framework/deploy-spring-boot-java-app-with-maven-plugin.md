@@ -11,18 +11,17 @@ ms.date: 12/19/2018
 ms.devlang: java
 ms.service: app-service
 ms.topic: article
-ms.custom: seo-java-july2019, seo-java-august2019
-ms.openlocfilehash: 415c0447cbe02a9514d38e3b79bbd57fad91a485
-ms.sourcegitcommit: 9cd460ee16b637e701aa30078932878c0d0a7945
+ms.custom: seo-java-july2019, seo-java-august2019, seo-java-september2019
+ms.openlocfilehash: 9adb83a74c569fd17b9ce1435064ed745487d39b
+ms.sourcegitcommit: cf5881235569c754c829a8f819642a6f5aed30be
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70181969"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70904933"
 ---
 # <a name="deploy-a-spring-boot-jar-file-app-to-azure-app-service-with-maven-and-azure-on-linux"></a>Distribuire un'app Spring Boot basata su file JAR nel servizio app di Azure con Maven e Azure in Linux
 
-Questo articolo illustra l'uso del [plug-in Maven per app Web del servizio app di Azure](/java/api/overview/azure/maven/azure-webapp-maven-plugin/readme) per distribuire un'applicazione Spring Boot inserita in un pacchetto JAR Java SE nel [servizio app di Azure in Linux](/azure/app-service/containers/). Preferire la distribuzione con Java SE a [Tomcat e file WAR](/azure/app-service/containers/quickstart-java) quando si vogliono consolidare le dipendenze, il runtime e la configurazione dell'app in un singolo artefatto distribuibile.
-
+In questa guida di avvio rapido si userà il [plug-in Maven per app Web del servizio app di Azure](/java/api/overview/azure/maven/azure-webapp-maven-plugin/readme) per distribuire un'applicazione Spring Boot inserita in un pacchetto JAR Java SE nel [servizio app di Azure in Linux](/azure/app-service/containers/). La distribuzione con Java SE sarà preferibile rispetto a [Tomcat e file WAR](/azure/app-service/containers/quickstart-java) quando si vogliono consolidare le dipendenze, il runtime e la configurazione dell'app in un singolo artefatto distribuibile.
 
 Se non si ha una sottoscrizione di Azure, creare un [account gratuito](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) prima di iniziare.
 
