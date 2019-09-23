@@ -8,16 +8,16 @@ ms.topic: conceptual
 ms.date: 04/09/2019
 ms.author: brendm
 ms.service: azure
-ms.openlocfilehash: 83dbef306087f63670c2567231eca1c4b9e5dd7f
-ms.sourcegitcommit: f799dd4590dc5a5e646d7d50c9604a9975dadeb1
+ms.openlocfilehash: 6c28a599180301ac19f114f467868b5f0e46cbd1
+ms.sourcegitcommit: 4a95777874ae3a3c760365148de868f937fdfd2e
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68691803"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71094884"
 ---
 # <a name="java-long-term-support-for-azure-and-azure-stack"></a>Supporto a lungo termine di Java per Azure e Azure Stack
 
-Gli sviluppatori Java in Azure e Azure Stack possono compilare ed eseguire applicazioni Java di produzione usando [Azul Zulu Enterprise per Azure](https://www.azul.com/downloads/azure-only/zulu/) senza incorrere in costi di supporto aggiuntivi. È possibile usare qualsiasi runtime Java in Azure, ma se si sceglie Zulu si ottengono aggiornamenti di manutenzione gratuiti ed è possibile richiedere assistenza a Microsoft.
+Gli sviluppatori Java in Azure e Azure Stack possono compilare ed eseguire applicazioni Java di produzione usando le build JDK [Azul Zulu per Azure - Enterprise Edition](https://www.azul.com/downloads/azure-only/zulu/) senza incorrere in costi di supporto aggiuntivi. È possibile usare qualsiasi runtime Java in Azure, ma se si sceglie Zulu si ottengono aggiornamenti di manutenzione gratuiti ed è possibile richiedere assistenza a Microsoft.
 
 > [!div class="nextstepaction"]
 > [Scaricare e installare Java](java-jdk-install.md)
@@ -34,7 +34,7 @@ Gli sviluppatori Java in Azure e Azure Stack possono compilare ed eseguire appli
 
 ## <a name="what-is-the-zulu-openjdk-for-azure"></a>Cos'è Zulu OpenJDK per Azure?
 
-Le build Azul Zulu Enterprise di OpenJDK sono distribuzioni di OpenJDK gratuite, multipiattaforma e pronte per la produzione per Azure e Azure Stack, supportate da Microsoft e Azul Systems. Queste distribuzioni:
+Le build Azul Zulu per Azure - Enterprise Edition di OpenJDK sono distribuzioni di OpenJDK gratuite, multipiattaforma e pronte per la produzione per Azure e Azure Stack, supportate da Microsoft e Azul Systems. Queste distribuzioni:
 
 * Sono build di OpenJDK completamente open source fornite come pacchetti JDK (Java Development Kit), JRE (Java Runtime Environment) e JRE headless. Questi binari sono build commerciali di Java Standard Edition (SE) pienamente compatibili e conformi che è possibile usare con applicazioni o componenti Java in Azure e Azure Stack.
 * Vengono fornite con supporto a lungo termine, tra cui correzioni di bug, miglioramenti delle prestazioni e patch di sicurezza.
@@ -52,7 +52,7 @@ Le build Azul Zulu Enterprise di OpenJDK sono distribuzioni di OpenJDK gratuite,
 
 ## <a name="supported-java-versions-and-update-schedule"></a>Versioni Java supportate e piano degli aggiornamenti
 
-Azul Systems fornisce [build Zulu Enterprise di OpenJDK per Microsoft Azure](https://www.azul.com/downloads/azure-only/zulu/) completamente supportate per tutte le versioni di Java con supporto a lungo termine, a partire da Java SE 7, 8 e 11. Per altre informazioni, vedere il [comunicato stampa di Azul](https://www.azul.com/press_release/free-java-production-support-for-microsoft-azure-azure-stack).
+Azul Systems fornisce build [Azul Zulu per Azure - Enterprise Edition](https://www.azul.com/downloads/azure-only/zulu/) completamente supportate per tutte le versioni di Java con supporto a lungo termine, a partire da Java SE 7, 8 e 11. Per altre informazioni, vedere il [comunicato stampa di Azul](https://www.azul.com/press_release/free-java-production-support-for-microsoft-azure-azure-stack).
 
 |Supporto a lungo termine di Java SE  |Data di fine supporto  |
 |---------|----------|
@@ -67,7 +67,7 @@ Azul Systems mantiene una [roadmap Java SE](https://www.azul.com/products/azul_s
 
 ## <a name="benefits-for-developers"></a>Vantaggi per gli sviluppatori
 
-Le versioni di JDK Azul Zulu offrono questi vantaggi:
+Le versioni degli SDK Azul Zulu per Azure - Enterprise Edition sono:
 
 1. Supporto assicurato sia da Microsoft che da Azul Systems
 
