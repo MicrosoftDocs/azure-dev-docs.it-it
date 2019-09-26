@@ -8,12 +8,12 @@ ms.service: azure-functions
 ms.topic: conceptual
 ms.date: 09/02/2019
 ms.author: kraigb
-ms.openlocfilehash: 84971f6befb7210052ee3b144533715d0c6d1fb3
-ms.sourcegitcommit: 74e28a479c87a3a53592646420b78e69852dd86a
+ms.openlocfilehash: efa55b4c2cc916f5bbebcc795ed70d920d395362
+ms.sourcegitcommit: 4188b92d8de367cf82f22dba5d9ccb2cb6dd2899
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/16/2019
-ms.locfileid: "71020079"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71126853"
 ---
 # <a name="deploy-python-to-azure-functions-with-visual-studio-code"></a>Distribuire Python in Funzioni di Azure con Visual Studio Code
 
@@ -42,7 +42,7 @@ Installare il software seguente:
 
 ### <a name="azure-functions-core-tools"></a>Azure Functions Core Tools
 
-Seguire le istruzioni per il sistema operativo riportate in [Usare Azure Functions Core Tools](/azure/azure-functions/functions-run-local.md#v2). Gli strumenti stessi sono scritti in .NET Core e per una corretta installazione del pacchetto Core Tools è consigliabile usare npm, l'utilità di gestione pacchetti di Node.js. È per questo motivo che è attualmente necessario installare .NET Core e Node.js persino per il codice Python. È però possibile ignorare il requisito di .NET Core relativo all'uso di bundle di estensione, come descritto nella documentazione menzionata in precedenza. In qualunque caso è necessario installare questi componenti solo una volta, perché in seguito sarà Visual Studio Code a richiedere automaticamente l'installazione di eventuali aggiornamenti.
+Seguire le istruzioni per il sistema operativo riportate in [Usare Azure Functions Core Tools](/azure/azure-functions/functions-run-local#v2). Gli strumenti stessi sono scritti in .NET Core e per una corretta installazione del pacchetto Core Tools è consigliabile usare npm, l'utilità di gestione pacchetti di Node.js. È per questo motivo che è attualmente necessario installare .NET Core e Node.js persino per il codice Python. È però possibile ignorare il requisito di .NET Core relativo all'uso di bundle di estensione, come descritto nella documentazione menzionata in precedenza. In qualunque caso è necessario installare questi componenti solo una volta, perché in seguito sarà Visual Studio Code a richiedere automaticamente l'installazione di eventuali aggiornamenti.
 
 ### <a name="sign-in-to-azure"></a>Accedere ad Azure
 

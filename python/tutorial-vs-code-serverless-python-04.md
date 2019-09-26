@@ -8,12 +8,12 @@ ms.service: azure-functions
 ms.topic: conceptual
 ms.date: 09/02/2019
 ms.author: kraigb
-ms.openlocfilehash: 06e09ee8dd8128fe3ea65b7004a775c4dabbe161
-ms.sourcegitcommit: 74e28a479c87a3a53592646420b78e69852dd86a
+ms.openlocfilehash: 28df4c9a8a8b3a6ab6308449e9ae2e1ebd2cc6e4
+ms.sourcegitcommit: d6575ac86449380b5a9c6c66aa722cb33ed53438
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/16/2019
-ms.locfileid: "71019629"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71186147"
 ---
 # <a name="debug-the-function-code-locally"></a>Eseguire il debug del codice della funzione in locale
 
@@ -52,7 +52,7 @@ ms.locfileid: "71019629"
 
     In alternativa, creare un file come *data.json* che contenga `{"name":"Visual Studio Code"}` e usare il comando `curl --header "Content-Type: application/json" --request POST --data @data.json http://localhost:7071/api/HttpExample`.
 
-1. Per testare il debug della funzione, impostare un punto di interruzione nella riga `name = req.params.get('name')` ed effettuare una nuova richiesta all'URL. Il debugger di Visual Studio Code dovrebbe arrestarsi su tale riga, consentendo di esaminare le variabili ed eseguire il codice un'istruzione alla volta. Per una breve procedura dettagliata sul debug di base, vedere l'[esercitazione sulla configurazione e l'esecuzione del debugger in Visual Studio Code](https://code.visualstudio.com/docs/python/python-tutorial.md#configure-and-run-the-debugger).
+1. Per testare il debug della funzione, impostare un punto di interruzione nella riga `name = req.params.get('name')` ed effettuare una nuova richiesta all'URL. Il debugger di Visual Studio Code dovrebbe arrestarsi su tale riga, consentendo di esaminare le variabili ed eseguire il codice un'istruzione alla volta. Per una breve procedura dettagliata sul debug di base, vedere l'[esercitazione sulla configurazione e l'esecuzione del debugger in Visual Studio Code](https://code.visualstudio.com/docs/python/python-tutorial#configure-and-run-the-debugger).
 
 1. Se si ritiene di aver testato la funzione in locale in modo esauriente, arrestare il debugger usando n il comando di menu **Debug** > **Arresta debug** oppure il comando **Disconnect** sulla barra degli strumenti di debug.
 

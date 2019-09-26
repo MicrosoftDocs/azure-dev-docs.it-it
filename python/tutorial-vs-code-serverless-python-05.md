@@ -8,18 +8,18 @@ ms.service: azure-functions
 ms.topic: conceptual
 ms.date: 09/02/2019
 ms.author: kraigb
-ms.openlocfilehash: 0bf24a900eb0c501443b8ff353c8b07529f840be
-ms.sourcegitcommit: 74e28a479c87a3a53592646420b78e69852dd86a
+ms.openlocfilehash: da7761f568849537ac3ee06cf6ef2c4cc521b452
+ms.sourcegitcommit: d6575ac86449380b5a9c6c66aa722cb33ed53438
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/16/2019
-ms.locfileid: "71019959"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71186157"
 ---
 # <a name="deploy-to-azure-functions"></a>Distribuire in Funzioni di Azure
 
 [Passaggio precedente: Eseguire il debug in locale](tutorial-vs-code-serverless-python-04.md)
 
-In questa procedura si userà l'estensione Funzioni per creare un'app per le funzioni in Azure, oltre ad altre risorse di Azure necessarie. Un'app per le funzioni consente di raggruppare le funzioni come un'unità logica per semplificare la gestione, la distribuzione e la condivisione delle risorse. È anche necessario un account di archiviazione di Azure per i dati e un [piano di hosting](/azure/azure-functions/functions-scale.md#hosting-plan-support). Tutte queste risorse sono organizzate all'interno di un singolo gruppo di risorse.
+In questa procedura si userà l'estensione Funzioni per creare un'app per le funzioni in Azure, oltre ad altre risorse di Azure necessarie. Un'app per le funzioni consente di raggruppare le funzioni come un'unità logica per semplificare la gestione, la distribuzione e la condivisione delle risorse. È anche necessario un account di archiviazione di Azure per i dati e un [piano di hosting](/azure/azure-functions/functions-scale#hosting-plan-support). Tutte queste risorse sono organizzate all'interno di un singolo gruppo di risorse.
 
 1. Nell'area **Azure: Funzioni** selezionare il comando **Deploy to Function App** (Distribuisci nell'app per le funzioni) oppure aprire il riquadro comandi (**F1**) e selezionare il comando **Funzioni di Azure: Deploy to Function App** (Distribuisci nell'app per le funzioni). Anche in questo caso, l'app per le funzioni è quella in cui viene eseguito il progetto Python in Azure.
 
@@ -30,7 +30,7 @@ In questa procedura si userà l'estensione Funzioni per creare un'app per le fun
 1. L'estensione esegue le azioni seguenti, che è possibile osservare nei messaggi popup e nella finestra **Output** di Visual Studio Code. Il processo richiede alcuni minuti:
 
     - Creare un gruppo di risorse usando il nome assegnato (rimuovendo i trattini).
-    - In questo gruppo di risorse creare l'account di archiviazione, il piano di hosting e l'app per le funzioni. Per impostazione predefinita, viene creato un [piano a consumo](/azure/azure-functions/functions-scale.md#consumption-plan). Per eseguire le funzioni in un piano dedicato, è necessario [abilitare la pubblicazione con le opzioni di creazione avanzate](/azure/azure-functions/functions-develop-vs-code.md).
+    - In questo gruppo di risorse creare l'account di archiviazione, il piano di hosting e l'app per le funzioni. Per impostazione predefinita, viene creato un [piano a consumo](/azure/azure-functions/functions-scale#consumption-plan). Per eseguire le funzioni in un piano dedicato, è necessario [abilitare la pubblicazione con le opzioni di creazione avanzate](/azure/azure-functions/functions-develop-vs-code).
     - Distribuire il codice nell'app per le funzioni.
 
     L'area **Azure: Funzioni** mostra anche lo stato di avanzamento:

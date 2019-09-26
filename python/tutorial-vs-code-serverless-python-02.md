@@ -8,12 +8,12 @@ ms.service: azure-functions
 ms.topic: conceptual
 ms.date: 09/02/2019
 ms.author: kraigb
-ms.openlocfilehash: 4427137000e7fca7706b782a73a45db03782872f
-ms.sourcegitcommit: 74e28a479c87a3a53592646420b78e69852dd86a
+ms.openlocfilehash: 9af09298c479f7584ffaece422c135e75138f0fc
+ms.sourcegitcommit: d6575ac86449380b5a9c6c66aa722cb33ed53438
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/16/2019
-ms.locfileid: "71019559"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71186160"
 ---
 # <a name="create-the-python-function"></a>Creare la funzione Python
 
@@ -29,7 +29,7 @@ ms.locfileid: "71019559"
     | --- | --- | --- |
     | Specify a folder for the project (Specificare una cartella per il progetto) | Cartella attualmente aperta | Cartella in cui creare il progetto. Se necessario, è possibile creare il progetto in una sottocartella. |
     | Selezionare un linguaggio per il progetto di app per le funzioni | **Python** | Linguaggio da usare per la funzione, che determina il modello usato per il codice. |
-    | Selezionare un modello per la prima funzione del progetto | **Trigger HTTP** | Una funzione che usa un trigger HTTP viene eseguita ogni volta che si effettua una richiesta HTTP all'endpoint della funzione. Sono disponibili diversi altri trigger per Funzioni di Azure. Per altre informazioni, vedere [Quali operazioni si possono eseguire con Funzioni?](/azure/azure-functions/functions-overview.md#what-can-i-do-with-functions). |
+    | Selezionare un modello per la prima funzione del progetto | **Trigger HTTP** | Una funzione che usa un trigger HTTP viene eseguita ogni volta che si effettua una richiesta HTTP all'endpoint della funzione. Sono disponibili diversi altri trigger per Funzioni di Azure. Per altre informazioni, vedere [Quali operazioni si possono eseguire con Funzioni?](/azure/azure-functions/functions-overview#what-can-i-do-with-functions). |
     | Specificare un nome di funzione | HttpExample | Il nome viene usato per una sottocartella che contiene il codice della funzione unitamente ai dati di configurazione e definisce anche il nome dell'endpoint HTTP. Usare "HttpExample" invece di accettare il valore predefinito "HTTPTrigger" per distinguere la funzione dal trigger. |
     | Livello di autorizzazione | **Anonimo** | Con l'autorizzazione anonima la funzione è accessibile pubblicamente a chiunque. |
     | Specificare come aprire il progetto | **Open in current window** (Apri nella finestra corrente) | Apre il progetto nella finestra corrente di Visual Studio Code. |

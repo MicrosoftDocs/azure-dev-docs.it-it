@@ -10,13 +10,13 @@ ms.topic: article
 ms.devlang: java
 ms.service: multiple
 ms.assetid: f452468b-7aae-4944-abad-0b1aaf19170d
-ms.custom: seo-java-july2019
-ms.openlocfilehash: dc7819f46725203c18c0bc50fe45135d61b4870e
-ms.sourcegitcommit: f799dd4590dc5a5e646d7d50c9604a9975dadeb1
+ms.custom: seo-java-july2019, seo-java-september2019
+ms.openlocfilehash: dfa3681cd1e6ac193a48d7e60ce8507af49c4776
+ms.sourcegitcommit: 50fbde9a640468147953d62f7ae0fca4685ed5e6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68691939"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71225274"
 ---
 # <a name="patterns-and-best-practices-for-development-with-the-azure-libraries-for-java"></a>Modelli e procedure consigliate per lo sviluppo con le librerie di Azure per Java 
 
@@ -35,7 +35,7 @@ StorageAccount storage = azure.storageAccounts().define(storageAccountName)
 
 Durante lo scorrimento della catena di metodi, l'ambiente di sviluppo integrato (IDE, Integrated Development Environment) suggerisce il metodo successivo da chiamare nella conversazione Fluent.   
 
-![GIF del completamento del comando di IntelliJ tramite una catena Fluent](media/intelliJFluent.gif)
+![GIF del completamento del comando di IntelliJ tramite una catena Fluent](media/intellij-fluent-method-chain.gif)
 
 Inserire nella catena i metodi suggeriti dall'IDE, purché risultino significativi per le risorse di Azure definite. Se nella catena non è presente un metodo necessario, l'IDE evidenzierà la catena con un errore.
 

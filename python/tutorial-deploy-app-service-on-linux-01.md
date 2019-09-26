@@ -8,12 +8,12 @@ ms.service: app-service
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.author: kraigb
-ms.openlocfilehash: 2007be8b9799df1b15cff76b3ef4aa1ad96cae44
-ms.sourcegitcommit: 74e28a479c87a3a53592646420b78e69852dd86a
+ms.openlocfilehash: 1b1e3d7fa1daa408584e4caf22c553d7f47bccea
+ms.sourcegitcommit: d6575ac86449380b5a9c6c66aa722cb33ed53438
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/16/2019
-ms.locfileid: "71019879"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71186188"
 ---
 # <a name="deploy-to-azure-app-service-on-linux"></a>Eseguire la distribuzione nel Servizio app di Azure in Linux
 
@@ -39,7 +39,7 @@ Se non si ha una sottoscrizione di Azure, [iscriversi](https://azure.microsoft.c
 Installare il software seguente:
 
 - [Visual Studio Code](https://code.visualstudio.com/).
-- Python e l'estensione [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python) come descritto nella sezione dei [prerequisiti dell'esercitazione su Python in VS Code](https://code.visualstudio.com/docs/python/python-tutorial.md).
+- Python e l'estensione [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python) come descritto nella sezione dei [prerequisiti dell'esercitazione su Python in VS Code](https://code.visualstudio.com/docs/python/python-tutorial).
 - Estensione [Servizio app di Azure](vscode:extension/ms-azuretools.vscode-azureappservice), che consente di interagire con il Servizio app di Azure dall'interno di VS Code. Per informazioni di carattere generale, vedere l'[esercitazione sull'estensione del Servizio app](https://code.visualstudio.com/tutorials/app-service-extension/getting-started) sull'estensione del servizio app e il [repository GitHub vscode-azureappservice](https://github.com/Microsoft/vscode-azureappservice).
 
 ## <a name="sign-in-to-azure"></a>Accedere ad Azure
@@ -47,6 +47,6 @@ Installare il software seguente:
 [!INCLUDE [azure-sign-in](includes/azure-sign-in.md)]
 
 > [!div class="nextstepaction"]
-> [È stato eseguito l'accesso ad Azure](tutorial-deploy-app-service-on-linux-02.md)
+> [L'accesso ad Azure è stato effettuato](tutorial-deploy-app-service-on-linux-02.md)
 
 [Si è verificato un problema](https://www.research.net/r/PWZWZ52?tutorial=vscode-appservice-python&step=01-verify-prerequisites)

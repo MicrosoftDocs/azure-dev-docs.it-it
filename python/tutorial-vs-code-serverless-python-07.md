@@ -8,18 +8,18 @@ ms.service: azure-functions
 ms.topic: conceptual
 ms.date: 09/02/2019
 ms.author: kraigb
-ms.openlocfilehash: 8fdb78024cc6ac1df0ee961fc424878f5f634cf2
-ms.sourcegitcommit: 74e28a479c87a3a53592646420b78e69852dd86a
+ms.openlocfilehash: 4595b6a60aa83d3818b41ddd1e4f06a44bb1eec1
+ms.sourcegitcommit: d6575ac86449380b5a9c6c66aa722cb33ed53438
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/16/2019
-ms.locfileid: "71019939"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71186125"
 ---
 # <a name="add-a-binding-to-write-messages-to-azure-storage"></a>Aggiungere un binding per scrivere messaggi nell'archiviazione di Azure
 
 [Passaggio precedente: Distribuire una seconda funzione](tutorial-vs-code-serverless-python-06.md)
 
-Un _binding_ consente di collegare il codice della funzione alle risorse, ad esempio archiviazione di Azure, senza scrivere codice di accesso ai dati. Il binding viene definito nel file *function.json* e può rappresentare sia l'input che l'output. Una funzione può usare più binding di input e output, ma un solo trigger. Per altre informazioni, vedere [Concetti su trigger e binding di Funzioni di Azure](/azure/azure-functions/functions-triggers-bindings.md).
+Un _binding_ consente di collegare il codice della funzione alle risorse, ad esempio archiviazione di Azure, senza scrivere codice di accesso ai dati. Il binding viene definito nel file *function.json* e può rappresentare sia l'input che l'output. Una funzione può usare più binding di input e output, ma un solo trigger. Per altre informazioni, vedere [Concetti su trigger e binding di Funzioni di Azure](/azure/azure-functions/functions-triggers-bindings).
 
 In questa sezione viene aggiunto un binding di archiviazione alla funzione HttpExample creata in precedenza in questa esercitazione. La funzione usa questo binding per scrivere messaggi nell'archiviazione a ogni richiesta. L'archiviazione in questione usa lo stesso account di archiviazione predefinito usato dall'app per le funzioni. Se si prevede di usare l'archiviazione in modo intensivo, tuttavia, è consigliabile creare un account separato.
 
@@ -92,9 +92,9 @@ In questa sezione viene aggiunto un binding di archiviazione alla funzione HttpE
 
     1. Accedere al [portale di Azure](https://portal.azure.com)e passare al gruppo di risorse contenente il progetto Funzioni. All'interno di tale gruppo di risorse individuare e passare all'account di archiviazione per il progetto, quindi passare a **Code**. In questa pagina passare a "outqueue", che dovrebbe visualizzare tutti i messaggi registrati.
 
-    1. Esplorare ed esaminare la coda con Azure Storage Explorer, che si integra con Visual Studio, come descritto in [Connettere funzioni ad Archiviazione di Azure con Visual Studio Code](/azure/azure-functions/functions-add-output-binding-storage-queue-vs-code.md), in particolare nella sezione [Esaminare la coda di output](/azure/azure-functions/functions-add-output-binding-storage-queue-vs-code.md#examine-the-output-queue).
+    1. Esplorare ed esaminare la coda con Azure Storage Explorer, che si integra con Visual Studio, come descritto in [Connettere funzioni ad Archiviazione di Azure con Visual Studio Code](/azure/azure-functions/functions-add-output-binding-storage-queue-vs-code), in particolare nella sezione [Esaminare la coda di output](/azure/azure-functions/functions-add-output-binding-storage-queue-vs-code#examine-the-output-queue).
 
-    1. Usare l'interfaccia della riga di comando di Azure per eseguire una query sulla coda di archiviazione, come descritto in [Eseguire una query sulla coda di archiviazione](/azure/azure-functions/functions-add-output-binding-storage-queue-python.md#query-the-storage-queue).
+    1. Usare l'interfaccia della riga di comando di Azure per eseguire una query sulla coda di archiviazione, come descritto in [Eseguire una query sulla coda di archiviazione](/azure/azure-functions/functions-add-output-binding-storage-queue-python#query-the-storage-queue).
 
 1. Per eseguire il test nel cloud, ridistribuire il codice usando l'opzione **Deploy to Function App** (Distribuisci nell'app per le funzioni) nell'area **Azure: Funzioni**. Se richiesto, selezionare l'app per le funzioni creata in precedenza. Al termine della distribuzione, che richiede qualche minuto, la finestra **Output** mostra di nuovo gli endpoint pubblici con cui è possibile ripetere i test.
 
