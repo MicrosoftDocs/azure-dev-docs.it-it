@@ -12,12 +12,12 @@ ms.devlang: java
 ms.service: app-service
 ms.topic: article
 ms.custom: seo-java-july2019, seo-java-august2019, seo-java-september2019
-ms.openlocfilehash: 9adb83a74c569fd17b9ce1435064ed745487d39b
-ms.sourcegitcommit: cf5881235569c754c829a8f819642a6f5aed30be
+ms.openlocfilehash: 0993634d87dd321f7322cbdbebd57ec880abcbff
+ms.sourcegitcommit: 76d0783395cbcf6ec1784b5aed368cab7058f8b3
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70904933"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71270017"
 ---
 # <a name="deploy-a-spring-boot-jar-file-app-to-azure-app-service-with-maven-and-azure-on-linux"></a>Distribuire un'app Spring Boot basata su file JAR nel servizio app di Azure con Maven e Azure in Linux
 
@@ -198,7 +198,7 @@ Dopo che è stata distribuita, l'app Web potrà essere gestita tramite il [porta
 
 * L'URL dell'app Web sarà riportato nella **panoramica** dell'app Web:
 
-   ![Individuazione dell'URL dell'app Web][AP02]
+   ![Trovare l'URL per l'app Web in Servizi app nel portale di Azure][AP02]
 
 Verificare il completamento della distribuzione con lo stesso comando curl eseguito in precedenza, usando l'URL dell'app Web riportato nel portale invece di `localhost`. Dovrebbe essere visualizzato il messaggio **Greetings from Spring Boot!** 
 
@@ -249,5 +249,6 @@ Per altre informazioni sulle varie tecnologie illustrate in questo articolo, ved
 
 <!-- IMG List -->
 
-[AP01]: ./media/deploy-spring-boot-java-app-with-maven-plugin/AP01.png
-[AP02]: ./media/deploy-spring-boot-java-app-with-maven-plugin/AP02.png
+
+[AP01]: ./media/deploy-spring-boot-java-app-with-maven-plugin/web-app-listed-azure-portal.png
+[AP02]: ./media/deploy-spring-boot-java-app-with-maven-plugin/determine-web-app-url.png
