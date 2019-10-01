@@ -84,6 +84,78 @@
               href: /azure/cognitive-services/Computer-vision/Quickstarts/node-analyze?toc=/azure/javascript/toc.json&bc=/azure/javascript/breadcrumb/toc.json
             - name: Riconoscimento vocale
               href: /azure/cognitive-services/speech-service/get-started?toc=/azure/javascript/toc.json&bc=/azure/javascript/breadcrumb/toc.json
+    - name: Esercitazioni
+      items:
+        - name: Distribuire Funzioni di Azure con VS Code
+          items:
+            - name: Introduzione e prerequisiti
+              href: tutorial-vscode-serverless-node-01.md
+            - name: Creare l'app per le funzioni
+              href: tutorial-vscode-serverless-node-02.md
+            - name: Testare la funzione in locale
+              href: tutorial-vscode-serverless-node-03.md
+            - name: Distribuire l'app per le funzioni
+              href: tutorial-vscode-serverless-node-04.md
+            - name: Pulire le risorse
+              href: tutorial-vscode-serverless-node-05.md
+        - name: Eseguire la distribuzione nel servizio app con VS Code
+          items:
+            - name: Introduzione e prerequisiti
+              href: tutorial-vscode-azure-app-service-node-01.md
+            - name: Creare l'app
+              href: tutorial-vscode-azure-app-service-node-02.md
+            - name: Distribuire il sito Web
+              href: tutorial-vscode-azure-app-service-node-03.md
+            - name: Eseguire lo streaming dei log
+              href: tutorial-vscode-azure-app-service-node-04.md
+            - name: Pulire le risorse
+              href: tutorial-vscode-azure-app-service-node-05.md
+        - name: Distribuire contenitori con VS Code
+          items:
+            - name: Introduzione e prerequisiti
+              href: tutorial-vscode-docker-node-01.md
+            - name: Usare un registro contenitori
+              href: tutorial-vscode-docker-node-02.md
+            - name: Creare l'immagine dell'app
+              href: tutorial-vscode-docker-node-03.md
+            - name: Distribuire l'immagine dell'app
+              href: tutorial-vscode-docker-node-04.md
+            - name: Apportare modifiche e ripetere la distribuzione
+              href: tutorial-vscode-docker-node-05.md
+            - name: Eseguire lo streaming dei log
+              href: tutorial-vscode-docker-node-06.md
+            - name: Pulire le risorse
+              href: tutorial-vscode-docker-node-07.md
+        - name: Distribuire nel servizio app con l'interfaccia della riga di comando di Azure
+          items:
+            - name: Introduzione e prerequisiti
+              href: tutorial-vscode-azure-cli-node-01.md
+            - name: Creare l'app
+              href: tutorial-vscode-azure-cli-node-02.md
+            - name: Creare il servizio app
+              href: tutorial-vscode-azure-cli-node-03.md
+            - name: Distribuire l'app
+              href: tutorial-vscode-azure-cli-node-04.md
+            - name: Eseguire lo streaming dei log
+              href: tutorial-vscode-azure-cli-node-05.md
+            - name: Apportare modifiche e ripetere la distribuzione
+              href: tutorial-vscode-azure-cli-node-06.md
+            - name: Pulire le risorse
+              href: tutorial-vscode-azure-cli-node-07.md
+        - name: Creare un sito Web statico con VS Code
+          items:
+            - name: Introduzione e prerequisiti
+              href: tutorial-vscode-static-website-node-01.md
+            - name: Creare il codice dell'app
+              href: tutorial-vscode-static-website-node-02.md
+            - name: Creare un account di archiviazione
+              href: tutorial-vscode-static-website-node-03.md
+            - name: Eseguire la distribuzione in Archiviazione di Azure
+              href: tutorial-vscode-static-website-node-04.md
+            - name: Apportare modifiche e ripetere la distribuzione
+              href: tutorial-vscode-static-website-node-05.md
+            - name: Pulire le risorse
+              href: tutorial-vscode-static-website-node-06.md
     - name: Guide alle procedure
       items:
         - name: Sviluppo end-to-end in Node.js con VS Code
