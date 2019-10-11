@@ -8,18 +8,19 @@ ms.topic: article
 ms.service: azure-nodejs
 ms.date: 08/20/2019
 ms.author: kraigb
-ms.openlocfilehash: aeef72d2e8b74cb7e6e30b95ed1cd12a1929ac31
-ms.sourcegitcommit: f519a1ee8017850b2fa37049af3bac1ea5ca5516
+ms.custom: seo-javascript-september2019
+ms.openlocfilehash: b35ee6c921fa9b5c01b5c89f7fa546a110bb21c2
+ms.sourcegitcommit: 945e92dae2fa4521eebdc049c65273ae6b5470ee
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69892505"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71813756"
 ---
-# <a name="how-to-deploy-nodejs-containers-to-azure"></a>Come distribuire contenitori Node.js in Azure
+# <a name="use-azure-to-deploy-scale-and-manage-nodejs-containers"></a>Usare Azure per distribuire, ridimensionare e gestire contenitori Node.js
 
 Azure fornisce un servizio contenitore affidabile che consente di distribuire, ridimensionare e gestire con facilità app Node.js basate su contenitore.
 
-Per iniziare, seguire la semplice procedura dettagliata [Eseguire la distribuzione in Azure con Docker e Visual Studio Code](https://code.visualstudio.com/tutorials/docker-extension/getting-started). Visual Studio Code consente di caricare facilmente le immagini in un registro contenitori, ad esempio Registro Azure Container, e di distribuire quindi il contenitore in Servizio app di Azure.
+Per iniziare, seguire la semplice procedura dettagliata [Eseguire la distribuzione in Azure con Docker e Visual Studio Code](tutorial-vscode-docker-node-01.md). Visual Studio Code consente di caricare facilmente le immagini in un registro contenitori, ad esempio Registro Azure Container, e di distribuire quindi il contenitore in Servizio app di Azure.
 
 È anche possibile esaminare i moduli Microsoft Learn seguenti:
 

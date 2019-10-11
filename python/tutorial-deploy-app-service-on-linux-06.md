@@ -1,5 +1,5 @@
 ---
-title: Streaming dei log dal servizio app di Azure in VS Code
+title: 'Esercitazione: Streaming dei log dal servizio app di Azure in VS Code'
 description: "Passaggio 6 dell'esercitazione: streaming dei log delle app in Visual Studio Code"
 services: app-service
 author: kraigb
@@ -8,14 +8,15 @@ ms.service: app-service
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.author: kraigb
-ms.openlocfilehash: 39ae534580e5057b1ddcf93588be94ad67f2a9b4
-ms.sourcegitcommit: 74e28a479c87a3a53592646420b78e69852dd86a
+ms.custom: seo-python-october2019
+ms.openlocfilehash: f4aac132e9c01a0c428e243e06e811357defc2aa
+ms.sourcegitcommit: bed07b313eeab51281d1a6d4eba67a75524b2f57
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/16/2019
-ms.locfileid: "71020169"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72172226"
 ---
-# <a name="stream-logs-from-the-running-app"></a>Eseguire lo streaming dei log dall'app in esecuzione
+# <a name="tutorial-stream-logs-from-azure-app-service-into-visual-studio-code"></a>Esercitazione: Eseguire lo streaming dei log dal Servizio app di Azure in Visual Studio Code
 
 [Passaggio precedente: Distribuire l'app](tutorial-deploy-app-service-on-linux-05.md)
 

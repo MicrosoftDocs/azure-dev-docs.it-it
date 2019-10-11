@@ -11,14 +11,14 @@ ms.topic: article
 ms.date: 06/25/2017
 ms.author: karler
 ms.custom: seo-javascript-september2019
-ms.openlocfilehash: da1436106b681508ef226ad33ccfc10160485d42
-ms.sourcegitcommit: d3349f1a2a8a7eab1ffe2fcb1d05f22cac91dffb
+ms.openlocfilehash: 51ed46032d0cff0f2e35c0a69e9b339158bad867
+ms.sourcegitcommit: 86aec15e2d25b5b706092feb4271fb958c29d5fa
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70923116"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71710262"
 ---
-# <a name="nodejs-development-with-visual-studio-code-and-azure"></a>Sviluppo di Node.js con Visual Studio Code e Azure
+# <a name="develop-and-deploy-a-containerized-nodejs-app-with-visual-studio-code-and-azure"></a>Sviluppare e distribuire un'app Node.js in contenitore con Visual Studio Code e Azure
 
 Questa esercitazione illustra la creazione di un contenitore Docker da un'app Node.js esistente e la distribuzione dell'app in Azure con Visual Studio Code.
 

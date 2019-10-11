@@ -8,16 +8,17 @@ ms.topic: article
 ms.service: azure-nodejs
 ms.date: 08/19/2019
 ms.author: kraigb
-ms.openlocfilehash: a5ed7d5d99009593845966969217f8a5081da4c4
-ms.sourcegitcommit: 9cd460ee16b637e701aa30078932878c0d0a7945
+ms.custom: seo-javascript-september2019, seo-javascript-october2019
+ms.openlocfilehash: a985578312a2c7cb722307bf8b291eaf02905e2c
+ms.sourcegitcommit: bed07b313eeab51281d1a6d4eba67a75524b2f57
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70181950"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72172161"
 ---
-# <a name="how-to-write-serverless-nodejs-code-on-azure"></a>Come scrivere codice Node.js serverless in Azure
+# <a name="use-azure-functions-to-write-serverless-nodejs-code-on-azure"></a>Usare Funzioni di Azure per scrivere codice Node.js serverless in Azure
 
-Il codice serverless consente di creare endpoint su richiesta reattivi su Internet senza doversi preoccupare del provisioning o della gestione dell'infrastruttura. Il codice serverless è composto da script o altre parti di codice eseguite in risposta a vari eventi. In Azure l'offerta serverless è denominata Funzioni di Azure.
+In Azure l'offerta serverless è denominata Funzioni di Azure. Il codice serverless consente di creare endpoint su richiesta reattivi su Internet senza doversi preoccupare del provisioning o della gestione dell'infrastruttura. Il codice serverless è composto da script o altre parti di codice eseguite in risposta a vari eventi. 
 
 Per iniziare, vedere:
 
