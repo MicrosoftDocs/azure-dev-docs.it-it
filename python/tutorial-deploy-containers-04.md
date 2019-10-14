@@ -1,5 +1,5 @@
 ---
-title: Streaming dei log in Visual Studio Code dal servizio app di Azure per un contenitore
+title: 'Esercitazione: Streaming dei log in Visual Studio Code dal servizio app di Azure per un contenitore'
 description: Parte 4 dell'esercitazione, visualizzazione dei log del servizio app di Azure per monitorarne il comportamento.
 services: app-service
 author: kraigb
@@ -8,14 +8,15 @@ ms.service: app-service
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.author: kraigb
-ms.openlocfilehash: b886eee84e6e8daef772c2ba6e7290a604d18409
-ms.sourcegitcommit: 74e28a479c87a3a53592646420b78e69852dd86a
+ms.custom: seo-python-october2019
+ms.openlocfilehash: 0f002444d2454b734821e067e65fa513619a68bf
+ms.sourcegitcommit: bed07b313eeab51281d1a6d4eba67a75524b2f57
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/16/2019
-ms.locfileid: "71019509"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72172216"
 ---
-# <a name="stream-logs-from-azure-app-service"></a>Streaming dei log dal servizio app di Azure
+# <a name="tutorial-stream-logs-from-azure-app-service-for-a-container"></a>Esercitazione: Streaming dei log dal Servizio app di Azure per un contenitore
 
 [Passaggio precedente: Apportare modifiche e ripetere la distribuzione](tutorial-deploy-containers-03.md)
 

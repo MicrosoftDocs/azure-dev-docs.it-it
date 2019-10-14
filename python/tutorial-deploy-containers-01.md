@@ -1,6 +1,6 @@
 ---
-title: Distribuire contenitori Docker nel servizio app di Azure con Visual Studio Code
-description: Passaggio 1 dell'esercitazione, introduzione e prerequisiti.
+title: 'Esercitazione: Distribuire contenitori Docker nel servizio app di Azure con Visual Studio Code'
+description: "Passaggio 1 dell'esercitazione: introduzione e prerequisiti."
 services: app-service
 author: kraigb
 manager: barbkess
@@ -8,16 +8,17 @@ ms.service: app-service
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.author: kraigb
-ms.openlocfilehash: 0135761f8294b3fbbb8fe821540b46126c107109
-ms.sourcegitcommit: d6575ac86449380b5a9c6c66aa722cb33ed53438
+ms.custom: seo-python-october2019
+ms.openlocfilehash: f6cdd345fddf0123cb26549ddbc498f156737799
+ms.sourcegitcommit: bed07b313eeab51281d1a6d4eba67a75524b2f57
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71186186"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72172305"
 ---
-# <a name="deploy-containers-to-azure-app-service"></a>Distribuire contenitori nel servizio app di Azure
+# <a name="tutorial-deploy-docker-containers-to-azure-app-service-with-visual-studio-code"></a>Esercitazione: Distribuire contenitori Docker nel servizio app di Azure con Visual Studio Code
 
-Questa esercitazione descrive come usare Visual Studio Code per distribuire un'immagine del contenitore nel [servizio app di Azure](https://azure.microsoft.com/services/app-service/containers/) da un registro contenitori, il tutto all'interno di Visual Studio Code.
+Questo articolo descrive come usare Visual Studio Code per distribuire un'immagine del contenitore nel [servizio app di Azure](https://azure.microsoft.com/services/app-service/containers/) da un registro contenitori, il tutto all'interno di Visual Studio Code.
 
 Se si riscontrano problemi con uno qualsiasi dei passaggi descritti in questa esercitazione, è possibile segnalarli. Per inviare feedback, seguire il collegamento **Si è verificato un problema** alla fine di ogni articolo.
 

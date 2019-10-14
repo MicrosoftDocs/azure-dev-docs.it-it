@@ -1,5 +1,5 @@
 ---
-title: Aggiungere un binding di archiviazione per Funzioni di Azure in Python con Visual Studio Code
+title: 'Esercitazione: Aggiungere un binding di archiviazione per Funzioni di Azure in Python con Visual Studio Code'
 description: Passaggio 7 dell'esercitazione, aggiunta di un binding in Python per scrivere messaggi nell'archiviazione di Azure.
 services: functions
 author: kraigb
@@ -8,14 +8,15 @@ ms.service: azure-functions
 ms.topic: conceptual
 ms.date: 09/02/2019
 ms.author: kraigb
-ms.openlocfilehash: 4595b6a60aa83d3818b41ddd1e4f06a44bb1eec1
-ms.sourcegitcommit: d6575ac86449380b5a9c6c66aa722cb33ed53438
+ms.custom: seo-python-october2019
+ms.openlocfilehash: e9f23e138dc9ddc0022199296320ff5c04e6c3d6
+ms.sourcegitcommit: bed07b313eeab51281d1a6d4eba67a75524b2f57
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71186125"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72172119"
 ---
-# <a name="add-a-binding-to-write-messages-to-azure-storage"></a>Aggiungere un binding per scrivere messaggi nell'archiviazione di Azure
+# <a name="tutorial-add-a-storage-binding-for-azure-functions-in-python"></a>Esercitazione: Aggiungere un binding di archiviazione per Funzioni di Azure in Python
 
 [Passaggio precedente: Distribuire una seconda funzione](tutorial-vs-code-serverless-python-06.md)
 

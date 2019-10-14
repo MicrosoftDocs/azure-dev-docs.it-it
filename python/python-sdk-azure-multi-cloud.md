@@ -1,5 +1,5 @@
 ---
-title: Multi-cloud
+title: Connettersi a tutte le aree - Azure SDK per Python multi-cloud
 description: Usare Azure in tutte le aree
 author: sptramer
 ms.author: sttramer
@@ -7,14 +7,15 @@ manager: carmonm
 ms.date: 02/22/2018
 ms.topic: conceptual
 ms.devlang: python
-ms.openlocfilehash: dd063ca7aa4e6620832aa59961f98c0ecca4dd49
-ms.sourcegitcommit: 2efdb9d8a8f8a2c1914bd545a8c22ae6fe0f463b
+ms.custom: seo-python-october2019
+ms.openlocfilehash: 03c2a42463332cbeaffdcc7373c04967018af804
+ms.sourcegitcommit: bed07b313eeab51281d1a6d4eba67a75524b2f57
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68285742"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72172498"
 ---
-# <a name="multi-cloud---use-azure-on-all-regions"></a>Multi-cloud - Usare Azure in tutte le aree
+# <a name="multi-cloud-connect-to-all-regions-with-the-azure-sdk-for-python"></a>Multi-cloud: connettersi a tutte le aree con Azure SDK per Python
 
 È possibile usare Azure SDK per Python per connettersi a tutte le aree in cui è disponibile [Azure](https://azure.microsoft.com/regions/services).
 

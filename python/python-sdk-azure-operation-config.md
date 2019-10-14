@@ -1,5 +1,5 @@
 ---
-title: Configurazione delle operazioni di Azure SDK per Python
+title: Parametri per la configurazione delle operazioni - Azure SDK pe Python
 description: Codice C generato da Azure SDK per Python
 author: sptramer
 ms.author: sttramer
@@ -7,14 +7,15 @@ manager: carmonm
 ms.date: 03/07/2018
 ms.topic: conceptual
 ms.devlang: python
-ms.openlocfilehash: 9638aa4602f96e2da0155a7b3840e5be4857eb98
-ms.sourcegitcommit: 2efdb9d8a8f8a2c1914bd545a8c22ae6fe0f463b
+ms.custom: seo-python-october2019
+ms.openlocfilehash: ca69b72789f28445c4654e635e641e2954890a38
+ms.sourcegitcommit: bed07b313eeab51281d1a6d4eba67a75524b2f57
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68285512"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72172367"
 ---
-# <a name="operation-config"></a>Configurazione delle operazioni 
+# <a name="parameters-for-operation-configuration"></a>Parametri per la configurazione delle operazioni
 
 I metodi per le operazioni includono parametri aggiuntivi che possono essere forniti in `kwargs`. Questo approccio è definito operation_config.
 

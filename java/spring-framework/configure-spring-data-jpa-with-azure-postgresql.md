@@ -1,30 +1,26 @@
 ---
 title: Come usare Spring Data JPA con Azure PostgreSQL
-description: Informazioni su come usare Spring Data JPA con un database PostgreSQL di Azure.
-services: postgresql
+description: Informazioni su come configurare e usare Spring Data JPA con un database di Azure per PostgreSQL.
 documentationcenter: java
 author: bmitchell287
-manager: douge
-editor: ''
-ms.assetid: ''
 ms.author: brendm
 ms.date: 12/19/2018
 ms.devlang: java
 ms.service: postgresql
 ms.tgt_pltfrm: multiple
-ms.topic: article
-ms.openlocfilehash: dca92f4cac26ba3e4f96f3591c3b4dfe997fbfba
-ms.sourcegitcommit: 2efdb9d8a8f8a2c1914bd545a8c22ae6fe0f463b
+ms.topic: conceptual
+ms.openlocfilehash: da8feb20e4163d9280256b51f64d3148b077f7ce
+ms.sourcegitcommit: 2610f3992cb6d21a3657032074acb981d130fdad
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68281922"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71960763"
 ---
 # <a name="how-to-use-spring-data-jpa-with-azure-postgresql"></a>Come usare Spring Data JPA con Azure PostgreSQL
 
 ## <a name="overview"></a>Panoramica
 
-Questo articolo illustra la creazione di un'applicazione di esempio che usa [Spring Data] per archiviare e recuperare le informazioni in un database [PostgreSQL]https://www.postgresql.org/ di Azure con [Java Persistence API (JPA)](https://docs.oracle.com/javaee/7/tutorial/persistence-intro.htm).
+Questo articolo illustra la creazione di un'applicazione di esempio che usa [Spring Data] per archiviare e recuperare le informazioni in un [database di Azure per PostgreSQL](/azure/postgresql/) con [JPA (Java Persistence API)](https://docs.oracle.com/javaee/7/tutorial/persistence-intro.htm).
 
 ## <a name="prerequisites"></a>Prerequisiti
 
@@ -39,7 +35,7 @@ I prerequisiti seguenti sono necessari per completare le procedure disponibili i
 
 ## <a name="create-a-postgresql-database-for-azure"></a>Creare un database PostgreSQL per Azure
 
-### <a name="create-a-postgresql-database-server-using-the-azure-portal"></a>Creare un server di database PostgreSQL con il portale di Azure
+### <a name="create-a-postgresql-database-server-using-the-azure-portal"></a>Creare un server di database PostgreSQL tramite il portale di Azure
 
 > [!NOTE]
 > 
@@ -67,7 +63,7 @@ I prerequisiti seguenti sono necessari per completare le procedure disponibili i
 
 1. Dopo aver immesso tutte le informazioni riportate sopra, fare clic su **Crea**.
 
-### <a name="configure-a-firewall-rule-for-your-postgresql-database-server-using-the-azure-portal"></a>Configurare una regola del firewall per il server di database PostgreSQL con il portale di Azure
+### <a name="configure-a-firewall-rule-for-your-postgresql-database-server-using-the-azure-portal"></a>Configurare una regola del firewall per il server di database PostgreSQL tramite il portale di Azure
 
 1. Passare al portale di Azure all'indirizzo <https://portal.azure.com/> ed eseguire l'accesso.
 
@@ -79,7 +75,7 @@ I prerequisiti seguenti sono necessari per completare le procedure disponibili i
 
    ![Configurare la sicurezza delle connessioni][POSTGRESQL04]
 
-### <a name="retrieve-the-connection-string-for-your-postgresql-server-using-the-azure-portal"></a>Recuperare la stringa di connessione per il server PostgreSQL con il portale di Azure
+### <a name="retrieve-the-connection-string-for-your-postgresql-server-using-the-azure-portal"></a>Recuperare la stringa di connessione per il server PostgreSQL tramite il portale di Azure
 
 1. Passare al portale di Azure all'indirizzo <https://portal.azure.com/> ed eseguire l'accesso.
 

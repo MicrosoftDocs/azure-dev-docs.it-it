@@ -1,5 +1,5 @@
 ---
-title: Distribuire un'immagine del contenitore nel servizio app di Azure con Visual Studio Code
+title: "Esercitazione: Distribuire un'immagine del contenitore nel servizio app di Azure con Visual Studio Code"
 description: Passaggio 2 dell'esercitazione, distribuzione dell'immagine Docker effettiva al servizio app Azure da un registro contenitori.
 services: app-service
 author: kraigb
@@ -8,14 +8,15 @@ ms.service: app-service
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.author: kraigb
-ms.openlocfilehash: 27cc6e68892821170c1e438378f8635bd320afe5
-ms.sourcegitcommit: 74e28a479c87a3a53592646420b78e69852dd86a
+ms.custom: seo-python-october2019
+ms.openlocfilehash: a099e25134615fc05508cde3c0f128a3be813402
+ms.sourcegitcommit: bed07b313eeab51281d1a6d4eba67a75524b2f57
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/16/2019
-ms.locfileid: "71020089"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72172267"
 ---
-# <a name="deploy-the-image-to-azure"></a>Distribuire l'immagine in Azure
+# <a name="tutorial-deploy-a-container-image-to-azure-app-service"></a>Esercitazione: Distribuire un'immagine del contenitore nel Servizio app di Azure
 
 [Passaggio precedente: Prerequisiti](tutorial-deploy-containers-01.md)
 

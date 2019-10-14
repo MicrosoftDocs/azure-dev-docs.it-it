@@ -1,5 +1,5 @@
 ---
-title: Creare e distribuire Funzioni di Azure serverless in Python con Visual Studio Code
+title: 'Esercitazione: Creare e distribuire Funzioni di Azure serverless in Python con Visual Studio Code'
 description: "Passaggio 1 dell'esercitazione: introduzione e prerequisiti."
 services: functions
 author: kraigb
@@ -8,16 +8,17 @@ ms.service: azure-functions
 ms.topic: conceptual
 ms.date: 09/02/2019
 ms.author: kraigb
-ms.openlocfilehash: bf6dd180d5fabc04c8fe3bf09c8277bb7b22ea47
-ms.sourcegitcommit: 86aec15e2d25b5b706092feb4271fb958c29d5fa
+ms.custom: seo-python-october2019
+ms.openlocfilehash: 792c9962d738a8e70f29d5df78c44b6303a63b77
+ms.sourcegitcommit: bed07b313eeab51281d1a6d4eba67a75524b2f57
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71710202"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72172293"
 ---
-# <a name="deploy-python-to-azure-functions-with-visual-studio-code"></a>Distribuire Python in Funzioni di Azure con Visual Studio Code
+# <a name="tutorial-create-and-deploy-serverless-azure-functions-in-python-with-visual-studio-code"></a>Esercitazione: Creare e distribuire Funzioni di Azure serverless in Python con Visual Studio Code
 
-In questa esercitazione si usano Visual Studio Code e l'estensione Funzioni di Azure per creare un endpoint HTTP serverless con Python e aggiungere anche una connessione (o "binding") all'archiviazione. Funzioni di Azure consente di eseguire il codice in un ambiente serverless senza dover effettuare il provisioning di una macchina virtuale o pubblicare un'app Web. L'estensione Funzioni di Azure per Visual Studio Code semplifica notevolmente il processo di utilizzo di Funzioni perché gestisce automaticamente numerosi problemi di configurazione.
+In questo articolo si usano Visual Studio Code e l'estensione Funzioni di Azure per creare un endpoint HTTP serverless con Python e anche per aggiungere una connessione (o "binding") all'archiviazione. Funzioni di Azure consente di eseguire il codice in un ambiente serverless senza dover effettuare il provisioning di una macchina virtuale o pubblicare un'app Web. L'estensione Funzioni di Azure per Visual Studio Code semplifica notevolmente il processo di utilizzo di Funzioni perché gestisce automaticamente numerosi problemi di configurazione.
 
 Se si riscontrano problemi con uno qualsiasi dei passaggi descritti in questa esercitazione, è possibile segnalarli. Per inviare feedback, usare il pulsante **Si è verificato un problema** alla fine di ogni articolo.
 
