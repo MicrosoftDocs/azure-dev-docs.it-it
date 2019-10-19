@@ -2,6 +2,6 @@
   tocHref: /azure
   topicHref: /azure/index
   items:
-    - name: Go SDK
+    - name: Azure SDK per Go
       tocHref: /azure/go
       topicHref: /azure/go/index
