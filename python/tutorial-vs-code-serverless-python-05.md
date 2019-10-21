@@ -9,22 +9,24 @@ ms.topic: conceptual
 ms.date: 09/02/2019
 ms.author: kraigb
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 231aefd696b3f4c91e5da8156dc339f4b355c1c7
-ms.sourcegitcommit: bed07b313eeab51281d1a6d4eba67a75524b2f57
+ms.openlocfilehash: 9acf6e4c0ecc5357580957e2ea9295cd89f441f0
+ms.sourcegitcommit: 6012460ad8d6ff112226b8f9ea6da397ef77712d
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72172182"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72278575"
 ---
 # <a name="tutorial-deploy-azure-functions-in-python"></a>Esercitazione: Distribuire Funzioni di Azure in Python
 
 [Passaggio precedente: Eseguire il debug in locale](tutorial-vs-code-serverless-python-04.md)
 
-In questa procedura si userà l'estensione Funzioni per creare un'app per le funzioni in Azure, oltre ad altre risorse di Azure necessarie. Un'app per le funzioni consente di raggruppare le funzioni come un'unità logica per semplificare la gestione, la distribuzione e la condivisione delle risorse. È anche necessario un account di archiviazione di Azure per i dati e un [piano di hosting](/azure/azure-functions/functions-scale#hosting-plan-support). Tutte queste risorse sono organizzate all'interno di un singolo gruppo di risorse.
+In questo articolo si userà l'estensione Funzioni di Azure per creare un'app per le funzioni in Azure, oltre ad altre risorse di Azure necessarie. Un'app per le funzioni consente di raggruppare le funzioni come un'unità logica per semplificare la gestione, la distribuzione e la condivisione delle risorse.
+
+Un'app per le funzioni richiede un account di archiviazione di Azure per i dati e un [piano di hosting](/azure/azure-functions/functions-scale#hosting-plan-support). Tutte queste risorse sono organizzate all'interno di un singolo gruppo di risorse.
 
 1. Nell'area **Azure: Funzioni** selezionare il comando **Deploy to Function App** (Distribuisci nell'app per le funzioni) oppure aprire il riquadro comandi (**F1**) e selezionare il comando **Funzioni di Azure: Deploy to Function App** (Distribuisci nell'app per le funzioni). Anche in questo caso, l'app per le funzioni è quella in cui viene eseguito il progetto Python in Azure.
 
-    ![Comando per la distribuzione nell'app per le funzioni](media/tutorial-vs-code-serverless-python/deploy-command.png)
+    ![Distribuire la funzione Python in un app per le funzioni di Azure](media/tutorial-vs-code-serverless-python/deploy-a-python-fuction-to-azure-function-app.png)
 
 1. Quando richiesto, selezionare **Create New Function App in Azure** (Crea una nuova app per le funzioni in Azure) e specificare un nome univoco in Azure, in genere usando il nome personale o della società insieme ad altri identificatori univoci. È possibile usare lettere, numeri e trattini. Se in precedenza è stata creata un'app per le funzioni, il relativo nome viene visualizzato in questo elenco di opzioni.
 
@@ -36,11 +38,11 @@ In questa procedura si userà l'estensione Funzioni per creare un'app per le fun
 
     L'area **Azure: Funzioni** mostra anche lo stato di avanzamento:
 
-    ![Indicatore di stato della distribuzione nell'area Azure: Funzioni](media/tutorial-vs-code-serverless-python/deploy-progress.png)
+    ![Indicatore di stato della distribuzione nell'area Azure: Funzioni](media/tutorial-vs-code-serverless-python/deployment-progress-indicator-in-azure-function-explorer.png)
 
 1. Al termine della distribuzione, l'estensione Funzioni di Azure visualizza un messaggio con i pulsanti per tre azioni aggiuntive:
 
-    ![Messaggio che indica la corretta distribuzione con azioni aggiuntive](media/tutorial-vs-code-serverless-python/deployment-popup.png)
+    ![Messaggio che indica la corretta distribuzione con azioni aggiuntive](media/tutorial-vs-code-serverless-python/azure-functions-deployment-success-with-additional-actions.png)
 
     Per **Stream logs** (Streaming di log) e **Upload settings** (Carica impostazioni), vedere le sezioni successive. Per **View output** (Visualizza output), vedere il passaggio 5 seguente.
 

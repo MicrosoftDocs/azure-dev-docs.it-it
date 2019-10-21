@@ -9,16 +9,18 @@ ms.topic: conceptual
 ms.date: 09/12/2019
 ms.author: kraigb
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 0f002444d2454b734821e067e65fa513619a68bf
-ms.sourcegitcommit: bed07b313eeab51281d1a6d4eba67a75524b2f57
+ms.openlocfilehash: 12cc4880a7001fc51b0e70f89f177390c5fd0f45
+ms.sourcegitcommit: 6012460ad8d6ff112226b8f9ea6da397ef77712d
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72172216"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72278707"
 ---
 # <a name="tutorial-stream-logs-from-azure-app-service-for-a-container"></a>Esercitazione: Streaming dei log dal Servizio app di Azure per un contenitore
 
 [Passaggio precedente: Apportare modifiche e ripetere la distribuzione](tutorial-deploy-containers-03.md)
+
+Usare questa procedura per eseguire lo streaming dei log in Visual Studio Code da un servizio app di Azure per un contenitore.
 
 In VS Code è possibile visualizzare i log del sito in esecuzione nel servizio app di Azure, che acquisiscono l'output nella console in modo analogo alle istruzioni `print` e lo instradano nel pannello **Output** di VS Code.
 

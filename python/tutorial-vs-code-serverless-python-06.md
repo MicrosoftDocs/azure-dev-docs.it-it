@@ -9,18 +9,18 @@ ms.topic: conceptual
 ms.date: 09/02/2019
 ms.author: kraigb
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 07f806dc58eb5aede65f0dca67e1bc59ce495a25
-ms.sourcegitcommit: bed07b313eeab51281d1a6d4eba67a75524b2f57
+ms.openlocfilehash: f247ff7730a9f1bca8cc7ed6255ed52966d94d6d
+ms.sourcegitcommit: 6012460ad8d6ff112226b8f9ea6da397ef77712d
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72172428"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72278506"
 ---
 # <a name="tutorial-add-a-second-python-function-to-azure-functions"></a>Esercitazione: Aggiungere una seconda funzione Python a Funzioni di Azure
 
 [Passaggio precedente: Distribuire in Azure](tutorial-vs-code-serverless-python-05.md)
 
-Dopo la prima distribuzione, è possibile apportare modifiche al codice, ad esempio aggiungendo altre funzioni, e ridistribuirle nella stessa app per le funzioni.
+Dopo la prima distribuzione, è possibile apportare modifiche al codice, ad esempio aggiungendo altre funzioni Python, e ridistribuirle nella stessa app per le funzioni di Azure.
 
 1. Nell'area **Azure: Functions** (Azure: Funzioni) selezionare il comando **Create Function** (Crea funzione) oppure usare **Azure Functions: Create Function** (Funzioni di Azure: Crea funzione) nel riquadro comandi. Specificare i dettagli seguenti per la funzione:
 

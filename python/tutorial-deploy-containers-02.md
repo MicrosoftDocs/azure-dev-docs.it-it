@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 09/12/2019
 ms.author: kraigb
 ms.custom: seo-python-october2019
-ms.openlocfilehash: a099e25134615fc05508cde3c0f128a3be813402
-ms.sourcegitcommit: bed07b313eeab51281d1a6d4eba67a75524b2f57
+ms.openlocfilehash: bb1797ef86d9a98661412ef555b4eb78a9282ad9
+ms.sourcegitcommit: 6012460ad8d6ff112226b8f9ea6da397ef77712d
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72172267"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72278872"
 ---
 # <a name="tutorial-deploy-a-container-image-to-azure-app-service"></a>Esercitazione: Distribuire un'immagine del contenitore nel Servizio app di Azure
 
@@ -24,15 +24,15 @@ Con un'immagine del contenitore in un registro, è possibile usare l'estensione 
 
 1. Nell'area **Docker** espandere **Registries** (Registri), espandere il nodo del registro, ad esempio **Azure**, quindi espandere il nodo relativo al nome dell'immagine fino a visualizzare l'immagine con il tag `:latest`.
 
-    ![Individuazione di un'immagine nell'area Docker](media/deploy-containers/deploy-find-image.png)
+    ![Individuare un'immagine nell'area Docker](media/deploy-containers/find-image-to-deploy-in-docker-explorer.png)
 
 1. Fare clic con il pulsante destro del mouse sull'immagine e scegliere **Deploy Image to Azure App Service** (Distribuisci immagine nel servizio app di Azure).
 
-    ![Selezione del comando di menu per la distribuzione](media/deploy-containers/deploy-menu.png)
+    ![Selezionare la voce di menu Deploy Image to Azure App Service](media/deploy-containers/deploy-image-to-azure-app-service-with-docker-explorer.png)
 
 1. Seguire le istruzioni per selezionare una sottoscrizione di Azure, selezionare o specificare un gruppo di risorse, specificare un'area, configurare un piano del servizio app (B1 è il meno costoso) e specificare un nome per il sito. L'animazione seguente illustra il processo.
 
-    ![Animazione sul processo di creazione e distribuzione](media/deploy-containers/deploy-to-app-service.gif)
+    ![Creare e distribuire l'immagine nel Servizio app di Azure](media/deploy-containers/deploy-image-to-azure-app-service.gif)
 
     Un **gruppo di risorse** è una raccolta denominata delle varie risorse che costituiscono un'app. Assegnando tutte le risorse dell'app a un singolo gruppo, è possibile gestirle facilmente come singola unità. Per altre informazioni, vedere [Panoramica di Azure Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview) nella documentazione di Azure.
 
@@ -44,7 +44,7 @@ Con un'immagine del contenitore in un registro, è possibile usare l'estensione 
 
 1. Al termine, è **necessario** aggiungere anche un'impostazione denominata `WEBSITES_PORT` al servizio app per specificare la porta su cui il contenitore è in ascolto. Se si usa un'immagine dell'esercitazione [Creare un contenitore Python in VS Code](https://code.visualstudio.com/docs/python/tutorial-create-container), ad esempio, la porta è 5000 per Flask e 8000 per Django. Per impostare `WEBSITES_PORT`, passare all'area **Azure: Servizio app**, espandere il nodo del nuovo servizio app (aggiornare se necessario), quindi fare clic con il pulsante destro del mouse su **Applications Settings** (Impostazioni applicazioni) e scegliere **Add New Setting** (Aggiungi nuova impostazione). Quando richiesto, immettere `WEBSITES_PORT` come chiave e il numero di porta per il valore.
 
-    ![Comando del menu di scelta rapida in un servizio app per l'aggiunta di una nuova impostazione](media/deploy-containers/add-app-service-setting.png)
+    ![Aggiunta di una nuova impostazione a un servizio app che specifica una porta](media/deploy-containers/add-new-setting-in-app-service-settings-explorer.png)
 
 1. Il servizio app viene riavviato automaticamente quando si cambiano le impostazioni. È anche possibile fare clic con il pulsante destro del mouse sul servizio app e scegliere **Restart** (Riavvia) in qualsiasi momento.
 

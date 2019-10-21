@@ -9,16 +9,18 @@ ms.topic: conceptual
 ms.date: 09/12/2019
 ms.author: kraigb
 ms.custom: seo-python-october2019
-ms.openlocfilehash: b284dd6b5a5d1a09f1be48fb2ab7e6a8f95a4708
-ms.sourcegitcommit: bed07b313eeab51281d1a6d4eba67a75524b2f57
+ms.openlocfilehash: 96e3a653567d146e1ce10fe0ae7950d35b9ed9e3
+ms.sourcegitcommit: 6012460ad8d6ff112226b8f9ea6da397ef77712d
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72172363"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72279072"
 ---
 # <a name="tutorial-prepare-your-app-for-deployment-to-azure-app-service"></a>Esercitazione: Preparare l'app per la distribuzione nel Servizio app di Azure
 
 [Passaggio precedente: Prerequisiti](tutorial-deploy-app-service-on-linux-01.md)
+
+In questo articolo viene preparata un'app da distribuire nel servizio app di Azure per questa esercitazione. È possibile usare un'app esistente oppure creare o scaricare un'app.
 
 Se si ha già un'app che si vuole usare, verificare di avere un file *requirements.txt* che descrive le dipendenze, inclusi i framework come Flask o Django.
 

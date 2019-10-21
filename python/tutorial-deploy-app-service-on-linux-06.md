@@ -9,20 +9,22 @@ ms.topic: conceptual
 ms.date: 09/12/2019
 ms.author: kraigb
 ms.custom: seo-python-october2019
-ms.openlocfilehash: f4aac132e9c01a0c428e243e06e811357defc2aa
-ms.sourcegitcommit: bed07b313eeab51281d1a6d4eba67a75524b2f57
+ms.openlocfilehash: a60c8fd0202e935960f14a9ab5570f86a78fab6e
+ms.sourcegitcommit: 6012460ad8d6ff112226b8f9ea6da397ef77712d
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72172226"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72278922"
 ---
 # <a name="tutorial-stream-logs-from-azure-app-service-into-visual-studio-code"></a>Esercitazione: Eseguire lo streaming dei log dal Servizio app di Azure in Visual Studio Code
 
 [Passaggio precedente: Distribuire l'app](tutorial-deploy-app-service-on-linux-05.md)
 
+Usare questa procedura per eseguire lo streaming dei log in Visual Studio Code da un servizio app di Azure.
+
 1. In Visual Studio Code aprire l'area **Azure: App Service** (Azure: App Service), fare clic con il pulsante destro del mouse sul servizio app e scegliere **Start streaming logs** (Avvia streaming dei log):
 
-   ![Comando Start streaming logs (Avvia streaming dei log)](media/deploy-azure/start-streaming-logs-command.png)
+   ![Avvio dello streaming dei log dall'area App Service (Servizio app)](media/deploy-azure/start-streaming-logs-in-visual-studio-code.png)
 
 1. Quando viene richiesto di abilitare la registrazione dei file e riavviare l'app Web, scegliere **Yes** (Sì). Durante il riavvio dell'app la finestra **Output** in VS Code visualizza lo stato dell'operazione. L'abilitazione della registrazione è un processo che viene eseguito una volta sola.
 

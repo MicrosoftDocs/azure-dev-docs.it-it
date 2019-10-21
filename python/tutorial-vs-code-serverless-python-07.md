@@ -9,18 +9,20 @@ ms.topic: conceptual
 ms.date: 09/02/2019
 ms.author: kraigb
 ms.custom: seo-python-october2019
-ms.openlocfilehash: e9f23e138dc9ddc0022199296320ff5c04e6c3d6
-ms.sourcegitcommit: bed07b313eeab51281d1a6d4eba67a75524b2f57
+ms.openlocfilehash: f8cfe602676c64f516f0a95ae73801b58f35076c
+ms.sourcegitcommit: 6012460ad8d6ff112226b8f9ea6da397ef77712d
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72172119"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72278519"
 ---
 # <a name="tutorial-add-a-storage-binding-for-azure-functions-in-python"></a>Esercitazione: Aggiungere un binding di archiviazione per Funzioni di Azure in Python
 
 [Passaggio precedente: Distribuire una seconda funzione](tutorial-vs-code-serverless-python-06.md)
 
-Un _binding_ consente di collegare il codice della funzione alle risorse, ad esempio archiviazione di Azure, senza scrivere codice di accesso ai dati. Il binding viene definito nel file *function.json* e può rappresentare sia l'input che l'output. Una funzione può usare più binding di input e output, ma un solo trigger. Per altre informazioni, vedere [Concetti su trigger e binding di Funzioni di Azure](/azure/azure-functions/functions-triggers-bindings).
+È possibile aggiungere un binding di archiviazione per Funzioni di Azure. Un _binding_ consente di collegare il codice della funzione alle risorse, ad esempio archiviazione di Azure, senza scrivere codice di accesso ai dati.
+
+Il binding viene definito nel file *function.json* e può rappresentare sia l'input che l'output. Una funzione può usare più binding di input e output, ma un solo trigger. Per altre informazioni, vedere [Concetti su trigger e binding di Funzioni di Azure](/azure/azure-functions/functions-triggers-bindings).
 
 In questa sezione viene aggiunto un binding di archiviazione alla funzione HttpExample creata in precedenza in questa esercitazione. La funzione usa questo binding per scrivere messaggi nell'archiviazione a ogni richiesta. L'archiviazione in questione usa lo stesso account di archiviazione predefinito usato dall'app per le funzioni. Se si prevede di usare l'archiviazione in modo intensivo, tuttavia, è consigliabile creare un account separato.
 
@@ -28,7 +30,7 @@ In questa sezione viene aggiunto un binding di archiviazione alla funzione HttpE
 
 1. Nella cartella `HttpExample` fare clic con il pulsante destro del mouse sul file *function.json* e scegliere **Aggiungi binding**:
 
-    ![Comando Aggiungi binding in Esplora risorse di Visual Studio Code](media/tutorial-vs-code-serverless-python/add-binding-command.png)
+    ![Comando Aggiungi binding in Esplora risorse di Visual Studio Code](media/tutorial-vs-code-serverless-python/add-binding-command-to-azure-functions-in-visual-studio-code.png)
 
 1. Nei prompt che seguono in Visual Studio Code selezionare o specificare i valori seguenti:
 

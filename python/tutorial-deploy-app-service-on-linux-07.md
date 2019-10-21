@@ -9,18 +9,18 @@ ms.topic: conceptual
 ms.date: 09/12/2019
 ms.author: kraigb
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 4ffadce6a6895041efe6737b271d7ab11c830095
-ms.sourcegitcommit: bed07b313eeab51281d1a6d4eba67a75524b2f57
+ms.openlocfilehash: 1eeb8f66040a757809aad9df374f3d6a5f9390d2
+ms.sourcegitcommit: 6012460ad8d6ff112226b8f9ea6da397ef77712d
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72172467"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72278908"
 ---
 # <a name="tutorial-clean-up-resources-after-deploying-to-azure-app-service-on-linux-from-visual-studio-code"></a>Esercitazione: Pulire le risorse dopo la distribuzione nel Servizio app di Azure in Linux da Visual Studio Code
 
 [Passaggio precedente: Eseguire lo streaming dei log](tutorial-deploy-app-service-on-linux-06.md)
 
-Il servizio app creato include un piano di servizio app sottostante che può comportare costi. Per pulire le risorse, fare clic con il pulsante destro del mouse sul servizio app nell'area **Azure: App Service** (Azure: Servizio app) e selezionare **Delete** (Elimina).
+Il servizio app di Azure creato include un piano di servizio app di supporto che può comportare costi. Per pulire le risorse, fare clic con il pulsante destro del mouse sul servizio app nell'area **Azure: App Service** (Azure: Servizio app) e selezionare **Delete** (Elimina).
 
 È anche possibile visitare il [portale di Azure](https://portal.azure.com), selezionare **Gruppi di risorse** nel riquadro di spostamento sinistro, selezionare il gruppo di risorse creato nella procedura di questa esercitazione e quindi usare il comando **Elimina gruppo di risorse**.
 
@@ -32,9 +32,9 @@ Come indicato in precedenza, è possibile ottenere altre informazioni sull'esten
 
 Per altre informazioni sui servizi di Azure che è possibile usare da Python, tra cui l'archiviazione di dati con servizi di intelligenza artificiale e Machine Learning, visitare la pagina dedicata ad [Azure per sviluppatori Python](https://docs.microsoft.com/python/azure/?view=azure-python).
 
-Sono inoltre disponibili altre estensioni di Azure per VS Code che possono risultare utili. È sufficiente cercare "Azure" nella finestra di esplorazione delle estensioni:
+Sono inoltre disponibili altre estensioni di Azure per VS Code che possono risultare utili. È sufficiente cercare "Azure" nell'area delle estensioni:
 
-![Estensioni di Azure per VS Code](media/deploy-containers/azure-extensions.png)
+![Estensioni di Azure per Visual Studio Code](media/deploy-containers/azure-extensions-for-visual-studio-code.png)
 
 Alcune estensioni comuni sono:
 

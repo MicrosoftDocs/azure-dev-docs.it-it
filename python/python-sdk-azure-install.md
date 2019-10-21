@@ -8,14 +8,16 @@ ms.date: 06/05/2017
 ms.topic: conceptual
 ms.devlang: python
 ms.custom: seo-python-october2019
-ms.openlocfilehash: a0e979ec58cb659873a1bbe85bda4579363a9777
-ms.sourcegitcommit: bed07b313eeab51281d1a6d4eba67a75524b2f57
+ms.openlocfilehash: 6b131a9a59fdf332abce426b8cbe776341b5b36a
+ms.sourcegitcommit: 6012460ad8d6ff112226b8f9ea6da397ef77712d
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72172344"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72279090"
 ---
 # <a name="install-the-azure-sdk-for-python"></a>Installare Azure SDK per Python
+
+Questo articolo illustra come installare Azure SDK per Python. È possibile usare pip per installare una versione precedente, verificare l'installazione e disinstallare Azure SDK per Python.
 
 ## <a name="which-python-and-which-version-to-use"></a>Tipo e versione di Python da utilizzare
 

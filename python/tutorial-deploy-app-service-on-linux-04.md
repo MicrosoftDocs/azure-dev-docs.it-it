@@ -9,16 +9,18 @@ ms.topic: conceptual
 ms.date: 09/12/2019
 ms.author: kraigb
 ms.custom: seo-python-october2019
-ms.openlocfilehash: fdd3248e50020bb90cdde8a3e9c30c2895dccdae
-ms.sourcegitcommit: bed07b313eeab51281d1a6d4eba67a75524b2f57
+ms.openlocfilehash: 7c3c863ed333528c675cda939f52b86f53bc8380
+ms.sourcegitcommit: 6012460ad8d6ff112226b8f9ea6da397ef77712d
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72172196"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72278935"
 ---
 # <a name="tutorial-configure-a-custom-startup-file-for-python-apps-on-azure-app-service"></a>Esercitazione: Configurare un file di avvio personalizzato per le app Python nel Servizio app di Azure
 
-[Passaggio precedente: Creare il servizio app](tutorial-deploy-app-service-on-linux-02.md)
+[Passaggio precedente: Creare il servizio app](tutorial-deploy-app-service-on-linux-03.md)
+
+Questo articolo illustra come configurare un file di avvio personalizzato per un'app Python in un servizio app di Azure.
 
 A seconda di come è stata strutturata l'app, può essere necessario creare un file di comando di avvio personalizzato per l'app, come descritto in [Configurare le app Python per il Servizio app in Linux](https://docs.microsoft.com/azure/app-service/containers/how-to-configure-python) nella documentazione di Azure.
 
@@ -37,11 +39,11 @@ Se è necessario un file di avvio personalizzato, attenersi alla procedura segue
 
 1. Nell'area **Azure: App Service** (Azure: Servizio app) espandere il servizio app, fare clic con il pulsante destro del mouse su **Application Settings** (Impostazioni applicazione) e selezionare **Open in Portal** (Apri nel portale):
 
-    ![Comando Open in Portal (Apri nel portale) nell'area App Service (Servizio app)](media/deploy-azure/open-settings-in-portal-command.png)
+    ![Comando Open in Portal (Apri nel portale) in Application Settings (Impostazioni applicazione) nell'area App Service (Servizio app)](media/deploy-azure/open-application-settings-in-portal-for-app-service.png)
 
 1. Nel portale di Azure eseguire l'accesso se necessario e quindi nella pagina **Configurazione** selezionare **Impostazioni generali**, immettere il nome del file di avvio, ad esempio *startup.txt*, in **Impostazioni stack** >  **Comando di avvio** e infine selezionare **Salva**.
 
-    ![Impostazione del nome del file di avvio nel portale di Azure](media/deploy-azure/azure-portal-startup-file.png)
+    ![Impostazione del nome file in Comando di avvio nel portale di Azure](media/deploy-azure/enter-startup-file-for-app-service-in-the-azure-portal.png)
 
     > [!NOTE]
     > Invece di usare un file di comando di avvio, è anche possibile inserire il comando di avvio direttamente nel campo **Comando di avvio** nel portale di Azure. L'uso di un file è tuttavia preferibile in genere, perché consente di mantenere queste impostazioni di configurazione nel repository in cui è possibile controllare le modifiche e ridistribuirle in una diversa istanza del Servizio app.

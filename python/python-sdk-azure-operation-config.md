@@ -8,23 +8,25 @@ ms.date: 03/07/2018
 ms.topic: conceptual
 ms.devlang: python
 ms.custom: seo-python-october2019
-ms.openlocfilehash: ca69b72789f28445c4654e635e641e2954890a38
-ms.sourcegitcommit: bed07b313eeab51281d1a6d4eba67a75524b2f57
+ms.openlocfilehash: 0730cec8470a3b55421c6c0cafa08f88819cb1d8
+ms.sourcegitcommit: 6012460ad8d6ff112226b8f9ea6da397ef77712d
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72172367"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72279083"
 ---
 # <a name="parameters-for-operation-configuration"></a>Parametri per la configurazione delle operazioni
 
-I metodi per le operazioni includono parametri aggiuntivi che possono essere forniti in `kwargs`. Questo approccio è definito operation_config.
+È possibile specificare parametri aggiuntivi per i metodi sulle operazioni in Azure SDK per Python.
+
+I parametri aggiuntivi vengono forniti in `kwargs`. Questa funzionalità è denominata *operation_config*.
 
 Le opzioni per la configurazione delle operazioni sono le seguenti:
 
 |Nome parametro|Type|Ruolo|
 |----------------------|------|---------------|
 | verify |`bool`|Indica se verificare il certificato SSL. Il valore predefinito è true.|
-|  cert |`str`| Percorso per il certificato locale per la verifica lato client.|
+|  cert |`str`| Percorso del certificato locale per la verifica lato client.|
 |  timeout |`int`| Timeout in secondi per stabilire una connessione al server.|
 |  allow_redirects |`bool` | Indica se consentire i reindirizzamenti.|
 |  max_redirects  |`int`| Numero massimo di reindirizzamenti consentiti.|

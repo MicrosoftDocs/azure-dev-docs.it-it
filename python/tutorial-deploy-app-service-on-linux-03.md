@@ -9,22 +9,24 @@ ms.topic: conceptual
 ms.date: 09/12/2019
 ms.author: kraigb
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 8a2a719ee578553bb2033469e64c2df34351e36e
-ms.sourcegitcommit: bed07b313eeab51281d1a6d4eba67a75524b2f57
+ms.openlocfilehash: 947a474f9bd6efa7fdb3c0a371f140623252aa25
+ms.sourcegitcommit: 6012460ad8d6ff112226b8f9ea6da397ef77712d
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72172515"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72279044"
 ---
 # <a name="tutorial-create-the-app-service-from-visual-studio-code"></a>Esercitazione: Creare il servizio app da Visual Studio Code
 
-[Passaggio precedente: Preparare l'app](tutorial-deploy-app-service-on-linux-01.md)
+[Passaggio precedente: Preparare l'app](tutorial-deploy-app-service-on-linux-02.md)
 
-In questo passaggio viene creata l'istanza del Servizio app di Azure in cui distribuire l'app. Eseguire questo passaggio prima di distribuire il codice in modo da poter configurare un file di avvio personalizzato, se necessario, nel passaggio successivo.
+In questo passaggio viene creata l'istanza di Servizio app di Azure in cui distribuire l'app.
+
+Eseguire questo passaggio prima di distribuire il codice in modo da poter configurare un file di avvio personalizzato, se necessario, nel passaggio successivo.
 
 1. Nell'area **Azure: App Service** (Azure: Servizio app) selezionare il comando **+** per creare un nuovo servizio app oppure aprire il riquadro comandi (**F1**) e selezionare **Azure App Service: Create New App** (Servizio app di Azure: Crea nuova app). Nella terminologia del servizio app un'app Web funge da **host** per il codice dell'app Web e non corrisponde al codice dell'app.
 
-    ![Pulsante Create new App Service (Crea nuovo servizio app) nell'area App Service (Servizio app)](media/deploy-azure/app-service-create-new.png)
+    ![Creazione di un nuovo servizio app nell'area App Service (Servizio app)](media/deploy-azure/create-new-app-service-in-app-service-explorer.png)
 
 1. Fornire le informazioni richieste ai prompt visualizzati:
 
@@ -33,15 +35,15 @@ In questo passaggio viene creata l'istanza del Servizio app di Azure in cui dist
 
 1. Quando viene visualizzato un messaggio che indica che il nuovo servizio app è stato creato, selezionare **View Output** (Visualizza output) per passare alla finestra **Output** in VS Code. L'output mostra i nomi del gruppo di risorse di Azure e del piano di servizio app creati, unitamente all'URL per il servizio app.
 
-    ![Messaggio visualizzato dopo la creazione del servizio app](media/deploy-azure/app-service-created.png)
+    ![URL, gruppo di risorse e piano di servizio app per il servizio app](media/deploy-azure/url-for-your-new-app-service-and-resource-group-and-plan.png)
 
 1. Per verificare la corretta esecuzione del servizio app, espandere la sottoscrizione nell'area **Azure: App Service** (Azure: Servizio app), fare clic con il pulsante destro del mouse sul nome del servizio app e scegliere **Browse website** (Sfoglia sito Web):
 
-    ![Comando Browse Website (Sfoglia sito Web) in un servizio app nell'area App Service (Servizio app)](media/deploy-azure/browse-website-command.png)
+    ![Comando Browse Website (Sfoglia sito Web) in un servizio app nell'area App Service (Servizio app)](media/deploy-azure/select-command-to-browse-website-in-app-service.png)
 
 1. Dal momento che il codice personale non è ancora stato distribuito nel servizio app (operazione che verrà eseguita nel passaggio successivo), viene visualizzata solo un'app predefinita:
 
-    ![App Python predefinita nel Servizio app di Azure in Linux](media/deploy-azure/default-python-app.png)
+    ![App Python predefinita nel Servizio app di Azure in Linux](media/deploy-azure/default-python-app-on-app-service-on-linux.png)
 
 ## <a name="optional-upload-an-environment-variable-definitions-file"></a>(Facoltativo) Caricare un file di definizioni delle variabili di ambiente
 
