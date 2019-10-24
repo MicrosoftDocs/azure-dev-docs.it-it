@@ -8,12 +8,12 @@ ms.service: app-service
 ms.topic: conceptual
 ms.date: 09/24/2019
 ms.author: kraigb
-ms.openlocfilehash: 44e6479379fff3ddf1012cdb61cf73440cad346e
-ms.sourcegitcommit: c04984b6367e922dbc5973af44f8cd0ca81ce157
+ms.openlocfilehash: ad207007e1c5a781f8cc02a2d20e0a68c77892e7
+ms.sourcegitcommit: 2757d8bd0cc045b7d02f430d44de859f9de853f4
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/30/2019
-ms.locfileid: "71685971"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72587648"
 ---
 # <a name="create-an-azure-storage-account"></a>Creare un account di Archiviazione di Azure
 
@@ -21,7 +21,7 @@ ms.locfileid: "71685971"
 
 In questo passaggio viene creato un account di Archiviazione di Azure, che funge da semplice archivio file (o rete per la distribuzione di contenuti) con un server Web incorporato. Grazie a questo server incorporato, Archiviazione di Azure rappresenta la scelta ideale per ospitare rapidamente siti statici.
 
-1. Nella cartella `my-react-app` creata nel passaggio precedente avviare Visual Studio Code in modo che apra tale cartella automaticamente:
+1. Nella cartella `my-static-app` creata nel passaggio precedente avviare Visual Studio Code in modo che apra tale cartella automaticamente:
 
     ```bash
     code .
