@@ -4,19 +4,19 @@ description: Completare l'esercitazione end-to-end che illustra come creare un'a
 services: multiple
 author: karlerickson
 manager: douge
-ms.service: azure-nodejs
+ms.service: app-service
 ms.tgt_pltfrm: na
 ms.devlang: nodejs
 ms.topic: article
 ms.date: 06/25/2017
 ms.author: karler
-ms.custom: seo-javascript-september2019
-ms.openlocfilehash: 51ed46032d0cff0f2e35c0a69e9b339158bad867
-ms.sourcegitcommit: 86aec15e2d25b5b706092feb4271fb958c29d5fa
+ms.custom: seo-javascript-september2019, seo-javascript-october2019
+ms.openlocfilehash: bc8e3a79e3d32cc3d16f496b169f4229d20a6163
+ms.sourcegitcommit: 2757d8bd0cc045b7d02f430d44de859f9de853f4
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71710262"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72587502"
 ---
 # <a name="develop-and-deploy-a-containerized-nodejs-app-with-visual-studio-code-and-azure"></a>Sviluppare e distribuire un'app Node.js in contenitore con Visual Studio Code e Azure
 
@@ -47,13 +47,13 @@ Per iniziare, scaricare il progetto di esempio usando la procedura seguente:
 
 1. Al prompt del riquadro comandi immettere `gitcl`, selezionare il comando **Git: Clone** e premere **&lt;INVIO>** .
 
-    ![Comando gitcl nel prompt del riquadro comandi di Visual Studio Code](./media/node-howto-e2e/git-clone.png)
+    ![Comando gitcl nel prompt del riquadro comandi di Visual Studio Code](./media/node-howto-e2e/visual-studio-code-git-clone.png)
 
 1. Quando viene richiesto l'**URL del repository**, immettere `https://github.com/scotch-io/node-todo`, quindi premere **&lt;Invio>** .
 
 1. Selezionare o creare la directory locale in cui si vuole clonare il progetto.
 
-    ![Esplora risorse di Visual Studio Code](./media/node-howto-e2e/explorer.png)
+    ![Esplora risorse di Visual Studio Code](./media/node-howto-e2e/visual-studio-code-explorer.png)
 
 ## <a name="integrated-terminal"></a>Terminale integrato
 
@@ -63,7 +63,7 @@ Trattandosi di un progetto Node.js, è prima di tutto necessario verificare che 
 
 1. Digitare `yarn` e premere **&lt;Invio>** .  
 
-    ![Esecuzione del comando yarn in Visual Studio Code](./media/node-howto-e2e/terminal.png)
+    ![Esecuzione del comando yarn in Visual Studio Code](./media/node-howto-e2e/visual-studio-code-install-yarn.png)
 
 ## <a name="integrated-git-version-control"></a>Controllo della versione integrato Git
 
@@ -75,7 +75,7 @@ La procedura seguente illustra come verificare il file `yarn.lock` nel controllo
 
 1. Nella casella **Messaggio**, immettere un messaggio di commit e premere **&lt;Ctrl>&lt;Invio>** . 
 
-    ![Aggiunta del file yarn.lock a Git](./media/node-howto-e2e/git.png)
+    ![Aggiunta del file yarn.lock a Git](./media/node-howto-e2e/visual-studio-code-add-yarn-lock.png)
 
 ## <a name="project-and-code-navigation"></a>Esplorazione del progetto e del codice
 
@@ -85,21 +85,21 @@ Per orientarsi nella base di codici, si esamineranno alcuni esempi di funzionali
 
 1. Immettere `.js` per visualizzare tutti i file JSON/JavaScript presenti nel progetto e la directory padre di ogni file 
 
-    ![Visualizzare tutti i file con estensione js](./media/node-howto-e2e/git-output.png)
+    ![Visualizzare tutti i file con estensione js* in Visual Studio Code](./media/node-howto-e2e/visual-studio-code-javascript-json-file-list.png)
 
 1. Selezionare `server.js`, ovvero lo script di avvio dell'app. 
 
 1. Posizionare il mouse sulla variabile **database** importata alla riga 6 per visualizzarne il tipo. La possibilità di analizzare rapidamente variabili, moduli e tipi in un file è molto utile durante lo sviluppo dei progetti. 
 
-    ![Individuare il tipo](./media/node-howto-e2e/hover-help.png)
+    ![Individuare il tipo in Visual Studio Code con la guida visualizzata al passaggio del mouse](./media/node-howto-e2e/visual-studio-code-hover-help.png)
 
 1. Facendo clic all'interno di una variabile, ad esempio **database**, è possibile vedere tutti i riferimenti a tale variabile presenti nello stesso file. Per visualizzare tutti i riferimenti a una variabile nel progetto, fare clic con il pulsante destro del mouse sulla variabile e dal menu di scelta rapida scegliere **Trova tutti i riferimenti**.
 
-    ![Trovare i riferimenti a una variabile](./media/node-howto-e2e/word-hilight.png)
+    ![Trovare tutti i riferimenti con Visual Studio Code](./media/node-howto-e2e/visual-studio-code-find-all-references.png)
 
 1. Oltre a passare il mouse su una variabile per individuarne il tipo, è possibile esaminare la definizione di una variabile, anche se si trova in un altro file. Per visualizzare questa azione, fare clic con il pulsante destro del mouse su **database.localUrl** (riga 12) e quindi scegliere **Visualizza definizione** dal menu di scelta rapida. 
 
-    ![Visualizzare la definizione di una variabile](./media/node-howto-e2e/code-peek.png)
+    ![Visualizzare la definizione della variabile in Visual Studio Code](./media/node-howto-e2e/visual-studio-code-peek-definition.png)
 
 ## <a name="modifying-the-code-and-using-autocompletion"></a>Modifica del codice e uso del completamento automatico
 
@@ -121,7 +121,7 @@ La stringa di connessione di MongoDB è hardcoded nella dichiarazione di **datab
 
 Si noti che se si immette il codice manualmente (invece di copiarlo e incollarlo), quando si digita il punto dopo `process`, Visual Studio Code visualizza i membri disponibili dell'API globale **process** di Node.js.
 
-![Il completamento automatico visualizza automaticamente i membri di un'API](./media/node-howto-e2e/process-env.png)
+![Il completamento automatico visualizza automaticamente i membri di un'API](./media/node-howto-e2e/visual-studio-code-process-env.png)
 
 Il completamento automatico funziona perché Visual Studio Code usa TypeScript in background, anche per JavaScript, per fornire informazioni sui tipi che possono quindi essere usate per l'elenco di completamento durante la digitazione. Visual Studio Code può rilevare che si tratta di un progetto di Node.js e quindi scarica automaticamente il file delle definizioni di tipi TypeScript per [Node.js da NPM](https://www.npmjs.com/package/@types/node). Il file delle definizioni di tipi consente di ottenere il completamento automatico per altre variabili globali Node.js, ad esempio **Buffer** e **setTimeout**, oltre a tutti i moduli predefiniti, ad esempio **fs** e **http**.
 
@@ -133,7 +133,7 @@ mongoose.connection.on("error", () => { console.log("DB connection error"); });
 
 Come con il codice precedente, si noterà che il completamento automatico funziona senza operazioni aggiuntive da parte dell'utente.
 
-![Il completamento automatico visualizza automaticamente i membri di un'API](./media/node-howto-e2e/mongoose.png)
+![Il completamento automatico visualizza automaticamente i membri di un'API](./media/node-howto-e2e/visual-studio-code-autocomplete-mongoose.png)
 
 È possibile vedere quali moduli supportano questa funzionalità di completamento automatico esplorando il progetto [DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped), che rappresenta la fonte gestita dalla community di tutte le definizioni di tipi TypeScript.
 
@@ -141,19 +141,19 @@ Come con il codice precedente, si noterà che il completamento automatico funzio
 
 Dopo aver esaminato il codice, eseguire l'app. Per eseguire l'app da Visual Studio Code premere **&lt;F5>** . Quando si esegue il codice tramite  **&lt;F5>** (modalità di debug), Visual Studio Code avvia l'app e visualizza la finestra **Console di debug** con il canale stdout per l'app.
 
-![Monitoraggio di stdout di un'app tramite la console di debug](./media/node-howto-e2e/console.png)
+![Monitoraggio di stdout di un'app tramite la console di debug](./media/node-howto-e2e/visual-studio-code-debug-console.png)
 
 La **console di debug** è collegata all'app appena avviata, quindi è possibile digitare espressioni JavaScript che verranno valutate nell'app. È anche disponibile il completamento automatico. Per un esempio pratico, digitare `process.env` nella console:
 
-![Immissione del codice nella console di debug](./media/node-howto-e2e/console-code.png)
+![Immissione del codice nella console di debug](./media/node-howto-e2e/visual-studio-code-debug-console-autocomplete.png)
 
 È stato possibile premere **&lt;F5>** per eseguire l'app perché il file attualmente aperto è un file JavaScript (`server.js`). Di conseguenza, Visual Studio Code presuppone che il progetto sia un'app Node.js. Se si chiudono tutti i file JavaScript in Visual Studio Code e quindi si preme **&lt;F5>** , Visual Studio Code chiederà di specificare l'ambiente:
 
-![Indicazione dell'ambiente di runtime](./media/node-howto-e2e/select-env.png)
+![Indicazione dell'ambiente di runtime](./media/node-howto-e2e/visual-studio-code-select-environment.png)
 
 Aprire un browser e passare a `http://localhost:8080` per vedere l'app in esecuzione. Digitare un messaggio nella casella di testo e aggiungere/rimuovere alcuni elementi Todo per avere un'idea del funzionamento dell'app.
 
-![App Todo in esecuzione](./media/node-howto-e2e/todo.png)
+![Aggiungere o rimuovere elementi Todo con l'app](./media/node-howto-e2e/add-remove-todos-app.png)
 
 ## <a name="debugging"></a>Debug
 
@@ -161,7 +161,7 @@ Oltre a poter eseguire l'app e interagire con essa tramite la console integrata,
 
 Impostare un punto di interruzione alla riga 28, che rappresenta la route Express che viene chiamata quando l'applicazione prova ad aggiungere una voce Todo. Per impostare un punto di interruzione è sufficiente fare clic sull'area a sinistra del numero di riga nell'editor come illustrato nell'immagine seguente.
 
-![Impostazione di un punto di interruzione in Visual Studio Code](./media/node-howto-e2e/breakpoint.png)
+![Impostazione di un punto di interruzione in Visual Studio Code](./media/node-howto-e2e/visual-studio-code-set-breakpoint.png)
 
 > [!NOTE]
 > Oltre ai punti di interruzione standard, Visual Studio Code supporta punti di interruzione condizionali che consentono di definire quando l'app deve sospendere l'esecuzione. Per impostare un punto di interruzione condizionale, fare clic con il pulsante destro del mouse a sinistra della riga in cui si vuole sospendere l'esecuzione, selezionare **Aggiungi punto di interruzione condizionale** e specificare un'espressione JavaScript (ad esempio `foo = "bar"`) o il conteggio esecuzioni che definisce la condizione che determina la sospensione dell'esecuzione.
@@ -170,7 +170,7 @@ Impostare un punto di interruzione alla riga 28, che rappresenta la route Expres
 
 Dopo aver impostato il punto di interruzione, tornare all'app in esecuzione e aggiungere una voce Todo. Con l'aggiunta di una voce Todo, l'app sospende immediatamente l'esecuzione alla riga 28 in cui è stato impostato il punto di interruzione:
 
-![Visual Studio Code sospende l'esecuzione nel punto di interruzione](./media/node-howto-e2e/debugger.png)
+![Visual Studio Code sospende l'esecuzione nel punto di interruzione](./media/node-howto-e2e/visual-studio-code-pause-breakpoint-execution.png)
 
 Quando l'applicazione è stata sospesa, è possibile passare il puntatore del mouse sulle espressioni del codice per visualizzare il relativo valore corrente, controllare le variabili locali o le espressioni di controllo e lo stack di chiamate e usare la barra degli strumenti di debug per scorrere l'esecuzione del codice. Premere  **&lt;F5>** per riprendere l'esecuzione dell'app.
 
@@ -180,17 +180,17 @@ Come accennato in precedenza in questo argomento, l'app TODO è un'app MEAN, ovv
 
 Passare alla scheda **Estensioni** e digitare `chrome` nella casella di ricerca:
 
-![Estensione di debug di Chrome per Visual Studio Code](./media/node-howto-e2e/chrome.png)
+![Estensione di debug di Chrome per Visual Studio Code](./media/node-howto-e2e/visual-studio-code-chrome-extension.png)
 
 Selezionare l'estensione denominata **Debugger for Chrome** e selezionare **Installa**. Dopo aver installato l'estensione di debug di Chrome, selezionare **Ricarica** per chiudere e riaprire Visual Studio Code e attivare così l'estensione. 
 
-![Ricaricamento di Visual Studio Code dopo l'installazione dell'estensione di debug di Chrome](./media/node-howto-e2e/chrome-extension-reload-vscode.png)
+![Ricaricamento di Visual Studio Code dopo l'installazione dell'estensione di debug di Chrome](./media/node-howto-e2e/visual-studio-code-reload-extension.png)
 
 Anche se è stato possibile eseguire il codice Node.js ed effettuarne il debug senza una configurazione specifica di Visual Studio Code, per eseguire il debug di un'app Web front-end è necessario generare un file `launch.json` che indica a Visual Studio Code come eseguire l'app. 
 
 Per generare il file `launch.json`, passare alla scheda **Debug**, fare clic sull'icona dell'ingranaggio (con un puntino rosso in cima) e selezionare l'ambiente **node.js**.
 
-![Opzione di Visual Studio Code per configurare il file launch.json](./media/node-howto-e2e/debug-gear.png)
+![Opzione di Visual Studio Code per configurare il file launch.json](./media/node-howto-e2e/visual-studio-code-debug-gear.png)
 
 Dopo la creazione, il file `launch.json` sarà simile al seguente e indicherà a Visual Studio Code come avviare e/o collegarsi all'app per eseguirne il debug. 
 
@@ -219,7 +219,7 @@ Si noti che Visual Studio Code è riuscito a rilevare che lo script di avvio del
 
 Con il file `launch.json` aperto, selezionare **Aggiungi configurazione** in basso a destra e selezionare **Chrome: Launch with userDataDir**.
 
-![Aggiunta di una configurazione di Chrome a Visual Studio Code](./media/node-howto-e2e/add-chrome-config.png)
+![Aggiunta di una configurazione di Chrome a Visual Studio Code](./media/node-howto-e2e/visual-studio-code-add-chrome-config.png)
 
 L'aggiunta di una nuova configurazione di esecuzione per Chrome consente di eseguire il debug del codice JavaScript di front-end. 
 
@@ -251,7 +251,7 @@ Aggiungere il frammento seguente come proprietà di primo livello nel file `laun
 
 I valori di stringa specificati nella matrice **compounds.configurations** si riferiscono al **nome** delle singole voci nell'elenco **configurations**. Se questi nomi sono stati modificati, è necessario apportare le modifiche appropriate nella matrice. Per vedere un esempio pratico, passare alla scheda Debug e impostare la configurazione su **Full-Stack** (il nome della configurazione composta), quindi premere **&lt;F5>** per eseguirla.
 
-![Esecuzione di una configurazione in Visual Studio Code](./media/node-howto-e2e/full-stack-profile.png)
+![Esecuzione di una configurazione in Visual Studio Code](./media/node-howto-e2e/visual-studio-code-full-stack-configuration.png)
 
 Con l'esecuzione della configurazione vengono avviati l'app Node.js (come si può vedere nell'output della console di debug) e Chrome, che è configurato per passare all'app Node.js all'indirizzo `http://localhost:8080`.
 
@@ -261,7 +261,7 @@ Impostare un punto di interruzione alla riga 11, ovvero nel punto di ingresso di
 
 Tornare all'app in esecuzione e aggiungere una nuova voce Todo. Si noti che Visual Studio Code ha ora sospeso l'esecuzione nel codice Angular.
 
-![Debug del codice di front-end in Visual Studio Code](./media/node-howto-e2e/chrome-pause.png)
+![Debug del codice di front-end in Visual Studio Code](./media/node-howto-e2e/visual-studio-code-chrome-pause.png)
 
 Come per il debug di Node.js, è possibile posizionare il mouse su espressioni, visualizzare variabili locali/espressioni di controllo, valutare le espressioni nella console e così via. 
 
@@ -283,19 +283,19 @@ Tornare alla scheda **Estensioni**, cercare `docker` e selezionare l'estensione 
 
 Installare l'estensione Docker e quindi ricaricare Visual Studio Code.
 
-![Installazione dell'estensione Docker per Visual Studio Code](./media/node-howto-e2e/docker-search.png)
+![Installazione dell'estensione Docker per Visual Studio Code](./media/node-howto-e2e/visual-studio-code-docker-extension.png)
 
 L'estensione Docker per Visual Studio Code include un comando per la generazione di un *Dockerfile* e del file `docker-compose.yml` per un progetto esistente. 
 
 Per vedere i comandi Docker disponibili, visualizzare il riquadro comandi premendo **&lt;F1>** e quindi digitare `docker`.
 
-![Comandi supportati dall'estensione Docker per Visual Studio ](./media/node-howto-e2e/docker-commands.png)
+![Comandi supportati dall'estensione Docker per Visual Studio Code ](./media/node-howto-e2e/visual-studio-code-available-docker-codes.png)
 
 Selezionare **Docker: Add docker files to workspace** (Docker: Aggiungi file docker all'area di lavoro), selezionare **Node.js** come piattaforma dell'app e specificare che l'app espone la porta `8080`. 
 
 Il comando Docker genera un `Dockerfile` completo e file Docker-compose che possono essere usati immediatamente.
 
-![Dockerfile generato](./media/node-howto-e2e/docker-file.png)
+![Dockerfile generato in Visual Studio Code](./media/node-howto-e2e/visual-studio-code-complete-dockerfile.png)
 
 Anche l'estensione Docker mette a disposizione il completamento automatico per `Dockerfiles` e i file `docker-compose.yml`. 
 
@@ -313,7 +313,7 @@ FROM mhart
 
 Con il cursore posizionato dopo la `t` di `mhart`, premere **&lt;Ctrl>&lt;spazio>** per visualizzare tutti i repository di immagini che `mhart` ha pubblicato su DockerHub.
 
-![Completamento automatico dell'estensione Docker](./media/node-howto-e2e/docker-completion.png)
+![Visualizzare i repository di immagini in DockerHub](./media/node-howto-e2e/visual-studio-code-dockerhub-image-repositories.png)
 
 Selezionare `mhart/alpine-node`, che offre tutti gli elementi di cui l'app necessita. 
 
@@ -321,7 +321,7 @@ Selezionare `mhart/alpine-node`, che offre tutti gli elementi di cui l'app neces
 
 Ora che è stato generato il `Dockerfile` è necessario creare l'immagine effettiva di Docker. Anche in questo caso è possibile usare un comando installato dall'estensione Docker in Visual Studio Code. Premere **&lt;F1>** , immettere `dockerb` nel riquadro comandi e selezionare il comando **Docker: Build Image**. Scegliere il `/Dockerfile` appena generato e modificato. Specificare un tag che includa il nome utente DockerHub, ad esempio `lostintangent/node`. Premere **&lt;INVIO>** per avviare la finestra del terminale integrata che visualizza l'output dell'immagine Docker in fase di creazione.
 
-![Stato di creazione dell'immagine Docker](./media/node-howto-e2e/docker-build.png)
+![Output di creazione dell'immagine Docker](./media/node-howto-e2e/docker-build-image-output.png)
 
 Si noti che il comando ha automatizzato il processo di esecuzione di `docker build`. Si tratta di un altro esempio di strumento di incremento della produttività facoltativo. In alternativa è possibile usare direttamente l'interfaccia della riga di comando di Docker. 
 
@@ -381,7 +381,7 @@ Per iniziare, aprire il terminale di Visual Studio. Si userà la nuova interfacc
     az webapp browse
     ```
 
-    ![App Todo in esecuzione nel browser](./media/node-howto-e2e/browse-app.png)
+    ![App Todo in esecuzione nel browser](./media/node-howto-e2e/deployed-container-app.png)
 
     > [!NOTE]
     > Potrebbero essere necessari alcuni minuti per caricare l'app la prima volta, perché il servizio app deve effettuare il pull dell'immagine Docker da DockerHub e quindi avviarla.
@@ -414,7 +414,7 @@ Anche se è possibile configurare un server di MongoDB o un set di repliche e ge
 
 4. Tornare al browser e aggiornarlo. Provare ad aggiungere e rimuovere un elemento Todo. L'app ora funziona senza dover modificare nulla. Impostare la variabile di ambiente sull'istanza di Cosmos DB creata, che emula completamente un database di MongoDB.
 
-    ![App demo dopo la connessione a un database](./media/node-howto-e2e/finished-demo.png)
+    ![App demo dopo la connessione a un database](./media/node-howto-e2e/finish-demo-walkthrough.png)
 
 Quando necessario, è possibile tornare all'istanza di Cosmos DB e aumentare o ridurre la velocità effettiva riservata richiesta dall'istanza di MongoDB e sfruttare il traffico aggiunto senza dover gestire manualmente l'infrastruttura.
 

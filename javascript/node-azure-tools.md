@@ -4,19 +4,19 @@ description: Installare i singoli strumenti per lo sviluppo con Node.js e JavaSc
 services: multiple
 author: karlerickson
 manager: douge
-ms.service: azure-nodejs
+ms.service: app-service
 ms.tgt_pltfrm: na
 ms.devlang: nodejs
 ms.topic: article
 ms.date: 11/07/2017
 ms.author: karler
-ms.custom: seo-javascript-september2019
-ms.openlocfilehash: 801e621b361a87223a9d2b948ce2afa8c2b1a138
-ms.sourcegitcommit: 47afd94820bad5214e60b42575e2a2d91a07ff65
+ms.custom: seo-javascript-september2019, seo-javascript-october2019
+ms.openlocfilehash: d943325cae970b69629fbc71ff4d86b6c0fa0491
+ms.sourcegitcommit: 2757d8bd0cc045b7d02f430d44de859f9de853f4
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72348037"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72587319"
 ---
 # <a name="azure-tools-for-javascript-developers"></a>Strumenti di Azure per sviluppatori JavaScript
 Di seguito sono riportati gli strumenti consigliati per lo sviluppo di app JavaScript in Azure.
@@ -24,7 +24,7 @@ Di seguito sono riportati gli strumenti consigliati per lo sviluppo di app JavaS
 ## <a name="azure-cli"></a>Interfaccia della riga di comando di Azure
 L'interfaccia della riga di comando di Azure è ottimizzata per la gestione delle risorse di Azure dalla riga di comando.
 
-![CLI](media/node-azure-tools/cli.png)
+![Interfaccia della riga di comando di Azure per la gestione delle risorse di Azure](media/node-azure-tools/azure-cli.png)
  
 > [!div class="nextstepaction"]
 > [Installare l'interfaccia della riga di comando di Azure 2.0](/cli/azure/install-az-cli2)
@@ -32,7 +32,7 @@ L'interfaccia della riga di comando di Azure è ottimizzata per la gestione dell
 ## <a name="visual-studio-code"></a>Visual Studio Code
 Modificare ed eseguire il debug delle app JavaScript in qualsiasi sistema operativo.
 
-![Visual Studio Code](media/node-azure-tools/vs-code.png)
+![Usare Visual Studio Code per modificare app JavaScript](media/node-azure-tools/visual-studio-code-debug-javascript.png)
 
 > [!div class="nextstepaction"]
 > [Download di Visual Studio Code](https://code.visualstudio.com)

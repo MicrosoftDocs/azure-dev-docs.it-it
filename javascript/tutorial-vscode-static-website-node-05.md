@@ -7,13 +7,13 @@ manager: barbkess
 ms.service: app-service
 ms.topic: conceptual
 ms.date: 09/24/2019
-ms.author: kraigb
-ms.openlocfilehash: 986d2a0f8999d79dfd1d856ed20a053c495a3765
-ms.sourcegitcommit: c04984b6367e922dbc5973af44f8cd0ca81ce157
+ms.author: buhollan
+ms.openlocfilehash: 73d27549e5ff1acb294f8e65fa610d0b46f56914
+ms.sourcegitcommit: 2757d8bd0cc045b7d02f430d44de859f9de853f4
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/30/2019
-ms.locfileid: "71685938"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72587298"
 ---
 # <a name="make-changes-and-redeploy"></a>Apportare modifiche e ripetere la distribuzione
 
@@ -21,19 +21,55 @@ ms.locfileid: "71685938"
 
 In questo passaggio viene apportata una semplice modifica al codice sorgente dell'app, quindi il sito viene ridistribuito per verificare il flusso di lavoro di distribuzione end-to-end.
 
-1. In Visual Studio Code aprire il file *src/app.js* e cambiare la riga 11 come indicato di seguito:
+# <a name="angulartabangular"></a>[Angular](#tab/angular)
 
-    ```js
+1. In Visual Studio Code aprire il file _src/app/app.component.html_ e modificare la riga 305 come indicato di seguito:
+
+    ```html
+    <span>Welcome To Azure</span>
+    ```
+
+1. In un terminale o al prompt dei comandi eseguire `npm run build`.
+
+1. In VS Code fare clic con il pulsante destro del mouse sulla cartella _dist/my-static-site_ aggiornata e scegliere di nuovo **Distribuisci in Sito Web statico**. Scegliere l'account di archiviazione e confermare di voler distribuire le modifiche. L'estensione di Azure elimina automaticamente i vecchi file prima di distribuire le modifiche per evitare problemi di memorizzazione nella cache.
+
+1. Al termine della distribuzione, aggiornare il sito nel browser per osservare le modifiche:
+
+    ![Modifiche nell'app dopo la ridistribuzione](media/static-website/updated-azure-app-angular.png)
+
+# <a name="reacttabreact"></a>[React](#tab/react)
+
+1. In Visual Studio Code aprire il file _src/app.js_ e cambiare la riga 11 come indicato di seguito:
+
+    ```html
     <h1 className="App-title">Welcome to Azure!</h1>
     ```
 
 1. In un terminale o al prompt dei comandi eseguire `npm run build`.
 
-1. In VS Code fare clic con il pulsante destro del mouse sulla cartella *build* aggiornata e scegliere di nuovo **Deploy to Static Website** (Distribuisci nel sito Web statico). Scegliere l'account di archiviazione e confermare di voler distribuire le modifiche. L'estensione di Azure elimina automaticamente i vecchi file prima di distribuire le modifiche per evitare problemi di memorizzazione nella cache.
+1. In VS Code fare clic con il pulsante destro del mouse sulla cartella _build_ aggiornata e scegliere di nuovo **Deploy to Static Website** (Distribuisci nel sito Web statico). Scegliere l'account di archiviazione e confermare di voler distribuire le modifiche. L'estensione di Azure elimina automaticamente i vecchi file prima di distribuire le modifiche per evitare problemi di memorizzazione nella cache.
 
 1. Al termine della distribuzione, aggiornare il sito nel browser per osservare le modifiche:
 
-    ![Modifiche nell'app dopo la ridistribuzione](media/static-website/updated-azure-app.png)
+    ![Modifiche nell'app dopo la ridistribuzione](media/static-website/updated-azure-app-react.png)
+
+# <a name="vuetabvue"></a>[Vue](#tab/vue)
+
+1. In Visual Studio Code aprire il file _src/App.vue_ e modificare la riga 11 come indicato di seguito:
+
+    ```html
+    <HelloWorld msg="Welcome to Azure!" />
+    ```
+
+1. In un terminale o al prompt dei comandi eseguire `npm run build`.
+
+1. In VS Code fare clic con il pulsante destro del mouse sulla cartella _dist_ aggiornata e scegliere di nuovo **Distribuisci in Sito Web statico**. Scegliere l'account di archiviazione e confermare di voler distribuire le modifiche. L'estensione di Azure elimina automaticamente i vecchi file prima di distribuire le modifiche per evitare problemi di memorizzazione nella cache.
+
+1. Al termine della distribuzione, aggiornare il sito nel browser per osservare le modifiche:
+
+    ![Modifiche nell'app dopo la ridistribuzione](media/static-website/updated-azure-app-vue.png)
+
+---
 
 > [!div class="nextstepaction"]
 > [Le modifiche sono state distribuite](tutorial-vscode-static-website-node-06.md) [Si è verificato un problema](https://www.research.net/r/PWZWZ52?tutorial=node-deployment-staticwebsite&step=code-change)

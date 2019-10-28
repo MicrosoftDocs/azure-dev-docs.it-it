@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 09/12/2019
 ms.author: kraigb
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 24f615f5f456276b1ed78fc431e3cdd929e2d1cd
-ms.sourcegitcommit: bed07b313eeab51281d1a6d4eba67a75524b2f57
+ms.openlocfilehash: 389b1ef07bd997ea6cd7d3d46fcaeffb36f6eaae
+ms.sourcegitcommit: 2757d8bd0cc045b7d02f430d44de859f9de853f4
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72172516"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72587119"
 ---
 # <a name="tutorial-deploy-python-apps-to-azure-app-service-on-linux-from-visual-studio-code"></a>Esercitazione: Distribuire app Python nel Servizio app di Azure in Linux da Visual Studio Code
 
@@ -23,7 +23,7 @@ Questo articolo illustra come usare Visual Studio Code per distribuire un'applic
 Se si riscontrano problemi con uno qualsiasi dei passaggi descritti in questa esercitazione, è possibile segnalarli. Per inviare feedback, seguire il collegamento **Si è verificato un problema** alla fine di ogni articolo.
 
 > [!TIP]
-> [Servizio app di Azure in Linux](https://docs.microsoft.com/azure/app-service/containers/app-service-linux-intro), attualmente disponibile in anteprima per Python, esegue il codice sorgente in un contenitore Docker predefinito. Il contenitore esegue le app con Python 3.7 usando il server Web [Gunicorn](https://gunicorn.org). Le caratteristiche di questo contenitore sono descritte in [Configurare app Python per il Servizio app di Azure in Linux](https://docs.microsoft.com/azure/app-service/containers/how-to-configure-python). La definizione del contenitore si trova in [github.com/Azure-App-Service/python](https://github.com/Azure-App-Service/python/tree/master/3.7).
+> [Servizio app di Azure in Linux](https://docs.microsoft.com/azure/app-service/containers/app-service-linux-intro) esegue il codice sorgente in un contenitore Docker predefinito. Il contenitore esegue le app con Python 3.7 usando il server Web [Gunicorn](https://gunicorn.org). Le caratteristiche di questo contenitore sono descritte in [Configurare app Python per il Servizio app di Azure in Linux](https://docs.microsoft.com/azure/app-service/containers/how-to-configure-python). La definizione del contenitore si trova in [github.com/Azure-App-Service/python](https://github.com/Azure-App-Service/python/tree/master/3.7).
 
 ## <a name="prerequisites"></a>Prerequisiti
 
