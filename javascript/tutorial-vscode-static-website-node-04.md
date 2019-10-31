@@ -8,12 +8,12 @@ ms.service: app-service
 ms.topic: conceptual
 ms.date: 09/24/2019
 ms.author: buhollan
-ms.openlocfilehash: 705256291709c6715f90f19c220a7e3e127f923f
-ms.sourcegitcommit: 2757d8bd0cc045b7d02f430d44de859f9de853f4
+ms.openlocfilehash: 671e600471402dbd6ca71d385a238caeee889497
+ms.sourcegitcommit: 66cc8d1839dbd7cc01b33030f188e15bf5f24dae
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72587195"
+ms.lasthandoff: 10/25/2019
+ms.locfileid: "72916675"
 ---
 # <a name="deploy-the-website-to-azure-storage"></a>Distribuire il sito Web in Archiviazione di Azure
 
@@ -26,10 +26,6 @@ In questo passaggio si usa Visual Studio Code per distribuire i file del sito We
 1. In Visual Studio Code passare all'area **Archiviazione di Azure**, espandere la propria sottoscrizione, espandere il nodo relativo all'account di Archiviazione di Azure creato nel passaggio precedente, quindi espandere il nodo **Contenitori BLOB**. Il codice dell'app verrà distribuito nel contenitore `$web`.
 
    ![I nodi di Archiviazione di Azure nell'area Archiviazione di Azure](media/static-website/storage-nodes.png)
-
-1. Selezionare l'area **File**, fare clic con il pulsante destro del mouse sulla cartella _dist/my-static-app_ e scegliere **Distribuisci in Sito Web statico**:
-
-    ![Comando Deploy to Static Website](media/static-website/deploy-build-angular.png)
 
 1. Selezionare l'area **File**, fare clic con il pulsante destro del mouse sulla cartella _dist/my-static-app_ e scegliere **Distribuisci in Sito Web statico**:
 
@@ -48,10 +44,6 @@ In questo passaggio si usa Visual Studio Code per distribuire i file del sito We
 1. In Visual Studio Code passare all'area **Archiviazione di Azure**, espandere la propria sottoscrizione, espandere il nodo relativo all'account di Archiviazione di Azure creato nel passaggio precedente, quindi espandere il nodo **Contenitori BLOB**. Il codice dell'app verrà distribuito nel contenitore `$web`.
 
    ![I nodi di Archiviazione di Azure nell'area Archiviazione di Azure](media/static-website/storage-nodes.png)
-
-1. Selezionare l'area **File**, fare clic con il pulsante destro del mouse sulla cartella _build_ e scegliere **Deploy to Static Website** (Distribuisci in sito Web statico):
-
-    ![Comando Deploy to Static Website](media/static-website/deploy-build-react.png)
 
 1. Selezionare l'area **File**, fare clic con il pulsante destro del mouse sulla cartella _build_ e scegliere **Deploy to Static Website** (Distribuisci in sito Web statico):
 
