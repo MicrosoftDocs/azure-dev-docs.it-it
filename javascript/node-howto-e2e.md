@@ -2,21 +2,21 @@
 title: Distribuire un'app Node.js aggiunta a contenitore con VS Code e Azure
 description: Completare l'esercitazione end-to-end che illustra come creare un'app Node.js, creare un contenitore Docker dall'app e distribuire l'app in Azure
 services: multiple
-author: karlerickson
-manager: douge
+author: kraigb
+manager: barbkess
 ms.service: app-service
 ms.tgt_pltfrm: na
 ms.devlang: nodejs
 ms.topic: article
 ms.date: 06/25/2017
-ms.author: karler
+ms.author: kraigb
 ms.custom: seo-javascript-september2019, seo-javascript-october2019
-ms.openlocfilehash: bc8e3a79e3d32cc3d16f496b169f4229d20a6163
-ms.sourcegitcommit: 2757d8bd0cc045b7d02f430d44de859f9de853f4
+ms.openlocfilehash: 2d130be2550af5be2206c332f629c9221188ed91
+ms.sourcegitcommit: 380300c283f3df8a87c7c02635eae3596732fb72
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72587502"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73661328"
 ---
 # <a name="develop-and-deploy-a-containerized-nodejs-app-with-visual-studio-code-and-azure"></a>Sviluppare e distribuire un'app Node.js in contenitore con Visual Studio Code e Azure
 

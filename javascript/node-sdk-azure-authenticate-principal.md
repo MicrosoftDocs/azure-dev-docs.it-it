@@ -1,20 +1,19 @@
 ---
 title: Creare un'entità servizio di Azure con Node.js
 description: Informazioni su come usare l'autenticazione basata su entità servizio in Azure con Node.js e JavaScript
-author: karlerickson
-manager: douge
-ms.author: karler
+author: kraigb
+manager: barbkess
+ms.author: kraigb
 ms.date: 06/17/2017
 ms.topic: article
 ms.prod: azure
 ms.devlang: nodejs
-ms.service: azure-nodejs
-ms.openlocfilehash: 627b69c7092a23080eb8825490f49509f8f3cd00
-ms.sourcegitcommit: 47afd94820bad5214e60b42575e2a2d91a07ff65
+ms.openlocfilehash: 0febc0f42bc526a4d550c906bb70e4eea0e57f98
+ms.sourcegitcommit: 380300c283f3df8a87c7c02635eae3596732fb72
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72348022"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73661240"
 ---
 # <a name="create-an-azure-service-principal-with-nodejs"></a>Creare un'entità servizio di Azure con Node.js 
 
