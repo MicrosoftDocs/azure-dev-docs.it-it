@@ -3,18 +3,18 @@ title: Documentazione di Azure SDK per JavaScript
 summary: >
   Informazioni su Azure SDK per JavaScript e Node.js, su come iniziare a usarlo e su cosa offre per gli sviluppatori. Introduzione a funzionalità utili di Azure, come l'hosting di applicazioni, le attività DevOps, l'archiviazione e i database permanenti e l'uso di dispositivi IoT.
 metadata:
-  title: Azure per sviluppatori JavaScript e Node.js - Esercitazioni, strumenti e informazioni di riferimento sull'SDK
-  description: Introduzione allo sviluppo di app con Azure SDK per JavaScript nel browser o in Node.js.
+  title: Azure per sviluppatori JavaScript e Node.js
+  description: Introduzione allo sviluppo di app con Azure SDK per JavaScript nel browser o in Node.js tramite esercitazioni, strumenti e informazioni di riferimento sull'SDK.
   author: sptramer
   ms.author: sttramer
   ms.date: 09/15/2019
   ms.topic: landing-page
-  ms.openlocfilehash: 8c3399baa263f6ec393d88c2b4698e39e76b976e
-  ms.sourcegitcommit: 47afd94820bad5214e60b42575e2a2d91a07ff65
+  ms.openlocfilehash: a24d3f9451d39b5d143060e12b92a9d703bdf49f
+  ms.sourcegitcommit: 380300c283f3df8a87c7c02635eae3596732fb72
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 10/15/2019
-  ms.locfileid: "72348027"
+  ms.lasthandoff: 11/06/2019
+  ms.locfileid: "73661269"
 landingContent:
 - title: Introduzione ad Azure SDK per JavaScript
   linkLists:
