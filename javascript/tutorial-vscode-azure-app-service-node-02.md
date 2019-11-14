@@ -8,12 +8,12 @@ ms.service: app-service
 ms.topic: conceptual
 ms.date: 09/20/2019
 ms.author: kraigb
-ms.openlocfilehash: 769ca61ef7716eaa08d45e109a9bf50e5801721c
-ms.sourcegitcommit: c04984b6367e922dbc5973af44f8cd0ca81ce157
+ms.openlocfilehash: 0ee7b185532b3febe8aab720e40ff10cf4b079b7
+ms.sourcegitcommit: ad1b12d9ebb6113991ce48255f5b491364490079
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/30/2019
-ms.locfileid: "71686193"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73842209"
 ---
 # <a name="create-your-nodejs-application"></a>Creare l'applicazione Node.js
 
@@ -26,7 +26,7 @@ In questo passaggio viene creata una semplice app Node.js, usando il generatore 
 1. In un terminale o al prompt dei comandi usare il comando seguente per eseguire il generatore Express ed eseguire lo scaffolding di una nuova app Express denominata "myExpressApp". I parametri `--view pug --git` indicano al generatore di usare il motore di modelli [pug](https://pugjs.org/api/getting-started.html), noto in precedenza come Jade, e creare un file con estensione *gitignore*.
 
     ```bash
-    npx express-generator myExpressApp --view pug –git
+    npx express-generator myExpressApp --view pug -–git
     ```
 
 1. Installare le dipendenze dell'applicazione eseguendo `npm install` nella cartella dell'app:
