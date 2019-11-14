@@ -12,12 +12,12 @@ ms.devlang: java
 ms.service: app-service
 ms.topic: article
 ms.custom: seo-java-july2019, seo-java-august2019, seo-java-september2019
-ms.openlocfilehash: c4af364cf6c47b23415a47974fd7eb909a371efb
-ms.sourcegitcommit: 380300c283f3df8a87c7c02635eae3596732fb72
+ms.openlocfilehash: f093e7f23a15420a60b6725e0f13d8457478ab5c
+ms.sourcegitcommit: ad1b12d9ebb6113991ce48255f5b491364490079
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73661309"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73842229"
 ---
 # <a name="deploy-a-spring-boot-jar-file-app-to-azure-app-service-with-maven-and-azure-on-linux"></a>Distribuire un'app Spring Boot basata su file JAR nel servizio app di Azure con Maven e Azure in Linux
 
@@ -57,7 +57,7 @@ In questa sezione sarà clonata e testata in locale un'applicazione Spring Boot 
    ```
    -- o --
    ```shell
-   md ~/SpringBoot
+   mkdir ~/SpringBoot
    cd ~/SpringBoot
    ```
 
@@ -104,9 +104,13 @@ In questa sezione si configurerà il progetto Spring Boot `pom.xml` in modo che 
    </plugin>
    ```
 
-3. È quindi possibile configurare la distribuzione, eseguire il comando maven `mvn azure-webapp:config` nel prompt dei comandi e usare il **numero** scegliere queste opzioni nel prompt:
+3. È quindi possibile configurare la distribuzione, eseguire il comando maven seguente al prompt dei comandi e usare il **numero** scegliere queste opzioni nel prompt:
     * **OS**: linux  
     * **javaVersion**: Java 8    
+    
+```cmd
+mvn azure-webapp:config
+```
 
 Quando viene visualizzato il prompt **Confirm (Y/N)** , premere **'y'** per completare la configurazione.
 
@@ -118,7 +122,7 @@ Quando viene visualizzato il prompt **Confirm (Y/N)** , premere **'y'** per comp
 [INFO] Building gs-spring-boot 0.1.0
 [INFO] --------------------------------[ jar ]---------------------------------
 [INFO]
-[INFO] --- azure-webapp-maven-plugin:1.6.0:config (default-cli) @ gs-spring-boot ---
+[INFO] --- azure-webapp-maven-plugin:1.8.0:config (default-cli) @ gs-spring-boot ---
 [WARNING] The plugin may not work if you change the os of an existing webapp.
 Define value for OS(Default: Linux):
 1. linux [*]
@@ -166,7 +170,16 @@ Confirm (Y/N)? : Y
              </property>
           </appSettings>
           <!-- End of App Settings  -->
-          ...
+          <deployment>
+            <resources>
+              <resource>
+                <directory>${project.basedir}/target</directory>
+                <includes>
+                  <include>*.jar</include>
+                </includes>
+              </resource>
+            </resources>
+          </deployment>
          </configuration>
    </plugin>
    ```
