@@ -93,9 +93,10 @@
       items:
         - name: Panoramica
           href: java-azure-tools.md
-        - name: Supporto a lungo termine di Java
-          href: jdk/index.md
+        - name: Supporto di Java
           items:
+            - name: Supporto a lungo termine di Java
+              href: jdk/index.md
             - name: Installazione di Java JDK
               href: jdk/java-jdk-install.md
             - name: Immagini Docker Java per Azure
