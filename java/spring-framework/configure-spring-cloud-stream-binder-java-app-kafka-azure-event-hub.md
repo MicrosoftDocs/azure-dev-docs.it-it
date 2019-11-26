@@ -4,26 +4,20 @@ description: Informazioni su come configurare un'applicazione creata con Spring 
 services: event-hubs
 documentationcenter: java
 author: bmitchell287
-manager: douge
-editor: ''
-ms.assetid: ''
 ms.author: brendm
 ms.date: 12/19/2018
 ms.devlang: java
 ms.service: event-hubs
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.workload: na
-ms.openlocfilehash: 074c7bb28907b3c71c981f261ae69d5477c21028
-ms.sourcegitcommit: 2efdb9d8a8f8a2c1914bd545a8c22ae6fe0f463b
+ms.openlocfilehash: 5d1f1d40eba0f4b4a6aa2718f09124b765a06a82
+ms.sourcegitcommit: 54d34557bb83f52a215bf9020263cb9f9782b41d
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68282622"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74118309"
 ---
 # <a name="how-to-use-the-spring-boot-starter-for-apache-kafka-with-azure-event-hubs"></a>Come usare Spring Boot Starter per Apache Kafka con Hub eventi di Azure
-
-## <a name="overview"></a>Panoramica
 
 Questo articolo illustra come configurare un'applicazione Spring Cloud Stream Binder basata su Java creata con Spring Boot Initializer per l'uso di [Apache Kafka] con Hub eventi di Azure.
 
@@ -46,18 +40,21 @@ I prerequisiti seguenti sono necessari per seguire le procedure disponibili in q
 
 1. Passare al portale di Azure all'indirizzo <https://portal.azure.com/> ed eseguire l'accesso.
 
-1. Fare clic su **+Crea una risorsa**, quindi su **Internet delle cose** e infine su **Hub eventi**.
+1. Fare clic su **+ Crea una risorsa**, quindi su **Internet delle cose** e infine cercare *Hub eventi**.
+
+1. Fare clic su **Create**(Crea).
 
    ![Creare uno spazio dei nomi dell'hub eventi di Azure][IMG01]
 
 1. Nella pagina **Crea spazio dei nomi** immettere le informazioni seguenti:
 
    * Immettere un **nome** univoco, che diventerà parte dell'URI dello spazio dei nomi dell'hub eventi. Se si immette **wingtiptoys** in **Nome**, ad esempio, l'URI sarà *wingtiptoys.servicebus.windows.net*.
-   * Scegliere un **piano tariffario** per lo spazio dei nomi dell'hub eventi.
+   * Piano tariffario.
    * Specificare **Abilita Kafka** per lo spazio dei nomi.
    * Scegliere la **sottoscrizione** da usare per lo spazio dei nomi.
    * Specificare se creare un nuovo **gruppo di risorse** per lo spazio dei nomi o sceglierne uno esistente.
    * Specificare la **località** per lo spazio dei nomi dell'hub eventi.
+   * È anche possibile specificare le **unità elaborate** per lo spazio dei nomi.
 
    ![Specificare le opzioni per lo spazio dei nomi dell'hub eventi di Azure][IMG02]
 
@@ -65,23 +62,17 @@ I prerequisiti seguenti sono necessari per seguire le procedure disponibili in q
 
 ### <a name="create-an-azure-event-hub-in-your-namespace"></a>Creare un hub eventi di Azure nello spazio dei nomi
 
-1. Passare al portale di Azure all'indirizzo <https://portal.azure.com/>.
+Dopo la distribuzione dello spazio dei nomi, è possibile creare un hub eventi al suo interno.
 
-1. Fare clic su **Tutte le risorse** e quindi sullo spazio dei nomi creato.
+1. Passare allo spazio dei nomi creato nel passaggio precedente.
 
-   ![Selezionare lo spazio dei nomi dell'hub eventi di Azure][IMG03]
+1. Fare clic su **+ Hub eventi** sulla barra dei menu superiore.
 
-1. Fare clic su **Hub eventi** e quindi su **+Hub eventi**.
+1. Assegnare un nome all'hub eventi.
 
-   ![Aggiungere un nuovo hub eventi di Azure][IMG04]
+1. Fare clic su **Create**(Crea).
 
-1. Nella pagina **Crea hub eventi** immettere un **nome** univoco per l'hub eventi e quindi fare clic su **Crea**.
-
-   ![Creare Hub eventi di Azure][IMG05]
-
-1. Al termine della creazione, l'hub eventi sarà incluso nell'elenco nella pagina **Hub eventi**.
-
-   ![Creare Hub eventi di Azure][IMG06]
+   ![Creare un hub eventi][IMG05]
 
 ## <a name="create-a-simple-spring-boot-application-with-the-spring-initializr"></a>Creare un'applicazione Spring Boot semplice con Spring Initializr
 
@@ -104,8 +95,6 @@ I prerequisiti seguenti sono necessari per seguire le procedure disponibili in q
 1. Dopo aver specificato le opzioni elencate sopra, fare clic su **Generate Project** (Genera progetto).
 
 1. Quando richiesto, scaricare il progetto in un percorso nel computer locale.
-
-   ![Scaricare il progetto Spring][SI02]
 
 1. Dopo l'estrazione dei file nel sistema locale, la semplice applicazione Spring Boot sarà pronta per la modifica.
 
@@ -229,7 +218,7 @@ I prerequisiti seguenti sono necessari per seguire le procedure disponibili in q
    spring.cloud.azure.credential-file-path=my.azureauth
    spring.cloud.azure.resource-group=wingtiptoysresources
    spring.cloud.azure.region=West US
-   spring.cloud.azure.eventhub.namespace=wingtiptoysnamespace
+   spring.cloud.azure.eventhub.namespace=wingtiptoys
 
    spring.cloud.stream.bindings.input.destination=wingtiptoyshub
    spring.cloud.stream.bindings.input.group=$Default

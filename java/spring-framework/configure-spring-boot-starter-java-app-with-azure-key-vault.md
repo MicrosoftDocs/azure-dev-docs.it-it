@@ -4,26 +4,21 @@ description: Informazioni su come configurare un'app Spring Boot Initializer con
 services: key-vault
 documentationcenter: java
 author: bmitchell287
-manager: douge
-editor: ''
-ms.assetid: ''
 ms.author: brendm
-ms.date: 12/19/2018
+ms.date: 10/29/2019
 ms.devlang: java
 ms.service: key-vault
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: identity
-ms.openlocfilehash: 1c04bab67c7fc6a409893416d27de7ed18018cd9
-ms.sourcegitcommit: 2efdb9d8a8f8a2c1914bd545a8c22ae6fe0f463b
+ms.openlocfilehash: 7841386ba89f2f14e4ef6e5c279d62293940f4af
+ms.sourcegitcommit: 54d34557bb83f52a215bf9020263cb9f9782b41d
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68283222"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74118035"
 ---
 # <a name="how-to-use-the-spring-boot-starter-for-azure-key-vault"></a>Come usare l'utilità di avvio Spring Boot per Azure Key Vault
-
-## <a name="overview"></a>Panoramica
 
 Questo articolo illustra la creazione di un'app con **[Spring Initializr]** , che usa l'utilità di avvio Spring Boot per Azure Key Vault per recuperare una stringa di connessione archiviata come segreto in un insieme di credenziali delle chiavi.
 
@@ -37,23 +32,25 @@ I prerequisiti seguenti sono necessari per completare le procedure disponibili i
 
 ## <a name="create-an-app-using-spring-initializr"></a>Creare un'app con Spring Initializr
 
+La procedura seguente crea l'applicazione con Spring Initializr.
+
 1. Passare a <https://start.spring.io/>.
 
-1. Specificare che si vuole generare un progetto **Maven** con **Java**, immettere i nomi di **Group** (Gruppo) e **Artifact** (Elemento) per l'applicazione e quindi fare clic sul collegamento relativo a **Switch to the full version** (Passa alla versione completa) di Spring Initializr.
+1. Specificare di voler generare un progetto **Maven** con **Java**.  
 
-   ![Specificare il nome del gruppo e dell'elemento][secrets-01]
+1. Immettere i nomi di **Group** (Gruppo) e **Artifact** (Artefatto) per l'applicazione.
 
-1. Scorrere verso il basso fino alla sezione **Azure** e selezionare la casella **Azure Key Vault**.
+1. Nella sezione **Dependencies** (Dipendenze) immettere **Azure Key Vault**.
 
-   ![Selezionare l'utilità di avvio Azure Key Vault][secrets-02]
+1. Scorrere alla fine della pagina e fare clic su **Generate** (Genera).
 
-1. Scorrere fino in fondo alla pagina e fare clic sul pulsante **Generate Project** (Genera progetto).
-
-   ![Generare il progetto Spring Boot][secrets-03]
+   ![Generare il progetto Spring Boot][secrets-01]
 
 1. Quando richiesto, scaricare il progetto in un percorso nel computer locale.
 
 ## <a name="sign-into-azure"></a>Accesso ad Azure
+
+La procedura seguente autentica l'utente nell'interfaccia dell'interfaccia della riga di comando di Azure.
 
 1. Aprire un prompt dei comandi.
 
@@ -62,13 +59,15 @@ I prerequisiti seguenti sono necessari per completare le procedure disponibili i
    ```azurecli
    az login
    ```
-   Seguire le istruzioni per completare il processo di accesso.
+
+Seguire le istruzioni per completare il processo di accesso.
 
 1. Elencare le sottoscrizioni:
 
    ```azurecli
    az account list
    ```
+
    Azure restituirà un elenco delle sottoscrizioni e sarà necessario copiare il GUID per la sottoscrizione che si vuole usare, ad esempio:
 
    ```json
@@ -96,10 +95,14 @@ I prerequisiti seguenti sono necessari per completare le procedure disponibili i
 
 ## <a name="create-a-new-azure-key-vault"></a>Creare una nuova istanza di Azure Key Vault
 
+La procedura seguente crea e inizializza l'insieme di credenziali delle chiavi.
+
 1. Creare un gruppo di risorse per le risorse di Azure che verranno usate per l'insieme di credenziali delle chiavi, ad esempio:
+
    ```azurecli
-   az group create --name wingtiptoysresources --location westus
+   az group create --name vged-rg2 --location westus
    ```
+
    Dove:
 
    | Parametro | DESCRIZIONE |
@@ -111,10 +114,10 @@ I prerequisiti seguenti sono necessari per completare le procedure disponibili i
 
    ```json
    {
-     "id": "/subscriptions/ssssssss-ssss-ssss-ssss-ssssssssssss/resourceGroups/wingtiptoysresources",
+     "id": "/subscriptions/ssssssss-ssss-ssss-ssss-ssssssssssss/resourceGroups/vged-rg2",
      "location": "westus",
      "managedBy": null,
-     "name": "wingtiptoysresources",
+     "name": "vged-rg2",
      "properties": {
        "provisioningState": "Succeeded"
      },
@@ -124,7 +127,7 @@ I prerequisiti seguenti sono necessari per completare le procedure disponibili i
 
 2. Creare un'entità servizio di Azure dalla registrazione per l'applicazione, ad esempio:
    ```shell
-   az ad sp create-for-rbac --name "wingtiptoysuser"
+   az ad sp create-for-rbac --name "vgeduser"
    ```
    Dove:
 
@@ -132,22 +135,24 @@ I prerequisiti seguenti sono necessari per completare le procedure disponibili i
    |---|---|
    | `name` | Specifica il nome dell'entità servizio di Azure. |
 
-   L'interfaccia della riga di comando di Azure restituirà un messaggio di stato JSON contenente *appId* e *password*, che si useranno in seguito come ID client e password client, ad esempio:
+   L'interfaccia della riga di comando di Azure restituisce un messaggio di stato JSON contenente *appId* e *password*, che si useranno in seguito come ID e password del client, ad esempio:
 
    ```json
    {
      "appId": "iiiiiiii-iiii-iiii-iiii-iiiiiiiiiiii",
-     "displayName": "wingtiptoysuser",
-     "name": "http://wingtiptoysuser",
+     "displayName": "vgeduser",
+     "name": "http://vgeduser",
      "password": "pppppppp-pppp-pppp-pppp-pppppppppppp",
      "tenant": "tttttttt-tttt-tttt-tttt-tttttttttttt"
    }
    ```
 
 3. Creare un nuovo insieme di credenziali delle chiavi nel gruppo di risorse, ad esempio:
+
    ```azurecli
-   az keyvault create --name wingtiptoyskeyvault --resource-group wingtiptoysresources --location westus --enabled-for-deployment true --enabled-for-disk-encryption true --enabled-for-template-deployment true --sku standard --query properties.vaultUri
+   az keyvault create --name vgedkeyvault --resource-group vged-rg2 --location westus --enabled-for-deployment true --enabled-for-disk-encryption true --enabled-for-template-deployment true --sku standard --query properties.vaultUri
    ```
+
    Dove:
 
    | Parametro | DESCRIZIONE |
@@ -162,14 +167,17 @@ I prerequisiti seguenti sono necessari per completare le procedure disponibili i
 
    L'interfaccia della riga di comando di Azure visualizzerà l'URI per l'insieme di credenziali delle chiavi, che verrà usato in un secondo momento, ad esempio:  
 
-   ```
-   "https://wingtiptoyskeyvault.vault.azure.net"
+   ```azurecli
+   "https://vgedkeyvault.vault.azure.net"
+
    ```
 
 4. Impostare il criterio di accesso per l'entità servizio di Azure creata prima, ad esempio:
+
    ```azurecli
-   az keyvault set-policy --name wingtiptoyskeyvault --secret-permission set get list delete --spn "iiiiiiii-iiii-iiii-iiii-iiiiiiiiiiii"
+   az keyvault set-policy --name vgedkeyvault --secret-permission set get list delete --spn "iiiiiiii-iiii-iiii-iiii-iiiiiiiiiiii"
    ```
+
    Dove:
 
    | Parametro | DESCRIZIONE |
@@ -184,22 +192,24 @@ I prerequisiti seguenti sono necessari per completare le procedure disponibili i
    {
      "id": "/subscriptions/ssssssss-ssss-ssss-ssss-ssssssssssss/...",
      "location": "westus",
-     "name": "wingtiptoyskeyvault",
+     "name": "vgedkeyvault",
      "properties": {
        ...
        ... (A long list of values will be displayed here.)
        ...
      },
-     "resourceGroup": "wingtiptoysresources",
+     "resourceGroup": "vged-rg2",
      "tags": {},
      "type": "Microsoft.KeyVault/vaults"
    }
    ```
 
 5. Archiviare un segreto nel nuovo insieme di credenziali delle chiavi, ad esempio:
+
    ```azurecli
-   az keyvault secret set --vault-name "wingtiptoyskeyvault" --name "connectionString" --value "jdbc:sqlserver://SERVER.database.windows.net:1433;database=DATABASE;"
+   az keyvault secret set --vault-name "vgedkeyvault" --name "connectionString" --value "jdbc:sqlserver://SERVER.database.windows.net:1433;database=DATABASE;"
    ```
+
    Dove:
 
    | Parametro | DESCRIZIONE |
@@ -221,28 +231,32 @@ I prerequisiti seguenti sono necessari per completare le procedure disponibili i
        "updated": "2017-12-01T09:00:16+00:00"
      },
      "contentType": null,
-     "id": "https://wingtiptoyskeyvault.vault.azure.net/secrets/connectionString/123456789abcdef123456789abcdef",
+     "id": "https://vgedkeyvault.vault.azure.net/secrets/connectionString/123456789abcdef123456789abcdef",
      "kid": null,
      "managed": null,
      "tags": {
        "file-encoding": "utf-8"
      },
-     "value": "jdbc:sqlserver://wingtiptoys.database.windows.net:1433;database=DATABASE;"
+     "value": "jdbc:sqlserver://.database.windows.net:1433;database=DATABASE;"
    }
    ```
 
 ## <a name="configure-and-compile-your-app"></a>Configurare e compilare l'app
+
+Usare la procedura seguente per configurare e compilare l'applicazione.
 
 1. Estrarre i file dai file di archivio del progetto Spring Boot scaricati prima in una directory.
 
 2. Passare alla cartella *src/main/resources* nel progetto e aprire il file *application.properties* in un editor di testo.
 
 3. Aggiungere i valori per l'insieme di credenziali delle chiavi usando i valori dei passaggi completati prima in questa esercitazione, ad esempio:
+
    ```yaml
-   azure.keyvault.uri=https://wingtiptoyskeyvault.vault.azure.net/
+   azure.keyvault.uri=https://vgedkeyvault.vault.azure.net/
    azure.keyvault.client-id=iiiiiiii-iiii-iiii-iiii-iiiiiiiiiiii
    azure.keyvault.client-key=pppppppp-pppp-pppp-pppp-pppppppppppp
    ```
+
    Dove:
 
    |          Parametro          |                                 DESCRIZIONE                                 |
@@ -252,12 +266,12 @@ I prerequisiti seguenti sono necessari per completare le procedure disponibili i
    | `azure.keyvault.client-key` | Specifica il GUID *password* di quando è stata creata l'entità servizio. |
 
 
-4. Passare al file di codice sorgente principale del progetto, ad esempio: */src/main/java/com/wingtiptoys/secrets*.
+4. Passare al file di codice sorgente principale del progetto, ad esempio: */src/main/java/com/vged/secrets*.
 
 5. Aprire il file Java principale dell'applicazione in un file in un editor di testo, ad esempio *SecretsApplication.java*, e aggiungere le righe seguenti al file:
 
    ```java
-   package com.wingtiptoys.secrets;
+   package com.vged.secrets;
 
    import org.springframework.boot.SpringApplication;
    import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -284,6 +298,8 @@ I prerequisiti seguenti sono necessari per completare le procedure disponibili i
 6. Salvare e chiudere il file Java.
 
 ## <a name="build-and-test-your-app"></a>Compilare e testare l'app
+
+Usare la procedura seguente per testare l'applicazione.
 
 1. Passare alla directory in cui si trova il file *pom.xml* per l'app Spring Boot:
 

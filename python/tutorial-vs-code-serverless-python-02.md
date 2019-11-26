@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 09/02/2019
 ms.author: kraigb
 ms.custom: seo-python-october2019
-ms.openlocfilehash: b87ca4bdefafbfa3e23c9538d6c77357dc9ba99b
-ms.sourcegitcommit: 6012460ad8d6ff112226b8f9ea6da397ef77712d
+ms.openlocfilehash: 4c4fab3227194884e1b9a77439efbe87099a6812
+ms.sourcegitcommit: 54d34557bb83f52a215bf9020263cb9f9782b41d
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72278763"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74118097"
 ---
 # <a name="tutorial-create-a-python-function-for-azure-functions"></a>Esercitazione: Creare una funzione Python per Funzioni di Azure
 
@@ -36,6 +36,9 @@ Questo articolo illustra come creare una funzione Python per Funzioni di Azure c
     | Specificare un nome di funzione | HttpExample | Il nome viene usato per una sottocartella che contiene il codice della funzione unitamente ai dati di configurazione e definisce anche il nome dell'endpoint HTTP. Usare "HttpExample" invece di accettare il valore predefinito "HTTPTrigger" per distinguere la funzione dal trigger. |
     | Livello di autorizzazione | **Anonimo** | Con l'autorizzazione anonima la funzione è accessibile pubblicamente a chiunque. |
     | Specificare come aprire il progetto | **Open in current window** (Apri nella finestra corrente) | Apre il progetto nella finestra corrente di Visual Studio Code. |
+
+    > [!NOTE]
+    > Se sono installati sia Python 3.6 che 3.7, per impostazione predefinita Visual Studio Code usa Python 3.6 per il progetto di Funzioni di Azure. Per usare Python 3.7 in questo momento, creare e attivare un ambiente Python 3.7, quindi usare il comando `func init` da un terminale. Quindi riavviare Visual Studio Code da tale cartella usando il comando `code .`.
 
 1. Dopo qualche istante viene visualizzato un messaggio per indicare che il nuovo progetto è stato creato. In **Esplora risorse** è presente la sottocartella creata per il progetto e Visual Studio Code apre il file *\_\_init\_\_.py* che contiene il codice predefinito della funzione:
 
