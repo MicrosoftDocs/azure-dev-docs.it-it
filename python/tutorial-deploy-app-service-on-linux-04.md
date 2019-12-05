@@ -1,20 +1,15 @@
 ---
 title: 'Esercitazione: Configurare un file di avvio personalizzato per le app Python nel Servizio app di Azure in Linux'
 description: "Passaggio 4 dell'esercitazione: indicare al servizio app come avviare l'app Web."
-services: app-service
-author: kraigb
-manager: barbkess
-ms.service: app-service
 ms.topic: conceptual
 ms.date: 09/12/2019
-ms.author: kraigb
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 7c3c863ed333528c675cda939f52b86f53bc8380
-ms.sourcegitcommit: 6012460ad8d6ff112226b8f9ea6da397ef77712d
+ms.openlocfilehash: e18d58a5caf18103063fabfa3101988399bbb722
+ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72278935"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74467056"
 ---
 # <a name="tutorial-configure-a-custom-startup-file-for-python-apps-on-azure-app-service"></a>Esercitazione: Configurare un file di avvio personalizzato per le app Python nel Servizio app di Azure
 

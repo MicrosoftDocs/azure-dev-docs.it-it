@@ -1,21 +1,16 @@
 ---
 title: Eseguire l'autenticazione con i moduli di gestione di Azure per Node.js
 description: Eseguire l'autenticazione con un'entità servizio nei moduli di gestione di Azure per Node.js
-author: kraigb
-manager: barbkess
-ms.author: kraigb
-ms.date: 06/17/2017
 ms.topic: article
-ms.prod: azure
-ms.devlang: nodejs
-ms.openlocfilehash: 87a30973c8a295540924e41aee9c8e0af455b41f
-ms.sourcegitcommit: 380300c283f3df8a87c7c02635eae3596732fb72
+ms.date: 06/17/2017
+ms.openlocfilehash: bf368183b63dbe42dd02d8236cf7e7b73cbc1845
+ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73661233"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74467269"
 ---
-# <a name="authenticate-with-the-azure-modules-for-nodejs"></a>Eseguire l'autenticazione con i moduli di Azure per Node.js 
+# <a name="authenticate-with-the-azure-modules-for-nodejs"></a>Eseguire l'autenticazione con i moduli di Azure per Node.js
 
 Tutte le API di un servizio richiedono l'autenticazione tramite un oggetto `credentials` quando ne viene creata un'istanza. Esistono tre modi per autenticare e creare le credenziali necessarie tramite Azure SDK per Node.js: 
 

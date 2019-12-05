@@ -1,19 +1,14 @@
 ---
 title: Distribuire app Node.js nel Servizio app di Azure tramite l'interfaccia della riga di comando di Azure
 description: Parte 1 dell'esercitazione, introduzione e prerequisiti.
-services: app-service
-author: kraigb
-manager: barbkess
-ms.service: app-service
 ms.topic: conceptual
 ms.date: 09/24/2019
-ms.author: kraigb
-ms.openlocfilehash: 2c566e43bce15672d4ae73310f96c91f4a6f137a
-ms.sourcegitcommit: c04984b6367e922dbc5973af44f8cd0ca81ce157
+ms.openlocfilehash: b249084e6c22491bd05dbb3df2544f8570dadad0
+ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/30/2019
-ms.locfileid: "71686183"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74466795"
 ---
 # <a name="deploy-to-azure-app-service-using-the-azure-cli"></a>Eseguire la distribuzione nel Servizio app di Azure tramite l'interfaccia della riga di comando di Azure
 
@@ -32,7 +27,7 @@ Una seconda alternativa è [Azure Cloud Shell](https://docs.microsoft.com/azure/
 
 ### <a name="azure-subscription"></a>Sottoscrizione di Azure
 
-Se non si ha una sottoscrizione di Azure, [iscriversi](https://azure.microsoft.com/en-us/free/?utm_source=campaign&utm_campaign=vscode-tutorial-node-git&mktingSource=vscode-tutorial-node-git) subito per ottenere un account gratuito con 200 USD in crediti di Azure per provare qualsiasi combinazione di servizi.
+Se non si ha una sottoscrizione di Azure, [iscriversi](https://azure.microsoft.com/free/?utm_source=campaign&utm_campaign=vscode-tutorial-node-git&mktingSource=vscode-tutorial-node-git) subito per ottenere un account gratuito con 200 USD in crediti di Azure per provare qualsiasi combinazione di servizi.
 
 ### <a name="sign-in-to-the-azure-cli"></a>Accedere all'interfaccia della riga di comando di Azure
 

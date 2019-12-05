@@ -1,19 +1,14 @@
 ---
 title: Usare un registro contenitori da Visual Studio Code
 description: Parte 2 dell'esercitazione, usare un registro contenitori
-services: app-service
-author: kraigb
-manager: barbkess
-ms.service: app-service
 ms.topic: conceptual
 ms.date: 09/20/2019
-ms.author: kraigb
-ms.openlocfilehash: 790267333cadc1208b6a750e487f0e459e87185d
-ms.sourcegitcommit: c04984b6367e922dbc5973af44f8cd0ca81ce157
+ms.openlocfilehash: 7d51e8011824ec19e9530f9bc94bcb2ce07f2851
+ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/30/2019
-ms.locfileid: "71686244"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74466636"
 ---
 # <a name="use-a-container-registry"></a>Usare un registro contenitori
 
@@ -21,7 +16,7 @@ ms.locfileid: "71686244"
 
 In questo passaggio viene configurato un registro contenitori idoneo per l'immagine dell'app. I servizi di hosting compatibili con contenitori, come il Servizio app di Azure, eseguono quindi il pull delle immagini dal registro.
 
-Questa esercitazione usa [Registro Azure Container](https://azure.microsoft.com/en-us/services/container-registry/), un registro ospitato, sicuro e privato per le immagini. Gli strumenti e i processi illustrati qui, tuttavia, sono compatibili anche con altri registri, ad esempio [Docker Hub](https://hub.docker.com/).
+Questa esercitazione usa [Registro Azure Container](https://azure.microsoft.com/services/container-registry/), un registro ospitato, sicuro e privato per le immagini. Gli strumenti e i processi illustrati qui, tuttavia, sono compatibili anche con altri registri, ad esempio [Docker Hub](https://hub.docker.com/).
 
 ## <a name="create-an-azure-container-registry"></a>Creare un'istanza di Registro Azure Container
 

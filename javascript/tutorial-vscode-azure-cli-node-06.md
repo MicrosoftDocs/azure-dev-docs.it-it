@@ -1,19 +1,14 @@
 ---
 title: Apportare modifiche al codice dell'app e ridistribuirla in Azure
 description: Parte 6 dell'esercitazione, apportare modifiche e ripetere la distribuzione
-services: app-service
-author: kraigb
-manager: barbkess
-ms.service: app-service
 ms.topic: conceptual
 ms.date: 09/24/2019
-ms.author: kraigb
-ms.openlocfilehash: f656e7414d6b7b6cecc28d69f108bfe92eb82894
-ms.sourcegitcommit: c04984b6367e922dbc5973af44f8cd0ca81ce157
+ms.openlocfilehash: 9702f10795893004965631fa99dfbfab181f2292
+ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/30/2019
-ms.locfileid: "71686130"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74467166"
 ---
 # <a name="make-changes-and-redeploy"></a>Apportare modifiche e ripetere la distribuzione
 

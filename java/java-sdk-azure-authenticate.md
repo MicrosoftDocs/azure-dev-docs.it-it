@@ -3,30 +3,27 @@ title: Eseguire l'autenticazione con le librerie di gestione di Azure per Java
 description: Eseguire l'autenticazione con un'entità servizio nelle librerie di gestione di Azure per Java
 keywords: Azure, Java, SDK, API, Maven, Gradle, autenticazione, active directory, entità servizio
 author: rloutlaw
-ms.author: brendm
-manager: douge
 ms.date: 04/16/2017
 ms.topic: article
-ms.devlang: java
 ms.service: multiple
 ms.assetid: 10f457e3-578b-4655-8cd1-51339226ee7d
 ms.custom: seo-java-september2019
-ms.openlocfilehash: 373a662f8dc500ca188aba5fdde97437c3eb7d74
-ms.sourcegitcommit: ad1b12d9ebb6113991ce48255f5b491364490079
+ms.openlocfilehash: 9be02a678157292772d7c7109bf8625e8c9bb74f
+ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73842221"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74812426"
 ---
-# <a name="authenticate-with-the-azure-libraries-for-java"></a>Eseguire l'autenticazione con le librerie di Azure per Java 
+# <a name="authenticate-with-the-azure-libraries-for-java"></a>Eseguire l'autenticazione con le librerie di Azure per Java
 
 ## <a name="connect-to-services-with-connection-strings"></a>Connettersi ai servizi con le stringhe di connessione
 
 Questo articolo illustra come eseguire l'autenticazione con le librerie di Azure per Java. La maggior parte delle librerie di servizi di Azure usa una stringa di connessione o una chiave di protezione per l'autenticazione. Il database SQL include, ad esempio, le informazioni specificate per nome utente e password nella stringa di connessione JDBC:
 
 ```java
-String url = "jdbc:sqlserver://myazuredb.database.windows.net:1433;" + 
-        "database=testjavadb;" + 
+String url = "jdbc:sqlserver://myazuredb.database.windows.net:1433;" +
+        "database=testjavadb;" +
         "user=myazdbuser;" +
         "password=myazdbpass;" +
         "encrypt=true;hostNameInCertificate=*.database.windows.net;loginTimeout=30;";
@@ -37,12 +34,12 @@ Archiviazione di Azure usa una chiave di archiviazione per autorizzare l'applica
 
 ```java
 final String storageConnection = "DefaultEndpointsProtocol=https;"
-        + "AccountName=" + storageName 
+        + "AccountName=" + storageName
         + ";AccountKey=" + storageKey
         + ";EndpointSuffix=core.windows.net";
 ```
 
-Le stringhe di connessione dei servizi vengono usate per eseguire l'autenticazione ad altri servizi di Azure, ad esempio [Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/sql-api-java-application#UseService), [Cache Redis](https://docs.microsoft.com/azure/redis-cache/cache-java-get-started) e [Bus di servizio](https://docs.microsoft.com/azure/service-bus-messaging/service-bus-java-how-to-use-queues). Per ottenere le stringhe di connessione, è possibile usare il portale di Azure o l'interfaccia della riga di comando.  È anche possibile usare le librerie di gestione di Azure per Java per eseguire query nelle risorse per creare stringhe di connessione nel codice. 
+Le stringhe di connessione dei servizi vengono usate per eseguire l'autenticazione ad altri servizi di Azure, ad esempio [Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/sql-api-java-application#UseService), [Cache Redis](https://docs.microsoft.com/azure/redis-cache/cache-java-get-started) e [Bus di servizio](https://docs.microsoft.com/azure/service-bus-messaging/service-bus-java-how-to-use-queues). Per ottenere le stringhe di connessione, è possibile usare il portale di Azure o l'interfaccia della riga di comando.  È anche possibile usare le librerie di gestione di Azure per Java per eseguire query nelle risorse per creare stringhe di connessione nel codice.
 
 Questo codice, ad esempio, usa le librerie di gestione per creare una stringa di connessione dell'account di archiviazione:
 
@@ -76,11 +73,11 @@ import com.microsoft.azure.AzureEnvironment;
 
 // ...
 
-ApplicationTokenCredentials credentials = new ApplicationTokenCredentials(client, 
+ApplicationTokenCredentials credentials = new ApplicationTokenCredentials(client,
         tenant,
-        key, 
+        key,
         AzureEnvironment.AZURE);
-        
+
 Azure azure = Azure
         .configure()
         .withLogLevel(LogLevel.NONE)
@@ -88,9 +85,9 @@ Azure azure = Azure
         .withDefaultSubscription();
 ```
 
-`client`, `tenant` e `key` sono gli stessi valori dell'entità servizio usati con l'[autenticazione basata su file](#mgmt-file). Il valore `AzureEnvironment.AZURE` crea le credenziali per il cloud pubblico di Azure. Sostituirlo con un valore diverso se è necessario accedere a un altro cloud (ad esempio, `AzureEnvironment.AZURE_GERMANY`).  
+`client`, `tenant` e `key` sono gli stessi valori dell'entità servizio usati con l'[autenticazione basata su file](#mgmt-file). Il valore `AzureEnvironment.AZURE` crea le credenziali per il cloud pubblico di Azure. Sostituirlo con un valore diverso se è necessario accedere a un altro cloud (ad esempio, `AzureEnvironment.AZURE_GERMANY`).
 
- Leggere i valori dell'entità servizio dalle variabili di ambiente o da un archivio di gestione segreto, ad esempio [Key Vault](/azure/key-vault/key-vault-whatis). Non impostare questi valori come stringhe in testo non crittografato nel codice per evitare l'esposizione accidentale delle credenziali nella cronologia del controllo della versione.   
+ Leggere i valori dell'entità servizio dalle variabili di ambiente o da un archivio di gestione segreto, ad esempio [Key Vault](/azure/key-vault/key-vault-whatis). Non impostare questi valori come stringhe in testo non crittografato nel codice per evitare l'esposizione accidentale delle credenziali nella cronologia del controllo della versione.
 
 <a name="mgmt-file"></a>
 
@@ -112,7 +109,7 @@ graphURL=https\://graph.windows.net/
 
 - subscription: usare il valore *id* da `az account show` nell'interfaccia della riga di comando di Azure 2.0.
 - client: usare il valore *appId* dell'output di un'entità servizio creata per eseguire l'applicazione. Se non è disponibile un'entità servizio per l'app, [crearne una con l'interfaccia della riga di comando di Azure 2.0](https://docs.microsoft.com/cli/azure/create-an-azure-service-principal-azure-cli).
-- key: usare il valore *password* dell'output dell'interfaccia della riga di comando di creazione dell'entità servizio 
+- key: usare il valore *password* dell'output dell'interfaccia della riga di comando di creazione dell'entità servizio
 - tenant: usare il valore *tenant* dell'output dell'interfaccia della riga di comando di creazione dell'entità servizio
 
 Salvare questo file nel sistema in una posizione sicura e leggibile dal codice. Impostare una variabile di ambiente con il percorso completo del file nella shell:
@@ -124,7 +121,7 @@ export AZURE_AUTH_LOCATION=/Users/raisa/azureauth.properties
 Creare l'oggetto `Azure` del punto di ingresso per iniziare a usare le librerie. Leggere la posizione del file delle proprietà tramite la variabile di ambiente.
 
 ```java
-// pull in the location of the authentication properties file from the environment 
+// pull in the location of the authentication properties file from the environment
 final File credFile = new File(System.getenv("AZURE_AUTH_LOCATION"));
 
 Azure azure = Azure
@@ -133,6 +130,3 @@ Azure azure = Azure
         .authenticate(credFile)
         .withDefaultSubscription();
 ```
-
-
-

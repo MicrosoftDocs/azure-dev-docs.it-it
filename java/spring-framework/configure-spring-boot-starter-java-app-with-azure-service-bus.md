@@ -3,17 +3,15 @@ title: Come usare l'utilità di avvio Spring Boot per il JMS del bus di servizio
 description: Questo articolo illustra come usare l'utilità di avvio Spring per il JMS per inviare e ricevere messaggi dal bus di servizio di Azure.
 author: seanli1988
 manager: kyliel
-ms.author: Sean.Li
+ms.author: seal
 ms.date: 08/21/2019
-ms.devlang: java
-ms.service: azure-java
 ms.topic: article
-ms.openlocfilehash: 58d8dd00deeb90b1a1b8935bcbbab471255328d4
-ms.sourcegitcommit: 9cd460ee16b637e701aa30078932878c0d0a7945
+ms.openlocfilehash: b64095bc2971bf9d9a7308bebdb91617538796c4
+ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70181972"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74812120"
 ---
 # <a name="how-to-use-the-spring-boot-starter-for-azure-service-bus-jms"></a>Come usare l'utilità di avvio Spring Boot per il JMS del bus di servizio di Azure
 
@@ -348,7 +346,7 @@ In questa sezione vengono create le classi Java necessarie per l'invio di messag
 
 ## <a name="clean-up-resources"></a>Pulire le risorse
 
-Quando le risorse create in questo articolo non sono più necessarie, usare il [portale di Azure](http://ms.portal.azure.com/) per eliminarle in modo da evitare addebiti imprevisti.
+Quando le risorse create in questo articolo non sono più necessarie, usare il [portale di Azure](https://portal.azure.com/) per eliminarle in modo da evitare addebiti imprevisti.
 
 ## <a name="next-steps"></a>Passaggi successivi
 

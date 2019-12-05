@@ -1,19 +1,14 @@
 ---
 title: Creare l'applicazione di Funzioni di Azure da Visual Studio Code
 description: Parte 2 dell'esercitazione, creare l'app di Funzioni di Azure
-services: app-service
-author: kraigb
-manager: barbkess
-ms.service: app-service
 ms.topic: conceptual
 ms.date: 09/23/2019
-ms.author: kraigb
-ms.openlocfilehash: 190e574e9614eb11d913c8b26904f7b80dab35fc
-ms.sourcegitcommit: c04984b6367e922dbc5973af44f8cd0ca81ce157
+ms.openlocfilehash: 5b2e46cde8740020cc2ad7a1b50ac9b4687d17d3
+ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/30/2019
-ms.locfileid: "71685997"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74467124"
 ---
 # <a name="create-the-local-functions-app"></a>Creare l'app per le funzioni locale
 

@@ -1,25 +1,20 @@
 ---
 title: Distribuire un'immagine del contenitore per un'app Node.js da Visual Studio Code
 description: Parte 4 dell'esercitazione, distribuire l'immagine nel Servizio app di Azure
-services: app-service
-author: kraigb
-manager: barbkess
-ms.service: app-service
 ms.topic: conceptual
 ms.date: 09/20/2019
-ms.author: kraigb
-ms.openlocfilehash: 60eb5be0b3d4049c7955195f3bb6bc85dd2b2498
-ms.sourcegitcommit: c04984b6367e922dbc5973af44f8cd0ca81ce157
+ms.openlocfilehash: b43f93ba97950c84302db2e18f69b506e44dc84e
+ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/30/2019
-ms.locfileid: "71686023"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74466545"
 ---
 # <a name="deploy-the-image-to-azure-app-service"></a>Distribuire l'immagine nel Servizio app di Azure
 
 [Passaggio precedente: Creare l'immagine dell'app](tutorial-vscode-docker-node-03.md)
 
-In questo passaggio viene distribuita l'immagine di cui è stato eseguito il push in un registro del [Servizio app di Azure](https://azure.microsoft.com/en-us/services/app-service/) direttamente da Visual Studio Code.
+In questo passaggio viene distribuita l'immagine di cui è stato eseguito il push in un registro del [Servizio app di Azure](https://azure.microsoft.com/services/app-service/) direttamente da Visual Studio Code.
 
 1. Nell'area **DOCKER** espandere i nodi per l'immagine in **Registries** (Registri), fare clic con il pulsante destro del mouse su `:latest` e quindi scegliere **Deploy Image to Azure App Service** (Distribuisci l'immagine nel Servizio app di Azure).
 

@@ -1,24 +1,20 @@
 ---
 title: Monitoraggio di Azure
 description: Controllare e configurare la creazione di report delle metriche da Monitoraggio di Azure.
-author: sptramer
-manager: carmonm
-ms.devlang: python
 ms.topic: conceptual
 ms.date: 6/15/2017
-ms.author: sttramer
-ms.openlocfilehash: ef46e316979c5a86e94c840ec52206400da7500c
-ms.sourcegitcommit: 2efdb9d8a8f8a2c1914bd545a8c22ae6fe0f463b
+ms.openlocfilehash: 6b92cd130988773107a51ce4055ea196801fb4a8
+ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68285472"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74466294"
 ---
 # <a name="azure-monitor"></a>Monitoraggio di Azure
 
 Questo esempio recupera le metriche relative a una risorsa in Azure (VM e così via).
 
-Per un elenco completo delle parole chiave disponibili per i filtri, vedere [qui](https://msdn.microsoft.com/en-us/library/azure/mt743622.aspx)
+Per un elenco completo delle parole chiave disponibili per i filtri, vedere [qui](https://msdn.microsoft.com/library/azure/mt743622.aspx)
 
 ```python
 import datetime

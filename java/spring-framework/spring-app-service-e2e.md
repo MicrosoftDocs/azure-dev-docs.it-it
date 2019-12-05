@@ -2,18 +2,16 @@
 title: Distribuire un'app Spring/Tomcat nel servizio app con Database di Azure per MySQL
 description: Esercitazione end-to-end per il servizio app Java con MySQL
 author: KarlErickson
-manager: barbkess
 ms.author: karler
 ms.date: 11/12/2019
 ms.service: app-service
-ms.devlang: java
 ms.topic: article
-ms.openlocfilehash: 2f5fc593733ea1f90d87ef9fbf98d6656410fa66
-ms.sourcegitcommit: 25cef39b178a175822bf29f28fb2658bb8df8c59
+ms.openlocfilehash: aa26952b320392beb553f327920fe5bd905a0b85
+ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74040532"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74811821"
 ---
 # <a name="deploy-a-spring-app-to-app-service-with-mysql"></a>Distribuire un'app Spring nel servizio app con MySQL
 

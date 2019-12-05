@@ -1,19 +1,14 @@
 ---
 title: Distribuire l'applicazione di Funzioni di Azure da Visual Studio Code
 description: Parte 4 dell'esercitazione, distribuire l'app per le funzioni nel cloud.
-services: app-service
-author: kraigb
-manager: barbkess
-ms.service: app-service
 ms.topic: conceptual
 ms.date: 09/23/2019
-ms.author: kraigb
-ms.openlocfilehash: 53d0dd11567084d42de71a0f737cf8b9f5fc5249
-ms.sourcegitcommit: c04984b6367e922dbc5973af44f8cd0ca81ce157
+ms.openlocfilehash: 690477392fffda4cd94d7271b061c195ccceb42b
+ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/30/2019
-ms.locfileid: "71685927"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74467107"
 ---
 # <a name="deploy-the-functions-app"></a>Distribuire l'app per le funzioni
 
@@ -29,7 +24,7 @@ ms.locfileid: "71685927"
 
 1. Al prompt successivo immettere un nome univoco globale per l'app per le funzioni e premere **INVIO**. I caratteri validi per un nome di app per le funzioni sono 'a-z', '0-9' e '-'.
 
-1. Al prompt successivo selezionare un'[area](https://azure.microsoft.com/en-us/regions/) di Azure vicina.
+1. Al prompt successivo selezionare un'[area](https://azure.microsoft.com/regions/) di Azure vicina.
 
 1. Il pannello **Output** di VS Code per **Funzioni di Azure** visualizza lo stato di avanzamento:
 

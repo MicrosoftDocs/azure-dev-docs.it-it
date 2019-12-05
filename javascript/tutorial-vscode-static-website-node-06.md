@@ -1,19 +1,14 @@
 ---
 title: Pulire le risorse dopo la distribuzione di un sito Web Node.js statico in Azure
 description: Parte 6 dell'esercitazione, pulire le risorse.
-services: app-service
-author: kraigb
-manager: barbkess
-ms.service: app-service
 ms.topic: conceptual
 ms.date: 09/24/2019
-ms.author: kraigb
-ms.openlocfilehash: f84c814e9d7b334ef08ab788af2c540af83aee82
-ms.sourcegitcommit: c04984b6367e922dbc5973af44f8cd0ca81ce157
+ms.openlocfilehash: cfc777d3e6ee4dbee51f5e580043f6950156101f
+ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/30/2019
-ms.locfileid: "71685963"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74467079"
 ---
 # <a name="clean-up-resources"></a>Pulire le risorse
 

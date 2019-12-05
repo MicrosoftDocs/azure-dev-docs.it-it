@@ -1,25 +1,17 @@
 ---
 title: Gestione delle Cache Redis con Azure Explorer per IntelliJ
 description: Informazioni su come gestire le Cache Redis di Azure con Azure Explorer per IntelliJ.
-services: ''
 documentationcenter: java
-author: bmitchell287
-manager: douge
-editor: ''
-ms.assetid: ''
-ms.author: brendm
 ms.date: 02/01/2018
-ms.devlang: Java
 ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
-ms.workload: na
-ms.openlocfilehash: 5420cf7efd4b6c4f28a1d14ee119f82d2f0b8802
-ms.sourcegitcommit: 2efdb9d8a8f8a2c1914bd545a8c22ae6fe0f463b
+ms.openlocfilehash: 68beece784320d1c717abcc53611eb0db6bcb8b8
+ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68278952"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74810946"
 ---
 # <a name="managing-redis-caches-using-the-azure-explorer-for-intellij"></a>Gestione delle Cache Redis con Azure Explorer per IntelliJ
 

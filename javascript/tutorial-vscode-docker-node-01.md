@@ -1,19 +1,14 @@
 ---
 title: Distribuire contenitori Docker nel Servizio app di Azure da Visual Studio Code
 description: Parte 1 dell'esercitazione, introduzione e prerequisiti.
-services: app-service
-author: kraigb
-manager: barbkess
-ms.service: app-service
 ms.topic: conceptual
 ms.date: 09/20/2019
-ms.author: kraigb
-ms.openlocfilehash: f37e049ab3c6dd0a01726aa9204746658540110b
-ms.sourcegitcommit: c04984b6367e922dbc5973af44f8cd0ca81ce157
+ms.openlocfilehash: 2d6721060281fb73d31576caa47f316f2d078d29
+ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/30/2019
-ms.locfileid: "71686115"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74467149"
 ---
 # <a name="deploy-containers-to-azure-app-service"></a>Distribuire contenitori nel servizio app di Azure
 
@@ -34,7 +29,7 @@ In questa esercitazione si usa Visual Studio Code per creare un'applicazione Nod
 
 ### <a name="azure-subscription"></a>Sottoscrizione di Azure
 
-Se non si ha una sottoscrizione di Azure, [iscriversi](https://azure.microsoft.com/en-us/free/?utm_source=campaign&utm_campaign=vscode-tutorial-docker-extension&mktingSource=vscode-tutorial-docker-extension) subito per ottenere un account gratuito con 200 USD in crediti di Azure per provare qualsiasi combinazione di servizi.
+Se non si ha una sottoscrizione di Azure, [iscriversi](https://azure.microsoft.com/free/?utm_source=campaign&utm_campaign=vscode-tutorial-docker-extension&mktingSource=vscode-tutorial-docker-extension) subito per ottenere un account gratuito con 200 USD in crediti di Azure per provare qualsiasi combinazione di servizi.
 
 ## <a name="sign-in-to-azure"></a>Accedere ad Azure
 

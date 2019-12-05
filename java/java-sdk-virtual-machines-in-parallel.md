@@ -2,27 +2,23 @@
 title: Creare macchine virtuali in diverse aree in parallelo | Microsoft Docs
 description: Codice di esempio per creare macchine virtuali in diverse aree di Azure in parallelo con Azure SDK per Java
 author: rloutlaw
-manager: douge
 ms.assetid: e5a36699-2d96-4571-84f9-a6af13f3c067
-ms.service: azure
-ms.devlang: java
 ms.topic: article
 ms.date: 03/30/2017
-ms.author: brendm
 ms.reviewer: asirveda
-ms.openlocfilehash: 8aacf198657da96218ef48b4714c26c6199724fc
-ms.sourcegitcommit: f799dd4590dc5a5e646d7d50c9604a9975dadeb1
+ms.openlocfilehash: 2d4cca2552e4a85ebc231531d7e55ffda6d1909f
+ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68691784"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74812279"
 ---
 # <a name="create-virtual-machines-across-multiple-regions-from-your-java-applications"></a>Creare macchine virtuali in più aree dalle applicazioni Java
 
 [Questo esempio](https://github.com/Azure-Samples/compute-java-create-virtual-machines-across-regions-in-parallel) crea macchine virtuali in parallelo in diverse aree di Azure usando le [librerie di gestione di Azure per Java](https://github.com/Azure/azure-sdk-for-java).
 
 > [!IMPORTANT]
-> Nell'esempio vengono create in quattro aree 48 macchine virtuali in totale che eseguono Ubuntu 16.04 LTS e hanno [dimensioni STANDARD_DS3_V2](http://docs.microsoft.com/azure/virtual-machines/virtual-machines-windows-sizes). Il codice di esempio elimina queste macchine virtuali prima di uscire. Assicurarsi di [verificare i limiti e le quote dei servizi](http://docs.microsoft.com/azure/azure-subscription-service-limits) prima di eseguire questo esempio con il numero predefinito di macchine virtuali.
+> Nell'esempio vengono create in quattro aree 48 macchine virtuali in totale che eseguono Ubuntu 16.04 LTS e hanno [dimensioni STANDARD_DS3_V2](/azure/virtual-machines/virtual-machines-windows-sizes). Il codice di esempio elimina queste macchine virtuali prima di uscire. Assicurarsi di [verificare i limiti e le quote dei servizi](/azure/azure-subscription-service-limits) prima di eseguire questo esempio con il numero predefinito di macchine virtuali.
 
 ## <a name="run-the-sample"></a>Eseguire l'esempio
 

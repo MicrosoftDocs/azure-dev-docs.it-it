@@ -2,20 +2,16 @@
 title: Gestire reti virtuali di Azure con Java | Microsoft Docs
 description: Codice di esempio per gestire reti virtuali di Azure nel codice Java
 author: rloutlaw
-manager: douge
 ms.assetid: 92736911-3df6-46e7-b751-25bb36bf89b9
-ms.devlang: java
 ms.topic: article
-ms.service: azure
 ms.date: 3/30/2017
-ms.author: brendm
 ms.reviewer: asirveda
-ms.openlocfilehash: baad3cd87096e12f7d3c14108436efb138e879d9
-ms.sourcegitcommit: f799dd4590dc5a5e646d7d50c9604a9975dadeb1
+ms.openlocfilehash: 9f66434c67cabd08304faecb56e51107a2aeb8ee
+ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68691814"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74812299"
 ---
 # <a name="create-and-manage-azure-virtual-networks-from-your-java-apps"></a>Creare e gestire reti virtuali di Azure dalle app Java
 
