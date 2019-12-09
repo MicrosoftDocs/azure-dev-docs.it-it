@@ -3,22 +3,16 @@ title: Come usare Spring Data JDBC con un database SQL di Azure
 description: Informazioni su come usare Spring Data JDBC con un database SQL di Azure.
 services: sql-database
 documentationcenter: java
-author: bmitchell287
-manager: douge
-editor: ''
-ms.assetid: ''
-ms.author: brendm
 ms.date: 12/19/2018
-ms.devlang: java
 ms.service: sql-database
 ms.tgt_pltfrm: multiple
 ms.topic: article
-ms.openlocfilehash: 86851ca66b55a59d788aee7bcde5d50a522442bd
-ms.sourcegitcommit: 2efdb9d8a8f8a2c1914bd545a8c22ae6fe0f463b
+ms.openlocfilehash: 76fe515c6f315a340d5c306edfef31cdf736ceed
+ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68282162"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74811991"
 ---
 # <a name="how-to-use-spring-data-jdbc-with-azure-sql-database"></a>Come usare Spring Data JDBC con un database SQL di Azure
 
@@ -74,7 +68,7 @@ I prerequisiti seguenti sono necessari per completare le procedure disponibili i
 
    ![Creare il database SQL][SQL04]
 
-### <a name="configure-a-firewall-rule-for-your-sql-server-using-the-azure-portal"></a>Configurare una regola del firewall per il server SQL con il portale di Azure
+### <a name="configure-a-firewall-rule-for-your-sql-server-using-the-azure-portal"></a>Configurare una regola del firewall per SQL Server con il portale di Azure
 
 1. Passare al portale di Azure all'indirizzo <https://portal.azure.com/> ed eseguire l'accesso.
 
@@ -90,7 +84,7 @@ I prerequisiti seguenti sono necessari per completare le procedure disponibili i
 
    ![Configurare le impostazioni del firewall][SQL07]
 
-### <a name="retrieve-the-connection-string-for-your-sql-server-using-the-azure-portal"></a>Recuperare la stringa di connessione per il server SQL con il portale di Azure
+### <a name="retrieve-the-connection-string-for-your-sql-server-using-the-azure-portal"></a>Recuperare la stringa di connessione per SQL Server con il portale di Azure
 
 1. Passare al portale di Azure all'indirizzo <https://portal.azure.com/> ed eseguire l'accesso.
 

@@ -1,24 +1,19 @@
 ---
-title: Distribuire un'app Web Hello World in esecuzione in un contenitore Linux nel cloud con Azure Toolkit for Eclipse
+title: Distribuire un'app Hello World in un contenitore cloud Linux
+titleSuffix: Azure Toolkit for Eclipse
 description: Eseguire un'app Web Hello World di base in un contenitore Linux e distribuirla nel cloud con Azure Toolkit for Eclipse.
 services: app-service\web
 documentationcenter: java
-author: bmitchell287
-manager: douge
-editor: ''
-ms.assetid: ''
-ms.author: brendm
 ms.date: 12/20/2018
-ms.devlang: Java
 ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
-ms.openlocfilehash: 471deaa03b282bb3a901e52592988d9d72712b86
-ms.sourcegitcommit: 2efdb9d8a8f8a2c1914bd545a8c22ae6fe0f463b
+ms.openlocfilehash: 5ad0949fb415b5bf04e47b8cf6605fe77dbcb0e7
+ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68429680"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74811879"
 ---
 # <a name="deploy-a-hello-world-web-app-to-a-linux-container-in-the-cloud-using-the-azure-toolkit-for-eclipse"></a>Distribuire un'app Web Hello World in un contenitore Linux nel cloud con Azure Toolkit for Eclipse
 

@@ -4,17 +4,15 @@ description: Documento riepilogativo destinato ai decision maker che valutano i 
 author: dsgrieve
 manager: maverberg
 tags: java
-ms.service: azure
-ms.devlang: java
 ms.topic: article
 ms.date: 11/19/2019
 ms.author: dagrieve
-ms.openlocfilehash: ed9b4d7e98357486367f7e7eaacac64ff05a0ff8
-ms.sourcegitcommit: 90068e30def5dfcb4289d8530ea5914728182a15
+ms.openlocfilehash: 7daf058c2abebbf2cca85dadc4f9ffe3e8771fa1
+ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74250748"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74812217"
 ---
 # <a name="reasons-to-move-to-java-11"></a>Motivi per passare a Java 11
 
@@ -27,7 +25,7 @@ Rispetto a Java 8 sono state aggiunte nuove funzionalità e sono state effettuat
 La transizione a Java 11 può essere eseguita in maniera graduale. Per l'esecuzione in Java 11, *non* è necessario che il codice usi i moduli Java. È possibile usare Java 11 per eseguire codice sviluppato e compilato con JDK 8.
 Esistono tuttavia alcuni potenziali problemi, soprattutto per quanto riguarda l'API deprecata, i caricatori di classe e la reflection.
 
-Una guida completa alla transizione da Java 8 a Java 11 sarà resa disponibile prossimamente dal Microsoft Java Platform Group. Nel frattempo, per iniziare, sono già disponibili numerose guide per la transizione da Java 8 a Java 9, ad esempio [Java Platform, Standard Edition Oracle JDK 9 Migration Guide](https://docs.oracle.com/javase/9/migrate/toc.htm) e [The State of the Module System: Compatibility and Migration](http://openjdk.java.net/projects/jigsaw/spec/sotms/#compatibility--migration).
+Una guida completa alla transizione da Java 8 a Java 11 sarà resa disponibile prossimamente dal Microsoft Java Engineering Group. Nel frattempo, per iniziare, sono già disponibili numerose guide per la transizione da Java 8 a Java 9, ad esempio [Java Platform, Standard Edition Oracle JDK 9 Migration Guide](https://docs.oracle.com/javase/9/migrate/toc.htm) e [The State of the Module System: Compatibility and Migration](http://openjdk.java.net/projects/jigsaw/spec/sotms/#compatibility--migration).
 
 ## <a name="high-level-changes-between-java-8-and-11"></a>Modifiche di rilievo tra Java 8 e 11
 
@@ -57,7 +55,7 @@ Java Flight Recorder (JFR) raccoglie dati di diagnostica e profilatura da un'app
 Java Mission Control (JMC) fornisce una visualizzazione grafica dei dati raccolti da Java Flight Recorder (JFR) ed è open source in Java
 11. Oltre alle informazioni generali sull'applicazione in esecuzione, JMC consente all'utente di eseguire il drill-down dei dati. JFR e JMC si possono usare per diagnosticare problemi di runtime, ad esempio perdite di memoria, sovraccarico di GC, metodi caldi, colli di bottiglia dei thread e I/O bloccanti.
 
-#### <a name="unified-logging-7ref7"></a>Unified Logging \[[7](#ref7)\]
+#### <a name="unified-logging-7ref7"></a>Registrazione unificata \[[7](#ref7)\]
 
 Java 11 include un sistema di registrazione comune per tutti i componenti della JVM.
 Questo sistema di registrazione unificata consente all'utente di definire quali componenti registrare e a quale livello. La registrazione con granularità fine è utile per eseguire l'analisi della causa radice negli arresti anomali della JVM e per diagnosticare i problemi di prestazioni in un ambiente di produzione.
@@ -66,7 +64,7 @@ Questo sistema di registrazione unificata consente all'utente di definire quali 
 
 In Java Virtual Machine Tool Interface (JVMTI) è stata aggiunta una nuova API per il campionamento delle allocazioni dell'heap Java. Il campionamento presenta un sovraccarico ridotto e può essere abilitato in modo continuo. Mentre l'allocazione dell'heap può essere monitorata con Java Flight Recorder (JFR), il metodo di campionamento in JFR funziona solo con le allocazioni. L'implementazione di JFR potrebbe anche perdere allocazioni. Al contrario, il campionamento dell'heap in Java 11 può fornire informazioni su oggetti attivi e inattivi.
 
-I fornitori di Application Performance Monitoring (APM) stanno iniziando a usare questa nuova piattaforma e il Java Platform Group ne sta esaminando il potenziale uso con gli strumenti di monitoraggio delle prestazioni di Azure.
+I fornitori di Application Performance Monitoring (APM) stanno iniziando a usare questa nuova piattaforma e il Java Engineering Group ne sta esaminando il potenziale uso con gli strumenti di monitoraggio delle prestazioni di Azure.
 
 #### <a name="stackwalker-9ref9"></a>StackWalker \[[9](#ref9)\]
 

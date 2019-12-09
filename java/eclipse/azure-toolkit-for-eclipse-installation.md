@@ -1,25 +1,18 @@
 ---
 title: Installare il Toolkit di Azure per Eclipse.
 description: Informazioni su come installare il plug-in Azure Toolkit for Eclipse per creare e distribuire applicazioni cloud in Azure.
-services: ''
 documentationcenter: java
-author: bmitchell287
-manager: douge
-editor: ''
 ms.assetid: 9e93ff6a-f42b-4d99-b55b-624136b4a730
-ms.author: brendm
 ms.date: 02/01/2018
-ms.devlang: Java
 ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
-ms.workload: na
-ms.openlocfilehash: 1b6dfbb30da08083ff48d4e62a71fac4cc7e5981
-ms.sourcegitcommit: 2efdb9d8a8f8a2c1914bd545a8c22ae6fe0f463b
+ms.openlocfilehash: 8a72ce4b8ceea8a6b5ba03b2800f46220f8c70c5
+ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68429308"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74811588"
 ---
 # <a name="installing-the-azure-toolkit-for-eclipse"></a>Installare il Toolkit di Azure per Eclipse.
 
@@ -41,7 +34,7 @@ ms.locfileid: "68429308"
 
 1. Trascinare il pulsante seguente nell'area di lavoro di Eclipse in esecuzione.
 
-    [![Trascinare nell'area di lavoro di Eclipse* in esecuzione. *Richiede il client Eclipse Marketplace](https://marketplace.eclipse.org/sites/all/themes/solstice/public/images/marketplace/btn-install.png)](http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1919278 "Trascinare nell'area di lavoro di Eclipse* in esecuzione. *Richiede il client Eclipse Marketplace")
+    [![Trascinare nell'area di lavoro Eclipse* in esecuzione. *Richiede Eclipse Marketplace Client](https://marketplace.eclipse.org/sites/all/themes/solstice/public/images/marketplace/btn-install.png)](http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1919278 "Trascinare nell'area di lavoro Eclipse* in esecuzione. *Richiede Eclipse Marketplace Client")
 
 2. Altrimenti, è anche possibile cercare e installare il **plug-in Azure Toolkit for Eclipse** tramite la **Guida di Eclipse Marketplace**.
 

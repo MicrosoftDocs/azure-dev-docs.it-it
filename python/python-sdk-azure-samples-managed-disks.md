@@ -1,24 +1,20 @@
 ---
 title: Managed Disks
 description: Creare, ridimensionare e aggiornare un disco gestito.
-author: sptramer
-manager: carmonm
-ms.devlang: python
 ms.topic: conceptual
 ms.date: 6/15/2017
-ms.author: sttramer
-ms.openlocfilehash: ab80a4aebd5f43d10f0cb6d939afbdf7ea9fb1b5
-ms.sourcegitcommit: 2efdb9d8a8f8a2c1914bd545a8c22ae6fe0f463b
+ms.openlocfilehash: c65e07dc4a56ef0376785df4f55d3a9fc9f129ac
+ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68285722"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74467019"
 ---
 # <a name="managed-disks"></a>Managed Disks
 
-Azure Managed Disks semplifica la gestione dei dischi, offre una scalabilità avanzata e migliore sicurezza e scalabilità. Non sono più necessari account di archiviazione per i dischi. I clienti possono quindi ridimensionare senza doversi preoccupare delle limitazioni associate agli account di archiviazione. Questo post offre una rapida introduzione e informazioni di riferimento sull'utilizzo del servizio da Python.
+Azure Managed Disks semplifica la gestione dei dischi, offre una scalabilità avanzata e migliora la sicurezza su larga scala. Non sono più necessari account di archiviazione per i dischi. I clienti possono quindi ridimensionare senza doversi preoccupare delle limitazioni associate agli account di archiviazione. Questo post offre una rapida introduzione e informazioni di riferimento sull'utilizzo del servizio da Python.
 
-Dal punto di vista degli sviluppatori, l'esperienza di Managed Disks nell'interfaccia della riga di comando di Azure è analoga all'esperienza dell'interfaccia della riga di comando in altri strumenti multipiattaforma. È possibile usare [Azure Python](https://azure.microsoft.com/develop/python/) SDK e il [pacchetto azure-mgmt-compute 0.33.0](https://pypi.python.org/pypi/azure-mgmt-compute) per amministrare Managed Disks. È possibile creare un client di calcolo usando questa [esercitazione](https://docs.microsoft.com/python/api/overview/azure/virtualmachines?view=azure-python).
+Dal punto di vista degli sviluppatori, l'esperienza di Managed Disks nell'interfaccia della riga di comando di Azure è analoga all'esperienza dell'interfaccia della riga di comando di altri strumenti multipiattaforma. È possibile usare [Azure Python](https://azure.microsoft.com/develop/python/) SDK e il [pacchetto azure-mgmt-compute 0.33.0](https://pypi.python.org/pypi/azure-mgmt-compute) per amministrare Managed Disks. È possibile creare un client di calcolo usando questa [esercitazione](https://docs.microsoft.com/python/api/overview/azure/virtualmachines?view=azure-python).
 
 ## <a name="standalone-managed-disks"></a>Dischi gestiti autonomi
 
@@ -166,7 +162,7 @@ async_update.wait()
 
 Senza Managed Disks, è necessario creare manualmente un account di archiviazione per tutte le VM da includere nel set di scalabilità e quindi usare il parametro di elenco ``vhd_containers`` per specificare i nomi di tutti gli account di archiviazione per l'API REST del set di scalabilità. La guida ufficiale per la transizione è disponibile in questo articolo `<https://docs.microsoft.com/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-convert-template-to-md>`.
 
-Con Managed Disk non è necessario gestire alcun account di archiviazione. Se si ha familiarità con VMSS Python SDK, il valore di ``storage_profile`` può ora essere identico a quello usato durante la creazione delle VM:
+Con Managed Disk non è necessario gestire alcun account di archiviazione. Se si ha familiarità con il set di scalabilità di macchine virtuali Python SDK, il valore di ``storage_profile`` può ora essere identico a quello usato durante la creazione delle VM:
 
 ```python
 'storage_profile': {

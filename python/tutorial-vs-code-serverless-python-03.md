@@ -1,20 +1,15 @@
 ---
 title: 'Esercitazione: Esaminare i file di codice Python per Funzioni di Azure in Visual Studio Code'
 description: Passaggio 3 dell'esercitazione, informazioni sul codice Python del modello fornito da Funzioni di Azure.
-services: functions
-author: kraigb
-manager: barbkess
-ms.service: azure-functions
 ms.topic: conceptual
 ms.date: 09/02/2019
-ms.author: kraigb
 ms.custom: seo-python-october2019
-ms.openlocfilehash: f31cbb3c1ad66a97ab4bb87cdcc58c9bd815c72e
-ms.sourcegitcommit: 38fc0daead4f6ef0cf16d9f4762ad24f4dc4c3e9
+ms.openlocfilehash: 5fa6f0095dec212f935c8c2e106f63eb58784d00
+ms.sourcegitcommit: 9d0a6de18d9b5180c1cb485eff8e2774de48d225
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/28/2019
-ms.locfileid: "72980943"
+ms.lasthandoff: 11/26/2019
+ms.locfileid: "74540507"
 ---
 # <a name="tutorial-examine-the-python-code-files-in-visual-studio-code"></a>Esercitazione: Esaminare i file di codice Python in Visual Studio Code
 
@@ -90,7 +85,7 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
 
 Di seguito sono riportate le parti importanti del codice:
 
-- È necessario importare `func` da `azure.functions`. L'importazione del modulo di registrazione è facoltativa ma consigliata.
+- È necessario importare il modulo `azure.functions`. L'importazione del modulo di registrazione è un'operazione facoltativa ma consigliata.
 - La funzione Python `main` necessaria riceve un oggetto `func.HttpRequest` denominato `req` e restituisce un valore di tipo `func.HttpResponse`. È possibile ottenere altre informazioni sulle funzionalità di questi oggetti nella documentazione di riferimento per [func.HttpRequest](/python/api/azure-functions/azure.functions.httprequest?view=azure-python) e [func.HttpResponse](/python/api/azure-functions/azure.functions.httpresponse?view=azure-python).
 - Il corpo di `main` elabora quindi la richiesta e genera una risposta. In questo caso, il codice cerca un parametro `name` nell'URL. Se non lo trova, verifica se il corpo della richiesta contiene codice JSON (usando `func.HttpRequest.get_json`) e se il codice JSON contiene un valore `name` (usando il metodo `get` dell'oggetto JSON restituito da `get_json`).
 - Se il nome viene trovato, il codice restituisce la stringa "Hello" con il nome aggiunto alla fine; in caso contrario, restituisce un messaggio di errore.

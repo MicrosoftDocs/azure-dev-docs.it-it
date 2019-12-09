@@ -3,22 +3,16 @@ title: Come usare Spring Data JPA con un database SQL di Azure
 description: Informazioni su come usare Spring Data JPA con un database SQL di Azure.
 services: sql-database
 documentationcenter: java
-author: bmitchell287
-manager: douge
-editor: ''
-ms.assetid: ''
-ms.author: brendm
 ms.date: 12/19/2018
-ms.devlang: java
 ms.service: sql-database
 ms.tgt_pltfrm: multiple
 ms.topic: article
-ms.openlocfilehash: a344596f93a8fc24c3d8853821b8a829e8904547
-ms.sourcegitcommit: 2efdb9d8a8f8a2c1914bd545a8c22ae6fe0f463b
+ms.openlocfilehash: d5c90992f4b669bf6089d0c0118496dfa33d67f1
+ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68281892"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74811942"
 ---
 # <a name="how-to-use-spring-data-jpa-with-azure-sql-database"></a>Come usare Spring Data JPA con un database SQL di Azure
 
@@ -66,21 +60,17 @@ I prerequisiti seguenti sono necessari per completare le procedure disponibili i
    - **Password** e **Conferma password**: specificare la password dell'amministratore del database.
    - **Località**: specificare l'area geografica più vicina per il database.
 
-   ![Specificare il server SQL][SQL03]
+1. Dopo aver immesso tutte le informazioni precedenti, fare clic su **OK**.
 
-1. Dopo aver immesso tutte le informazioni riportate sopra, fare clic su **Seleziona**.
+1. Fare clic su **Rivedi e crea**.
 
-1. Per questa esercitazione specificare il **piano tariffario** meno costoso e quindi fare clic su **Crea**.
+### <a name="configure-a-firewall-rule-for-your-sql-server-using-the-azure-portal"></a>Configurare una regola del firewall per SQL Server con il portale di Azure
 
-   ![Creare il database SQL][SQL04]
-
-### <a name="configure-a-firewall-rule-for-your-sql-server-using-the-azure-portal"></a>Configurare una regola del firewall per il server SQL con il portale di Azure
+Dopo aver creato il server e il database SQL, è possibile configurare le impostazioni di sicurezza.
 
 1. Passare al portale di Azure all'indirizzo <https://portal.azure.com/> ed eseguire l'accesso.
 
 1. Fare clic su **Tutte le risorse** e quindi sul server SQL appena creato.
-
-   ![Selezionare il server SQL][SQL05]
 
 1. Nella sezione **Panoramica** fare clic su **Mostra impostazioni firewall**.
 
@@ -90,15 +80,18 @@ I prerequisiti seguenti sono necessari per completare le procedure disponibili i
 
    ![Configurare le impostazioni del firewall][SQL07]
 
-### <a name="retrieve-the-connection-string-for-your-sql-server-using-the-azure-portal"></a>Recuperare la stringa di connessione per il server SQL con il portale di Azure
+### <a name="retrieve-the-connection-string-for-your-sql-server-using-the-azure-portal"></a>Recuperare la stringa di connessione per SQL Server con il portale di Azure
 
 1. Passare al portale di Azure all'indirizzo <https://portal.azure.com/> ed eseguire l'accesso.
 
 1. Fare clic su **Tutte le risorse** e quindi sul database SQL appena creato.
 
+1. Fare clic su **Stringhe di connessione**.
+
+
    ![Selezionare il database SQL][SQL08]
 
-1. Fare clic su **Stringhe di connessione** e quindi su **JDBC** e copiare il valore del campo di testo JDBC.
+1. Quindi fare clic su **JDBC** e copiare il valore del campo di testo JDBC.
 
    ![Recuperare la stringa di connessione JDBC][SQL09]
 
@@ -140,15 +133,15 @@ I prerequisiti seguenti sono necessari per completare le procedure disponibili i
 1. Avviare l'applicazione di esempio. Ad esempio:
 
    ```shell
-   java -jar target/spring-data-jpa-on-azure-0.1.0-SNAPSHOT.jar
+   java -jar target/spring-data-jdbc-on-azure-0.1.0-SNAPSHOT.jar
    ```
 
 1. Creare nuovi record usando `curl` al prompt dei comandi come negli esempi seguenti:
 
    ```shell
-   curl -s -d '{"name":"dog","species":"canine"}' -H "Content-Type: application/json" -X POST http://localhost:8080/pets
+   curl -s -d "{\"name\":\"dog\",\"species\":\"canine\"}" -H "Content-Type: application/json" -X POST http://localhost:8080/pets
 
-   curl -s -d '{"name":"cat","species":"feline"}' -H "Content-Type: application/json" -X POST http://localhost:8080/pets
+   curl -s -d "{\"name\":\"cat\",\"species\":\"feline\"}" -H "Content-Type: application/json" -X POST http://localhost:8080/pets
    ```
 
    L'applicazione dovrebbe restituire valori come i seguenti:

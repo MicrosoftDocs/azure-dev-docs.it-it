@@ -1,24 +1,20 @@
 ---
 title: Strumenti di Azure per sviluppatori Python | Microsoft Docs
 description: Integrazioni dell'IDE e interfacce della riga di comando per gli sviluppatori Python in Azure.
-author: sptramer
-manager: carmonm
-ms.devlang: python
 ms.topic: conceptual
 ms.date: 06/21/2017
-ms.author: sttramer
-ms.openlocfilehash: 19f314347296c2ecaf7e41da2332ff6a018a5a06
-ms.sourcegitcommit: 2efdb9d8a8f8a2c1914bd545a8c22ae6fe0f463b
+ms.openlocfilehash: c1ca9752b63baa783f078d7d26a2576fdee74e6a
+ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68285772"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74467076"
 ---
 # <a name="azure-tools-for-python-developers"></a>Strumenti di Azure per sviluppatori Python
 
 ## <a name="azure-cli-20"></a>Interfaccia della riga di comando di Azure 2.0
 
-L'interfaccia della riga di comando di Azure 2.0 fornisce un'interfaccia della riga di comando per la creazione e la configurazione delle risorse di Azure nelle sottoscrizioni. L'interfaccia della riga di comando di Azure 2.0 è multipiattaforma e include funzionalità per query e filtri, che consentono di inviare tramite pipe l'output direttamente agli strumenti preferiti della riga di comando. 
+L'interfaccia della riga di comando di Azure 2.0 fornisce un'interfaccia della riga di comando per la creazione e la configurazione delle risorse di Azure nelle sottoscrizioni. L'interfaccia della riga di comando di Azure 2.0 è multipiattaforma e include funzionalità per query e filtri, che consentono di inviare tramite pipe l'output direttamente agli strumenti preferiti della riga di comando.
 
 [Installare l'interfaccia della riga di comando di Azure 2.0](https://docs.microsoft.com/cli/azure/install-azure-cli)
 

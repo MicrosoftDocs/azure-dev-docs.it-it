@@ -5,23 +5,19 @@ services: app-service
 keywords: java, eclipse, app web, servizio app di azure, hello world, avvio rapido
 documentationcenter: java
 author: selvasingh
-manager: douge
-editor: ''
 ms.assetid: 20d41e88-9eab-462e-8ee3-89da71e7a33f
-ms.author: brendm
 ms.reviewer: asirveda
 ms.date: 02/01/2018
-ms.devlang: java
 ms.service: app-service
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
-ms.openlocfilehash: 3d673abe4f4efd7330307999c7a945cd5cb37179
-ms.sourcegitcommit: 3d42245ecbfaeda31abba5f3f813b28f715ffd7c
+ms.openlocfilehash: ae3d983a0b3e64489fa89d0e6a845310878b204c
+ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "68691759"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74811438"
 ---
 # <a name="create-a-hello-world-web-app-for-azure-app-service-using-eclipse"></a>Creare un'app Web Hello World per Servizio app di Azure con Eclipse
 
@@ -42,7 +38,7 @@ Usando il plug-in open source [Azure Toolkit for Eclipse](https://marketplace.ec
 
 1. Trascinare il pulsante seguente nell'area di lavoro di Eclipse in esecuzione per installare il plug-in Azure Toolkit for Eclipse ([altre opzioni di installazione](azure-toolkit-for-eclipse-installation.md)).
 
-    [![Trascinare nell'area di lavoro di Eclipse* in esecuzione. *Richiede il client Eclipse Marketplace](https://marketplace.eclipse.org/sites/all/themes/solstice/public/images/marketplace/btn-install.png)](http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1919278 "Trascinare nell'area di lavoro di Eclipse* in esecuzione. *Richiede il client Eclipse Marketplace")
+    [![Trascinare nell'area di lavoro Eclipse* in esecuzione. *Richiede Eclipse Marketplace Client](https://marketplace.eclipse.org/sites/all/themes/solstice/public/images/marketplace/btn-install.png)](http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1919278 "Trascinare nell'area di lavoro Eclipse* in esecuzione. *Richiede Eclipse Marketplace Client")
 
 1. Per accedere all'account Azure, fare clic su **Tools** (Strumenti), su **Azure** e quindi su **Sign In** (Accedi).
    ![Menu di Eclipse per l'accesso ad Azure][I01]

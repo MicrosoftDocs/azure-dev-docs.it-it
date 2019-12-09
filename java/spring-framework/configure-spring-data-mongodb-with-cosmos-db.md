@@ -3,22 +3,16 @@ title: Come usare l'API MongoDB per Spring Data con Azure Cosmos DB
 description: Informazioni su come usare l'API MongoDB per Spring Data con Azure Cosmos DB.
 services: cosmos-db
 documentationcenter: java
-author: bmitchell287
-manager: douge
-editor: ''
-ms.assetid: ''
-ms.author: brendm
 ms.date: 12/19/2018
-ms.devlang: java
 ms.service: cosmos-db
 ms.tgt_pltfrm: multiple
 ms.topic: article
-ms.openlocfilehash: 77851933366e09a7d5b0d1ae87816c563bf35e6b
-ms.sourcegitcommit: 2efdb9d8a8f8a2c1914bd545a8c22ae6fe0f463b
+ms.openlocfilehash: 0284f89f6a37497709947649fba3b1284416a95c
+ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68281902"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74811930"
 ---
 # <a name="how-to-use-spring-data-mongodb-api-with-azure-cosmos-db"></a>Come usare l'API MongoDB per Spring Data con Azure Cosmos DB
 
@@ -71,8 +65,6 @@ I prerequisiti seguenti sono necessari per completare le procedure disponibili i
 
 1. Fare clic su **Tutte le risorse** e quindi sull'account Azure Cosmos DB appena creato.
 
-   ![Selezionare l'account Azure Cosmos DB][COSMOSDB04]
-
 1. Fare clic su **Stringhe di connessione** e copiare il valore del campo **Stringa di connessione primaria**. Questo valore verrà usato più avanti per configurare l'applicazione.
 
    ![Recuperare la stringa di connessione di Cosmos DB][COSMOSDB06]
@@ -102,7 +94,9 @@ I prerequisiti seguenti sono necessari per completare le procedure disponibili i
 
 1. Salvare e chiudere il file *application.properties*.
 
-## <a name="package-and-test-the-sample-application"></a>Creare il pacchetto dell'applicazione di esempio e testarla 
+## <a name="package-and-test-the-sample-application"></a>Creare il pacchetto dell'applicazione di esempio e testarla
+
+Per compilare l'applicazione, passare alla directory */gs-accessing-data-mongodb/complete*, che contiene il file pom.xml.
 
 1. Compilare l'applicazione di esempio con Maven e configurare Maven per ignorare i test. Ad esempio:
 
@@ -113,7 +107,7 @@ I prerequisiti seguenti sono necessari per completare le procedure disponibili i
 1. Avviare l'applicazione di esempio. Ad esempio:
 
    ```shell
-   java -jar target/gs-accessing-data-mongodb-0.1.0.jar
+   java -jar target/accessing-data-mongodb-0.0.1-SNAPSHOT.jar
    ```
     
    L'applicazione dovrebbe restituire valori come i seguenti:

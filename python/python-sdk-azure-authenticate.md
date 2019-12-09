@@ -1,19 +1,15 @@
 ---
 title: Eseguire l'autenticazione con le librerie di gestione di Azure per Python
 description: Eseguire l'autenticazione con un'entità servizio nelle librerie di gestione di Azure per Python
-author: sptramer
-ms.author: sttramer
-manager: carmonm
 ms.date: 04/11/2019
 ms.topic: conceptual
-ms.devlang: python
 ms.custom: seo-python-october2019
-ms.openlocfilehash: afeaafb4289544b92324154d5c45d3410cbb3b02
-ms.sourcegitcommit: 6012460ad8d6ff112226b8f9ea6da397ef77712d
+ms.openlocfilehash: 93d41e76bc8fb58d70a3590e2ea3658014a8673a
+ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72279107"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74466447"
 ---
 # <a name="authenticate-with-the-azure-management-libraries-for-python"></a>Eseguire l'autenticazione con le librerie di gestione di Azure per Python
 
@@ -215,9 +211,9 @@ client = get_client_from_cli_profile(ComputeManagementClient)
 
 ## <a name="mgmt-auth-legacy"></a>Eseguire l'autenticazione con le credenziali del token (legacy)
 
-Nella versione precedente dell'SDK non è ancora disponibile ADAL e viene quindi fornita una classe `UserPassCredentials`. Questo approccio viene considerato deprecato e non deve essere più usato.
+Nella versione precedente dell'SDK non è ancora disponibile ADAL e viene quindi fornita una classe `UserPassCredentials`. L'uso di questa classe viene considerato deprecato e non deve essere più adottato.
 
-Questo esempio mostra uno scenario con utente/password. Non è supportata l'autenticazione a due fattori.
+Questo esempio illustra lo scenario utente/password, che non supporta 2FA.
 
 ```python
 from azure.common.credentials import UserPassCredentials

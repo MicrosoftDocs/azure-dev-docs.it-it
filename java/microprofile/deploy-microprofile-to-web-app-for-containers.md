@@ -1,25 +1,22 @@
 ---
-title: Distribuire un servizio MicroProfile basato su Java in app Web per contenitori di Azure
+title: Distribuire un servizio MicroProfile Java
+titleSuffix: Azure Web App for Containers
 description: Informazioni su come distribuire un servizio MicroProfile usando Docker e app Web per contenitori di Azure
 services: container-registry;app-service
 documentationcenter: java
 author: jonathangiles
-manager: douge
-editor: jonathangiles
-ms.assetid: ''
 ms.author: jogiles
 ms.date: 09/07/2018
-ms.devlang: java
-ms.service: container-registry;app-service
+ms.service: app-service
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
-ms.openlocfilehash: 4ef47693094489baae85bc7622289d9943acb62b
-ms.sourcegitcommit: 2efdb9d8a8f8a2c1914bd545a8c22ae6fe0f463b
+ms.openlocfilehash: 6deaced31e9cbe6ebd1ef1eb20bd0414ab5df471
+ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68284022"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74812193"
 ---
 # <a name="deploy-a-java-based-microprofile-service-to-azure-web-app-for-containers"></a>Distribuire un servizio MicroProfile basato su Java in app Web per contenitori di Azure
 
@@ -37,9 +34,9 @@ Questa esercitazione inizierà con la creazione e l'esecuzione del codice in loc
 
 ## <a name="creating-an-azure-container-registry"></a>Creazione di un'istanza di Registro Azure Container
 
-L'istanza di Registro Azure Container verrà creata usando il [portale di Azure](http://portal.azure.com), ma sono disponibili alternative come l'interfaccia della riga di comando di Azure. Seguire questa procedura per creare una nuova istanza di Registro Azure Container:
+L'istanza di Registro Azure Container verrà creata usando il [portale di Azure](https://portal.azure.com), ma sono disponibili alternative come l'interfaccia della riga di comando di Azure. Seguire questa procedura per creare una nuova istanza di Registro Azure Container:
 
-1. Accedere al [portale di Azure](http://portal.azure.com) e creare una nuova risorsa di Registro Azure Container. Specificare un nome per il registro. Questo nome dovrà essere impostato come proprietà `docker.registry` in `pom.xml`. Modificare le impostazioni predefinite secondo le esigenze, quindi fare clic su "Crea".
+1. Accedere al [portale di Azure](https://portal.azure.com) e creare una nuova risorsa di Registro Azure Container. Specificare un nome per il registro. Questo nome dovrà essere impostato come proprietà `docker.registry` in `pom.xml`. Modificare le impostazioni predefinite secondo le esigenze, quindi fare clic su "Crea".
 
 1. Quando il registro contenitori diventa disponibile (circa 30 secondi dopo aver fatto clic su "Crea"), fare clic sul registro contenitori, quindi sul collegamento "Chiavi di accesso" nell'area dei menu a sinistra. Qui è necessario abilitare l'impostazione "Utente amministratore" per rendere il registro contenitori accessibile dai computer (per il push dei contenitori Docker) e per consentire l'accesso dall'istanza di app Web per contenitori di Azure che verrà configurata più avanti nell'esercitazione.
 
@@ -143,7 +140,7 @@ A questo punto, l'immagine del contenitore Docker è stata caricata in Registro 
 
 ## <a name="creating-an-azure-web-app-for-containers-instance"></a>Creazione di un'istanza di app Web per contenitori di Azure
 
-1. Tornare al [portale di Azure](http://portal.azure.com) e creare una nuova istanza di app Web per contenitori, sotto la voce "Web e dispositivi mobili" nel menu. Alcune informazioni utili:
+1. Tornare al [portale di Azure](https://portal.azure.com) e creare una nuova istanza di app Web per contenitori, sotto la voce 'Web e dispositivi mobili' nel menu. Alcune informazioni utili:
 
    1. Il nome specificato qui sarà l'URL pubblico dell'app Web (anche se è possibile aggiungere un dominio personalizzato in seguito), quindi è opportuno scegliere un nome facile da ricordare.
 
