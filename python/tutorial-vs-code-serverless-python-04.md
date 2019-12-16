@@ -1,15 +1,15 @@
 ---
-title: 'Esercitazione: Eseguire il debug in locale del codice Python in Funzioni di Azure con Visual Studio Code'
+title: 'Esercitazione: Eseguire il debug in locale del codice Python in Funzioni di Azure con VS Code'
 description: "Passaggio 4 dell'esercitazione: esecuzione del debugger di VS Code in locale per verificare il codice Python."
 ms.topic: conceptual
 ms.date: 09/02/2019
 ms.custom: seo-python-october2019
-ms.openlocfilehash: b1ea7c60b8d4dca8de829a9c627811a33ea57f01
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.openlocfilehash: 7dafd432289ad96664ca7c8a319b3368368adcbd
+ms.sourcegitcommit: 68a4044b9fa3291c9e7e2f68ae0049328f9c01bb
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74465948"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74992446"
 ---
 # <a name="tutorial-debug-the-azure-functions-python-code-locally"></a>Esercitazione: Eseguire il debug in locale del codice Python in Funzioni di Azure
 

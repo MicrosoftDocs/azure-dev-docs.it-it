@@ -1,15 +1,15 @@
 ---
-title: 'Esercitazione: Creare una funzione Python per Funzioni di Azure con Visual Studio Code'
+title: 'Esercitazione: Creare una funzione Python per Funzioni di Azure con VS Code'
 description: "Passaggio 2 dell'esercitazione: informazioni sull'uso dell'estensione Funzioni di Azure per VS Code."
 ms.topic: conceptual
 ms.date: 09/02/2019
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 5ccb93abf37011de5075768b73ed330fd91461ea
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.openlocfilehash: 49ab6b150f14268b6d52ac48524f66e6e520e547
+ms.sourcegitcommit: 68a4044b9fa3291c9e7e2f68ae0049328f9c01bb
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74466035"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74992521"
 ---
 # <a name="tutorial-create-a-python-function-for-azure-functions"></a>Esercitazione: Creare una funzione Python per Funzioni di Azure
 

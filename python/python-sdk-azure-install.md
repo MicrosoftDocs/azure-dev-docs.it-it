@@ -4,12 +4,12 @@ description: Come installare Azure SDK per Python con pip o GitHub. Azure SDK pu
 ms.date: 10/31/2019
 ms.topic: conceptual
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 39de0959f3d73306412c39b32a4e13766d1500e9
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.openlocfilehash: d3d162bc14f27a9b2bc3fb033dab36dcd1dfeb89
+ms.sourcegitcommit: 68a4044b9fa3291c9e7e2f68ae0049328f9c01bb
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74466406"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74992494"
 ---
 # <a name="install-the-azure-sdk-for-python"></a>Installare Azure SDK per Python
 
@@ -19,7 +19,7 @@ Azure SDK per Python viene testato e supportato con CPython versioni 2.7 e 3.5.3
 
 ## <a name="install-sdk-libraries-using-pip"></a>Installare le librerie SDK tramite pip
 
-Azure SDK per Python è costituito da una serie di librerie singole che effettuano il provisioning o funzionano con servizi specifici di Azure. È possibile installare ognuno di essi usando `pip install <library>` con i nomi visualizzati nell'[elenco di librerie SDK](https://github.com/Azure/azure-sdk-for-python/blob/master/packages.md). In questo elenco sono disponibili collegamenti a utili file README per ogni raccolta.
+Azure SDK per Python è costituito da una serie di librerie singole che effettuano il provisioning o funzionano con servizi specifici di Azure. È possibile installare ognuna usando `pip install <library>`. Per istruzioni e documentazione specifiche per ogni libreria, vedere la [pagina relativa alle versioni dell'SDK](https://azure.github.io/azure-sdk/releases/latest/python.html).
 
 Se ad esempio si usa Archiviazione di Azure, è possibile installare la libreria `azure-storage-file`, `azure-storage-blob` o `azure-storage-queue` library. Se si usano tabelle di Azure Cosmos DB, installare `azure-cosmosdb-table`. Funzioni di Azure è supportato tramite la libreria `azure-functions` e così via. Le librerie che iniziano con `azure-mgmt-` forniscono l'API per effettuare il provisioning delle risorse di Azure.
 

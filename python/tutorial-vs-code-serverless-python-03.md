@@ -1,15 +1,15 @@
 ---
-title: 'Esercitazione: Esaminare i file di codice Python per Funzioni di Azure in Visual Studio Code'
+title: 'Esercitazione: Esaminare i file di codice Python per Funzioni di Azure in VS Code'
 description: Passaggio 3 dell'esercitazione, informazioni sul codice Python del modello fornito da Funzioni di Azure.
 ms.topic: conceptual
 ms.date: 09/02/2019
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 5fa6f0095dec212f935c8c2e106f63eb58784d00
-ms.sourcegitcommit: 9d0a6de18d9b5180c1cb485eff8e2774de48d225
+ms.openlocfilehash: 253bc4384f896c9114f2f1113cdf0ee2f290819d
+ms.sourcegitcommit: 68a4044b9fa3291c9e7e2f68ae0049328f9c01bb
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/26/2019
-ms.locfileid: "74540507"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74992502"
 ---
 # <a name="tutorial-examine-the-python-code-files-in-visual-studio-code"></a>Esercitazione: Esaminare i file di codice Python in Visual Studio Code
 
