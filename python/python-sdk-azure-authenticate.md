@@ -4,16 +4,18 @@ description: Eseguire l'autenticazione con un'entità servizio nelle librerie di
 ms.date: 04/11/2019
 ms.topic: conceptual
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 93d41e76bc8fb58d70a3590e2ea3658014a8673a
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.openlocfilehash: 760b8e7c565cbef3d8e6e7664a53f6e2758bbe8c
+ms.sourcegitcommit: 5c65d22b5203b0c17806463d349a6ede93a99fa0
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74466447"
+ms.lasthandoff: 12/12/2019
+ms.locfileid: "75010554"
 ---
 # <a name="authenticate-with-the-azure-management-libraries-for-python"></a>Eseguire l'autenticazione con le librerie di gestione di Azure per Python
 
 Questo articolo illustra come autenticare l'applicazione quando si usano le librerie di gestione di Python. Sono disponibili diverse opzioni per autenticare l'applicazione in Azure.
+
+[!INCLUDE [chrome-note](includes/chrome-note.md)]
 
 ## <a name="mgmt-auth-token"></a>Eseguire l'autenticazione con le credenziali del token
 

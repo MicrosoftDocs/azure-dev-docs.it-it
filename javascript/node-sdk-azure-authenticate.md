@@ -3,12 +3,12 @@ title: Eseguire l'autenticazione con i moduli di gestione di Azure per Node.js
 description: Eseguire l'autenticazione con un'entità servizio nei moduli di gestione di Azure per Node.js
 ms.topic: article
 ms.date: 06/17/2017
-ms.openlocfilehash: bf368183b63dbe42dd02d8236cf7e7b73cbc1845
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.openlocfilehash: 76233fb6e6d15829783ff98b3af672abc7eba226
+ms.sourcegitcommit: 5c65d22b5203b0c17806463d349a6ede93a99fa0
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74467269"
+ms.lasthandoff: 12/12/2019
+ms.locfileid: "75010514"
 ---
 # <a name="authenticate-with-the-azure-modules-for-nodejs"></a>Eseguire l'autenticazione con i moduli di Azure per Node.js
 
@@ -17,6 +17,8 @@ Tutte le API di un servizio richiedono l'autenticazione tramite un oggetto `cred
 - Autenticazione di base
 - Accesso interattivo
 - Autenticazione di un'entità servizio
+
+[!INCLUDE [chrome-note](includes/chrome-note.md)]
 
 ## <a name="basic-authentication"></a>Autenticazione di base
 
