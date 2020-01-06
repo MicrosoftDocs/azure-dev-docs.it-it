@@ -1,5 +1,5 @@
 ---
-title: Creare un'app Web Hello World per Azure con il toolkit legacy per IntelliJ
+title: Creare un'app Web Hello World per Azure in IntelliJ (legacy)
 description: Questa esercitazione descrive come usare Azure Toolkit for IntelliJ 3.0.6 (o versioni precedenti) per creare un'app Web Hello World per Azure.
 services: app-service
 documentationcenter: java
@@ -8,12 +8,12 @@ ms.service: app-service
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
-ms.openlocfilehash: 423379239c823bdeba9947719a43d9f446bbd2f3
-ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
+ms.openlocfilehash: ffb633ac6d1ddfc4255d6f8917b6a27a5ea0a3bc
+ms.sourcegitcommit: db803eba96ffa73b21b94fcb41439cb9b7a0e3c8
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74811187"
+ms.lasthandoff: 12/13/2019
+ms.locfileid: "75031697"
 ---
 # <a name="create-a-hello-world-web-app-for-azure-using-the-legacy-toolkit-for-intellij"></a>Creare un'app Web Hello World per Azure con il toolkit legacy per IntelliJ
 
