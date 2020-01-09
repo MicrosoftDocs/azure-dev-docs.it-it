@@ -3,24 +3,22 @@ title: Come usare Spring Data JDBC con Azure PostgreSQL
 description: Informazioni su come usare Spring Data JDBC con un database PostgreSQL di Azure.
 services: postgresql
 documentationcenter: java
-ms.date: 12/19/2018
+ms.date: 12/26/2019
 ms.service: postgresql
 ms.tgt_pltfrm: multiple
 ms.topic: article
-ms.openlocfilehash: d7f4ddeab5c46f6070145e5aab0b273156ed38a0
-ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
+ms.openlocfilehash: b5abc7479a52aa84cd3f05ffb56e5c7f31d0c533
+ms.sourcegitcommit: 94ca8c28d8d3e954cf118f1f46ac905c3a470b38
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74811999"
+ms.lasthandoff: 12/27/2019
+ms.locfileid: "75502374"
 ---
 # <a name="how-to-use-spring-data-jdbc-with-azure-postgresql"></a>Come usare Spring Data JDBC con Azure PostgreSQL
 
-## <a name="overview"></a>Panoramica
-
 Questo articolo illustra la creazione di un'applicazione di esempio che usa [Spring Data] per archiviare e recuperare le informazioni in un database [PostgreSQL](https://www.postgresql.org/) di Azure con [Java Database Connectivity (JDBC)](https://docs.oracle.com/javase/8/docs/technotes/guides/jdbc/).
 
-## <a name="prerequisites"></a>Prerequisiti
+## <a name="prerequisites"></a>Prerequisites
 
 I prerequisiti seguenti sono necessari per completare le procedure disponibili in questo articolo:
 
@@ -47,19 +45,20 @@ I prerequisiti seguenti sono necessari per completare le procedure disponibili i
 
 1. Immettere le seguenti informazioni:
 
-   - **Nome server**: scegliere un nome univoco per il server PostgreSQL. Tale nome verrà usato per creare un nome di dominio completo, ad esempio *wingtiptoyspostgresql.postgres.database.azure.com*.
-   - **Sottoscrizione** specificare la sottoscrizione di Azure da usare.
    - **Gruppo di risorse**: specificare se creare un nuovo gruppo di risorse o sceglierne uno esistente.
-   - **Selezionare l'origine**: per questa esercitazione selezionare `Blank` per creare un nuovo database.
+   - **Sottoscrizione** specificare la sottoscrizione di Azure da usare.
+   - **Nome server**: scegliere un nome univoco per il server PostgreSQL. Tale nome verrà usato per creare un nome di dominio completo, ad esempio *wingtiptoyspostgresql.postgres.database.azure.com*.
+   - **Selezionare l'origine**: per questa esercitazione selezionare `None` per creare un nuovo database.
    - **Account di accesso amministratore server**: specificare il nome dell'amministratore del database.
    - **Password** e **Conferma password**: specificare la password dell'amministratore del database.
    - **Località**: specificare l'area geografica più vicina per il database.
    - **Versione**: specificare la versione del database più aggiornata.
-   - **Piano tariffario**: per questa esercitazione specificare il piano tariffario meno costoso.
 
    ![Creare le proprietà del database PostgreSQL][POSTGRESQL02]
 
-1. Dopo aver immesso tutte le informazioni riportate sopra, fare clic su **Crea**.
+1. Dopo aver immesso tutte le informazioni riportate sopra, fare clic su **Rivedi e crea**.
+
+1. Verificare le specifiche e fare clic su **Crea**.
 
 ### <a name="configure-a-firewall-rule-for-your-postgresql-database-server-using-the-azure-portal"></a>Configurare una regola del firewall per il server di database PostgreSQL tramite il portale di Azure
 
@@ -67,19 +66,15 @@ I prerequisiti seguenti sono necessari per completare le procedure disponibili i
 
 1. Fare clic su **Tutte le risorse** e quindi sul database PostgreSQL appena creato.
 
-   ![Selezionare il database PostgreSQL][POSTGRESQL03]
-
 1. Fare clic su **Sicurezza delle connessioni**, creare una nuova regola specificando un nome univoco in **Regole del firewall**, immettere l'intervallo di indirizzi IP che dovrà avere accesso al database e quindi fare clic su **Salva**.
 
-   ![Configurare la sicurezza delle connessioni][POSTGRESQL04]
+   ![Configurare la sicurezza delle connessioni][POSTGRESQL03]
 
 ### <a name="retrieve-the-connection-string-for-your-postgresql-server-using-the-azure-portal"></a>Recuperare la stringa di connessione per il server PostgreSQL tramite il portale di Azure
 
 1. Passare al portale di Azure all'indirizzo <https://portal.azure.com/> ed eseguire l'accesso.
 
 1. Fare clic su **Tutte le risorse** e quindi sul database PostgreSQL appena creato.
-
-   ![Selezionare il database PostgreSQL][POSTGRESQL03]
 
 1. Fare clic su **Stringhe di connessione** e copiare il valore del campo di testo **JDBC**.
 
@@ -94,7 +89,7 @@ I prerequisiti seguenti sono necessari per completare le procedure disponibili i
    ```
    Dove:
 
-   | Parametro | DESCRIZIONE |
+   | Parametro | Descrizione |
    |---|---|
    | `host` | Specifica il nome completo del server PostgreSQL dei passaggi precedenti di questo articolo. |
    | `host` | Specifica la porta del server PostgreSQL, che per impostazione predefinita è `5432`. |
@@ -159,7 +154,7 @@ I prerequisiti seguenti sono necessari per completare le procedure disponibili i
     ```
    Dove:
 
-   | Parametro | DESCRIZIONE |
+   | Parametro | Descrizione |
    |---|---|
    | `spring.datasource.url` | Specifica la stringa JDBC per PostgreSQL dei passaggi precedenti di questo articolo. |
    | `spring.datasource.username` | Specifica il nome dell'amministratore PostgreSQL dei passaggi precedenti di questo articolo, cui viene aggiunto il nome abbreviato del server. |

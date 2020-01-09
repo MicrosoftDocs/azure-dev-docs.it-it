@@ -7,14 +7,14 @@ ms.date: 02/01/2018
 ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
-ms.openlocfilehash: ece88bc262cf6b7c626cd50364c1133b098bb0f7
-ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
+ms.openlocfilehash: d11dfce0baa04fd19d54f37832bf61b785818390
+ms.sourcegitcommit: fc3408b6e153c847dd90026161c4c498aa06e2fc
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74811832"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75191120"
 ---
-# <a name="publish-a-spring-boot-app-as-a-docker-container-by-using-the-azure-toolkit-for-eclipse"></a>Pubblicare un'app Spring Boot come contenitore Docker usando il Toolkit di Azure per Eclipse
+# <a name="publish-a-spring-boot-app-as-a-docker-container-by-using-the-azure-toolkit-for-eclipse-deprecated"></a>Pubblicare un'app Spring Boot come contenitore Docker usando Azure Toolkit for Eclipse (DEPRECATO)
 
 [Spring Framework] è una soluzione open source che consente agli sviluppatori Java di creare applicazioni di livello enterprise. Uno dei progetti più comuni che si basa su questa piattaforma è [Spring Boot], che fornisce un approccio semplificato per la creazione di applicazioni Java autonome.
 
@@ -162,7 +162,7 @@ Il repository Docker Spring Boot contiene un progetto Maven completato che verr�
 
 1. Se si sceglie di eseguire la distribuzione in un host esistente, è possibile procedere al passaggio 5. In alternativa, per creare un host seguire questa procedura:
 
-   a. Fare clic su **Aggiungi**.
+   a. Scegliere **Aggiungi**.
 
       ![Aggiungere un nuovo host Docker][PU03]
 
@@ -207,7 +207,7 @@ Per altre risorse per Docker, vedere il [sito Web Docker](https://www.docker.com
 [Docker]: https://www.docker.com/
 [Publish Container with Azure Toolkit]: azure-toolkit-for-eclipse-publish-as-docker-container.md
 [Spring Boot]: http://projects.spring.io/spring-boot/
-[Spring Framework]: https://spring.io/
+[Spring Framework]: https://spring.io/ (Framework di Spring)
 
 <!-- IMG List -->
 

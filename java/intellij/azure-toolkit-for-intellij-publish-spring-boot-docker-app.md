@@ -7,14 +7,14 @@ ms.date: 11/13/2018
 ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
-ms.openlocfilehash: eb8458301036ffedfce98844c22aa4ef1aafb0e0
-ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
+ms.openlocfilehash: 00d6d77c78a1b38bbeb5369301956b2cfce166a5
+ms.sourcegitcommit: fc3408b6e153c847dd90026161c4c498aa06e2fc
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74812497"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75191124"
 ---
-# <a name="publish-a-spring-boot-app-as-a-docker-container-by-using-the-azure-toolkit-for-intellij"></a>Pubblicare un'app Spring Boot come contenitore Docker usando il Toolkit di Azure per IntelliJ
+# <a name="publish-a-spring-boot-app-as-a-docker-container-by-using-the-azure-toolkit-for-intellij-deprecated"></a>Pubblicare un'app Spring Boot come contenitore Docker usando Azure Toolkit for IntelliJ (DEPRECATO)
 
 [Spring Framework] è una soluzione open source che consente agli sviluppatori Java di creare applicazioni di livello enterprise. Uno dei progetti più comuni che si basa su questa piattaforma è [Spring Boot], che fornisce un approccio semplificato per la creazione di applicazioni Java autonome.
 
@@ -110,7 +110,7 @@ IntelliJ importa l'app Spring Boot come un progetto e visualizza la struttura al
 
 ### <a name="create-a-deployment-ready-artifact"></a>Creare un elemento pronto per la distribuzione
 
-Per pubblicare l'app Spring Boot, è necessario creare un elemento pronto per la distribuzione. Seguire questa procedura:
+Per pubblicare l'app Spring Boot, è necessario creare un elemento pronto per la distribuzione. Eseguire la procedura descritta di seguito:
 
 1. Aprire il progetto dell'app Web in IntelliJ.
 
@@ -223,7 +223,7 @@ Per informazioni su altri metodi per la creazione di app Spring Boot tramite Int
 [Docker]: https://www.docker.com/
 [Publish Container with Azure Toolkit]: ./azure-toolkit-for-intellij-publish-as-docker-container.md
 [Spring Boot]: http://projects.spring.io/spring-boot/
-[Spring Framework]: https://spring.io/
+[Spring Framework]: https://spring.io/ (Framework di Spring)
 
 <!-- IMG List -->
 

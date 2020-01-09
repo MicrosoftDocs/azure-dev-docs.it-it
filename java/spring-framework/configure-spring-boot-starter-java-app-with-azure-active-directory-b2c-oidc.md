@@ -1,5 +1,5 @@
 ---
-title: Come usare Spring Boot Starter per Azure Active Directory B2C
+title: Usare Spring Boot Starter per Azure Active Directory B2C
 description: Informazioni su come configurare un'app Spring Boot Initializer con l'utilità di avvio per Azure Active Directory B2C.
 services: active-directory-b2c
 documentationcenter: java
@@ -11,12 +11,12 @@ ms.service: active-directory-b2c
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: identity
-ms.openlocfilehash: 7996e4f2947e08fc7a802a741b958988e58829e8
-ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
+ms.openlocfilehash: 87134da87f47b1c808648a8b6e2f77650c9141bf
+ms.sourcegitcommit: a1f7e0f0cfd5c9d0806a7d44acdf2a54d578d8fe
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74812157"
+ms.lasthandoff: 12/20/2019
+ms.locfileid: "75319678"
 ---
 # <a name="tutorial-secure-a-java-web-app-using-the-spring-boot-starter-for-azure-active-directory-b2c"></a>Esercitazione: Proteggere un'app Web Java con Spring Boot Starter per Azure Active Directory B2C.
 
@@ -24,7 +24,7 @@ ms.locfileid: "74812157"
 
 Questo articolo illustra come creare un'app Java con [Spring Initializr](https://start.spring.io/), che usa Spring Boot Starter per Azure Active Directory (Azure AD).
 
-In questa esercitazione si apprenderà come:
+In questa esercitazione verranno illustrate le procedure per:
 
 > [!div class="checklist"]
 > * Creare un'applicazione Java con Spring Initializr
@@ -34,7 +34,7 @@ In questa esercitazione si apprenderà come:
 
 Se non si ha una sottoscrizione di Azure, creare un [account gratuito](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) prima di iniziare.
 
-## <a name="prerequisites"></a>Prerequisiti
+## <a name="prerequisites"></a>Prerequisites
 
 I prerequisiti seguenti sono necessari per completare le procedure disponibili in questo articolo:
 
@@ -144,7 +144,7 @@ I prerequisiti seguenti sono necessari per completare le procedure disponibili i
    ```
    Dove:
 
-   | Parametro | DESCRIZIONE |
+   | Parametro | Descrizione |
    |---|---|
    | `azure.activedirectory.b2c.tenant` | Contiene il valore di `${your-tenant-name` di AD B2C illustrato in precedenza. |
    | `azure.activedirectory.b2c.client-id` | Contiene il valore di `${your-client-id}` dell'applicazione completata in precedenza. |

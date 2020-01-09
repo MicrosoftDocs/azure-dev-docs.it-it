@@ -7,14 +7,14 @@ ms.date: 02/01/2018
 ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
-ms.openlocfilehash: 2d81c2a23a58c2dfdb036988b8831efe0c821392
-ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
+ms.openlocfilehash: d1e384525ec32141b945f50d1d5be7190e84b239
+ms.sourcegitcommit: fc3408b6e153c847dd90026161c4c498aa06e2fc
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74811808"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75191048"
 ---
-# <a name="publish-a-web-app-as-a-docker-container-by-using-the-azure-toolkit-for-eclipse"></a>Pubblicare un'app Web come contenitore Docker usando il Toolkit di Azure per Eclipse
+# <a name="publish-a-web-app-as-a-docker-container-by-using-the-azure-toolkit-for-eclipse-deprecated"></a>Pubblicare un'app Web come contenitore Docker usando Azure Toolkit for Eclipse (DEPRECATO)
 
 I contenitori Docker sono un metodo molto diffuso per la distribuzione di applicazioni Web. L'uso dei contenitori Docker permette agli sviluppatori di consolidare tutti i file di progetto e le dipendenze in un unico pacchetto per la distribuzione in un server. Il Toolkit di Azure per Eclipse semplifica questo processo per gli sviluppatori Java aggiungendo la funzionalità *Publish as Docker Container* (Pubblica come contenitore Docker) per la distribuzione in Microsoft Azure. Questo articolo illustra la procedura da seguire per pubblicare le applicazioni in Azure come contenitori Docker.
 
@@ -28,7 +28,7 @@ I contenitori Docker sono un metodo molto diffuso per la distribuzione di applic
 
 1. Aprire il progetto dell'applicazione Web in Eclipse.
 
-2. Per avviare la procedura guidata **Publish as Docker Container** (Pubblica come contenitore Docker), eseguire una delle operazioni seguenti:
+2. Per avviare la procedura guidata **Publish as Docker Container** (Pubblica come contenitore Docker), eseguire una di queste operazioni:
 
    * Nella vista **Navigator** (Strumento di navigazione) fare clic con il pulsante destro del mouse sul progetto, fare clic su **Azure** e quindi fare clic su **Publish as Docker Container** (Pubblica come contenitore Docker).
 
@@ -46,7 +46,7 @@ I contenitori Docker sono un metodo molto diffuso per la distribuzione di applic
 
    a. Nella casella **Docker image name** (Nome immagine Docker) immettere un nome univoco per l'host Docker. La procedura guidata crea automaticamente un nome, ma è possibile modificarlo.
 
-   b. Nell'area **Hosts** (Host) vengono visualizzati tutti gli host Docker già creati. Eseguire una di queste operazioni:
+   b. Nell'area **Hosts** (Host) vengono visualizzati tutti gli host Docker già creati. Effettuare una delle operazioni seguenti:
 
    * Se è disponibile un host Docker esistente, è possibile distribuirvi l'app Web.
    * Per creare un nuovo host Docker, fare clic su **Aggiungi**.  
@@ -57,7 +57,7 @@ I contenitori Docker sono un metodo molto diffuso per la distribuzione di applic
 
 4. Nella finestra **Configure the new virtual machine** (Configura la nuova macchina virtuale) specificare le opzioni seguenti per l'host Docker. La procedura guidata genera automaticamente la maggior parte delle opzioni, ma è possibile modificarle.
 
-   a. **Nome**: immettere un nome univoco per l'host Docker. Questo non è lo stesso nome immagine Docker specificato in precedenza.
+   a. **Name**: immettere un nome univoco per l'host Docker. Questo non è lo stesso nome immagine Docker specificato in precedenza.
 
    b. **Sottoscrizione** immettere la sottoscrizione di Azure usata per l'host.
 
@@ -65,7 +65,7 @@ I contenitori Docker sono un metodo molto diffuso per la distribuzione di applic
 
    d. Nella scheda **Host OS and Size** (Sistema operativo e dimensioni host) specificare le opzioni seguenti: 
    * **Host OS** (Sistema operativo host): immettere il sistema operativo della macchina virtuale in cui è presente l'host.
-   * **Dimensione**: immettere le dimensioni della macchina virtuale per l'host.
+   * **Size**: immettere le dimensioni della macchina virtuale per l'host.
 
    e. Nella scheda **Resource Group** (Gruppo di risorse) specificare le opzioni seguenti: 
    * **New resource group** (Nuovo gruppo di risorse): creare un nuovo gruppo di risorse per l'host.
@@ -147,7 +147,7 @@ I contenitori Docker sono un metodo molto diffuso per la distribuzione di applic
 
 10. Al termine della procedura, fare clic su **Finish** (Fine).
 
-Il Toolkit di Azure inizia a distribuire l'app Web in Azure in un contenitore Docker. 
+Azure Toolkit inizia a distribuire l'app Web in Azure in un contenitore Docker. 
 
 ## <a name="next-steps"></a>Passaggi successivi
 

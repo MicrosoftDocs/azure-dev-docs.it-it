@@ -3,12 +3,12 @@ title: Usare un registro contenitori da Visual Studio Code
 description: Parte 2 dell'esercitazione, usare un registro contenitori
 ms.topic: conceptual
 ms.date: 09/20/2019
-ms.openlocfilehash: 7d51e8011824ec19e9530f9bc94bcb2ce07f2851
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.openlocfilehash: c5e9ff3cd803ef4d57408199682c71e4b57f2d77
+ms.sourcegitcommit: fc3408b6e153c847dd90026161c4c498aa06e2fc
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74466636"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75191024"
 ---
 # <a name="use-a-container-registry"></a>Usare un registro contenitori
 
@@ -20,9 +20,13 @@ Questa esercitazione usa [Registro Azure Container](https://azure.microsoft.com/
 
 ## <a name="create-an-azure-container-registry"></a>Creare un'istanza di Registro Azure Container
 
-1. Accedere al [portale di Azure](https://portal.azure.com), quindi selezionare **Crea una risorsa** > **Contenitori** > **Registro Container**.
+1. Accedere al [portale di Azure](https://portal.azure.com), quindi selezionare **Crea una risorsa**.
 
-    ![Creazione di un registro contenitori nel portale di Azure](media/deploy-containers/portal-01.png)
+    ![Creazione di una nuova risorsa nel portale di Azure](media/deploy-containers/portal-01a.png)
+
+1. Nella pagina successiva selezionare **Contenitori** > **Registro Container**.
+
+    ![Creazione di un registro contenitori nel portale di Azure](media/deploy-containers/portal-01b.png)
 
 1. Nel modulo **Crea registro contenitori** che viene visualizzato immettere i valori appropriati:
 
@@ -50,6 +54,8 @@ Questa esercitazione usa [Registro Azure Container](https://azure.microsoft.com/
     ```bash
     docker login <registry_name>.azurecr.io -u <username> -p <password>
     ```
+
+    Per migliorare la sicurezza, usare `--password-stdin` invece di `-p <password>` e quindi incollare la password quando richiesto.
 
 1. In Visual Studio Code aprire l'area **Docker** e verificare che l'endpoint del registro appena configurato sia visibile in **Registries** (Registri):
 

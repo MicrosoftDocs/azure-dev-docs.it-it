@@ -4,12 +4,12 @@ description: "Passaggio 1 dell'esercitazione: introduzione e prerequisiti."
 ms.topic: conceptual
 ms.date: 09/02/2019
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 388c49767e08d4f86ad02439ece58610b7c2cf09
-ms.sourcegitcommit: 68a4044b9fa3291c9e7e2f68ae0049328f9c01bb
+ms.openlocfilehash: a380a447150f29653a1f94a3fe1f6464dd495a81
+ms.sourcegitcommit: fc3408b6e153c847dd90026161c4c498aa06e2fc
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74992542"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75190998"
 ---
 # <a name="tutorial-create-and-deploy-serverless-azure-functions-in-python-with-visual-studio-code"></a>Esercitazione: Creare e distribuire Funzioni di Azure serverless in Python con Visual Studio Code
 
@@ -19,33 +19,36 @@ Funzioni di Azure consente di eseguire il codice in un ambiente serverless senza
 
 Se si riscontrano problemi con uno qualsiasi dei passaggi descritti in questa esercitazione, è possibile segnalarli. Per inviare feedback, usare il pulsante **Si è verificato un problema** alla fine di ogni articolo.
 
-## <a name="prerequisites"></a>Prerequisiti
+## <a name="prerequisites"></a>Prerequisites
 
 - Una [sottoscrizione di Azure](#azure-subscription).
-- [Visual Studio Code con l'estensione Funzioni di Azure](#visual-studio-code-python-and-the-azure-functions-extension).
 - [Azure Functions Core Tools](#azure-functions-core-tools).
+- [Visual Studio Code con l'estensione Funzioni di Azure](#visual-studio-code-python-and-the-azure-functions-extension).
 
 ### <a name="azure-subscription"></a>Sottoscrizione di Azure
 
 Se non si ha una sottoscrizione di Azure, [iscriversi](https://azure.microsoft.com/free/?utm_source=campaign&utm_campaign=vscode-tutorial-functions-extension&mktingSource=vscode-tutorial-functions-extension) subito per ottenere un account gratuito valido per 30 giorni con 200 USD in crediti di Azure per provare qualsiasi combinazione di servizi.
 
+### <a name="azure-functions-core-tools"></a>Azure Functions Core Tools
+
+Installare Azure Functions Core Tools seguendo le istruzioni per il sistema operativo specifico in [Usare Azure Functions Core Tools](/azure/azure-functions/functions-run-local#v2). Ignorare i commenti nell'articolo sullo strumento di gestione pacchetti Chocolately, perché non sono necessari per completare questa esercitazione.
+
+Durante l'installazione di Node.js, usare le opzioni predefinite e *non* selezionare l'opzione per l'installazione automatica degli strumenti necessari.  Assicurarsi anche di usare l'opzione `-g` con i comandi `npm install` per rendere disponibili Core Tools per i comandi successivi.
+
+    > [!TIP]
+    > The Core Tools are written in .NET Core, and the Core Tools package is best installed using the Node.js package manager, npm, which is why you need to install .NET Core and Node.js at present, even for working with Azure Functions in Python. You can, however bypass the .NET Core requirement using "extension bundles" as described in the aforementioned documentation. Whatever the case, you need install these components only once, after which Visual Studio Code automatically prompts you to install any updates.
+
 ### <a name="visual-studio-code-python-and-the-azure-functions-extension"></a>Visual Studio Code, Python e l'estensione Funzioni di Azure
 
 Installare il software seguente:
 
-- Python 3.7 o Python 3.6 come richiesto da Funzioni di Azure. [Python 3.7.5](https://www.python.org/downloads/release/python-375/) e [Python 3.6.8](https://www.python.org/downloads/release/python-368/) sono le versioni compatibili più recenti.
+- Python 3.7 o Python 3.6 come richiesto da Funzioni di Azure. [Python 3.7.5](https://www.python.org/downloads/release/python-375/) e [Python 3.6.8](https://www.python.org/downloads/release/python-368/) sono le versioni compatibili più recenti. Scorrere verso il basso in queste pagine per trovare i programmi di installazione. Durante l'installazione selezionare **Add Python 3.x to PATH** (Aggiungi Python 3.x a PATH) e usare le opzioni predefinite selezionando l'opzione **Install Now** (Installa ora). In Windows selezionare anche **Disable Path length limit** (Disabilita il limite di lunghezza del percorso) alla fine del processo.
 - [Visual Studio Code](https://code.visualstudio.com/).
 - [Estensione Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python) come descritto nella sezione dei [prerequisiti dell'esercitazione su Python in Visual Studio Code](https://code.visualstudio.com/docs/python/python-tutorial).
 - [Estensione Funzioni di Azure](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions). Per informazioni di carattere generale, visitare il [repository GitHub vscode-azurefunctions](https://github.com/Microsoft/vscode-azurefunctions).
 
-> [!NOTE]
-> L'estensione Funzioni di Azure è inclusa nel [pacchetto di estensioni Strumenti di Azure](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-node-azure-pack).
-
-### <a name="azure-functions-core-tools"></a>Azure Functions Core Tools
-
-Seguire le istruzioni per il sistema operativo riportate in [Usare Azure Functions Core Tools](/azure/azure-functions/functions-run-local#v2).
-
-Gli strumenti sono scritti in .NET Core e per una corretta installazione del pacchetto Core Tools è consigliabile usare npm, l'utilità di gestione pacchetti di Node.js. È per questo motivo che è attualmente necessario installare .NET Core e Node.js anche per usare Funzioni di Azure in Python. È però possibile ignorare il requisito di .NET Core relativo all'uso di bundle di estensione, come descritto nella documentazione menzionata in precedenza. In qualunque caso è necessario installare questi componenti solo una volta, perché in seguito sarà Visual Studio Code a richiedere automaticamente l'installazione di eventuali aggiornamenti.
+    > [!NOTE]
+    > L'estensione Funzioni di Azure è inclusa nel [pacchetto di estensioni Strumenti di Azure](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-node-azure-pack).
 
 ### <a name="sign-in-to-azure"></a>Accedere ad Azure
 

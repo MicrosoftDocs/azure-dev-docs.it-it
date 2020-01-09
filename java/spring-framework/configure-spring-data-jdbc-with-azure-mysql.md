@@ -2,16 +2,16 @@
 title: Come usare Spring Data JDBC con Database di Azure per MySQL
 description: Informazioni su come usare Spring Data JDBC con un database di Azure per MySQL.
 documentationcenter: java
-ms.date: 12/19/2018
+ms.date: 01/07/2020
 ms.service: mysql
 ms.tgt_pltfrm: multiple
 ms.topic: conceptual
-ms.openlocfilehash: 323613fa8508f4e52c602763b40f15c4d2ffbc54
-ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
+ms.openlocfilehash: a36484cb6858422f4d9b0e6a5c72a793f3686514
+ms.sourcegitcommit: 3b8ccf447921a55f16c25795914d9eed64c2b9cf
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74812011"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75755627"
 ---
 # <a name="how-to-use-spring-data-jdbc-with-azure-mysql"></a>Come usare Spring Data JDBC con Azure MySQL
 
@@ -19,7 +19,7 @@ ms.locfileid: "74812011"
 
 Questo articolo illustra la creazione di un'applicazione di esempio che usa [Spring Data] per archiviare e recuperare le informazioni in un [database di Azure per MySQL](/azure/mysql/) tramite [JDBC (Java Database Connectivity)](https://docs.oracle.com/javase/8/docs/technotes/guides/jdbc/).
 
-## <a name="prerequisites"></a>Prerequisiti
+## <a name="prerequisites"></a>Prerequisites
 
 I prerequisiti seguenti sono necessari per completare le procedure disponibili in questo articolo:
 
@@ -46,27 +46,26 @@ I prerequisiti seguenti sono necessari per completare le procedure disponibili i
 
 1. Immettere le seguenti informazioni:
 
-   - **Nome server**: scegliere un nome univoco per il server MySQL. Tale nome verrà usato per creare un nome di dominio completo, ad esempio *wingtiptoysmysql.mysql.database.azure.com*.
    - **Sottoscrizione** specificare la sottoscrizione di Azure da usare.
    - **Gruppo di risorse**: specificare se creare un nuovo gruppo di risorse o sceglierne uno esistente.
-   - **Selezionare l'origine**: per questa esercitazione selezionare `Blank` per creare un nuovo database.
-   - **Account di accesso amministratore server**: specificare il nome dell'amministratore del database.
+   - **Nome server**: scegliere un nome univoco per il server MySQL. Tale nome verrà usato per creare un nome di dominio completo, ad esempio *wingtiptoysmysql.mysql.database.azure.com*.
+   - **Origine dati**: per questa esercitazione selezionare `Blank` per creare un nuovo database.
+   - **Nome utente amministratore**: specificare il nome dell'amministratore del database.
    - **Password** e **Conferma password**: specificare la password dell'amministratore del database.
    - **Località**: specificare l'area geografica più vicina per il database.
    - **Versione**: specificare la versione del database più aggiornata.
-   - **Piano tariffario**: per questa esercitazione specificare il piano tariffario meno costoso.
 
    ![Creare le proprietà del database MySQL][MYSQL02]
 
-1. Dopo aver immesso tutte le informazioni riportate sopra, fare clic su **Crea**.
+1. Dopo aver immesso tutte le informazioni riportate sopra, fare clic su **Rivedi e crea**.
+
+1. Verificare la specifica e fare clic su **Crea**.
 
 ### <a name="configure-a-firewall-rule-for-your-server-using-the-azure-portal"></a>Configurare una regola del firewall per il server tramite il portale di Azure
 
 1. Passare al portale di Azure all'indirizzo <https://portal.azure.com/> ed eseguire l'accesso.
 
 1. Fare clic su **Tutte le risorse** e quindi sulla risorsa Database di Azure per MySQL appena creata.
-
-   ![Selezionare il database MySQL][MYSQL03]
 
 1. Fare clic su **Sicurezza delle connessioni**, creare una nuova regola specificando un nome univoco in **Regole del firewall**, immettere l'intervallo di indirizzi IP che dovrà avere accesso al database e quindi fare clic su **Salva**.
 
@@ -77,8 +76,6 @@ I prerequisiti seguenti sono necessari per completare le procedure disponibili i
 1. Passare al portale di Azure all'indirizzo <https://portal.azure.com/> ed eseguire l'accesso.
 
 1. Fare clic su **Tutte le risorse** e quindi sul database di Azure per MySQL appena creato.
-
-   ![Selezionare il database MySQL][MYSQL03]
 
 1. Fare clic su **Stringhe di connessione** e copiare il valore del campo di testo **JDBC**.
 
@@ -93,7 +90,7 @@ I prerequisiti seguenti sono necessari per completare le procedure disponibili i
    ```
    Dove:
 
-   | Parametro | DESCRIZIONE |
+   | Parametro | Descrizione |
    |---|---|
    | `host` | Specifica il nome completo del server MySQL dei passaggi precedenti di questo articolo. |
    | `user` | Specifica l'amministratore MySQL e il nome abbreviato del server dei passaggi precedenti di questo articolo. |
@@ -170,7 +167,7 @@ I prerequisiti seguenti sono necessari per completare le procedure disponibili i
     ```
    Dove:
 
-   | Parametro | DESCRIZIONE |
+   | Parametro | Descrizione |
    |---|---|
    | `spring.datasource.url` | Specifica la stringa JDBC per MySQL dei passaggi precedenti di questo articolo, con l'aggiunta del fuso orario. |
    | `spring.datasource.username` | Specifica il nome dell'amministratore MySQL dei passaggi precedenti di questo articolo, cui viene aggiunto il nome abbreviato del server. |
@@ -250,6 +247,5 @@ Per altre informazioni sull'uso di Azure con Java, vedere [Azure per sviluppator
 
 [MYSQL01]: media/configure-spring-data-jdbc-with-azure-mysql/create-mysql-01.png
 [MYSQL02]: media/configure-spring-data-jdbc-with-azure-mysql/create-mysql-02.png
-[MYSQL03]: media/configure-spring-data-jdbc-with-azure-mysql/create-mysql-03.png
 [MYSQL04]: media/configure-spring-data-jdbc-with-azure-mysql/create-mysql-04.png
 [MYSQL05]: media/configure-spring-data-jdbc-with-azure-mysql/create-mysql-05.png

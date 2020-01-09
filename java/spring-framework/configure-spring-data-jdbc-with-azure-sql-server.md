@@ -7,12 +7,12 @@ ms.date: 12/19/2018
 ms.service: sql-database
 ms.tgt_pltfrm: multiple
 ms.topic: article
-ms.openlocfilehash: 76fe515c6f315a340d5c306edfef31cdf736ceed
-ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
+ms.openlocfilehash: 028e54c54410caf9e81448fd8df8283532591895
+ms.sourcegitcommit: 7722fc50eeab0f97bd0ea9cb3263da87244af406
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74811991"
+ms.lasthandoff: 12/26/2019
+ms.locfileid: "75492180"
 ---
 # <a name="how-to-use-spring-data-jdbc-with-azure-sql-database"></a>Come usare Spring Data JDBC con un database SQL di Azure
 
@@ -20,7 +20,7 @@ ms.locfileid: "74811991"
 
 Questo articolo illustra la creazione di un'applicazione di esempio che usa [Spring Data] per archiviare e recuperare le informazioni in un [database SQL di Azure](https://azure.microsoft.com/services/sql-database/) con [Java Database Connectivity (JDBC)](https://docs.oracle.com/javase/8/docs/technotes/guides/jdbc/).
 
-## <a name="prerequisites"></a>Prerequisiti
+## <a name="prerequisites"></a>Prerequisites
 
 I prerequisiti seguenti sono necessari per completare le procedure disponibili in questo articolo:
 
@@ -30,7 +30,7 @@ I prerequisiti seguenti sono necessari per completare le procedure disponibili i
 * [Curl](https://curl.haxx.se/) o utilità HTTP simile per testare il funzionamento.
 * Un client [Git](https://git-scm.com/downloads).
 
-## <a name="create-an-azure-sql-satabase"></a>Creare un database SQL di Azure
+## <a name="create-an-azure-sql-database"></a>Creare un database SQL di Azure
 
 ### <a name="create-a-sql-database-server-using-the-azure-portal"></a>Creare un server di database SQL con il portale di Azure
 
@@ -42,7 +42,7 @@ I prerequisiti seguenti sono necessari per completare le procedure disponibili i
 
 1. Fare clic su **+Crea una risorsa**, quindi su **Database** e infine su **Database SQL**.
 
-   ![Creazione di un database SQL][SQL01]
+   ![Creare un database SQL][SQL01]
 
 1. Specificare le informazioni seguenti.
 
@@ -53,20 +53,19 @@ I prerequisiti seguenti sono necessari per completare le procedure disponibili i
 
    ![Specificare le proprietà del database SQL][SQL02]
    
-1. Fare clic su **Server** e su **Crea un nuovo server** e quindi specificare le informazioni seguenti.
+1. Fare clic su **Server**, quindi su **Crea nuovo** e infine specificare le informazioni seguenti:
 
    - **Nome server**: scegliere un nome univoco per il server SQL. Tale nome verrà usato per creare un nome di dominio completo, ad esempio *wingtiptoyssql.database.windows.net*.
    - **Account di accesso amministratore server**: specificare il nome dell'amministratore del database.
    - **Password** e **Conferma password**: specificare la password dell'amministratore del database.
    - **Località**: specificare l'area geografica più vicina per il database.
 
-   ![Specificare il server SQL][SQL03]
 
-1. Dopo aver immesso tutte le informazioni riportate sopra, fare clic su **Seleziona**.
+1. Dopo aver immesso tutte le informazioni precedenti, fare clic su **OK**.
 
-1. Per questa esercitazione specificare il **piano tariffario** meno costoso e quindi fare clic su **Crea**.
+1. Fare clic su **Rivedi e crea**.
 
-   ![Creare il database SQL][SQL04]
+1. Rivedere le impostazioni e fare clic su **Crea**.
 
 ### <a name="configure-a-firewall-rule-for-your-sql-server-using-the-azure-portal"></a>Configurare una regola del firewall per SQL Server con il portale di Azure
 
@@ -74,9 +73,7 @@ I prerequisiti seguenti sono necessari per completare le procedure disponibili i
 
 1. Fare clic su **Tutte le risorse** e quindi sul server SQL appena creato.
 
-   ![Selezionare il server SQL][SQL05]
-
-1. Nella sezione **Panoramica** fare clic su **Mostra impostazioni firewall**.
+1. Nel riquadro di spostamento a sinistra fare clic sulla sezione **Panoramica** e quindi su **Imposta firewall server**
 
    ![Mostra impostazioni firewall][SQL06]
 
@@ -89,8 +86,6 @@ I prerequisiti seguenti sono necessari per completare le procedure disponibili i
 1. Passare al portale di Azure all'indirizzo <https://portal.azure.com/> ed eseguire l'accesso.
 
 1. Fare clic su **Tutte le risorse** e quindi sul database SQL appena creato.
-
-   ![Selezionare il database SQL][SQL08]
 
 1. Fare clic su **Stringhe di connessione** e quindi su **JDBC** e copiare il valore del campo di testo JDBC.
 
@@ -115,7 +110,7 @@ I prerequisiti seguenti sono necessari per completare le procedure disponibili i
     ```
    Dove:
 
-   | Parametro | DESCRIZIONE |
+   | Parametro | Descrizione |
    |---|---|
    | `spring.datasource.url` | Specifica una versione modificata della stringa JDBC per SQL dei passaggi precedenti di questo articolo. |
    | `spring.datasource.username` | Specifica il nome dell'amministratore SQL dei passaggi precedenti di questo articolo, cui viene aggiunto il nome abbreviato del server. |

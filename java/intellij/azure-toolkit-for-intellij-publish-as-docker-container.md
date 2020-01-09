@@ -7,14 +7,14 @@ ms.date: 02/01/2018
 ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
-ms.openlocfilehash: 0d57d691853cf16dba21cda9cea670629528c144
-ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
+ms.openlocfilehash: 8b601f2faf1431cf393db3560077e299d2a52f4c
+ms.sourcegitcommit: fc3408b6e153c847dd90026161c4c498aa06e2fc
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74812506"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75191058"
 ---
-# <a name="publish-a-web-app-as-a-docker-container-by-using-the-azure-toolkit-for-intellij"></a>Pubblicare un'app Web come contenitore Docker usando Azure Toolkit for IntelliJ
+# <a name="publish-a-web-app-as-a-docker-container-by-using-the-azure-toolkit-for-intellij-deprecated"></a>Pubblicare un'app Web come contenitore Docker usando Azure Toolkit for IntelliJ (DEPRECATO)
 
 I contenitori Docker sono un metodo molto diffuso per la distribuzione di applicazioni Web. L'uso dei contenitori Docker permette agli sviluppatori di consolidare tutti i file di progetto e le dipendenze in un unico pacchetto per la distribuzione in un server. Azure Toolkit for IntelliJ semplifica questo processo per gli sviluppatori Java aggiungendo la funzionalità *Publish as Docker Container* (Pubblica come contenitore Docker) per la distribuzione in Microsoft Azure. Questo articolo illustra la procedura da seguire per pubblicare le applicazioni in Azure come contenitori Docker.
 
@@ -52,7 +52,7 @@ I contenitori Docker sono un metodo molto diffuso per la distribuzione di applic
 
    a. Nella casella **Docker image name** (Nome immagine Docker) immettere un nome univoco per l'host Docker. La procedura guidata crea automaticamente un nome, ma è possibile modificarlo. 
 
-   b. Nell'area **Hosts** (Host) vengono visualizzati tutti gli host Docker già creati. Eseguire una di queste operazioni: 
+   b. Nell'area **Hosts** (Host) vengono visualizzati tutti gli host Docker già creati. Effettuare una delle operazioni seguenti: 
    * Se è disponibile un host Docker esistente, è possibile distribuirvi l'app Web.
    * Per creare un host Docker, fare clic sul segno più verde ( **+** ).  
      Verrà visualizzata la finestra di dialogo **Create Docker Host** (Crea host Docker). 
@@ -69,7 +69,7 @@ I contenitori Docker sono un metodo molto diffuso per la distribuzione di applic
       
    d. Nella scheda **OS and Size** (Sistema operativo e dimensioni) seguire questa procedura:      
       * **Host OS** (Sistema operativo host): immettere il sistema operativo della macchina virtuale in cui è presente l'host. 
-      * **Dimensione**: immettere le dimensioni della macchina virtuale per l'host.   
+      * **Size**: immettere le dimensioni della macchina virtuale per l'host.   
        
    e. Nella scheda **Resource Group** (Gruppo di risorse) selezionare una delle opzioni seguenti:      
       * **New resource group** (Nuovo gruppo di risorse): creare un gruppo di risorse per l'host.
