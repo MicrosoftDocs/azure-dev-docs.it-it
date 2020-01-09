@@ -7,12 +7,12 @@ ms.date: 12/19/2018
 ms.service: app-service
 ms.topic: article
 ms.custom: seo-java-july2019, seo-java-august2019, seo-java-september2019
-ms.openlocfilehash: c97363fa84421a73d9493b41c66e2d2dc40250cc
-ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
+ms.openlocfilehash: 1cca7784cd341c65f1a6e4fea37e500e7c102018
+ms.sourcegitcommit: a1f7e0f0cfd5c9d0806a7d44acdf2a54d578d8fe
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74811860"
+ms.lasthandoff: 12/20/2019
+ms.locfileid: "75319668"
 ---
 # <a name="deploy-a-spring-boot-jar-file-app-to-azure-app-service-with-maven-and-azure-on-linux"></a>Distribuire un'app Spring Boot basata su file JAR nel servizio app di Azure con Maven e Azure in Linux
 
@@ -20,7 +20,7 @@ In questa guida di avvio rapido si userà il [plug-in Maven per app Web del serv
 
 Se non si ha una sottoscrizione di Azure, creare un [account gratuito](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) prima di iniziare.
 
-## <a name="prerequisites"></a>Prerequisiti
+## <a name="prerequisites"></a>Prerequisites
 
 Per completare i passaggi di questa esercitazione, devono essere installati e configurati gli strumenti seguenti:
 
@@ -161,7 +161,7 @@ In questa sezione si configurerà il progetto Spring Boot `pom.xml` in modo che 
           <appSettings>
              <property>
                    <name>JAVA_OPTS</name>
-                   <value>-D server.port=80</value>
+                   <value>-Dserver.port=80</value>
              </property>
           </appSettings>
           <!-- End of App Settings  -->
@@ -195,7 +195,7 @@ Dopo aver configurato tutte le impostazioni nelle sezioni precedenti di questo a
 
 Maven distribuirà l'app Web in Azure. Se l'app Web o il piano dell'app Web non esiste già, verrà creato. Potrebbero essere necessari alcuni minuti prima che l'app Web sia visibile nell'URL indicato nell'output. Passare all'URL in un Web browser.  Dovrebbe essere visualizzato il messaggio Greetings from Spring Boot!
 
-Dopo che è stata distribuita, l'app Web potrà essere gestita tramite il [portale di Azure].
+Dopo che è stata distribuita, l'app Web potrà essere gestita tramite il [Azure portal].
 
 * L'app Web sarà elencata in **Servizi app**:
 
@@ -238,7 +238,7 @@ Per altre informazioni sulle varie tecnologie illustrate in questo articolo, ved
 
 [Azure Command-Line Interface (CLI)]: /cli/azure/overview
 [Azure for Java Developers]: /azure/java/
-[Portale di Azure]: https://portal.azure.com/
+[Azure portal]: https://portal.azure.com/
 [free Azure account]: https://azure.microsoft.com/pricing/free-trial/
 [Git]: https://github.com/
 [Working with Azure DevOps and Java]: /azure/devops/
