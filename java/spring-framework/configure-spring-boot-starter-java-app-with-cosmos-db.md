@@ -10,12 +10,12 @@ ms.service: cosmos-db
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: data-services
-ms.openlocfilehash: 33e590106a5686eafa89924e22aeef05aa4f6df7
-ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
+ms.openlocfilehash: 887925fd652194c38db99c30e1db505ecfcee918
+ms.sourcegitcommit: 8c84b6db37d0f78d66779fb6489cc8fe063055b3
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74812092"
+ms.lasthandoff: 01/13/2020
+ms.locfileid: "75913985"
 ---
 # <a name="how-to-use-the-spring-boot-starter-with-the-azure-cosmos-db-sql-api"></a>Come usare Spring Boot Starter con l'API SQL di Azure Cosmos DB
 
@@ -23,7 +23,7 @@ Azure Cosmos DB è un servizio di database distribuito a livello globale che con
 
 Questo articolo descrive la creazione di un database di Azure Cosmos DB con il portale di Azure, l'uso di **[Spring Initializr]** per creare un'applicazione Spring Boot personalizzata e quindi l'aggiunta delle funzionalità di [Spring Boot Cosmos DB Starter per Azure] all'applicazione personalizzata per l'archiviazione e il recupero di dati da Azure Cosmos DB usando Spring Data e l'API SQL di Cosmos DB.
 
-## <a name="prerequisites"></a>Prerequisiti
+## <a name="prerequisites"></a>Prerequisites
 
 I prerequisiti seguenti sono necessari per seguire le procedure disponibili in questo articolo:
 
@@ -91,12 +91,6 @@ La semplice applicazione Spring Boot è ora pronta per la modifica.
         <groupId>com.microsoft.azure</groupId>
         <artifactId>azure-cosmosdb-spring-boot-starter</artifactId>
     </dependency>
-
-    <dependency>
-        <groupId>io.projectreactor.netty</groupId>
-        <artifactId>reactor-netty</artifactId>
-        <version>0.8.3.RELEASE</version>
-    </dependency>
     ```
 
 1. Verificare che l'elemento *properties* indichi le versioni necessarie di Java e Azure:
@@ -104,7 +98,7 @@ La semplice applicazione Spring Boot è ora pronta per la modifica.
     ```xml
     <properties>
        <java.version>1.8</java.version>
-       <azure.version>2.2.0.M1</azure.version>
+       <azure.version>2.2.0</azure.version>
     </properties>
     ```
 
@@ -446,7 +440,7 @@ Per altre informazioni sull'uso di Azure con Java, vedere [Azure per sviluppator
 [vantaggi per i sottoscrittori di MSDN]: https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/
 [Spring Boot]: http://projects.spring.io/spring-boot/
 [Spring Initializr]: https://start.spring.io/
-[Spring Framework]: https://spring.io/
+[Spring Framework]: https://spring.io/ (Framework di Spring)
 
 <!-- IMG List -->
 
