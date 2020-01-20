@@ -7,12 +7,12 @@ ms.date: 12/19/2018
 ms.service: sql-database
 ms.tgt_pltfrm: multiple
 ms.topic: article
-ms.openlocfilehash: d5c90992f4b669bf6089d0c0118496dfa33d67f1
-ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
+ms.openlocfilehash: a57fbc5dc8be0848f0b68fd1a45a1478de52b419
+ms.sourcegitcommit: 2ad3f7ce8c87331f8aff759ac2a3dc1b29581866
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74811942"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76022131"
 ---
 # <a name="how-to-use-spring-data-jpa-with-azure-sql-database"></a>Come usare Spring Data JPA con un database SQL di Azure
 
@@ -20,7 +20,7 @@ ms.locfileid: "74811942"
 
 Questo articolo illustra la creazione di un'applicazione di esempio che usa [Spring Data] per archiviare e recuperare le informazioni in un [database SQL di Azure](https://azure.microsoft.com/services/sql-database/) con [Java Persistence API (JPA)](https://docs.oracle.com/javaee/7/tutorial/persistence-intro.htm).
 
-## <a name="prerequisites"></a>Prerequisiti
+## <a name="prerequisites"></a>Prerequisites
 
 I prerequisiti seguenti sono necessari per completare le procedure disponibili in questo articolo:
 
@@ -42,7 +42,7 @@ I prerequisiti seguenti sono necessari per completare le procedure disponibili i
 
 1. Fare clic su **+Crea una risorsa**, quindi su **Database** e infine su **Database SQL**.
 
-   ![Creazione di un database SQL][SQL01]
+   ![Creare un database SQL][SQL01]
 
 1. Specificare le informazioni seguenti.
 
@@ -76,7 +76,7 @@ Dopo aver creato il server e il database SQL, è possibile configurare le impost
 
    ![Mostra impostazioni firewall][SQL06]
 
-1. Nella sezione **Firewall e reti virtuali** creare una nuova regola specificando un nome univoco, immettere l'intervallo di indirizzi IP che dovrà avere accesso al database e quindi fare clic su **Salva**.
+1. Nella sezione **Firewall e reti virtuali** creare una nuova regola specificando un nome univoco, immettere l'intervallo di indirizzi IP che dovrà avere accesso al database e quindi fare clic su **Salva**. Per questo esercizio l'indirizzo IP è quello del computer di sviluppo, che corrisponde al client.  È possibile usarlo sia per **Indirizzo IP iniziale** che per **Indirizzo IP finale**.
 
    ![Configurare le impostazioni del firewall][SQL07]
 
@@ -114,7 +114,7 @@ Dopo aver creato il server e il database SQL, è possibile configurare le impost
     ```
    Dove:
 
-   | Parametro | DESCRIZIONE |
+   | Parametro | Descrizione |
    |---|---|
    | `spring.datasource.url` | Specifica una versione modificata della stringa JDBC per SQL dei passaggi precedenti di questo articolo. |
    | `spring.datasource.username` | Specifica il nome dell'amministratore SQL dei passaggi precedenti di questo articolo, cui viene aggiunto il nome abbreviato del server. |

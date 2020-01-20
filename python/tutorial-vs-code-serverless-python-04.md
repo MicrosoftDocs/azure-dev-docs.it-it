@@ -4,12 +4,12 @@ description: "Passaggio 4 dell'esercitazione: esecuzione del debugger di VS Code
 ms.topic: conceptual
 ms.date: 09/02/2019
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 7dafd432289ad96664ca7c8a319b3368368adcbd
-ms.sourcegitcommit: 68a4044b9fa3291c9e7e2f68ae0049328f9c01bb
+ms.openlocfilehash: ffd5d433166c44edd8c021fd29cb7e43395df7ff
+ms.sourcegitcommit: ac68fb174d606c7af2bfa79fe32b8ca7b73c86a1
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74992446"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75946691"
 ---
 # <a name="tutorial-debug-the-azure-functions-python-code-locally"></a>Esercitazione: Eseguire il debug in locale del codice Python in Funzioni di Azure
 
@@ -47,6 +47,10 @@ ms.locfileid: "74992446"
     curl --header "Content-Type: application/json" --request POST \
         --data {"""name""":"""Visual Studio Code"""} http://localhost:7071/api/HttpExample
     ```
+
+    In PowerShell è anche possibile usare il [cmdlet Invoke-WebRequest](/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-6).
+
+    ---
 
     In alternativa, creare un file come *data.json* che contenga `{"name":"Visual Studio Code"}` e usare il comando `curl --header "Content-Type: application/json" --request POST --data @data.json http://localhost:7071/api/HttpExample`.
 

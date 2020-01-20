@@ -6,12 +6,12 @@ ms.date: 01/07/2020
 ms.service: mysql
 ms.tgt_pltfrm: multiple
 ms.topic: conceptual
-ms.openlocfilehash: a36484cb6858422f4d9b0e6a5c72a793f3686514
-ms.sourcegitcommit: 3b8ccf447921a55f16c25795914d9eed64c2b9cf
+ms.openlocfilehash: 7a6550be633b29d97d55b8db2f50b2c57d0ba30d
+ms.sourcegitcommit: 2ad3f7ce8c87331f8aff759ac2a3dc1b29581866
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75755627"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76022080"
 ---
 # <a name="how-to-use-spring-data-jdbc-with-azure-mysql"></a>Come usare Spring Data JDBC con Azure MySQL
 
@@ -67,7 +67,7 @@ I prerequisiti seguenti sono necessari per completare le procedure disponibili i
 
 1. Fare clic su **Tutte le risorse** e quindi sulla risorsa Database di Azure per MySQL appena creata.
 
-1. Fare clic su **Sicurezza delle connessioni**, creare una nuova regola specificando un nome univoco in **Regole del firewall**, immettere l'intervallo di indirizzi IP che dovrà avere accesso al database e quindi fare clic su **Salva**.
+1. Fare clic su **Sicurezza delle connessioni**, creare una nuova regola specificando un nome univoco in **Regole del firewall**, immettere l'intervallo di indirizzi IP che dovrà avere accesso al database e quindi fare clic su **Salva**. Per questo esercizio l'indirizzo IP è quello del computer di sviluppo, che corrisponde al client.  È possibile usarlo sia per **Indirizzo IP iniziale** che per **Indirizzo IP finale**.
 
    ![Configurare la sicurezza delle connessioni][MYSQL04]
 
@@ -113,6 +113,7 @@ I prerequisiti seguenti sono necessari per completare le procedure disponibili i
    
    mysql>
    ```
+   > Nota: se viene visualizzato un errore in cui si informa che il server non riconosce questo indirizzo IP, nell'errore sarà indicato l'indirizzo IP usato dal client.  Tornare indietro e assegnarlo come descritto in precedenza: *Configurare una regola del firewall per il server tramite il portale di Azure*.
 
 1. Creare un database denominato *mysqldb* immettendo un comando `mysql` come quello riportato nell'esempio seguente:
 
@@ -192,9 +193,9 @@ I prerequisiti seguenti sono necessari per completare le procedure disponibili i
 1. Creare nuovi record usando `curl` al prompt dei comandi come negli esempi seguenti:
 
    ```shell
-   curl -s -d '{"name":"dog","species":"canine"}' -H "Content-Type: application/json" -X POST http://localhost:8080/pets
+   curl -s -d "{\"name\":\"dog\",\"species\":\"canine\"}" -H "Content-Type: application/json" -X POST http://localhost:8080/pets
 
-   curl -s -d '{"name":"cat","species":"feline"}' -H "Content-Type: application/json" -X POST http://localhost:8080/pets
+   curl -s -d "{\"name\":\"cat\",\"species\":\"feline\"}" -H "Content-Type: application/json" -X POST http://localhost:8080/pets
    ```
 
    L'applicazione dovrebbe restituire valori come i seguenti:
