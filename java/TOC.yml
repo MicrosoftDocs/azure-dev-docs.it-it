@@ -1,9 +1,9 @@
 - name: Azure per sviluppatori Java
   href: index.yml
   items:
-    - name: Attività iniziali
+    - name: Introduzione
       href: java-sdk-azure-get-started.md
-    - name: Guide introduttive
+    - name: Avvi rapidi
       items:
         - name: Distribuire app Web
           items:
@@ -152,8 +152,16 @@
       items:
         - name: Aggiungere un certificato radice
           href: java-sdk-add-certificate-ca-store.md
-        - name: Autentica
+        - name: Authenticate
           href: java-sdk-azure-authenticate.md
+        - name: Eseguire la migrazione di Java in Azure
+          items:
+            - name: Panoramica
+              href: migration-overview.md
+            - name: Da Tomcat a Servizio app di Azure
+              href: migrate-tomcat-to-tomcat-app-service.md
+            - name: Da Tomcat ai contenitori nel servizio Azure Container
+              href: migrate-tomcat-to-containers-on-azure-kubernetes-service.md
     - name: Esempi di codice
       items:
         - name: Service Fabric
@@ -170,5 +178,5 @@
           href: java-sdk-azure-containers-samples.md
         - name: Tutti gli esempi Java
           href: 'https://azure.microsoft.com/resources/samples/?platform=java'
-    - name: riferimento
+    - name: Informazioni di riferimento
       href: /java/api/?view=azure-java
