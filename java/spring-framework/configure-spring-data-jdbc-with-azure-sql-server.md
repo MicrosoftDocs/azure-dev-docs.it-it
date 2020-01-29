@@ -7,12 +7,12 @@ ms.date: 12/19/2018
 ms.service: sql-database
 ms.tgt_pltfrm: multiple
 ms.topic: article
-ms.openlocfilehash: d5e7ff3a31f8fb66b4231770c86094244752b439
-ms.sourcegitcommit: 2ad3f7ce8c87331f8aff759ac2a3dc1b29581866
+ms.openlocfilehash: b75db0f3cff02b5f7ead90265a170fc63405dbb6
+ms.sourcegitcommit: 3585b1b5148e0f8eb950037345bafe6a4f6be854
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76022122"
+ms.lasthandoff: 01/21/2020
+ms.locfileid: "76283334"
 ---
 # <a name="how-to-use-spring-data-jdbc-with-azure-sql-database"></a>Come usare Spring Data JDBC con un database SQL di Azure
 
@@ -46,10 +46,10 @@ I prerequisiti seguenti sono necessari per completare le procedure disponibili i
 
 1. Specificare le informazioni seguenti.
 
-   - **Nome database**: scegliere un nome univoco per il database SQL, che verrà creato nel server SQL specificato in seguito.
-   - **Sottoscrizione** specificare la sottoscrizione di Azure da usare.
-   - **Gruppo di risorse**: specificare se creare un nuovo gruppo di risorse o sceglierne uno esistente.
-   - **Selezionare l'origine**: per questa esercitazione selezionare `Blank database` per creare un nuovo database.
+   * **Nome database**: scegliere un nome univoco per il database SQL, che verrà creato nel server SQL specificato in seguito.
+   * **Sottoscrizione** specificare la sottoscrizione di Azure da usare.
+   * **Gruppo di risorse**: specificare se creare un nuovo gruppo di risorse o sceglierne uno esistente.
+   * **Selezionare l'origine**: per questa esercitazione selezionare `Blank database` per creare un nuovo database.
 
    ![Specificare le proprietà del database SQL][SQL02]
    
@@ -91,6 +91,19 @@ I prerequisiti seguenti sono necessari per completare le procedure disponibili i
 
    ![Recuperare la stringa di connessione JDBC][SQL09]
 
+### <a name="create-test-table-in-database"></a>Creare una tabella di test in un database
+Per eseguire un'applicazione client in questo database, usare il comando SQL seguente per creare una nuova tabella.
+
+``` SQL
+IF NOT EXISTS (SELECT 1 FROM sysobjects WHERE NAME='pet' and XTYPE='U')
+  CREATE TABLE pet (
+    id      INT           IDENTITY  PRIMARY KEY,
+    name    VARCHAR(255),
+    species VARCHAR(255)
+  );
+
+```
+
 ## <a name="configure-the-sample-application"></a>Configurare l'applicazione di esempio
 
 1. Aprire una shell dei comandi e clonare il progetto di esempio con un comando git come quello riportato nell'esempio seguente:
@@ -99,11 +112,21 @@ I prerequisiti seguenti sono necessari per completare le procedure disponibili i
    git clone https://github.com/Azure-Samples/spring-data-jdbc-on-azure.git
    ```
 
+1. Modificare il file POM in modo da includere la dipendenza seguente:
+
+```
+ <dependency>
+    <groupId>com.microsoft.sqlserver</groupId>
+    <artifactId>mssql-jdbc</artifactId>
+    <version>7.4.1.jre11</version>
+ </dependency>
+```
 1. Individuare il file *application.properties* nella directory *resources* del progetto di esempio oppure creare il file se non esiste già.
 
 1. Aprire il file *application.properties* in un editor di testo e aggiungere o configurare le righe seguenti nel file, sostituendo i valori di esempio con i valori appropriati dei passaggi precedenti:
 
    ```yaml
+   spring.datasource.driver-class-name=com.microsoft.sqlserver.jdbc.SQLServerDriver
    spring.datasource.url=jdbc:sqlserver://wingtiptoyssql.database.windows.net:1433;database=wingtiptoys;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;
    spring.datasource.username=wingtiptoysuser@wingtiptoyssql
    spring.datasource.password=********
@@ -136,8 +159,12 @@ I prerequisiti seguenti sono necessari per completare le procedure disponibili i
 
    ```shell
    curl -s -d '{"name":"dog","species":"canine"}' -H "Content-Type: application/json" -X POST http://localhost:8080/pets
+   ```
 
-   curl -s -d '{"name":"cat","species":"feline"}' -H "Content-Type: application/json" -X POST http://localhost:8080/pets
+   oppure:
+
+``` shell
+   curl -s -d "{\"name\":\"cat\",\"species\":\"feline\"}" -H "Content-Type: application/json" -X POST http://localhost:8080/pets
    ```
 
    L'applicazione dovrebbe restituire valori come i seguenti:

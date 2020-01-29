@@ -4,28 +4,28 @@ description: "Passaggio 5 dell'esercitazione: pulizia delle risorse di Azure per
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 0c6688dcfb1d3c8adbf4ba2e0eb2603ce85de43c
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.openlocfilehash: bbafb323c49b9dd6879bf69924d8e8bcf62093a3
+ms.sourcegitcommit: a8073315f751631ab983618fa9f812eb95d8b2dc
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74466064"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76125240"
 ---
 # <a name="tutorial-clean-up-azure-resources"></a>Esercitazione: Pulire le risorse di Azure
 
 [Passaggio precedente: Eseguire lo streaming dei log](tutorial-deploy-containers-04.md)
 
-Questo articolo illustra come rimuovere le risorse di Azure create durante la distribuzione di un'app nel servizio app di Azure con Visual Studio Code.
+Le risorse di Azure create in questa esercitazione possono comportare addebiti ricorrenti. Per evitare tali costi, eliminare il gruppo che contiene tutte queste risorse.
 
-Le diverse risorse di Azure create in questa esercitazione possono comportare addebiti ricorrenti. Per pulirle, è opportuno visitare il [portale di Azure](https://portal.azure.com), selezionare **Gruppi di risorse** nel riquadro di spostamento sinistro, selezionare il gruppo di risorse creato nella procedura di questa esercitazione e quindi usare il comando **Elimina gruppo di risorse**.
+[!INCLUDE [delete-resource-group](includes/delete-resource-group.md)]
 
 ## <a name="next-steps"></a>Passaggi successivi
 
-Per altre informazioni sulle estensioni di Docker e del Servizio app, visitare i rispettivi repository in GitHub: [vscode-docker](https://github.com/Microsoft/vscode-docker) e [vscode-azureappservice](https://github.com/Microsoft/vscode-azureappservice). Le segnalazioni di problemi e i contributi sono inoltre molto apprezzati.
+Per altre informazioni sulle estensioni di Docker e del Servizio app, visitare i rispettivi repository in GitHub: [vscode-docker](https://github.com/Microsoft/vscode-docker) e [vscode-azureappservice](https://github.com/Microsoft/vscode-azureappservice). Le segnalazioni di problemi e i contributi sono molto apprezzati.
 
 Per altre informazioni sui servizi di Azure che è possibile usare da Python, tra cui l'archiviazione di dati con servizi di intelligenza artificiale e Machine Learning, visitare la pagina dedicata ad [Azure per sviluppatori Python](https://docs.microsoft.com/python/azure/?view=azure-python).
 
-Sono inoltre disponibili altre estensioni di Azure per VS Code che possono risultare utili. È sufficiente cercare "Azure" nella finestra di esplorazione delle estensioni:
+Sono inoltre disponibili altre estensioni di Azure per VS Code che possono risultare utili. È sufficiente cercare "Azure" nell'area delle estensioni:
 
 ![Estensioni di Azure per VS Code](media/deploy-containers/azure-extensions-for-visual-studio-code.png)
 
