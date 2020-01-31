@@ -6,12 +6,12 @@ ms.author: karler
 ms.date: 11/12/2019
 ms.service: app-service
 ms.topic: article
-ms.openlocfilehash: aa26952b320392beb553f327920fe5bd905a0b85
-ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
+ms.openlocfilehash: 47f318708fbe786b2fd0b58dc7d68cdd5c975856
+ms.sourcegitcommit: 4cf22356d6d4817421b551bd53fcba76bdb44cc1
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74811821"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76872136"
 ---
 # <a name="deploy-a-spring-app-to-app-service-with-mysql"></a>Distribuire un'app Spring nel servizio app con MySQL
 
@@ -19,7 +19,7 @@ Questa esercitazione illustra il processo per compilare, configurare, distribuir
 
 L'esercitazione si basa sulla popolare app di esempio Spring PetClinic. In questo argomento si testerà in locale e quindi si distribuirà nel [servizio app di Azure](/azure/app-service/containers) una versione HSQLDB dell'app. Successivamente si configurerà e si distribuirà una versione che usa [Database di Azure per MySQL](/azure/mysql). Infine verrà illustrato come accedere ai log dell'app e aumentare il numero di istanze incrementando il numero di ruoli di lavoro che eseguono l'app.
 
-## <a name="prerequisites"></a>Prerequisiti
+## <a name="prerequisites"></a>Prerequisites
 
 * [Interfaccia della riga di comando di Azure](https://docs.microsoft.com/cli/azure/overview)
 * [Java 8](http://java.oracle.com/)
@@ -121,7 +121,7 @@ Aggiornare quindi il file *pom.xml* per configurare Maven per una distribuzione 
 <plugin>
     <groupId>com.microsoft.azure</groupId>
     <artifactId>azure-webapp-maven-plugin</artifactId>
-    <version>1.8.0</version>
+    <version>1.9.0</version>
     <configuration>
         <schemaVersion>v2</schemaVersion>
         <resourceGroup>${RESOURCEGROUP_NAME}</resourceGroup>

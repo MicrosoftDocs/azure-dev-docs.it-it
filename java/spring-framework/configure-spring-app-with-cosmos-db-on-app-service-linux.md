@@ -6,12 +6,12 @@ ms.reviewer: joshuapa
 ms.date: 4/24/2019
 ms.service: cosmos-db
 ms.topic: article
-ms.openlocfilehash: ab49d2c05477d6f2674cd410cf3b9fbeda357bf8
-ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
+ms.openlocfilehash: 53bc7d9ebd03fb122d58dd52145876e698dc751f
+ms.sourcegitcommit: 4cf22356d6d4817421b551bd53fcba76bdb44cc1
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74812174"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76872166"
 ---
 # <a name="how-to-use-spring-and-cosmos-db-with-app-service-on-linux"></a>Come usare Spring e Cosmos DB con Servizio app in Linux
 
@@ -23,11 +23,11 @@ Verrà dimostrato l'utilizzo dei componenti seguenti:
 - [Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/sql-api-introduction)
 - [Servizio app in Linux](https://docs.microsoft.com/azure/app-service/containers/app-service-linux-intro)
 
-## <a name="prerequisites"></a>Prerequisiti
+## <a name="prerequisites"></a>Prerequisites
 
 I prerequisiti seguenti sono necessari per seguire le procedure disponibili in questo articolo:
 
-- Per distribuire un'app Web Java nel cloud, è necessaria una sottoscrizione di Azure. Se non si ha già una sottoscrizione di Azure, è possibile attivare i [vantaggi per i sottoscrittori di MSDN](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/) oppure iscriversi per ottenere un [account Azure gratuito]((https://azure.microsoft.com/pricing/free-trial/)).
+- Per distribuire un'app Web Java nel cloud, è necessaria una sottoscrizione di Azure. Se non si ha già una sottoscrizione di Azure, è possibile attivare i [vantaggi per i sottoscrittori di MSDN](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/) oppure iscriversi per ottenere un [account Azure gratuito](https://azure.microsoft.com/pricing/free-trial/).
 - [Interfaccia della riga di comando di Azure 2.0](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest)
 - [Java 8 JDK](https://docs.microsoft.com/azure/java/jdk/java-jdk-install)
 - [Maven 3](http://maven.apache.org/)
@@ -331,7 +331,7 @@ Per altre informazioni sull'uso di Azure con Java, vedere [Azure per sviluppator
 [MSDN subscriber benefits]: https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/
 [Spring Boot]: http://projects.spring.io/spring-boot/
 [Spring Initializr]: https://start.spring.io/
-[Spring Framework]: https://spring.io/
+[Spring Framework]: https://spring.io/ (Framework di Spring)
 
 <!-- IMG List -->
 

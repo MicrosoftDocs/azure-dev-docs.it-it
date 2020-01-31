@@ -1,18 +1,14 @@
 ---
 title: Installare Azure SDK per Go
 description: Come installare, eseguire il vendoring e configurare Azure SDK per Go.
-author: sptramer
-ms.author: sttramer
-manager: carmonm
 ms.date: 03/14/2018
 ms.topic: conceptual
-ms.devlang: go
-ms.openlocfilehash: e7a4449ed29239e7cb08902cee299d74102a72bf
-ms.sourcegitcommit: 2efdb9d8a8f8a2c1914bd545a8c22ae6fe0f463b
+ms.openlocfilehash: daf725a59042038e682c852a50080972d33a497e
+ms.sourcegitcommit: 4cf22356d6d4817421b551bd53fcba76bdb44cc1
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68291939"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76871884"
 ---
 # <a name="install-the-azure-sdk-for-go"></a>Installare Azure SDK per Go
 
@@ -47,7 +43,7 @@ version = "14.0.0"
 Per usare i servizi di Azure dal codice di Go, importare eventuali servizi con cui si interagisce e i moduli `autorest` necessari.
 Si ottiene un elenco completo dei moduli disponibili da GoDoc per i [servizi disponibili](https://godoc.org/github.com/Azure/azure-sdk-for-go) e per i [pacchetti AutoRest](https://godoc.org/github.com/Azure/go-autorest). I pacchetti più comuni necessari da `go-autorest` sono:
 
-| Pacchetto | DESCRIZIONE |
+| Pacchetto | Descrizione |
 |---------|-------------|
 | [github.com/Azure/go-autorest/autorest][autorest] | Oggetti per la gestione dell'autenticazione del client del servizio |
 | [github.com/Azure/go-autorest/autorest/azure][autorest/azure] | Costanti per le interazioni con i servizi di Azure |

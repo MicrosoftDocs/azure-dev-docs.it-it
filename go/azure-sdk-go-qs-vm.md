@@ -1,20 +1,16 @@
 ---
 title: Distribuire una macchina virtuale di Azure da Go
 description: Distribuire una macchina virtuale tramite Azure SDK per Go.
-author: sptramer
-ms.author: sttramer
-manager: carmonm
 ms.date: 09/05/2018
 ms.topic: quickstart
-ms.devlang: go
-ms.openlocfilehash: 01f6e40e80a4c5f29a6179869a2fd95f6cea0623
-ms.sourcegitcommit: 2efdb9d8a8f8a2c1914bd545a8c22ae6fe0f463b
+ms.openlocfilehash: b777d638d0adb1b67351a7ccffb545e05309a53e
+ms.sourcegitcommit: 4cf22356d6d4817421b551bd53fcba76bdb44cc1
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68291956"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76872086"
 ---
-# <a name="quickstart-deploy-an-azure-virtual-machine-from-a-template-with-the-azure-sdk-for-go"></a>Guida introduttiva: Distribuire una macchina virtuale da un modello con Azure SDK per Go
+# <a name="quickstart-deploy-an-azure-virtual-machine-from-a-template-with-the-azure-sdk-for-go"></a>Avvio rapido: Distribuire una macchina virtuale da un modello con Azure SDK per Go
 
 Questa guida introduttiva illustra come distribuire risorse da un modello di Azure Resource Manager usando Azure SDK per Go. I modelli sono snapshot di tutte le risorse incluse in un [gruppo di risorse di Azure](/azure/azure-resource-manager/resource-group-overview). Sarà possibile acquisire familiarità con la funzionalità e le convenzioni dell'SDK.
 

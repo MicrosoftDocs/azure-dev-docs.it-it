@@ -5,12 +5,12 @@ author: yevster
 ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 1/20/2020
-ms.openlocfilehash: fbf1faabbefcb987cf398a45005eb480ec16b27d
-ms.sourcegitcommit: 3585b1b5148e0f8eb950037345bafe6a4f6be854
+ms.openlocfilehash: d32c38d763901152135b965484362031dfac7f0a
+ms.sourcegitcommit: 367780fe48d977c82cb84208c128b0bf694b1029
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/21/2020
-ms.locfileid: "76288590"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76825795"
 ---
 # <a name="migrate-java-applications-to-azure"></a>Eseguire la migrazione di applicazioni Java ad Azure
 
@@ -129,9 +129,9 @@ Usare le righe seguenti per trovare il tipo di applicazione Java e le colonne pe
 
 |Destinazione&nbsp;→<br><br>Tipo di&nbsp;applicazione&nbsp;↓|App<br>Service<br>Java SE|App<br>Service<br>Tomcat|App<br>Service<br>WildFly|Azure<br>Spring<br>Cloud|Servizio Azure Kubernetes|Macchine virtuali|
 |---|---|---|---|---|---|---|
-| Spring Boot/<br>Applicazioni JAR | pianificato | pianificato        | pianificato | pianificato | pianificato        | pianificato |
-| Spring Cloud/<br>microservizi   | N/D     | N/D            | N/D     | pianificato | pianificato        | pianificato |
-| Applicazioni Web<br>su Tomcat     | N/D     | [disponibile][2] | N/D     | N/D     | [disponibile][3] | pianificato |
+| Spring Boot/<br>Applicazioni JAR | [disponibile][5] | pianificato        | pianificato | pianificato | pianificato        | pianificato |
+| Spring Cloud/<br>microservizi   | N/D            | N/D            | N/D     | pianificato | pianificato        | pianificato |
+| Applicazioni Web<br>su Tomcat     | N/D            | [disponibile][2] | N/D     | N/D     | [disponibile][3] | pianificato |
 
 **Applicazioni Java EE**
 
@@ -139,12 +139,14 @@ Usare le righe seguenti per trovare il tipo di applicazione Java EE in esecuzion
 
 |Destinazione&nbsp;→<br><br>Server app&nbsp;↓|App<br>Service<br>Java SE|App<br>Service<br>Tomcat|App<br>Service<br>WildFly|Azure<br>Spring<br>Cloud|Servizio Azure Kubernetes|Macchine virtuali|
 |---|---|---|---|---|---|---|
-| WildFly/<br>JBoss AS | N/D | N/D | pianificato | N/D | pianificato | pianificato |
-| WebLogic              | N/D | N/D | pianificato | N/D | pianificato | pianificato |
-| WebSphere             | N/D | N/D | pianificato | N/D | pianificato | pianificato |
-| JBoss EAP             | N/D | N/D | pianificato | N/D | N/D     | pianificato |
+| WildFly/<br>JBoss AS | N/D | N/D | pianificato | N/D | pianificato | pianificato        |
+| WebLogic              | N/D | N/D | pianificato | N/D | pianificato | [disponibile][4] |
+| WebSphere             | N/D | N/D | pianificato | N/D | pianificato | pianificato        |
+| JBoss EAP             | N/D | N/D | pianificato | N/D | N/D     | pianificato        |
 
 <!-- reference links, for use with tables -->
 [1]: media/migration-overview/logo_azure.svg
 [2]: migrate-tomcat-to-tomcat-app-service.md
 [3]: migrate-tomcat-to-containers-on-azure-kubernetes-service.md
+[4]: migrate-weblogic-to-virtual-machines.md
+[5]: migrate-java-se-to-java-se-app-service.md

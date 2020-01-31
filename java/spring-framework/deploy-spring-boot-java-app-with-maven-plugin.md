@@ -7,12 +7,12 @@ ms.date: 12/19/2018
 ms.service: app-service
 ms.topic: article
 ms.custom: seo-java-july2019, seo-java-august2019, seo-java-september2019
-ms.openlocfilehash: 1cca7784cd341c65f1a6e4fea37e500e7c102018
-ms.sourcegitcommit: a1f7e0f0cfd5c9d0806a7d44acdf2a54d578d8fe
+ms.openlocfilehash: cb6a5de6f48092fdb6b1756363c8be7300d72a56
+ms.sourcegitcommit: 4cf22356d6d4817421b551bd53fcba76bdb44cc1
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/20/2019
-ms.locfileid: "75319668"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76872156"
 ---
 # <a name="deploy-a-spring-boot-jar-file-app-to-azure-app-service-with-maven-and-azure-on-linux"></a>Distribuire un'app Spring Boot basata su file JAR nel servizio app di Azure con Maven e Azure in Linux
 
@@ -95,7 +95,7 @@ In questa sezione si configurerà il progetto Spring Boot `pom.xml` in modo che 
    <plugin>
     <groupId>com.microsoft.azure</groupId>
     <artifactId>azure-webapp-maven-plugin</artifactId>
-    <version>1.8.0</version>
+    <version>1.9.0</version>
    </plugin>
    ```
 
@@ -117,7 +117,7 @@ In questa sezione si configurerà il progetto Spring Boot `pom.xml` in modo che 
    [INFO] Building gs-spring-boot 0.1.0
    [INFO] --------------------------------[ jar ]---------------------------------
    [INFO]
-   [INFO] --- azure-webapp-maven-plugin:1.6.0:config (default-cli) @ gs-spring-boot ---
+   [INFO] --- azure-webapp-maven-plugin:1.9.0:config (default-cli) @ gs-spring-boot ---
    [WARNING] The plugin may not work if you change the os of an existing webapp.
    Define value for OS(Default: Linux):
    1. linux [*]
@@ -145,7 +145,7 @@ In questa sezione si configurerà il progetto Spring Boot `pom.xml` in modo che 
    <plugin>
        <groupId>com.microsoft.azure</groupId>
        <artifactId>azure-webapp-maven-plugin</artifactId>
-       <version>1.8.0</version>
+       <version>1.9.0</version>
        <configuration>
           <schemaVersion>V2</schemaVersion>
           <resourceGroup>gs-spring-boot-1559091271202-rg</resourceGroup>

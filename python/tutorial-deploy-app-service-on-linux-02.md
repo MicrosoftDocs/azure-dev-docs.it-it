@@ -4,12 +4,12 @@ description: Passaggio 2 dell'esercitazione, configurare l'applicazione
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.custom: seo-python-october2019
-ms.openlocfilehash: e504e78ae660719c60827db46d4801f5f5c4b3ce
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.openlocfilehash: d77da775a112185f7ccb81805272c5c70a2aecb3
+ms.sourcegitcommit: 367780fe48d977c82cb84208c128b0bf694b1029
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74466217"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76825775"
 ---
 # <a name="tutorial-prepare-your-app-for-deployment-to-azure-app-service"></a>Esercitazione: Preparare l'app per la distribuzione nel Servizio app di Azure
 
@@ -47,12 +47,16 @@ Questa sezione descrive l'app Flask minima usata in questa procedura dettagliata
 1. Per eseguire questa app, usare i comandi seguenti (a seconda del sistema operativo). La variabile di ambiente FLASK_APP indica a Flask dove trovare l'oggetto app.
 
     ```ps
-    set FLASK_APP=hello:myapp
-    flask run
+    $env:FLASK_APP = "hello:myapp"
     ```
 
     ```bash
     export FLASK_APP=hello:myapp
+    flask run
+    ```
+
+    ```cmd
+    set FLASK_APP=hello:myapp
     flask run
     ```
 

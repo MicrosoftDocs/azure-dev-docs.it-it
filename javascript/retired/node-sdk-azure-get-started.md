@@ -1,26 +1,20 @@
 ---
 title: Introduzione ai moduli di Azure per Node.js
 description: Introduzione alla gestione dell'autenticazione e delle risorse con i moduli di Azure per Node.js
-author: karlerickson
-manager: douge
-ms.author: karler
 ms.date: 06/17/2017
 ms.topic: conceptual
-ms.prod: azure
-ms.devlang: nodejs
-ms.service: azure-nodejs
-ms.openlocfilehash: 3ba92eae7d6d287cec668dbd1bfcac8e52b04017
-ms.sourcegitcommit: f799dd4590dc5a5e646d7d50c9604a9975dadeb1
+ms.openlocfilehash: 66aface16b4281c541f0f40a3f0f6cbc12be8f89
+ms.sourcegitcommit: 4cf22356d6d4817421b551bd53fcba76bdb44cc1
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68690833"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76872126"
 ---
 # <a name="get-started-with-the-azure-modules-for-nodejs"></a>Introduzione ai moduli di Azure per Node.js
 
 Questa guida illustra l'installazione dei moduli di Azure per Node.js, l'autenticazione in Azure con un'entità servizio e l'esecuzione del codice di esempio che crea le risorse nella sottoscrizione di Azure e si connette ai servizi cloud di Azure.
 
-## <a name="prerequisites"></a>Prerequisiti
+## <a name="prerequisites"></a>Prerequisites
 
 - Un account Azure. Se non è disponibile, [ottenere una versione di valutazione gratuita](https://azure.microsoft.com/free/)
 - [Node.js](https://nodejs.org)
@@ -262,7 +256,7 @@ az group delete --name myResourceGroup
 
 Esplorare altro [codice Node.js di esempio](https://azure.microsoft.com/resources/samples/?platform=nodejs) da usare nelle app.
 
-## <a name="reference"></a>riferimento 
+## <a name="reference"></a>Informazioni di riferimento 
 
 Le [informazioni di riferimento](/javascript/api/overview/azure/) sono disponibili per tutti i pacchetti.
 
