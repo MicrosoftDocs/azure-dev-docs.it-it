@@ -5,24 +5,18 @@ author: yevster
 ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 1/20/2020
-ms.openlocfilehash: da516609aaf976db929664bf0402a48f378034d3
-ms.sourcegitcommit: 3585b1b5148e0f8eb950037345bafe6a4f6be854
+ms.openlocfilehash: dbcf1f0989208f960f31fec13a65477d87b1a042
+ms.sourcegitcommit: 367780fe48d977c82cb84208c128b0bf694b1029
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/21/2020
-ms.locfileid: "76288610"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76825821"
 ---
 # <a name="migrate-tomcat-applications-to-containers-on-azure-kubernetes-service"></a>Eseguire la migrazione di applicazioni Tomcat ai contenitori nel servizio Azure Kubernetes
 
 Questa guida descrive gli aspetti da considerare per la migrazione di un'applicazione Tomcat esistente da eseguire nel servizio Azure Kubernetes.
 
 ## <a name="pre-migration-steps"></a>Passaggi di pre-migrazione
-
-* [Inventario delle risorse esterne](#inventory-external-resources)
-* [Inventario dei segreti](#inventory-secrets)
-* [Inventario dell'utilizzo di persistenza](#inventory-persistence-usage)
-* [Casi speciali](#special-cases)
-* [Test sul posto](#in-place-testing)
 
 [!INCLUDE [inventory-external-resources](includes/migration/inventory-external-resources.md)]
 
@@ -75,7 +69,7 @@ Se viene usato [AccessLogValve](https://tomcat.apache.org/tomcat-9.0-doc/api/org
 
 Prima di creare immagini del contenitore, eseguire la migrazione dell'applicazione all'istanza di JDK e Tomcat che si intende usare nel servizio Azure Kubernetes. Testare accuratamente l'applicazione per garantirne la compatibilità e le prestazioni.
 
-### <a name="parametrize-the-configuration"></a>Parametrizzare la configurazione
+### <a name="parameterize-the-configuration"></a>Parametrizzare la configurazione
 
 Nella fase di pre-migrazione è probabile che nei file *server.xml* e *context.xml* siano stati identificati segreti e dipendenze esterne, ad esempio origini dati. Per ogni elemento di questo tipo identificato, sostituire l'eventuale nome utente, password, stringa di connessione o URL con una variabile di ambiente.
 
@@ -128,7 +122,7 @@ Clonare il [repository GitHub indicato nell'argomento di avvio rapido su Tomcat 
 
 #### <a name="open-ports-for-clustering-if-needed"></a>Se necessario, aprire le porte per il clustering
 
-Se si intende usare il [clustering Tomcat](https://tomcat.apache.org/tomcat-9.0-doc/cluster-howto.html) nel servizio Azure Kubernetes, verificare che gli intervalli di porte necessari siano esposti nel Dockerfile. Per specificare l'indirizzo IP del server in `server.xml`, assicurarsi di usare un valore di una variabile inizializzata all'avvio del contenitore nell'indirizzo IP del pod.
+Se si intende usare il [clustering Tomcat](https://tomcat.apache.org/tomcat-9.0-doc/cluster-howto.html) nel servizio Azure Kubernetes, verificare che gli intervalli di porte necessari siano esposti nel Dockerfile. Per specificare l'indirizzo IP del server in *server.xml*, assicurarsi di usare un valore di una variabile inizializzata all'avvio del contenitore nell'indirizzo IP del pod.
 
 In alternativa, lo stato della sessione può essere [reso persistente in una posizione alternativa](#identify-session-persistence-mechanism) ai fini della disponibilità tra repliche.
 
@@ -218,7 +212,7 @@ Includere [parametri esternalizzati come variabili di ambiente](https://kubernet
 
 Se l'applicazione richiede una risorsa di archiviazione non volatile, configurare uno o più [volumi persistenti](/azure/aks/azure-disks-dynamic-pv).
 
-Si potrebbe scegliere di [creare un volume persistente usando File di Azure](/azure/aks/azure-files-dynamic-pv), montato nella directory dei log di Tomcat ( */tomcat_logs*) per mantenere i log a livello centrale.
+Si potrebbe scegliere di creare un volume persistente usando File di Azure, montato nella directory dei log di Tomcat ( */tomcat_logs*) per mantenere i log a livello centrale. Per altre informazioni, vedere [Creare dinamicamente e usare un volume persistente con File di Azure nel servizio Azure Kubernetes](/azure/aks/azure-files-dynamic-pv).
 
 ### <a name="configure-keyvault-flexvolume"></a>Configurare KeyVault FlexVolume
 

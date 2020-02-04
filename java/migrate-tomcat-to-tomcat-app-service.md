@@ -5,12 +5,12 @@ author: yevster
 ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 1/20/2020
-ms.openlocfilehash: ce1c54f0f4b28c5c0a2e11f4afc53f1dd59899c5
-ms.sourcegitcommit: 3585b1b5148e0f8eb950037345bafe6a4f6be854
+ms.openlocfilehash: f9611415264ce0c00a077d8988ef0fc9f7d97f66
+ms.sourcegitcommit: 367780fe48d977c82cb84208c128b0bf694b1029
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/21/2020
-ms.locfileid: "76288600"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76825880"
 ---
 # <a name="migrate-tomcat-applications-to-tomcat-on-azure-app-service"></a>Eseguire la migrazione di applicazioni Tomcat a Tomcat nel servizio app di Azure
 
@@ -21,36 +21,17 @@ Questa guida descrive gli aspetti da considerare per la migrazione di un'applica
 Se non è possibile soddisfare i requisiti di pre-migrazione, vedere le guide alla migrazione complementari seguenti:
 
 * [Eseguire la migrazione di applicazioni Tomcat ai contenitori nel servizio Azure Kubernetes](migrate-tomcat-to-containers-on-azure-kubernetes-service.md)
-* Eseguire la migrazione di applicazioni Tomcat alle macchine virtuali di Azure (presto disponibile)
+* Eseguire la migrazione di applicazioni Tomcat alle macchine virtuali di Azure (in pianificazione)
 
 ## <a name="pre-migration-steps"></a>Passaggi di pre-migrazione
 
-* [Passare a una piattaforma supportata](#switch-to-a-supported-platform)
-* [Inventario delle risorse esterne](#inventory-external-resources)
-* [Inventario dei segreti](#inventory-secrets)
-* [Inventario dell'utilizzo di persistenza](#inventory-persistence-usage)
-* [Casi speciali](#special-cases)
-
 ### <a name="switch-to-a-supported-platform"></a>Passare a una piattaforma supportata
 
-Il servizio app offre versioni specifiche di Tomcat per versioni specifiche di Java. Per garantire la compatibilità, eseguire la migrazione dell'applicazione a una delle versioni supportate di Tomcat e Java nell'ambiente corrente prima di procedere con i passaggi rimanenti. Assicurarsi di testare completamente la configurazione risultante. Usare [Red Hat Enterprise Linux 8](https://portal.azure.com/#create/RedHat.RedHatEnterpriseLinux80-ARM) come sistema operativo in tali test.
+Il servizio app offre versioni specifiche di Tomcat per versioni specifiche di Java. Per garantire la compatibilità, eseguire la migrazione dell'applicazione a una delle versioni supportate di Tomcat e Java nell'ambiente corrente prima di procedere con i passaggi rimanenti. Assicurarsi di testare completamente la configurazione risultante. Usare la versione stabile più recente della distribuzione Linux in questi test.
 
-#### <a name="java"></a>Java
-
-> [!NOTE]
-> Questa convalida è particolarmente importante se il server corrente è in esecuzione in un JDK non supportato, ad esempio Oracle JDK o IBM OpenJ9.
+[!INCLUDE [note-obtain-your-current-java-version](includes/migration/note-obtain-your-current-java-version.md)]
 
 Per ottenere la versione corrente di Java, accedere al server di produzione ed eseguire il comando seguente:
-
-```bash
-java -version
-```
-
-Per ottenere la versione corrente usata dal servizio app di Azure, scaricare [Zulu 8](https://www.azul.com/downloads/zulu-community/?&version=java-8-lts&os=&os=linux&architecture=x86-64-bit&package=jdk) se si intende usare Java Runtime Environment 8 o [Zulu 11](https://www.azul.com/downloads/zulu-community/?&version=java-11-lts&os=&os=linux&architecture=x86-64-bit&package=jdk) se si intende usare Java Runtime Environment 11.
-
-#### <a name="tomcat"></a>Tomcat
-
-Per determinare la versione corrente di Tomcat, accedere al server di produzione ed eseguire il comando seguente:
 
 ```bash
 ${CATALINA_HOME}/bin/version.sh
@@ -62,6 +43,8 @@ Per ottenere la versione corrente usata dal servizio app di Azure, scaricare [To
 
 [!INCLUDE [inventory-secrets](includes/migration/inventory-secrets.md)]
 
+[!INCLUDE [inventory-certificates](includes/migration/inventory-certificates.md)]
+
 [!INCLUDE [inventory-persistence-usage](includes/migration/inventory-persistence-usage.md)]
 
 <!-- App-Service-specific addendum to inventory-persistence-usage -->
@@ -71,9 +54,9 @@ Per i file scritti e letti di frequente dall'applicazione, ad esempio i file di 
 
 ### <a name="identify-session-persistence-mechanism"></a>Identificare il meccanismo di persistenza delle sessioni
 
-Per identificare il gestore di persistenza delle sessioni in uso, esaminare i file *context.xml* nell'applicazione e nella configurazione di Tomcat. Cercare l'elemento `<Manager>`, quindi prendere nota del valore dell'attributo `className`.
+Per identificare il gestore di persistenza delle sessioni in uso, esaminare i file *context.xml* nell'applicazione e nella configurazione di Tomcat. Cercare l'elemento `<Manager>`, quindi notare il valore dell'attributo `className`.
 
-Le implementazioni predefinite di [PersistentManager](https://tomcat.apache.org/tomcat-8.5-doc/config/manager.html) di Tomcat, ad esempio [StandardManager](https://tomcat.apache.org/tomcat-8.5-doc/config/manager.html#Standard_Implementation) o [FileStore](https://tomcat.apache.org/tomcat-8.5-doc/config/manager.html#Nested_Components) non sono progettate per l'uso con una piattaforma distribuita e scalabile come il servizio app. Poiché il servizio app può bilanciare il carico tra diverse istanze e riavviare in modo trasparente qualsiasi istanza in qualsiasi momento, non è consigliabile rendere persistente lo stato modificabile di un file system.
+Le implementazioni predefinite di [PersistentManager](https://tomcat.apache.org/tomcat-8.5-doc/config/manager.html) di Tomcat, ad esempio [StandardManager](https://tomcat.apache.org/tomcat-8.5-doc/config/manager.html#Standard_Implementation) o [FileStore](https://tomcat.apache.org/tomcat-8.5-doc/config/manager.html#Nested_Components), non sono progettate per l'uso con una piattaforma distribuita e scalabile come il servizio app. Poiché il servizio app può bilanciare il carico tra diverse istanze e riavviare in modo trasparente qualsiasi istanza in qualsiasi momento, non è consigliabile rendere persistente lo stato modificabile di un file system.
 
 Se è necessaria la persistenza delle sessioni, è necessario usare un'implementazione di `PersistentManager` alternativa che scriverà in un archivio dati esterno, ad esempio Pivotal Session Manager con Cache Redis. Per altre informazioni, vedere [Usare Redis come cache di sessione con Tomcat](/azure/app-service/containers/configure-language-java#use-redis-as-a-session-cache-with-tomcat).
 
@@ -85,7 +68,7 @@ Alcuni scenari di produzione possono richiedere ulteriori modifiche o imporre li
 
 I processi pianificati, ad esempio le attività dell'utilità di Quartz Scheduler o i processi Cron, non possono essere usati con il servizio app. Il servizio app non impedisce la distribuzione interna di un'applicazione contenente attività pianificate. Tuttavia, se l'applicazione viene ampliata, lo stesso processo pianificato può essere eseguito più di una volta per ogni periodo pianificato. Questa situazione può provocare conseguenze indesiderate.
 
-Creare un inventario di ogni processo pianificato, all'interno o all'esterno del server applicazioni.
+Creare un inventario di tutti i processi pianificati, all'interno o all'esterno del server applicazioni.
 
 #### <a name="determine-whether-your-application-contains-os-specific-code"></a>Determinare se l'applicazione contiene codice specifico del sistema operativo
 
@@ -123,7 +106,7 @@ Se si usa [AccessLogValve](https://tomcat.apache.org/tomcat-8.5-doc/api/org/apac
 
 ## <a name="migration"></a>Migrazione
 
-### <a name="parametrize-the-configuration"></a>Parametrizzare la configurazione
+### <a name="parameterize-the-configuration"></a>Parametrizzare la configurazione
 
 Nella fase di pre-migrazione è probabile che nei file *server.xml* e *context.xml* siano stati identificati segreti e dipendenze esterne, ad esempio origini dati. Per ogni elemento di questo tipo identificato, sostituire l'eventuale nome utente, password, stringa di connessione o URL con una variabile di ambiente.
 
@@ -164,7 +147,7 @@ Creare quindi il piano di servizio app. Per altre informazioni, vedere [Gestire 
 
 ### <a name="create-and-deploy-web-apps"></a>Creare e distribuire app Web
 
-È necessario creare un'app Web nel piano di servizio app per ogni file WAR distribuito nel server Tomcat.
+È necessario creare un'app Web nel piano di servizio app (scegliendo una versione di Tomcat come stack di runtime) per ogni file WAR distribuito nel server Tomcat.
 
 > [!NOTE]
 > Sebbene sia possibile distribuire più file WAR in un'unica app Web, questo approccio non è consigliabile. La distribuzione di più file WAR in un'unica app Web impedisce il ridimensionamento di ogni applicazione in base alle proprie esigenze di utilizzo, aumentando anche la complessità delle pipeline di distribuzione successive. Se più applicazioni devono essere disponibili in un singolo URL, provare a usare una soluzione di routing come il [gateway applicazione di Azure](/azure/application-gateway/).
@@ -191,17 +174,15 @@ Se l'applicazione richiede opzioni di runtime specifiche, [usare il meccanismo p
 
 Usare le impostazioni dell'applicazione per archiviare i segreti specifici dell'applicazione. Se si intende usare gli stessi segreti tra più applicazioni o se sono necessari criteri di accesso e funzionalità di controllo con granularità fine, [usare Azure Key Vault](/azure/app-service/containers/configure-language-java#use-keyvault-references).
 
-### <a name="configure-custom-domain-and-ssl"></a>Configurare un dominio personalizzato e SSL
+[!INCLUDE [configure-custom-domain-and-ssl](includes/migration/configure-custom-domain-and-ssl.md)]
 
-Se l'applicazione sarà visibile in un dominio personalizzato, sarà necessario [eseguire il mapping dell'applicazione Web a tale dominio](/azure/app-service/app-service-web-tutorial-custom-domain).
-
-Sarà quindi necessario [associare il certificato SSL per tale dominio all'app Web del servizio app](/azure/app-service/app-service-web-tutorial-custom-ssl).
+[!INCLUDE [import-backend-certificates](includes/migration/import-backend-certificates.md)]
 
 ### <a name="migrate-data-sources-libraries-and-jndi-resources"></a>Eseguire la migrazione di origini dati, librerie e risorse JNDI
 
 Completare [questa procedura per eseguire la migrazione delle origini dati](/azure/app-service/containers/configure-language-java#tomcat).
 
-Eseguire la migrazione di eventuali altre dipendenze di classpath a livello di server, seguendo [la stessa procedura indicata per i file con estensione jar delle origini dati](/azure/app-service/containers/configure-language-java#finalize-configuration).
+Eseguire la migrazione di eventuali altre dipendenze del classpath a livello di server, seguendo [la stessa procedura indicata per i file JAR delle origini dati](/azure/app-service/containers/configure-language-java#finalize-configuration).
 
 Eseguire la migrazione di eventuali altre [risorse JDNI condivise a livello di server](/azure/app-service/containers/configure-language-java#shared-server-level-resources).
 
@@ -214,14 +195,7 @@ Al termine della sezione precedente, si avrà la configurazione del server perso
 
 Completare la migrazione copiando eventuali altre configurazioni, ad esempio [aree di autenticazione](https://tomcat.apache.org/tomcat-8.5-doc/config/realm.html), [JASPIC](https://tomcat.apache.org/tomcat-8.5-doc/config/jaspic.html).
 
-### <a name="migrate-scheduled-jobs"></a>Eseguire la migrazione di processi pianificati
-
-Per eseguire i processi pianificati in Azure, provare a usare [Funzioni di Azure con un trigger timer](/azure/azure-functions/functions-bindings-timer). Non è necessario eseguire la migrazione del codice del processo stesso in una funzione. La funzione può semplicemente richiamare un URL nell'applicazione per attivare il processo.
-
-In alternativa, è possibile creare un'[app per la logica](/azure/logic-apps/logic-apps-overview) con un [trigger ricorrenza](/azure/logic-apps/tutorial-build-schedule-recurring-logic-app-workflow#add-the-recurrence-trigger) per richiamare l'URL senza scrivere codice all'esterno dell'applicazione.
-
-> [!NOTE]
-> Per evitare un uso improprio, potrebbe essere necessario assicurarsi che l'endpoint di chiamata del processo richieda le credenziali. In questo caso, la funzione di trigger dovrà fornire le credenziali.
+[!INCLUDE [migrate-scheduled-jobs](includes/migration/migrate-scheduled-jobs.md)]
 
 ### <a name="restart-and-smoke-test"></a>Riavvio e smoke test
 
