@@ -10,12 +10,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
 ms.custom: seo-java-july2019, seo-java-august2019, seo-java-september2019
-ms.openlocfilehash: 1c5254c041c57e1fc04ce9553d6902047eec878a
-ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
+ms.openlocfilehash: 729efd44b5b2489462c55c29f669d7bbbde8740c
+ms.sourcegitcommit: d9f585bea70b01ba6657a75ea245d8519d4a5aad
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74811917"
+ms.lasthandoff: 02/03/2020
+ms.locfileid: "76967253"
 ---
 # <a name="use-maven-for-azure-web-apps-to-deploy-a-spring-boot-app-in-azure-container-registry-to-azure-app-service"></a>Usare Maven per app Web di Azure per distribuire un'app Spring Boot di Registro Azure Container nel servizio app di Azure
 
@@ -28,7 +28,7 @@ Questo articolo illustra come distribuire un'applicazione [Spring Boot] di esemp
 > Il plug-in Maven per App Web di Azure è attualmente disponibile in anteprima. Per il momento è supportata solo la pubblicazione FTP, ma sono previste in futuro funzionalità aggiuntive.
 > 
 
-## <a name="prerequisites"></a>Prerequisiti
+## <a name="prerequisites"></a>Prerequisites
 
 Per completare la procedura di questa esercitazione, sono necessari i prerequisiti seguenti:
 
@@ -61,7 +61,7 @@ In questa sezione si clona e si testa in locale un'applicazione Spring Boot in c
 
 1. Clonare il progetto di esempio [Spring Boot on Docker Getting Started] (Introduzione a Spring Boot in Docker) nella directory appena creata, ad esempio:
    ```shell
-   git clone -b https://github.com/spring-guides/gs-spring-boot-docker
+   https://github.com/spring-guides/gs-spring-boot-docker.git
    ```
 
 1. Passare alla directory del progetto completato. Ad esempio:
@@ -108,15 +108,9 @@ In questa sezione si crea un'entità servizio di Azure che verrà usata dal plug
 
 3. Creare un'entità servizio di Azure:
    ```azurecli
-   az ad sp create-for-rbac --name "uuuuuuuu" --password "pppppppp"
+   az ad sp create-for-rbac --name <ServicePrincipalName>
    ```
-   Dove:
-
-   | Parametro  |                    DESCRIZIONE                     |
-   |------------|----------------------------------------------------|
-   | `uuuuuuuu` | Specifica il nome utente per l'entità servizio. |
-   | `pppppppp` | Specifica la password per l'entità servizio.  |
-
+Senza parametri di autenticazione, l'autenticazione basata su password prevede una password casuale creata automaticamente.
 
 4. Azure restituisce una risposta JSON simile all'esempio seguente:
    ```json
@@ -188,7 +182,7 @@ In questa sezione si crea un'entità servizio di Azure che verrà usata dal plug
    ```
    Dove:
 
-   |   Elemento    |                                 DESCRIZIONE                                  |
+   |   Elemento    |                                 Descrizione                                  |
    |--------------|------------------------------------------------------------------------------|
    |    `<id>`    |         Contiene il nome del Registro Azure Container privato.          |
    | `<username>` |         Contiene il nome del Registro Azure Container privato.          |
@@ -212,7 +206,7 @@ In questa sezione si crea un'entità servizio di Azure che verrà usata dal plug
    ```
    Dove:
 
-   |     Elemento     |                                                                                   DESCRIZIONE                                                                                   |
+   |     Elemento     |                                                                                   Descrizione                                                                                   |
    |-----------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
    |     `<id>`      |                                Specifica un nome univoco che viene usato da Maven per cercare le impostazioni di sicurezza quando si distribuisce l'app Web in Azure.                                |
    |   `<client>`    |                                                             Contiene il valore `appId` dell'entità servizio.                                                             |
@@ -239,7 +233,7 @@ In questa sezione si crea un'entità servizio di Azure che verrà usata dal plug
    ```
    Dove:
 
-   |           Elemento           |                                                                       DESCRIZIONE                                                                       |
+   |           Elemento           |                                                                       Descrizione                                                                       |
    |-----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------|
    | `<azure.containerRegistry>` |                                              Specifica il nome del Registro Azure Container privato.                                               |
    |   `<docker.image.prefix>`   | Specifica l'URL del Registro Azure Container privato, ottenuto accodando ".azurecr.io" al nome del registro contenitori privato. |
@@ -269,7 +263,7 @@ In questa sezione si crea un'entità servizio di Azure che verrà usata dal plug
    ```
    Dove:
 
-   |     Elemento     |                                       DESCRIZIONE                                       |
+   |     Elemento     |                                       Descrizione                                       |
    |-----------------|-----------------------------------------------------------------------------------------|
    |  `<serverId>`   |  Specifica la proprietà contenente il nome del Registro Azure Container privato.   |
    | `<registryUrl>` | Specifica la proprietà contenente l'URL del Registro Azure Container privato. |
@@ -281,7 +275,7 @@ In questa sezione si crea un'entità servizio di Azure che verrà usata dal plug
    mvn package docker:build -DpushImage 
    ```
 
-5. FACOLTATIVO: passare al [portale di Azure] e verificare la presenza nel registro contenitori dell'immagine del contenitore Docker denominata **gs-spring-boot-docker**.
+5. FACOLTATIVO: passare al [Azure portal] e verificare la presenza nel registro contenitori dell'immagine del contenitore Docker denominata **gs-spring-boot-docker**.
 
    ![Verificare il contenitore nel portale di Azure][CR01]
 
@@ -318,7 +312,7 @@ Aprire il file `pom.xml` per l'applicazione Spring Boot in un editor di testo e 
 
 È possibile modificare diversi valori per il plug-in Maven. Una descrizione dettagliata di ognuno di questi elementi è disponibile nella documentazione del [Maven Plugin for Azure Web Apps (Plug-in Maven per App Web di Azure)]. Dopo questa premessa, in questo articolo è opportuno evidenziare diversi valori:
 
-| Elemento | DESCRIZIONE |
+| Elemento | Descrizione |
 |---|---|
 | `<version>` | Specifica la versione del [Maven Plugin for Azure Web Apps (Plug-in Maven per App Web di Azure)]. È consigliabile controllare la versione riportata nel [repository centrale Maven](https://search.maven.org/#search%7Cga%7C1%7Ca%3A%22azure-webapp-maven-plugin%22) per assicurarsi di usare l'ultima versione. |
 | `<authentication>` | Specifica le informazioni di autenticazione per Azure, che in questo esempio includono un elemento `<serverId>` contenente `azure-auth`. Maven usa questo valore per cercare i valori dell'entità servizio di Azure nel file *settings.xml* di Maven, in base a quanto definito in una sezione precedente di questo articolo. |
@@ -365,7 +359,7 @@ Maven distribuirà l'app Web in Azure. Se l'app Web non esiste già, verrà crea
 >
 >
 
-Dopo che è stata distribuita, l'app Web potrà essere gestita usando il [portale di Azure].
+Dopo che è stata distribuita, l'app Web potrà essere gestita usando il [Azure portal].
 
 * L'app Web sarà elencata in **Servizi app**:
 
@@ -403,7 +397,7 @@ Per altre informazioni sull'uso di Azure con Java, vedere [Azure per sviluppator
 [Interfaccia della riga di comando di Azure]: /cli/azure/overview
 [Azure Container Service (AKS)]: https://azure.microsoft.com/services/container-service/
 [Azure per sviluppatori Java]: /azure/java/
-[Portale di Azure]: https://portal.azure.com/
+[Azure portal]: https://portal.azure.com/
 [Maven Plugin for Azure Web Apps (Plug-in Maven per App Web di Azure)]: https://github.com/Microsoft/azure-maven-plugins/tree/master/azure-webapp-maven-plugin
 [Create a private Docker container registry using the Azure portal]: /azure/container-registry/container-registry-get-started-portal
 [Using a custom Docker image for Azure Web App on Linux]: /azure/app-service/containers/tutorial-custom-docker-image
