@@ -10,12 +10,12 @@ metadata:
   ms.date: 10/11/2019
   ms.topic: landing-page
   ms.collection: collection
-  ms.openlocfilehash: b6c33142880eb289cfe1c87b54341341f98ef939
-  ms.sourcegitcommit: 7e5392a0af419c650225cfaa10215d1e0e56ce71
+  ms.openlocfilehash: 39ea83a1e5795b6eec19ef960b188b156525329b
+  ms.sourcegitcommit: 6fa28ea675ae17ffb9ac825415e2e26a3dfe7107
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 11/04/2019
-  ms.locfileid: "73568175"
+  ms.lasthandoff: 02/04/2020
+  ms.locfileid: "77002180"
 landingContent:
 - title: Introduzione ad Azure SDK per Python
   linkLists:
@@ -72,7 +72,7 @@ landingContent:
     - text: Estensioni di Azure per Visual Studio Code
       url: https://code.visualstudio.com/docs/azure/extensions
     - text: Installare l'interfaccia della riga di comando di Azure
-      url: /azure/install-azure-cli?view=azure-cli-latest?toc=%2Fazure%2Fpython%2Ftoc.json&bc=%2Fazure%2Fpython%2Fbreadcrumb%2Ftoc.json
+      url: /cli/azure/install-azure-cli?view=azure-cli-latest?toc=%2Fazure%2Fpython%2Ftoc.json&bc=%2Fazure%2Fpython%2Fbreadcrumb%2Ftoc.json
     - text: Eseguire le applicazioni Linux in modalità nativa in Windows 10 con una vasta gamma di distribuzioni
       url: /windows/wsl/install-win10?toc=%2Fazure%2Fpython%2Ftoc.json&bc=%2Fazure%2Fpython%2Fbreadcrumb%2Ftoc.json
 - title: Servizi per data science, intelligenza artificiale e Machine Learning
@@ -98,7 +98,7 @@ landingContent:
   - linkListType: overview
     links:
     - text: Informazioni sulle soluzioni di archiviazione in Azure
-      url: /storage/common/storage-introduction?toc=%2Fazure%2Fpython%2Ftoc.json&bc=%2Fazure%2Fpython%2Fbreadcrumb%2Ftoc.json
+      url: /azure/storage/common/storage-introduction?toc=%2Fazure%2Fpython%2Ftoc.json&bc=%2Fazure%2Fpython%2Fbreadcrumb%2Ftoc.json
     - text: NoSQL scalabile con Azure CosmosDB
       url: /azure/cosmos-db/introduction?toc=%2Fazure%2Fpython%2Ftoc.json&bc=%2Fazure%2Fpython%2Fbreadcrumb%2Ftoc.json
     - text: Messaggistica tra applicazioni con il bus di servizio di Azure
