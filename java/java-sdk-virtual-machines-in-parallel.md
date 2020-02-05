@@ -6,12 +6,12 @@ ms.assetid: e5a36699-2d96-4571-84f9-a6af13f3c067
 ms.topic: article
 ms.date: 03/30/2017
 ms.reviewer: asirveda
-ms.openlocfilehash: 2d4cca2552e4a85ebc231531d7e55ffda6d1909f
-ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
+ms.openlocfilehash: ef56241e0ddf0dca34a0229c7d2261d996d05870
+ms.sourcegitcommit: 6fa28ea675ae17ffb9ac825415e2e26a3dfe7107
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74812279"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "77002508"
 ---
 # <a name="create-virtual-machines-across-multiple-regions-from-your-java-applications"></a>Creare macchine virtuali in più aree dalle applicazioni Java
 
@@ -22,7 +22,7 @@ ms.locfileid: "74812279"
 
 ## <a name="run-the-sample"></a>Eseguire l'esempio
 
-Creare un [file di autenticazione](https://github.com/Azure/azure-sdk-for-java/blob/master/AUTH.md) e impostare una variabile di ambiente `AZURE_AUTH_LOCATION` con il percorso completo del file nel computer. Quindi eseguire:
+Creare un [file di autenticazione](https://github.com/Azure/azure-sdk-for-java/blob/master/AUTH.md) e impostare una variabile di ambiente `AZURE_AUTH_LOCATION` con il percorso completo del file nel computer. Eseguire quindi:
 
 ```
 git clone https://github.com/Azure-Samples/compute-java-create-virtual-machines-across-regions-in-parallel.git
@@ -185,11 +185,11 @@ Il blocco `finally` elimina le risorse dalla sottoscrizione di Azure anche in ca
 
 | Classe usata nell'esempio | Note
 |-------|-------|
-| [VirtualMachine](https://docs.microsoft.com/java/api/com.microsoft.azure.management.compute._virtual_machine) | Eseguire query sulle proprietà e gestire lo stato delle macchine virtuali. I risultati vengono recuperati sotto forma di elenco da `azure.virtualMachines().list()` o per nome o ID `azure.virtualMachines().getByResourceGroup()`
-| [VirtualMachineSizeTypes](https://docs.microsoft.com/java/api/com.microsoft.azure.management.compute._virtual_machine_size_types) | Valori statici che eseguono il mapping a [opzioni relative alle dimensioni delle macchine virtuali](https://azure.microsoft.com/pricing/details/virtual-machines/linux/) per l'uso come parametro di `withSize()` quando si definisce una macchina virtuale.
-| [PublicIpAddress](https://docs.microsoft.com/java/api/com.microsoft.azure.management.network._public_i_p_address) | Definito, ma non immediatamente creato, per ogni macchina virtuale tramite `azure.publicIpAddresses().define()`. Archiviare la chiave per ogni `Creatable` e recuperarla in un secondo momento tramite `createdRelatedResource()`
-| [KnownLinuxVirtualMachineImage](https://docs.microsoft.com/java/api/com.microsoft.azure.management.compute._known_linux_virtual_machine_image) | Set di opzioni di macchine virtuali Linux usato come parametro per il metodo `withPopularLinuxImage()` durante la definizione di una macchina virtuale.
-| [Rete](https://docs.microsoft.com/java/api/com.microsoft.azure.management.network._network) | L'esempio definisce una rete virtuale per ogni area tramite `azure.networks().define()`. 
+| [VirtualMachine](https://docs.microsoft.com/java/api/com.microsoft.azure.management.compute.virtualmachine) | Eseguire query sulle proprietà e gestire lo stato delle macchine virtuali. I risultati vengono recuperati sotto forma di elenco da `azure.virtualMachines().list()` o per nome o ID `azure.virtualMachines().getByResourceGroup()`
+| [VirtualMachineSizeTypes](https://docs.microsoft.com/java/api/com.microsoft.azure.management.compute.virtualmachinesizetypes) | Valori statici che eseguono il mapping a [opzioni relative alle dimensioni delle macchine virtuali](https://azure.microsoft.com/pricing/details/virtual-machines/linux/) per l'uso come parametro di `withSize()` quando si definisce una macchina virtuale.
+| [PublicIpAddress](https://docs.microsoft.com/java/api/com.microsoft.azure.management.network.publicipaddress) | Definito, ma non immediatamente creato, per ogni macchina virtuale tramite `azure.publicIpAddresses().define()`. Archiviare la chiave per ogni `Creatable` e recuperarla in un secondo momento tramite `createdRelatedResource()`
+| [KnownLinuxVirtualMachineImage](https://docs.microsoft.com/java/api/com.microsoft.azure.management.compute.knownlinuxvirtualmachineimage) | Set di opzioni di macchine virtuali Linux usato come parametro per il metodo `withPopularLinuxImage()` durante la definizione di una macchina virtuale.
+| [Network](https://docs.microsoft.com/java/api/com.microsoft.azure.management.network.network) | L'esempio definisce una rete virtuale per ogni area tramite `azure.networks().define()`. 
 
 ## <a name="next-steps"></a>Passaggi successivi
 

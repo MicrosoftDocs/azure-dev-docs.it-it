@@ -6,12 +6,12 @@ manager: kyliel
 ms.author: seal
 ms.date: 08/21/2019
 ms.topic: article
-ms.openlocfilehash: 2d888d225a8bcf5c957da11e18ea86d09ec8e897
-ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
+ms.openlocfilehash: 8c62a68ff2a9912d88361adc6ef3b8dc2ea29c98
+ms.sourcegitcommit: 6fa28ea675ae17ffb9ac825415e2e26a3dfe7107
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74812042"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "77002288"
 ---
 # <a name="how-to-use-spring-cloud-azure-stream-binder-for-azure-service-bus"></a>Come usare Spring Cloud Stream Binder per il bus di servizio di Azure
 
@@ -21,11 +21,11 @@ Azure fornisce una piattaforma di messaggistica asincrona denominata [bus di ser
 
 Questo articolo illustra come usare Spring Cloud Stream Binder per inviare e ricevere messaggi da `queues` e `topics` del bus di servizio.
 
-## <a name="prerequisites"></a>Prerequisiti
+## <a name="prerequisites"></a>Prerequisites
 
 Per questo articolo sono necessari i prerequisiti seguenti:
 
-1. Se non si ha una sottoscrizione di Azure, è possibile attivare i [vantaggi per i sottoscrittori di MSDN](https://azure.microsoft.com/pricing/member-offers/credit-for-visual-studio-subscribers/) oppure iscriversi per ottenere un [account gratuito](https://azure.microsoft.comfree/).
+1. Se non si ha una sottoscrizione di Azure, è possibile attivare i [vantaggi per i sottoscrittori di MSDN](https://azure.microsoft.com/pricing/member-offers/credit-for-visual-studio-subscribers/) oppure iscriversi per ottenere un [account gratuito](https://azure.microsoft.com/free/).
 
 1. Una versione supportata di Java Development Kit (JDK), versione 8 o successive. Per altre informazioni sulle versioni di JDK utilizzabili per lo sviluppo in Azure, vedere <https://aka.ms/azure-jdks>.
 
@@ -119,7 +119,7 @@ Per questo articolo sono necessari i prerequisiti seguenti:
 
     **<a name="fd">Descrizioni dei campi</a>**
 
-    |                                        Campo                                   |                                                                                   DESCRIZIONE                                                                                    |
+    |                                        Campo                                   |                                                                                   Descrizione                                                                                    |
     |--------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
     |               `spring.cloud.azure.servicebus.connection-string`                |                                        Specificare la stringa di connessione ottenuta nello spazio dei nomi del bus di servizio dal portale di Azure.                                   |
     |               `spring.cloud.stream.bindings.input.destination`                 |                            Specificare la coda o l'argomento del bus di servizio usato in questa esercitazione.                         |

@@ -5,12 +5,12 @@ author: rloutlaw
 ms.assetid: 833e9c78-1e50-4c23-a611-f73a2f0c2983
 ms.topic: article
 ms.date: 03/30/2017
-ms.openlocfilehash: 8ed90b7fff9c973481af1603e14fdb5858d5b9e0
-ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
+ms.openlocfilehash: e8cda5ca26b57e7c64d577fb5542295c930f5623
+ms.sourcegitcommit: 6fa28ea675ae17ffb9ac825415e2e26a3dfe7107
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74812337"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "77002464"
 ---
 # <a name="configure-azure-app-service-deployment-sources-from-your-java-applications"></a>Configurare le origini distribuzione di Servizio app di Azure dalle applicazioni Java
 
@@ -18,7 +18,7 @@ ms.locfileid: "74812337"
 
 ## <a name="run-the-sample"></a>Eseguire l'esempio
 
-Creare un [file di autenticazione](https://github.com/Azure/azure-sdk-for-java/blob/master/AUTH.md) e impostare una variabile di ambiente `AZURE_AUTH_LOCATION` con il percorso completo del file nel computer. Quindi eseguire:
+Creare un [file di autenticazione](https://github.com/Azure/azure-sdk-for-java/blob/master/AUTH.md) e impostare una variabile di ambiente `AZURE_AUTH_LOCATION` con il percorso completo del file nel computer. Eseguire quindi:
 
 ```
 git clone https://github.com/Azure-Samples/app-service-java-configure-deployment-sources-for-web-apps.git
@@ -153,12 +153,12 @@ La quarta applicazione distribuisce il codice nel ramo principale ogni volta che
 
 | Classe usata nell'esempio | Note
 |-------|-------|
-| [WebApp](https://docs.microsoft.com/java/api/com.microsoft.azure.management.appservice._web_app) | Creata dalla catena Fluent `azure.webApps().define()....create()`. Crea un'app Web del servizio app e tutte le risorse necessarie per l'app. La maggior parte dei metodi esegue una query sull'oggetto per i dettagli di configurazione, ma i metodi verbo come `restart()` modificano lo stato dell'app Web.
-| [WebContainer](https://docs.microsoft.com/java/api/com.microsoft.azure.management.appservice._web_container) | Classe con campi pubblici statici usati come parametri di `withWebContainer()` quando si definisce un'app Web che esegue un contenitore Web Java. Offre opzioni per entrambe le versioni, Jetty e Tomcat.
-| [PublishingProfile](https://docs.microsoft.com/java/api/com.microsoft.azure.management.appservice._publishing_profile) | Classe ottenuta tramite un oggetto WebApp usando il metodo `getPublishingProfile()`. Contiene informazioni di distribuzione FTP e Git, inclusi nome utente e password della distribuzione (distinti dall'account di Azure o dalle credenziali dell'entità servizio).
-| [AppServicePlan](https://docs.microsoft.com/java/api/com.microsoft.azure.management.appservice._app_service_plan) | Classe restituita da `azure.appServices().appServicePlans().getByResourceGroup()`. Sono disponibili metodi per verificare la capacità, il livello e il numero di app Web in esecuzione nel piano.
-| [AppServicePricingTier](https://docs.microsoft.com/java/api/com.microsoft.azure.management.appservice._app_service_pricing_tier) | Classe con campi pubblici statici che rappresentano i livelli del servizio app. Usata per definire una livello di piano inline durante la creazione dell'app con `withPricingTier()` o direttamente quando si definisce un piano tramite `azure.appServices().appServicePlans().define()`.
-| [JavaVersion](https://docs.microsoft.com/java/api/com.microsoft.azure.management.appservice._java_version) | Classe con campi pubblici statici che rappresentano le versioni di Java supportate dal servizio app. Usata con `withJavaVersion()` nella catena `define()...create()` quando si crea una nuova app Web.
+| [WebApp](https://docs.microsoft.com/java/api/com.microsoft.azure.management.appservice.webapp) | Creata dalla catena Fluent `azure.webApps().define()....create()`. Crea un'app Web del servizio app e tutte le risorse necessarie per l'app. La maggior parte dei metodi esegue una query sull'oggetto per i dettagli di configurazione, ma i metodi verbo come `restart()` modificano lo stato dell'app Web.
+| [WebContainer](https://docs.microsoft.com/java/api/com.microsoft.azure.management.appservice.webcontainer) | Classe con campi pubblici statici usati come parametri di `withWebContainer()` quando si definisce un'app Web che esegue un contenitore Web Java. Offre opzioni per entrambe le versioni, Jetty e Tomcat.
+| [PublishingProfile](https://docs.microsoft.com/java/api/com.microsoft.azure.management.appservice.publishingprofile) | Classe ottenuta tramite un oggetto WebApp usando il metodo `getPublishingProfile()`. Contiene informazioni di distribuzione FTP e Git, inclusi nome utente e password della distribuzione (distinti dall'account di Azure o dalle credenziali dell'entità servizio).
+| [AppServicePlan](https://docs.microsoft.com/java/api/com.microsoft.azure.management.appservice.appserviceplan) | Classe restituita da `azure.appServices().appServicePlans().getByResourceGroup()`. Sono disponibili metodi per verificare la capacità, il livello e il numero di app Web in esecuzione nel piano.
+| [AppServicePricingTier](https://docs.microsoft.com/java/api/com.microsoft.azure.management.appservice.PricingTier) | Classe con campi pubblici statici che rappresentano i livelli del servizio app. Usata per definire una livello di piano inline durante la creazione dell'app con `withPricingTier()` o direttamente quando si definisce un piano tramite `azure.appServices().appServicePlans().define()`.
+| [JavaVersion](https://docs.microsoft.com/java/api/com.microsoft.azure.management.appservice.javaversion) | Classe con campi pubblici statici che rappresentano le versioni di Java supportate dal servizio app. Usata con `withJavaVersion()` nella catena `define()...create()` quando si crea una nuova app Web.
 
 ## <a name="next-steps"></a>Passaggi successivi
 

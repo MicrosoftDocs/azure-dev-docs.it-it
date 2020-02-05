@@ -6,12 +6,12 @@ manager: kyliel
 ms.author: seal
 ms.date: 08/21/2019
 ms.topic: article
-ms.openlocfilehash: b64095bc2971bf9d9a7308bebdb91617538796c4
-ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
+ms.openlocfilehash: 17baf4899bd47b15bc60d02b853605c422d3c82b
+ms.sourcegitcommit: 6fa28ea675ae17ffb9ac825415e2e26a3dfe7107
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74812120"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "77002315"
 ---
 # <a name="how-to-use-the-spring-boot-starter-for-azure-service-bus-jms"></a>Come usare l'utilità di avvio Spring Boot per il JMS del bus di servizio di Azure
 
@@ -23,11 +23,11 @@ L'utilità di avvio Spring Boot per il JMS del bus di servizio di Azure fornisce
 
 Questo articolo illustra come usare l'utilità di avvio Spring Boot per il JMS del bus di servizio di Azure per inviare e ricevere messaggi da `queues` e `topics` del bus di servizio.
 
-## <a name="prerequisites"></a>Prerequisiti
+## <a name="prerequisites"></a>Prerequisites
 
 Per questo articolo sono necessari i prerequisiti seguenti:
 
-1. Se non si ha una sottoscrizione di Azure, è possibile attivare i [vantaggi per i sottoscrittori di MSDN](https://azure.microsoft.com/pricing/member-offers/credit-for-visual-studio-subscribers/) oppure iscriversi per ottenere un [account gratuito](https://azure.microsoft.comfree/).
+1. Se non si ha una sottoscrizione di Azure, è possibile attivare i [vantaggi per i sottoscrittori di MSDN](https://azure.microsoft.com/pricing/member-offers/credit-for-visual-studio-subscribers/) oppure iscriversi per ottenere un [account gratuito](https://azure.microsoft.com/free/).
 
 1. Una versione supportata di Java Development Kit (JDK), versione 8 o successive. Per altre informazioni sulle versioni di JDK utilizzabili per lo sviluppo in Azure, vedere <https://aka.ms/azure-jdks>.
 
@@ -41,7 +41,7 @@ Per questo articolo sono necessari i prerequisiti seguenti:
 
 1. Se non è presente una coda o un argomento configurato del bus di servizio, usare il portale di Azure per [creare una coda del bus di servizio](https://docs.microsoft.com/azure/service-bus-messaging/service-bus-quickstart-portal) o per [creare un argomento del bus di servizio](https://docs.microsoft.com/azure/service-bus-messaging/service-bus-quickstart-topics-subscriptions-portal). Verificare che lo spazio dei nomi soddisfi i requisiti specificati nel passaggio precedente. Prendere nota inoltre della stringa di connessione nello spazio dei nomi. Sarà necessaria per l'app di test di questa esercitazione.
 
-1. Se non si dispone di un'applicazione Spring Boot, [creare un progetto **Maven** con Spring Initializr](https://start.spring.io/). Ricordarsi di selezionare **Maven Project** (Progetto Maven) e, in **Dependencies** (Dipendenze), aggiungere la dipendenza **Web**.
+1. Se non si dispone di un'applicazione Spring Boot, [creare un progetto **Maven** con Spring Initializr](https://start.spring.io/). Ricordarsi di selezionare **Maven Project** (Progetto Maven) e in **Dependencies** (Dipendenze) aggiungere la dipendenza **Web**.
 
 ## <a name="use-the-azure-service-bus-jms-starter"></a>Usare l'utilità di avvio per il JMS del bus di servizio di Azure
 
@@ -94,7 +94,7 @@ In questa sezione viene illustrato come configurare l'app per l'uso di una coda 
 
     **Descrizioni dei campi**
 
-    | Campo                                     | DESCRIZIONE                                                                                     |
+    | Campo                                     | Descrizione                                                                                     |
     |-------------------------------------------|-------------------------------------------------------------------------------------------------|
     | `spring.jms.servicebus.connection-string` | Specificare la stringa di connessione ottenuta nello spazio dei nomi del bus di servizio dal portale di Azure. |
     | `spring.jms.servicebus.idle-timeout`      | Specificare il timeout di inattività in millisecondi. Il valore consigliato per questa esercitazione è 1800000.   |
@@ -123,7 +123,7 @@ In questa sezione viene illustrato come configurare l'app per l'uso di una coda 
 
     **Descrizioni dei campi**
 
-    | Campo                                     | DESCRIZIONE                                                                                       |
+    | Campo                                     | Descrizione                                                                                       |
     |-------------------------------------------|---------------------------------------------------------------------------------------------------|
     | `spring.jms.servicebus.connection-string` | Specificare la stringa di connessione ottenuta nello spazio dei nomi del bus di servizio dal portale di Azure.   |
     | `spring.jms.servicebus.topic-client-id`   | Specificare l'ID client JMS se si usa un argomento del bus di servizio di Azure con una sottoscrizione durevole. |
@@ -210,7 +210,7 @@ In questa sezione vengono create le classi Java necessarie per l'invio di messag
 
 1. Usare un editor di testo per creare un file Java denominato *SendController.java* nella directory del pacchetto dell'app
 
-1. Aggiungere il codice seguente nel nuovo file:
+1. Aggiungere al nuovo file il codice seguente:
 
     ```java
     package com.wingtiptoys.servicebus;
@@ -253,7 +253,7 @@ In questa sezione vengono create le classi Java necessarie per l'invio di messag
 
 1. Usare un editor di testo per creare un file Java denominato *QueueReceiveController.java* nella directory del pacchetto dell'app
 
-1. Aggiungere il codice seguente nel nuovo file:
+1. Aggiungere al nuovo file il codice seguente:
 
     ```java
     package com.wingtiptoys.servicebus;

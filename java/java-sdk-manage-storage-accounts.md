@@ -6,12 +6,12 @@ ms.assetid: 49be8b66-3b56-4c10-8f14-9d326d815cb4
 ms.topic: article
 ms.date: 3/30/2017
 ms.reviewer: asirveda
-ms.openlocfilehash: b1eeaa139e7642220524a76869fd8713044f9df5
-ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
+ms.openlocfilehash: 88298088099ed61c97eb6cb4a900c2ce55f5c3f0
+ms.sourcegitcommit: 6fa28ea675ae17ffb9ac825415e2e26a3dfe7107
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74812323"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "77002430"
 ---
 # <a name="manage-azure-storage-accounts-from-your-java-applications"></a>Gestire gli account di archiviazione di Azure dalle applicazioni Java
 
@@ -19,7 +19,7 @@ ms.locfileid: "74812323"
 
 ## <a name="run-the-sample"></a>Eseguire l'esempio
 
-Creare un [file di autenticazione](https://github.com/Azure/azure-sdk-for-java/blob/master/AUTH.md) e impostare una variabile di ambiente `AZURE_AUTH_LOCATION` con il percorso completo del file nel computer. Quindi eseguire:
+Creare un [file di autenticazione](https://github.com/Azure/azure-sdk-for-java/blob/master/AUTH.md) e impostare una variabile di ambiente `AZURE_AUTH_LOCATION` con il percorso completo del file nel computer. Eseguire quindi:
 
 ```
 git clone https://github.com/Azure-Samples/storage-java-manage-storage-accounts.git
@@ -43,7 +43,7 @@ StorageAccount storageAccount = azure.storageAccounts().define(storageAccountNam
                     .create();
 ```
 
-Il nome della risorsa di archiviazione fornito deve essere univoco in tutti i nomi di Azure e deve contenere solo lettere minuscole e numeri. Il profilo di prestazioni e replica predefinito usato per questo account è [Standard_GRS](https://docs.microsoft.com/azure/storage/storage-redundancy#geo-redundant-storage).
+Il nome della risorsa di archiviazione fornito deve essere univoco in tutti i nomi di Azure e deve contenere solo lettere minuscole e numeri. Il profilo di prestazioni e replica predefinito usato per questo account è [Standard_GRS](https://docs.microsoft.com/azure/storage/common/storage-redundancy-grs).
 
 ## <a name="list-keys-in-a-storage-account"></a>Elencare le chiavi in un account di archiviazione
 ```java
@@ -75,7 +75,7 @@ for (StorageAccount sa : accounts) {
 }
 ```
 
-[com.microsoft.azure.management.storage.StorageAccount](https://docs.microsoft.com/java/api/com.microsoft.azure.management.storage._storage_account) fornisce un set di metodi utili per ispezionare la configurazione di un account di archiviazione.
+[com.microsoft.azure.management.storage.StorageAccount](https://docs.microsoft.com/java/api/com.microsoft.azure.management.storage.storageaccount) fornisce un set di metodi utili per ispezionare la configurazione di un account di archiviazione.
 
 ## <a name="delete-a-storage-account"></a>Eliminare un account di archiviazione
 ```java
@@ -100,8 +100,8 @@ Il [codice di esempio su GitHub](https://github.com/Azure-Samples/storage-java-m
 
 | Classe usata nell'esempio | Note
 |-------|-------|
-| [StorageAccount](https://docs.microsoft.com/java/api/com.microsoft.azure.management.storage._storage_account)  | Rappresentazione di un account di archiviazione di Azure. Usare i metodi nella classe per ottenere informazioni sull'account di archiviazione.
-| [StorageAccountKey](https://docs.microsoft.com/java/api/com.microsoft.azure.management.storage._storage_account_key) | `StorageAccount.getKeys()` restituisce le chiavi dell'account di archiviazione. Usare i metodi `regenerateKey` in `StorageAccount` per aggiornare le chiavi.
+| [StorageAccount](https://docs.microsoft.com/java/api/com.microsoft.azure.management.storage.storageaccount)  | Rappresentazione di un account di archiviazione di Azure. Usare i metodi nella classe per ottenere informazioni sull'account di archiviazione.
+| [StorageAccountKey](https://docs.microsoft.com/java/api/com.microsoft.azure.management.storage.storageaccountkey) | `StorageAccount.getKeys()` restituisce le chiavi dell'account di archiviazione. Usare i metodi `regenerateKey` in `StorageAccount` per aggiornare le chiavi.
 
 ## <a name="next-steps"></a>Passaggi successivi
 

@@ -6,12 +6,12 @@ ms.assetid: b55923b7-d60a-460d-b77c-af5fac67f1cc
 ms.topic: article
 ms.date: 3/30/2017
 ms.reviewer: asirveda
-ms.openlocfilehash: bd956502c6cd5910f6c22844840aeec6cb1ec8aa
-ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
+ms.openlocfilehash: 092bb328c4d7e68da9c75a43eaa9c31173d79864
+ms.sourcegitcommit: 6fa28ea675ae17ffb9ac825415e2e26a3dfe7107
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74812288"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "77002535"
 ---
 # <a name="manage-azure-virtual-machine-scale-sets-from-your-java-applications"></a>Gestire set di scalabilità di macchine virtuali di Azure dalle applicazioni Java
 
@@ -19,7 +19,7 @@ ms.locfileid: "74812288"
 
 ## <a name="run-the-sample"></a>Eseguire l'esempio
 
-Creare un [file di autenticazione](https://github.com/Azure/azure-sdk-for-java/blob/master/AUTH.md) e impostare una variabile di ambiente `AZURE_AUTH_LOCATION` con il percorso completo del file nel computer. Quindi eseguire:
+Creare un [file di autenticazione](https://github.com/Azure/azure-sdk-for-java/blob/master/AUTH.md) e impostare una variabile di ambiente `AZURE_AUTH_LOCATION` con il percorso completo del file nel computer. Eseguire quindi:
 
 ```
 git clone https://github.com/Azure-Samples/compute-java-manage-virtual-machine-scale-sets.git
@@ -226,11 +226,11 @@ Il [codice di esempio](https://github.com/Azure-Samples/compute-java-manage-virt
    
 | Classe usata nell'esempio | Note
 |-------|-------|
-| [VirtualMachineScaleSet](https://docs.microsoft.com/java/api/com.microsoft.azure.management.compute._virtual_machine_scale_set) | Consente di eseguire query, avviare, arrestare, aggiornare ed eliminare tutte le macchine virtuali del set di scalabilità.
-| [VirtualMachineScaleSetVM](https://docs.microsoft.com/java/api/com.microsoft.azure.management.compute._virtual_machine_scale_set_v_m) | Recuperata da `virtualMachineScaleSet.virtualMachines().get()` o `list()`, consente di eseguire query, avviare, arrestare, configurare ed eliminare le macchine virtuali del set di scalabilità.
-| [VirtualMachineScaleSetNetworkInterface](https://docs.microsoft.com/java/api/com.microsoft.azure.management.network._virtual_machine_scale_set_network_interface) | Restituita da `virtualMachineScaleSet.listNetworkInterfaces()`, offre una rappresentazione di sola lettura di un'interfaccia di rete in una macchina virtuale in un set di scalabilità.
-| [VirtualMachineScaleSetSkuTypes](https://docs.microsoft.com/java/api/com.microsoft.azure.management.compute._virtual_machine_scale_set_sku_types) | Classe dei campi statici che consente di impostare il [livello del set di scalabilità di macchine virtuali](https://azure.microsoft.com/pricing/details/virtual-machine-scale-sets/linux/) usato per definire la quantità di risorse utilizzabile per i membri del set di scalabilità.
-| [VirtualMachineScaleSetNicIpConfiguration](https://docs.microsoft.com/java/api/com.microsoft.azure.management.network._virtual_machine_scale_set_nic_i_p_configuration) | Usata eseguire query sulla configurazione IP associata a un'interfaccia di rete in una macchina virtuale del set di scalabilità.
+| [VirtualMachineScaleSet](https://docs.microsoft.com/java/api/com.microsoft.azure.management.compute.virtualmachinescaleset) | Consente di eseguire query, avviare, arrestare, aggiornare ed eliminare tutte le macchine virtuali del set di scalabilità.
+| [VirtualMachineScaleSetVM](https://docs.microsoft.com/java/api/com.microsoft.azure.management.compute.virtualmachinescalesetvm) | Recuperata da `virtualMachineScaleSet.virtualMachines().get()` o `list()`, consente di eseguire query, avviare, arrestare, configurare ed eliminare le macchine virtuali del set di scalabilità.
+| [VirtualMachineScaleSetNetworkInterface](https://docs.microsoft.com/java/api/com.microsoft.azure.management.network.virtualmachinescalesetnetworkinterface) | Restituita da `virtualMachineScaleSet.listNetworkInterfaces()`, offre una rappresentazione di sola lettura di un'interfaccia di rete in una macchina virtuale in un set di scalabilità.
+| [VirtualMachineScaleSetSkuTypes](https://docs.microsoft.com/java/api/com.microsoft.azure.management.compute.virtualmachinescalesetskutypes) | Classe dei campi statici che consente di impostare il [livello del set di scalabilità di macchine virtuali](https://azure.microsoft.com/pricing/details/virtual-machine-scale-sets/linux/) usato per definire la quantità di risorse utilizzabile per i membri del set di scalabilità.
+| [VirtualMachineScaleSetNicIpConfiguration](https://docs.microsoft.com/java/api/com.microsoft.azure.management.network.virtualmachinescalesetnicipconfiguration) | Usata eseguire query sulla configurazione IP associata a un'interfaccia di rete in una macchina virtuale del set di scalabilità.
 
 ## <a name="next-steps"></a>Passaggi successivi
 
