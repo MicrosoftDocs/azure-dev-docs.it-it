@@ -4,12 +4,12 @@ description: Indicazioni su come usare Funzioni di Azure per creare e distribuir
 ms.topic: article
 ms.date: 08/19/2019
 ms.custom: seo-javascript-september2019, seo-javascript-october2019
-ms.openlocfilehash: d1b17e33b5ae4aa51a84ceae8005a5385c162967
-ms.sourcegitcommit: 68a4044b9fa3291c9e7e2f68ae0049328f9c01bb
+ms.openlocfilehash: ae6a4cebef39976af4d9a30534d394d37d86a0c8
+ms.sourcegitcommit: 6fa28ea675ae17ffb9ac825415e2e26a3dfe7107
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74992465"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "77002495"
 ---
 # <a name="use-azure-functions-to-write-serverless-nodejs-code-on-azure"></a>Usare Funzioni di Azure per scrivere codice Node.js serverless in Azure
 
@@ -39,13 +39,13 @@ Da qui è possibile accedere a molte altre risorse che consentono di esplorare u
   - [Eseguire codice quando vengono caricati o aggiornati file in Archiviazione BLOB di Azure](/azure/storage/blobs/storage-upload-process-images?tabs=nodejsv10)
   - [Eseguire codice quando viene scritto un messaggio in Archiviazione code di Azure](/azure/azure-functions/functions-create-storage-queue-triggered-function)
 
-- [Archiviare dati non strutturati usando Funzioni di Azure e Azure Cosmos DB](/azure/azure-functions/functions-integrate-store-unstructured-data-cosmosdb.md?tabs=javascript). Per informazioni su altri database, vedere [Come integrare i database di Azure in codice Node.js](node-howto-integrate-databases.md)
+- [Archiviare dati non strutturati usando Funzioni di Azure e Azure Cosmos DB](/azure/azure-functions/functions-integrate-store-unstructured-data-cosmosdb?tabs=javascript). Per informazioni su altri database, vedere [Come integrare i database di Azure in codice Node.js](node-howto-integrate-databases.md)
 
 - [Scrivere codici per Funzioni di Azure e testarle in locale](/azure/azure-functions/functions-develop-local)
 
 - [Strategie per il test del codice in Funzioni di Azure](/azure/azure-functions/functions-test-a-function) e [Gestione degli errori](/azure/azure-functions/functions-bindings-error-pages)
 
-- [Configurare l'autenticazione con Azure Active Directory](/azure/app-service/configure-authentication-provider-aad.md?toc=%2fazure%2fazure-functions%2ftoc.json)
+- [Configurare l'autenticazione con Azure Active Directory](/azure/app-service/configure-authentication-provider-aad?toc=%2fazure%2fazure-functions%2ftoc.json)
 
 - [Configurare la distribuzione continua con Azure Pipelines](/azure/azure-functions/functions-how-to-azure-devops)
 

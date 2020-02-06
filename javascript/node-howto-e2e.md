@@ -4,12 +4,12 @@ description: Completare l'esercitazione end-to-end che illustra come creare un'a
 ms.topic: article
 ms.date: 06/25/2017
 ms.custom: seo-javascript-september2019, seo-javascript-october2019
-ms.openlocfilehash: 98b154a78702fa5c5a0808170c8227ce7910459b
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.openlocfilehash: b8841e5259a49b45db1f526330e0238d1bd0d050
+ms.sourcegitcommit: 6fa28ea675ae17ffb9ac825415e2e26a3dfe7107
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74467387"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "77002522"
 ---
 # <a name="develop-and-deploy-a-containerized-nodejs-app-with-visual-studio-code-and-azure"></a>Sviluppare e distribuire un'app Node.js in contenitore con Visual Studio Code e Azure
 
@@ -17,7 +17,7 @@ Questa esercitazione illustra la creazione di un contenitore Docker da un'app No
 
 L'esercitazione usa una semplice app Todo creata e pubblicata da [Scotch.io](https://scotch.io/tutorials/creating-a-single-page-todo-app-with-node-and-angular). Si tratta di un'app MEAN a singola pagina e quindi usa MongoDB come database, Node/Express per il server Web/API REST e Angular.js 1. x per l'interfaccia front-end. 
 
-## <a name="prerequisites"></a>Prerequisiti
+## <a name="prerequisites"></a>Prerequisites
 
 Per seguire la demo è necessario avere installato il software seguente:
 
@@ -354,7 +354,7 @@ Per iniziare, aprire il terminale di Visual Studio. Si userà la nuova interfacc
     ```
 
     > [!NOTE]
-    > Se invece di un contenitore personalizzato si preferisce usare una distribuzione Git, vedere l'articolo [Creare un'app Web Node.js in Azure](/azure/app-service-web/app-service-web-get-started-nodejs#configure-to-use-nodejs).
+    > Se invece di un contenitore personalizzato si preferisce usare una distribuzione Git, vedere l'articolo [Creare un'app Web Node.js in Azure](/azure/app-service-web/app-service-web-get-started-nodejs).
 
 1. Impostare l'app Web come istanza Web predefinita:
 
