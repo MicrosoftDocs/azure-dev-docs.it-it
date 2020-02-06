@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: ab31ee32ea940db2d7bcfa2fe36475d8a648bfc9
-ms.sourcegitcommit: 2efdb9d8a8f8a2c1914bd545a8c22ae6fe0f463b
+ms.openlocfilehash: 5d005f5a4906e5e2a55189d073383ab77f6c1860
+ms.sourcegitcommit: 6fa28ea675ae17ffb9ac825415e2e26a3dfe7107
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68284352"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "77013771"
 ---
 | **Creare macchine virtuali** || 
 |---|---|
@@ -19,9 +19,9 @@ ms.locfileid: "68284352"
 | [Creare un set di scalabilità di macchine virtuali con un servizio di bilanciamento del carico][7] | Creare un set di scalabilità di macchine virtuali, configurare un servizio di bilanciamento del carico e ottenere le stringhe di connessione SSH per le VM del set di scalabilità. |
 
 [1]: ../java-sdk-manage-virtual-machines.md
-[2]: https://azure.microsoft.com/resources/samples/managed-disk-java-create-virtual-machine-using-custom-image/
-[3]: https://azure.microsoft.com/resources/samples/managed-disk-java-create-virtual-machine-using-specialized-disk-from-vhd/
-[4]: https://azure.microsoft.com/resources/samples/compute-java-manage-virtual-machines-in-parallel/
+[2]: https://github.com/Azure-Samples/managed-disk-java-create-virtual-machine-using-custom-image/
+[3]: https://github.com/Azure-Samples/managed-disk-java-create-virtual-machine-using-specialized-disk-from-vhd/
+[4]: https://github.com/Azure-Samples/compute-java-manage-virtual-machines-in-parallel/
 [5]: ../java-sdk-virtual-machines-in-parallel.md
 [6]: ../java-sdk-manage-virtual-networks.md
 [7]: ../java-sdk-manage-vm-scalesets.md
