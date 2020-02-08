@@ -3,12 +3,12 @@ title: Eseguire l'applicazione di Funzioni di Azure in locale in Visual Studio C
 description: Parte 3 dell'esercitazione, eseguire l'app in locale per testarla.
 ms.topic: conceptual
 ms.date: 09/23/2019
-ms.openlocfilehash: 2a7cb5e5c433c90d74cd3b7771ce90529f617fcb
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.openlocfilehash: d5af3cbe6fd138bc8aeeb36a60ea05f2a6460f8f
+ms.sourcegitcommit: d9f585bea70b01ba6657a75ea245d8519d4a5aad
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74466577"
+ms.lasthandoff: 02/03/2020
+ms.locfileid: "76967227"
 ---
 # <a name="test-the-function-locally"></a>Testare la funzione in locale
 
@@ -20,7 +20,7 @@ Quando è stata creata l'app per le funzioni, l'estensione Funzioni di Azure ha 
 
 1. In Visual Studio Code premere **F5** (oppure usare il comando di menu **Debug** > **Avvia debug**) per avviare il debugger e collegarsi all'host di Funzioni di Azure. Questo comando usa automaticamente la singola configurazione di debug creata da Funzioni di Azure.
 
-1. L'output di Functions Core Tools viene visualizzato nel pannello **Terminale** di VS Code. Una volta avviato l'host, premere **CTRL**+clic sull'URL locale visualizzato nell'output per aprire il browser ed eseguire la funzione:
+1. L'output di Functions Core Tools viene visualizzato nel pannello **Terminale** di VS Code. Dopo aver volta avviato l'host, premere **ALT**+clic sull'URL locale visualizzato nell'output per aprire il browser ed eseguire la funzione:
 
     ![Output visualizzato nel pannello Terminale di VS Code durante il debug in locale](media/functions-extension/local-test-output.png)
 

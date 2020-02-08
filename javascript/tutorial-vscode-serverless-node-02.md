@@ -3,18 +3,18 @@ title: Creare l'applicazione di Funzioni di Azure da Visual Studio Code
 description: Parte 2 dell'esercitazione, creare l'app di Funzioni di Azure
 ms.topic: conceptual
 ms.date: 09/23/2019
-ms.openlocfilehash: 5b2e46cde8740020cc2ad7a1b50ac9b4687d17d3
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.openlocfilehash: 6c0adc93899eb9480008774fe35f3aa3b2ab5842
+ms.sourcegitcommit: d9f585bea70b01ba6657a75ea245d8519d4a5aad
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74467124"
+ms.lasthandoff: 02/03/2020
+ms.locfileid: "76967239"
 ---
 # <a name="create-the-local-functions-app"></a>Creare l'app per le funzioni locale
 
 [Passaggio precedente: Introduzione e prerequisiti](tutorial-vscode-serverless-node-01.md)
 
-In questo passaggio viene creata un'applicazione locale di Funzioni di Azure contenente una funzione che usa un trigger HTTP. Un'app di Funzioni di Azure può contenere molte funzioni con trigger diversi. Il trigger HTTP in particolare gestisce il traffico HTTP in ingresso.
+In questo passaggio viene creata un'applicazione locale di Funzioni di Azure contenente una funzione che usa un [trigger HTTP](https://docs.microsoft.com/azure/azure-functions/functions-reference-node#http-triggers-and-bindings). Un'app di Funzioni di Azure può contenere molte funzioni con [trigger diversi](https://docs.microsoft.com/azure/azure-functions/functions-triggers-bindings). Il trigger HTTP in particolare gestisce il traffico HTTP in ingresso.
 
 1. In un terminale o al prompt dei comandi eseguire Visual Studio Code da una cartella adatta per il progetto:
 
@@ -45,7 +45,7 @@ In questo passaggio viene creata un'applicazione locale di Funzioni di Azure con
 
 1. Dopo alcuni secondi, VS Code completa la creazione del progetto. È disponibile una cartella denominata per la funzione, *HttpExample*, che contiene tre file:
 
-    | Nome file | DESCRIZIONE |
+    | Nome file | Descrizione |
     | --- | --- |
     | *index.js* |  Il codice sorgente che risponde alla richiesta HTTP. |
     | *functions.json* | La [configurazione di binding](/azure/azure-functions/functions-triggers-bindings) per il trigger HTTP. |
