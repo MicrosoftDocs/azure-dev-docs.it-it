@@ -3,22 +3,22 @@ title: Creare un'app Spring Boot Initializer - Cache di Azure per Redis
 description: Configurare un'applicazione Spring Boot creata con Spring Initializr per l'uso di Redis sul cloud con la cache Redis di Azure.
 services: redis-cache
 documentationcenter: java
-ms.date: 12/19/2018
+ms.date: 02/06/2020
 ms.service: cache
 ms.tgt_pltfrm: cache-redis
 ms.topic: conceptual
-ms.openlocfilehash: e70b5f9b8427bebd9c5ca3761a664464ad3b0909
-ms.sourcegitcommit: 670874dfe49e6ffa5bee88555851878f0da93042
+ms.openlocfilehash: 8287cf923acb5770a5ba5eb88fe60896e6cd3a4d
+ms.sourcegitcommit: 24795630044c10a07b5dedc0f51c280f090c097e
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/16/2019
-ms.locfileid: "75034038"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77075325"
 ---
 # <a name="configure-a-spring-boot-initializer-app-to-use-redis-in-the-cloud-with-azure-redis-cache"></a>Configurare un'app Spring Boot Initializer per l'uso di Redis sul cloud con la cache Redis di Azure
 
 Questo articolo illustra in modo dettagliato come creare una cache Redis sul cloud usando il portale di Azure, quindi usare **[Spring Initializr]** per creare un'applicazione personalizzata e infine creare un'applicazione Web Java che archivia e recupera i dati tramite la cache Redis.
 
-## <a name="prerequisites"></a>Prerequisiti
+## <a name="prerequisites"></a>Prerequisites
 
 I prerequisiti seguenti sono necessari per completare le procedure disponibili in questo articolo:
 
@@ -30,22 +30,21 @@ I prerequisiti seguenti sono necessari per completare le procedure disponibili i
 
 1. Passare a <https://start.spring.io/>.
 
-1. Specificare che si vuole generare un progetto **Maven** con **Java**, immettere i nomi di **Group** (Gruppo) e **Artifact** (Elemento) per l'applicazione e quindi fare clic sul collegamento relativo a **Switch to the full version** (Passa alla versione completa) di Spring Initializr.
+1. Specificare che si vuole generare un progetto **Maven** con **Java**, quindi immettere i nomi in **Group** (Gruppo) e **Artifact** (Artefatto) per l'applicazione.
+
+1. Aggiungere le dipendenze per la sezione **Spring Web** e selezionare la casella **Web**, quindi scorrere verso il basso fino alla sezione **NoSQL** e selezionare la casella **Spring Data Reactive Redis**. 
+1. Scorrere fino in fondo alla pagina e fare clic sul pulsante **Generate Project** (Genera progetto).
 
    ![Opzioni di base di Spring Initializr][SI01]
 
    > [!NOTE]
    >
-   > Spring Initializr userà i valori di **Group** (Gruppo) e **Artifact** (Elemento) per creare il nome del pacchetto, ad esempio *com.contoso.myazuredemo*.
+   > Spring Initializr userà i valori di **Group** (Gruppo) e **Artifact** (Artefatto) per creare il nome del pacchetto, ad esempio *com.contoso.myazuredemo*.
    >
-
-1. Scorrere verso il basso fino alla sezione **Web** e selezionare la casella relativa a **Web**, quindi scorrere verso il basso fino alla sezione **NoSQL** e selezionare la casella **Redis**. Scorrere infine fino alla parte inferiore della pagina e fare clic sul pulsante **Generate Project** (Genera progetto).
-
-   ![Opzioni complete di Spring Initializr][SI02]
 
 1. Quando richiesto, scaricare il progetto in un percorso nel computer locale.
 
-   ![Scaricare il progetto Spring Boot][SI03]
+   ![Scaricare il progetto Spring Boot personalizzato][SI03]
 
 1. Dopo l'estrazione dei file nel sistema locale, l'applicazione Spring Boot personalizzata sarà pronta per la modifica.
 
@@ -54,8 +53,6 @@ I prerequisiti seguenti sono necessari per completare le procedure disponibili i
 ## <a name="create-a-redis-cache-on-azure"></a>Creare una cache Redis in Azure
 
 1. Passare al portale di Azure all'indirizzo <https://portal.azure.com/> e fare clic su **+Nuovo**.
-
-   ![Portale di Azure][AZ01]
 
 1. Fare clic su **Database** e quindi su **Cache Redis**.
 
@@ -218,7 +215,7 @@ Per altre informazioni sulle operazioni iniziali nella cache Redis con Java in A
 [vantaggi per i sottoscrittori di MSDN]: https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/
 [Spring Boot]: http://projects.spring.io/spring-boot/
 [Spring Initializr]: https://start.spring.io/
-[Spring Framework]: https://spring.io/
+[Spring Framework]: https://spring.io/ (Framework di Spring)
 [Redis Cache with Java]: /azure/redis-cache/cache-java-get-started
 
 <!-- IMG List -->

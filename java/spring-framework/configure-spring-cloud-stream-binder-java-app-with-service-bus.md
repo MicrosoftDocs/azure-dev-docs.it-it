@@ -6,12 +6,12 @@ manager: kyliel
 ms.author: seal
 ms.date: 08/21/2019
 ms.topic: article
-ms.openlocfilehash: 8c62a68ff2a9912d88361adc6ef3b8dc2ea29c98
-ms.sourcegitcommit: 6fa28ea675ae17ffb9ac825415e2e26a3dfe7107
+ms.openlocfilehash: e8f9dd93da56b17efca059e00cf1483666f4cf33
+ms.sourcegitcommit: 24795630044c10a07b5dedc0f51c280f090c097e
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "77002288"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77075268"
 ---
 # <a name="how-to-use-spring-cloud-azure-stream-binder-for-azure-service-bus"></a>Come usare Spring Cloud Stream Binder per il bus di servizio di Azure
 
@@ -34,7 +34,7 @@ Per questo articolo sono necessari i prerequisiti seguenti:
 1. Se è già presente una coda o un argomento configurato del bus di servizio, assicurarsi che lo spazio dei nomi del bus di servizio soddisfi i requisiti seguenti:
 
     1. Consente l'accesso da tutte le reti
-    1. È una versione Premium (o superiore)
+    1. È Standard o versione successiva
     1. Dispone di un criterio di accesso in lettura/scrittura per la coda e l'argomento
 
 1. Se non è presente una coda o un argomento configurato del bus di servizio, usare il portale di Azure per [creare una coda del bus di servizio](https://docs.microsoft.com/azure/service-bus-messaging/service-bus-quickstart-portal) o per [creare un argomento del bus di servizio](https://docs.microsoft.com/azure/service-bus-messaging/service-bus-quickstart-topics-subscriptions-portal). Verificare che lo spazio dei nomi soddisfi i requisiti specificati nel passaggio precedente. Prendere nota inoltre della stringa di connessione nello spazio dei nomi. Sarà necessaria per l'app di test di questa esercitazione.

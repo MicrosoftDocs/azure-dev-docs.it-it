@@ -3,12 +3,12 @@ title: Eseguire l'applicazione di Funzioni di Azure in locale in Visual Studio C
 description: Parte 3 dell'esercitazione, eseguire l'app in locale per testarla.
 ms.topic: conceptual
 ms.date: 09/23/2019
-ms.openlocfilehash: d5af3cbe6fd138bc8aeeb36a60ea05f2a6460f8f
-ms.sourcegitcommit: d9f585bea70b01ba6657a75ea245d8519d4a5aad
+ms.openlocfilehash: fd2255fa3a085f979e5893d6178063ee8686ea08
+ms.sourcegitcommit: 20634277152d72a35ad9b35fa1203608740d1145
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/03/2020
-ms.locfileid: "76967227"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77144052"
 ---
 # <a name="test-the-function-locally"></a>Testare la funzione in locale
 
@@ -31,6 +31,10 @@ Quando è stata creata l'app per le funzioni, l'estensione Funzioni di Azure ha 
 1. Con la funzione in esecuzione in locale, è possibile impostare i punti di interruzione su parti diverse del codice. Per altre informazioni sui punti di interruzione e sul debug in VS Code, vedere [Debug](https://code.visualstudio.com/docs/editor/debugging). Aprire il file *index.js*, quindi fare clic sul margine a sinistra della riga 11 nella finestra dell'editor. Viene visualizzato un puntino rosso per indicare un punto di interruzione. Ora rimuovere l'argomento `?name=` dall'URL nel browser. Quando il browser effettua la richiesta, VS Code arresta il codice della funzione in corrispondenza del punto di interruzione:
 
     ![VS Code arrestato in un punto di interruzione](media/functions-extension/debugging-breakpoint.png)
+
+> [!Note]
+>
+> Se si verifica un errore dei criteri di esecuzione in questo processo, provare a disinstallare `azure-functions-core-tools@3` con npm, quindi reinstallare il pacchetto usando Chocolatey in un terminale con privilegi elevati.
 
 > [!div class="nextstepaction"]
 > [L'app per le funzioni è stata eseguita in locale](tutorial-vscode-serverless-node-04.md) [Si è verificato un problema](https://www.research.net/r/PWZWZ52?tutorial=node-deployment-azurefunctions&step=run-app)
