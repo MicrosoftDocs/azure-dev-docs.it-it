@@ -4,7 +4,7 @@
   items:
     - name: Informazioni su Python SDK
       href: python-sdk-azure-overview.md
-- name: Guide introduttive
+- name: Avvi rapidi
   items:
     - name: Python SDK
       href: python-sdk-azure-get-started.yml
@@ -14,7 +14,7 @@
       items:
         - name: Servizio app
           href: /azure/app-service/containers/quickstart-python?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
-        - name: kubernetes
+        - name: Kubernetes
           href: /azure/aks/kubernetes-walkthrough?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
         - name: Macchine virtuali di Linux
           href: /azure/virtual-machines/linux/quick-create-cli?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
@@ -64,55 +64,55 @@
   items:
     - name: Eseguire la distribuzione nel servizio app con VS Code
       items:
-        - name: Introduzione e prerequisiti
+        - name: 1 - Introduzione e prerequisiti
           href: tutorial-deploy-app-service-on-linux-01.md
-        - name: Preparare l'app
+        - name: 2 - Preparare l'app
           href: tutorial-deploy-app-service-on-linux-02.md
-        - name: Creare il servizio app
+        - name: 3 - Creare il servizio app
           href: tutorial-deploy-app-service-on-linux-03.md
-        - name: Configurare il file di avvio
+        - name: 4 - Configurare il file di avvio
           href: tutorial-deploy-app-service-on-linux-04.md
-        - name: Distribuire l'app
+        - name: 5 - Distribuire l'app
           href: tutorial-deploy-app-service-on-linux-05.md
-        - name: Eseguire lo streaming dei log
+        - name: 6 - Eseguire lo streaming dei log
           href: tutorial-deploy-app-service-on-linux-06.md
-        - name: Pulire le risorse
+        - name: 7 - Eseguire la pulizia delle risorse
           href: tutorial-deploy-app-service-on-linux-07.md
     - name: Distribuire contenitori con VS Code
       items:
-        - name: Introduzione e prerequisiti
+        - name: 1 - Introduzione e prerequisiti
           href: tutorial-deploy-containers-01.md
-        - name: Distribuire l'immagine del contenitore
+        - name: 2 - Distribuire l'immagine del contenitore
           href: tutorial-deploy-containers-02.md
-        - name: Apportare modifiche e ripetere la distribuzione
+        - name: 3 - Apportare modifiche e ripetere la distribuzione
           href: tutorial-deploy-containers-03.md
-        - name: Eseguire lo streaming dei log
+        - name: 4 - Eseguire lo streaming dei log
           href: tutorial-deploy-containers-04.md
-        - name: Pulire le risorse
+        - name: 5 - Eseguire la pulizia delle risorse
           href: tutorial-deploy-containers-05.md
     - name: Distribuire Funzioni di Azure con VS Code
       items:
-        - name: Introduzione e prerequisiti
+        - name: 1 - Introduzione e prerequisiti
           href: tutorial-vs-code-serverless-python-01.md
-        - name: Creare la funzione Python
+        - name: 2 - Creare la funzione Python
           href: tutorial-vs-code-serverless-python-02.md
-        - name: Esaminare i file di codice
+        - name: 3 - Esaminare i file di codice
           href: tutorial-vs-code-serverless-python-03.md
-        - name: Eseguire il debug in locale
+        - name: 4 - Eseguire il debug in locale
           href: tutorial-vs-code-serverless-python-04.md
-        - name: Distribuisci in Azure
+        - name: 5 - Eseguire la distribuzione in Azure
           href: tutorial-vs-code-serverless-python-05.md
-        - name: Aggiungere una seconda funzione
+        - name: 6 - Aggiungere una seconda funzione
           href: tutorial-vs-code-serverless-python-06.md
-        - name: Aggiungere un binding di archiviazione
+        - name: 7 - Aggiungere un binding di archiviazione
           href: tutorial-vs-code-serverless-python-07.md
-        - name: Pulire le risorse
+        - name: 8 - Eseguire la pulizia delle risorse
           href: tutorial-vs-code-serverless-python-08.md
-- name: Guide alle procedure
+- name: Guide pratiche
   items:
     - name: Installare l'SDK
       href: python-sdk-azure-install.md
-    - name: Authentication
+    - name: Autenticazione
       href: python-sdk-azure-authenticate.md
     - name: Configurazione delle operazioni
       href: python-sdk-azure-operation-config.md
@@ -148,5 +148,5 @@
       href: 'https://docs.microsoft.com/samples/browse/?languages=python&products=azure-search'
     - name: Tutti gli esempi
       href: 'https://docs.microsoft.com/samples/browse/?languages=python'
-- name: riferimento
+- name: Informazioni di riferimento
   href: /python/api/?view=azure-python
