@@ -3,12 +3,12 @@ title: Distribuire l'applicazione di Funzioni di Azure da Visual Studio Code
 description: Parte 4 dell'esercitazione, distribuire l'app per le funzioni nel cloud.
 ms.topic: conceptual
 ms.date: 09/23/2019
-ms.openlocfilehash: e287f24429fc5939bcd64ba753b36eb0f387d8f3
-ms.sourcegitcommit: 20634277152d72a35ad9b35fa1203608740d1145
+ms.openlocfilehash: 8cb80b25e224d6f4552ec165779cda35f990ad6a
+ms.sourcegitcommit: 44d1abfb836f90b8731d7ea5d5a5af09245b2b89
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77144060"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77422530"
 ---
 # <a name="deploy-the-functions-app"></a>Distribuire l'app per le funzioni
 
@@ -24,7 +24,7 @@ ms.locfileid: "77144060"
 
 1. Al prompt successivo immettere un nome univoco globale per l'app per le funzioni e premere **INVIO**. I caratteri validi per un nome di app per le funzioni sono 'a-z', '0-9' e '-'.
 
-1. Scegliere la versione/runtime di Node.js 
+1. Scegliere la versione/runtime di Node.js
 
     ![Pannello di output di VS Code che mostra la versione/runtime di Node.js](media/functions-extension/nodejs-runtime-version.png)
 
