@@ -9,12 +9,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
 ms.custom: mvc
-ms.openlocfilehash: b6c8e138c9d738b56d237180e618268cb71284e3
-ms.sourcegitcommit: 20634277152d72a35ad9b35fa1203608740d1145
+ms.openlocfilehash: 9288f680f5eb92046ada7ce420d64de2e5301fcc
+ms.sourcegitcommit: aceed8548ad4529a81d83eb15a095edc8607cac5
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77144085"
+ms.lasthandoff: 02/18/2020
+ms.locfileid: "77440972"
 ---
 # <a name="deploy-a-spring-boot-application-on-azure-app-service-for-container"></a>Distribuire un'applicazione Web Spring Boot nel servizio app di Azure per Container
 
@@ -140,10 +140,10 @@ Specificare il nome utente e la password dal riquadro del registro nel nodo `<to
             <image>openjdk:8-jre-alpine</image>
         </from>
         <to>
-            <image>{docker.image.prefix}/{project.artifactId}</image>
+            <image>${docker.image.prefix}/${project.artifactId}</image>
             <auth>
-               <username>{username}</username>
-               <password>{password}</password>
+               <username>${username}</username>
+               <password>${password}</password>
             </auth>
         </to>
      </configuration>

@@ -6,12 +6,12 @@ ms.date: 12/19/2018
 ms.service: postgresql
 ms.tgt_pltfrm: multiple
 ms.topic: conceptual
-ms.openlocfilehash: 5748f3e51132ff003e41d61f9c10dff61b95e364
-ms.sourcegitcommit: 2ad3f7ce8c87331f8aff759ac2a3dc1b29581866
+ms.openlocfilehash: e968f6a86cc8616b0ae79e5d55756acea76040a6
+ms.sourcegitcommit: 44d1abfb836f90b8731d7ea5d5a5af09245b2b89
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76022097"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77422540"
 ---
 # <a name="how-to-use-spring-data-jpa-with-azure-postgresql"></a>Come usare Spring Data JPA con Azure PostgreSQL
 
@@ -24,7 +24,7 @@ I prerequisiti seguenti sono necessari per completare le procedure disponibili i
 * Sottoscrizione di Azure; se non si ha una sottoscrizione di Azure, è possibile attivare i [vantaggi per i sottoscrittori di MSDN] oppure iscriversi per ottenere un [account Azure gratuito].
 * Java Development Kit (JDK) supportato. Per altre informazioni sulle versioni di JDK utilizzabili per lo sviluppo in Azure, vedere <https://aka.ms/azure-jdks>.
 * [Apache Maven](http://maven.apache.org/), versione 3.0 o versione successiva.
-* [Curl](https://curl.haxx.se/) o utilità HTTP simile per testare il funzionamento. In alternativa, un'utilità HTTP simile per testare il funzionamento.
+* [Curl](https://curl.haxx.se/) o utilità HTTP simile per testare il funzionamento.
 * Utilità da riga di comando [psql](https://www.postgresql.org/docs/current/app-psql.html).
 * Un client [Git](https://git-scm.com/downloads).
 
