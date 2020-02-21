@@ -10,12 +10,12 @@ metadata:
   ms.date: 10/11/2019
   ms.topic: landing-page
   ms.collection: collection
-  ms.openlocfilehash: 39ea83a1e5795b6eec19ef960b188b156525329b
-  ms.sourcegitcommit: 6fa28ea675ae17ffb9ac825415e2e26a3dfe7107
+  ms.openlocfilehash: b65eadb3913aea78871e621f40fbdda19005b154
+  ms.sourcegitcommit: c34647aee3b9a72fa0ee6aeac2dfa1e36d67c7ef
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 02/04/2020
-  ms.locfileid: "77002180"
+  ms.lasthandoff: 02/20/2020
+  ms.locfileid: "77504519"
 landingContent:
 - title: Introduzione ad Azure SDK per Python
   linkLists:
@@ -40,19 +40,19 @@ landingContent:
   - linkListType: quickstart
     links:
     - text: Creare, distribuire e ridimensionare app Web Python
-      url: /azure/app-service/containers/quickstart-python?toc=%2Fazure%2Fpython%2Ftoc.json&bc=%2Fazure%2Fpython%2Fbreadcrumb%2Ftoc.json
+      url: /azure/app-service/containers/quickstart-python?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
     - text: Creare un'app Python serverless in Funzioni di Azure con Visual Studio Code
       url: tutorial-vs-code-serverless-python-01.md
     - text: Distribuire app in contenitori nel servizio Azure Kubernetes
-      url: /azure/aks/kubernetes-walkthrough?toc=%2Fazure%2Fpython%2Ftoc.json&bc=%2Fazure%2Fpython%2Fbreadcrumb%2Ftoc.json
+      url: /azure/aks/kubernetes-walkthrough?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
     - text: Creare e distribuire un'app Python con Azure Pipelines
-      url: /azure/devops/pipelines/languages/python-webapp?toc=%2Fazure%2Fpython%2Ftoc.json&bc=%2Fazure%2Fpython%2Fbreadcrumb%2Ftoc.json
+      url: /azure/devops/pipelines/languages/python-webapp?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
     - text: Aggiungere l'accesso con Microsoft a un'applicazione Web Python
-      url: /azure/active-directory/develop/quickstart-v2-python-webapp?toc=%2Fazure%2Fpython%2Ftoc.json&bc=%2Fazure%2Fpython%2Fbreadcrumb%2Ftoc.json
+      url: /azure/active-directory/develop/quickstart-v2-python-webapp?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
   - linkListType: overview
     links:
     - text: Introduzione al Servizio app di Azure in Linux
-      url: /azure/app-service/containers/app-service-linux-intro?toc=%2Fazure%2Fpython%2Ftoc.json&bc=%2Fazure%2Fpython%2Fbreadcrumb%2Ftoc.json
+      url: /azure/app-service/containers/app-service-linux-intro?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
 - title: Introduzione agli strumenti di sviluppo
   linkLists:
   - linkListType: overview
@@ -72,48 +72,66 @@ landingContent:
     - text: Estensioni di Azure per Visual Studio Code
       url: https://code.visualstudio.com/docs/azure/extensions
     - text: Installare l'interfaccia della riga di comando di Azure
-      url: /cli/azure/install-azure-cli?view=azure-cli-latest?toc=%2Fazure%2Fpython%2Ftoc.json&bc=%2Fazure%2Fpython%2Fbreadcrumb%2Ftoc.json
+      url: /cli/azure/install-azure-cli?view=azure-cli-latest?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
     - text: Eseguire le applicazioni Linux in modalità nativa in Windows 10 con una vasta gamma di distribuzioni
-      url: /windows/wsl/install-win10?toc=%2Fazure%2Fpython%2Ftoc.json&bc=%2Fazure%2Fpython%2Fbreadcrumb%2Ftoc.json
+      url: /windows/wsl/install-win10?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
 - title: Servizi per data science, intelligenza artificiale e Machine Learning
   linkLists:
   - linkListType: overview
     links:
     - text: Informazioni sui servizi Azure Machine Learning
-      url: /azure/machine-learning/service?toc=%2Fazure%2Fpython%2Ftoc.json&bc=%2Fazure%2Fpython%2Fbreadcrumb%2Ftoc.json
+      url: /azure/machine-learning/service?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
     - text: Informazioni su Servizi cognitivi di Azure
-      url: /azure/cognitive-services?toc=%2Fazure%2Fpython%2Ftoc.json&bc=%2Fazure%2Fpython%2Fbreadcrumb%2Ftoc.json
+      url: /azure/cognitive-services?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
   - linkListType: quickstart
     links:
     - text: Usare gli strumenti di Azure Machine Learning in un notebook di Jupyter
-      url: /azure/notebooks/use-machine-learning-services-jupyter-notebooks?toc=%2Fazure%2Fpython%2Ftoc.json&bc=%2Fazure%2Fpython%2Fbreadcrumb%2Ftoc.json
+      url: /azure/notebooks/use-machine-learning-services-jupyter-notebooks?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
     - text: Usare un cluster Azure HDInsights gestito per l'elaborazione dei dati
-      url: /azure/hdinsight/hadoop/apache-hadoop-linux-create-cluster-get-started-portal?toc=%2Fazure%2Fpython%2Ftoc.json&bc=%2Fazure%2Fpython%2Fbreadcrumb%2Ftoc.json
+      url: /azure/hdinsight/hadoop/apache-hadoop-linux-create-cluster-get-started-portal?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
     - text: Creare una macchina virtuale di Azure per attività di data science
       url: /azure/machine-learning/data-science-virtual-machine/dsvm-ubuntu-intro?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
     - text: Usare notebook di Jupyter in Azure Notebooks
       url: https://notebooks.azure.com/
-- title: Soluzioni di archiviazione, messaggistica e database in Azure
+- title: Soluzioni di archiviazione e database in Azure
   linkLists:
   - linkListType: overview
     links:
     - text: Informazioni sulle soluzioni di archiviazione in Azure
-      url: /azure/storage/common/storage-introduction?toc=%2Fazure%2Fpython%2Ftoc.json&bc=%2Fazure%2Fpython%2Fbreadcrumb%2Ftoc.json
-    - text: NoSQL scalabile con Azure CosmosDB
-      url: /azure/cosmos-db/introduction?toc=%2Fazure%2Fpython%2Ftoc.json&bc=%2Fazure%2Fpython%2Fbreadcrumb%2Ftoc.json
-    - text: Messaggistica tra applicazioni con il bus di servizio di Azure
-      url: /azure/service-bus-messaging?toc=%2Fazure%2Fpython%2Ftoc.json&bc=%2Fazure%2Fpython%2Fbreadcrumb%2Ftoc.json
+      url: /azure/storage/common/storage-introduction?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
+    - text: NoSQL scalabile con Azure Cosmos DB
+      url: /azure/cosmos-db/introduction?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
   - linkListType: quickstart
     links:
     - text: Gestire i BLOB in archiviazione di Azure da Python
-      url: /azure/storage/blobs/storage-quickstart-blobs-python?toc=%2Fazure%2Fpython%2Ftoc.json&bc=%2Fazure%2Fpython%2Fbreadcrumb%2Ftoc.json
+      url: /azure/storage/blobs/storage-quickstart-blobs-python?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
     - text: Creare un'istanza PostgreSQL in Azure e connettersi a tale istanza usando Python
       url: /azure/postgresql/quickstart-create-server-database-portal?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
     - text: Creare un'istanza MySQL in Azure e connettersi a tale istanza usando Python.
       url: /azure/mysql/quickstart-create-mysql-server-database-using-azure-portal?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
-    - text: Usare query SQL in un account Azure CosmosDB da Python
-      url: /azure/cosmos-db/create-sql-api-python?toc=%2Fazure%2Fpython%2Ftoc.json&bc=%2Fazure%2Fpython%2Fbreadcrumb%2Ftoc.json
+    - text: Usare query SQL in un account Azure Cosmos DB da Python
+      url: /azure/cosmos-db/create-sql-api-python?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
     - text: Configurare un server SQL gestito in Azure
-      url: /azure/sql-database/sql-database-connect-query-python?toc=%2Fazure%2Fpython%2Ftoc.json&bc=%2Fazure%2Fpython%2Fbreadcrumb%2Ftoc.json
+      url: /azure/sql-database/sql-database-connect-query-python?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
+- title: Messaggistica in Azure
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Archiviazione di messaggi con le code di Azure
+      url: /azure/storage/queues/storage-queues-introduction?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
+    - text: Messaggistica tra applicazioni con il bus di servizio di Azure
+      url: /azure/service-bus-messaging?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
+    - text: Streaming di Big Data con Hub eventi
+      url: /azure/event-hubs/event-hubs-about?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
+    - text: Creazione di applicazioni basate su eventi con Griglia di eventi
+      url: /azure/event-grid/overview?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
+  - linkListType: quickstart
+    links:
+    - text: Usare Archiviazione code di Azure
+      url: /azure/storage/queues/storage-python-how-to-use-queue-storage?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
+    - text: Usare le code del bus di servizio di Azure
+      url: /azure/service-bus-messaging/service-bus-python-how-to-use-queues?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
     - text: Inserire i dati in tempo reale tramite Hub eventi di Azure
-      url: /azure/event-hubs/event-hubs-python?toc=%2Fazure%2Fpython%2Ftoc.json&bc=%2Fazure%2Fpython%2Fbreadcrumb%2Ftoc.json
+      url: /azure/event-hubs/event-hubs-python?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
+    - text: Instradare eventi personalizzati con Griglia di eventi
+      url: /azure/event-grid/custom-event-quickstart?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
