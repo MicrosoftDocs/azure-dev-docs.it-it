@@ -1,17 +1,17 @@
 ---
-title: 'Esercitazione: Pulire le risorse di Azure'
+title: 'Passaggio 5: Pulire le risorse di Azure'
 description: "Passaggio 5 dell'esercitazione: pulizia delle risorse di Azure per evitare di incorrere in addebiti ricorrenti."
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.custom: seo-python-october2019
-ms.openlocfilehash: bbafb323c49b9dd6879bf69924d8e8bcf62093a3
-ms.sourcegitcommit: a8073315f751631ab983618fa9f812eb95d8b2dc
+ms.openlocfilehash: df785e68de26fe4414430289800fdabfa8757eef
+ms.sourcegitcommit: 44d1abfb836f90b8731d7ea5d5a5af09245b2b89
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76125240"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77422236"
 ---
-# <a name="tutorial-clean-up-azure-resources"></a>Esercitazione: Pulire le risorse di Azure
+# <a name="5-clean-up-azure-resources"></a>5: Pulire le risorse di Azure
 
 [Passaggio precedente: Eseguire lo streaming dei log](tutorial-deploy-containers-04.md)
 

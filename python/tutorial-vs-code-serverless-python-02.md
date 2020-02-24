@@ -1,17 +1,17 @@
 ---
-title: 'Esercitazione: Creare una funzione Python per Funzioni di Azure con VS Code'
+title: 'Passaggio 2: Creare una funzione Python per Funzioni di Azure con VS Code'
 description: "Passaggio 2 dell'esercitazione: informazioni sull'uso dell'estensione Funzioni di Azure per VS Code."
 ms.topic: conceptual
 ms.date: 09/02/2019
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 49ab6b150f14268b6d52ac48524f66e6e520e547
-ms.sourcegitcommit: 68a4044b9fa3291c9e7e2f68ae0049328f9c01bb
+ms.openlocfilehash: 3d33213d00c2b20d3a712c5cf9ca6888d25ebb8a
+ms.sourcegitcommit: 44d1abfb836f90b8731d7ea5d5a5af09245b2b89
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74992521"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77422162"
 ---
-# <a name="tutorial-create-a-python-function-for-azure-functions"></a>Esercitazione: Creare una funzione Python per Funzioni di Azure
+# <a name="2-create-a-python-function-for-azure-functions"></a>2: Creare una funzione Python per Funzioni di Azure
 
 [Passaggio precedente: Prerequisiti](tutorial-vs-code-serverless-python-01.md)
 
@@ -23,7 +23,7 @@ Questo articolo illustra come creare una funzione Python per Funzioni di Azure c
 
 1. Fornire le informazioni richieste ai prompt visualizzati:
 
-    | Prompt | Valore | DESCRIZIONE |
+    | Prompt | valore | Descrizione |
     | --- | --- | --- |
     | Specify a folder for the project (Specificare una cartella per il progetto) | Cartella attualmente aperta | Cartella in cui creare il progetto. Se necessario, è possibile creare il progetto in una sottocartella. |
     | Selezionare un linguaggio per il progetto di app per le funzioni | **Python** | Linguaggio da usare per la funzione, che determina il modello usato per il codice. |
@@ -50,6 +50,6 @@ Questo articolo illustra come creare una funzione Python per Funzioni di Azure c
 > ![Creare funzioni usando Create Function nell'area Azure: Functions](media/tutorial-vs-code-serverless-python/create-new-functions-in-azure-functions-explorer.png)
 
 > [!div class="nextstepaction"]
-> [La funzione è stata creata](tutorial-vs-code-serverless-python-03.md)
+> [La funzione è stata creata: procedere con il passaggio 3 >>>](tutorial-vs-code-serverless-python-03.md)
 
 [Si è verificato un problema](https://www.research.net/r/PWZWZ52?tutorial=vscode-functions-python&step=02-create-function)

@@ -4,20 +4,20 @@ description: Parte 2 dell'esercitazione, creare l'app di esempio
 ms.topic: conceptual
 ms.date: 09/24/2019
 ms.author: buhollan
-ms.openlocfilehash: b236f64f04be0c0b8faa74eb67ce22f96ec595aa
-ms.sourcegitcommit: 367780fe48d977c82cb84208c128b0bf694b1029
+ms.openlocfilehash: 69c0e7d6f43829546e5f23ec63a4ac35b71d7e78
+ms.sourcegitcommit: 44d1abfb836f90b8731d7ea5d5a5af09245b2b89
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76825845"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77422525"
 ---
 # <a name="create-the-app"></a>Creare l'app
 
 [Passaggio precedente: Introduzione e prerequisiti](tutorial-vscode-static-website-node-01.md)
 
-In questo passaggio si usa l'interfaccia della riga di comando di [Angular](https://cli.angular.io/), [React](https://github.com/facebook/create-react-app) o [Vue](https://cli.vuejs.org/) per creare una semplice app che è possibile distribuire in Azure. In alternativa, è possibile usare qualsiasi altro framework JavaScript che produca un set di file statici o qualsiasi cartella che contenga file HTML, CSS o JavaScript. Se è già disponibile un'app da distribuire, è possibile procedere con il passaggio [Creare un account di Archiviazione di Azure](tutorial-vscode-static-website-node-03.md).
+In questo passaggio si usa l'interfaccia della riga di comando di [Angular](https://cli.angular.io/), [React](https://github.com/facebook/create-react-app), [Vue](https://cli.vuejs.org/) o [Svelte](https://github.com/sveltejs/template) per creare una semplice app che è possibile distribuire in Azure. In alternativa, è possibile usare qualsiasi altro framework JavaScript che produca un set di file statici o qualsiasi cartella che contenga file HTML, CSS o JavaScript. Se è già disponibile un'app da distribuire, è possibile procedere con il passaggio [Creare un account di Archiviazione di Azure](tutorial-vscode-static-website-node-03.md).
 
-# <a name="angulartabangular"></a>[Angular](#tab/angular)
+# <a name="angular"></a>[Angular](#tab/angular)
 
 1. Usare l'interfaccia della riga di comando per eseguire lo scaffolding di una nuova app denominata "my-static-app" eseguendo il comando seguente:
 
@@ -48,7 +48,7 @@ In questo passaggio si usa l'interfaccia della riga di comando di [Angular](http
 
 1. Arrestare il server premendo **CTRL**+**C** nel terminale o al prompt dei comandi.
 
-# <a name="reacttabreact"></a>[React](#tab/react)
+# <a name="react"></a>[React](#tab/react)
 
 1. Usare l'interfaccia della riga di comando per eseguire lo scaffolding di una nuova app denominata "my-static-app" eseguendo il comando seguente:
 
@@ -77,7 +77,7 @@ In questo passaggio si usa l'interfaccia della riga di comando di [Angular](http
 
 1. Arrestare il server premendo **CTRL**+**C** nel terminale o al prompt dei comandi.
 
-# <a name="vuetabvue"></a>[Vue](#tab/vue)
+# <a name="vue"></a>[Vue](#tab/vue)
 
 1. Usare l'interfaccia della riga di comando per eseguire lo scaffolding di una nuova app denominata "my-static-app" eseguendo il comando seguente:
 
@@ -105,6 +105,41 @@ Quando l'interfaccia della riga di comando visualizza domande relative alla conf
 1. Aprire un browser all'indirizzo [http://localhost:8080](http://localhost:8080) per verificare se l'app è in esecuzione:
 
     ![App Vue di esempio in esecuzione](media/static-website/local-app-vue.png)
+
+1. Arrestare il server premendo **CTRL**+**C** nel terminale o al prompt dei comandi.
+
+# <a name="svelte"></a>[Svelte](#tab/svelte)
+
+1. Usare l'interfaccia della riga di comando per eseguire lo scaffolding di una nuova app denominata "my-static-app" eseguendo il comando seguente:
+
+    ```bash
+    npx degit sveltejs/template my-static-app
+    ```
+
+1. Quindi, passare alla nuova cartella ed eseguire il comando `npm install`:
+
+    ```bash
+    cd my-static-app
+    npm install
+    ```
+
+1. Compilare ora l'applicazione eseguendo il comando `npm run build`:
+
+    ```bash
+    npm run build
+    ```
+
+1. Nella cartella _public_ dovrebbe essere presente una cartella _build_. La cartella _build_ contiene i file HTML, CSS e JavaScript da distribuire in Archiviazione di Azure.
+
+1. Eseguire l'app usando il comando seguente:
+
+     ```bash
+     npm run dev
+     ```
+
+1. Aprire un browser all'indirizzo [http://localhost:5000](http://localhost:5000) per verificare se l'app è in esecuzione:
+
+    ![App Vue di esempio in esecuzione](media/static-website/local-app-svelte.png)
 
 1. Arrestare il server premendo **CTRL**+**C** nel terminale o al prompt dei comandi.
 

@@ -1,17 +1,17 @@
 ---
-title: 'Esercitazione: Creare il servizio app da Visual Studio Code'
+title: 'Passaggio 3: Creare il servizio app da Visual Studio Code'
 description: "Passaggio 3 dell'esercitazione: creazione del servizio app dall'estensione VS Code."
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.custom: seo-python-october2019
-ms.openlocfilehash: b64adc1604698de74f4f318b805dd8c289c8fff8
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.openlocfilehash: dea4ace359c8d072af8ab9ed33451bc8077249b7
+ms.sourcegitcommit: 44d1abfb836f90b8731d7ea5d5a5af09245b2b89
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74466227"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77422458"
 ---
-# <a name="tutorial-create-the-app-service-from-visual-studio-code"></a>Esercitazione: Creare il servizio app da Visual Studio Code
+# <a name="3-create-the-app-service-from-visual-studio-code"></a>3: Creare il servizio app da Visual Studio Code
 
 [Passaggio precedente: Preparare l'app](tutorial-deploy-app-service-on-linux-02.md)
 
@@ -53,6 +53,6 @@ Se si ha un file di definizioni delle variabili di ambiente, è possibile usarlo
 1. Se si creano impostazioni direttamente nel portale di Azure, è possibile salvarle in un file di definizioni facendo clic con il pulsante destro del mouse sul nodo **Application Settings** (Impostazioni applicazione) e scegliendo **Download Remote Settings** (Scarica impostazioni remote). Questo processo assicura che le impostazioni siano presenti nel repository e non solo nel portale.
 
 > [!div class="nextstepaction"]
-> [Il servizio app è stato creato](tutorial-deploy-app-service-on-linux-04.md)
+> [Il servizio app è stato creato: procedere con il passaggio 4 >>>](tutorial-deploy-app-service-on-linux-04.md)
 
 [Si è verificato un problema](https://www.research.net/r/PWZWZ52?tutorial=vscode-appservice-python&step=03-create-app-service)

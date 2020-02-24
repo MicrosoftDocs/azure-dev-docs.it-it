@@ -4,12 +4,12 @@ description: Parte 5 dell'esercitazione, apportare modifiche e ripetere la distr
 ms.topic: conceptual
 ms.date: 09/24/2019
 ms.author: buhollan
-ms.openlocfilehash: 0db773cdea2e288dc461479c3753b94c9a286e82
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.openlocfilehash: d0f6be1d57c9d378a4428a5a05da0428314f76c0
+ms.sourcegitcommit: aceed8548ad4529a81d83eb15a095edc8607cac5
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74466639"
+ms.lasthandoff: 02/18/2020
+ms.locfileid: "77440943"
 ---
 # <a name="make-changes-and-redeploy"></a>Apportare modifiche e ripetere la distribuzione
 
@@ -17,7 +17,7 @@ ms.locfileid: "74466639"
 
 In questo passaggio viene apportata una semplice modifica al codice sorgente dell'app, quindi il sito viene ridistribuito per verificare il flusso di lavoro di distribuzione end-to-end.
 
-# <a name="angulartabangular"></a>[Angular](#tab/angular)
+# <a name="angular"></a>[Angular](#tab/angular)
 
 1. In Visual Studio Code aprire il file _src/app/app.component.html_ e modificare la riga 305 come indicato di seguito:
 
@@ -33,7 +33,7 @@ In questo passaggio viene apportata una semplice modifica al codice sorgente del
 
     ![Modifiche nell'app dopo la ridistribuzione](media/static-website/updated-azure-app-angular.png)
 
-# <a name="reacttabreact"></a>[React](#tab/react)
+# <a name="react"></a>[React](#tab/react)
 
 1. In Visual Studio Code aprire il file _src/app.js_ e cambiare la riga 11 come indicato di seguito:
 
@@ -49,7 +49,7 @@ In questo passaggio viene apportata una semplice modifica al codice sorgente del
 
     ![Modifiche nell'app dopo la ridistribuzione](media/static-website/updated-azure-app-react.png)
 
-# <a name="vuetabvue"></a>[Vue](#tab/vue)
+# <a name="vue"></a>[Vue](#tab/vue)
 
 1. In Visual Studio Code aprire il file _src/App.vue_ e modificare la riga 11 come indicato di seguito:
 
@@ -64,6 +64,37 @@ In questo passaggio viene apportata una semplice modifica al codice sorgente del
 1. Al termine della distribuzione, aggiornare il sito nel browser per osservare le modifiche:
 
     ![Modifiche nell'app dopo la ridistribuzione](media/static-website/updated-azure-app-vue.png)
+
+# <a name="svelte"></a>[Svelte](#tab/svelte)
+
+1. In Visual Studio Code aprire il file _src/main.js_ e cambiare la riga 6 come indicato di seguito:
+
+    ```js
+    import App from './App.svelte';
+
+    const app = new App({
+        target: document.body,
+        props: {
+            name: 'Welcome to Azure!'
+        }
+    });
+
+    export default app;
+    ```
+
+2. Ora aprire il file _src/App.svelte_ e cambiare la riga 6 come indicato di seguito:
+
+    ```html
+    <h1>{name}</h1>
+    ```
+
+1. In un terminale o al prompt dei comandi eseguire `npm run build`.
+
+1. In VS Code fare clic con il pulsante destro del mouse sulla cartella _public_ aggiornata e scegliere di nuovo **Distribuisci in Sito Web statico**. Scegliere l'account di archiviazione e confermare di voler distribuire le modifiche. L'estensione di Azure elimina automaticamente i vecchi file prima di distribuire le modifiche per evitare problemi di memorizzazione nella cache.
+
+1. Al termine della distribuzione, aggiornare il sito nel browser per osservare le modifiche:
+
+    ![Modifiche nell'app dopo la ridistribuzione](media/static-website/updated-azure-app-svelte.png)
 
 ---
 

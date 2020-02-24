@@ -1,17 +1,17 @@
 ---
-title: 'Esercitazione: Eseguire il debug in locale del codice Python in Funzioni di Azure con VS Code'
+title: 'Passaggio 4: Eseguire il debug in locale del codice Python in Funzioni di Azure con VS Code'
 description: "Passaggio 4 dell'esercitazione: esecuzione del debugger di VS Code in locale per verificare il codice Python."
 ms.topic: conceptual
 ms.date: 09/02/2019
 ms.custom: seo-python-october2019
-ms.openlocfilehash: ffd5d433166c44edd8c021fd29cb7e43395df7ff
-ms.sourcegitcommit: ac68fb174d606c7af2bfa79fe32b8ca7b73c86a1
+ms.openlocfilehash: ddb6cd0b1c1cac308e7e7e8da5b658cda277586a
+ms.sourcegitcommit: 44d1abfb836f90b8731d7ea5d5a5af09245b2b89
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75946691"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77422149"
 ---
-# <a name="tutorial-debug-the-azure-functions-python-code-locally"></a>Esercitazione: Eseguire il debug in locale del codice Python in Funzioni di Azure
+# <a name="4-debug-the-azure-functions-python-code-locally"></a>4: Eseguire il debug in locale del codice Python in Funzioni di Azure
 
 [Passaggio precedente: Esaminare i file di codice](tutorial-vs-code-serverless-python-03.md)
 
@@ -59,6 +59,6 @@ ms.locfileid: "75946691"
 1. Se si ritiene di aver testato la funzione in locale in modo esauriente, arrestare il debugger usando n il comando di menu **Debug** > **Arresta debug** oppure il comando **Disconnect** sulla barra degli strumenti di debug.
 
 > [!div class="nextstepaction"]
-> [Il debugger è stato eseguito in locale](tutorial-vs-code-serverless-python-05.md)
+> [Il debugger è stato eseguito in locale: procedere con il passaggio 5 >>>](tutorial-vs-code-serverless-python-05.md)
 
 [Si è verificato un problema](https://www.research.net/r/PWZWZ52?tutorial=vscode-functions-python&step=04-test-debug)

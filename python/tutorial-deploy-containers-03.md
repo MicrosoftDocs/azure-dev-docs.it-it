@@ -1,17 +1,17 @@
 ---
-title: 'Esercitazione: Ridistribuire un contenitore nel servizio app di Azure dopo aver apportato modifiche in Visual Studio Code'
+title: 'Passaggio 3: Ridistribuire un contenitore nel servizio app di Azure dopo aver apportato modifiche in Visual Studio Code'
 description: Passaggio 3 dell'esercitazione, la procedura semplice per ricompilare e ridistribuire un'immagine del contenitore.
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 88c5b608316f7dec601625fbf5962b9b888a4662
-ms.sourcegitcommit: 6fa28ea675ae17ffb9ac825415e2e26a3dfe7107
+ms.openlocfilehash: f0e6eb808e25f3bb48eb2c849310747945e0d7f9
+ms.sourcegitcommit: 44d1abfb836f90b8731d7ea5d5a5af09245b2b89
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "77002302"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77422401"
 ---
-# <a name="tutorial-redeploy-a-container-to-azure-app-service-after-making-changes"></a>Esercitazione: Ridistribuire un contenitore nel Servizio app di Azure dopo aver apportato modifiche
+# <a name="2-redeploy-a-container-to-azure-app-service-after-making-changes"></a>2: Ridistribuire un contenitore nel Servizio app di Azure dopo aver apportato modifiche
 
 [Passaggio precedente: Distribuire l'immagine in Azure](tutorial-deploy-containers-02.md)
 
@@ -30,6 +30,6 @@ Dal momento che inevitabilmente si apportano modifiche all'app, si finisce per r
 1. Dopo circa 15-20 secondi, visitare di nuovo l'URL del servizio app per controllare gli aggiornamenti.
 
 > [!div class="nextstepaction"]
-> [Sono state apportate modifiche ed è stata ripetuta la distribuzione](tutorial-deploy-containers-04.md)
+> [Sono state apportate modifiche ed è stata ripetuta la distribuzione: procedere con il passaggio 4 >>>](tutorial-deploy-containers-04.md)
 
 [Si è verificato un problema](https://www.research.net/r/PWZWZ52?tutorial=vscode-appservice-containers&step=03-make-changes-redeploy)

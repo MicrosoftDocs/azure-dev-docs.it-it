@@ -5,12 +5,12 @@ author: yevster
 ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 1/20/2020
-ms.openlocfilehash: d32c38d763901152135b965484362031dfac7f0a
-ms.sourcegitcommit: 367780fe48d977c82cb84208c128b0bf694b1029
+ms.openlocfilehash: 7025393f45a32a42fcd2ae3dafee6274a4ba3cbc
+ms.sourcegitcommit: aceed8548ad4529a81d83eb15a095edc8607cac5
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76825795"
+ms.lasthandoff: 02/18/2020
+ms.locfileid: "77440866"
 ---
 # <a name="migrate-java-applications-to-azure"></a>Eseguire la migrazione di applicazioni Java ad Azure
 
@@ -48,7 +48,7 @@ Le applicazioni Web vengono compresse in archivi con l'estensione *war* (file WA
 
 ### <a name="java-ee-applications"></a>Applicazioni Java EE
 
-Le applicazioni Java EE, denominate anche applicazioni J2EE o, più di recente, applicazioni JakartaEE, possono contenere alcuni, tutti o nessuno degli elementi delle applicazioni Web. Possono inoltre contenere e utilizzare molti componenti aggiuntivi, come definito dalla [specifica Java EE](https://en.wikipedia.org/wiki/Java_Platform,_Enterprise_Edition).
+Le applicazioni Java EE, denominate anche applicazioni J2EE o, più di recente, applicazioni Jakarta EE, possono contenere alcuni, tutti o nessun elemento delle applicazioni Web. Possono inoltre contenere e utilizzare molti componenti aggiuntivi, come definito dalla [specifica Java EE](https://en.wikipedia.org/wiki/Java_Platform,_Enterprise_Edition).
 
 Le applicazioni Java EE possono essere compresse come archivi con l'estensione *ear* (file EAR) o come archivi con l'estensione *war* (file WAR).
 

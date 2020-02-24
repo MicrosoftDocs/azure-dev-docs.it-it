@@ -4,12 +4,12 @@ description: "Passaggio 1 dell'esercitazione: introduzione e prerequisiti."
 ms.topic: conceptual
 ms.date: 09/02/2019
 ms.custom: seo-python-october2019
-ms.openlocfilehash: a380a447150f29653a1f94a3fe1f6464dd495a81
-ms.sourcegitcommit: fc3408b6e153c847dd90026161c4c498aa06e2fc
+ms.openlocfilehash: 3056ccaa6d0cc8e5f2e15c6b7511172f59644936
+ms.sourcegitcommit: 44d1abfb836f90b8731d7ea5d5a5af09245b2b89
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75190998"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77422180"
 ---
 # <a name="tutorial-create-and-deploy-serverless-azure-functions-in-python-with-visual-studio-code"></a>Esercitazione: Creare e distribuire Funzioni di Azure serverless in Python con Visual Studio Code
 
@@ -67,6 +67,6 @@ Se il comando `func` non viene riconosciuto, eseguire nuovamente `npm install -g
 Il comando `func` funziona tramite il file *func.cmd* che viene installato nella cartella globale di Node.js. Per vedere la posizione di questa cartella, eseguire `npm -l` ed esaminare il percorso alla fine dell'output.
 
 > [!div class="nextstepaction"]
-> [L'accesso ad Azure è stato effettuato](tutorial-vs-code-serverless-python-02.md)
+> [L'accesso ad Azure è stato eseguito: procedere con il passaggio 2 >>>](tutorial-vs-code-serverless-python-02.md)
 
 [Si è verificato un problema](https://www.research.net/r/PWZWZ52?tutorial=vscode-functions-python&step=01-verify-prerequisites)

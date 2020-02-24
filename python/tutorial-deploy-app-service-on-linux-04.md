@@ -1,17 +1,17 @@
 ---
-title: 'Esercitazione: Configurare un file di avvio personalizzato per le app Python nel Servizio app di Azure in Linux'
+title: 'Passaggio 4: Configurare un file di avvio personalizzato per le app Python nel Servizio app di Azure in Linux'
 description: "Passaggio 4 dell'esercitazione: indicare al servizio app come avviare l'app Web."
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.custom: seo-python-october2019
-ms.openlocfilehash: e18d58a5caf18103063fabfa3101988399bbb722
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.openlocfilehash: d744b4a270c89b7feb826353366ba021345eac85
+ms.sourcegitcommit: 44d1abfb836f90b8731d7ea5d5a5af09245b2b89
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74467056"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77422482"
 ---
-# <a name="tutorial-configure-a-custom-startup-file-for-python-apps-on-azure-app-service"></a>Esercitazione: Configurare un file di avvio personalizzato per le app Python nel Servizio app di Azure
+# <a name="4-configure-a-custom-startup-file-for-python-apps-on-azure-app-service"></a>4: Configurare un file di avvio personalizzato per le app Python nel Servizio app di Azure
 
 [Passaggio precedente: Creare il servizio app](tutorial-deploy-app-service-on-linux-03.md)
 
@@ -88,6 +88,6 @@ Per impostazione predefinita, il contenitore del Servizio app in Linux presuppon
     ```
 
 > [!div class="nextstepaction"]
-> [Il file di avvio è stato configurato](tutorial-deploy-app-service-on-linux-05.md)
+> [Il file di avvio è stato configurato: procedere con il passaggio 5 >>>](tutorial-deploy-app-service-on-linux-05.md)
 
 [Si è verificato un problema](https://www.research.net/r/PWZWZ52?tutorial=vscode-appservice-python&step=04-startup-command)

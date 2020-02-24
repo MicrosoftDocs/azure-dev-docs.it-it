@@ -4,12 +4,12 @@ description: Come installare Azure SDK per Python con pip o GitHub. Azure SDK pu
 ms.date: 10/31/2019
 ms.topic: conceptual
 ms.custom: seo-python-october2019
-ms.openlocfilehash: d3d162bc14f27a9b2bc3fb033dab36dcd1dfeb89
-ms.sourcegitcommit: 68a4044b9fa3291c9e7e2f68ae0049328f9c01bb
+ms.openlocfilehash: de36effc1787c83d137f84f8e0d670c97c71cdcf
+ms.sourcegitcommit: 44d1abfb836f90b8731d7ea5d5a5af09245b2b89
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74992494"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77422497"
 ---
 # <a name="install-the-azure-sdk-for-python"></a>Installare Azure SDK per Python
 
@@ -30,6 +30,9 @@ Se è necessario installare una versione specifica di una libreria, indicarla ne
 ```bash
 pip install azure-storage-blob==12.0.0
 ```
+
+> [!NOTE]
+> Nei sistemi Linux, l'SDK non supporta l'uso di `sudo pip install` per installare una libreria per tutti gli utenti. Ogni utente deve usare `pip install` separatamente. 
 
 ### <a name="install-preview-packages"></a>Installare i pacchetti di anteprima
 

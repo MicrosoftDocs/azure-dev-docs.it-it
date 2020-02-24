@@ -1,17 +1,17 @@
 ---
-title: 'Esercitazione: Pulire le risorse usate con il codice Python in Funzioni di Azure'
+title: 'Passaggio 8: Pulire le risorse usate con il codice Python in Funzioni di Azure'
 description: Passaggio 8 dell'esercitazione, pulizia delle risorse di Azure per evitare di incorrere in addebiti ricorrenti.
 ms.topic: conceptual
 ms.date: 01/15/2020
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 264c09a8d84c7115bb0a56d0455d576187695db0
-ms.sourcegitcommit: a8073315f751631ab983618fa9f812eb95d8b2dc
+ms.openlocfilehash: 1e8735f8cb1a3955fda50365a70274ae6c3c5230
+ms.sourcegitcommit: 44d1abfb836f90b8731d7ea5d5a5af09245b2b89
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76125254"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77422191"
 ---
-# <a name="tutorial-clean-up-azure-resources-for-azure-functions"></a>Esercitazione: Pulire le risorse di Azure per Funzioni di Azure
+# <a name="8-clean-up-azure-resources-for-azure-functions"></a>8: Pulire le risorse di Azure per Funzioni di Azure
 
 [Passaggio precedente: Aggiungere un binding di archiviazione](tutorial-vs-code-serverless-python-07.md)
 

@@ -1,17 +1,17 @@
 ---
-title: "Esercitazione: Distribuire un'app Web Python nel Servizio app di Azure in Linux con VS Code"
+title: "Passaggio 5: Distribuire un'app Web Python nel Servizio app di Azure in Linux con VS Code"
 description: Passaggio 5 dell'esercitazione, distribuzione del codice dell'app Web
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 02d906611ac5f2a56ba85202d89c7c39058b3bc1
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.openlocfilehash: 3f17fe3190857d1cc4faca84c9319e1c514cea4c
+ms.sourcegitcommit: 44d1abfb836f90b8731d7ea5d5a5af09245b2b89
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74466097"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77422450"
 ---
-# <a name="tutorial-deploy-your-python-web-app-to-azure-app-service-on-linux"></a>Esercitazione: Distribuire un'app Web Python nel Servizio app di Azure in Linux
+# <a name="5-deploy-your-python-web-app-to-azure-app-service-on-linux"></a>5: Distribuire un'app Web Python nel Servizio app di Azure in Linux
 
 [Passaggio precedente: Configurare un file di avvio personalizzato](tutorial-deploy-app-service-on-linux-04.md)
 
@@ -45,6 +45,6 @@ Usare questa procedura per distribuire l'app Python in un servizio app di Azure.
     La cartella *antenv* è quella in cui il servizio app crea un ambiente virtuale con le dipendenze. Se si espande questo nodo, è possibile verificare che i pacchetti specificati in *requirements.txt* sono stati installati in *antenv/lib/python3.7/site-packages*.
 
 > [!div class="nextstepaction"]
-> [L'app è stata distribuita](tutorial-deploy-app-service-on-linux-06.md)
+> [L'app è stata distribuita: procedere con il passaggio 6 >>>](tutorial-deploy-app-service-on-linux-06.md)
 
 [Si è verificato un problema](https://www.research.net/r/PWZWZ52?tutorial=vscode-appservice-python&step=05-deploy-app)

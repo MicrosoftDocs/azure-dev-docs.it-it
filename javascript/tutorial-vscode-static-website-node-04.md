@@ -4,12 +4,12 @@ description: Parte 4 dell'esercitazione, distribuire i file in Archiviazione di 
 ms.topic: conceptual
 ms.date: 09/24/2019
 ms.author: buhollan
-ms.openlocfilehash: 2683de33fd8ddc7148991d85e3d67f1eb93a5f44
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.openlocfilehash: 53578d829167512877c2359d02c3e70d88afe77f
+ms.sourcegitcommit: aceed8548ad4529a81d83eb15a095edc8607cac5
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74466653"
+ms.lasthandoff: 02/18/2020
+ms.locfileid: "77440887"
 ---
 # <a name="deploy-the-website-to-azure-storage"></a>Distribuire il sito Web in Archiviazione di Azure
 
@@ -17,7 +17,7 @@ ms.locfileid: "74466653"
 
 In questo passaggio si usa Visual Studio Code per distribuire i file del sito Web statico creati nei passaggi precedenti in Archiviazione di Azure, dove verranno ospitati e gestiti.
 
-# <a name="angulartabangular"></a>[Angular](#tab/angular)
+# <a name="angular"></a>[Angular](#tab/angular)
 
 1. In Visual Studio Code passare all'area **Archiviazione di Azure**, espandere la propria sottoscrizione, espandere il nodo relativo all'account di Archiviazione di Azure creato nel passaggio precedente, quindi espandere il nodo **Contenitori BLOB**. Il codice dell'app verrà distribuito nel contenitore `$web`.
 
@@ -35,7 +35,7 @@ In questo passaggio si usa Visual Studio Code per distribuire i file del sito We
 
     ![Sito Web statico in esecuzione in Azure](media/static-website/azure-app-angular.png)
 
-# <a name="reacttabreact"></a>[React](#tab/react)
+# <a name="react"></a>[React](#tab/react)
 
 1. In Visual Studio Code passare all'area **Archiviazione di Azure**, espandere la propria sottoscrizione, espandere il nodo relativo all'account di Archiviazione di Azure creato nel passaggio precedente, quindi espandere il nodo **Contenitori BLOB**. Il codice dell'app verrà distribuito nel contenitore `$web`.
 
@@ -53,7 +53,7 @@ In questo passaggio si usa Visual Studio Code per distribuire i file del sito We
 
     ![Sito Web statico in esecuzione in Azure](media/static-website/azure-app-react.png)
 
-# <a name="vuetabvue"></a>[Vue](#tab/vue)
+# <a name="vue"></a>[Vue](#tab/vue)
 
 1. In Visual Studio Code passare all'area **Archiviazione di Azure**, espandere la propria sottoscrizione, espandere il nodo relativo all'account di Archiviazione di Azure creato nel passaggio precedente, quindi espandere il nodo **Contenitori BLOB**. Il codice dell'app verrà distribuito nel contenitore `$web`.
 
@@ -70,6 +70,24 @@ In questo passaggio si usa Visual Studio Code per distribuire i file del sito We
     ![Messaggio di distribuzione completata](media/static-website/deployment-complete.png)
 
     ![Sito Web statico in esecuzione in Azure](media/static-website/azure-app-vue.png)
+
+# <a name="svelte"></a>[Svelte](#tab/svelte)
+
+1. In Visual Studio Code passare all'area **Archiviazione di Azure**, espandere la propria sottoscrizione, espandere il nodo relativo all'account di Archiviazione di Azure creato nel passaggio precedente, quindi espandere il nodo **Contenitori BLOB**. Il codice dell'app verrà distribuito nel contenitore `$web`.
+
+   ![I nodi di Archiviazione di Azure nell'area Archiviazione di Azure](media/static-website/storage-nodes.png)
+
+1. Selezionare l'area **File**, fare clic con il pulsante destro del mouse sulla cartella _public_ e scegliere **Distribuisci in Sito Web statico**:
+
+    ![Comando Deploy to Static Website](media/static-website/deploy-build-svelte.png)
+
+1. Quando richiesto, scegliere l'account di archiviazione creato in precedenza.
+
+1. Al termine della distribuzione, viene visualizzato un messaggio con il pulsante **Browse to website** (Passa a sito Web). Selezionare il pulsante per aprire l'endpoint primario del codice dell'app distribuito.
+
+    ![Messaggio di distribuzione completata](media/static-website/deployment-complete-svelte.png)
+
+    ![Sito Web statico in esecuzione in Azure](media/static-website/azure-app-svelte.png)
 
 ---
 

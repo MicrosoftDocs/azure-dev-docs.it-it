@@ -1,17 +1,17 @@
 ---
-title: 'Esercitazione: Aggiungere un binding di archiviazione per Funzioni di Azure in Python con VS Code'
+title: 'Passaggio 7: Aggiungere un binding di archiviazione per Funzioni di Azure in Python con VS Code'
 description: Passaggio 7 dell'esercitazione, aggiunta di un binding in Python per scrivere messaggi nell'archiviazione di Azure.
 ms.topic: conceptual
 ms.date: 09/02/2019
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 34ee80b2fac2f66e37e67fd45ca366b97d3f52dd
-ms.sourcegitcommit: 6fa28ea675ae17ffb9ac825415e2e26a3dfe7107
+ms.openlocfilehash: 2203104d53387254284e75e322367f2e7142bfad
+ms.sourcegitcommit: 44d1abfb836f90b8731d7ea5d5a5af09245b2b89
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "77002079"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77422171"
 ---
-# <a name="tutorial-add-a-storage-binding-for-azure-functions-in-python"></a>Esercitazione: Aggiungere un binding di archiviazione per Funzioni di Azure in Python
+# <a name="7-add-a-storage-binding-for-azure-functions-in-python"></a>7: Aggiungere un binding di archiviazione per Funzioni di Azure in Python
 
 [Passaggio precedente: Distribuire una seconda funzione](tutorial-vs-code-serverless-python-06.md)
 
@@ -97,6 +97,6 @@ In questa sezione viene aggiunto un binding di archiviazione alla funzione HttpE
 1. Per eseguire il test nel cloud, ridistribuire il codice usando l'opzione **Deploy to Function App** (Distribuisci nell'app per le funzioni) nell'area **Azure: Functions** (Azure: Funzioni). Se richiesto, selezionare l'app per le funzioni creata in precedenza. Al termine della distribuzione, che richiede qualche minuto, la finestra **Output** mostra di nuovo gli endpoint pubblici con cui è possibile ripetere i test.
 
 > [!div class="nextstepaction"]
-> [Il binding di archiviazione è stato aggiunto](tutorial-vs-code-serverless-python-08.md)
+> [Il binding di archiviazione è stato aggiunto: procedere con il passaggio 8 >>>](tutorial-vs-code-serverless-python-08.md)
 
 [Si è verificato un problema](https://www.research.net/r/PWZWZ52?tutorial=python-functions-extension&step=07-storage-binding)

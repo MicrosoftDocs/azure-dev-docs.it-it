@@ -1,17 +1,17 @@
 ---
-title: 'Esercitazione: Distribuire Funzioni di Azure in Python con VS Code'
+title: 'Passaggio 5: Distribuire Funzioni di Azure in Python con VS Code'
 description: Passaggio 5 dell'esercitazione, distribuzione del codice di funzioni Python in Azure e informazioni sullo streaming di log e sulla sincronizzazione delle impostazioni tra un progetto locale e Azure.
 ms.topic: conceptual
 ms.date: 09/02/2019
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 07af40c402104f07844c2cbe0d84c38c86f2fca2
-ms.sourcegitcommit: 68a4044b9fa3291c9e7e2f68ae0049328f9c01bb
+ms.openlocfilehash: 94f142bdaba07b272f840684057811fdc7fafde8
+ms.sourcegitcommit: 44d1abfb836f90b8731d7ea5d5a5af09245b2b89
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74992513"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77422206"
 ---
-# <a name="tutorial-deploy-azure-functions-in-python"></a>Esercitazione: Distribuire Funzioni di Azure in Python
+# <a name="5-deploy-azure-functions-in-python"></a>5: Distribuire Funzioni di Azure in Python
 
 [Passaggio precedente: Eseguire il debug in locale](tutorial-vs-code-serverless-python-04.md)
 
@@ -33,7 +33,7 @@ Un'app per le funzioni richiede un account di archiviazione di Azure per i dati 
 
     L'area **Azure: Funzioni** mostra anche lo stato di avanzamento:
 
-    ![Indicatore di stato della distribuzione nell'area Azure: Funzioni](media/tutorial-vs-code-serverless-python/deployment-progress-indicator-in-azure-function-explorer.png)
+    ![Indicatore di stato della distribuzione nell'area Azure: Functions (Azure: Functions)](media/tutorial-vs-code-serverless-python/deployment-progress-indicator-in-azure-function-explorer.png)
 
 1. Al termine della distribuzione, l'estensione Funzioni di Azure visualizza un messaggio con i pulsanti per tre azioni aggiuntive:
 
@@ -41,7 +41,7 @@ Un'app per le funzioni richiede un account di archiviazione di Azure per i dati 
 
     Per **Stream logs** (Streaming di log) e **Upload settings** (Carica impostazioni), vedere le sezioni successive. Per **View output** (Visualizza output), vedere il passaggio 5 seguente.
 
-1. Dopo la distribuzione, la finestra **Output** mostra anche l'endpoint pubblico in Azure:
+1. Dopo la distribuzione, la finestra **Output** visualizza anche l'endpoint pubblico in Azure (l'URL dell'endpoint specifico corrisponderà al nome specificato per l'app per le funzioni):
 
     ```output
     HTTP Trigger Urls:
@@ -70,6 +70,6 @@ Il caricamento delle impostazioni aggiorna le impostazioni esistenti e aggiunge 
 Per applicare le modifiche apportate tramite il portale o tramite **Azure Explorer** nel file *local.settings.json*, fare clic con il pulsante destro del mouse sul nodo **Application Settings** (Impostazioni applicazioni) e scegliere il comando **Download remote settings** (Scarica impostazioni remote). È inoltre possibile usare il riquadro comandi per selezionare il comando **Funzioni di Azure: Download Remote Settings** (Scarica impostazioni remote).
 
 > [!div class="nextstepaction"]
-> [Le funzioni sono state distribuite](tutorial-vs-code-serverless-python-06.md)
+> [Le funzioni sono state distribuite: procedere con il passaggio 6 >>>](tutorial-vs-code-serverless-python-06.md)
 
 [Si è verificato un problema](https://www.research.net/r/PWZWZ52?tutorial=vscode-functions-python&step=05-deploy)

@@ -1,17 +1,17 @@
 ---
-title: 'Esercitazione: Pulire le risorse dopo la distribuzione nel Servizio app di Azure in Linux da Visual Studio Code'
+title: 'Passaggio 7: Pulire le risorse dopo la distribuzione nel Servizio app di Azure in Linux da Visual Studio Code'
 description: "Passaggio 7 dell'esercitazione: pulizia delle risorse di Azure"
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 8145b33ae52427d55c9b3de9fcf6fb20467b7ba9
-ms.sourcegitcommit: a8073315f751631ab983618fa9f812eb95d8b2dc
+ms.openlocfilehash: 001e5d58311267221c5fafb3de89aff3859f4197
+ms.sourcegitcommit: 44d1abfb836f90b8731d7ea5d5a5af09245b2b89
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76125264"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77422430"
 ---
-# <a name="tutorial-clean-up-resources-after-deploying-to-azure-app-service-on-linux-from-visual-studio-code"></a>Esercitazione: Pulire le risorse dopo la distribuzione nel Servizio app di Azure in Linux da Visual Studio Code
+# <a name="7-clean-up-resources-after-deploying-to-azure-app-service-on-linux-from-visual-studio-code"></a>7: Pulire le risorse dopo la distribuzione nel Servizio app di Azure in Linux da Visual Studio Code
 
 [Passaggio precedente: Eseguire lo streaming dei log](tutorial-deploy-app-service-on-linux-06.md)
 

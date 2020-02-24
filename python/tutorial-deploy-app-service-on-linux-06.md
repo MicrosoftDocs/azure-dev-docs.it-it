@@ -1,17 +1,17 @@
 ---
-title: 'Esercitazione: Streaming dei log dal servizio app di Azure in VS Code'
+title: 'Passaggio 6: Streaming dei log dal servizio app di Azure in VS Code'
 description: "Passaggio 6 dell'esercitazione: streaming dei log delle app in Visual Studio Code"
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 56cbd468771af8d60fce20d88b8c984f95d4b9b9
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.openlocfilehash: f2e19a52b673ddcef927165191d610776e06a32f
+ms.sourcegitcommit: 44d1abfb836f90b8731d7ea5d5a5af09245b2b89
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74466076"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77422425"
 ---
-# <a name="tutorial-stream-logs-from-azure-app-service-into-visual-studio-code"></a>Esercitazione: Eseguire lo streaming dei log dal Servizio app di Azure in Visual Studio Code
+# <a name="6-stream-logs-from-azure-app-service-into-visual-studio-code"></a>6: Eseguire lo streaming dei log dal Servizio app di Azure in Visual Studio Code
 
 [Passaggio precedente: Distribuire l'app](tutorial-deploy-app-service-on-linux-05.md)
 
@@ -28,6 +28,6 @@ Usare questa procedura per eseguire lo streaming dei log in Visual Studio Code d
 1. Per arrestare lo streaming dei log (senza disabilitare la registrazione), fare clic con il pulsante destro del mouse sull'app nell'area **Azure: App Service** (Azure: Servizio app) e scegliere **Stop streaming logs** (Arresta streaming dei log).
 
 > [!div class="nextstepaction"]
-> [I log vengono visualizzati](tutorial-deploy-app-service-on-linux-07.md)
+> [I log vengono visualizzati: procedere con il passaggio 7 >>>](tutorial-deploy-app-service-on-linux-07.md)
 
 [Si è verificato un problema](https://www.research.net/r/PWZWZ52?tutorial=vscode-appservice-python&step=06-stream-logs)
