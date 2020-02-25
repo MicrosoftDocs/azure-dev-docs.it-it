@@ -1,18 +1,19 @@
 ---
 title: Motivi per passare a Java 11
+titleSuffix: Azure
 description: Documento riepilogativo destinato ai decision maker che valutano i vantaggi derivanti dal passaggio da Java 8 a Java 11.
 author: dsgrieve
-manager: maverberg
+manager: maverbur
 tags: java
 ms.topic: article
 ms.date: 11/19/2019
 ms.author: dagrieve
-ms.openlocfilehash: 7daf058c2abebbf2cca85dadc4f9ffe3e8771fa1
-ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
+ms.openlocfilehash: c0a2f46f8a3249f6c9580e823e102a86291e15e7
+ms.sourcegitcommit: aceed8548ad4529a81d83eb15a095edc8607cac5
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74812217"
+ms.lasthandoff: 02/18/2020
+ms.locfileid: "77440915"
 ---
 # <a name="reasons-to-move-to-java-11"></a>Motivi per passare a Java 11
 
@@ -25,13 +26,13 @@ Rispetto a Java 8 sono state aggiunte nuove funzionalità e sono state effettuat
 La transizione a Java 11 può essere eseguita in maniera graduale. Per l'esecuzione in Java 11, *non* è necessario che il codice usi i moduli Java. È possibile usare Java 11 per eseguire codice sviluppato e compilato con JDK 8.
 Esistono tuttavia alcuni potenziali problemi, soprattutto per quanto riguarda l'API deprecata, i caricatori di classe e la reflection.
 
-Una guida completa alla transizione da Java 8 a Java 11 sarà resa disponibile prossimamente dal Microsoft Java Engineering Group. Nel frattempo, per iniziare, sono già disponibili numerose guide per la transizione da Java 8 a Java 9, ad esempio [Java Platform, Standard Edition Oracle JDK 9 Migration Guide](https://docs.oracle.com/javase/9/migrate/toc.htm) e [The State of the Module System: Compatibility and Migration](http://openjdk.java.net/projects/jigsaw/spec/sotms/#compatibility--migration).
+Il Microsoft Java Engineering Group ha definito una guida per la [transizione da Java 8 a Java 11](./transition-from-java-8-to-java-11.md). [Java Platform, Standard Edition Oracle JDK 9 Migration Guide](https://docs.oracle.com/javase/9/migrate/toc.htm) e [The State of the Module System: Compatibility and Migration](http://openjdk.java.net/projects/jigsaw/spec/sotms/#compatibility--migration) sono altre guide utili. 
 
 ## <a name="high-level-changes-between-java-8-and-11"></a>Modifiche di rilievo tra Java 8 e 11
 
 In questa sezione non vengono enumerate tutte le modifiche apportate nelle versioni Java 9 \[[1](#ref1)\], 10 \[[2](#ref2)\] e 11 \[[3](#ref3)\]. Vengono evidenziate solo le modifiche che incidono su prestazioni, diagnostica e produttività.
 
-### <a name="modules-4ref4"></a>Moduli \[[4](#ref4)\]
+### <a name="modules-4"></a>Moduli \[[4](#ref4)\]
 
 I moduli risolvono i problemi di configurazione e incapsulamento difficili da gestire nelle applicazioni su larga scala eseguite in *classpath*. Un *modulo* è una raccolta autodescrittiva di classi e interfacce Java e di risorse correlate.
 
@@ -46,31 +47,31 @@ L'applicazione può continuare a usare *classpath* e non è necessario eseguire 
 
 ### <a name="profiling-and-diagnostics"></a>Profilatura e diagnostica
 
-#### <a name="java-flight-recorder-5ref5"></a>Java Flight Recorder \[[5](#ref5)\]
+#### <a name="java-flight-recorder-5"></a>Java Flight Recorder \[[5](#ref5)\]
 
 Java Flight Recorder (JFR) raccoglie dati di diagnostica e profilatura da un'applicazione Java in esecuzione. JFR ha un effetto minimo su un'applicazione Java in esecuzione. I dati raccolti possono quindi essere analizzati con Java Mission Control (JMC) e altri strumenti. Mentre in Java 8 JFR e JMC sono funzionalità commerciali, in Java 11 sono open source.
 
-#### <a name="java-mission-control-6ref6"></a>Java Mission Control \[[6](#ref6)\]
+#### <a name="java-mission-control-6"></a>Java Mission Control \[[6](#ref6)\]
 
 Java Mission Control (JMC) fornisce una visualizzazione grafica dei dati raccolti da Java Flight Recorder (JFR) ed è open source in Java
 11. Oltre alle informazioni generali sull'applicazione in esecuzione, JMC consente all'utente di eseguire il drill-down dei dati. JFR e JMC si possono usare per diagnosticare problemi di runtime, ad esempio perdite di memoria, sovraccarico di GC, metodi caldi, colli di bottiglia dei thread e I/O bloccanti.
 
-#### <a name="unified-logging-7ref7"></a>Registrazione unificata \[[7](#ref7)\]
+#### <a name="unified-logging-7"></a>Registrazione unificata \[[7](#ref7)\]
 
 Java 11 include un sistema di registrazione comune per tutti i componenti della JVM.
 Questo sistema di registrazione unificata consente all'utente di definire quali componenti registrare e a quale livello. La registrazione con granularità fine è utile per eseguire l'analisi della causa radice negli arresti anomali della JVM e per diagnosticare i problemi di prestazioni in un ambiente di produzione.
 
-#### <a name="low-overhead-heap-profiling-8ref8"></a>Low-Overhead Heap Profiling \[[8](#ref8)\]
+#### <a name="low-overhead-heap-profiling-8"></a>Low-Overhead Heap Profiling \[[8](#ref8)\]
 
 In Java Virtual Machine Tool Interface (JVMTI) è stata aggiunta una nuova API per il campionamento delle allocazioni dell'heap Java. Il campionamento presenta un sovraccarico ridotto e può essere abilitato in modo continuo. Mentre l'allocazione dell'heap può essere monitorata con Java Flight Recorder (JFR), il metodo di campionamento in JFR funziona solo con le allocazioni. L'implementazione di JFR potrebbe anche perdere allocazioni. Al contrario, il campionamento dell'heap in Java 11 può fornire informazioni su oggetti attivi e inattivi.
 
 I fornitori di Application Performance Monitoring (APM) stanno iniziando a usare questa nuova piattaforma e il Java Engineering Group ne sta esaminando il potenziale uso con gli strumenti di monitoraggio delle prestazioni di Azure.
 
-#### <a name="stackwalker-9ref9"></a>StackWalker \[[9](#ref9)\]
+#### <a name="stackwalker-9"></a>StackWalker \[[9](#ref9)\]
 
 Durante la registrazione viene spesso usata l'acquisizione di uno snapshot dello stack per il thread corrente. Il problema riguarda la quantità di dati dell'analisi dello stack da registrare e la decisione se eseguire effettivamente questa registrazione o meno. Ad esempio, è possibile che si voglia visualizzare l'analisi dello stack solo per una determinata eccezione di un metodo. La classe StackWalker (aggiunta in Java 9) fornisce uno snapshot dello stack e prevede metodi che consentono al programmatore di controllare con granularità fine il modo in cui utilizzare l'analisi dello stack.
 
-### <a name="garbage-collection-10ref10"></a>Garbage Collection \[[10](#ref10)\]
+### <a name="garbage-collection-10"></a>Garbage Collection \[[10](#ref10)\]
 
 In Java 11 sono disponibili i Garbage Collector seguenti: seriale, parallelo, Garbage-First ed epsilon. L'impostazione predefinita in Java 11 è Garbage-First Garbage Collector(G1GC).
 
@@ -88,12 +89,12 @@ L'impostazione predefinita in Java 11 è G1 Garbage Collector (G1GC). Lo scopo d
 
 Il collector parallelo è l'impostazione predefinita in Java 8. Si tratta di un collector per la velocità effettiva che usa più thread per velocizzare l'operazione di Garbage Collection.
 
-#### <a name="epsilon-11ref11"></a>Epsilon \[[11](#ref11)\]
+#### <a name="epsilon-11"></a>Epsilon \[[11](#ref11)\]
 
 Il Garbage Collector epsilon gestisce le allocazioni, ma non recupera alcuna memoria. Quando l'heap viene esaurito, la JVM verrà arrestata.
 Epsilon è utile per i servizi di breve durata e per le applicazioni note per essere prive di garbage.
 
-#### <a name="improvements-for-docker-containers-12ref12"></a>Miglioramenti per i contenitori Docker \[[12](#ref12)\]
+#### <a name="improvements-for-docker-containers-12"></a>Miglioramenti per i contenitori Docker \[[12](#ref12)\]
 
 Prima di Java 10, i vincoli di memoria e CPU impostati in un contenitore non venivano riconosciuti dalla JVM. In Java 8, ad esempio, la JVM predefinita imposterà come predefinite le dimensioni massime dell'heap su ¼ della memoria fisica dell'host sottostante. A partire da Java 10, la JVM usa i vincoli impostati dai gruppi di controllo contenitore (cgroups) per impostare i limiti di memoria e CPU (vedere la nota di seguito).
 Ad esempio, le dimensioni massime predefinite dell'heap sono ¼ del limite di memoria del contenitore (ad esempio, 500 MB per -m2G).
@@ -105,7 +106,7 @@ Questo supporto è abilitato per impostazione predefinita ed è disponibile solo
 > [!NOTE]
 > Per la maggior parte del supporto di cgroup è stato eseguito il backporting a Java 8 a partire da jdk8u191. Ulteriori miglioramenti potrebbero non essere necessariamente sottoposti a backporting alla versione 8.
 
-#### <a name="multi-release-jar-files-13ref13"></a>File JAR con più versioni \[[13](#ref13)\]
+#### <a name="multi-release-jar-files-13"></a>File JAR con più versioni \[[13](#ref13)\]
 
 In Java 11 è possibile creare un file JAR contenente più versioni dei file di classe specifiche della versione Java. I file JAR con più versioni consentono agli sviluppatori di librerie di supportare più versioni di Java senza dover distribuire più versioni dei file JAR. Per il consumer di queste librerie, i file JAR con più versioni risolvono il problema di dover abbinare file JAR specifici a destinazioni di runtime specifiche.
 
@@ -113,7 +114,7 @@ In Java 11 è possibile creare un file JAR contenente più versioni dei file di 
 
 Le modifiche seguenti apportate alla JVM hanno un impatto diretto sulle prestazioni.
 
--   **JEP 197: Segmented Code Cache** \[[14](#ref14)\]: divide la cache di codice in segmenti distinti. Questa segmentazione assicura un maggior controllo del footprint di memoria della JVM, riduce il tempo di analisi dei metodi compilati, riduce significativamente la frammentazione della cache del codice e migliora le prestazioni.
+-   **JEP 197: Segmented Code Cache**\[[14](#ref14)\]: divide la cache di codice in segmenti distinti. Questa segmentazione assicura un maggior controllo del footprint di memoria della JVM, riduce il tempo di analisi dei metodi compilati, riduce significativamente la frammentazione della cache del codice e migliora le prestazioni.
 
 -   **JEP 254: Compact Strings** \[[15](#ref15)\]: cambia la rappresentazione interna di una stringa da due byte per carattere a uno o due byte per carattere, a seconda della codifica dei caratteri. Poiché la maggior parte delle stringhe contiene caratteri ISO-8859-1/Latin-1, questa modifica dimezza di fatto la quantità di spazio necessaria per archiviare una stringa.
 
@@ -126,7 +127,7 @@ Le modifiche seguenti apportate alla JVM hanno un impatto diretto sulle prestazi
 
 Le modifiche seguenti apportate alle librerie principali hanno un impatto sulle prestazioni del codice nuovo o modificato.
 
--   **JEP 193: Variable Handles** \[[19](#ref19)\]: definisce uno strumento standard per richiamare gli equivalenti di varie operazioni java.util.concurrent.atomic and sun.misc.Unsafe sui campi degli oggetti e sugli elementi di matrice, un set standard di operazioni di limitazione per il controllo con granularità fine dell'ordinamento della memoria e un'operazione standard di limitazione della raggiungibilità standard per assicurare che un oggetto a cui viene fatto riferimento rimanga ampiamente raggiungibile.
+-   **JEP 193: Variable Handles** \[[19](#ref19)\]: definisce uno strumento standard per richiamare gli equivalenti di varie operazioni java.util.concurrent.atomic e sun.misc.Unsafe sui campi degli oggetti e sugli elementi di matrice, un set standard di operazioni di limitazione per il controllo con granularità fine dell'ordinamento della memoria e un'operazione standard di limitazione della raggiungibilità standard per assicurare che un oggetto a cui viene fatto riferimento rimanga ampiamente raggiungibile.
 
 -   **JEP 269: Convenience Factory Methods for Collections** \[[20](#ref20)\]: definisce le API della libreria per semplificare la creazione di istanze di raccolte e mappe con un numero ridotto di elementi. Si stratta di metodi factory statici per le interfacce di raccolte che creano istanze di raccolte compatte e non modificabili. Queste istanze sono intrinsecamente più efficienti. Le API creano raccolte rappresentate in maniera compatta e prive di una classe wrapper.
 
