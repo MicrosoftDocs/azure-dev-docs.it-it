@@ -1,34 +1,44 @@
 ---
-title: Strumenti di Azure per sviluppatori Python | Microsoft Docs
+title: Strumenti di Azure per sviluppatori Python
 description: Integrazioni dell'IDE e interfacce della riga di comando per gli sviluppatori Python in Azure.
 ms.topic: conceptual
-ms.date: 06/21/2017
-ms.openlocfilehash: c1ca9752b63baa783f078d7d26a2576fdee74e6a
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.date: 02/19/2020
+ms.openlocfilehash: 2cf9e2cad7cfb69a50da09438f448e6d2676faaa
+ms.sourcegitcommit: c34647aee3b9a72fa0ee6aeac2dfa1e36d67c7ef
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74467076"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77504432"
 ---
 # <a name="azure-tools-for-python-developers"></a>Strumenti di Azure per sviluppatori Python
 
-## <a name="azure-cli-20"></a>Interfaccia della riga di comando di Azure 2.0
-
-L'interfaccia della riga di comando di Azure 2.0 fornisce un'interfaccia della riga di comando per la creazione e la configurazione delle risorse di Azure nelle sottoscrizioni. L'interfaccia della riga di comando di Azure 2.0 è multipiattaforma e include funzionalità per query e filtri, che consentono di inviare tramite pipe l'output direttamente agli strumenti preferiti della riga di comando.
-
-[Installare l'interfaccia della riga di comando di Azure 2.0](https://docs.microsoft.com/cli/azure/install-azure-cli)
-
 ## <a name="visual-studio-code"></a>Visual Studio Code
-Python è pienamente supportato in Visual Studio Code tramite le estensioni. Le estensioni più diffuse nel Marketplace offrono completamento del codice, linting, debug, formattazione del codice, frammenti di codice e altro ancora.
 
-[Installare Visual Studio Code e le estensioni](https://code.visualstudio.com/docs/languages/python)
+Python è pienamente supportato in Visual Studio Code tramite l'estensione Python ampiamente diffusa.
 
-## <a name="python-tools-for-visual-studio-extension"></a>Estensione Python Tools for Visual Studio
-Visual Studio in Windows fornisce il supporto open source per il linguaggio Python tramite lo sviluppo Python e i carichi di lavoro di data science (Visual Studio 2017) e l'estensione gratuita Python Tools for Visual Studio (Visual Studio 2015 e versioni precedenti). 
+[Installare Visual Studio Code e l'estensione Python](https://code.visualstudio.com/docs/languages/python)
+
+## <a name="azure-sdk-for-python"></a>Azure SDK per Python
+
+Azure SDK per Python offre un'API tramite la quale è possibile interagire con Azure dal codice Python.
+
+[Installare Azure SDK per le librerie Python](python-sdk-azure-install.md)
+
+## <a name="azure-command-line-interface-cli"></a>interfaccia della riga di comando di Azure
+
+L'interfaccia della riga di comando di Azure multipiattaforma permette la creazione e la configurazione delle risorse di Azure nelle sottoscrizioni. L'interfaccia della riga di comando di Azure include funzionalità per query e filtri, che consentono di inviare tramite pipe l'output direttamente ad altri strumenti della riga di comando. L'interfaccia della riga di comando di Azure è scritta in Python e usa Azure SDK per Python.
+
+[Installare l'interfaccia della riga di comando di Azure](/cli/azure/install-azure-cli)
+
+## <a name="azure-powershell"></a>Azure PowerShell
+
+Come l'interfaccia della riga di comando di Azure, Azure PowerShell fornisce i comandi di PowerShell per creare e configurare le risorse di Azure e può essere usato con la suite completa di funzionalità generali di PowerShell.
+
+[Installare Azure PowerShell](/powershell/azure/install-az-ps)
+
+## <a name="visual-studio"></a>Visual Studio
+
+Visual Studio in Windows fornisce il supporto open source per il linguaggio Python tramite i carichi di lavoro di sviluppo e data science di Python (Visual Studio 2017) e l'estensione gratuita Python Tools for Visual Studio (Visual Studio 2015 e versioni precedenti). Visual Studio viene usato più di frequente dagli sviluppatori che lavorano con Python e C++ perché offre supporto per lo sviluppo e il debug di più classi e in più linguaggi.
 
 [Installare il supporto per Python in Visual Studio](https://docs.microsoft.com/visualstudio/python/installation)
 
-## <a name="azure-notebooks-preview"></a>Notebook di Azure (anteprima)
-Notebook di Azure è un servizio ospitato per Notebook di Jupyter che non richiede installazione. Consente di iniziare rapidamente a creare prototipi, eseguire operazioni relative a data science e ricerca accademica oppure imparare a programmare in Python, R e F#. È possibile combinare codice, markdown, immagini, video, elementi grafici, tutto in un unico formato.
-
-[Introduzione a Notebook di Azure](https://notebooks.azure.com/)

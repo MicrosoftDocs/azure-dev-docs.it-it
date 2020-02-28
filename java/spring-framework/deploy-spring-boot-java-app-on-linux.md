@@ -9,12 +9,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
 ms.custom: mvc
-ms.openlocfilehash: 9288f680f5eb92046ada7ce420d64de2e5301fcc
-ms.sourcegitcommit: aceed8548ad4529a81d83eb15a095edc8607cac5
+ms.openlocfilehash: 5d0e196a6d0c65a6bf8f159f880b0890341a9fc3
+ms.sourcegitcommit: c34647aee3b9a72fa0ee6aeac2dfa1e36d67c7ef
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/18/2020
-ms.locfileid: "77440972"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77504439"
 ---
 # <a name="deploy-a-spring-boot-application-on-azure-app-service-for-container"></a>Distribuire un'applicazione Web Spring Boot nel servizio app di Azure per Container
 
@@ -126,7 +126,7 @@ La procedura seguente illustra come usare il portale di Azure per creare un'ista
 
 Specificare l'immagine di base in `<from>/<image>`, qui `openjdk:8-jre-alpine`. Specificare il nome dell'immagine finale da creare dalla base in `<to>/<image>`.  
 
-Il valore `{docker.image.prefix}` dell'autenticazione è il **Server di accesso** nella pagina del registro visualizzata in precedenza. Il valore `{project.artifactId}` indica il nome e il numero di versione del file JAR dalla prima build Mavin del progetto.
+Il valore `{docker.image.prefix}` dell'autenticazione è il **Server di accesso** nella pagina del registro visualizzata in precedenza. Il valore `{project.artifactId}` indica il nome e il numero di versione del file JAR dalla prima compilazione Maven del progetto.
 
 Specificare il nome utente e la password dal riquadro del registro nel nodo `<to>/<auth>`. Ad esempio:
 
