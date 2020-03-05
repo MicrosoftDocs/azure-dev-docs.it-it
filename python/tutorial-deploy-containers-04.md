@@ -4,12 +4,12 @@ description: Parte 4 dell'esercitazione, visualizzazione dei log del servizio ap
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 4f448945c0e1d1eda7870eb633d644535da7be0e
-ms.sourcegitcommit: 44d1abfb836f90b8731d7ea5d5a5af09245b2b89
+ms.openlocfilehash: b6c8d85ca74359863aca5b4e83cf96107e5a8e88
+ms.sourcegitcommit: aa2c66b0fecce51862cc9115f68d39c770f0b2ae
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/17/2020
-ms.locfileid: "77422222"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77709788"
 ---
 # <a name="4-stream-logs-from-azure-app-service-for-a-container"></a>4: Streaming dei log dal Servizio app di Azure per un contenitore
 
@@ -23,9 +23,9 @@ In VS Code è possibile visualizzare i log del sito in esecuzione nel servizio a
 
 1. Quando viene richiesto, scegliere**Yes** (Sì) per abilitare la registrazione e riavviare l'app. Una volta riavviata l'app, verrà aperto il pannello Output di VS Code con una connessione al flusso di log.
 
-1. Dopo alcuni secondi verrà visualizzato un messaggio che indica che si è connessi al servizio di streaming di log.
+1. Dopo alcuni secondi nell'output verrà visualizzato un messaggio che indica che si è connessi al servizio di streaming di log:
 
-    ```bash
+    <pre>
     Connecting to log stream...
     2018-09-27T20:14:26  Welcome, you are now connected to log-streaming service.
 
@@ -34,7 +34,7 @@ In VS Code è possibile visualizzare i log del sito in esecuzione nel servizio a
     2018-09-27 20:14:59.270 INFO  - docker run -d -p 24138:8000 --name vsdocs-django-sample-container_0 -e WEBSITES_PORT=8000 -e WEBSITE_SITE_NAME=vsdocs-django-sample-container -e WEBSITE_AUTH_ENABLED=False -e WEBSITE_ROLE_INSTANCE_ID=0 -e WEBSITE_INSTANCE_ID=02c705ae24eaf5f298e553a9c2724b9fe4485707c2d1c36137cd02931091e561 -e HTTP_LOGGING_ENABLED=1 vsdocsregistry.azurecr.io/python-sample-vscode-django-tutorial:latest
 
     2018-09-27 20:15:06.216 INFO  - Container vsdocs-django-sample-container_0 for site vsdocs-django-sample-container initialized successfully.
-    ```
+    </pre>
 
 1. Spostarsi all'interno dell'app per visualizzare output aggiuntivo per varie richieste HTTP.
 

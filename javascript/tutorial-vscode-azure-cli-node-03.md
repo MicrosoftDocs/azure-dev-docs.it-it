@@ -3,12 +3,12 @@ title: Creare il Servizio app di Azure dall'interfaccia della riga di comando di
 description: Parte 3 dell'esercitazione, creare il Servizio app
 ms.topic: conceptual
 ms.date: 09/24/2019
-ms.openlocfilehash: afac5aa2f610384b537c1f235b99cd29e6ff86d0
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.openlocfilehash: 827bcde79336304f424a283ccbdc4a4282a50bf7
+ms.sourcegitcommit: aa2c66b0fecce51862cc9115f68d39c770f0b2ae
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74466774"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77709888"
 ---
 # <a name="create-the-app-service"></a>Creare il servizio app
 
@@ -18,7 +18,7 @@ In questo passaggio si usa l'interfaccia della riga di comando di Azure per crea
 
 1. In un terminale o al prompt dei comandi usare il comando seguente per creare un **gruppo di risorse** per il Servizio app. Un gruppo di risorse è essenzialmente una raccolta denominata delle risorse di un'app in Azure, ad esempio un sito Web, un database, Funzioni di Azure e così via.
 
-    ```bash
+    ```azurecli
     az group create --name myResourceGroup --location westus
     ```
 
@@ -28,13 +28,13 @@ In questo passaggio si usa l'interfaccia della riga di comando di Azure per crea
 
 1. Eseguire il comando seguente per impostare i valori predefiniti per gruppo di risorse e area per i comandi successivi. In questo modo si evita di specificare questi valori ogni volta. L'esecuzione di questo comando non venera un output.
 
-    ```bash
+    ```azurecli
     az configure --defaults group=myResourceGroup location=westus
     ```
 
 1. Eseguire il comando seguente per creare un **piano di servizio app** che definisce la macchina virtuale sottostante usata dal Servizio app:
 
-    ```bash
+    ```azurecli
     az appservice plan create --name myPlan --sku F1
     ```
 
@@ -42,7 +42,7 @@ In questo passaggio si usa l'interfaccia della riga di comando di Azure per crea
 
 1. Eseguire il comando seguente per creare il Servizio app, sostituendo `<your_app_name>` con un nome univoco che diventa l'URL, `http://<your_app_name>.azurewebsites.net`. Si noti che il comando di PowerShell è leggermente diverso. L'argomento `--runtime "node|6.9"` indica ad Azure di usare il nodo versione 6.9.x nel server.
 
-    ```bash
+    ```azurecli
     az webapp create --name <your_app_name> --plan myPlan --runtime "node|6.9"
     ```
 
@@ -57,7 +57,7 @@ In questo passaggio si usa l'interfaccia della riga di comando di Azure per crea
 
 1. Eseguire il comando seguente per aprire un browser con il Servizio app appena creato, anche in questo caso sostituendo `<your_app_name>` con il nome usato:
 
-    ```bash
+    ```azurecli
     az webapp browse --name <your_app_name>
     ```
 

@@ -4,12 +4,12 @@ description: Passaggio 5 dell'esercitazione, distribuzione del codice di funzion
 ms.topic: conceptual
 ms.date: 09/02/2019
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 94f142bdaba07b272f840684057811fdc7fafde8
-ms.sourcegitcommit: 44d1abfb836f90b8731d7ea5d5a5af09245b2b89
+ms.openlocfilehash: 425fb745cec74672cfabc6c3c5eab96821a43224
+ms.sourcegitcommit: aa2c66b0fecce51862cc9115f68d39c770f0b2ae
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/17/2020
-ms.locfileid: "77422206"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77709758"
 ---
 # <a name="5-deploy-azure-functions-in-python"></a>5: Distribuire Funzioni di Azure in Python
 
@@ -43,10 +43,11 @@ Un'app per le funzioni richiede un account di archiviazione di Azure per i dati 
 
 1. Dopo la distribuzione, la finestra **Output** visualizza anche l'endpoint pubblico in Azure (l'URL dell'endpoint specifico corrisponderà al nome specificato per l'app per le funzioni):
 
-    ```output
+    <pre>
     HTTP Trigger Urls:
-      HttpExample: https://vscode-azure-functions.azurewebsites.net/api/HttpExample
-    ```
+
+          HttpExample: https://vscode-azure-functions.azurewebsites.net/api/HttpExample
+    </pre>
 
     Usare questo endpoint per eseguire gli stessi test effettuati localmente, usando i parametri URL e/o le richieste con dati JSON nel corpo della richiesta. I risultati dell'endpoint pubblico devono corrispondere a quelli dell'endpoint locale testato in precedenza nella [parte 4](tutorial-vs-code-serverless-python-04.md).
 
@@ -56,7 +57,7 @@ Il supporto per lo streaming dei log è attualmente in fase di sviluppo, come de
 
 Attualmente, tuttavia, questi comandi non sono ancora operativi. Lo streaming dei log è invece disponibile in un browser eseguendo il comando seguente, sostituendo `<app_name>` con il nome dell'app per le funzioni in Azure:
 
-```bash
+```
 # Replace <app_name> with the name of your Functions app on Azure
 func azure functionapp logstream <app_name> --browser
 ```

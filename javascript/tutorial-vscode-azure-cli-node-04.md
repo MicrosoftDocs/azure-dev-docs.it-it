@@ -3,12 +3,12 @@ title: Distribuire il codice dell'app nel Servizio app di Azure tramite l'interf
 description: Parte 4 dell'esercitazione, distribuire il sito Web
 ms.topic: conceptual
 ms.date: 09/24/2019
-ms.openlocfilehash: 4911ccdf4003b44359d40c58d1b924e6bf88c829
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.openlocfilehash: 668d055a56eae2eb365884a41fcc515aae5fb229
+ms.sourcegitcommit: aa2c66b0fecce51862cc9115f68d39c770f0b2ae
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74467171"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77709798"
 ---
 # <a name="deploy-the-app-to-app-service"></a>Distribuire l'app nel Servizio app
 
@@ -26,23 +26,23 @@ In questo passaggio il codice dell'app Node.js viene distribuito nel Servizio ap
 
 1. Eseguire i comandi seguenti per configurare le credenziali di distribuzione in Azure, sostituendo `username` e `pPassword` con le proprie credenziali. Quando viene completato, il comando visualizza l'output JSON.
 
-    ```bash
+    ```azurecli
     az webapp deployment user set --user-name <username> --password <password>
     ```
 
 1. Eseguire il comando seguente per recuperare l'endpoint Git in cui eseguire il push del codice dell'app, sostituendo `<your_app_name>` con il nome usato per creare il Servizio app nel passaggio precedente:
 
-    ```bash
+    ```azurecli
     az webapp deployment source config-local-git --name <your_app_name>
     ```
 
     L'output di questo comando è simile al seguente:
 
-    ```output
+    <pre>
     {
       "url": "https://username@msdocs-node-cli.scm.azurewebsites.net/msdocs-node-cli.git"
     }
-    ```
+    </pre>
 
 1. Eseguire il comando seguente per impostare un nuovo host remoto in Git denominato `azure`, usando l'URL del passaggio precedente ma *omettendo il nome utente*. Usando l'esempio del passaggio precedente, il comando sarà come segue:
 
@@ -63,7 +63,7 @@ In questo passaggio il codice dell'app Node.js viene distribuito nel Servizio ap
 > [!TIP]
 > Se si verifica l'errore `Object #<eventemitter> has no method 'hrtime'`, è probabile che sia necessario impostare la versione del runtime del nodo nel sito. Il comando seguente indica al sito di usare la versione `6.9.1` del nodo. Se il sito richiede una versione diversa o successiva del nodo, specificare la versione semantica completa `major.minor.patch`.
 >
-> ```bash
+> ```azurecli
 > az webapp config appsettings set --name <your_app_name> --settings
 > ```
 

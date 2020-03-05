@@ -3,12 +3,12 @@ title: Streaming dei log dal servizio app di Azure
 description: Parte 5 dell'esercitazione, visualizzare i log
 ms.topic: conceptual
 ms.date: 09/24/2019
-ms.openlocfilehash: 8a173bbb7f53de2189e0ecb99b851d77704ff92d
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.openlocfilehash: f96deb992af0d446876265e1b8214879ddff45e6
+ms.sourcegitcommit: aa2c66b0fecce51862cc9115f68d39c770f0b2ae
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74466760"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77709877"
 ---
 # <a name="stream-logs-from-app-service"></a>Eseguire lo streaming dei log dal Servizio app
 
@@ -18,23 +18,23 @@ In questo passaggio vengono visualizzati i log del Servizio app in esecuzione. Q
 
 1. Eseguire il comando seguente per avviare la registrazione, sostituendo `<your_app_name>` con il nome del Servizio app:
 
-    ```bash
+    ```azurecli
     az webapp log tail --name <your_app_name>
     ```
 
-1. Dopo alcuni secondi dovrebbe essere visualizzato un messaggio che indica che si è connessi al servizio di streaming di log.
+1. Dopo alcuni secondi nell'output dovrebbe essere visualizzato un messaggio che indica che si è connessi al servizio di streaming di log.
 
-    ```bash
+    <pre>
     2019-09-25T13:39:23  Welcome, you are now connected to log-streaming service. The default timeout is 2 hours. Change the timeout with the App Setting SCM_LOGSTREAM_TIMEOUT (in seconds).
-    ```
+    </pre>
 
 1. Aggiornare la pagina alcune volte nel browser per generare altro output:
 
-    ```bash
+    <pre>
     GET / 304 2.327 ms - -
     GET / 304 0.957 ms - -
     GET / 304 2.435 ms - -
-    ```
+    </pre>
 
 1. Premere **CTRL**+**C** per terminare la sessione di registrazione.
 

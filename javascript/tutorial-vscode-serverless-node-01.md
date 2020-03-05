@@ -3,12 +3,12 @@ title: Distribuire Funzioni di Azure in Node.js da Visual Studio Code
 description: Parte 1 dell'esercitazione, introduzione e prerequisiti.
 ms.topic: conceptual
 ms.date: 09/23/2019
-ms.openlocfilehash: a4e60d45f5bddb358e596fc3b9e7db72e7e2f9eb
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.openlocfilehash: 8a6dc30c90ba056070e69e40ed1534a176ae21aa
+ms.sourcegitcommit: aa2c66b0fecce51862cc9115f68d39c770f0b2ae
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74466627"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77709848"
 ---
 # <a name="deploy-azure-functions-from-visual-studio-code"></a>Distribuire Funzioni di Azure da Visual Studio Code
 
@@ -41,7 +41,7 @@ Per abilitare il debug locale, è necessario installare [Azure Functions Core To
 
 1. Per verificare l'installazione, selezionare il comando di menu **Terminale** > **Nuovo terminale** in VS Code, quindi eseguire il comando `func`. Il comando dovrebbe mostrare un output simile al seguente, insieme alle informazioni sull'utilizzo.
 
-    ```output
+    <pre>
                       %%%%%%
                      %%%%%%
                 @   %%%%%%    @
@@ -56,7 +56,7 @@ Per abilitare il debug locale, è necessario installare [Azure Functions Core To
 
     Azure Functions Core Tools (2.4.419 Commit hash: c9c1724d002bd90b2e6b41393915ea3a26bcf0ce)
     Function Runtime Version: 2.0.12332.0
-    ```
+    </pre>
 
 > [!div class="nextstepaction"]
 > [I prerequisiti sono stati installati](tutorial-vscode-serverless-node-02.md) [Si è verificato un problema](https://www.research.net/r/PWZWZ52?tutorial=node-deployment-azurefunctions&step=getting-started)

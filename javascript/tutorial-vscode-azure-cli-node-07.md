@@ -3,12 +3,12 @@ title: Pulire le risorse dopo aver distribuito un'app Node.js in Azure tramite l
 description: Parte 7 dell'esercitazione, pulire le risorse
 ms.topic: conceptual
 ms.date: 09/24/2019
-ms.openlocfilehash: 7998eb641090b252455613a46ae41e45e5cd1c1d
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.openlocfilehash: 183539b8e2f0246bd812e5fa364a885b75626819
+ms.sourcegitcommit: aa2c66b0fecce51862cc9115f68d39c770f0b2ae
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74466752"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77709858"
 ---
 # <a name="clean-up-resources"></a>Pulire le risorse
 
@@ -16,7 +16,7 @@ ms.locfileid: "74466752"
 
 Il servizio app creato include un piano di servizio app sottostante che può comportare costi. Per pulire le risorse, eseguire il comando seguente in un terminale o al prompt dei comandi:
 
-```bash
+```azurecli
 az group delete --name myResourceGroup
 ```
 

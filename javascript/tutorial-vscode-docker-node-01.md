@@ -3,12 +3,12 @@ title: Distribuire contenitori Docker nel Servizio app di Azure da Visual Studio
 description: Parte 1 dell'esercitazione, introduzione e prerequisiti.
 ms.topic: conceptual
 ms.date: 09/20/2019
-ms.openlocfilehash: 2d6721060281fb73d31576caa47f316f2d078d29
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.openlocfilehash: 98ebb6bd857216cb395eb8cc62faa3d6ee30e3eb
+ms.sourcegitcommit: aa2c66b0fecce51862cc9115f68d39c770f0b2ae
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74467149"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77709834"
 ---
 # <a name="deploy-containers-to-azure-app-service"></a>Distribuire contenitori nel servizio app di Azure
 
@@ -45,9 +45,9 @@ docker --version
 
 L'output dovrebbe essere simile al seguente:
 
-```output
+<pre>
 Docker Version 17.12.0-ce, build c97c6d6
-```
+</pre>
 
 > [!div class="nextstepaction"]
 > [L'estensione Docker è stata installata](tutorial-vscode-docker-node-02.md) [Si è verificato un problema](https://www.research.net/r/PWZWZ52?tutorial=docker-extension&step=getting-started)
