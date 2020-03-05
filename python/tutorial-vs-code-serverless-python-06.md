@@ -4,12 +4,12 @@ description: "Passaggio 6 dell'esercitazione: espansione di un progetto di Funzi
 ms.topic: conceptual
 ms.date: 09/02/2019
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 45a17a403073110fec03c077d6009e26928d2310
-ms.sourcegitcommit: 44d1abfb836f90b8731d7ea5d5a5af09245b2b89
+ms.openlocfilehash: 0f28ef3b6d57abe75c286839001078875787b849
+ms.sourcegitcommit: aa2c66b0fecce51862cc9115f68d39c770f0b2ae
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/17/2020
-ms.locfileid: "77422154"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77709658"
 ---
 # <a name="6-add-a-second-python-function-to-azure-functions"></a>6: Aggiungere una seconda funzione Python a Funzioni di Azure
 
@@ -104,13 +104,11 @@ Dopo la prima distribuzione, è possibile apportare modifiche al codice, ad esem
 
 1. Avviare il debugger premendo F5 o selezionando il comando di menu **Debug** > **Avvia debug**. La finestra **Output** dovrebbe ora visualizzare entrambi gli endpoint del progetto:
 
-    ```output
+    <pre>
     Http Functions:
-
             DigitsOfPi: [GET] http://localhost:7071/api/DigitsOfPi
-
             HttpExample: [GET,POST] http://localhost:7071/api/HttpExample
-    ```
+    </pre>
 
 1. In un browser o da cURL effettuare una richiesta a `http://localhost:7071/api/DigitsOfPi?digits=125` e osservare l'output. È possibile notare che l'algoritmo del codice non è del tutto accurato, ma è comunque migliorabile dall'utente. Al termine, arrestare il debugger.
 

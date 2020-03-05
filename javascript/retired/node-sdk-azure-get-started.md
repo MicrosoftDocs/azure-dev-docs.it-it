@@ -3,18 +3,18 @@ title: Introduzione ai moduli di Azure per Node.js
 description: Introduzione alla gestione dell'autenticazione e delle risorse con i moduli di Azure per Node.js
 ms.date: 06/17/2017
 ms.topic: conceptual
-ms.openlocfilehash: ecd256b28e666368d3b15a97a198aacc82a0f823
-ms.sourcegitcommit: 6fa28ea675ae17ffb9ac825415e2e26a3dfe7107
+ms.openlocfilehash: 600c10c052a3aa95eb4dc04de0166a6974ede060
+ms.sourcegitcommit: aa2c66b0fecce51862cc9115f68d39c770f0b2ae
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "77002275"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77709898"
 ---
 # <a name="get-started-with-the-azure-modules-for-nodejs"></a>Introduzione ai moduli di Azure per Node.js
 
 Questa guida illustra l'installazione dei moduli di Azure per Node.js, l'autenticazione in Azure con un'entità servizio e l'esecuzione del codice di esempio che crea le risorse nella sottoscrizione di Azure e si connette ai servizi cloud di Azure.
 
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>Prerequisiti
 
 - Un account Azure. Se non è disponibile, [ottenere una versione di valutazione gratuita](https://azure.microsoft.com/free/)
 - [Node.js](https://nodejs.org)
@@ -38,7 +38,7 @@ Le applicazioni Node.js devono leggere e creare le autorizzazioni nella sottoscr
 
 [Crea un'entità servizio usando l'interfaccia della riga di comando di Azure 2.0](/cli/azure/create-an-azure-service-principal-azure-cli) e acquisire l'output. Sarà necessario fornire una [password di protezione](/azure/active-directory/active-directory-passwords-policy) nell'argomento password invece di `MY_SECURE_PASSWORD`.
 
-```azurecli-interactive
+```azurecli
 az ad sp create-for-rbac --name AzureNodeTest --password MY_SECURE_PASSWORD
 ```
 
@@ -62,7 +62,7 @@ export AZURE_TENANT XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
 
 Ottenere l'ID per la propria sottoscrizione con [az account show](/cli/azure/account#az-account-show).
 
-```azurecli-interactive
+```azurecli
 az account show
 ```
 
@@ -181,7 +181,7 @@ node createVM.js
 
 Dopo il completamento del codice, ottenere l'IP della nuova macchina virtuale ed eseguire l'accesso con SSH usando il valore di `adminPass` ricavato dal codice.
 
-```azurecli-interactive
+```azurecli
 az vm list-ip-addresses --name newLinuxVM
 ```
 
@@ -248,7 +248,7 @@ node uploadFile.js
 
 Eliminare il gruppo di risorse per rimuovere le risorse create in questa guida.
 
-```azurecli-interactive
+```azurecli
 az group delete --name myResourceGroup
 ```
 

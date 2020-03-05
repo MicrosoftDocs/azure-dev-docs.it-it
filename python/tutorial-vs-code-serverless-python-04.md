@@ -4,12 +4,12 @@ description: "Passaggio 4 dell'esercitazione: esecuzione del debugger di VS Code
 ms.topic: conceptual
 ms.date: 09/02/2019
 ms.custom: seo-python-october2019
-ms.openlocfilehash: ddb6cd0b1c1cac308e7e7e8da5b658cda277586a
-ms.sourcegitcommit: 44d1abfb836f90b8731d7ea5d5a5af09245b2b89
+ms.openlocfilehash: 15b0eeb6be2d1477b99b3fd2ec3abb48df353873
+ms.sourcegitcommit: aa2c66b0fecce51862cc9115f68d39c770f0b2ae
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/17/2020
-ms.locfileid: "77422149"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77709709"
 ---
 # <a name="4-debug-the-azure-functions-python-code-locally"></a>4: Eseguire il debug in locale del codice Python in Funzioni di Azure
 
@@ -23,11 +23,11 @@ ms.locfileid: "77422149"
 
 1. Quando si avvia il debugger, viene aperto un terminale che mostra l'output di Funzioni di Azure, incluso un riepilogo degli endpoint disponibili. L'URL potrebbe essere diverso se è stato usato un nome diverso da "HttpExample":
 
-    ```output
+    <pre>
     Http Functions:
 
             HttpExample: [GET,POST] http://localhost:7071/api/HttpExample
-    ```
+    </pre>
 
 1. Usare **CTRL+clic** o **CMD+clic** sull'URL visualizzato nella finestra **Output** di Visual Studio Code per aprire l'indirizzo in un browser oppure avviare un browser e incollarvi lo stesso URL. In entrambi i casi l'endpoint è `api/<function_name>`, ma in questo caso è `api/HttpExample`. Dal momento però che l'URL non include alcun parametro name, nella finestra del browser dovrebbe essere visualizzato "Please pass a name on the query string or in the request body" (Passare un nome nella stringa di query o nel corpo della richiesta) a seconda del percorso nel codice.
 
@@ -35,13 +35,17 @@ ms.locfileid: "77422149"
 
 1. Per passare il valore del nome nel corpo di una richiesta JSON, è possibile usare uno strumento come curl con JSON inline:
 
+    # <a name="bash"></a>[Bash](#tab/bash)
+
     ```bash
     # Mac OS/Linux: modify the URL if you're using a different function name
     curl --header "Content-Type: application/json" --request POST \
         --data '{"name":"Visual Studio Code"}' http://localhost:7071/api/HttpExample
     ```
 
-    ```ps
+    # <a name="powershell"></a>[PowerShell](#tab/powershell)
+
+    ```powershell
     # Windows (escaping on the quotes is necessary; also modify the URL
     # if you're using a different function name)
     curl --header "Content-Type: application/json" --request POST \
