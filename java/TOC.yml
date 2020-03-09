@@ -170,6 +170,10 @@
               href: migrate-tomcat-to-containers-on-azure-kubernetes-service.md
             - name: Da WebLogic a macchine virtuali di Azure
               href: migrate-weblogic-to-virtual-machines.md
+            - name: Da WebLogic a WildFly nel servizio Azure Kubernetes
+              href: migrate-weblogic-to-wildfly-on-azure-kubernetes-service.md
+            - name: Da WebSphere a WildFly nel servizio Azure Kubernetes
+              href: migrate-websphere-to-wildfly-on-azure-kubernetes-service.md
     - name: Esempi di codice
       items:
         - name: Service Fabric
