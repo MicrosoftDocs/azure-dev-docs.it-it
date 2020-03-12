@@ -10,12 +10,12 @@ ms.devlang: java
 ms.topic: article
 ms.date: 11/19/2019
 ms.author: dagrieve
-ms.openlocfilehash: 21b302225f8b28099e36622ae5e32a84c947a58a
-ms.sourcegitcommit: c34647aee3b9a72fa0ee6aeac2dfa1e36d67c7ef
+ms.openlocfilehash: 528b111e945bb68bd18c849847522a070259c0f3
+ms.sourcegitcommit: f1e3c72c38376b15f5313d4bfe5fefdbfc022dc9
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77504540"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79022293"
 ---
 # <a name="transition-from-java-8-to-java-11"></a>Transizione da Java 8 a Java 11
 
@@ -246,7 +246,7 @@ Questo problema può essere risolto usando `--patch-module <module-name>=<path>[
 
 ##### <a name="noclassdeffounderror-caused-by-using-java-ee-or-corba-modules"></a>NoClassDefFoundError causato da moduli Java EE o CORBA
 
-Se l'applicazione viene eseguita in Java 8 ma genera un errore `java.lang.NoClassDefFoundError` o `java.lang.ClassNotFoundError`, è probabile che usi un pacchetto dei moduli Java EE o CORBA. Questi moduli sono stati deprecati in Java 9 e [rimossi in Java 11](https://openjdk.java.net/jeps/320). 
+Se l'applicazione viene eseguita in Java 8 ma genera un errore `java.lang.NoClassDefFoundError` o `java.lang.ClassNotFoundException`, è probabile che usi un pacchetto dei moduli Java EE o CORBA. Questi moduli sono stati deprecati in Java 9 e [rimossi in Java 11](https://openjdk.java.net/jeps/320). 
 
 Per risolvere il problema, aggiungere una dipendenza dal runtime nel progetto.
 

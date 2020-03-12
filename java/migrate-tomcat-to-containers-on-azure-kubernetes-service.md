@@ -5,18 +5,18 @@ author: yevster
 ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 1/20/2020
-ms.openlocfilehash: dbcf1f0989208f960f31fec13a65477d87b1a042
-ms.sourcegitcommit: 367780fe48d977c82cb84208c128b0bf694b1029
+ms.openlocfilehash: fafe7b16b14f43f6fe97090de8964c4e78796bda
+ms.sourcegitcommit: 56e5f51daf6f671f7b6e84d4c6512473b35d31d2
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76825821"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78893735"
 ---
 # <a name="migrate-tomcat-applications-to-containers-on-azure-kubernetes-service"></a>Eseguire la migrazione di applicazioni Tomcat ai contenitori nel servizio Azure Kubernetes
 
 Questa guida descrive gli aspetti da considerare per la migrazione di un'applicazione Tomcat esistente da eseguire nel servizio Azure Kubernetes.
 
-## <a name="pre-migration-steps"></a>Passaggi di pre-migrazione
+## <a name="pre-migration"></a>Pre-migrazione
 
 [!INCLUDE [inventory-external-resources](includes/migration/inventory-external-resources.md)]
 
@@ -224,26 +224,26 @@ Sarà necessario modificare lo script di avvio (*startup.sh*) nel repository di 
 
 Per eseguire i processi pianificati nel cluster del servizio Azure Kubernetes, definire [processi Cron](https://kubernetes.io/docs/tasks/job/automated-tasks-with-cron-jobs/) in base alle esigenze.
 
-## <a name="post-migration-steps"></a>Passaggi post-migrazione
+## <a name="post-migration"></a>Post-migrazione
 
 Ora che è stata eseguita la migrazione dell'applicazione al servizio Azure Kubernetes, è necessario verificare che funzioni come previsto. Una volta completata questa operazione, sono disponibili alcune raccomandazioni per rendere l'applicazione maggiormente nativa del cloud.
 
-1. Valutare se [aggiungere un nome DNS](/azure/aks/ingress-static-ip#configure-a-dns-name) all'indirizzo IP allocato al controller in ingresso o al servizio di bilanciamento del carico dell'applicazione.
+* Valutare se [aggiungere un nome DNS](/azure/aks/ingress-static-ip#configure-a-dns-name) all'indirizzo IP allocato al controller in ingresso o al servizio di bilanciamento del carico dell'applicazione.
 
-1. Valutare se [aggiungere grafici Helm per l'applicazione](https://helm.sh/docs/topics/charts/). Un grafico Helm consente di parametrizzare la distribuzione dell'applicazione per l'uso e la personalizzazione da parte di un set più diversificato di clienti.
+* Valutare se [aggiungere grafici Helm per l'applicazione](https://helm.sh/docs/topics/charts/). Un grafico Helm consente di parametrizzare la distribuzione dell'applicazione per l'uso e la personalizzazione da parte di un set più diversificato di clienti.
 
-1. Progettare e implementare una strategia DevOps. Per mantenere l'affidabilità aumentando al tempo stesso la velocità di sviluppo, è consigliabile [automatizzare le distribuzioni e i test con Azure Pipelines](/azure/devops/pipelines/ecosystems/kubernetes/aks-template).
+* Progettare e implementare una strategia DevOps. Per mantenere l'affidabilità aumentando al tempo stesso la velocità di sviluppo, è consigliabile [automatizzare le distribuzioni e i test con Azure Pipelines](/azure/devops/pipelines/ecosystems/kubernetes/aks-template).
 
-1. Abilitare [Monitoraggio di Azure per il cluster](/azure/azure-monitor/insights/container-insights-enable-existing-clusters) per consentire la raccolta di log del contenitore, tenere traccia dell'utilizzo e così via.
+* Abilitare [Monitoraggio di Azure per il cluster](/azure/azure-monitor/insights/container-insights-enable-existing-clusters) per consentire la raccolta di log del contenitore, tenere traccia dell'utilizzo e così via.
 
-1. Valutare se esporre metriche specifiche dell'applicazione tramite Prometheus. Prometheus è un framework di metriche open source ampiamente adottato nella community di Kubernetes. È possibile configurare lo [scraping delle metriche di Prometheus in Monitoraggio di Azure](/azure/azure-monitor/insights/container-insights-prometheus-integration) invece di ospitare il proprio server Prometheus per consentire l'aggregazione delle metriche dalle applicazioni e la risposta automatizzata o l'escalation delle condizioni anomale.
+* Valutare se esporre metriche specifiche dell'applicazione tramite Prometheus. Prometheus è un framework di metriche open source ampiamente adottato nella community di Kubernetes. È possibile configurare lo [scraping delle metriche di Prometheus in Monitoraggio di Azure](/azure/azure-monitor/insights/container-insights-prometheus-integration) invece di ospitare il proprio server Prometheus per consentire l'aggregazione delle metriche dalle applicazioni e la risposta automatizzata o l'escalation delle condizioni anomale.
 
-1. Progettare e implementare una strategia di continuità aziendale e ripristino di emergenza. Per le applicazioni cruciali, considerare un'[architettura di distribuzione in più aree](/azure/aks/operator-best-practices-multi-region).
+* Progettare e implementare una strategia di continuità aziendale e ripristino di emergenza. Per le applicazioni cruciali, considerare un'[architettura di distribuzione in più aree](/azure/aks/operator-best-practices-multi-region).
 
-1. Vedere [Criteri di supporto della versione di Kubernetes](/azure/aks/supported-kubernetes-versions#kubernetes-version-support-policy). È responsabilità dell'utente mantenere [aggiornato il cluster del servizio Azure Kubernetes](/azure/aks/upgrade-cluster) per assicurarsi che sia sempre in esecuzione una versione supportata.
+* Vedere [Criteri di supporto della versione di Kubernetes](/azure/aks/supported-kubernetes-versions#kubernetes-version-support-policy). È responsabilità dell'utente mantenere [aggiornato il cluster del servizio Azure Kubernetes](/azure/aks/upgrade-cluster) per assicurarsi che sia sempre in esecuzione una versione supportata.
 
-1. Chiedere a tutti i membri del team responsabili dell'amministrazione del cluster e dello sviluppo di applicazioni di esaminare le [procedure consigliate per il servizio Azure Kubernetes](/azure/aks/best-practices).
+* Chiedere a tutti i membri del team responsabili dell'amministrazione del cluster e dello sviluppo di applicazioni di esaminare le [procedure consigliate per il servizio Azure Kubernetes](/azure/aks/best-practices).
 
-1. Valutare gli elementi nel file *logging.properties*. Valutare se eliminare o ridurre parte dell'output della registrazione per migliorare le prestazioni.
+* Valutare gli elementi nel file *logging.properties*. Valutare se eliminare o ridurre parte dell'output della registrazione per migliorare le prestazioni.
 
-1. Valutare se [monitorare le dimensioni della cache del codice](https://docs.oracle.com/javase/8/embedded/develop-apps-platforms/codecache.htm) e aggiungere i parametri `-XX:InitialCodeCacheSize` e `-XX:ReservedCodeCacheSize` alla variabile `JAVA_OPTS` nel Dockerfile per ottimizzare ulteriormente le prestazioni.
+* Valutare se [monitorare le dimensioni della cache del codice](https://docs.oracle.com/javase/8/embedded/develop-apps-platforms/codecache.htm) e aggiungere i parametri `-XX:InitialCodeCacheSize` e `-XX:ReservedCodeCacheSize` alla variabile `JAVA_OPTS` nel Dockerfile per ottimizzare ulteriormente le prestazioni.
