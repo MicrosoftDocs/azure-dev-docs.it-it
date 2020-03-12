@@ -4,12 +4,12 @@ description: Passaggio 7 dell'esercitazione, aggiunta di un binding in Python pe
 ms.topic: conceptual
 ms.date: 09/02/2019
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 2203104d53387254284e75e322367f2e7142bfad
-ms.sourcegitcommit: 44d1abfb836f90b8731d7ea5d5a5af09245b2b89
+ms.openlocfilehash: 4ed8fee52e466643ac73a96ef1529bf492418256
+ms.sourcegitcommit: f1e3c72c38376b15f5313d4bfe5fefdbfc022dc9
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/17/2020
-ms.locfileid: "77422171"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79022317"
 ---
 # <a name="7-add-a-storage-binding-for-azure-functions-in-python"></a>7: Aggiungere un binding di archiviazione per Funzioni di Azure in Python
 
@@ -92,7 +92,7 @@ In questa sezione viene aggiunto un binding di archiviazione alla funzione HttpE
 
     1. Esplorare ed esaminare la coda con Azure Storage Explorer, che si integra con Visual Studio, come descritto in [Connettere funzioni ad Archiviazione di Azure con Visual Studio Code](/azure/azure-functions/functions-add-output-binding-storage-queue-vs-code), in particolare nella sezione [Esaminare la coda di output](/azure/azure-functions/functions-add-output-binding-storage-queue-vs-code#examine-the-output-queue).
 
-    1. Usare l'interfaccia della riga di comando di Azure per eseguire una query sulla coda di archiviazione, come descritto in [Eseguire una query sulla coda di archiviazione](/azure/azure-functions/functions-add-output-binding-storage-queue-python).
+    1. Usare l'interfaccia della riga di comando di Azure per eseguire una query sulla coda di archiviazione, come descritto in [Eseguire una query sulla coda di archiviazione](/azure/azure-functions/functions-add-output-binding-storage-queue-cli?pivots=programming-language-python).
 
 1. Per eseguire il test nel cloud, ridistribuire il codice usando l'opzione **Deploy to Function App** (Distribuisci nell'app per le funzioni) nell'area **Azure: Functions** (Azure: Funzioni). Se richiesto, selezionare l'app per le funzioni creata in precedenza. Al termine della distribuzione, che richiede qualche minuto, la finestra **Output** mostra di nuovo gli endpoint pubblici con cui è possibile ripetere i test.
 

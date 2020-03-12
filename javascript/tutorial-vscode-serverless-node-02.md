@@ -3,12 +3,12 @@ title: Creare l'applicazione di Funzioni di Azure da Visual Studio Code
 description: Parte 2 dell'esercitazione, creare l'app di Funzioni di Azure
 ms.topic: conceptual
 ms.date: 09/23/2019
-ms.openlocfilehash: 6c0adc93899eb9480008774fe35f3aa3b2ab5842
-ms.sourcegitcommit: d9f585bea70b01ba6657a75ea245d8519d4a5aad
+ms.openlocfilehash: fb7b5f3bab0dbde0a04671126ad7aa8e5be16ba0
+ms.sourcegitcommit: 21ddeb9bd9abd419d143dc2ca8a7c821a1758cf9
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/03/2020
-ms.locfileid: "76967239"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79089963"
 ---
 # <a name="create-the-local-functions-app"></a>Creare l'app per le funzioni locale
 
@@ -48,7 +48,7 @@ In questo passaggio viene creata un'applicazione locale di Funzioni di Azure con
     | Nome file | Descrizione |
     | --- | --- |
     | *index.js* |  Il codice sorgente che risponde alla richiesta HTTP. |
-    | *functions.json* | La [configurazione di binding](/azure/azure-functions/functions-triggers-bindings) per il trigger HTTP. |
+    | *function.json* | La [configurazione di binding](/azure/azure-functions/functions-triggers-bindings) per il trigger HTTP. |
     | *sample.dat* | Un file di dati segnaposto per dimostrare che la cartella contiene altri file. È possibile eliminare questo file, se si desidera, perché non viene usato nell'esercitazione. |
 
     ![Risultato della creazione di un'app per le funzioni](media/functions-extension/create-function-app-results.png)
