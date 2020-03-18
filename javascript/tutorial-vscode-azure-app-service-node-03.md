@@ -2,70 +2,83 @@
 title: Distribuire app Node.js nel Servizio app di Azure da Visual Studio Code
 description: Parte 3 dell'esercitazione, distribuire il sito Web
 ms.topic: conceptual
-ms.date: 09/20/2019
-ms.openlocfilehash: 937eb54e9885e3b5b9fa7be54f551945a54572cd
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.date: 03/04/2020
+ms.openlocfilehash: 1a8b4a37fa823b631e6b4849cf7cff6ac2ba26f3
+ms.sourcegitcommit: 56e5f51daf6f671f7b6e84d4c6512473b35d31d2
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74467207"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78894247"
 ---
-# <a name="deploy-the-website"></a>Distribuire il sito Web
+# <a name="deploy-the-app-to-azure"></a>Distribuire l'app in Azure
 
 [Passaggio precedente: Creare l'app](tutorial-vscode-azure-app-service-node-02.md)
 
-In questa sezione si distribuisce il sito Web Node.js usando Visual Studio Code e l'estensione Servizio app di Azure. Questa esercitazione usa il modello di distribuzione più semplice in cui l'app viene compressa e distribuita nel Servizio app di Azure in Linux.
+In questo passaggio l'app Node.js viene distribuita in Azure usando git deploy tramite VS Code e l'estensione Servizio app di Azure. Per realizzare questo obiettivo, inizializzare prima di tutto un repository git locale, quindi creare un'app Web in Azure e infine configurare VS Code per l'uso di git deploy.
 
-1. Prima di distribuire l'app, assicurarsi che sia in ascolto sulla porta specificata dalla variabile di ambiente `PORT`: `process.env.PORT`.
-
-1. Nella cartella dell'app, ad esempio `myExpressApp` del passaggio precedente, avviare VS Code usando il comando seguente:
+1. Nel terminale assicurarsi di trovarsi nella cartella *expressApp1*, quindi avviare Visual Studio Code con il comando seguente:
 
     ```bash
     code .
     ```
 
-1. In VS Code selezionare l'icona di Azure per aprire l'area **Servizio app di Azure**, quindi selezionare l'icona della freccia verso l'alto blu per distribuire l'app in Azure:
+1. In VS Code selezionare l'icona del controllo del codice sorgente per aprire l'area **Controllo del codice sorgente**, quindi selezionare **+** per inizializzare un repository git locale:
 
-    ![Eseguire la distribuzione nell'app Web](media/deploy-azure/deploy.png)
+    ![Inizializzare repository git](media/deploy-azure/git-init.png)
 
-    > [!TIP]
-    > In alternativa, aprire il **riquadro comandi** (**F1**), digitare 'deploy to web app' e selezionare il comando **Servizio app di Azure: Distribuisci nell'app Web**.
+1. Ai prompt scegliere *expressApp1* come cartella dell'area di lavoro.
 
-1. Quando richiesto, immettere le informazioni seguenti:
+1. Dopo l'inizializzazione del repository, immettere il messaggio "Initial commit" e selezionare il segno di spunta per creare il commit iniziale dei file di origine.
 
-    a. Selezionare la cartella corrente per l'app (in questa esercitazione, `myExpressApp`).
+    ![Completare un commit iniziale nel repository](media/deploy-azure/initial-commit.png)
 
-    a. Selezionare **Crea una nuova app Web**.
+1. Nel riquadro comandi (**CTRL**+**MAIUSC**+**P**), digitare "create web" e selezionare **Servizio app di Azure: Crea una nuova app Web - Avanzate**. Usare il comando Avanzate per avere il controllo completo sulla distribuzione, tra cui il gruppo di risorse, il piano di servizio app e il sistema operativo, invece di usare le impostazioni predefinite di Linux.
 
-    a. Immettere un nome univoco globale per l'app e premere **INVIO**. I caratteri validi per il nome dell'app sono "a-z", "0-9" e "-".
+1. Rispondere alle richieste come segue:
 
-    a. Scegliere una posizione in un'area di Azure, come illustrato in [Aree](https://azure.microsoft.com/regions/), vicina alla propria posizione o ad altri servizi a cui può essere necessario accedere.
+    - Per **Enter a globally unique name** (Immettere un nome univoco globale) immettere un nome univoco in tutto Azure. Usare solo caratteri alfanumerici ('A-Z', 'a-z' e '0-9') e trattini ('-')
+    - Selezionare **Crea nuovo gruppo di risorse** e specificare un nome, ad esempio `AppServiceTutorial-rg`.
+    - Selezionare un sistema operativo (Windows o Linux)
+    - Solo Linux: selezionare una versione di Node.js. Per Windows, la versione viene specificata con un'impostazione dell'app più avanti.
+    - Selezionare **Crea un nuovo piano di servizio app**, specificare un nome, ad esempio `AppServiceTutorial-plan`, quindi selezionare il piano tariffario **F1 Gratuito**.
+    - Per la risorsa di Application Insight, selezionare **Ignora per adesso**.
+    - Selezionare una località nelle vicinanze.
 
-    a. Scegliere la **versione di Node.js**; l'opzione consigliata è LTS.
+1. Dopo un breve periodo di tempo, VS Code informa che la creazione è stata completata. Chiudere la notifica con il pulsante **X**:
 
-1. Mentre l'estensione crea l'app, nella finestra **Output** di VS Code viene visualizzato lo stato di avanzamento. Può essere necessario selezionare l'output **Servizio app di Azure**.
+    ![Notifica sul completamento della creazione dell'app Web](media/deploy-azure/creation-complete.png)
 
-    ![Finestra dell'output di Visual Studio Code per il Servizio app di Azure](media/deploy-azure/output-window.png)
+1. Dopo aver creato l'app Web, indicare a VS Code di distribuire il codice dal repository git locale. Selezionare l'icona di Azure per aprire l'area **Servizio app di Azure**, espandere il nodo della sottoscrizione, fare clic con il pulsante destro del mouse sul nome dell'app Web appena creata e scegliere **Configure Deployment Source** (Configura l'origine della distribuzione).
 
-1. Selezionare **Sì** quando viene chiesto di aggiornare la configurazione per eseguire `npm install` nel server di destinazione. L'app viene quindi distribuita.
+    ![Comando per configurare l'origine della distribuzione per un'app Web](media/deploy-azure/configure-deployment-source.png)
 
-    ![Distribuzione configurata](media/deploy-azure/server-build.png)
+1. Quando richiesto, selezionare **LocalGit**.
 
-1. All'avvio della distribuzione, viene richiesto di aggiornare l'area di lavoro in modo che tutte le distribuzioni successive usino automaticamente come destinazione la stessa app Web del Servizio app. Scegliere **Sì** per assicurarsi che le modifiche vengano distribuite nell'app corretta.
+1. Se si esegue la distribuzione nel servizio app in Windows, è necessario specificare due impostazioni prima della distribuzione:
 
-    ![Distribuzione configurata](media/deploy-azure/save-configuration.png)
+    1. In VS Code espandere il nodo del nuovo servizio app, quindi fare clic con il pulsante destro del mouse su **Impostazioni applicazione** e scegliere **Aggiungi nuova impostazione**:
 
-1. Una volta completata la distribuzione, selezionare **Esplora sito Web** nel messaggio per visualizzare il sito Web appena distribuito.
+        ![Comando per l'aggiunta di un'impostazione dell'app](media/deploy-azure/add-setting.png)
 
-## <a name="troubleshooting"></a>risoluzione dei problemi
+    1. Immettere `WEBSITE_NODE_DEFAULT_VERSION` per la chiave e `10.15.2` per il valore dell'impostazione. Questa impostazione specifica la versione di Node.js.
+    1. Ripetere la procedura per creare una chiave per `SCM_DO_BUILD_DURING_DEPLOYMENT` con il valore `1`. Questa impostazione forza il server a eseguire `npm install` al momento della distribuzione.
+    1. Espandere il nodo **Impostazioni applicazione** per verificare se le impostazioni sono attive.
 
-Se viene visualizzato il messaggio di errore "Non si dispone delle autorizzazioni necessarie per visualizzare la directory o la pagina", è probabile che l'app non sia stata avviata correttamente. La visualizzazione dei log, come descritto nel [passaggio successivo](tutorial-vscode-azure-app-service-node-04.md), può risultare utile per diagnosticare e risolvere il problema. Se non è possibile risolvere il problema, contattare il supporto facendo clic sul pulsante **Si è verificato un problema** sotto. Microsoft sarà lieta di fornire aiuto.
+1. Selezionare l'icona della freccia in su blu per distribuire il codice in Azure:
 
-## <a name="updating-the-website"></a>Aggiornamento del sito Web
+    ![Icona per la distribuzione nell'app Web](media/deploy-azure/deploy.png)
 
-È possibile distribuire le modifiche all'app usando lo stesso processo e scegliendo l'app esistente invece di crearne una nuova.
+1. Ai prompt selezionare la cartella *expressApp1*, quindi selezionare il nome dell'app Web creata in precedenza.
 
-----
+1. Per la distribuzione in Linux, selezionare **Sì** quando viene richiesto di aggiornare la configurazione per eseguire `npm install` nel server di destinazione.
+
+    ![Richiesta di aggiornamento della configurazione nel server Linux di destinazione](media/deploy-azure/server-build.png)
+
+1. Per Linux e Windows, quando richiesto, selezionare **Sì** per **Distribuisci sempre l'area di lavoro "nodejs-docs-hello-world" in (nome app)"** . Selezionando **Sì** si indica VS Code di impostare automaticamente come destinazione la stessa app Web del servizio app con le distribuzioni successive.
+
+1. Una volta completata la distribuzione, selezionare **Esplora sito Web** nel messaggio per visualizzare l'app Web appena distribuita. Nel browser verrà visualizzato il testo "Hello World!"
+
+1. (Facoltativo): È possibile apportare modifiche ai file di codice, quindi usare di nuovo il pulsante di distribuzione per aggiornare l'app Web.
 
 > [!div class="nextstepaction"]
 > [Il sito si trova in Azure](tutorial-vscode-azure-app-service-node-04.md) [Si è verificato un problema](https://www.research.net/r/PWZWZ52?tutorial=node-deployment-azureappservice&step=deploy-app)

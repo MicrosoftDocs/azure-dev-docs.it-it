@@ -9,18 +9,18 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
 ms.custom: mvc
-ms.openlocfilehash: 5d0e196a6d0c65a6bf8f159f880b0890341a9fc3
-ms.sourcegitcommit: c34647aee3b9a72fa0ee6aeac2dfa1e36d67c7ef
+ms.openlocfilehash: 943f4c5d859ed31bc7a28b8056855ed4cd2c2a98
+ms.sourcegitcommit: 56e5f51daf6f671f7b6e84d4c6512473b35d31d2
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77504439"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78893711"
 ---
 # <a name="deploy-a-spring-boot-application-on-azure-app-service-for-container"></a>Distribuire un'applicazione Web Spring Boot nel servizio app di Azure per Container
 
 Questa esercitazione illustra l'uso di [Docker] per distribuire l'applicazione [Spring Boot] in contenitori e distribuire l'immagine Docker in un host Linux nel [servizio app di Azure](https://docs.microsoft.com/azure/app-service/containers/app-service-linux-intro).
 
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>Prerequisiti
 
 Per completare la procedura di questa esercitazione, sono necessari i prerequisiti seguenti:
 
@@ -215,7 +215,7 @@ Una volta completata la distribuzione, fare clic su **Vai alla risorsa**.  La pa
 
 > [!NOTE]
 >
-> Azure eseguirà automaticamente il mapping delle richieste Internet al server Tomcat incorporato in esecuzione sulla porta standard 80 o 8080. Se tuttavia il server Tomcat incorporato è stato configurato per l'esecuzione su una porta personalizzata, è necessario aggiungere all'app Web una variabile di ambiente che definisce la porta del server Tomcat incorporato. A tale scopo, seguire questa procedura:
+> Azure eseguirà automaticamente il mapping delle richieste Internet al server Tomcat incorporato in esecuzione sulla porta - 80. Se tuttavia il server Tomcat incorporato è stato configurato per l'esecuzione sulla porta - 8080 o su una porta personalizzata, è necessario aggiungere all'app Web una variabile di ambiente che definisce tale porta. A tale scopo, seguire questa procedura:
 >
 > 1. Aprire il [Azure portal] ed effettuare l'accesso.
 > 

@@ -1,24 +1,22 @@
 ---
 title: Pulire le risorse dopo la distribuzione nel Servizio app di Azure in Visual Studio Code
 description: Parte 5 dell'esercitazione, pulire le risorse
-author: kraigb
-manager: barbkess
 ms.topic: conceptual
-ms.date: 09/20/2019
-ms.openlocfilehash: d7ce42ab0807a9331d8c3021ff0d3007381f3bc1
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.date: 03/04/2020
+ms.openlocfilehash: 1c3b277270bf6f8f7cb5884b7bb56ce2c9b3368c
+ms.sourcegitcommit: 56e5f51daf6f671f7b6e84d4c6512473b35d31d2
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74467188"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78894206"
 ---
 # <a name="clean-up-resources"></a>Pulire le risorse
 
 [Passaggio precedente: Eseguire lo streaming dei log](tutorial-vscode-azure-app-service-node-04.md)
 
-Il servizio app creato include un piano di servizio app sottostante che può comportare costi. Per pulire le risorse, fare clic con il pulsante destro del mouse sul servizio app nell'area **Azure: App Service** (Azure: Servizio app) e selezionare **Delete** (Elimina).
+Il servizio app creato include un piano di servizio app in esecuzione con un piano tariffario gratuito, quindi non verranno addebitati costi ricorrenti.
 
-È anche possibile visitare il [portale di Azure](https://portal.azure.com), selezionare **Gruppi di risorse** nel riquadro di spostamento sinistro, selezionare il gruppo di risorse creato nella procedura di questa esercitazione e quindi usare il comando **Elimina gruppo di risorse**.
+Se si vogliono pulire le risorse, visitare il [portale di Azure](https://portal.azure.com), selezionare **Gruppi di risorse**, individuare e selezionare il gruppo di risorse creato in questa esercitazione, ad esempio `AppServiceTutorial-rg`, quindi scegliere il comando **Elimina gruppo di risorse**.
 
 ## <a name="next-steps"></a>Passaggi successivi
 

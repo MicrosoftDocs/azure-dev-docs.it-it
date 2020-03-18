@@ -4,12 +4,12 @@ description: "Passaggio 1 dell'esercitazione: introduzione e prerequisiti."
 ms.topic: conceptual
 ms.date: 09/02/2019
 ms.custom: seo-python-october2019
-ms.openlocfilehash: b9aecefc05db95aa121e496c9c993a5bba373ef7
+ms.openlocfilehash: 509e62b5bb8b23365dc30781b6f658a39894d56d
 ms.sourcegitcommit: a9ec05f964009409fe6e54b95c9d548f805a518e
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/02/2020
-ms.locfileid: "78215335"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78875808"
 ---
 # <a name="tutorial-create-and-deploy-serverless-azure-functions-in-python-with-visual-studio-code"></a>Esercitazione: Creare e distribuire Funzioni di Azure serverless in Python con Visual Studio Code
 
@@ -31,7 +31,7 @@ Se non si ha una sottoscrizione di Azure, [iscriversi](https://azure.microsoft.c
 
 ### <a name="azure-functions-core-tools"></a>Azure Functions Core Tools
 
-Installare Azure Functions Core Tools seguendo le istruzioni per il sistema operativo specifico in [Usare Azure Functions Core Tools](/azure/azure-functions/functions-run-local#v2). Ignorare i commenti nell'articolo sullo strumento di gestione pacchetti Chocolately, perché non sono necessari per completare questa esercitazione.
+Installare Azure Functions Core Tools seguendo le istruzioni per il sistema operativo specifico in [Usare Azure Functions Core Tools](/azure/azure-functions/functions-run-local#v2). Ignorare i commenti nell'articolo sullo strumento di gestione pacchetti Chocolatey, perché non sono necessari per completare questa esercitazione.
 
 Durante l'installazione di Node.js, usare le opzioni predefinite e *non* selezionare l'opzione per l'installazione automatica degli strumenti necessari.  Assicurarsi anche di usare l'opzione `-g` con i comandi `npm install` per rendere disponibili Core Tools per i comandi successivi.
 

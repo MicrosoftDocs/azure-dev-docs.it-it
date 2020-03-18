@@ -5,12 +5,12 @@ author: yevster
 ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 1/20/2020
-ms.openlocfilehash: 7025393f45a32a42fcd2ae3dafee6274a4ba3cbc
-ms.sourcegitcommit: aceed8548ad4529a81d83eb15a095edc8607cac5
+ms.openlocfilehash: f6ee53e25f7ce75e5e0d88688880f788fa6795f9
+ms.sourcegitcommit: 21ddeb9bd9abd419d143dc2ca8a7c821a1758cf9
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/18/2020
-ms.locfileid: "77440866"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79089943"
 ---
 # <a name="migrate-java-applications-to-azure"></a>Eseguire la migrazione di applicazioni Java ad Azure
 
@@ -73,16 +73,16 @@ Le sezioni seguenti illustrano quali destinazioni del servizio soddisfano i requ
 
 Usare la griglia seguente per identificare le destinazioni che supportano i tipi di applicazione e le funzionalità necessarie.
 
-|   |App<br>Service<br>Java SE|App<br>Service<br>Tomcat|App<br>Service<br>WildFly|Azure<br>Spring<br>Cloud|Servizio Azure Kubernetes|Macchine virtuali|
+|   |App<br>Service<br>Java SE|App<br>Service<br>Tomcat|Azure<br>Spring<br>Cloud|Servizio Azure Kubernetes|Macchine virtuali|
 |---|---|---|---|---|---|---|
-| Applicazioni Spring Boot/JAR                                    |&#x2714;|        |        |        |&#x2714;|&#x2714;|
-| Spring Cloud/microservizi                                      |        |        |        |&#x2714;|&#x2714;|&#x2714;|
-| Applicazioni Web                                                  |        |&#x2714;|&#x2714;|        |&#x2714;|&#x2714;|
-| Applicazioni Java EE                                              |        |        |&#x2714;|        |&#x2714;|&#x2714;|
-| Server applicazioni commerciali<br>(ad esempio WebLogic o WebSphere) |        |        |        |        |&#x2714;|&#x2714;|
-| Persistenza a lungo termine nel file system locale                         |&#x2714;|&#x2714;|&#x2714;|        |&#x2714;|&#x2714;|
-| Clustering delle applicazioni a livello di server                               |        |        |        |        |&#x2714;|&#x2714;|
-| Processi batch/pianificati                                            |        |        |        |&#x2714;|&#x2714;|&#x2714;|
+| Applicazioni Spring Boot/JAR                                    |&#x2714;|        |        |&#x2714;|&#x2714;|
+| Spring Cloud/microservizi                                      |        |        |&#x2714;|&#x2714;|&#x2714;|
+| Applicazioni Web                                                  |        |&#x2714;|        |&#x2714;|&#x2714;|
+| Applicazioni Java EE                                              |        |        |        |&#x2714;|&#x2714;|
+| Server applicazioni commerciali<br>(ad esempio WebLogic o WebSphere) |        |        |        |&#x2714;|&#x2714;|
+| Persistenza a lungo termine nel file system locale                         |&#x2714;|&#x2714;|        |&#x2714;|&#x2714;|
+| Clustering delle applicazioni a livello di server                               |        |        |        |&#x2714;|&#x2714;|
+| Processi batch/pianificati                                            |        |        |&#x2714;|&#x2714;|&#x2714;|
 
 ### <a name="ongoing-responsibility-grid"></a>Griglia di responsabilità continuative
 
@@ -127,22 +127,26 @@ Usare le griglie seguenti per trovare indicazioni sulla migrazione in base al ti
 
 Usare le righe seguenti per trovare il tipo di applicazione Java e le colonne per trovare la destinazione del servizio di Azure che ospiterà l'applicazione.
 
-|Destinazione&nbsp;→<br><br>Tipo di&nbsp;applicazione&nbsp;↓|App<br>Service<br>Java SE|App<br>Service<br>Tomcat|App<br>Service<br>WildFly|Azure<br>Spring<br>Cloud|Servizio Azure Kubernetes|Macchine virtuali|
+Se si vuole eseguire la migrazione di un'app JBoss EAP a Tomcat nel servizio app, convertire prima l'app Java EE in app Web Java (servlet) in esecuzione in Tomcat, quindi seguire le istruzioni indicate di seguito.
+
+Se si vuole eseguire la migrazione di un'app Web in Tomcat ad Azure Spring Cloud, convertire prima l'app in microservizi di Spring Cloud, quindi seguire le istruzioni indicate di seguito.
+
+|Destinazione&nbsp;→<br><br>Tipo di&nbsp;applicazione&nbsp;↓|App<br>Service<br>Java SE|App<br>Service<br>Tomcat|Azure<br>Spring<br>Cloud|Servizio Azure Kubernetes|Macchine virtuali|
 |---|---|---|---|---|---|---|
-| Spring Boot/<br>Applicazioni JAR | [disponibile][5] | pianificato        | pianificato | pianificato | pianificato        | pianificato |
-| Spring Cloud/<br>microservizi   | N/D            | N/D            | N/D     | pianificato | pianificato        | pianificato |
-| Applicazioni Web<br>su Tomcat     | N/D            | [disponibile][2] | N/D     | N/D     | [disponibile][3] | pianificato |
+| Spring Boot/<br>Applicazioni JAR | [indicazioni][5] | indicazioni<br>pianificato | indicazioni<br>pianificato | indicazioni<br>pianificato | indicazioni<br>pianificato |
+| Spring Cloud/<br>microservizi   | N/D           | N/D                 | indicazioni<br>pianificato | indicazioni<br>pianificato | indicazioni<br>pianificato |
+| Applicazioni Web<br>su Tomcat     | N/D           | [indicazioni][2]       | N/D                 | [indicazioni][3]       | indicazioni<br>pianificato |
 
 **Applicazioni Java EE**
 
 Usare le righe seguenti per trovare il tipo di applicazione Java EE in esecuzione in un server app specifico. Usare le colonne per trovare la destinazione del servizio di Azure che ospiterà l'applicazione.
 
-|Destinazione&nbsp;→<br><br>Server app&nbsp;↓|App<br>Service<br>Java SE|App<br>Service<br>Tomcat|App<br>Service<br>WildFly|Azure<br>Spring<br>Cloud|Servizio Azure Kubernetes|Macchine virtuali|
+|Destinazione&nbsp;→<br><br>Server app&nbsp;↓|App<br>Service<br>Java SE|App<br>Service<br>Tomcat|Azure<br>Spring<br>Cloud|Servizio Azure Kubernetes|Macchine virtuali|
 |---|---|---|---|---|---|---|
-| WildFly/<br>JBoss AS | N/D | N/D | pianificato | N/D | pianificato | pianificato        |
-| WebLogic              | N/D | N/D | pianificato | N/D | pianificato | [disponibile][4] |
-| WebSphere             | N/D | N/D | pianificato | N/D | pianificato | pianificato        |
-| JBoss EAP             | N/D | N/D | pianificato | N/D | N/D     | pianificato        |
+| WildFly/<br>JBoss AS | N/D | N/D | N/D | indicazioni<br>pianificato | indicazioni<br>pianificato |
+| WebLogic              | N/D | N/D | N/D | [indicazioni][6]       | [indicazioni][4]       |
+| WebSphere             | N/D | N/D | N/D | [indicazioni][7]       | indicazioni<br>pianificato |
+| JBoss EAP             | N/D | N/D | N/D | N/D                 | indicazioni<br>pianificato |
 
 <!-- reference links, for use with tables -->
 [1]: media/migration-overview/logo_azure.svg
@@ -150,3 +154,5 @@ Usare le righe seguenti per trovare il tipo di applicazione Java EE in esecuzion
 [3]: migrate-tomcat-to-containers-on-azure-kubernetes-service.md
 [4]: migrate-weblogic-to-virtual-machines.md
 [5]: migrate-java-se-to-java-se-app-service.md
+[6]: migrate-weblogic-to-wildfly-on-azure-kubernetes-service.md
+[7]: migrate-websphere-to-wildfly-on-azure-kubernetes-service.md

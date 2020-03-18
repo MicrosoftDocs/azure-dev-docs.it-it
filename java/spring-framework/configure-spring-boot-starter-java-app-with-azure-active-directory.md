@@ -8,12 +8,12 @@ ms.service: active-directory
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: identity
-ms.openlocfilehash: 3a1c174662d172b38e9d2c88043be24f18332356
-ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
+ms.openlocfilehash: c3dc7dd1df14ef7d12667c603fbaab588667ac22
+ms.sourcegitcommit: 56e5f51daf6f671f7b6e84d4c6512473b35d31d2
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74812144"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78894065"
 ---
 # <a name="tutorial-secure-a-java-web-app-using-the-spring-boot-starter-for-azure-active-directory"></a>Esercitazione: Proteggere un'app Web Java con l'utilità di avvio Spring Boot per Azure Active Directory
 
@@ -21,13 +21,12 @@ ms.locfileid: "74812144"
 
 Questo articolo illustra la creazione di un'app Java con **[Spring Initializr]** , che usa l'utilità di avvio Spring Boot per Azure Active Directory (Azure AD).
 
-In questa esercitazione si apprenderà come:
+In questa esercitazione verranno illustrate le procedure per:
 
-> [!div class="checklist"]
-> * Creare un'applicazione Java con Spring Initializr
-> * Configurare Azure Active Directory
-> * Proteggere l'applicazione con le classi e le annotazioni Spring Boot
-> * Compilare e testare l'applicazione Java
+ * Creare un'applicazione Java con Spring Initializr
+ * Configurare Azure Active Directory
+ * Proteggere l'applicazione con le classi e le annotazioni Spring Boot
+ * Compilare e testare l'applicazione Java
 
 Se non si ha una sottoscrizione di Azure, creare un [account gratuito](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) prima di iniziare.
 
@@ -42,17 +41,15 @@ I prerequisiti seguenti sono necessari per completare le procedure disponibili i
 
 1. Passare a <https://start.spring.io/>.
 
-1. Specificare che si vuole generare un progetto **Maven** con **Java**, immettere i nomi per l'applicazione in **Group** (Gruppo) e **Artifact** (Elemento) e quindi fare clic sul collegamento **Switch to the full version** (Passa alla versione completa) di Spring Initializr.
+1. Specificare che si vuole generare un progetto **Maven** con **Java**, quindi immettere i nomi in **Group** (Gruppo) e **Artifact** (Artefatto) per l'applicazione.
 
-   ![Specificare il nome del gruppo e dell'elemento][create-spring-app-01]
+   ![Specificare i nomi del gruppo e dell'artefatto][create-spring-app-01]
 
-1. Scorrere fino alla sezione **Core** e selezionare la casella **Security** (Sicurezza), quindi nella sezione **Web** selezionare la casella **Web** e infine scorrere verso il basso fino alla sezione **Azure** e selezionare la casella **Azure Active Directory**.
+1. Scorrere verso il basso e aggiungere **Dipendenze** per **Spring Web**, **Azure Active Directory** e **Spring Security**.
+
+1. Nella parte inferiore della pagina fare clic sul collegamento **Genera**.
 
    ![Selezionare le utilità di avvio Security (Sicurezza), Web e Azure Active Directory][create-spring-app-02]
-
-1. Scorrere fino alla parte superiore o inferiore alla pagina e fare clic sul pulsante **Generate Project** (Genera progetto).
-
-   ![Generare il progetto Spring Boot][create-spring-app-03]
 
 1. Quando richiesto, scaricare il progetto in un percorso nel computer locale.
 
@@ -66,65 +63,63 @@ I prerequisiti seguenti sono necessari per completare le procedure disponibili i
 
    ![Creare la nuova istanza di Azure Active Directory][create-directory-01]
 
-1. Immettere il **Nome organizzazione** e il **Nome di dominio iniziale**. Copiare l'URL completo della directory. L'URL verrà usato per aggiungere account utente più avanti in questa esercitazione, ad esempio: `wingtiptoysdirectory.onmicrosoft.com`. Al termine, fare clic su **Crea**.
+1. Immettere il **Nome organizzazione** e il **Nome di dominio iniziale**. Copiare l'URL completo della directory. L'URL verrà usato per aggiungere account utente più avanti in questa esercitazione, ad esempio: `wingtiptoysdirectory.onmicrosoft.com`. 
+
+Copiare l'URL completo della directory. L'URL verrà usato per aggiungere account utente più avanti in questa esercitazione, Ad esempio: wingtiptoysdirectory.onmicrosoft.com.
+
+Al termine, fare clic su **Crea**. La creazione della nuova risorsa richiederà alcuni minuti.
 
    ![Specificare i nomi di Azure Active Directory][create-directory-02]
 
-1. Selezionare il nome dell'account nella parte superiore destra della barra degli strumenti del portale di Azure e quindi fare clic su **Cambia directory**.
+1. Al termine, fare clic per accedere alla nuova directory.
 
    ![Selezionare il nome dell'account Azure][create-directory-03]
 
-1. Selezionare la nuova istanza di Azure Active Directory nel menu a discesa.
+1. Copiare l'**ID tenant** perché questo valore verrà usato per configurare il file *application.properties* più avanti in questa esercitazione.
 
-   ![Scegliere l'istanza di Azure Active Directory][create-directory-04]
-
-1. Selezionare **Azure Active Directory** nel menu del portale, fare clic su **Proprietà** e copiare il valore di **ID directory**, perché verrà usato per configurare il file *application.properties* più avanti in questa esercitazione.
-
-   ![Copiare l'ID di Azure Active Directory][create-directory-05]
+   ![Copiare l'ID tenant][create-directory-05]
 
 ### <a name="add-an-application-registration-for-your-spring-boot-app"></a>Aggiungere una registrazione per l'app Spring Boot
 
-1. Selezionare **Azure Active Directory** nel menu del portale e fare clic su **Registrazioni per l'app** e quindi su **Registrazione nuova applicazione**.
+1. Scegliere **Registrazioni per l'app** dal menu del portale e fare clic su **Registra un'applicazione**.
 
    ![Aggiungere una nuova registrazione per l'app][create-app-registration-01]
 
-2. Specificare il **nome** dell'applicazione, usare http://localhost:8080 come **URL di accesso** e quindi fare clic su **Crea**.
+1. Selezionare l'applicazione e quindi fare clic su **Registra**.
 
    ![Creare una nuova registrazione di app][create-app-registration-02]
 
-4. Quando viene visualizzata la pagina per la registrazione dell'app, copiare il valore di **ID applicazione**, perché verrà usato per configurare il file *application.properties* più avanti in questa esercitazione. Fare clic su **Impostazioni** e quindi su **Chiara**.
+1. Quando viene visualizzata la pagina per la registrazione dell'app, copiare i valori di **ID applicazione** e **ID tenant**, perché verranno usati per configurare il file *application.properties* più avanti in questa esercitazione.
 
    ![Creare le chiavi della registrazione per l'app][create-app-registration-03]
 
-5. Aggiungere una **Descrizione**, specificare la **Durata** di una nuova chiave e fare clic su **Salva**. Il valore della chiave verrà inserito automaticamente quando si fa clic sull'icona **Salva** ed è necessario copiare il valore della chiave per configurare il file *application.properties* più avanti in questa esercitazione. Non sarà possibile recuperare questo valore in un secondo momento.
+1. Fare clic su **Certificati e segreti** nel riquadro di spostamento sinistro.  Quindi fare clic su **Nuovo segreto client**.
+
+   ![Creare le chiavi della registrazione per l'app][create-app-registration-03.5]
+
+1. Aggiungere una **Descrizione** e selezionare durata nell'elenco **Scade**.  Scegliere **Aggiungi**. Il valore della chiave verrà compilato automaticamente.
 
    ![Specificare i parametri della chiave di registrazione per l'app][create-app-registration-04]
 
-6. Nella pagina principale per la registrazione dell'app fare clic su **Impostazioni** e quindi su **Autorizzazioni necessarie**.
+1. Copiare e salvare il valore del segreto client per configurare il file *application.properties* più avanti in questa esercitazione. Non sarà possibile recuperare questo valore in un secondo momento.
 
-   ![Autorizzazioni necessarie per la registrazione per l'app][create-app-registration-05]
+   ![Specificare i parametri della chiave di registrazione per l'app][create-app-registration-04.5]
 
-7. Fare clic su **Microsoft Azure Active Directory**.
+1. Fare clic su **Autorizzazioni API** nel riquadro di spostamento sinistro. 
 
-   ![Selezionare Microsoft Azure Active Directory][create-app-registration-06]
-
-8. Selezionare le caselle **Accede alla directory come utente registrato** e **Accedi e leggi il profilo di un altro utente** e quindi fare clic su **Salva**.
-
-   ![Abilitare le autorizzazioni di accesso][create-app-registration-07]
-
-9. Nella pagina **Autorizzazioni necessarie** fare clic su **Concedi autorizzazioni** e su **Sì** quando richiesto.
+1. Nella pagina **Autorizzazioni API** fare clic su **Fornisci il consenso amministratore** e quindi su **Sì** quando richiesto.
 
    ![Concedere le autorizzazioni di accesso][create-app-registration-08]
 
-10. Nella pagina principale per la registrazione dell'app fare clic su **Impostazioni** e quindi su **URL di risposta**.
+1. Nella pagina principale della registrazione dell'app fare clic su **Autenticazione** e quindi su **Aggiungi una piattaforma**.  Fare quindi clic su **Applicazioni Web**.
 
     ![Modificare gli URL di risposta][create-app-registration-09]
 
-11. Immettere "<http://localhost:8080/login/oauth2/code/azure>" come nuovo URL di risposta e quindi fare clic su **Salva**.
+1. Immettere <http:<span></span>//localhost:8080/login/oauth2/code/azure> come nuovo **URI di reindirizzamento**, quindi fare clic su **Configura**.
 
     ![Aggiungere un nuovo URL di risposta][create-app-registration-10]
 
-12. Nella pagina principale per la registrazione dell'app fare clic su **Manifesto**, quindi impostare il valore del parametro `oauth2AllowImplicitFlow` su `true` e fare clic su **Salva**.
+1. Nella pagina principale per la registrazione dell'app fare clic su **Manifesto**, quindi impostare il valore del parametro `oauth2AllowImplicitFlow` su `true` e fare clic su **Salva**.
 
     ![Configurare il manifesto dell'app][create-app-registration-11]
 
@@ -139,7 +134,7 @@ I prerequisiti seguenti sono necessari per completare le procedure disponibili i
 
    ![Aggiungere un nuovo account utente][create-user-01]
 
-1. Quando viene visualizzato il pannello **Utente**, immettere il **Nome** e il **Nome utente**.
+1. Quando viene visualizzato il pannello **Utente**, immettere i valori per **Nome utente** e **Nome**.  Fare quindi clic su **Crea**.
 
    ![Immettere le informazioni sull'account utente][create-user-02]
 
@@ -150,11 +145,13 @@ I prerequisiti seguenti sono necessari per completare le procedure disponibili i
    > `wingtipuser@wingtiptoysdirectory.onmicrosoft.com`
    > 
 
-1. Fare clic su **Gruppi**, quindi selezionare i gruppi che verranno usati per l'autorizzazione nell'applicazione e quindi fare clic su **Seleziona**. Per le finalità di questa esercitazione, aggiungere l'account al gruppo _Utenti_.
+1. Fare clic su **Gruppi** quindi su **Crea un nuovo gruppo** per creare un gruppo da usare per l'autorizzazione nell'applicazione.
 
-   ![Selezionare i gruppi dell'utente][create-user-03]
+1. Quindi fare clic su **Nessun membro selezionato**. Ai fini di questa esercitazione verrà creato un gruppo denominato *users*.  Cercare l'utente creato nel passaggio precedente.  Fare clic su **Seleziona** per aggiungere l'utente al gruppo.  Quindi fare clic su **Crea** per creare il nuovo gruppo.
 
-1. Fare clic su **Mostra password** e copiare la password, perché verrà usata quando si accede all'applicazione più avanti in questa esercitazione. Dopo aver copiato la password, fare clic su **Crea** per aggiungere il nuovo account utente alla directory.
+   ![Selezionare l'utente per il gruppo][create-user-03]
+
+1. Tornare nel pannello **Utenti**, selezionare l'utente di test, fare clic su **Reimposta password**, quindi copiare la password, che verrà usata per l'accesso all'applicazione più avanti in questa esercitazione. 
 
    ![Mostrare la password][create-user-04]
 
@@ -198,7 +195,7 @@ I prerequisiti seguenti sono necessari per completare le procedure disponibili i
    ```
    Dove:
 
-   | Parametro | DESCRIZIONE |
+   | Parametro | Descrizione |
    |---|---|
    | `azure.activedirectory.tenant-id` | Contiene il valore di **ID directory** di Active Directory copiato in precedenza. |
    | `spring.security.oauth2.client.registration.azure.client-id` | Contiene il valore di **ID applicazione** della registrazione dell'app completata in precedenza. |
@@ -317,7 +314,7 @@ I prerequisiti seguenti sono necessari per completare le procedure disponibili i
 
    ![Compilare l'applicazione][build-application]
 
-1. Al termine della compilazione e dell'avvio dell'applicazione tramite Maven, aprire <http://localhost:8080> in un Web browser. Verranno richiesti un nome utente e una password.
+1. Al termine della compilazione e dell'avvio dell'applicazione tramite Maven, aprire <span></span>//localhost:8080 in un Web browser. Verranno richiesti un nome utente e una password.
 
    ![Accesso all'applicazione][application-login]
 
@@ -340,6 +337,9 @@ I prerequisiti seguenti sono necessari per completare le procedure disponibili i
 ## <a name="summary"></a>Summary
 
 In questa esercitazione si è creata una nuova applicazione Web Java con l'utilità di avvio per Azure Active Directory, si è configurato un nuovo tenant di Azure AD registrandovi quindi una nuova applicazione e infine si è configurata l'applicazione in modo da usare le annotazioni e le classi Spring per proteggere l'app Web.
+
+## <a name="see-also"></a>Vedere anche
+* Per informazioni sulle nuove opzioni dell'interfaccia utente, vedere [Guida di formazione per la registrazione di app nel portale di Azure](https://docs.microsoft.com/azure/active-directory/develop/app-registrations-training-guide-for-app-registrations-legacy-users)
 
 ## <a name="next-steps"></a>Passaggi successivi
 
@@ -377,7 +377,9 @@ Per altre informazioni su Spring e Azure, passare al centro di documentazione di
 [create-app-registration-01]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/create-app-registration-01.png
 [create-app-registration-02]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/create-app-registration-02.png
 [create-app-registration-03]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/create-app-registration-03.png
+[create-app-registration-03.5]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/create-app-registration-03.5.png
 [create-app-registration-04]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/create-app-registration-04.png
+[create-app-registration-04.5]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/create-app-registration-04.5.png
 [create-app-registration-05]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/create-app-registration-05.png
 [create-app-registration-06]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/create-app-registration-06.png
 [create-app-registration-07]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/create-app-registration-07.png
