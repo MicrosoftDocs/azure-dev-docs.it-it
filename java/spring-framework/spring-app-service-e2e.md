@@ -6,12 +6,12 @@ ms.author: karler
 ms.date: 11/12/2019
 ms.service: app-service
 ms.topic: article
-ms.openlocfilehash: 47f318708fbe786b2fd0b58dc7d68cdd5c975856
-ms.sourcegitcommit: 4cf22356d6d4817421b551bd53fcba76bdb44cc1
+ms.openlocfilehash: 4daf41e1cf13d57a42230cd8ed6af4a2258e5e01
+ms.sourcegitcommit: 9f9f5c51472dbdd7b9304b02364ed136dcf81f1c
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76872136"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79139301"
 ---
 # <a name="deploy-a-spring-app-to-app-service-with-mysql"></a>Distribuire un'app Spring nel servizio app con MySQL
 
@@ -19,7 +19,7 @@ Questa esercitazione illustra il processo per compilare, configurare, distribuir
 
 L'esercitazione si basa sulla popolare app di esempio Spring PetClinic. In questo argomento si testerà in locale e quindi si distribuirà nel [servizio app di Azure](/azure/app-service/containers) una versione HSQLDB dell'app. Successivamente si configurerà e si distribuirà una versione che usa [Database di Azure per MySQL](/azure/mysql). Infine verrà illustrato come accedere ai log dell'app e aumentare il numero di istanze incrementando il numero di ruoli di lavoro che eseguono l'app.
 
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>Prerequisiti
 
 * [Interfaccia della riga di comando di Azure](https://docs.microsoft.com/cli/azure/overview)
 * [Java 8](http://java.oracle.com/)
@@ -115,7 +115,7 @@ export REGION=<region>
 
 Maven userà questi valori per creare le risorse di Azure con i nomi specificati. Usando le variabili di ambiente, è possibile mantenere i segreti dell'account al di fuori dei file di progetto.
 
-Aggiornare quindi il file *pom.xml* per configurare Maven per una distribuzione di Azure. Aggiungere il codice XML seguente dopo l'elemento `<plugin>` aggiunto in precedenza. Se necessario, sostituire `1.7.0` con la versione corrente del [plug-in Maven per il servizio app di Azure](/java/api/overview/azure/maven/azure-webapp-maven-plugin/readme).
+Aggiornare quindi il file *pom.xml* per configurare Maven per una distribuzione di Azure. Aggiungere il codice XML seguente dopo l'elemento `<plugin>` aggiunto in precedenza. Se necessario, sostituire `1.9.0` con la versione corrente del [plug-in Maven per il servizio app di Azure](/java/api/overview/azure/maven/azure-webapp-maven-plugin/readme).
 
 ```xml
 <plugin>
@@ -230,13 +230,13 @@ Aggiornare quindi il file *pom.xml* per impostare MySQL come configurazione atti
 </profile>
 ```
 
-Aggiornare quindi il file *pom.xml* per configurare Maven per una distribuzione di Azure e per l'uso di MySQL. Aggiungere il codice XML seguente dopo l'elemento `<plugin>` aggiunto in precedenza. Se necessario, sostituire `1.7.0` con la versione corrente del [plug-in Maven per il servizio app di Azure](/java/api/overview/azure/maven/azure-webapp-maven-plugin/readme).
+Aggiornare quindi il file *pom.xml* per configurare Maven per una distribuzione di Azure e per l'uso di MySQL. Aggiungere il codice XML seguente dopo l'elemento `<plugin>` aggiunto in precedenza. Se necessario, sostituire `1.9.0` con la versione corrente del [plug-in Maven per il servizio app di Azure](/java/api/overview/azure/maven/azure-webapp-maven-plugin/readme).
 
 ```xml
 <plugin>
     <groupId>com.microsoft.azure</groupId>
     <artifactId>azure-webapp-maven-plugin</artifactId>
-    <version>1.7.0</version>
+    <version>1.9.0</version>
     <configuration>
 
         <resourceGroup>${RESOURCEGROUP_NAME}</resourceGroup>
@@ -300,7 +300,7 @@ Dopo aver visualizzato i log, selezionare CTRL+C per interrompere il flusso.
 
 Il flusso di log è disponibile anche all'indirizzo `https://<app-name>.scm.azurewebsites.net/api/logstream`.
 
-## <a name="scale-out"></a>Scalabilità orizzontale
+## <a name="scale-out"></a>Aumentare il numero di istanze
 
 Per supportare un maggiore traffico verso l'app, è possibile aumentare il numero di istanze con il comando seguente.
 
