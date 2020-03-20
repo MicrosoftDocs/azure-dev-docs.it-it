@@ -9,12 +9,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
 ms.custom: mvc
-ms.openlocfilehash: 943f4c5d859ed31bc7a28b8056855ed4cd2c2a98
-ms.sourcegitcommit: 56e5f51daf6f671f7b6e84d4c6512473b35d31d2
+ms.openlocfilehash: 03aa4ec91b8c39ccdd774a99d2e4c3af39b997b6
+ms.sourcegitcommit: 0cf7703a8b26469bb58840853ce9135b5adf4417
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78893711"
+ms.lasthandoff: 03/18/2020
+ms.locfileid: "79510612"
 ---
 # <a name="deploy-a-spring-boot-application-on-azure-app-service-for-container"></a>Distribuire un'applicazione Web Spring Boot nel servizio app di Azure per Container
 
@@ -124,11 +124,11 @@ La procedura seguente illustra come usare il portale di Azure per creare un'ista
 
 1. Aggiungere [jib-maven-plugin](https://github.com/GoogleContainerTools/jib/tree/master/jib-maven-plugin) alla raccolta `<plugins>` nel file *pom.xml*.  Questo esempio usa la versione 1.8.0. 
 
-Specificare l'immagine di base in `<from>/<image>`, qui `openjdk:8-jre-alpine`. Specificare il nome dell'immagine finale da creare dalla base in `<to>/<image>`.  
+   Specificare l'immagine di base in `<from>/<image>`, qui `mcr.microsoft.com/java/jre:8-zulu-alpine`. Specificare il nome dell'immagine finale da creare dalla base in `<to>/<image>`.  
 
-Il valore `{docker.image.prefix}` dell'autenticazione è il **Server di accesso** nella pagina del registro visualizzata in precedenza. Il valore `{project.artifactId}` indica il nome e il numero di versione del file JAR dalla prima compilazione Maven del progetto.
+   Il valore `{docker.image.prefix}` dell'autenticazione è il **Server di accesso** nella pagina del registro visualizzata in precedenza. Il valore `{project.artifactId}` indica il nome e il numero di versione del file JAR dalla prima compilazione Maven del progetto.
 
-Specificare il nome utente e la password dal riquadro del registro nel nodo `<to>/<auth>`. Ad esempio:
+   Specificare il nome utente e la password dal riquadro del registro nel nodo `<to>/<auth>`. Ad esempio:
 
    ```xml
    <plugin>
@@ -137,7 +137,7 @@ Specificare il nome utente e la password dal riquadro del registro nel nodo `<to
      <version>1.8.0</version>
      <configuration>
         <from>
-            <image>openjdk:8-jre-alpine</image>
+            <image>mcr.microsoft.com/java/jre:8-zulu-alpine</image>
         </from>
         <to>
             <image>${docker.image.prefix}/${project.artifactId}</image>
@@ -165,7 +165,7 @@ Specificare il nome utente e la password dal riquadro del registro nel nodo `<to
 
 1. Aprire il [Azure portal] ed effettuare l'accesso.
 
-2. Fare clic sull'icona di menu **+ Crea una risorsa**, quindi su **Web** e infine su **App Web per contenitori**.
+2. Fare clic sull'icona di menu **+ Crea una risorsa**, quindi su **Calcolo** e infine su **App Web per contenitori**.
    
    ![Creare una nuova app Web nel portale di Azure][LX01]
 

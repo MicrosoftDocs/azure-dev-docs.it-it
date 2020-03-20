@@ -9,12 +9,12 @@ ms.date: 07/17/2019
 ms.service: azure-functions
 ms.tgt_pltfrm: multiple
 ms.topic: article
-ms.openlocfilehash: 12ca26bae42c17395c70448ffc5bf3f01dde9b8e
-ms.sourcegitcommit: 4cf22356d6d4817421b551bd53fcba76bdb44cc1
+ms.openlocfilehash: 621fa4c79511149ef18a60fd4143490773e49271
+ms.sourcegitcommit: 1586dacf8ea29f24f3bc9ccbf0eb07638b5596d2
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76872146"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79313262"
 ---
 # <a name="getting-started-with-spring-cloud-function-in-azure"></a>Introduzione a Spring Cloud Function in Azure
 
@@ -22,7 +22,7 @@ Questo articolo illustra come usare [Spring Cloud Function](https://spring.io/pr
 
 [!INCLUDE [quickstarts-free-trial-note](../includes/quickstarts-free-trial-note.md)]
 
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>Prerequisiti
 
 Per sviluppare funzioni con Java, è necessario che siano installati gli elementi seguenti:
 
@@ -64,7 +64,7 @@ Per l'applicazione è necessario personalizzare alcune proprietà:
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
-    <azure.functions.maven.plugin.version>1.4.0</azure.functions.maven.plugin.version>
+    <azure.functions.maven.plugin.version>1.4.1</azure.functions.maven.plugin.version>
     <azure.functions.java.library.version>1.3.0</azure.functions.java.library.version>
     <functionAppName>my-spring-function</functionAppName>
     <functionAppRegion>westus</functionAppRegion>
@@ -326,6 +326,10 @@ Ecco uno screenshot della richiesta cURL nella parte superiore della schermata e
 ## <a name="deploy-the-function-to-azure-functions"></a>Distribuire la funzione in Funzioni di Azure
 
 La funzione di Azure verrà ora pubblicata nell'ambiente di produzione. Tenere presente che per configurare la funzione verranno usate le proprietà `<functionAppName>`, `<functionAppRegion>` e `<functionResourceGroup>` definite nel file *pom.xml*.
+
+> [!NOTE]
+> Se è installata l'interfaccia della riga di comando di Azure, il plug-in Maven deve eseguire l'autenticazione con Azure, quindi usare `az login` prima di continuare.
+> Fare clic [qui](https://github.com/microsoft/azure-maven-plugins/wiki/Authentication) per altre opzioni di autenticazione.
 
 Eseguire Maven per distribuire automaticamente la funzione:
 

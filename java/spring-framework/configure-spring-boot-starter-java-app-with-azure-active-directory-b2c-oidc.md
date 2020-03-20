@@ -6,17 +6,17 @@ documentationcenter: java
 author: panli
 manager: kevinzha
 ms.author: panli
-ms.date: 02/28/2019
+ms.date: 02/06/2020
 ms.service: active-directory-b2c
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: identity
-ms.openlocfilehash: 87134da87f47b1c808648a8b6e2f77650c9141bf
-ms.sourcegitcommit: a1f7e0f0cfd5c9d0806a7d44acdf2a54d578d8fe
+ms.openlocfilehash: b554af8f375d3b054a4391a35c0b457944b4bad1
+ms.sourcegitcommit: 9f9f5c51472dbdd7b9304b02364ed136dcf81f1c
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/20/2019
-ms.locfileid: "75319678"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79139335"
 ---
 # <a name="tutorial-secure-a-java-web-app-using-the-spring-boot-starter-for-azure-active-directory-b2c"></a>Esercitazione: Proteggere un'app Web Java con Spring Boot Starter per Azure Active Directory B2C.
 
@@ -34,7 +34,7 @@ In questa esercitazione verranno illustrate le procedure per:
 
 Se non si ha una sottoscrizione di Azure, creare un [account gratuito](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) prima di iniziare.
 
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>Prerequisiti
 
 I prerequisiti seguenti sono necessari per completare le procedure disponibili in questo articolo:
 
@@ -47,7 +47,7 @@ I prerequisiti seguenti sono necessari per completare le procedure disponibili i
 
 2. Specificare che si vuole generare un progetto **Maven** con **Java**, immettere i nomi per l'applicazione in **Group** (Gruppo) e **Artifact** (Elemento) e quindi selezionare i moduli **Web** e **Security** (Sicurezza) di Spring Initializr.
 
-   ![Specificare il nome del gruppo e dell'elemento](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/SI.png)
+   ![Specificare il nome del gruppo e dell'elemento](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/si-n.png)
 
 
 3. Fare clic su `Generate Project` e, quando richiesto, scaricare il progetto in un percorso nel computer locale.
@@ -58,45 +58,45 @@ I prerequisiti seguenti sono necessari per completare le procedure disponibili i
 
 1. Accedere a <https://portal.azure.com>.
 
-2. Fare clic su **+Crea una risorsa**, quindi su **Identità** e infine su **Azure Active Directory B2C**.
+2. Fare clic su **+Crea una risorsa**, quindi su **Identità** e infine su **Visualizza tutto**.  Cercare **Azure Active Directory B2C**.
 
-   ![Creare la nuova istanza di Azure Active Directory B2C](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/AZ1.png)
+   ![Creare la nuova istanza di Azure Active Directory B2C](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/az-1-n.png)
 
-3. Immettere il **nome organizzazione** e il **nome di dominio iniziale**, registrare il **nome di dominio** come `${your-tenant-name}` e quindi fare clic su **Crea**.
+3. Fare clic su **Crea**.
 
-   ![Ottenere il nome del tenant B2C](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/AZ5.png)
+   ![Ottenere il nome del tenant B2C](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/az-5-n.png)
 
-4. Selezionare il nome dell'account nella parte superiore destra della barra degli strumenti del portale di Azure e quindi fare clic su **Cambia directory**.
+4. Selezionare **Crea un nuovo tenant Azure AD B2C**.
 
-   ![Scegliere l'istanza di Azure Active Directory](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/AZ2.png)
+   ![Creare la nuova istanza di Azure Active Directory](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/az-2-n.png)
 
-5. Selezionare la nuova istanza di Azure Active Directory nel menu a discesa.
+5. Immettere il nome dell'organizzazione e il nome di dominio iniziale e salvare il nome di dominio per farvi riferimento in un secondo momento.  Fare clic su **Crea**.
 
-   ![Scegliere l'istanza di Azure Active Directory](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/AZ3.png)
+   ![Scegliere l'istanza di Azure Active Directory](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/az-3-n.png)
 
-6. Cercare `b2c` e fare clic sul servizio `Azure AD B2C`.
+6. Dopo aver completato l'istanza di Active Directory, passare alla nuova directory.  In alternativa, cercare `b2c` e fare clic sul servizio `Azure AD B2C`.
 
-   ![Individuare l'istanza di Azure Active Directory B2C](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/AZ4.png)
+   ![Individuare l'istanza di Azure Active Directory B2C](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/az-4-n.ng.png)
 
 ### <a name="add-an-application-registration-for-your-spring-boot-app"></a>Aggiungere una registrazione per l'app Spring Boot
 
 1. Scegliere **Azure AD B2C** dal menu del portale e fare clic su **Applicazioni**, quindi su **Aggiungi**.
 
-   ![Aggiungere una nuova registrazione per l'app](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/B2C1.png)
+   ![Aggiungere una nuova registrazione per l'app](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/b2c1-n.png)
 
 2. Specificare il **nome** dell'applicazione, aggiungere `http://localhost:8080/home` per **URL di risposta**, registrare l'**ID applicazione** come `${your-client-id}` e quindi fare clic su **Salva**.
 
-   ![Aggiungere l'URL di risposta dell'applicazione](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/B2C2.png)
+   ![Aggiungere l'URL di risposta dell'applicazione](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/b2c2-n.png)
 
 3. Selezionare **Chiavi** nell'applicazione, fare clic su **Genera chiave** per generare `${your-client-secret}` e quindi su **Salva**.
 
 4. Selezionare **Flussi utente** a sinistra e quindi fare clic su **Nuovo flusso utente**.
 
-   ![Creare un flusso utente](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/B2C3.png)
+   ![Creare un flusso utente](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/b2c3-n.png)
 
 5. Scegliere **Accedi o registrati**, **Criteri di modifica del profilo** e **Reimpostazione password** per creare i flussi utente. Specificare i valori per **Nome** e **Attributi e attestazioni utente** del flusso utente, quindi fare clic su **Crea**.
 
-   ![Configurare il flusso utente](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/B2C4.png)
+   ![Configurare il flusso utente](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/b2c4-n.png)
 
 ## <a name="configure-and-compile-your-app"></a>Configurare e compilare l'app
 
@@ -260,15 +260,15 @@ I prerequisiti seguenti sono necessari per completare le procedure disponibili i
 
 3. Al termine della compilazione e dell'avvio dell'applicazione tramite Maven, aprire <http://localhost:8080/> in un Web browser. Si dovrebbe essere reindirizzati alla pagina di accesso.
 
-   ![Pagina di accesso](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/LO1.png)
+   ![Pagina di accesso](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/lo1-n.png)
 
 4. Fare clic sul collegamento con il nome del flusso utente `${your-sign-up-or-in}`. Si dovrebbe essere reindirizzati in Azure AD B2C per avviare il processo di autenticazione.
 
-   ![Accesso ad Azure AD B2C](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/LO2.png)
+   ![Accesso ad Azure AD B2C](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/lo2-n.png)
 
 4. Al termine dell'accesso, dovrebbe essere visualizzato l'esempio di `home page` nel browser.
 
-   ![Accesso riuscito](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/LO3.png)
+   ![Accesso riuscito](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/lo3-n.png)
 
 ## <a name="summary"></a>Summary
 

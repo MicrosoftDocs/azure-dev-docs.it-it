@@ -3,12 +3,12 @@ title: Distribuire app Node.js nel Servizio app di Azure da Visual Studio Code
 description: Parte 3 dell'esercitazione, distribuire il sito Web
 ms.topic: conceptual
 ms.date: 03/04/2020
-ms.openlocfilehash: 1a8b4a37fa823b631e6b4849cf7cff6ac2ba26f3
-ms.sourcegitcommit: 56e5f51daf6f671f7b6e84d4c6512473b35d31d2
+ms.openlocfilehash: 7e7a6c765b79878ca3ddc86bd16349694cb7ded6
+ms.sourcegitcommit: 0cf7703a8b26469bb58840853ce9135b5adf4417
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78894247"
+ms.lasthandoff: 03/18/2020
+ms.locfileid: "79510599"
 ---
 # <a name="deploy-the-app-to-azure"></a>Distribuire l'app in Azure
 
@@ -36,6 +36,7 @@ In questo passaggio l'app Node.js viene distribuita in Azure usando git deploy t
 
 1. Rispondere alle richieste come segue:
 
+    - Selezionare l'account della **sottoscrizione**.
     - Per **Enter a globally unique name** (Immettere un nome univoco globale) immettere un nome univoco in tutto Azure. Usare solo caratteri alfanumerici ('A-Z', 'a-z' e '0-9') e trattini ('-')
     - Selezionare **Crea nuovo gruppo di risorse** e specificare un nome, ad esempio `AppServiceTutorial-rg`.
     - Selezionare un sistema operativo (Windows o Linux)
@@ -68,7 +69,7 @@ In questo passaggio l'app Node.js viene distribuita in Azure usando git deploy t
 
     ![Icona per la distribuzione nell'app Web](media/deploy-azure/deploy.png)
 
-1. Ai prompt selezionare la cartella *expressApp1*, quindi selezionare il nome dell'app Web creata in precedenza.
+1. Ai prompt selezionare la cartella *expressApp1*, selezionare di nuovo l'account della **sottoscrizione** e quindi selezionare il nome dell'app Web creata in precedenza.
 
 1. Per la distribuzione in Linux, selezionare **Sì** quando viene richiesto di aggiornare la configurazione per eseguire `npm install` nel server di destinazione.
 
