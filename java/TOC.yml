@@ -1,9 +1,10 @@
-- name: Azure per sviluppatori Java
+- name: Azure per sviluppatori cloud Java
   href: index.yml
   items:
     - name: Introduzione
       href: java-sdk-azure-get-started.md
     - name: Avvi rapidi
+      expanded: true
       items:
         - name: Distribuire app Web
           items:
@@ -84,14 +85,12 @@
             - name: Ricerca immagini Bing
               href: /azure/cognitive-services/bing-image-search/quickstarts/java?toc=/azure/java/toc.json&bc=/azure/java/breadcrumb/toc.json
     - name: Framework e piattaforme
-      expanded: true
       items:
         - name: Spring Framework e Spring Boot
           href: /azure/java/spring-framework/index
         - name: Eclipse MicroProfile
           href: /azure/java/microprofile/index
     - name: Strumenti di sviluppo
-      expanded: true
       items:
         - name: Panoramica
           href: java-azure-tools.md

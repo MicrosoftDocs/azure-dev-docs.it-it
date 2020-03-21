@@ -1,15 +1,9 @@
 - name: Toolkit di Azure per Eclipse
   href: azure-toolkit-for-eclipse.md
   items:
-    - name: Attività iniziali
+    - name: Introduzione
       href: azure-toolkit-for-eclipse-create-hello-world-web-app.md
-    - name: Esercitazioni
-      items:
-        - name: Distribuire i contenitori nelle VM di Azure
-          href: azure-toolkit-for-eclipse-publish-as-docker-container.md
-        - name: Pubblicare un'app Spring Boot come contenitore Docker
-          href: azure-toolkit-for-eclipse-publish-spring-boot-docker-app.md
-    - name: Procedura
+    - name: Procedure
       items:
         - name: Installare il toolkit
           href: azure-toolkit-for-eclipse-installation.md
