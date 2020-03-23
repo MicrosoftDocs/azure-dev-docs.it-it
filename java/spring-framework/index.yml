@@ -1,85 +1,78 @@
-### YamlMime:YamlDocument
-documentType: LandingData
-title: Spring in Azure
+### YamlMime:Landing
+title: Documentazione sull'integrazione di Spring in Azure
+summary: Spring è un framework di applicazioni open source, sviluppato da Pivotal, che fornisce un approccio modulare semplificato alla creazione di applicazioni Java. Il contenuto di questo sito Web illustra come sviluppare e distribuire app Spring nel cloud.
 metadata:
-  document_id: null
-  title: Spring in Azure
-  description: Introduzione all'uso di Spring per lo sviluppo di app in Azure.
-  keywords: 'Azure, Java, Maven, Spring, Boot'
+  title: Documentazione sull'integrazione di Spring in Azure
+  description: Spring è un framework di applicazioni open source, sviluppato da Pivotal, che fornisce un approccio modulare semplificato alla creazione di applicazioni Java. Il contenuto di questo sito Web illustra come sviluppare e distribuire app Spring nel cloud.
+  ms.service: azure-java
   author: bmitchell287
   ms.author: brendm
-  manager: douge
-  ms.date: 02/01/2018
+  ms.date: 03/13/2020
   ms.topic: landing-page
-  ms.technology: azure
-  ms.devlang: java
-  ms.service: multiple
-  ms.custom: seo-java-july2019
-sections:
-  - items:
-      - type: markdown
-        text: |
-          [Spring](https://spring.io/) è un framework applicazione open source sviluppato da [Pivotal](https://pivotal.io) che fornisce un approccio modulare semplificato alla creazione di applicazioni Java.  Le guide introduttive e le esercitazioni disponibili in questo sito Web illustrano come sviluppare e distribuire app Spring nel cloud.
-  - title: Guide introduttive
-    items:
-      - type: list
-        style: icon48
-        items:
-          - image:
-              src: 'https://docs.microsoft.com/media/common/i_get-started.svg'
-            text: Utilità di avvio Spring Boot per Azure
-            href: spring-boot-starters-for-azure.md
-          - image:
-              src: 'https://docs.microsoft.com/azure/media/index/storage.svg'
-            text: Archiviazione di Azure
-            href: configure-spring-boot-starter-java-app-with-azure-storage.md
-          - image:
-              src: 'https://docs.microsoft.com/azure/media/index/ActiveDirectory.svg'
-            text: Azure Active Directory
-            href: configure-spring-boot-starter-java-app-with-azure-active-directory.md
-          - image:
-              src: 'https://docs.microsoft.com/azure/media/index/KeyVault.svg'
-            text: Key Vault
-            href: configure-spring-boot-starter-java-app-with-azure-key-vault.md
-          - image:
-              src: 'https://docs.microsoft.com/azure/media/index/EventHubs.svg'
-            text: Kafka e Hub eventi
-            href: configure-spring-cloud-stream-binder-java-app-kafka-azure-event-hub.md
-          - image:
-              src: 'https://docs.microsoft.com/azure/media/index/ApplicationInsights.svg'
-            text: Application Insights
-            href: configure-spring-boot-java-applicationinsights.md
-  - title: Esercitazioni dettagliate
-    items:
-      - type: markdown
-        text: Informazioni su come integrare applicazioni Spring Boot con i servizi di Azure.
-      - type: list
-        style: unordered
-        className: spaced noBullet
-        items:
-          - html: <a href="configure-spring-boot-initializer-java-app-with-redis-cache.md">Come configurare un'app Spring Boot Initializer per l'uso della cache Redis</a>
-          - html: <a href="configure-spring-boot-starter-java-app-with-cosmos-db.md">Come usare Spring Boot Starter con l'API SQL di Azure Cosmos DB</a>
-          - html: <a href="deploy-spring-boot-java-app-with-maven-plugin.md">Come usare il plug-in Maven per App Web di Azure per distribuire un'app Spring Boot in Azure</a>
-          - html: <a href="deploy-spring-boot-java-app-on-kubernetes.md">Distribuire un'app Spring Boot su Kubernetes nel servizio Azure Container</a>
-          - html: <a href="deploy-spring-boot-java-app-on-linux.md">Distribuire un'app Web Spring Boot su Linux nel servizio Azure Container</a>
-          - html: <a href="deploy-spring-boot-java-app-using-fabric8-maven-plugin.md">Distribuire un'app Spring Boot con il plug-in Maven Fabric8</a>
-          - html: <a href="deploy-containerized-spring-boot-java-app-with-maven-plugin.md">Come usare il plug-in Maven per App Web di Azure per distribuire un'app Spring Boot in contenitore in Azure</a>
-          - html: <a href="deploy-spring-boot-java-app-from-container-registry-using-maven-plugin.md">Come usare il plug-in Maven per App Web di Azure per distribuire un'app Spring Boot di Registro Azure Container nel servizio app di Azure</a>
-  - title: Esempi
-    items:
-      - type: list
-        style: unordered
-        className: spaced noBullet
-        items:
-          - html: '<a href="https://github.com/Microsoft/azure-spring-boot/tree/master/azure-spring-boot-samples">Esempi di Spring Boot per Azure</a>'
-          - html: '<a href="https://github.com/spring-guides/">Spring Guides</a> (Guide di Spring)'
-  - title: riferimento
-    items:
-      - type: list
-        style: cards
-        className: cardsD
-        items:
-          - title: Spring Framework
-            html: '<p><a href="https://spring.io/">Spring Framework</a> (Framework di Spring)</p><p><a href="https://spring.io/docs">Informazioni su Spring</a></p><p><a href="https://spring.io/docs/reference">Documentazione di riferimento</a></p>'
-          - title: Spring Boot
-            html: '<p><a href="https://projects.spring.io/spring-boot/">Spring Boot</a></p><p><a href="https://start.spring.io/">Spring Initializr</a></p>'
+  ms.openlocfilehash: e7732a900c5f1684e9f0817d679f059e21be4941
+  ms.sourcegitcommit: efa585ecdcf1cc54a6f0b664fb83cd4f0ccc7b2c
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 03/21/2020
+  ms.locfileid: "79990375"
+landingContent:
+- title: Guide introduttive
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Utilità di avvio Spring Boot per Azure
+      url: spring-boot-starters-for-azure.md
+    - text: Spring Data Azure Cosmos DB
+      url: how-to-guides-spring-data-cosmosdb.md
+  - linkListType: get-started
+    links:
+    - text: Archiviazione di Azure
+      url: configure-spring-boot-starter-java-app-with-azure-storage.md
+    - text: Key Vault
+      url: configure-spring-boot-starter-java-app-with-azure-key-vault.md
+    - text: Kafka e Hub eventi
+      url: configure-spring-cloud-stream-binder-java-app-kafka-azure-event-hub.md
+    - text: Application Insights
+      url: configure-spring-boot-java-applicationinsights.md
+- title: Esercitazioni dettagliate
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Proteggere un'app con Azure Active Directory
+      url: configure-spring-boot-starter-java-app-with-azure-active-directory.md
+    - text: Configurare un'app per l'uso di Cache Redis
+      url: configure-spring-boot-initializer-java-app-with-redis-cache.md
+    - text: Usare l'API SQL Azure Cosmos DB
+      url: configure-spring-boot-starter-java-app-with-cosmos-db.md
+    - text: Distribuire un'app Spring Boot
+      url: deploy-spring-boot-java-app-with-maven-plugin.md
+    - text: Distribuire un'app in un cluster del servizio Azure Kubernetes
+      url: deploy-spring-boot-java-app-on-kubernetes.md
+    - text: Distribuire un'app in app Web per contenitori
+      url: deploy-spring-boot-java-app-on-linux.md
+    - text: Distribuire con Maven in app Web per contenitori
+      url: deploy-containerized-spring-boot-java-app-with-maven-plugin.md
+    - text: Distribuire un'app da Registro Azure Container ad Azure
+      url: deploy-spring-boot-java-app-from-container-registry-using-maven-plugin.md
+- title: Esempi di codice
+  linkLists:
+  - linkListType: sample
+    links:
+    - text: Esempi di Spring Boot per Azure
+      url: https://github.com/Microsoft/azure-spring-boot/tree/master/azure-spring-boot-samples
+    - text: Guide di Spring
+      url: https://github.com/spring-guides/
+- title: Risorse per Spring
+  linkLists:
+  - linkListType: get-started
+    links:
+    - text: Spring Framework
+      url: https://spring.io/
+    - text: Spring Cloud Azure
+      url: https://spring.io/projects/spring-cloud-azure
+    - text: Informazioni su Spring
+      url: https://spring.io/learn
+    - text: Spring Boot
+      url: https://spring.io/projects/spring-boot
+    - text: Spring Initializr
+      url: https://start.spring.io/
