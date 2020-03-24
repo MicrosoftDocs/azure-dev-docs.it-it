@@ -1,0 +1,52 @@
+### YamlMime:Landing
+title: Documentazione di Azure Toolkit for Eclipse
+summary: Azure Toolkit for Eclipse offre modelli e funzionalità che è possibile usare per creare, sviluppare, testare e distribuire applicazioni cloud in Azure dall'IDE di Eclipse.
+metadata:
+  title: Documentazione di Azure Toolkit for Eclipse
+  description: Informazioni sul modo in cui il plug-in Azure Toolkit for Eclipse semplifica la creazione e la distribuzione di applicazioni cloud in Azure.
+  ms.service: azure-java
+  author: bmitchell287
+  ms.author: brendm
+  ms.date: 03/13/2020
+  ms.topic: landing-page
+  ms.openlocfilehash: 43a83bd5cd50abaa507ca1d2f80601b85526df0b
+  ms.sourcegitcommit: efa585ecdcf1cc54a6f0b664fb83cd4f0ccc7b2c
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 03/21/2020
+  ms.locfileid: "80063908"
+landingContent:
+- title: Guide introduttive
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Creare un'app Web Hello World per il Servizio app di Azure
+      url: azure-toolkit-for-eclipse-create-hello-world-web-app.md
+- title: Esercitazioni dettagliate
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Creare applicazioni Spark per cluster HDInsight Spark Linux
+      url: /azure/hdinsight/hdinsight-apache-spark-eclipse-tool-plugin
+- title: Gestire le risorse di Azure
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Cache Redis
+      url: azure-toolkit-for-eclipse-managing-redis-caches-using-azure-explorer.md
+    - text: Account di archiviazione
+      url: azure-toolkit-for-eclipse-managing-storage-accounts-using-azure-explorer.md
+    - text: Macchine virtuali
+      url: azure-toolkit-for-eclipse-managing-virtual-machines-using-azure-explorer.md
+- title: JDK supportati
+  linkLists:
+  - linkListType: download
+    links:
+    - text: Java per Azure e Azure Stack
+      url: /azure/java/jdk/
+- title: Codice sorgente
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: Toolkit di Azure per Java
+      url: https://github.com/microsoft/azure-tools-for-java
