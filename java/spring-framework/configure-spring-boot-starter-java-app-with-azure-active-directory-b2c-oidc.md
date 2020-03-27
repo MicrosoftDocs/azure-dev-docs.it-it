@@ -11,12 +11,12 @@ ms.service: active-directory-b2c
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: identity
-ms.openlocfilehash: b554af8f375d3b054a4391a35c0b457944b4bad1
-ms.sourcegitcommit: 9f9f5c51472dbdd7b9304b02364ed136dcf81f1c
+ms.openlocfilehash: a795f7ffea218f4f117a9935adac4f2bb74af9f3
+ms.sourcegitcommit: efa585ecdcf1cc54a6f0b664fb83cd4f0ccc7b2c
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79139335"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "79990507"
 ---
 # <a name="tutorial-secure-a-java-web-app-using-the-spring-boot-starter-for-azure-active-directory-b2c"></a>Esercitazione: Proteggere un'app Web Java con Spring Boot Starter per Azure Active Directory B2C.
 
@@ -84,15 +84,15 @@ I prerequisiti seguenti sono necessari per completare le procedure disponibili i
 
    ![Aggiungere una nuova registrazione per l'app](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/b2c1-n.png)
 
-2. Specificare il **nome** dell'applicazione, aggiungere `http://localhost:8080/home` per **URL di risposta**, registrare l'**ID applicazione** come `${your-client-id}` e quindi fare clic su **Salva**.
+2. Specificare un valore per **Nome** dell'applicazione, aggiungere `http://localhost:8080/home` per **URI di reindirizzamento**. Fare clic su **Salva**.  Quindi registrare l'**ID applicazione** come `${your-client-id}`.  
 
-   ![Aggiungere l'URL di risposta dell'applicazione](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/b2c2-n.png)
+   ![Aggiungere l'URI di reindirizzamento dell'applicazione](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/b2c2-n.png)
 
-3. Selezionare **Chiavi** nell'applicazione, fare clic su **Genera chiave** per generare `${your-client-secret}` e quindi su **Salva**.
-
-4. Selezionare **Flussi utente** a sinistra e quindi fare clic su **Nuovo flusso utente**.
+3. Selezionare **Certificati e segreti** nell'applicazione, fare clic su **Genera chiave** per generare `${your-client-secret}` e quindi su **Salva**.
 
    ![Creare un flusso utente](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/b2c3-n.png)
+
+4. Selezionare **Flussi utente** a sinistra e quindi fare clic su **Nuovo flusso utente**.
 
 5. Scegliere **Accedi o registrati**, **Criteri di modifica del profilo** e **Reimpostazione password** per creare i flussi utente. Specificare i valori per **Nome** e **Attributi e attestazioni utente** del flusso utente, quindi fare clic su **Crea**.
 
@@ -135,7 +135,7 @@ I prerequisiti seguenti sono necessari per completare le procedure disponibili i
          tenant: ${your-tenant-name}
          client-id: ${your-client-id}
          client-secret: ${your-client-secret}
-         reply-url: ${your-reply-url-from-aad} # should be absolute url.
+         reply-url: ${your-redirect-uri-from-aad} # should be absolute url.
          logout-success-url: ${you-logout-success-url}
          user-flows:
            sign-up-or-sign-in: ${your-sign-up-or-in-user-flow}
@@ -149,7 +149,7 @@ I prerequisiti seguenti sono necessari per completare le procedure disponibili i
    | `azure.activedirectory.b2c.tenant` | Contiene il valore di `${your-tenant-name` di AD B2C illustrato in precedenza. |
    | `azure.activedirectory.b2c.client-id` | Contiene il valore di `${your-client-id}` dell'applicazione completata in precedenza. |
    | `azure.activedirectory.b2c.client-secret` | Contiene il valore di `${your-client-secret}` dell'applicazione completata in precedenza. |
-   | `azure.activedirectory.b2c.reply-url` | Contiene uno degli **URL di risposta** dell'applicazione completata in precedenza. |
+   | `azure.activedirectory.b2c.reply-url` | Contiene uno degli **URI di reindirizzamento** dell'applicazione completata in precedenza. |
    | `azure.activedirectory.b2c.logout-success-url` | Specificare l'URL relativo alla corretta disconnessione dell'applicazione. |
    | `azure.activedirectory.b2c.user-flows` | Contiene il nome dei flussi utente completati in precedenza.
 
