@@ -3,13 +3,13 @@
 - name: Panoramica
   items:
     - name: Informazioni su Python SDK
-      href: python-sdk-azure-overview.md
+      href: azure-sdk-overview.md
     - name: Strumenti di sviluppo
-      href: python-azure-tools.md
+      href: azure-tools.md
 - name: Avvi rapidi
   items:
     - name: Python SDK
-      href: python-sdk-azure-get-started.yml
+      href: azure-sdk-get-started.yml
     - name: Hosting di app
       href: quickstarts-app-hosting.md
     - name: Soluzioni per i dati
@@ -73,13 +73,13 @@
 - name: Guide pratiche
   items:
     - name: Installare l'SDK
-      href: python-sdk-azure-install.md
+      href: azure-sdk-install.md
     - name: Authentication
-      href: python-sdk-azure-authenticate.md
+      href: azure-sdk-authenticate.md
     - name: Configurazione delle operazioni
-      href: python-sdk-azure-operation-config.md
+      href: azure-sdk-operation-config.md
     - name: Sviluppo multi-cloud
-      href: python-sdk-azure-multi-cloud.md
+      href: azure-sdk-multi-cloud.md
 - name: Esempi
   items:
     - name: App Web e serverless

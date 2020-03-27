@@ -1,0 +1,37 @@
+items:
+  - name: Azure SDK per Go
+    href: index.yml
+  - name: Panoramica
+    items:
+      - name: Installazione
+        href: azure-sdk-install.md
+      - name: Strumenti
+        href: azure-sdk-tools.md
+      - name: Authentication
+        href: azure-sdk-authorization.md
+  - name: Avvi rapidi
+    items:
+      - name: Macchine virtuali e modelli di risorse
+        href: azure-sdk-qs-vm.md
+      - name: Archiviazione BLOB di Azure
+        href: /azure/storage/blobs/storage-quickstart-blobs-go?toc=/azure/developer/go/toc.json&bc=/azure/developer/breadcrumb/toc.json
+      - name: Database di Azure per PostgreSQL
+        href: /azure/postgresql/connect-go?toc=/azure/developer/go/toc.json&bc=/azure/developer/breadcrumb/toc.json
+      - name: Database di Azure per MySQL
+        href: /azure/mysql/connect-go?toc=/azure/developer/go/toc.json&bc=/azure/developer/breadcrumb/toc.json
+      - name: database SQL di Azure
+        href: /azure/sql-database/sql-database-connect-query-go?toc=/azure/developer/go/toc.json&bc=/azure/developer/breadcrumb/toc.json
+  - name: Esempi
+    items:
+      - name: Autenticazione e Active Directory
+        href: azure-sdk-auth-aad-samples.md
+      - name: Contenitori
+        href: azure-sdk-containers-samples.md
+      - name: Calcolo e rete
+        href: azure-sdk-compute-networking-samples.md
+      - name: database SQL di Azure
+        href: azure-sdk-sql-database-samples.md
+      - name: Tutti gli esempi di Go
+        href: 'http://github.com/azure-samples/azure-sdk-for-go-samples'
+  - name: Informazioni di riferimento
+    href: 'https://godoc.org/github.com/Azure/azure-sdk-for-go'
