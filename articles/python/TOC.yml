@@ -1,0 +1,114 @@
+- name: Azure per sviluppatori Python
+  href: index.yml
+- name: Panoramica
+  items:
+    - name: Informazioni su Python SDK
+      href: azure-sdk-overview.md
+    - name: Strumenti di sviluppo
+      href: azure-tools.md
+- name: Avvi rapidi
+  items:
+    - name: Python SDK
+      href: azure-sdk-get-started.yml
+    - name: Hosting di app
+      href: quickstarts-app-hosting.md
+    - name: Soluzioni per i dati
+      href: quickstarts-data-solutions.md
+    - name: Machine Learning
+      href: quickstarts-machine-learning.md
+    - name: Servizi cognitivi di Azure
+      href: quickstarts-cognitive-services.md
+    - name: Messaggistica
+      href: quickstarts-messaging.md
+    - name: Sicurezza e integrazione
+      href: quickstarts-security-integration.md
+- name: Esercitazioni
+  items:
+    - name: Eseguire la distribuzione nel servizio app con VS Code
+      items:
+        - name: 1 - Introduzione e prerequisiti
+          href: tutorial-deploy-app-service-on-linux-01.md
+        - name: 2 - Preparare l'app
+          href: tutorial-deploy-app-service-on-linux-02.md
+        - name: 3 - Creare il servizio app
+          href: tutorial-deploy-app-service-on-linux-03.md
+        - name: 4 - Configurare il file di avvio
+          href: tutorial-deploy-app-service-on-linux-04.md
+        - name: 5 - Distribuire l'app
+          href: tutorial-deploy-app-service-on-linux-05.md
+        - name: 6 - Eseguire lo streaming dei log
+          href: tutorial-deploy-app-service-on-linux-06.md
+        - name: 7 - Eseguire la pulizia delle risorse
+          href: tutorial-deploy-app-service-on-linux-07.md
+    - name: Distribuire contenitori con VS Code
+      items:
+        - name: 1 - Introduzione e prerequisiti
+          href: tutorial-deploy-containers-01.md
+        - name: 2 - Distribuire l'immagine del contenitore
+          href: tutorial-deploy-containers-02.md
+        - name: 3 - Apportare modifiche e ripetere la distribuzione
+          href: tutorial-deploy-containers-03.md
+        - name: 4 - Eseguire lo streaming dei log
+          href: tutorial-deploy-containers-04.md
+        - name: 5 - Eseguire la pulizia delle risorse
+          href: tutorial-deploy-containers-05.md
+    - name: Distribuire Funzioni di Azure con VS Code
+      items:
+        - name: 1 - Introduzione e prerequisiti
+          href: tutorial-vs-code-serverless-python-01.md
+        - name: 2 - Creare la funzione Python
+          href: tutorial-vs-code-serverless-python-02.md
+        - name: 3 - Esaminare i file di codice
+          href: tutorial-vs-code-serverless-python-03.md
+        - name: 4 - Eseguire il debug in locale
+          href: tutorial-vs-code-serverless-python-04.md
+        - name: 5 - Eseguire la distribuzione in Azure
+          href: tutorial-vs-code-serverless-python-05.md
+        - name: 6 - Aggiungere una seconda funzione
+          href: tutorial-vs-code-serverless-python-06.md
+        - name: 7 - Aggiungere un binding di archiviazione
+          href: tutorial-vs-code-serverless-python-07.md
+        - name: 8 - Eseguire la pulizia delle risorse
+          href: tutorial-vs-code-serverless-python-08.md
+- name: Guide pratiche
+  items:
+    - name: Installare l'SDK
+      href: azure-sdk-install.md
+    - name: Authentication
+      href: azure-sdk-authenticate.md
+    - name: Configurazione delle operazioni
+      href: azure-sdk-operation-config.md
+    - name: Sviluppo multi-cloud
+      href: azure-sdk-multi-cloud.md
+- name: Esempi
+  items:
+    - name: App Web e serverless
+      href: 'https://docs.microsoft.com/samples/browse/?languages=python&products=azure-functions%2Cazure-app-service%2Cazure-logic-apps'
+    - name: Database
+      href: 'https://docs.microsoft.com/samples/browse/?languages=python&products=azure-cosmos-db%2Cazure-sql-database'
+    - name: Archiviazione
+      items:
+        - name: Archiviazione di Azure
+          href: 'https://docs.microsoft.com/samples/browse/?languages=python&products=azure-storage'
+        - name: Cache Redis
+          href: 'https://docs.microsoft.com/samples/browse/?languages=python&products=azure-redis-cache'
+    - name: Identità e sicurezza
+      href: 'https://docs.microsoft.com/samples/browse/?languages=python&products=azure-active-directory%2Cazure-key-vault'
+    - name: IoT
+      href: 'https://docs.microsoft.com/samples/browse/?languages=python&products=azure-iot-hub%2Cazure-iot-edge%2Cazure-iot-central'
+    - name: Data science
+      items:
+        - name: Servizio Machine Learning
+          href: 'https://docs.microsoft.com/samples/browse/?languages=python&products=azure-machine-learning-service'
+        - name: Databricks
+          href: 'https://docs.microsoft.com/samples/browse/?languages=python&products=azure-databricks'
+        - name: HDInsight
+          href: 'https://docs.microsoft.com/samples/browse/?languages=python&products=azure-hdinsight'
+    - name: Intelligenza artificiale con servizi cognitivi
+      href: 'https://docs.microsoft.com/samples/browse/?languages=python&products=azure-cognitive-services'
+    - name: Ricerca
+      href: 'https://docs.microsoft.com/samples/browse/?languages=python&products=azure-search'
+    - name: Tutti gli esempi
+      href: 'https://docs.microsoft.com/samples/browse/?languages=python'
+- name: Informazioni di riferimento
+  href: /python/api/?view=azure-python

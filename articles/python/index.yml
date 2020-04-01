@@ -1,0 +1,144 @@
+### YamlMime:Landing
+title: Azure per sviluppatori Python
+summary: >
+  Azure offre servizi completi per gli sviluppatori Python, tra cui hosting di app, archiviazione, database open source come mySQL e PostgreSQL, data science, Machine Learning e intelligenza artificiale. Azure SDK per Python consente agli sviluppatori di essere estremamente produttivi quando usano questi servizi.
+metadata:
+  title: Azure per sviluppatori Python
+  description: Iniziare a sviluppare con Python e Azure per Python.
+  author: kraigb
+  ms.author: kraigb
+  ms.date: 10/11/2019
+  ms.topic: landing-page
+  ms.collection: collection
+  ms.technology: azure
+  ms.service: multiple
+  ms.devlang: python
+  ms.openlocfilehash: d874f84249ed67a6597574d7ccc6c8e02d3066f0
+  ms.sourcegitcommit: 1bd9ec6a4115e9162e33b76a933869788e6ab702
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 03/31/2020
+  ms.locfileid: "80442226"
+landingContent:
+- title: Introduzione ad Azure SDK per Python
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Informazioni su Azure SDK per Python
+      url: azure-sdk-overview.md
+  - linkListType: download
+    links:
+    - text: Installare l'SDK
+      url: azure-sdk-install.md
+  - linkListType: how-to-guide
+    links:
+    - text: Autenticare l'applicazione
+      url: azure-sdk-authenticate.md
+  - linkListType: reference
+    links:
+    - text: Informazioni di riferimento sull'API di Azure SDK per Python
+      url: /python/api?view=azure-python
+- title: Ospitare applicazioni in Azure
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Creare una funzione serverless per le richieste HTTP con Visual Studio Code
+      url: tutorial-vs-code-serverless-python-01.md
+    - text: Creare una funzione serverless per le richieste HTTP con l'interfaccia della riga di comando di Azure
+      url: /azure/azure-functions/functions-create-first-azure-function-azure-cli?pivots=programming-language-python
+    - text: Creare un'app Python nel Servizio app di Azure in Linux
+      url: /azure/app-service/containers/quickstart-python
+    - text: Distribuire app in contenitori nel servizio Azure Kubernetes
+      url: /azure/aks/kubernetes-walkthrough
+    - text: Distribuire un'istanza di contenitore in Azure con l'interfaccia della riga di comando di Azure
+      url: /azure/container-instances/container-instances-quickstart
+    - text: Creare e distribuire un'app Python con Azure Pipelines
+      url: /azure/devops/pipelines/languages/python-webapp
+    - text: Aggiungere l'accesso con Microsoft a un'applicazione Web Python
+      url: /azure/active-directory/develop/quickstart-v2-python-webapp
+  - linkListType: overview
+    links:
+    - text: Introduzione al Servizio app di Azure in Linux
+      url: /azure/app-service/containers/app-service-linux-intro
+- title: Introduzione agli strumenti di sviluppo
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Python in Visual Studio Code
+      url: https://code.visualstudio.com/docs/languages/python
+  - linkListType: tutorial
+    links:
+    - text: Creare un'app Python serverless in Funzioni di Azure con Visual Studio Code
+      url: tutorial-vs-code-serverless-python-01.md
+    - text: Creare e distribuire un'app Web in Azure con Visual Studio Code
+      url: tutorial-deploy-app-service-on-linux-01.md
+    - text: Creare e distribuire contenitori in Azure con Visual Studio Code
+      url: tutorial-deploy-containers-01.md
+  - linkListType: download
+    links:
+    - text: Estensioni di Azure per Visual Studio Code
+      url: https://code.visualstudio.com/docs/azure/extensions
+    - text: Installare l'interfaccia della riga di comando di Azure
+      url: /cli/azure/install-azure-cli?view=azure-cli-latest
+    - text: Eseguire le applicazioni Linux in modalità nativa in Windows 10 con una vasta gamma di distribuzioni
+      url: /windows/wsl/install-win10
+- title: Servizi per data science, intelligenza artificiale e Machine Learning
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Informazioni sui servizi Azure Machine Learning
+      url: /azure/machine-learning/service
+    - text: Informazioni su Servizi cognitivi di Azure
+      url: /azure/cognitive-services
+  - linkListType: quickstart
+    links:
+    - text: Usare gli strumenti di Azure Machine Learning in un notebook di Jupyter
+      url: /azure/notebooks/use-machine-learning-services-jupyter-notebooks
+    - text: Usare un cluster Azure HDInsights gestito per l'elaborazione dei dati
+      url: /azure/hdinsight/hadoop/apache-hadoop-linux-create-cluster-get-started-portal
+    - text: Creare una macchina virtuale di Azure per attività di data science
+      url: /azure/machine-learning/data-science-virtual-machine/dsvm-ubuntu-intro
+    - text: Usare notebook di Jupyter in Azure Notebooks
+      url: https://notebooks.azure.com/
+- title: Soluzioni di archiviazione e database in Azure
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Informazioni sulle soluzioni di archiviazione in Azure
+      url: /azure/storage/common/storage-introduction
+    - text: NoSQL scalabile con Azure Cosmos DB
+      url: /azure/cosmos-db/introduction
+  - linkListType: quickstart
+    links:
+    - text: Gestire i BLOB in archiviazione di Azure da Python
+      url: /azure/storage/blobs/storage-quickstart-blobs-python
+    - text: Creare un'istanza PostgreSQL in Azure e connettersi a tale istanza usando Python
+      url: /azure/postgresql/quickstart-create-server-database-portal
+    - text: Creare un'istanza MySQL in Azure e connettersi a tale istanza usando Python.
+      url: /azure/mysql/quickstart-create-mysql-server-database-using-azure-portal
+    - text: Usare query SQL in un account Azure Cosmos DB da Python
+      url: /azure/cosmos-db/create-sql-api-python
+    - text: Configurare un server SQL gestito in Azure
+      url: /azure/sql-database/sql-database-connect-query-python
+- title: Messaggistica in Azure
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Archiviazione di messaggi con le code di Azure
+      url: /azure/storage/queues/storage-queues-introduction
+    - text: Messaggistica tra applicazioni con il bus di servizio di Azure
+      url: /azure/service-bus-messaging
+    - text: Streaming di Big Data con Hub eventi
+      url: /azure/event-hubs/event-hubs-about
+    - text: Creazione di applicazioni basate su eventi con Griglia di eventi
+      url: /azure/event-grid/overview
+  - linkListType: quickstart
+    links:
+    - text: Usare Archiviazione code di Azure
+      url: /azure/storage/queues/storage-python-how-to-use-queue-storage
+    - text: Usare le code del bus di servizio di Azure
+      url: /azure/service-bus-messaging/service-bus-python-how-to-use-queues
+    - text: Inserire i dati in tempo reale tramite Hub eventi di Azure
+      url: /azure/event-hubs/event-hubs-python
+    - text: Instradare eventi personalizzati con Griglia di eventi
+      url: /azure/event-grid/custom-event-quickstart
