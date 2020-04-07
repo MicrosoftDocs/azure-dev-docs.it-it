@@ -1,0 +1,117 @@
+- name: Documentazione di Ansible in Azure
+  href: ./index.yml
+- name: Panoramica
+  items:
+    - name: Informazioni su Ansible in Azure
+      href: overview.md
+- name: Avvi rapidi
+  expanded: true
+  items:
+    - name: Distribuire il modello di soluzione Ansible in CentOS
+      href: solution-template-deploy.md
+    - name: Installare Ansible in macchine virtuali Linux
+      href: install-on-linux-vm.md
+      maintainContext: true
+    - name: Eseguire playbook in Cloud Shell
+      href: cloudshell-run-playbook.md
+    - name: Usare macchine virtuali Linux
+      expanded: true
+      items:
+        - name: Configurare le macchine virtuali Linux
+          href: vm-configure.md
+          maintainContext: true
+        - name: Gestire le macchine virtuali Linux
+          href: vm-manage.md
+          maintainContext: true
+- name: Esercitazioni
+  items:
+    - name: Gateway applicazione di Azure
+      items:
+        - name: Gestire il traffico Web
+          href: application-gateway-configure.md
+    - name: Servizio app di Azure
+      items:
+        - name: Configurare le app
+          href: azure-web-apps-configure.md
+        - name: Ridimensionare le app
+          href: azure-web-apps-scale.md
+    - name: Azure DevTest Labs
+      items:
+        - name: Configurare i lab
+          href: devtest-labs-configure.md
+    - name: Servizio Azure Kubernetes
+      items:
+        - name: Configurare i cluster del servizio Azure Kubernetes
+          href: aks-configure-clusters.md
+        - name: Configurare le funzionalità di rete dell'interfaccia di rete dei contenitori di Azure
+          href: aks-configure-cni-networking.md
+        - name: Configurare le funzionalità di rete kubenet
+          href: aks-configure-kubenet-networking.md
+        - name: Configurare i ruoli Controllo degli accessi in base al ruolo in un cluster del servizio Azure Kubernetes
+          href: aks-configure-rbac.md
+    - name: HDInsight di Azure
+      items:
+        - name: Configurare i cluster
+          href: hdinsight-configure.md
+    - name: Bus di servizio di Azure
+      items:
+        - name: Configurare le code
+          href: service-bus-queue-configure.md
+        - name: Configurare gli argomenti
+          href: service-bus-topic-configure.md
+    - name: Database
+      items:
+        - name: Configurare Database di Azure per MySQL
+          href: mysql-configure.md
+        - name: Configurare gli account Azure Cosmos DB
+          href: cosmos-configure.md
+        - name: Configurare Cache Redis di Azure
+          href: cache-for-redis-configure.md
+    - name: Inventario dinamico
+      items:
+        - name: Gestire le risorse di Azure
+          href: dynamic-inventory-configure.md
+    - name: Macchine virtuali
+      items:
+        - name: Creare la Raccolta immagini condivise
+          href: vm-configure-from-azure-shared-image-gallery.md
+    - name: set di scalabilità di macchine virtuali
+      items:
+        - name: Configurare
+          href: vm-scale-set-configure.md
+        - name: Distribuire
+          href: vm-scale-set-deploy-app.md
+        - name: Autoscale
+          href: vm-scale-set-auto-scale.md
+        - name: Aggiornare un'immagine personalizzata
+          href: vm-scale-set-update-image.md
+        - name: Creare la Raccolta immagini condivise
+          href: vm-configure-from-azure-shared-image-gallery.md
+    - name: Rete virtuale
+      items:
+        - name: Configurare il peering
+          href: virtual-network-peering-configure.md
+        - name: Configurare le tabelle di route
+          href: route-table-configure.md
+- name: Esempi
+  items:
+    - name: Lab Ansible per Azure
+      href: 'https://github.com/microsoft/ansiblelabs'
+    - name: Esempi di playbook di Ansible Azure
+      href: 'https://github.com/Azure-Samples/ansible-playbooks'
+- name: Informazioni di riferimento
+  items:
+    - name: Ruoli dei playbook
+      items:
+        - name: azure_module
+          href: 'https://galaxy.ansible.com/Azure/azure_modules/'
+        - name: azure_preview_module
+          href: 'https://galaxy.ansible.com/Azure/azure_preview_modules'
+    - name: Versioni e funzionalità
+      href: module-version-matrix.md
+    - name: Tutti i moduli per Azure
+      href: 'https://docs.ansible.com/ansible/latest/modules/list_of_cloud_modules#azure'
+- name: Risorse
+  items:
+    - name: Estensione Visual Studio Code per Ansible
+      href: 'https://marketplace.visualstudio.com/items?itemName=vscoss.vscode-ansible'

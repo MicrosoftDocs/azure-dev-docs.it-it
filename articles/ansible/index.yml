@@ -1,0 +1,93 @@
+### YamlMime:Landing
+title: Documentazione di Ansible in Azure
+summary: Informazioni su come usare Ansible per automatizzare il provisioning cloud, la gestione della configurazione e le distribuzioni dell'applicazione.
+metadata:
+  title: Documentazione di Ansible in Azure
+  description: Informazioni su come usare Ansible per automatizzare il provisioning cloud, la gestione della configurazione e le distribuzioni dell'applicazione.
+  services: azure
+  ms.service: ansible
+  ms.topic: landing-page
+  author: TomArcherMsft
+  ms.author: tarcher
+  ms.date: 04/03/2020
+  ms.openlocfilehash: d0880d656bede1b8ad9da64694ee2b8bd4a25588
+  ms.sourcegitcommit: f89c59f772364ec717e751fb59105039e6fab60c
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 04/06/2020
+  ms.locfileid: "80741859"
+landingContent:
+- title: Informazioni su Ansible in Azure
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Informazioni su Ansible in Azure
+      url: overview.md
+  - linkListType: reference
+    links:
+    - text: Versioni e funzionalità
+      url: module-version-matrix.md
+    - text: Tutti i moduli per Azure
+      url: https://docs.ansible.com/ansible/latest/modules/list_of_cloud_modules#azure
+- title: Installare e configurare Ansible
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Distribuire il modello di soluzione Ansible in CentOS
+      url: solution-template-deploy.md
+    - text: Installare Ansible in macchine virtuali Linux
+      url: install-on-linux-vm.md
+    - text: Eseguire playbook in Cloud Shell
+      url: cloudshell-run-playbook.md
+  - linkListType: tutorial
+    links:
+    - text: Configurare un inventario dinamico
+      url: dynamic-inventory-configure.md
+  - linkListType: download
+    links:
+    - text: Estensione Visual Studio Code per Ansible
+      url: https://marketplace.visualstudio.com/items?itemName=vscoss.vscode-ansible
+- title: Gestire le macchine virtuali
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Configurare le macchine virtuali Linux
+      url: vm-configure.md
+    - text: Gestire le macchine virtuali Linux
+      url: vm-manage.md
+    - text: Creare una macchina virtuale da Raccolta immagini condivise
+      url: vm-configure-from-azure-shared-image-gallery.md
+- title: Gestire set di scalabilità di macchine virtuali
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Configurare set di scalabilità di macchine virtuali
+      url: vm-scale-set-configure.md
+    - text: Distribuire applicazioni nei set di scalabilità di macchine virtuali
+      url: vm-scale-set-deploy-app.md
+    - text: Ridimensionare automaticamente i set di scalabilità di macchine virtuali
+      url: vm-scale-set-auto-scale.md
+    - text: Aggiornare un'immagine personalizzata
+      url: vm-scale-set-update-image.md
+    - text: Creare una macchina virtuale da Raccolta immagini condivise
+      url: vm-configure-from-azure-shared-image-gallery.md
+- title: Gestire le reti virtuali
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Configurare il peering
+      url: virtual-network-peering-configure.md
+    - text: Configurare le tabelle di route
+      url: route-table-configure.md
+- title: Gestire il servizio Azure Kubernetes
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Configurare i cluster del servizio Azure Kubernetes
+      url: aks-configure-clusters.md
+    - text: Configurare le funzionalità di rete dell'interfaccia di rete dei contenitori di Azure
+      url: aks-configure-cni-networking.md
+    - text: Configurare le funzionalità di rete kubenet
+      url: aks-configure-kubenet-networking.md
+    - text: Configurare i ruoli Controllo degli accessi in base al ruolo in un cluster del servizio Azure Kubernetes
+      url: aks-configure-rbac.md
