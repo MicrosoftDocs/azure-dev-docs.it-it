@@ -6,18 +6,18 @@ ms.date: 11/27/2019
 ms.service: mysql
 ms.tgt_pltfrm: multiple
 ms.topic: conceptual
-ms.openlocfilehash: 927cc72a526651be71a7983a298ca2c6718f4546
-ms.sourcegitcommit: 2ad3f7ce8c87331f8aff759ac2a3dc1b29581866
+ms.openlocfilehash: 58863eb3d6193833e0d8506b90abe7223b87d661
+ms.sourcegitcommit: 3b76a0aa1683f28bcb42cd4d506426b48e5b0397
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76022093"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80537229"
 ---
 # <a name="how-to-use-spring-data-jpa-with-azure-database-for-mysql"></a>Come usare Spring Data JPA con Database di Azure per MySQL
 
 Questo articolo illustra la creazione di un'applicazione di esempio che usa [Spring Data] per archiviare e recuperare le informazioni in un [database di Azure per MySQL](/azure/mysql/) con [JPA (Java Persistence API)](https://docs.oracle.com/javaee/7/tutorial/persistence-intro.htm).
 
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>Prerequisiti
 
 I prerequisiti seguenti sono necessari per completare le procedure disponibili in questo articolo:
 
@@ -175,7 +175,11 @@ I prerequisiti seguenti sono necessari per completare le procedure disponibili i
 
 1. Salvare e chiudere il file *application.properties*.
 
-## <a name="package-and-test-the-sample-application"></a>Creare il pacchetto dell'applicazione di esempio e testarla 
+> [!NOTE]
+> La prima proprietà del file *application.properties* è `spring.jpa.hibernate.ddl-auto=create`, ovvero una proprietà di ibernazione che eliminerà lo schema del database e lo ricreerà all'avvio dell'applicazione.
+> Questa configurazione è utile durante le attività di sviluppo e test, ma non deve essere usata nell'ambiente di produzione.
+
+## <a name="package-and-test-the-sample-application"></a>Creare il pacchetto dell'applicazione di esempio e testarla
 
 1. Compilare l'applicazione di esempio con Maven. Ad esempio:
 

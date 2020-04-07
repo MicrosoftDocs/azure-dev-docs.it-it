@@ -3,12 +3,12 @@ title: Distribuire l'applicazione di Funzioni di Azure da Visual Studio Code
 description: Parte 4 dell'esercitazione, distribuire l'app per le funzioni nel cloud.
 ms.topic: conceptual
 ms.date: 09/23/2019
-ms.openlocfilehash: 8cb80b25e224d6f4552ec165779cda35f990ad6a
-ms.sourcegitcommit: 44d1abfb836f90b8731d7ea5d5a5af09245b2b89
+ms.openlocfilehash: 78f6f044397cc29f22949525e4e7e860d5c101f9
+ms.sourcegitcommit: 56be0c2bf65c699a0ef3f15f240856219b5d299b
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/17/2020
-ms.locfileid: "77422530"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80329925"
 ---
 # <a name="deploy-the-functions-app"></a>Distribuire l'app per le funzioni
 
@@ -45,7 +45,7 @@ ms.locfileid: "77422530"
 1. Se si desidera, apportare alcune modifiche al codice della funzione in *index.js* oppure aggiungere altre funzioni con altri trigger. Dopo aver eseguito i test in locale, distribuire di nuovo il codice come descritto nei passaggi precedenti per testare tali modifiche nel cloud.
 
     > [!TIP]
-    > Poiché verrà distribuita l'intera applicazione per le funzioni, le modifiche apportate alle singole funzioni verranno distribuite contemporaneamente.
+    > Poiché verrà distribuita l'intera applicazione per le funzioni, le modifiche apportate a tutte le singole funzioni vengono distribuite contemporaneamente.
 
 > [!div class="nextstepaction"]
 > [L'app per le funzioni è stata distribuita](tutorial-vscode-serverless-node-05.md) [Si è verificato un problema](https://www.research.net/r/PWZWZ52?tutorial=node-deployment-azurefunctions&step=deploy-app)

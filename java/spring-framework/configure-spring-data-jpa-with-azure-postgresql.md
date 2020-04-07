@@ -6,18 +6,18 @@ ms.date: 12/19/2018
 ms.service: postgresql
 ms.tgt_pltfrm: multiple
 ms.topic: conceptual
-ms.openlocfilehash: e968f6a86cc8616b0ae79e5d55756acea76040a6
-ms.sourcegitcommit: 44d1abfb836f90b8731d7ea5d5a5af09245b2b89
+ms.openlocfilehash: 162e99db4f079c3e6e3c7a63591632ec9922231d
+ms.sourcegitcommit: 3b76a0aa1683f28bcb42cd4d506426b48e5b0397
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/17/2020
-ms.locfileid: "77422540"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80537182"
 ---
 # <a name="how-to-use-spring-data-jpa-with-azure-postgresql"></a>Come usare Spring Data JPA con Azure PostgreSQL
 
 Questo articolo illustra la creazione di un'applicazione di esempio che usa [Spring Data] per archiviare e recuperare le informazioni in un [database di Azure per PostgreSQL](/azure/postgresql/) con [JPA (Java Persistence API)](https://docs.oracle.com/javaee/7/tutorial/persistence-intro.htm).
 
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>Prerequisiti
 
 I prerequisiti seguenti sono necessari per completare le procedure disponibili in questo articolo:
 
@@ -164,7 +164,11 @@ I prerequisiti seguenti sono necessari per completare le procedure disponibili i
 
 1. Salvare e chiudere il file *application.properties*.
 
-## <a name="package-and-test-the-sample-application"></a>Creare il pacchetto dell'applicazione di esempio e testarla 
+> [!NOTE]
+> La prima proprietà del file *application.properties* è `spring.jpa.hibernate.ddl-auto=create`, ovvero una proprietà di ibernazione che eliminerà lo schema del database e lo ricreerà all'avvio dell'applicazione.
+> Questa configurazione è utile durante le attività di sviluppo e test, ma non deve essere usata nell'ambiente di produzione.
+
+## <a name="package-and-test-the-sample-application"></a>Creare il pacchetto dell'applicazione di esempio e testarla
 
 1. Compilare l'applicazione di esempio con Maven. Ad esempio:
 

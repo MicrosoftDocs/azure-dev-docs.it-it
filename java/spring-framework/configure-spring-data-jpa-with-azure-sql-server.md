@@ -7,12 +7,12 @@ ms.date: 12/19/2018
 ms.service: sql-database
 ms.tgt_pltfrm: multiple
 ms.topic: article
-ms.openlocfilehash: a57fbc5dc8be0848f0b68fd1a45a1478de52b419
-ms.sourcegitcommit: 2ad3f7ce8c87331f8aff759ac2a3dc1b29581866
+ms.openlocfilehash: 180eac30a5aaeb10abe09904c578463bfe5a71da
+ms.sourcegitcommit: 3b76a0aa1683f28bcb42cd4d506426b48e5b0397
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76022131"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80537209"
 ---
 # <a name="how-to-use-spring-data-jpa-with-azure-sql-database"></a>Come usare Spring Data JPA con un database SQL di Azure
 
@@ -20,7 +20,7 @@ ms.locfileid: "76022131"
 
 Questo articolo illustra la creazione di un'applicazione di esempio che usa [Spring Data] per archiviare e recuperare le informazioni in un [database SQL di Azure](https://azure.microsoft.com/services/sql-database/) con [Java Persistence API (JPA)](https://docs.oracle.com/javaee/7/tutorial/persistence-intro.htm).
 
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>Prerequisiti
 
 I prerequisiti seguenti sono necessari per completare le procedure disponibili in questo articolo:
 
@@ -122,7 +122,11 @@ Dopo aver creato il server e il database SQL, è possibile configurare le impost
 
 1. Salvare e chiudere il file *application.properties*.
 
-## <a name="package-and-test-the-sample-application"></a>Creare il pacchetto dell'applicazione di esempio e testarla 
+> [!NOTE]
+> La prima proprietà del file *application.properties* è `spring.jpa.hibernate.ddl-auto=create`, ovvero una proprietà di ibernazione che eliminerà lo schema del database e lo ricreerà all'avvio dell'applicazione.
+> Questa configurazione è utile durante le attività di sviluppo e test, ma non deve essere usata nell'ambiente di produzione.
+
+## <a name="package-and-test-the-sample-application"></a>Creare il pacchetto dell'applicazione di esempio e testarla
 
 1. Compilare l'applicazione di esempio con Maven. Ad esempio:
 

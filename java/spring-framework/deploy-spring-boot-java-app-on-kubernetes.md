@@ -1,5 +1,5 @@
 ---
-title: Distribuire un'app Spring Boot in Kubernetes
+title: Distribuire un'applicazione Spring Boot nel servizio Azure Kubernetes
 titleSuffix: Azure Kubernetes Service
 description: Questa esercitazione illustra in modo dettagliato la procedura per la distribuzione di un'applicazione Spring Boot in un cluster Kubernetes in Microsoft Azure.
 services: container-service
@@ -9,14 +9,14 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.custom: mvc
-ms.openlocfilehash: 3e845f9d8a4069225f0f2d949f8a8de492b21771
-ms.sourcegitcommit: 9f9f5c51472dbdd7b9304b02364ed136dcf81f1c
+ms.openlocfilehash: dedd7a8c30e71b1197781838c1006745884eb67d
+ms.sourcegitcommit: 31f6d047f244f1e447faed6d503afcbc529bd28c
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79139250"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80306796"
 ---
-# <a name="deploy-a-spring-boot-application-on-a-kubernetes-cluster-in-the-azure-kubernetes-service"></a>Distribuire un'applicazione Spring Boot in un cluster Kubernetes nel servizio Azure Kubernetes
+# <a name="deploy-spring-boot-application-to-the-azure-kubernetes-service"></a>Distribuire un'applicazione Spring Boot nel servizio Azure Kubernetes
 
 **[Kubernetes]** e **[Docker]** sono soluzioni open source che consentono agli sviluppatori di automatizzare la distribuzione, il ridimensionamento e la gestione delle applicazioni eseguite in contenitori.
 
@@ -30,6 +30,7 @@ Questa esercitazione illustra come combinare queste due diffuse tecnologie open 
 * Lo strumento di compilazione [Maven] di Apache (versione 3).
 * Un client [Git].
 * Un client [Docker].
+* L'[helper per le credenziali Docker di Registro Azure Container](https://github.com/Azure/acr-docker-credential-helper).
 
 > [!NOTE]
 >
@@ -121,8 +122,7 @@ La procedura seguente illustra come creare un'applicazione Web di Spring Boot e 
       <java.version>1.8</java.version>
    </properties>
    ```
-
-1. Aggiornare la raccolta `<plugins>` nel file *pom.xml* in modo che `<plugin>` contenga `jib-maven-plugin`.
+1. Aggiornare la raccolta `<plugins>` nel file *pom.xml* in modo che l'elemento `<plugin>` contenga una voce per `jib-maven-plugin`, come illustrato nell'esempio seguente. Si noti che si sta usando un'immagine di base di Microsoft Container Registry, `mcr.microsoft.com/java/jdk:8-zulu-alpine`, che contiene una versione di JDK supportata ufficialmente per Azure. Per altre immagini di base di MCR con versioni di JDK supportate ufficialmente, vedere [Java SE JDK](https://hub.docker.com/_/microsoft-java-jdk), [Java SE JRE](https://hub.docker.com/_/microsoft-java-jre), [Java SE Headless JRE](https://hub.docker.com/_/microsoft-java-jre-headless) e [Java SE JDK e Maven](https://hub.docker.com/_/microsoft-java-maven).
 
    ```xml
    <plugin>
@@ -131,7 +131,7 @@ La procedura seguente illustra come creare un'applicazione Web di Spring Boot e 
      <version>${jib-maven-plugin.version}</version>
      <configuration>
         <from>
-            <image>openjdk:8-jre-alpine</image>
+            <image>mcr.microsoft.com/java/jdk:8-zulu-alpine</image>
         </from>
         <to>
             <image>${docker.image.prefix}/${project.artifactId}</image>
