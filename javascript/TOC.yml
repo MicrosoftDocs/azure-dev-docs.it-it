@@ -1,7 +1,7 @@
 - name: Azure per sviluppatori JavaScript e Node.js
   href: index.yml
   items:
-    - name: Guide introduttive
+    - name: Avvi rapidi
       expanded: true
       items:
         - name: Hosting di app
@@ -14,7 +14,7 @@
               href: tutorial-vscode-serverless-node-01.md
             - name: Docker
               href: tutorial-vscode-docker-node-01.md
-            - name: kubernetes
+            - name: Kubernetes
               href: /azure/aks/kubernetes-walkthrough?toc=/azure/javascript/toc.json&bc=/azure/javascript/breadcrumb/toc.json
             - name: Macchine virtuali di Linux
               href: /azure/virtual-machines/linux/quick-create-cli?toc=/azure/javascript/toc.json&bc=/azure/javascript/breadcrumb/toc.json
@@ -116,16 +116,18 @@
               href: tutorial-vscode-docker-node-01.md
             - name: Usare un registro contenitori
               href: tutorial-vscode-docker-node-02.md
-            - name: Creare l'immagine dell'app
+            - name: Creare un'app Node.js locale
               href: tutorial-vscode-docker-node-03.md
-            - name: Distribuire l'immagine dell'app
+            - name: Creare l'immagine dell'app
               href: tutorial-vscode-docker-node-04.md
-            - name: Apportare modifiche e ripetere la distribuzione
+            - name: Distribuire l'immagine dell'app
               href: tutorial-vscode-docker-node-05.md
-            - name: Eseguire lo streaming dei log
+            - name: Apportare modifiche e ripetere la distribuzione
               href: tutorial-vscode-docker-node-06.md
-            - name: Pulire le risorse
+            - name: Eseguire lo streaming dei log
               href: tutorial-vscode-docker-node-07.md
+            - name: Pulire le risorse
+              href: tutorial-vscode-docker-node-08.md
         - name: Distribuire nel servizio app con l'interfaccia della riga di comando di Azure
           items:
             - name: Introduzione e prerequisiti
@@ -202,5 +204,5 @@
           href: 'https://docs.microsoft.com/samples/browse/?languages=javascript%2Cnodejs&products=azure-search'
         - name: Tutti gli esempi
           href: 'https://docs.microsoft.com/samples/browse/?languages=javascript%2Cnodejs'
-    - name: riferimento
+    - name: Informazioni di riferimento
       href: /javascript/api/?view=azure-node-latest
