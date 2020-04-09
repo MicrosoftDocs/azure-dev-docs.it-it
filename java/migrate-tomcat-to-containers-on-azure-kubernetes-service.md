@@ -5,12 +5,12 @@ author: yevster
 ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 1/20/2020
-ms.openlocfilehash: fafe7b16b14f43f6fe97090de8964c4e78796bda
-ms.sourcegitcommit: 56e5f51daf6f671f7b6e84d4c6512473b35d31d2
+ms.openlocfilehash: a27c009fd656ea925f7709908178738eeea8ac0a
+ms.sourcegitcommit: 2e4167c9e47cea3f2e7dc2607884b2e0d4214556
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78893735"
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "80809202"
 ---
 # <a name="migrate-tomcat-applications-to-containers-on-azure-kubernetes-service"></a>Eseguire la migrazione di applicazioni Tomcat ai contenitori nel servizio Azure Kubernetes
 
@@ -33,7 +33,7 @@ Per i file scritti e letti di frequente dall'applicazione, ad esempio i file di 
 
 Per identificare il gestore di persistenza delle sessioni in uso, esaminare i file *context.xml* nell'applicazione e nella configurazione di Tomcat. Cercare l'elemento `<Manager>`, quindi notare il valore dell'attributo `className`.
 
-Le implementazioni predefinite di [PersistentManager](https://tomcat.apache.org/tomcat-8.5-doc/config/manager.html) di Tomcat, ad esempio [StandardManager](https://tomcat.apache.org/tomcat-8.5-doc/config/manager.html#Standard_Implementation) o [FileStore](https://tomcat.apache.org/tomcat-8.5-doc/config/manager.html#Nested_Components) non sono progettate per l'uso con una piattaforma distribuita e scalabile come Kubernetes. Il servizio Azure Kubernetes può bilanciare il carico tra diversi pod e riavviare in modo trasparente qualsiasi pod in qualsiasi momento, quindi non è consigliabile rendere persistente lo stato modificabile di un file system.
+Le implementazioni predefinite di [PersistentManager](https://tomcat.apache.org/tomcat-9.0-doc/config/manager.html) di Tomcat, ad esempio [StandardManager](https://tomcat.apache.org/tomcat-9.0-doc/config/manager.html#Standard_Implementation) o [FileStore](https://tomcat.apache.org/tomcat-9.0-doc/config/manager.html#Nested_Components) non sono progettate per l'uso con una piattaforma distribuita e scalabile come Kubernetes. Il servizio Azure Kubernetes può bilanciare il carico tra diversi pod e riavviare in modo trasparente qualsiasi pod in qualsiasi momento, quindi non è consigliabile rendere persistente lo stato modificabile di un file system.
 
 Se è richiesta la persistenza delle sessioni, è necessario usare un'implementazione di `PersistentManager` alternativa che scriverà in un archivio dati esterno, ad esempio Pivotal Session Manager con Cache Redis. Per altre informazioni, vedere [Usare Redis come cache di sessione con Tomcat](/azure/app-service/containers/configure-language-java#use-redis-as-a-session-cache-with-tomcat).
 
@@ -162,6 +162,8 @@ Ad esempio:
 </GlobalNamingResources>
 ```
 
+[!INCLUDE[Tomcat datasource additional instructions](includes/migration/tomcat-datasource-additional-instructions.md)]
+
 ### <a name="build-and-push-the-image"></a>Creare l'immagine ed eseguirne il push
 
 Il modo più semplice per creare e caricare l'immagine in Registro Azure Container per l'uso da parte del servizio Azure Kubernetes consiste nell'usare il comando `az acr build`. Questo comando non richiede l'installazione di Docker nel computer. Ad esempio, se il Dockerfile precedente e il pacchetto dell'applicazione *petclinic.war* si trovano nella directory corrente, è possibile creare l'immagine del contenitore in Registro Azure Container con un solo passaggio:
@@ -228,7 +230,7 @@ Per eseguire i processi pianificati nel cluster del servizio Azure Kubernetes, d
 
 Ora che è stata eseguita la migrazione dell'applicazione al servizio Azure Kubernetes, è necessario verificare che funzioni come previsto. Una volta completata questa operazione, sono disponibili alcune raccomandazioni per rendere l'applicazione maggiormente nativa del cloud.
 
-* Valutare se [aggiungere un nome DNS](/azure/aks/ingress-static-ip#configure-a-dns-name) all'indirizzo IP allocato al controller in ingresso o al servizio di bilanciamento del carico dell'applicazione.
+* Valutare se [aggiungere un nome DNS](/azure/aks/ingress-static-ip#create-an-ingress-controller) all'indirizzo IP allocato al controller in ingresso o al servizio di bilanciamento del carico dell'applicazione.
 
 * Valutare se [aggiungere grafici Helm per l'applicazione](https://helm.sh/docs/topics/charts/). Un grafico Helm consente di parametrizzare la distribuzione dell'applicazione per l'uso e la personalizzazione da parte di un set più diversificato di clienti.
 

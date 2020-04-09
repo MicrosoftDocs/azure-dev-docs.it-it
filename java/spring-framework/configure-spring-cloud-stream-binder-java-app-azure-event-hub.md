@@ -7,12 +7,12 @@ ms.date: 12/19/2018
 ms.service: event-hubs
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.openlocfilehash: 9eef2c48b076ae0fc84aea16bb3e5b7bba17d744
-ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
+ms.openlocfilehash: 5ba844a66be0eb1acaac2cdf5b132ab422c9a954
+ms.sourcegitcommit: 951fc116a9519577b5d35b6fb584abee6ae72b0f
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74812069"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80612036"
 ---
 # <a name="how-to-create-a-spring-cloud-stream-binder-application-with-azure-event-hubs"></a>Come creare un'applicazione Spring Cloud Stream Binder con Hub eventi di Azure
 
@@ -41,7 +41,7 @@ La procedura seguente crea un hub eventi di Azure.
 
 1. Fare clic su **+ Crea una risorsa**, quindi cercare *Hub eventi**.
 
-1. Fare clic su **Create**(Crea).
+1. Fare clic su **Crea**.
 
    ![Creare uno spazio dei nomi dell'hub eventi di Azure][IMG01]
 
@@ -68,7 +68,7 @@ Dopo la distribuzione dello spazio dei nomi, è possibile creare un hub eventi a
 
 1. Assegnare un nome all'hub eventi.
 
-1. Fare clic su **Create**(Crea).
+1. Fare clic su **Crea**.
 
    ![Creare un hub eventi][IMG05]
 
@@ -237,10 +237,11 @@ La procedura seguente crea un'applicazione Spring Boot.
    spring.cloud.stream.bindings.input.destination=wingtiptoyshub
    spring.cloud.stream.bindings.input.group=$Default
    spring.cloud.stream.eventhub.bindings.input.consumer.checkpoint-mode=MANUAL
+   spring.cloud.stream.bindings.output.destination=wingtiptoyshub
    ```
    Dove:
 
-   |                          Campo                           |                                                                                   DESCRIZIONE                                                                                    |
+   |                          Campo                           |                                                                                   Descrizione                                                                                    |
    |----------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
    |        `spring.cloud.azure.credential-file-path`         |                                                    Specifica il file di credenziali di Azure creato in precedenza in questa esercitazione.                                                    |
    |           `spring.cloud.azure.resource-group`            |                                                      Specifica il gruppo di risorse di Azure contenente l'hub eventi di Azure.                                                      |
@@ -413,7 +414,7 @@ Per altre informazioni sull'uso di Azure con Java, vedere [Azure per sviluppator
 [vantaggi per i sottoscrittori di MSDN]: https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/
 [Spring Boot]: http://projects.spring.io/spring-boot/
 [Spring Initializr]: https://start.spring.io/
-[Spring Framework]: https://spring.io/
+[Spring Framework]: https://spring.io/ (Framework di Spring)
 
 <!-- IMG List -->
 
