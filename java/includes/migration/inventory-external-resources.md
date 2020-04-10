@@ -2,12 +2,12 @@
 author: yevster
 ms.author: yebronsh
 ms.date: 1/20/2020
-ms.openlocfilehash: affabacec95b8f1c4c7ea654ff9a765056220c76
-ms.sourcegitcommit: 367780fe48d977c82cb84208c128b0bf694b1029
+ms.openlocfilehash: 4b5b73eee66c4a5c9eb28b79804e0dc610f639d6
+ms.sourcegitcommit: 951fc116a9519577b5d35b6fb584abee6ae72b0f
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76825822"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80612064"
 ---
 ### <a name="inventory-external-resources"></a>Inventario delle risorse esterne
 
@@ -32,6 +32,8 @@ Le origini dati sono risorse JNDI con l'attributo `type` impostato su `javax.sql
 * Qual è il nome dell'origine dati?
 * Qual è la configurazione del pool di connessioni?
 * Dove è possibile trovare il file JAR del driver JDBC?
+
+Per altre informazioni, vedere la sezione di [procedure per le origini dati JNDI](https://tomcat.apache.org/tomcat-9.0-doc/jndi-datasource-examples-howto.html) nella documentazione di Tomcat.
 
 #### <a name="all-other-external-resources"></a>Tutte le altre risorse esterne
 

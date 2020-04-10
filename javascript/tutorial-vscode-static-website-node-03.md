@@ -3,12 +3,12 @@ title: Creare un account di Archiviazione di Azure per un sito Web Node.js stati
 description: Parte 3 dell'esercitazione, creare un account di Archiviazione di Azure
 ms.topic: conceptual
 ms.date: 09/24/2019
-ms.openlocfilehash: 42badfc649d7cc43eb1a58ab20c8ff639eff5354
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.openlocfilehash: 4adca67f850497777abce7d550e39532e59257d9
+ms.sourcegitcommit: a32ca0946275165ce24216c6fa243ec21d6c9193
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74466501"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80890845"
 ---
 # <a name="create-an-azure-storage-account"></a>Creare un account di Archiviazione di Azure
 
@@ -28,17 +28,19 @@ In questo passaggio viene creato un account di Archiviazione di Azure, che funge
 
 1. Quando viene chiesto di immettere il nome del nuovo account di archiviazione, immettere un nome univoco globale e premere INVIO. I caratteri validi per il nome dell'app sono 'a-z' e '0-9'.
 
-1. Quando viene chiesto di selezionare un gruppo di risorse, scegliere **Crea un nuovo gruppo di risorse** e accettare il nome predefinito.
-
-1. Quando viene chiesto di selezionare una località, scegliere un'[area](https://azure.microsoft.com/regions/) vicina.
+    > [!NOTE]
+    > Vengono creati un account di archiviazione e un gruppo di risorse con lo stesso nome. L'account di archiviazione viene inserito automaticamente nell'area Stati Uniti occidentali. Se si vogliono specificare il gruppo di risorse e la località, scegliere l'opzione "Crea account di archiviazione (avanzato)" dal menu di scelta rapida.
 
 1. Durante la creazione dell'account di archiviazione, nel pannello **Output** di VS Code viene visualizzato lo stato di avanzamento:
 
-1. Una volta completato l'account di archiviazione, fare clic su di esso con il pulsante destro del mouse e scegliere **Configure Static Website** (Configura sito Web statico). Abilitando l'hosting del sito Web statico, Archiviazione di Azure fornisce automaticamente il documento di indice ed eventuali altri asset statici.
+    ![Finestra di output di VS Code ](media/static-website/output-storage.png)
 
-    ![Crea account di archiviazione](media/static-website/configure-static-website.png)
+1. Una volta completato l'account di archiviazione, viene visualizzato un messaggio indicante che l'hosting del sito Web statico è stato abilitato.
 
-1. Quando richiesto, immettere *index.html* sia per il nome del documento sia per il nome del documento di errore 404. Il file *index.html* viene usato per il documento di errore perché le moderne app a pagina singola, come React, Angular e Vue, gestiscono gli errori nel client. Per i classici siti Web statici, usare una pagina di errore 404 personalizzata.
+    ![Creare un account di archiviazione](media/static-website/static-website-enabled-notification.png)
+
+    > [!IMPORTANT]
+    > Il file *index.html* viene usato per il documento di errore perché le moderne app a pagina singola, come React, Angular e Vue, gestiscono gli errori di route nel client. Per i classici siti Web statici, usare una pagina di errore 404 personalizzata.
 
 > [!div class="nextstepaction"]
 > [Il contenitore di archiviazione è stato creato](tutorial-vscode-static-website-node-04.md) [Si è verificato un errore](https://www.research.net/r/PWZWZ52?tutorial=node-deployment-staticwebsite&step=create-storage)

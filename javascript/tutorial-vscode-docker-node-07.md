@@ -1,26 +1,30 @@
 ---
-title: Pulire le risorse dopo la distribuzione di un app Node.js in contenitore da Visual Studio Code
-description: Parte 6 dell'esercitazione, pulire le risorse
+title: Eseguire lo streaming dei log da un'app Node.js in contenitore da Visual Studio Code
+description: Parte 7 dell'esercitazione, eseguire lo streaming dei log in Visual Studio Code
 ms.topic: conceptual
 ms.date: 09/20/2019
-ms.openlocfilehash: 7c235cff8b5685880fc63d7e50587980502c7e8d
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.openlocfilehash: 10ccf13cddfc7bb1ed7f226629072cb9baeea3a1
+ms.sourcegitcommit: f89c59f772364ec717e751fb59105039e6fab60c
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74467134"
+ms.lasthandoff: 04/06/2020
+ms.locfileid: "80740636"
 ---
-# <a name="clean-up-resources"></a>Pulire le risorse
+# <a name="stream-logs-into-visual-studio-code"></a>Eseguire lo streaming dei log in Visual Studio Code
 
-[Passaggio precedente: Eseguire lo streaming dei log](tutorial-vscode-docker-node-05.md)
+[Passaggio precedente: Apportare modifiche e ripetere la distribuzione](tutorial-vscode-docker-node-06.md)
 
-Il Servizio app creato per il contenitore include un piano di Servizio app di supporto che può comportare costi. Per pulire le risorse, fare clic con il pulsante destro del mouse sul servizio app nell'area **Azure: App Service** (Azure: Servizio app) e selezionare **Delete** (Elimina).
+Questo passaggio illustra come visualizzare qualsiasi output generato dal sito Web in esecuzione tramite chiamate a `console.log`. Questo output viene visualizzato nella finestra **Output** in Visual Studio Code.
 
-È anche possibile visitare il [portale di Azure](https://portal.azure.com), selezionare **Gruppi di risorse** nel riquadro di spostamento sinistro, selezionare il gruppo di risorse creato nella procedura di questa esercitazione e quindi usare il comando **Elimina gruppo di risorse**.
+1. Nell'area **Servizio app di Azure** fare clic con il pulsante destro del mouse sul nodo dell'app e scegliere **Start Streaming Logs** (Avvia lo streaming dei log).
 
-## <a name="next-steps"></a>Passaggi successivi
+    ![Comando Visualizza log in streaming](media/deploy-containers/stream-logs-command.png)
 
-[!INCLUDE [tutorial-next-steps](includes/tutorial-next-steps.md)]
+1. Quando viene richiesto, scegliere di abilitare la registrazione e riavviare l'applicazione.
+
+    ![Richiesta di abilitare la registrazione e riavviare](media/deploy-azure/enable-restart.png)
+
+1. Una volta riavviata l'app, viene visualizzato il pannello **Output** di Visual Studio Code con una connessione al flusso di log, a partire dal messaggio `Starting Live Log Stream`.
 
 > [!div class="nextstepaction"]
-> [L'esercitazione è stata completata](node-howto-deploy-containers.md) [Si è verificato un problema](https://www.research.net/r/PWZWZ52?tutorial=node-deployment-docker-extension&step=clean-up-resources)
+> [I log vengono visualizzati](tutorial-vscode-docker-node-08.md) [Si è verificato un problema](https://www.research.net/r/PWZWZ52?tutorial=node-deployment-docker-extension&step=tailing-logs)

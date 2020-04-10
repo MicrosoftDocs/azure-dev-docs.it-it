@@ -3,12 +3,12 @@ title: Usare un registro contenitori da Visual Studio Code
 description: Parte 2 dell'esercitazione, usare un registro contenitori
 ms.topic: conceptual
 ms.date: 09/20/2019
-ms.openlocfilehash: c5e9ff3cd803ef4d57408199682c71e4b57f2d77
-ms.sourcegitcommit: fc3408b6e153c847dd90026161c4c498aa06e2fc
+ms.openlocfilehash: e6dde135a2e6482284488fb83d9f811b02249c4d
+ms.sourcegitcommit: f89c59f772364ec717e751fb59105039e6fab60c
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75191024"
+ms.lasthandoff: 04/06/2020
+ms.locfileid: "80740526"
 ---
 # <a name="use-a-container-registry"></a>Usare un registro contenitori
 
@@ -20,46 +20,38 @@ Questa esercitazione usa [Registro Azure Container](https://azure.microsoft.com/
 
 ## <a name="create-an-azure-container-registry"></a>Creare un'istanza di Registro Azure Container
 
-1. Accedere al [portale di Azure](https://portal.azure.com), quindi selezionare **Crea una risorsa**.
+1. In Visual Studio Code premere <kbd>F1</kbd> per aprire il **riquadro comandi**.
 
-    ![Creazione di una nuova risorsa nel portale di Azure](media/deploy-containers/portal-01a.png)
+1. Digitare "registry" nella casella di ricerca e selezionare **Registro Azure Container: Create Registry** (Crea registro).
 
-1. Nella pagina successiva selezionare **Contenitori** > **Registro Container**.
+   ![L'area Docker in VS Code](media/deploy-containers/docker-create-registry.jpg)
 
-    ![Creazione di un registro contenitori nel portale di Azure](media/deploy-containers/portal-01b.png)
-
-1. Nel modulo **Crea registro contenitori** che viene visualizzato immettere i valori appropriati:
+1. Quando richiesto, specificare i valori seguenti.
 
     - Il **Nome registro** deve essere univoco in Azure e può contenere da 5 a 50 caratteri alfanumerici.
-    - In **Sottoscrizione** selezionare la propria sottoscrizione.
+    - Per **SKU** selezionare **Basic**.
     - Il **Gruppo di risorse** deve essere univoco solo all'interno della sottoscrizione.
     - In **Località** selezionare un'area vicina.
-    - Impostare **Utente amministratore** su **Abilita**.
-    - Per **SKU** selezionare **Basic**.
 
-    ![Valori del modulo del registro contenitori](media/deploy-containers/portal-02.png)
+    Visual Studio Code inizierà il processo di creazione del registro in Azure. Al termine, verrà visualizzata una notifica simile a quella riportata di seguito, che conferma che il registro è stato creato correttamente.
 
-1. Selezionare **Crea** per creare il registro.
+   ![Conferma in Visual Studio Code che il registro è stato creato](media/deploy-containers/registry-created.jpg)
 
-1. Dopo aver creato il registro, aprire le notifiche nel portale e selezionare l'opzione **Vai alla risorsa** riferita al registro:
+1. Aprire l'area **Docker** e verificare che l'endpoint del registro appena configurato sia visibile in **Registries** (Registri):
 
-    ![Apertura della risorsa registro appena creata](media/deploy-containers/portal-03.png)
+   ![Verifica che il registro compaia nell'area Docker](media/deploy-containers/docker-explorer-registry.jpg)
 
-1. Nella pagina del registro selezionare **Chiavi di accesso** e prendere nota delle credenziali di amministratore:
+## <a name="sign-in-to-azure-container-registry"></a>Accedere a Registro Azure Container
 
-    ![Credenziali per il registro nel portale di Azure](media/deploy-containers/portal-04.png)
+Anche se è possibile visualizzare i registri di Azure nell'estensione Docker, non sarà possibile eseguire il push delle immagini fino a quando non si accede a Registro Azure Container.
 
-1. Al prompt dei comandi o in un terminale accedere a Docker usando il comando seguente, sostituendo `<registry_name>` con il nome del registro e `<username>` e `<password>` con i valori mostrati nel portale di Azure per l'utente amministratore:
+1. Premere <kbd>CTRL+'</kbd> per aprire il **terminale integrato** in VS Code.
+
+1. Eseguire il comando dell'interfaccia della riga di comando di Azure seguente per accedere a Registro Azure Container. Sostituire "<your-registry-name>" con il nome del registro appena creato.
 
     ```bash
-    docker login <registry_name>.azurecr.io -u <username> -p <password>
+    az acr login --name <your-registry-name>
     ```
-
-    Per migliorare la sicurezza, usare `--password-stdin` invece di `-p <password>` e quindi incollare la password quando richiesto.
-
-1. In Visual Studio Code aprire l'area **Docker** e verificare che l'endpoint del registro appena configurato sia visibile in **Registries** (Registri):
-
-    ![Verifica che il registro compaia nell'area Docker](media/deploy-containers/registries.png)
 
 > [!div class="nextstepaction"]
 > [Il registro è stato creato](tutorial-vscode-docker-node-03.md) [Si è verificato un problema](https://www.research.net/r/PWZWZ52?tutorial=docker-extension&step=create-registry)

@@ -5,16 +5,21 @@ author: yevster
 ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 1/20/2020
-ms.openlocfilehash: f6ee53e25f7ce75e5e0d88688880f788fa6795f9
-ms.sourcegitcommit: 21ddeb9bd9abd419d143dc2ca8a7c821a1758cf9
+ms.openlocfilehash: e6215502b54bedf62f40a024f9e7b3acc01cdc1f
+ms.sourcegitcommit: 951fc116a9519577b5d35b6fb584abee6ae72b0f
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "79089943"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80612019"
 ---
 # <a name="migrate-java-applications-to-azure"></a>Eseguire la migrazione di applicazioni Java ad Azure
 
 Questo argomento fornisce una panoramica delle strategie consigliate per la migrazione di applicazioni Java ad Azure.
+
+Questa guida alla migrazione è progettata per coprire i principali scenari di Java in Azure e per fornire suggerimenti e considerazioni generali per la pianificazione. Per discutere di uno scenario specifico di migrazione delle app Java con il team Microsoft Java in Azure, compilare il questionario seguente per essere contattati da un rappresentante.
+
+> [!div class="nextstepaction"]
+> [Questionario sulla migrazione di Java](https://aka.ms/migrate-my-Java-app-requested-thru-docs)
 
 ## <a name="identifying-application-type"></a>Identificazione del tipo di applicazione
 
@@ -143,10 +148,10 @@ Usare le righe seguenti per trovare il tipo di applicazione Java EE in esecuzion
 
 |Destinazione&nbsp;→<br><br>Server app&nbsp;↓|App<br>Service<br>Java SE|App<br>Service<br>Tomcat|Azure<br>Spring<br>Cloud|Servizio Azure Kubernetes|Macchine virtuali|
 |---|---|---|---|---|---|---|
-| WildFly/<br>JBoss AS | N/D | N/D | N/D | indicazioni<br>pianificato | indicazioni<br>pianificato |
-| WebLogic              | N/D | N/D | N/D | [indicazioni][6]       | [indicazioni][4]       |
-| WebSphere             | N/D | N/D | N/D | [indicazioni][7]       | indicazioni<br>pianificato |
-| JBoss EAP             | N/D | N/D | N/D | N/D                 | indicazioni<br>pianificato |
+| WildFly/<br>JBoss AS | N/D | N/D | N/D | [indicazioni][9] | indicazioni<br>pianificato |
+| WebLogic              | N/D | N/D | N/D | [indicazioni][6] | [indicazioni][4]       |
+| WebSphere             | N/D | N/D | N/D | [indicazioni][7] | indicazioni<br>pianificato |
+| JBoss EAP             | N/D | N/D | N/D | [indicazioni][8] | indicazioni<br>pianificato |
 
 <!-- reference links, for use with tables -->
 [1]: media/migration-overview/logo_azure.svg
@@ -156,3 +161,5 @@ Usare le righe seguenti per trovare il tipo di applicazione Java EE in esecuzion
 [5]: migrate-java-se-to-java-se-app-service.md
 [6]: migrate-weblogic-to-wildfly-on-azure-kubernetes-service.md
 [7]: migrate-websphere-to-wildfly-on-azure-kubernetes-service.md
+[8]: migrate-jboss-eap-to-wildfly-on-azure-kubernetes-service.md
+[9]: migrate-wildfly-to-wildfly-on-azure-kubernetes-service.md

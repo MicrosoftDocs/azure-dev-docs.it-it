@@ -2,15 +2,15 @@
 author: edburns
 ms.author: edburns
 ms.date: 1/21/2020
-ms.openlocfilehash: b2458a80eccfcae24a3364208334cce3aedea861
-ms.sourcegitcommit: 21ddeb9bd9abd419d143dc2ca8a7c821a1758cf9
+ms.openlocfilehash: a521396292214fd4e68b4625a0e5f5bcfca8be92
+ms.sourcegitcommit: 951fc116a9519577b5d35b6fb584abee6ae72b0f
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "79129525"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80612137"
 ---
-### <a name="determine-whether-jms-queues-or-topics-are-in-use"></a>Determinare se sono in uso code o argomenti JMS
+### <a name="determine-whether-java-message-service-jms-queues-or-topics-are-in-use"></a>Determinare se sono in uso code o argomenti di JMS (Java Message Service)
 
-Se l'applicazione usa code o argomenti JMS, sarà necessario eseguirne la migrazione a un server JMS ospitato esternamente, ad esempio al bus di servizio di Azure. Vedere [Usare il bus di servizio come broker dei messaggi](/azure/service-bus-messaging/message-transfers-locks-settlement).
+Se l'applicazione usa code o argomenti di JMS, sarà necessario eseguirne la migrazione a un server JMS ospitato esternamente. Il bus di servizio di Azure e il protocollo AMQP (Advanced Message Queueing Protocol) possono risultare un'ottima strategia di migrazione se si usa JMS. Per altre informazioni, vedere [Usare JMS con il bus di servizio e AMQP 1.0](/azure/service-bus-messaging/service-bus-java-how-to-use-jms-api-amqp).
 
 Se sono stati configurati archivi persistenti JMS, è necessario acquisire la relativa configurazione e applicarla dopo la migrazione.

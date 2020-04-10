@@ -1,20 +1,20 @@
 ---
-title: Eseguire la migrazione di applicazioni WebSphere a WildFly nel servizio Azure Kubernetes
-description: Questa guida descrive gli aspetti da considerare per la migrazione di un'applicazione WebSphere esistente da eseguire in WildFly in un contenitore del servizio Azure Kubernetes.
+title: Eseguire la migrazione di applicazioni JBoss EAP a WildFly nel servizio Azure Kubernetes
+description: Questa guida descrive gli aspetti da considerare per la migrazione di un'applicazione JBoss EAP esistente da eseguire in WildFly in un contenitore del servizio Azure Kubernetes.
 author: mriem
 ms.author: manriem
 ms.topic: conceptual
-ms.date: 2/28/2020
-ms.openlocfilehash: a32784542618c3ee3a57d8cc1105837a414883ad
+ms.date: 3/16/2020
+ms.openlocfilehash: 44bc24a64aa122434e1178922b79284388c78e57
 ms.sourcegitcommit: 951fc116a9519577b5d35b6fb584abee6ae72b0f
 ms.translationtype: HT
 ms.contentlocale: it-IT
 ms.lasthandoff: 04/02/2020
-ms.locfileid: "80612140"
+ms.locfileid: "80613097"
 ---
-# <a name="migrate-websphere-applications-to-wildfly-on-azure-kubernetes-service"></a>Eseguire la migrazione di applicazioni WebSphere a WildFly nel servizio Azure Kubernetes
+# <a name="migrate-jboss-eap-applications-to-wildfly-on-azure-kubernetes-service"></a>Eseguire la migrazione di applicazioni JBoss EAP a WildFly nel servizio Azure Kubernetes
 
-Questa guida descrive gli aspetti da considerare per la migrazione di un'applicazione WebSphere esistente da eseguire in WildFly in un contenitore del servizio Azure Kubernetes.
+Questa guida descrive gli aspetti da considerare per la migrazione di un'applicazione JBoss EAP esistente da eseguire in WildFly in un contenitore del servizio Azure Kubernetes.
 
 ## <a name="pre-migration"></a>Pre-migrazione
 
@@ -22,7 +22,9 @@ Questa guida descrive gli aspetti da considerare per la migrazione di un'applica
 
 ### <a name="inventory-all-secrets"></a>Inventario di tutti i segreti
 
-Controllare tutte le proprietà e i file di configurazione nei server di produzione per verificare la presenza di segreti e password. Assicurarsi di controllare *ibm-web-bnd.xml* nei WAR. I file di configurazione contenenti password o credenziali possono trovarsi anche all'interno dell'applicazione.
+Controllare tutte le proprietà e i file di configurazione nei server di produzione per verificare la presenza di segreti e password. Assicurarsi di controllare *jboss-web.xml* nei WAR. I file di configurazione contenenti password o credenziali possono trovarsi anche all'interno dell'applicazione.
+
+È consigliabile archiviare tali segreti in Azure KeyVault. Per altre informazioni, vedere [Concetti di base di Azure Key Vault](/azure/key-vault/basic-concepts).
 
 [!INCLUDE [inventory-all-certificates](includes/migration/inventory-all-certificates.md)]
 
@@ -30,19 +32,25 @@ Controllare tutte le proprietà e i file di configurazione nei server di produzi
 
 L'uso di WildFly nel servizio Azure Kubernetes richiede una versione specifica di Java. Pertanto, sarà necessario verificare che l'applicazione sia in grado di funzionare correttamente usando tale versione supportata. Questa convalida è particolarmente importante se il server corrente è usa una versione di JDK non supportata, ad esempio Oracle JDK o IBM OpenJ9.
 
-Per ottenere la versione corrente, accedere al server di produzione ed eseguire
+Per ottenere la versione corrente, accedere al server di produzione ed eseguire questo comando:
 
 ```bash
 java -version
 ```
 
+Per informazioni sulla versione da usare per l'esecuzione di WildFly, vedere [Requisiti](http://docs.wildfly.org/19/Getting_Started_Guide.html#requirements).
+
 ### <a name="inventory-jndi-resources"></a>Inventario delle risorse JNDI
 
 Creare un inventario di tutte le risorse JNDI. Alcune, ad esempio i broker di messaggi JMS, possono richiedere la migrazione o la riconfigurazione.
 
+### <a name="determine-whether-session-replication-is-used"></a>Determinare se viene usata la replica delle sessioni
+
+Se l'applicazione si basa sulla replica delle sessioni, sarà necessario cambiarla per rimuovere questa dipendenza.
+
 #### <a name="inside-your-application"></a>All'interno dell'applicazione
 
-Esaminare i file *WEB-INF/ibm-web-bnd.xml* e/o *WEB-INF/web.xml*.
+Esaminare i file *WEB-INF/jboss-web.xml* e/o *WEB-INF/web.xml*.
 
 ### <a name="document-datasources"></a>Documentare le origini dati
 
@@ -52,11 +60,11 @@ Se l'applicazione usa qualsiasi database, è necessario acquisire le informazion
 * Qual è la configurazione del pool di connessioni?
 * Dove è possibile trovare il file JAR del driver JDBC?
 
-Per altre informazioni, vedere la sezione relativa alla [configurazione della connettività del database](https://www.ibm.com/support/knowledgecenter/SSQP76_8.10.x/com.ibm.odm.distrib.config.was/config_dc_websphere/tpc_was_create_datasrc_cpl.html) nella documentazione di WebSphere.
+Per altre informazioni, vedere la sezione relativa alle [origini dati di JBoss EAP](https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.3/html/configuration_guide/datasource_management) nella documentazione di JBoss EAP.
 
 ### <a name="determine-whether-and-how-the-file-system-is-used"></a>Determinare se e come viene usato il file system
 
-Qualsiasi utilizzo del file system nel server applicazioni richiede modifiche della configurazione o, in casi rari, dell'architettura. Il file system può essere usato da moduli WebSphere o dal codice dell'applicazione. È possibile identificare alcuni o tutti gli scenari descritti nelle sezioni seguenti.
+Qualsiasi utilizzo del file system nel server applicazioni richiede modifiche della configurazione o, in casi rari, dell'architettura. Il file system può essere usato da moduli JBoss EAP o dal codice dell'applicazione. È possibile identificare alcuni o tutti gli scenari descritti nelle sezioni seguenti.
 
 #### <a name="read-only-static-content"></a>Contenuto statico di sola lettura
 
@@ -76,9 +84,9 @@ Per i file scritti e letti di frequente dall'applicazione, ad esempio i file di 
 
 [!INCLUDE [determine-whether-jms-queues-or-topics-are-in-use](includes/migration/determine-whether-jms-queues-or-topics-are-in-use.md)]
 
-### <a name="determine-whether-your-application-uses-websphere-specific-apis"></a>Determinare se l'applicazione usa API specifiche di WebSphere
+### <a name="determine-whether-your-application-uses-jboss-eap-specific-apis"></a>Determinare se l'applicazione usa API specifiche di JBoss EAP
 
-Se l'applicazione usa API specifiche di WebSphere, sarà necessario effettuarne il refactoring per rimuovere tali dipendenze. Se, ad esempio, è stata usata una classe indicata nella [specifica dell'API IBM WebSphere Application Server, versione 9.0](https://www.ibm.com/support/knowledgecenter/en/SSEQTJ_9.0.5/com.ibm.websphere.javadoc.doc/web/apidocs/overview-summary.html?view=embed), è stata usata un'API specifica di WebSphere nell'applicazione.
+Se l'applicazione usa API specifiche di JBoss EAP, sarà necessario effettuarne il refactoring per rimuovere tali dipendenze.
 
 [!INCLUDE [determine-whether-your-application-uses-entity-beans](includes/migration/determine-whether-your-application-uses-entity-beans.md)]
 
@@ -90,7 +98,7 @@ Se l'applicazione usa API specifiche di WebSphere, sarà necessario effettuarne 
 
 ### <a name="determine-whether-jca-connectors-are-in-use"></a>Determinare se vengono usati i connettori JCA
 
-Se l'applicazione usa connettori JCA, è necessario verificare che possano essere usati in WildFly. Se l'implementazione di JCA è vincolata a WebSphere, sarà necessario effettuare il refactoring dell'applicazione per rimuovere tale dipendenza. Se il connettore può essere usato, sarà necessario aggiungere i file JAR al classpath del server e inserire i file di configurazione necessari nella posizione corretta nelle directory del server WildFly per renderlo disponibile.
+Se l'applicazione usa connettori JCA, è necessario verificare che possano essere usati in WildFly. Se l'implementazione di JCA è vincolata a JBoss EAP, sarà necessario effettuare il refactoring dell'applicazione per rimuovere tale dipendenza. Se il connettore può essere usato, sarà necessario aggiungere i file JAR al classpath del server e inserire i file di configurazione necessari nella posizione corretta nelle directory del server WildFly per renderlo disponibile.
 
 [!INCLUDE [determine-whether-jaas-is-in-use](includes/migration/determine-whether-jaas-is-in-use.md)]
 
@@ -100,7 +108,7 @@ Se l'applicazione usa connettori JCA, è necessario verificare che possano esser
 
 ### <a name="determine-whether-your-application-is-packaged-as-an-ear"></a>Determinare se l'applicazione è assemblata come EAR
 
-Se l'applicazione è assemblata come file EAR, assicurarsi di esaminare i file *application.xml* e *application-bnd.xml* e acquisire le relative configurazioni.
+Se l'applicazione è assemblata come file EAR, assicurarsi di esaminare il file *application.xml* e acquisire la relativa configurazione.
 
 > [!NOTE]
 > Per ridimensionare ogni applicazione Web in modo indipendente per un uso più efficace delle risorse del servizio Azure Kubernetes, è necessario dividere EAR in applicazioni Web distinte.

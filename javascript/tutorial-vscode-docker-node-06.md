@@ -1,30 +1,30 @@
 ---
-title: Eseguire lo streaming dei log da un'app Node.js in contenitore da Visual Studio Code
-description: Parte 5 dell'esercitazione, eseguire lo streaming dei log in Visual Studio Code
+title: Ridistribuire un contenitore nel servizio app di Azure dopo aver apportato modifiche in Visual Studio Code
+description: Passaggio 6 dell'esercitazione, la procedura semplice per ricompilare e ridistribuire un'immagine del contenitore.
 ms.topic: conceptual
 ms.date: 09/20/2019
-ms.openlocfilehash: 2ac930996bd910014565c4e329bec93015bd2a3a
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.openlocfilehash: 7920bc9ddb2b9b7cc06f936fb97400a5c1d9dd7d
+ms.sourcegitcommit: f89c59f772364ec717e751fb59105039e6fab60c
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74466525"
+ms.lasthandoff: 04/06/2020
+ms.locfileid: "80740643"
 ---
-# <a name="stream-logs-into-visual-studio-code"></a>Eseguire lo streaming dei log in Visual Studio Code
+# <a name="make-changes-and-redeploy"></a>Apportare modifiche e ripetere la distribuzione
 
-[Passaggio precedente: Apportare modifiche e ripetere la distribuzione](tutorial-vscode-docker-node-05.md)
+[Passaggio precedente: Distribuire l'immagine dell'app](tutorial-vscode-docker-node-05.md)
 
-Questo passaggio illustra come visualizzare qualsiasi output generato dal sito Web in esecuzione tramite chiamate a `console.log`. Questo output viene visualizzato nella finestra **Output** in Visual Studio Code.
+Dal momento che inevitabilmente si apportano modifiche all'app, si finisce per ricompilare e ridistribuire il contenitore molte volte. Il processo è tuttavia semplice:
 
-1. Nell'area **Servizio app di Azure** fare clic con il pulsante destro del mouse sul nodo dell'app e scegliere **Start Streaming Logs** (Avvia lo streaming dei log).
+1. Apportare le modifiche all'app e testarla in locale.
 
-    ![Comando Visualizza log in streaming](media/deploy-containers/stream-logs-command.png)
+1. In Visual Studio Code aprire il **riquadro comandi** (**F1**) ed eseguire **Docker Images: Build Image** (Immagini Docker: Compila immagine) per ricompilare l'immagine. Se si cambia solo il codice dell'app, la compilazione dovrebbe richiedere solo pochi secondi.
 
-1. Quando viene richiesto, scegliere di abilitare la registrazione e riavviare l'applicazione.
+1. Per eseguire il push dell'immagine nel registro, aprire di nuovo il **riquadro comandi** (**F1**) ed eseguire **Docker Images: Push** (Immagini Docker: Esegui il push), scegliendo l'immagine appena compilata. Anche in questo caso, poiché si apporta solo una lieve modifica al codice dell'app, è necessario eseguire il push solo di questo livello e il processo viene in genere completato in pochi secondi.
 
-    ![Richiesta di abilitare la registrazione e riavviare](media/deploy-azure/enable-restart.png)
+1. Nell'area **Azure: Servizio app** fare clic con il pulsante destro del mouse sul servizio app appropriato e scegliere **Restart** (Riavvia). Con il riavvio di un servizio app viene automaticamente eseguito il pull dell'immagine del contenitore più recente dal registro di sistema.
 
-1. Una volta riavviata l'app, viene visualizzato il pannello **Output** di Visual Studio Code con una connessione al flusso di log, a partire dal messaggio `Starting Live Log Stream`.
+1. Dopo circa 15-20 secondi, visitare di nuovo l'URL del servizio app per controllare gli aggiornamenti.
 
 > [!div class="nextstepaction"]
-> [I log vengono visualizzati](tutorial-vscode-docker-node-07.md) [Si è verificato un problema](https://www.research.net/r/PWZWZ52?tutorial=node-deployment-docker-extension&step=tailing-logs)
+> [Le modifiche vengono visualizzate](tutorial-vscode-docker-node-07.md) [Si è verificato un problema](https://www.research.net/r/PWZWZ52?tutorial=node-deployment-docker-extension&step=deploy-changes)

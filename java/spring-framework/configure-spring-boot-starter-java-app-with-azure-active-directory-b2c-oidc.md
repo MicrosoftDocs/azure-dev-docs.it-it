@@ -11,12 +11,12 @@ ms.service: active-directory-b2c
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: identity
-ms.openlocfilehash: a795f7ffea218f4f117a9935adac4f2bb74af9f3
-ms.sourcegitcommit: efa585ecdcf1cc54a6f0b664fb83cd4f0ccc7b2c
+ms.openlocfilehash: 63fa23a946841d284d229561e597ea1d9450e822
+ms.sourcegitcommit: f89c59f772364ec717e751fb59105039e6fab60c
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "79990507"
+ms.lasthandoff: 04/06/2020
+ms.locfileid: "80740706"
 ---
 # <a name="tutorial-secure-a-java-web-app-using-the-spring-boot-starter-for-azure-active-directory-b2c"></a>Esercitazione: Proteggere un'app Web Java con Spring Boot Starter per Azure Active Directory B2C.
 
@@ -162,12 +162,12 @@ I prerequisiti seguenti sono necessari per completare le procedure disponibili i
 
 8. Creare una cartella denominata *controller* nella cartella di origine Java per l'applicazione.
 
-9. Creare un nuovo file Java denominato *HelloController.java* nella cartella *controller* e aprirlo in un editor di testo.
+9. Creare un nuovo file Java denominato *WebController.java* nella cartella *controller* e aprirlo in un editor di testo.
 
 10. Immettere il codice seguente, quindi salvare e chiudere il file:
 
     ```java
-    package sample.aad.controller;
+    package com.example.demo.controller;
     
     import org.springframework.security.oauth2.client.authentication.OAuth2AuthenticationToken;
     import org.springframework.security.oauth2.core.user.OAuth2User;
@@ -212,12 +212,12 @@ I prerequisiti seguenti sono necessari per completare le procedure disponibili i
 
 11. Creare una cartella denominata *security* nella cartella di origine Java per l'applicazione.
 
-12. Creare un nuovo file Java denominato *WebSecurityConfig.java* nella cartella *security* e aprirlo in un editor di testo.
+12. Creare un nuovo file Java denominato *WebSecurityConfiguration.java* nella cartella *security* e aprirlo in un editor di testo.
 
 13. Immettere il codice seguente, quindi salvare e chiudere il file:
 
     ```java
-    package sample.aad.security;
+    package com.example.demo.security;
     
     import com.microsoft.azure.spring.autoconfigure.b2c.AADB2COidcLoginConfigurer;
     import org.springframework.security.config.annotation.web.builders.HttpSecurity;

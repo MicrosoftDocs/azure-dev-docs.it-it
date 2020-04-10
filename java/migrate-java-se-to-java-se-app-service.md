@@ -5,12 +5,12 @@ author: yevster
 ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 01/22/2019
-ms.openlocfilehash: 2846dc10ff782568d596daee4baa8ecbd1195729
-ms.sourcegitcommit: 56e5f51daf6f671f7b6e84d4c6512473b35d31d2
+ms.openlocfilehash: 91292d50f49bde2b76084f8a09119ae74a20f72f
+ms.sourcegitcommit: 951fc116a9519577b5d35b6fb584abee6ae72b0f
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78894194"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80612106"
 ---
 # <a name="migrate-executable-jar-web-applications-to-java-se-on-azure-app-service"></a>Eseguire la migrazione di applicazioni Web JAR eseguibili a Java SE nel servizio app di Azure
 
@@ -20,8 +20,8 @@ Questa guida descrive gli aspetti da considerare per la migrazione di un'applica
 
 Se non è possibile soddisfare i requisiti di pre-migrazione, vedere le guide alla migrazione complementari seguenti:
 
-* Eseguire la migrazione di applicazioni JAR eseguibili ai contenitori nel servizio Azure Kubernetes (in pianificazione)
-* Eseguire la migrazione di applicazioni JAR eseguibili alle macchine virtuali di Azure (in pianificazione)
+* Eseguire la migrazione di applicazioni JAR eseguibili ai contenitori nel servizio Azure Kubernetes (indicazioni in pianificazione)
+* Eseguire la migrazione di applicazioni JAR eseguibili alle macchine virtuali di Azure (indicazioni in pianificazione)
 
 ## <a name="pre-migration"></a>Pre-migrazione
 
@@ -39,7 +39,7 @@ Identificare le risorse esterne, ad esempio le origini dati, i broker dei messag
 
 Per qualsiasi database SQL, identificare la stringa di connessione.
 
-Per un'applicazione Spring Boot, le stringhe di connessione sono in genere incluse nei file di configurazione. 
+Per un'applicazione Spring Boot, le stringhe di connessione sono in genere incluse nei file di configurazione.
 
 Ecco un esempio di un file *application.properties*:
 
@@ -57,6 +57,8 @@ spring:
     mongodb:
       uri: mongodb://mongouser:deepsecret@mongoserver.contoso.com:27017
 ```
+
+Per altre informazioni, vedere la pagina relativa ai repository [JPA](https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#jpa.repositories) e [JDBC](https://docs.spring.io/spring-data/jdbc/docs/current/reference/html/#jdbc.repositories) nella documentazione di Spring.
 
 #### <a name="jms-message-brokers"></a>Broker di messaggi JMS
 
@@ -143,7 +145,7 @@ Il servizio app supporta solo un singolo endpoint HTTP in una singola porta. Se 
 
 ### <a name="parameterize-the-configuration"></a>Parametrizzare la configurazione
 
-Assicurarsi che le coordinate di tutte le risorse esterne, ad esempio le stringhe di connessione di database, e altre impostazioni personalizzabili possano essere lette dalle variabili di ambiente. Se si esegue la migrazione di un'applicazione Spring Boot, è necessario che tutte le impostazioni di configurazione siano già [esternalizzabili](https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-features.html#boot-features-external-config).
+Assicurarsi che le coordinate di tutte le risorse esterne, ad esempio le stringhe di connessione di database, e altre impostazioni personalizzabili possano essere lette dalle variabili di ambiente. Se si esegue la migrazione di un'applicazione Spring Boot, è necessario che tutte le impostazioni di configurazione siano già esternalizzabili. Per altre informazioni, vedere la sezione relativa alla [configurazione esternalizzata](https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-features.html#boot-features-external-config) nella documentazione di Spring Boot.
 
 Ecco un esempio che fa riferimento a una variabile di ambiente `SERVICEBUS_CONNECTION_STRING` da un file *application.properties*:
 
