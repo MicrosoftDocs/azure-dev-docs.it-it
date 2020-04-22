@@ -1,0 +1,30 @@
+- name: Documentazione di Azure Toolkit for IntelliJ
+  href: index.yml
+  items:
+    - name: Introduzione - App Web
+      href: create-hello-world-web-app.md
+    - name: Introduzione - Funzioni
+      href: quickstart-functions.md
+    - name: Esercitazioni
+      expanded: true
+      items:
+        - name: Distribuire un'app Web in un contenitore Linux
+          href: hello-world-web-app-linux.md
+    - name: Procedure
+      expanded: true
+      items:
+        - name: Accedere con l'account Azure
+          href: sign-in-instructions.md
+        - name: Gestire le risorse di Azure
+          expanded: true
+          items:
+            - name: Macchine virtuali
+              href: managing-virtual-machines-using-azure-explorer.md
+            - name: Account di archiviazione
+              href: managing-storage-accounts-using-azure-explorer.md
+            - name: Cache Redis di Azure
+              href: managing-redis-caches-using-azure-explorer.md
+    - name: Note sulla versione
+      href: 'https://github.com/Microsoft/azure-tools-for-java/releases'
+    - name: Marketplace
+      href: 'https://plugins.jetbrains.com/plugin/8053'
