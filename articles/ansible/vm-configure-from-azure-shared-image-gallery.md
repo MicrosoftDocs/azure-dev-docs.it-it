@@ -4,20 +4,20 @@ description: Informazioni su come usare Ansible per creare una VM o un set di sc
 keywords: ansible, azure, devops, bash, playbook, macchina virtuale, set di scalabilità di macchine virtuali, raccolta immagini condivise
 ms.topic: tutorial
 ms.date: 10/14/2019
-ms.openlocfilehash: f784419736854095cc1bc5da14f3867ac3f7eb12
-ms.sourcegitcommit: f89c59f772364ec717e751fb59105039e6fab60c
+ms.openlocfilehash: cd66899b5d5f37bc056d251a68117456062c16cf
+ms.sourcegitcommit: eabc9e3fb8ad0f067be5ed878c2eacebd461b6ce
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/06/2020
-ms.locfileid: "80741749"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81743256"
 ---
 # <a name="tutorial-create-a-vm-or-virtual-machine-scale-set-from-the-azure-shared-image-gallery-using-ansible"></a>Esercitazione: Creare una VM o un set di scalabilità di macchine virtuali dalla Raccolta immagini condivise di Azure con Ansible
 
-[!INCLUDE [ansible-29-note.md](../../includes/ansible-29-note.md)]
+[!INCLUDE [ansible-29-note.md](includes/ansible-29-note.md)]
 
 [Raccolta immagini condivise ](/azure/virtual-machines/windows/shared-image-galleries) è un servizio che consente di gestire, condividere e organizzare facilmente immagini gestite in modo personalizzato. Questa funzionalità è utile per scenari in cui vengono gestite e condivise molte immagini. Le immagini personalizzate possono essere condivise tra le sottoscrizioni e tra i tenant di Azure Active Directory. Le immagini possono anche essere replicate in più aree, per un ridimensionamento più rapido delle distribuzioni.
 
-[!INCLUDE [ansible-tutorial-goals.md](../../includes/ansible-tutorial-goals.md)]
+[!INCLUDE [ansible-tutorial-goals.md](includes/ansible-tutorial-goals.md)]
 
 > [!div class="checklist"]
 >
@@ -30,8 +30,8 @@ ms.locfileid: "80741749"
 
 ## <a name="prerequisites"></a>Prerequisiti
 
-[!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../../includes/open-source-devops-prereqs-azure-subscription.md)]
-[!INCLUDE [ansible-prereqs-cloudshell-use-or-vm-creation2.md](../../includes/ansible-prereqs-cloudshell-use-or-vm-creation2.md)]
+[!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
+[!INCLUDE [ansible-prereqs-cloudshell-use-or-vm-creation2.md](includes/ansible-prereqs-cloudshell-use-or-vm-creation2.md)]
 
 ## <a name="get-the-sample-playbooks"></a>Ottenere i playbook di esempio
 
