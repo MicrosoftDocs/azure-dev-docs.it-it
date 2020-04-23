@@ -4,12 +4,12 @@ description: In questo argomento di avvio rapido viene illustrato come distribui
 keywords: ansible, azure, devops, modello di soluzione, macchina virtuale, Identità gestite per le risorse di azure, centos, red hat
 ms.topic: quickstart
 ms.date: 04/30/2019
-ms.openlocfilehash: ac6d5f550447c11a463fb2d002c95a1242c08afb
-ms.sourcegitcommit: f89c59f772364ec717e751fb59105039e6fab60c
+ms.openlocfilehash: 79638c8ae4bd8d1a54448d2cf8aef1a391a91e44
+ms.sourcegitcommit: eabc9e3fb8ad0f067be5ed878c2eacebd461b6ce
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/06/2020
-ms.locfileid: "80741059"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81743921"
 ---
 # <a name="quickstart-deploy-the-ansible-solution-template-for-azure-to-centos"></a>Guida introduttiva: Distribuire il modello di soluzione Ansible per Azure in CentOS
 
@@ -21,7 +21,7 @@ Il modello di soluzione Ansible per Azure è progettato per configurare un'istan
 
 ## <a name="prerequisites"></a>Prerequisiti
 
-[!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../../includes/open-source-devops-prereqs-azure-subscription.md)]
+[!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
 
 ## <a name="deploy-the-ansible-solution-template"></a>Distribuire il modello di soluzione Ansible
 

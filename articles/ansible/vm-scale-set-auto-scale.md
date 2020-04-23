@@ -4,22 +4,22 @@ description: Informazioni su come usare Ansible per ridimensionare set di scalab
 keywords: ansible, azure, devops, bash, playbook, scalabilità, scalabilità automatica, macchina virtuale, set di scalabilità di macchine virtuali, vmss
 ms.topic: tutorial
 ms.date: 04/30/2019
-ms.openlocfilehash: 8c8aab0a96fe30d08c0f673f9e5bc5fb47b2b409
-ms.sourcegitcommit: f89c59f772364ec717e751fb59105039e6fab60c
+ms.openlocfilehash: f50ac83b03d957e0d6649a5803ee90982a532935
+ms.sourcegitcommit: eabc9e3fb8ad0f067be5ed878c2eacebd461b6ce
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/06/2020
-ms.locfileid: "80741699"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81743871"
 ---
 # <a name="tutorial-autoscale-virtual-machine-scale-sets-in-azure-using-ansible"></a>Esercitazione: Ridimensionare automaticamente i set di scalabilità di macchine virtuali in Azure con Ansible
 
-[!INCLUDE [ansible-27-note.md](../../includes/ansible-27-note.md)]
+[!INCLUDE [ansible-27-note.md](includes/ansible-27-note.md)]
 
-[!INCLUDE [open-source-devops-intro-vm-scale-set.md](../../includes/open-source-devops-intro-vm-scale-set.md)]
+[!INCLUDE [open-source-devops-intro-vm-scale-set.md](../includes/open-source-devops-intro-vm-scale-set.md)]
 
 La funzionalità per adattare automaticamente il numero di istanze di macchine virtuali è denominata [scalabilità automatica](/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-autoscale-overview). Il vantaggio della scalabilità automatica è che riduce il sovraccarico di gestione per monitorare e ottimizzare le prestazioni dell'applicazione. È possibile configurare la scalabilità automatica in risposta a una richiesta o una pianificazione definita. Con Ansible è possibile specificare le regole di scalabilità automatica che definiscono le prestazioni accettabili per un'esperienza positiva del cliente.
 
-[!INCLUDE [ansible-tutorial-goals.md](../../includes/ansible-tutorial-goals.md)]
+[!INCLUDE [ansible-tutorial-goals.md](includes/ansible-tutorial-goals.md)]
 
 > [!div class="checklist"]
 >
@@ -31,9 +31,9 @@ La funzionalità per adattare automaticamente il numero di istanze di macchine v
 
 ## <a name="prerequisites"></a>Prerequisiti
 
-[!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../../includes/open-source-devops-prereqs-azure-subscription.md)]
-[!INCLUDE [ansible-prereqs-cloudshell-use-or-vm-creation2.md](../../includes/ansible-prereqs-cloudshell-use-or-vm-creation2.md)] 
-[!INCLUDE [ansible-prereqs-vm-scale-set.md](../../includes/ansible-prereqs-vm-scale-set.md)]
+[!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
+[!INCLUDE [ansible-prereqs-cloudshell-use-or-vm-creation2.md](includes/ansible-prereqs-cloudshell-use-or-vm-creation2.md)] 
+[!INCLUDE [ansible-prereqs-vm-scale-set.md](includes/ansible-prereqs-vm-scale-set.md)]
 
 ## <a name="autoscale-based-on-a-schedule"></a>Ridimensionare automaticamente in base a una pianificazione
 

@@ -8,12 +8,12 @@ author: tomarchermsft
 manager: gwallace
 ms.author: tarcher
 ms.date: 04/30/2019
-ms.openlocfilehash: 6c346ad30be953550dfd679d60bf2c5ce6f3d8c7
-ms.sourcegitcommit: f89c59f772364ec717e751fb59105039e6fab60c
+ms.openlocfilehash: 4f577b9841375d63bfc88249da88e554c1464bde
+ms.sourcegitcommit: eabc9e3fb8ad0f067be5ed878c2eacebd461b6ce
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/06/2020
-ms.locfileid: "80741129"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81743582"
 ---
 # <a name="quickstart-install-ansible-on-linux-virtual-machines-in-azure"></a>Guida introduttiva: Installare Ansible in macchine virtuali Linux in Azure
 
@@ -21,8 +21,8 @@ Ansible consente di automatizzare la distribuzione e la configurazione delle ris
 
 ## <a name="prerequisites"></a>Prerequisiti
 
-[!INCLUDE [open-source-devops-prereqs-azure-sub.md](../../includes/open-source-devops-prereqs-azure-subscription.md)]
-[!INCLUDE [open-source-devops-prereqs-create-sp.md](../../includes/open-source-devops-prereqs-create-service-principal.md)]
+[!INCLUDE [open-source-devops-prereqs-azure-sub.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
+[!INCLUDE [open-source-devops-prereqs-create-sp.md](../includes/open-source-devops-prereqs-create-service-principal.md)]
 - **Accesso a Linux o a una macchina virtuale Linux**: in assenza di un computer Linux, creare una [macchina virtuale Linux](/azure/virtual-network/quick-create-cli).
 
 ## <a name="install-ansible-on-an-azure-linux-virtual-machine"></a>Installare Ansible in una macchina virtuale Linux di Azure
@@ -159,7 +159,7 @@ In questa sezione vengono esportati i valori dell'entità servizio per configura
 
 Per verificare la configurazione, usare Ansible per creare un gruppo di risorse di Azure.
 
-[!INCLUDE [create-resource-group-with-ansible.md](../../includes/ansible-snippet-create-resource-group.md)]
+[!INCLUDE [create-resource-group-with-ansible.md](includes/ansible-snippet-create-resource-group.md)]
 
 ## <a name="next-steps"></a>Passaggi successivi
 

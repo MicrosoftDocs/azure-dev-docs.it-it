@@ -4,20 +4,20 @@ description: Informazioni su come ridimensionare un'app nel servizio app di Azur
 keywords: ansible, azure, devops, bash, playbook, servizio app di Azure, app Web, ridimensionare, Java
 ms.topic: tutorial
 ms.date: 04/30/2019
-ms.openlocfilehash: 32dbeafe891c92001b137a5802df0adbbd93552f
-ms.sourcegitcommit: f89c59f772364ec717e751fb59105039e6fab60c
+ms.openlocfilehash: beb9009fa02742ce39b15da9be60895acfbcd3cc
+ms.sourcegitcommit: eabc9e3fb8ad0f067be5ed878c2eacebd461b6ce
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/06/2020
-ms.locfileid: "80741439"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81743681"
 ---
 # <a name="tutorial-scale-apps-in-azure-app-service-using-ansible"></a>Esercitazione: Ridimensionare app nel servizio app di Azure tramite Ansible
 
-[!INCLUDE [ansible-27-note.md](../../includes/ansible-27-note.md)]
+[!INCLUDE [ansible-27-note.md](includes/ansible-27-note.md)]
 
-[!INCLUDE [open-source-devops-intro-app-service.md](../../includes/open-source-devops-intro-app-service.md)]
+[!INCLUDE [open-source-devops-intro-app-service.md](../includes/open-source-devops-intro-app-service.md)]
 
-[!INCLUDE [ansible-tutorial-goals.md](../../includes/ansible-tutorial-goals.md)]
+[!INCLUDE [ansible-tutorial-goals.md](includes/ansible-tutorial-goals.md)]
 
 > [!div class="checklist"]
 >
@@ -26,8 +26,8 @@ ms.locfileid: "80741439"
 
 ## <a name="prerequisites"></a>Prerequisiti
 
-[!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../../includes/open-source-devops-prereqs-azure-subscription.md)]
-[!INCLUDE [ansible-prereqs-cloudshell-use-or-vm-creation2.md](../../includes/ansible-prereqs-cloudshell-use-or-vm-creation2.md)]
+[!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
+[!INCLUDE [ansible-prereqs-cloudshell-use-or-vm-creation2.md](includes/ansible-prereqs-cloudshell-use-or-vm-creation2.md)]
 - **App di servizio app di Azure** - Se non è disponibile un'app del servizio app di Azure, [configurare un'app nel servizio app di Azure tramite Ansible](azure-web-apps-configure.md).
 
 ## <a name="scale-up-an-app"></a>Aumentare le prestazioni di un'app

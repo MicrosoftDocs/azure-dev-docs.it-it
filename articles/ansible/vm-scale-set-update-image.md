@@ -4,22 +4,22 @@ description: Informazioni su come usare Ansible per aggiornare i set di scalabil
 keywords: ansible, azure, devops, bash, playbook, macchina virtuale, set di scalabilità di macchine virtuali, vmss
 ms.topic: tutorial
 ms.date: 04/30/2019
-ms.openlocfilehash: a80df95b0977a4c93fc91a188ce4b69afda80169
-ms.sourcegitcommit: f89c59f772364ec717e751fb59105039e6fab60c
+ms.openlocfilehash: ae25012346c7d6fbc65c43fad6b3b228eedc9e7c
+ms.sourcegitcommit: eabc9e3fb8ad0f067be5ed878c2eacebd461b6ce
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/06/2020
-ms.locfileid: "80740959"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81743833"
 ---
 # <a name="tutorial-update-the-custom-image-of-azure-virtual-machine-scale-sets-using-ansible"></a>Esercitazione: Aggiornare l'immagine personalizzata di set di scalabilità di macchine virtuali di Azure tramite Ansible
 
-[!INCLUDE [ansible-27-note.md](../../includes/ansible-28-note.md)]
+[!INCLUDE [ansible-27-note.md](includes/ansible-28-note.md)]
 
-[!INCLUDE [open-source-devops-intro-vm-scale-set.md](../../includes/open-source-devops-intro-vm-scale-set.md)]
+[!INCLUDE [open-source-devops-intro-vm-scale-set.md](../includes/open-source-devops-intro-vm-scale-set.md)]
 
 Dopo averla distribuita, si configura la macchina virtuale con il software necessario per l'app. Invece di eseguire questa attività di configurazione per ogni macchina virtuale, è possibile creare un'immagine personalizzata. Un'immagine personalizzata è uno snapshot di una macchina virtuale esistente che include qualsiasi software installato. Quando si [configura un set di scalabilità](./vm-scale-set-configure.md), si specifica l'immagine da usare per le macchine virtuali del set di scalabilità. Usando un'immagine personalizzata, ogni istanza di macchina virtuale viene configurata in modo identico per l'app. In alcuni casi, potrebbe essere necessario aggiornare l'immagine personalizzata del set di scalabilità. Questa attività è l'obiettivo di questa esercitazione.
 
-[!INCLUDE [ansible-tutorial-goals.md](../../includes/ansible-tutorial-goals.md)]
+[!INCLUDE [ansible-tutorial-goals.md](includes/ansible-tutorial-goals.md)]
 
 > [!div class="checklist"]
 >
@@ -30,8 +30,8 @@ Dopo averla distribuita, si configura la macchina virtuale con il software neces
 
 ## <a name="prerequisites"></a>Prerequisiti
 
-[!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../../includes/open-source-devops-prereqs-azure-subscription.md)]
-[!INCLUDE [ansible-prereqs-cloudshell-use-or-vm-creation2.md](../../includes/ansible-prereqs-cloudshell-use-or-vm-creation2.md)]
+[!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
+[!INCLUDE [ansible-prereqs-cloudshell-use-or-vm-creation2.md](includes/ansible-prereqs-cloudshell-use-or-vm-creation2.md)]
 
 ## <a name="configure-two-vms"></a>Configurare due macchine virtuali
 

@@ -1,0 +1,235 @@
+### YamlMime:Tutorial
+title: Creare macchine virtuali con l'interfaccia della riga di comando di Azure
+metadata:
+  title: Creare macchine virtuali con l'interfaccia della riga di comando di Azure
+  description: Introduzione all'interfaccia della riga di comando di Azure tramite la creazione di macchine virtuali.
+  audience: Developer
+  level: Beginner
+  displayType: two-column
+  interactive: azurecli
+  ms.date: 07/09/2018
+  ms.author: dbradish
+  author: dbradish-microsoft
+  manager: barbkess
+  ms.devlang: azure-cli
+  ms.topic: tutorial
+  ms.prod: azure
+  ms.technology: azurecli
+  clicktale: true
+  ms.openlocfilehash: fb231b99b0f25760b84683d160a63e62c4f36276
+  ms.sourcegitcommit: 36e02e96b955ed0531f98b9c0f623f4acb508661
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 04/22/2020
+  ms.locfileid: "82030943"
+items:
+- durationInMinutes: 1
+  content: >-
+    In questa esercitazione si apprenderanno tutti i passaggi necessari per la configurazione di una macchina virtuale con l'interfaccia della riga di comando di Azure. L'esercitazione illustra anche le query di output, il riutilizzo delle risorse di Azure e la pulizia delle risorse.
+
+
+    Questa esercitazione può essere completata con l'esperienza interattiva disponibile tramite Azure Cloud Shell oppure è possibile [installare l'interfaccia della riga di comando](install-azure-cli.md) nell'ambiente locale.
+
+
+    Usare __CTRL+MAIUSC+V__ (__CMD+MAIUSC+V__ in macOS) per incollare il testo dell'esercitazione in Azure Cloud Shell.
+- durationInMinutes: 1
+  title: Accesso
+  content: "Se si usa un'installazione locale dell'interfaccia della riga di comando è necessario accedere prima di eseguire altri passaggi.\n\n```azurecli-interactive\naz login\n```\n\nCompletare il processo di autenticazione seguendo le istruzioni visualizzate nel terminale. "
+- durationInMinutes: 1
+  title: Creare un gruppo di risorse
+  content: >-
+    In Azure tutte le risorse vengono allocate in un gruppo di gestione delle risorse. I gruppi di risorse offrono raggruppamenti logici di risorse che ne rendono più semplice l'uso come raccolta. Per questa esercitazione, tutte le risorse create vengono inserite in un unico gruppo denominato `TutorialResources`.
+
+
+    ```azurecli
+
+    az group create --name TutorialResources --location eastus
+
+    ```
+- durationInMinutes: 4
+  title: Creare una macchina virtuale
+  content: "Le macchine virtuali in Azure hanno un numero elevato di dipendenze. L'interfaccia della riga di comando crea automaticamente tali risorse in base agli argomenti della riga di comando specificati.\n\nCreare una nuova macchina virtuale che esegue Ubuntu e usa l'autenticazione SSH per l'accesso.\n\n```azurecli-interactive\naz vm create --resource-group TutorialResources \\\n  --name TutorialVM1 \\\n  --image UbuntuLTS \\\n  --generate-ssh-keys \\\n  --output json \\\n  --verbose \n```\n\n> [!NOTE]\n> Se è già disponibile una chiave SSH denominata `id_rsa`, questa chiave viene usata per l'autenticazione e non ne viene generata una nuova.\n\nDurante la creazione della VM saranno visibili i valori locali usati e le risorse di Azure create per via dell'opzione `--verbose`.\nQuando la macchina virtuale è pronta, il servizio di Azure restituisce il codice JSON, incluso l'indirizzo IP pubblico.\n\n```json\n{\n  \"fqdns\": \"\",\n  \"id\": \"...\",\n  \"location\": \"eastus\",\n  \"macAddress\": \"...\",\n  \"powerState\": \"VM running\",\n  \"privateIpAddress\": \"...\",\n  \"publicIpAddress\": <PUBLIC_IP_ADDRESS>,\n  \"resourceGroup\": \"TutorialResources\",\n  \"zones\": \"\"\n}\n```\n\nVerificare che la VM sia in esecuzione connettendosi tramite SSH.\n\n```bash\nssh <PUBLIC_IP_ADDRESS>\n```\n\nDisconnettersi quindi dalla macchina virtuale.\n\nEsistono altri modi per ottenere questo indirizzo IP dopo l'avvio della macchina virtuale. La sezione successiva illustra come ottenere e filtrare informazioni dettagliate sulla macchina virtuale."
+- durationInMinutes: 3
+  title: Ottenere informazioni sulla VM con le query
+  content: "Ora che è stata creata, è possibile ottenere informazioni dettagliate sulla VM. Il comando comune per ottenere informazioni da una risorsa è `show`.\n\n```azurecli-interactive\naz vm show --name TutorialVM1 --resource-group TutorialResources\n```\n\nVerranno restituite numerose informazioni che possono essere difficili da analizzare visivamente. Il codice JSON restituito contiene informazioni su autenticazione, interfacce di rete, archiviazione e altro. Contiene soprattutto gli ID oggetto di Azure per le risorse alle quali è connessa la macchina virtuale. Gli ID oggetto consentono l'accesso diretto a queste risorse per ottenere altre informazioni sulla configurazione e le capacità della macchina virtuale. \n\nPer estrarre l'ID oggetto desiderato, viene usato l'argomento `--query`. Le query sono scritte nel [linguaggio di query JMESPath](http://jmespath.org). Iniziare ottenendo l'ID oggetto della scheda di interfaccia di rete.\n\n```azurecli-interactive\naz vm show --name TutorialVM1 \\\n  --resource-group TutorialResources \\\n  --query 'networkProfile.networkInterfaces[].id' \\\n  --output tsv\n```\n\nVengono visualizzate molte informazioni, semplicemente aggiungendo la query. Ogni parte della query fa riferimento a una chiave nell'output JSON oppure è un operatore JMESPath.\n\n* `networkProfile` è una chiave del valore JSON di primo livello, che ha `networkInterfaces` come sottochiave. Se un valore JSON è un dizionario, alle sue chiavi fa riferimento la chiave padre con l'operatore `.`.\n* Il valore `networkInterfaces` è una matrice, quindi viene reso flat con l'operatore `[]`. Questo operatore esegue il resto della query in ogni elemento della matrice. In questo caso ottiene il valore `id` di ogni elemento di matrice.\n\nIl formato di output `tsv` (valori delimitati da tabulazioni) include solo i dati dei risultati e spazi vuoti costituiti da tabulazioni e caratteri di nuova riga.\nPoiché il valore restituito è una singola stringa bare, è possibile assegnarlo direttamente a una variabile di ambiente.\n\nProcedere ora assegnando l'ID oggetto della scheda di interfaccia di rete a una variabile di ambiente.\n\n```bash\nNIC_ID=$(az vm show -n TutorialVM1 -g TutorialResources \\\n  --query 'networkProfile.networkInterfaces[].id' \\\n  -o tsv)\n```\n\nQuesto esempio illustra anche l'uso di argomenti brevi. È possibile usare `-g` al posto di `--resource-group`, `-n` al posto di `--name` e `-o` al posto di `--output`."
+- durationInMinutes: 4
+  title: Impostare le variabili di ambiente dall'output dell'interfaccia della riga di comando
+  content: >-
+    Ora che è disponibile l'ID della scheda di interfaccia di rete, eseguire `az network nic show` per ottenere le relative informazioni. Tenere presente che non è necessario un gruppo di risorse in questo caso, perché il nome del gruppo di risorse è contenuto nell'ID risorsa di Azure.
+
+
+    ```azurecli-interactive
+
+    az network nic show --ids $NIC_ID
+
+    ```
+
+
+
+    Questo comando mostra tutte le informazioni per la scheda di interfaccia di rete della macchina virtuale. Questi dati includono impostazioni DNS, informazioni IP, impostazioni di sicurezza e indirizzo MAC. Al momento l'obiettivo è ottenere l'indirizzo IP pubblico e gli ID oggetto della subnet.
+
+
+    ```azurecli-interactive
+
+    az network nic show --ids $NIC_ID \
+      --query '{IP:ipConfigurations[].publicIpAddress.id, Subnet:ipConfigurations[].subnet.id}' \
+      -o json
+    ```
+
+
+    ```json
+
+    {
+      "IP": [
+        "/subscriptions/.../resourceGroups/TutorialResources/providers/Microsoft.Network/publicIPAddresses/TutorialVM1PublicIP"
+      ],
+      "Subnet": [
+        "/subscriptions/.../resourceGroups/TutorialResources/providers/Microsoft.Network/virtualNetworks/TutorialVM1VNET/subnets/TutorialVM1Subnet"
+      ]
+    }
+
+    ```
+
+
+    Questo comando visualizza un oggetto JSON avente chiavi personalizzate ('IP' e 'Subnet') per i valori estratti. Questo stile di output potrebbe non essere utile per gli strumenti da riga di comando, ma consente di migliorare la leggibilità e può essere usato con script personalizzati.
+
+
+    Per usare gli strumenti da riga di comando, modificare il comando per rimuovere le chiavi JSON personalizzate e restituire un output in formato `tsv`. Questo stile di output può essere elaborato dal comando `read` della shell per caricare i risultati in più variabili. Poiché vengono visualizzati due valori in righe separate, il delimitatore del comando `read` deve essere impostato sulla stringa vuota, anziché sul valore predefinito di spazio vuoto non di nuova riga.
+
+
+    ```bash
+
+    read -d '' IP_ID SUBNET_ID <<< $(az network nic show \
+      --ids $NIC_ID \
+      --query '[ipConfigurations[].publicIpAddress.id, ipConfigurations[].subnet.id]' \
+      -o tsv)
+    ```
+
+
+    L'ID subnet non verrà usato subito, ma deve essere archiviato adesso per non dover eseguire un'altra ricerca in un secondo momento. Per il momento, usare l'ID oggetto IP pubblico per cercare l'indirizzo IP pubblico e archiviarlo in una variabile della shell.
+
+
+    ```bash
+
+    VM1_IP_ADDR=$(az network public-ip show --ids $IP_ID \
+      --query ipAddress \
+      -o tsv)
+    ```
+
+
+    Ora l'indirizzo IP della macchina virtuale è archiviato in una variabile della shell. Proseguire verificando che si tratti dello stesso valore usato inizialmente per connettersi alla VM.
+
+
+    ```bash
+
+    echo $VM1_IP_ADDR
+
+    ```
+- durationInMinutes: 2
+  title: Creazione di una nuova macchina virtuale nella subnet esistente
+  content: >-
+    La seconda VM usa la subnet esistente. È possibile ignorare alcuni passaggi per archiviare subito l'indirizzo IP pubblico della nuova macchina virtuale in una variabile di ambiente, dato che viene restituito nelle informazioni di creazione della VM. Se successivamente si rendono necessarie altre informazioni sulla macchina virtuale, è sempre possibile ottenerle con il comando `az vm show`.
+
+
+    ```bash
+
+    VM2_IP_ADDR=$(az vm create -g TutorialResources \
+      -n TutorialVM2 \
+      --image UbuntuLTS \
+      --generate-ssh-keys \
+      --subnet $SUBNET_ID \
+      --query publicIpAddress \
+      -o tsv)
+    ```
+
+
+    Usando l'indirizzo IP archiviato, usare SSH per connettersi alla macchina virtuale appena creata.
+
+
+    ```bash
+
+    ssh $VM2_IP_ADDR
+
+    ```
+
+
+    Disconnettersi quindi dalla macchina virtuale.
+- durationInMinutes: 2
+  title: Pulizia
+  content: >-
+    Ora che è stata completata l'esercitazione, eseguire la pulizia delle risorse create. È possibile eliminare le singole risorse con il comando `delete`, ma il modo più sicuro per rimuovere tutte le risorse in un gruppo di risorse è con `group delete`.
+
+
+    ```azurecli-interactive
+
+    az group delete --name TutorialResources --no-wait
+
+    ```
+
+
+    Questo comando elimina le risorse create durante l'esercitazione e le dealloca nell'ordine corretto. Il parametro `--no-wait` impedisce all'interfaccia della riga di comando di bloccarsi durante l'eliminazione. Se si vuole attendere il completamento dell'eliminazione o seguirne lo stato di avanzamento, usare il comando `group wait`.
+
+
+    ```azurecli-interactive
+
+    az group wait --name TutorialResources --deleted
+
+    ```
+
+
+    Dopo aver completato la pulizia, l'esercitazione è terminata. Proseguire con un riepilogo di tutte le nozioni apprese e i collegamenti a risorse utili per i passaggi successivi.
+- durationInMinutes: 1
+  title: Summary
+  content: >-
+    Congratulazioni! Si è appreso come creare macchine virtuali con risorse nuove o esistenti e come usare gli argomenti `--query` e `--output` per acquisire dati da archiviare nelle variabili shell. Sono state anche esaminate alcune delle risorse create per le macchine virtuali di Azure.
+
+
+    I passaggi successivi dipendono da ciò che si vuole ottenere usando l'interfaccia della riga di comando. Sono disponibili molti documenti che offrono maggiori dettagli sulle funzionalità descritte in questa esercitazione.
+
+
+    ### <a name="samples"></a>Esempi
+
+
+    Se si vuole iniziare subito con attività specifiche, esaminare alcuni script di esempio.
+
+
+    * Uso di [VM Linux](/azure/virtual-machines/linux/cli-samples?toc=%2fcli%2fazure%2ftoc.json) e [VM Windows](/azure/virtual-machines/windows/cli-samples?toc=%2fcli%2fazure%2ftoc.json)
+
+    * Uso di [app Web](/azure/app-service/app-service-cli-samples?toc=%2Fcli%2Fazure%2Ftoc.json) e [Funzioni di Azure](/azure/azure-functions/functions-cli-samples?toc=%2fcli%2fazure%2ftoc.json)
+
+    * Uso di database: [database SQL di Azure](/azure/sql-database/sql-database-cli-samples?toc=%2fcli%2fazure%2ftoc.json), [PostgreSQL](/azure/postgresql/sample-scripts-azure-cli?toc=%2fcli%2fazure%2ftoc.json), [MySQL](/azure/mysql/sample-scripts-azure-cli?toc=%2fcli%2fazure%2ftoc.json) e [CosmosDB](/azure/cosmos-db/cli-samples?toc=%2fcli%2fazure%2ftoc.json).
+
+
+    ### <a name="in-depth-cli-documentation"></a>Documentazione di approfondimento per l'interfaccia della riga di comando
+
+
+    Sono anche disponibili argomenti che approfondiscono le funzionalità dell'interfaccia della riga di comando descritte nell'esercitazione.
+
+
+    * Altre informazioni sui [formati di output](format-output-azure-cli.md)
+
+    * Altre informazioni sulle [query di output](query-azure-cli.md)
+
+    * Altre informazioni sull'[autorizzazione in Azure](authenticate-azure-cli.md)
+
+
+    ### <a name="other-useful-documentation"></a>Altra documentazione utile
+
+
+    È consigliabile esplorare funzionalità più avanzate dell'interfaccia della riga di comando, ad esempio la [configurazione di impostazioni predefinite](azure-cli-configuration.md) o le [estensioni](azure-cli-extensions-overview.md).
+
+
+    ### <a name="feedback"></a>Commenti e suggerimenti
+
+
+    Sono disponibili molti modi per inviare commenti, suggerimenti o domande sull'interfaccia della riga di comando.
+
+
+    * `az feedback` è un comando incorporato per l'interfaccia della riga di comando che consente di inviare commenti e suggerimenti in formato libero al team.
+
+    * Inviare una richiesta di funzionalità o un report sui bug con l'interfaccia della riga di comando nel [repository dell'interfaccia della riga di comando di Azure](https://github.com/Azure/azure-cli).
+
+    * Porre una domanda o ottenere chiarimenti inviando un problema nel [repository della documentazione dell'interfaccia della riga di comando di Azure](https://github.com/MicrosoftDocs/azure-docs-cli/issues).
+
+
+    Microsoft auspica che l'uso dell'interfaccia della riga di comando di Azure sia un'esperienza gradevole per l'utente.

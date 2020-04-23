@@ -4,20 +4,20 @@ description: Informazioni su come usare Ansible per la creazione e la configuraz
 keywords: ansible, azure, devops, bash, playbook, gateway applicazione, bilanciamento del carico, traffico Web
 ms.topic: tutorial
 ms.date: 04/30/2019
-ms.openlocfilehash: 7fa2a8574bfa3f4848df4cce29887ac2bbc67942
-ms.sourcegitcommit: f89c59f772364ec717e751fb59105039e6fab60c
+ms.openlocfilehash: 3ff9a43513a2ee34964e6e82447e3398469db8f8
+ms.sourcegitcommit: eabc9e3fb8ad0f067be5ed878c2eacebd461b6ce
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/06/2020
-ms.locfileid: "80741449"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81743717"
 ---
 # <a name="tutorial-manage-web-traffic-with-azure-application-gateway-using-ansible"></a>Esercitazione: Gestire il traffico Web con il gateway applicazione di Azure tramite Ansible
 
-[!INCLUDE [ansible-27-note.md](../../includes/ansible-27-note.md)]
+[!INCLUDE [ansible-27-note.md](includes/ansible-27-note.md)]
 
 Il [gateway applicazione di Azure](/azure/application-gateway/overview) è un servizio di bilanciamento del carico del traffico Web che consente di gestire il traffico verso le applicazioni Web. In base all'indirizzo IP e alla porta di origine, gli strumenti tradizionali di bilanciamento del carico instradano il traffico a un indirizzo IP e a una porta di destinazione. Il gateway applicazione offre un livello di controllo maggiore, consentendo di instradare il traffico in base all'URL. Ad esempio, è possibile stabilire che, se `images` è il percorso dell'URL, il traffico deve essere instradato a un set specifico di server (noto come pool) configurato per le immagini.
 
-[!INCLUDE [ansible-tutorial-goals.md](../../includes/ansible-tutorial-goals.md)]
+[!INCLUDE [ansible-tutorial-goals.md](includes/ansible-tutorial-goals.md)]
 
 > [!div class="checklist"]
 >
@@ -27,8 +27,8 @@ Il [gateway applicazione di Azure](/azure/application-gateway/overview) è un se
 
 ## <a name="prerequisites"></a>Prerequisiti
 
-[!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../../includes/open-source-devops-prereqs-azure-subscription.md)]
-[!INCLUDE [ansible-prereqs-cloudshell-use-or-vm-creation2.md](../../includes/ansible-prereqs-cloudshell-use-or-vm-creation2.md)]
+[!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
+[!INCLUDE [ansible-prereqs-cloudshell-use-or-vm-creation2.md](includes/ansible-prereqs-cloudshell-use-or-vm-creation2.md)]
 
 ## <a name="create-a-resource-group"></a>Creare un gruppo di risorse
 
