@@ -1,0 +1,45 @@
+- name: Documentazione degli strumenti di sviluppo di Azure per Java
+  href: index.yml
+  items:
+    - name: Panoramica
+      href: java-azure-tools.md
+    - name: Supporto di Java
+      expanded: true
+      items:
+        - name: Supporto a lungo termine di Java
+          href: java-jdk-long-term-support.md
+        - name: Installazione di Java JDK
+          href: java-jdk-install.md
+        - name: Immagini Docker Java per Azure
+          href: java-jdk-docker-images.md
+        - name: Java Flight Recorder e Mission Control
+          href: java-jdk-flight-recorder-and-mission-control.md
+        - name: Motivi per passare a Java 11
+          href: reasons-to-move-to-java-11.md
+        - name: Transizione da Java 8 a Java 11
+          href: transition-from-java-8-to-java-11.md
+    - name: Visual Studio Code
+      href: 'https://code.visualstudio.com/docs/languages/java'
+    - name: IntelliJ IDEA
+      href: /azure/developer/java/toolkit-for-intellij
+    - name: Eclipse
+      href: /azure/developer/java/toolkit-for-eclipse
+    - name: Plug-in Maven
+      expanded: true
+      href: /java/api/overview/azure/maven/README
+      items:
+        - name: Servizio app di Azure
+          href: /java/api/overview/azure/maven/azure-webapp-maven-plugin/readme
+        - name: Funzioni di Azure
+          href: /java/api/overview/azure/maven/azure-functions-maven-plugin/readme
+        - name: Azure Spring Cloud
+          href: /java/api/overview/azure/maven/azure-spring-cloud-maven-plugin/readme
+    - name: CI/CD con Jenkins
+      href: /azure/jenkins/
+    - name: Azure DevOps
+      href: /azure/devops/java/
+    - name: Esercitazioni
+      expanded: true
+      items:
+        - name: Monitoraggio e registrazione con Logz.io
+          href: java-get-started-with-logzio.md

@@ -39,6 +39,10 @@
       items:
         - name: Configurare i lab
           href: devtest-labs-configure.md
+    - name: Insieme di credenziali chiave di Azure
+      items:
+        - name: Configurare la sicurezza delle VM
+          href: key-vault-configure-vm-security.md
     - name: Servizio Azure Kubernetes
       items:
         - name: Configurare i cluster del servizio Azure Kubernetes

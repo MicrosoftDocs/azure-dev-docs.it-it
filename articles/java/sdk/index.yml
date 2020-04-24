@@ -1,0 +1,37 @@
+### YamlMime:Landing
+title: Documentazione di Azure SDK per Java
+summary: Sviluppo per il cloud con Java in Azure.
+metadata:
+  title: Documentazione di Azure SDK per Java
+  description: Sviluppo per il cloud con Java in Azure
+  ms.date: 04/03/2020
+  ms.topic: landing-page
+  ms.openlocfilehash: 2380696b801927bc842278b1b8604825feda0984
+  ms.sourcegitcommit: 0af39ee9ff27c37ceeeb28ea9d51e32995989591
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 04/21/2020
+  ms.locfileid: "81675147"
+landingContent:
+- title: Azure per sviluppatori cloud Java
+  linkLists:
+  - linkListType: get-started
+    links:
+    - text: Sviluppo di Azure con Java
+      url: java-sdk-azure-get-started.md
+  - linkListType: reference
+    links:
+    - text: Browser API Java
+      url: /java/api/?view=azure-java
+  - linkListType: how-to-guide
+    links:
+    - text: Aggiungere un certificato radice
+      url: java-sdk-add-certificate-ca-store.md
+    - text: Authenticate
+      url: java-sdk-azure-authenticate.md
+    - text: Configurare la registrazione
+      url: java-sdk-azure-log.md
+  - linkListType: learn
+    links:
+    - text: Modelli e procedure consigliate
+      url: java-sdk-azure-concepts.md

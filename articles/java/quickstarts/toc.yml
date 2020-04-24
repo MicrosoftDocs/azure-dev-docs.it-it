@@ -1,0 +1,25 @@
+- name: Guide di avvio rapido di Azure per Java
+  href: /azure/developer/java/quickstarts
+  items:
+    - name: Servizi di calcolo
+      href: compute.md
+    - name: Data
+      href: data.md
+    - name: Archiviazione
+      href: storage.md
+    - name: Memorizzazione nella cache
+      href: caching.md
+    - name: Gestione della configurazione e segreti
+      href: secrets-and-configuration-management.md
+    - name: Directory
+      href: directories.md
+    - name: Messaggistica e gestione eventi
+      href: messaging-and-eventing.md
+    - name: Rete
+      href: networking.md
+    - name: Monitoraggio
+      href: monitoring.md
+    - name: Servizi cognitivi
+      href: cognitive-services.md
+    - name: DevOps
+      href: devops.md

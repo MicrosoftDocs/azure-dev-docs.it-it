@@ -1,0 +1,67 @@
+### YamlMime:Landing
+title: Documentazione degli strumenti di sviluppo di Azure per Java
+summary: Strumenti, IDE e JDK supportati per lo sviluppo Java in Azure.
+metadata:
+  title: Documentazione sui concetti fondamentali di Java in Azure
+  description: Strumenti, IDE e JDK supportati per lo sviluppo Java in Azure
+  ms.date: 04/03/2020
+  ms.topic: landing-page
+  ms.openlocfilehash: d229e7b7964290c78c8ab963e7c70374043c40a8
+  ms.sourcegitcommit: 0af39ee9ff27c37ceeeb28ea9d51e32995989591
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 04/21/2020
+  ms.locfileid: "81675267"
+landingContent:
+- title: Strumenti per sviluppatori cloud Java
+  linkLists:
+  - linkListType: get-started
+    links:
+    - text: Panoramica degli strumenti
+      url: java-azure-tools.md
+- title: JDK supportati
+  linkLists:
+  - linkListType: get-started
+    links:
+    - text: Supporto a lungo termine di Java
+      url: java-jdk-long-term-support.md
+    - text: Installazione di Java JDK
+      url: java-jdk-install.md
+    - text: Immagini Docker Java per Azure
+      url: java-jdk-docker-images.md
+- title: IDE
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Visual Studio Code
+      url: https://code.visualstudio.com/docs/languages/java
+    - text: IntelliJ IDEA
+      url: /azure/developer/java/toolkit-for-intellij
+    - text: Eclipse
+      url: /azure/developer/java/toolkit-for-eclipse
+- title: Plug-in Maven
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Servizio app di Azure
+      url: /java/api/overview/azure/maven/azure-webapp-maven-plugin/readme
+    - text: Funzioni di Azure
+      url: /java/api/overview/azure/maven/azure-functions-maven-plugin/readme
+    - text: Azure Spring Cloud
+      url: /java/api/overview/azure/maven/azure-spring-cloud-maven-plugin/readme
+- title: Registrazione
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Configurare la registrazione con Azure SDK per Java
+      url: /azure/developer/java/sdk/java-sdk-azure-log
+    - text: Monitoraggio e registrazione con Logz.io
+      url: java-get-started-with-logzio.md
+- title: DevOps
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Azure DevOps
+      url: /azure/devops/java/
+    - text: CI/CD con Jenkins
+      url: /azure/jenkins/
