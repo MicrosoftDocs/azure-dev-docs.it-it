@@ -7,12 +7,12 @@ metadata:
   description: Esercitazioni e strumenti per sviluppatori Java per lo sviluppo di app per il cloud.
   ms.topic: hub-page
   ms.date: 04/08/2020
-  ms.openlocfilehash: c037f46cd3cc03c366ef9a904c4a9178eebc5a0a
-  ms.sourcegitcommit: 0af39ee9ff27c37ceeeb28ea9d51e32995989591
+  ms.openlocfilehash: d828acd15a58db94370c3f807bd51d8712ef1e2c
+  ms.sourcegitcommit: 36e02e96b955ed0531f98b9c0f623f4acb508661
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 04/21/2020
-  ms.locfileid: "81675227"
+  ms.lasthandoff: 04/22/2020
+  ms.locfileid: "82026184"
 conceptualContent:
   items:
   - title: Guide di avvio rapido di Azure per Java
@@ -20,7 +20,7 @@ conceptualContent:
     - text: Distribuire un'app Web Java SE in Linux
       itemType: quickstart
       url: /azure/developer/java/spring-framework/deploy-spring-boot-java-app-with-maven-plugin
-    - text: Creare e pubblicare una funzione serverless
+    - text: Creare una funzione serverless
       itemType: quickstart
       url: /azure/azure-functions/functions-create-first-java-maven
     - text: Gestire BLOB di archiviazione
@@ -82,6 +82,9 @@ conceptualContent:
     - text: Distribuire un'app Spring con MySQL
       itemType: tutorial
       url: /azure/developer/java/spring-framework/spring-app-service-e2e
+    footerLink:
+      text: Vedere la documentazione del Servizio app di Azure
+      url: /azure/app-service/containers/
   - title: Azure Spring Cloud
     links:
     - text: Cos'è Azure Spring Cloud?
@@ -121,6 +124,9 @@ conceptualContent:
     - text: Guida per sviluppatori
       itemType: reference
       url: /azure/azure-functions/functions-reference-java
+    footerLink:
+      text: Vedere la documentazione di Funzioni di Azure
+      url: /azure/azure-functions
   - title: Monitoraggio delle app Java
     links:
     - text: Introduzione ad Application Insights
@@ -132,17 +138,23 @@ conceptualContent:
     - text: Monitorare app Spring
       itemType: how-to-guide
       url: /azure/spring-cloud/diagnostic-services
+    footerLink:
+      text: Vedere la documentazione di Monitoraggio di Azure
+      url: /azure/azure-monitor
   - title: Protezione delle app Java
     links:
-    - text: Abilitare l'autenticazione e l'autorizzazione degli utenti finali
+    - text: Abilitare l'autenticazione dell'utente finale
       itemType: quickstart
       url: /azure/active-directory/develop/quickstart-v2-java-webapp
-    - text: Usare Microsoft Authentication Library
+    - text: Microsoft Authentication Library
       itemType: how-to-guide
       url: /azure/active-directory/develop/migrate-adal-msal-java
     - text: Gestire i segreti delle app
       itemType: quickstart
       url: /azure/key-vault/quick-create-java
+    footerLink:
+      text: Vedere la documentazione di Active Directory
+      url: /azure/active-directory
 tools:
   title: Strumenti
   items:
