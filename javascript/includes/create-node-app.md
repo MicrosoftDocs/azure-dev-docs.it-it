@@ -4,16 +4,16 @@ ms.service: app-service
 ms.topic: include
 ms.date: 03/31/2020
 ms.author: buhollan
-ms.openlocfilehash: 59eea52aab3f2b1941a3accb5848bc4ad92d2992
-ms.sourcegitcommit: f89c59f772364ec717e751fb59105039e6fab60c
+ms.openlocfilehash: 6cb841a9cf9563c3b7b3db86d907eac757c5d31d
+ms.sourcegitcommit: 36e02e96b955ed0531f98b9c0f623f4acb508661
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/06/2020
-ms.locfileid: "80740507"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "82072666"
 ---
-1. In un terminale o un prompt dei comandi passare alla posizione in cui creare la cartella dell'app.
+1. In un prompt dei comandi del terminale passare alla posizione in cui creare la cartella dell'app.
 
-1. Eseguire il comando seguente per creare una nuova app Express denominata *myexpressapp* usando il generatore Express. I parametri `--git --view pug` indicano al generatore di creare un file con estensione *gitignore* e di usare il motore modello [pug](https://pugjs.org/api/getting-started.html), noto in precedenza come Jade.
+1. Eseguire il comando seguente per creare una nuova app Express denominata `myexpressapp` usando il generatore Express. I parametri `--git --view pug` indicano al generatore di creare un file con estensione gitignore e di usare il motore di modelli [Pug](https://pugjs.org/api/getting-started.html), noto in precedenza come Jade.
 
     ```bash
     npx express-generator myexpressapp --git --view pug
@@ -37,8 +37,9 @@ ms.locfileid: "80740507"
     npm start
     ```
 
-1. Testare l'app aprendo un browser all'indirizzo [http://localhost:3000](http://localhost:3000). Il sito dovrebbe essere simile al seguente:
+1. Testare l'app aprendo un browser all'indirizzo [http://localhost:3000](http://localhost:3000). Ecco come dovrà essere il sito:
 
     ![Esecuzione dell'applicazione Express](../media/deploy-azure/express.png)
 
 1. Premere **CTRL**+**C** nel terminale per arrestare il server.
+ 

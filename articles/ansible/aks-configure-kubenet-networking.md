@@ -3,19 +3,20 @@ title: Esercitazione - Configurare funzionalità di rete di kubenet nel servizio
 description: Informazioni su come usare Ansible per configurare funzionalità di rete kubenet nel cluster del servizio Azure Kubernetes
 keywords: ansible, azure, devops, bash, cloudshell, playbook, servizio Azure Kubernetes, contenitore, servizio Azure Kubernetes, kubernetes
 ms.topic: tutorial
+ms.custom: fasttrack-edit
 ms.date: 10/23/2019
-ms.openlocfilehash: 1f15710de9ab6f2d058b72096f0265541c131d9f
-ms.sourcegitcommit: f89c59f772364ec717e751fb59105039e6fab60c
+ms.openlocfilehash: 7d1dc7b381c02c84b2da89c5c90d822e86a3cd1b
+ms.sourcegitcommit: 36e02e96b955ed0531f98b9c0f623f4acb508661
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/06/2020
-ms.locfileid: "80741689"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "82026124"
 ---
 # <a name="tutorial-configure-kubenet-networking-in-azure-kubernetes-service-aks-using-ansible"></a>Esercitazione: Configurare funzionalità di rete di kubenet nel servizio Azure Kubernetes con Ansible
 
-[!INCLUDE [ansible-28-note.md](../../includes/ansible-28-note.md)]
+[!INCLUDE [ansible-28-note.md](includes/ansible-28-note.md)]
 
-[!INCLUDE [open-source-devops-intro-aks.md](../../includes/open-source-devops-intro-aks.md)]
+[!INCLUDE [open-source-devops-intro-aks.md](../includes/open-source-devops-intro-aks.md)]
 
 Usando il servizio Azure Kubernetes è possibile distribuire un cluster che usa uno dei modelli di rete seguenti:
 
@@ -24,7 +25,7 @@ Usando il servizio Azure Kubernetes è possibile distribuire un cluster che usa 
 
 Per altre informazioni sulle funzionalità di rete per le applicazioni nel servizio Azure Kubernetes, vedere [Concetti relativi alla rete per le applicazioni nel servizio Azure Kubernetes](/azure/aks/concepts-network).
 
-[!INCLUDE [ansible-tutorial-goals.md](../../includes/ansible-tutorial-goals.md)]
+[!INCLUDE [ansible-tutorial-goals.md](includes/ansible-tutorial-goals.md)]
 
 > [!div class="checklist"]
 >
@@ -33,9 +34,9 @@ Per altre informazioni sulle funzionalità di rete per le applicazioni nel servi
 
 ## <a name="prerequisites"></a>Prerequisiti
 
-[!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../../includes/open-source-devops-prereqs-azure-subscription.md)]
-[!INCLUDE [open-source-devops-prereqs-create-service-principal.md](../../includes/open-source-devops-prereqs-create-service-principal.md)]
-[!INCLUDE [ansible-prereqs-cloudshell-use-or-vm-creation2.md](../../includes/ansible-prereqs-cloudshell-use-or-vm-creation2.md)]
+[!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
+[!INCLUDE [open-source-devops-prereqs-create-service-principal.md](../includes/open-source-devops-prereqs-create-service-principal.md)]
+[!INCLUDE [ansible-prereqs-cloudshell-use-or-vm-creation2.md](includes/ansible-prereqs-cloudshell-use-or-vm-creation2.md)]
 
 ## <a name="create-a-virtual-network-and-subnet"></a>Creare una rete virtuale e una subnet
 
@@ -106,9 +107,9 @@ Quando si usa il playbook di esempio, è necessario tenere conto di alcuni conce
 - Usare il modulo `azure_rm_aks_version` per trovare la versione supportata.
 - `vnet_subnet_id` è la subnet creata nella sezione precedente.
 - `network_profile` definisce le proprietà del plug-in di rete kubenet.
-- `service_cidr` consente di assegnare i servizi interni nel cluster del servizio Azure Kubernetes a un indirizzo IP. Questo intervallo di indirizzi IP deve essere uno spazio indirizzi non in uso in qualsiasi altra posizione nella rete. 
+- `service_cidr` consente di assegnare i servizi interni nel cluster del servizio Azure Kubernetes a un indirizzo IP. Questo intervallo di indirizzi IP deve essere uno spazio indirizzi non in uso al di fuori dei cluster del servizio Azure Kubernetes. Tuttavia, è possibile riutilizzare lo stesso CIDR del servizio per più cluster del servizio Azure Kubernetes. 
 - L'indirizzo `dns_service_ip` deve essere l'indirizzo ".10" dell'intervallo di indirizzi IP del servizio.
-- `pod_cidr` deve essere uno spazio indirizzi ampio non in uso in qualsiasi altra posizione nell'ambiente di rete. L'intervallo di indirizzi deve essere abbastanza ampio da contenere il numero di nodi in base a cui si prevede di aumentare le dimensioni. Non è possibile cambiare questo intervallo di indirizzi dopo la distribuzione del cluster.
+- `pod_cidr` deve essere uno spazio indirizzi ampio non in uso in qualsiasi altra posizione nell'ambiente di rete. L'intervallo di indirizzi deve essere abbastanza ampio da contenere il numero di nodi in base a cui si prevede di aumentare le dimensioni. Non è possibile cambiare questo intervallo di indirizzi dopo la distribuzione del cluster. Come per il CIDR del servizio, questo intervallo di indirizzi IP non deve esistere all'esterno del cluster del servizio Azure Kubernetes, ma può essere tranquillamente riutilizzato tra cluster.
 - L'intervallo di indirizzi IP dei pod viene usato per assegnare uno spazio indirizzi /24 a ogni nodo del cluster. Nell'esempio seguente l'intervallo `pod_cidr` 192.168.0.0/16 assegna al primo nodo 192.168.0.0/24, al secondo nodo 192.168.1.0/24 e al terzo nodo 192.168.2.0/24.
 - Quando il cluster viene ridimensionato o aggiornato, Azure continua ad assegnare un intervallo di indirizzi IP dei pod a ogni nuovo nodo.
 - Il playbook carica `ssh_key` da `~/.ssh/id_rsa.pub`. Per modificare, usare il formato a riga singola che inizia con "ssh-rsa" (senza virgolette).
