@@ -6,12 +6,12 @@ ms.date: 02/01/2018
 ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
-ms.openlocfilehash: 1a223c858874566c2fbfe7b02faec99179cd1e72
-ms.sourcegitcommit: 0af39ee9ff27c37ceeeb28ea9d51e32995989591
+ms.openlocfilehash: 762ac74b73a274e792ed19ac8ca7c2b68d98e778
+ms.sourcegitcommit: 3c69d7c3e5c5a00a01ee18e63b0659830c7d4ec0
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81670527"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82105072"
 ---
 # <a name="manage-storage-accounts-by-using-the-azure-explorer-for-intellij"></a>Gestire gli account di archiviazione usando Azure Explorer per IntelliJ
 
@@ -107,7 +107,7 @@ Per altre informazioni sugli account di archiviazione, sulle dimensioni e sui pr
 <!-- URL List -->
 
 [Istruzioni di accesso per Azure Toolkit for IntelliJ]: ./sign-in-instructions.md
-[Introduzione ad Archiviazione di Microsoft Azure]: /azure/storage/storage-introduction
+[Introduzione ad Archiviazione di Microsoft Azure]: /azure/storage/common/storage-introduction
 [Informazioni sugli account di archiviazione di Azure]: /azure/storage/storage-create-storage-account
 [Replica di Archiviazione di Azure]: /azure/storage/storage-redundancy
 [Obiettivi di scalabilità e prestazioni per Archiviazione di Azure]: /azure/storage/storage-scalability-targets

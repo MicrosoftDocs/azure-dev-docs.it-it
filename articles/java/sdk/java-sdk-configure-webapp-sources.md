@@ -5,12 +5,12 @@ author: rloutlaw
 ms.assetid: 833e9c78-1e50-4c23-a611-f73a2f0c2983
 ms.topic: article
 ms.date: 03/30/2017
-ms.openlocfilehash: c4cd83a0ac2507718966c550b1f0f1f9cfec2f46
-ms.sourcegitcommit: 0af39ee9ff27c37ceeeb28ea9d51e32995989591
+ms.openlocfilehash: c6fcf68e5ac4509744a618fab8b80f09ce24f052
+ms.sourcegitcommit: 3c69d7c3e5c5a00a01ee18e63b0659830c7d4ec0
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81674147"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82105022"
 ---
 # <a name="configure-azure-app-service-deployment-sources-from-your-java-applications"></a>Configurare le origini distribuzione di Servizio app di Azure dalle applicazioni Java
 
@@ -18,7 +18,7 @@ ms.locfileid: "81674147"
 
 ## <a name="run-the-sample"></a>Eseguire l'esempio
 
-Creare un [file di autenticazione](https://github.com/Azure/azure-sdk-for-java/blob/master/AUTH.md) e impostare una variabile di ambiente `AZURE_AUTH_LOCATION` con il percorso completo del file nel computer. Eseguire quindi:
+Creare un [file di autenticazione](https://docs.microsoft.com/azure/java/java-sdk-azure-authenticate#mgmt-file) e impostare una variabile di ambiente `AZURE_AUTH_LOCATION` con il percorso completo del file nel computer. Eseguire quindi:
 
 ```
 git clone https://github.com/Azure-Samples/app-service-java-configure-deployment-sources-for-web-apps.git

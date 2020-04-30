@@ -3,12 +3,12 @@ title: Distribuire un sito Web Node.js statico in Azure da Visual Studio Code
 description: Parte 1 dell'esercitazione, introduzione e prerequisiti.
 ms.topic: conceptual
 ms.date: 09/23/2019
-ms.openlocfilehash: 4795d3a80be1ffa7516f64fa5563d4960f58a31b
-ms.sourcegitcommit: 36e02e96b955ed0531f98b9c0f623f4acb508661
+ms.openlocfilehash: c63ff76f3572a7815b385b08b05e223eb681fbbe
+ms.sourcegitcommit: e6cdb0ce11a8272195a0072c7c91cc9b7e89b0b6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "82026164"
+ms.lasthandoff: 04/24/2020
+ms.locfileid: "82138767"
 ---
 # <a name="deploy-a-static-website-to-azure-from-visual-studio-code"></a>Distribuire un sito Web statico in Azure da Visual Studio Code
 
@@ -30,7 +30,7 @@ Guardare questo video per una procedura dettagliata completa del contenuto di qu
 - L'[estensione Archiviazione di Azure](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurestorage).
 - [Node.js e npm](https://nodejs.org/en/download), la gestione pacchetti Node.js. Questo requisito serve solo per generare un progetto di esempio. Non è necessario installare Node.js se si ha già il codice di un'app.
 
-> <a class="tutorial-install-extension-btn" href="vscode:extension/ms-azuretools.vscode-azurestorage">Installare l'estensione Archiviazione di Azure</a>
+> <a class="tutorial-install-extension-btn" href="https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurestorage">Installare l'estensione Archiviazione di Azure</a>
 
 ### <a name="azure-subscription"></a>Sottoscrizione di Azure
 

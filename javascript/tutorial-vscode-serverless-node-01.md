@@ -3,12 +3,12 @@ title: Distribuire Funzioni di Azure in Node.js da Visual Studio Code
 description: Parte 1 dell'esercitazione, introduzione e prerequisiti.
 ms.topic: conceptual
 ms.date: 09/23/2019
-ms.openlocfilehash: 915ab0cb07fe6f4cf74d812c022d5e0e9d266177
-ms.sourcegitcommit: 1bd9ec6a4115e9162e33b76a933869788e6ab702
+ms.openlocfilehash: 23eff2eb672b7221ed74fc8085515647392d8525
+ms.sourcegitcommit: e6cdb0ce11a8272195a0072c7c91cc9b7e89b0b6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/31/2020
-ms.locfileid: "80439163"
+ms.lasthandoff: 04/24/2020
+ms.locfileid: "82138777"
 ---
 # <a name="deploy-azure-functions-from-visual-studio-code"></a>Distribuire Funzioni di Azure da Visual Studio Code
 
@@ -24,10 +24,10 @@ Guardare questo video per una procedura dettagliata completa del contenuto di qu
 
 - Una [sottoscrizione di Azure](#azure-subscription).
 - [Visual Studio Code](https://code.visualstudio.com/).
-- L'[estensione Funzioni di Azure](vscode:extension/ms-azuretools.vscode-azurefunctions)
+- L'[estensione Funzioni di Azure](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions)
 - [Node.js e npm](https://nodejs.org/en/download), la gestione pacchetti Node.js.
 
-> <a class="tutorial-install-extension-btn" href="vscode:extension/ms-azuretools.vscode-azurefunctions">Installare l'estensione Funzioni di Azure</a>
+> <a class="tutorial-install-extension-btn" href="https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions">Installare l'estensione Funzioni di Azure</a>
 
 ### <a name="azure-subscription"></a>Sottoscrizione di Azure
 

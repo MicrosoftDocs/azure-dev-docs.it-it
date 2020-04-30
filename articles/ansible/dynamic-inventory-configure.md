@@ -4,12 +4,12 @@ description: Informazioni su come usare Ansible per gestire gli inventari dinami
 keywords: ansible, azure, devops, bash, cloud shell, inventario dinamico
 ms.topic: tutorial
 ms.date: 10/23/2019
-ms.openlocfilehash: 31966012fb5178fe76a6eadfbd9830a5cc17ebe2
-ms.sourcegitcommit: eabc9e3fb8ad0f067be5ed878c2eacebd461b6ce
+ms.openlocfilehash: c777ee18663507b6e8d658a7ba027d99f9645cc9
+ms.sourcegitcommit: 3c69d7c3e5c5a00a01ee18e63b0659830c7d4ec0
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "81743383"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82104692"
 ---
 # <a name="tutorial-configure-dynamic-inventories-of-your-azure-resources-using-ansible"></a>Esercitazione: Configurare gli inventari dinamici delle risorse di Azure tramite Ansible
 
@@ -87,7 +87,7 @@ Dopo avere definito (e contrassegnato) le macchine virtuali, è necessario gener
 
 ### <a name="using-ansible-version--28"></a>Uso di Ansible versione < 2.8
 
-Ansible fornisce uno script Python denominato [azure_rm. py](https://github.com/ansible/ansible/blob/devel/contrib/inventory/azure_rm.py) che consente di generare un inventario dinamico delle risorse di Azure. La procedura seguente descrive l'uso dello script `azure_rm.py` per connettersi alle due macchine virtuali di Azure di test:
+Ansible fornisce uno script Python denominato [azure_rm. py](https://github.com/ansible/ansible/blob/stable-2.9/contrib/inventory/azure_rm.py) che consente di generare un inventario dinamico delle risorse di Azure. La procedura seguente descrive l'uso dello script `azure_rm.py` per connettersi alle due macchine virtuali di Azure di test:
 
 1. Usare il comando `wget` GNU per recuperare lo script `azure_rm.py`:
 
@@ -124,7 +124,7 @@ Ansible fornisce uno script Python denominato [azure_rm. py](https://github.com/
 
 ### <a name="ansible-version--28"></a>Ansible versione > = 2.8
 
-A partire da Ansible 2.8, Ansible include un [plug-in per inventari dinamici di Azure](https://github.com/ansible/ansible/blob/devel/lib/ansible/plugins/inventory/azure_rm.py). La procedura seguente illustra come usare il plug-in:
+A partire da Ansible 2.8, Ansible include un [plug-in per inventari dinamici di Azure](https://github.com/ansible/ansible/blob/stable-2.9/lib/ansible/plugins/inventory/azure_rm.py). La procedura seguente illustra come usare il plug-in:
 
 1. Il plug-in per l'inventario richiede un file di configurazione. Il file di configurazione deve terminare con `azure_rm` e avere l'estensione `yml` o `yaml`. Per l'esempio in questa esercitazione, salvare il playbook seguente come `myazure_rm.yml`:
 

@@ -11,12 +11,12 @@ ms.service: active-directory-b2c
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: identity
-ms.openlocfilehash: dde59a631f225fb5fbaecf30d91503428ebb8064
-ms.sourcegitcommit: 0af39ee9ff27c37ceeeb28ea9d51e32995989591
+ms.openlocfilehash: 71bc7e2e7677ce3f53c70bd68e5e73765070bd06
+ms.sourcegitcommit: 3c69d7c3e5c5a00a01ee18e63b0659830c7d4ec0
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81671907"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82104862"
 ---
 # <a name="tutorial-secure-a-java-web-app-using-the-spring-boot-starter-for-azure-active-directory-b2c"></a>Esercitazione: Proteggere un'app Web Java con Spring Boot Starter per Azure Active Directory B2C.
 
@@ -258,7 +258,7 @@ I prerequisiti seguenti sono necessari per completare le procedure disponibili i
    mvn spring-boot:run
    ```
 
-3. Al termine della compilazione e dell'avvio dell'applicazione tramite Maven, aprire <http://localhost:8080/> in un Web browser. Si dovrebbe essere reindirizzati alla pagina di accesso.
+3. Al termine della compilazione e dell'avvio dell'applicazione tramite Maven, aprire `http://localhost:8080/` in un Web browser. Si dovrebbe essere reindirizzati alla pagina di accesso.
 
    ![Pagina di accesso](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/lo1-n.png)
 

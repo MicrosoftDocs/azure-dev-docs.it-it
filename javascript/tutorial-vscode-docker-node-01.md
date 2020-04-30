@@ -3,12 +3,12 @@ title: Distribuire contenitori Docker nel Servizio app di Azure da Visual Studio
 description: Parte 1 dell'esercitazione, introduzione e prerequisiti.
 ms.topic: conceptual
 ms.date: 09/20/2019
-ms.openlocfilehash: 1a14010d362ed3858d319a141fd24e5ea1b0e714
-ms.sourcegitcommit: f89c59f772364ec717e751fb59105039e6fab60c
+ms.openlocfilehash: bd4110bbbef5e5f65f76cd9329b194646431f91a
+ms.sourcegitcommit: e6cdb0ce11a8272195a0072c7c91cc9b7e89b0b6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/06/2020
-ms.locfileid: "80740574"
+ms.lasthandoff: 04/24/2020
+ms.locfileid: "82138792"
 ---
 # <a name="deploy-containers-to-azure-app-service"></a>Distribuire contenitori nel servizio app di Azure
 
@@ -24,14 +24,14 @@ Guardare questo video per una procedura dettagliata completa del contenuto di qu
 
 - Una [sottoscrizione di Azure](#azure-subscription).
 - [Visual Studio Code](https://code.visualstudio.com/).
-- L'[estensione Docker](vscode:extension/ms-azuretools.vscode-docker).
-- L'[estensione Servizio app di Azure](vscode:extension/ms-azuretools.vscode-azureappservice).
+- L'[estensione Docker](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker).
+- L'[estensione Servizio app di Azure](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azureappservice).
 - [Node.js e npm](https://nodejs.org/en/download), la gestione pacchetti Node.js.
 - [Docker](https://www.docker.com/community-edition).
 
-> <a class="tutorial-install-extension-btn" href="vscode:extension/ms-azuretools.vscode-docker">Installare l'estensione Docker</a>
+> <a class="tutorial-install-extension-btn" href="https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker">Installare l'estensione Docker</a>
 
-> <a class="tutorial-install-extension-btn" href="vscode:extension/ms-azuretools.vscode-azureappservice">Installare l'estensione Servizio app di Azure</a>
+> <a class="tutorial-install-extension-btn" href="https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azureappservice">Installare l'estensione Servizio app di Azure</a>
 
 ### <a name="azure-subscription"></a>Sottoscrizione di Azure
 

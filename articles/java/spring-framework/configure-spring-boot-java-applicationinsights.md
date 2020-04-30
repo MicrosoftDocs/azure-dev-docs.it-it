@@ -9,12 +9,12 @@ ms.date: 11/29/2019
 ms.service: azure-monitor
 ms.tgt_pltfrm: application-insights
 ms.topic: article
-ms.openlocfilehash: 4002ca79f2473026582bedea8f2b9a84cf3b15c4
-ms.sourcegitcommit: 0af39ee9ff27c37ceeeb28ea9d51e32995989591
+ms.openlocfilehash: 85da0b92bbc5780e923fc447c66e5a0d2518e737
+ms.sourcegitcommit: 3c69d7c3e5c5a00a01ee18e63b0659830c7d4ec0
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81668297"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82104822"
 ---
 # <a name="configure-a-spring-boot-initializer-app-to-use-application-insights"></a>Configurare un'app Spring Boot Initializer per l'uso di Application Insights
 
@@ -168,7 +168,7 @@ Configurare l'applicazione usando la procedura seguente.
    mvn spring-boot:run
    ```
 
-1. Testare l'app Web passando a http://localhost:8080/sample/hello con un Web browser oppure usare una sintassi simile all'esempio seguente, se è disponibile **curl**:
+1. Testare l'app Web passando a `http://localhost:8080/sample/hello` con un Web browser oppure usare una sintassi simile all'esempio seguente, se è disponibile **curl**:
 
    ```shell
    curl http://localhost:8080/sample/hello

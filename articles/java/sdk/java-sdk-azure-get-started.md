@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: multiple
 ms.assetid: b1e10b79-f75e-4605-aecd-eed64873e2d3
 ms.custom: seo-java-august2019
-ms.openlocfilehash: 1a165468f024b375f9bf60f77c7f1ca8e7ea5b31
-ms.sourcegitcommit: 0af39ee9ff27c37ceeeb28ea9d51e32995989591
+ms.openlocfilehash: c03e458f9a91d13a3ed1c375e0b6cb0fefe15a3d
+ms.sourcegitcommit: 3c69d7c3e5c5a00a01ee18e63b0659830c7d4ec0
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81673997"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82105212"
 ---
 # <a name="get-started-with-cloud-development-using-java-on-azure"></a>Introduzione allo sviluppo per il cloud con Java in Azure
 
@@ -382,7 +382,7 @@ az group delete --name sampleSqlResourceGroup
 
 ## <a name="write-a-blob-into-a-new-storage-account"></a>Scrivere un BLOB in un nuovo account di archiviazione
 
-Sostituire il metodo principale corrente in `AzureApp.java` con il codice seguente. Questo codice crea un [account di archiviazione di Azure](/azure/storage/storage-introduction) e quindi usa le librerie di archiviazione di Azure per Java per creare un nuovo file di testo nel cloud.
+Sostituire il metodo principale corrente in `AzureApp.java` con il codice seguente. Questo codice crea un [account di archiviazione di Azure](/azure/storage/common/storage-introduction) e quindi usa le librerie di archiviazione di Azure per Java per creare un nuovo file di testo nel cloud.
 
 ```java
 public static void main(String[] args) {
