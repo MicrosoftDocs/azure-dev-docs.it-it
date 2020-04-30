@@ -8,12 +8,12 @@ ms.date: 06/11/2018
 ms.topic: conceptual
 ms.service: azure-cli
 ms.devlang: azurecli
-ms.openlocfilehash: ff5f9f5a5add52bc05009a42aeb00855eb2703fa
-ms.sourcegitcommit: 36e02e96b955ed0531f98b9c0f623f4acb508661
+ms.openlocfilehash: fd37b633100d92a4126910a3fb9e8ad25b11423c
+ms.sourcegitcommit: 858b061ed9ac883821a0485054b8076e2e719821
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "82030843"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82209784"
 ---
 # <a name="azure-cli-configuration"></a>Configurazione dell'interfaccia della riga di comando di Azure
 
@@ -86,7 +86,7 @@ Quando si specifica un valore predefinito, questo argomento non è più richiest
 |---------|-----------|------|------------|
 | __core__ | output | string | Formato di output predefinito. Può essere uno di `json`, `jsonc`, `tsv` o `table`. |
 | | disable\_confirm\_prompt | boolean | Consente di attivare o disattivare i prompt di conferma. |
-| | collect\_telemetry | boolean | Consente a Microsoft di raccogliere dati anonimi sull'utilizzo dell'interfaccia della riga di comando. Per informazioni sulla privacy, vedere le [Condizioni d'uso dell'interfaccia della riga di comando di Azure](https://aka.ms/AzureCliLegal). |
+| | collect\_telemetry | boolean | Consente a Microsoft di raccogliere dati anonimi sull'utilizzo dell'interfaccia della riga di comando. Per informazioni sulla privacy, vedere le [Condizioni d'uso dell'interfaccia della riga di comando di Azure](https://github.com/Azure/azure-cli/blob/dev/LICENSE). |
 | __logging__ | enable\_log\_file | boolean | Consente di attivare o disattivare la registrazione. |
 | | log\_dir | string | Directory in cui scrivere i log. Per impostazione predefinita, questo valore è `${AZURE_CONFIG_DIR}/logs`. |
 | __storage__ | connection\_string | string | Stringa di connessione predefinita da usare per i comandi `az storage`. |

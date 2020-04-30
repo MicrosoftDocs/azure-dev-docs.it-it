@@ -6,12 +6,12 @@ ms.date: 02/01/2018
 ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
-ms.openlocfilehash: 227a997c8b1268444f6165e800279410d0085953
-ms.sourcegitcommit: 0af39ee9ff27c37ceeeb28ea9d51e32995989591
+ms.openlocfilehash: 131cc95ce3b927ffc26ea7b08367b65dd434c0e4
+ms.sourcegitcommit: 858b061ed9ac883821a0485054b8076e2e719821
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81675097"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82209764"
 ---
 # <a name="manage-storage-accounts-by-using-the-azure-explorer-for-eclipse"></a>Gestire gli account di archiviazione con Azure Explorer per Eclipse
 
@@ -25,7 +25,7 @@ Incluso nel Toolkit di Azure per Eclipse, Azure Explorer offre agli sviluppatori
 
 Per creare un account di archiviazione con Azure Explorer, eseguire queste operazioni:
 
-1. Accedere al proprio account Azure seguendo le [Istruzioni di accesso ad Azure per il Toolkit di Azure per Eclipse](/azure/developer/java/eclipse/sign-in-instructions).
+1. Accedere al proprio account Azure seguendo le [Istruzioni di accesso ad Azure per il Toolkit di Azure per Eclipse](/azure/developer/java/toolkit-for-eclipse/sign-in-instructions).
 
 1. Nella visualizzazione **Azure Explorer** espandere il nodo **Azure**, fare clic con il pulsante destro del mouse su **Account di archiviazione** e quindi fare clic su **Crea account di archiviazione**.
 
@@ -106,7 +106,7 @@ Per altre informazioni sugli account di archiviazione, sulle dimensioni e sui pr
 
 <!-- URL List -->
 
-[Introduzione ad Archiviazione di Microsoft Azure]: /azure/storage/storage-introduction
+[Introduzione ad Archiviazione di Microsoft Azure]: /azure/storage/common/storage-introduction
 [Informazioni sugli account di archiviazione di Azure]: /azure/storage/storage-create-storage-account
 [Replica di Archiviazione di Azure]: /azure/storage/storage-redundancy
 [Obiettivi di scalabilità e prestazioni per Archiviazione di Azure]: /azure/storage/storage-scalability-targets

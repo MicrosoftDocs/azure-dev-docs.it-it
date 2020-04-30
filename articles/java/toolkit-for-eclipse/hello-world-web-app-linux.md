@@ -8,12 +8,12 @@ ms.date: 12/20/2018
 ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
-ms.openlocfilehash: c6ee9137d94c5cb840d93cdc2c6e2375bbefd1e3
-ms.sourcegitcommit: 0af39ee9ff27c37ceeeb28ea9d51e32995989591
+ms.openlocfilehash: 9048fe69be5f12b19b547e275fd801733849a87f
+ms.sourcegitcommit: 858b061ed9ac883821a0485054b8076e2e719821
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81670947"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82209824"
 ---
 # <a name="deploy-a-hello-world-web-app-to-a-linux-container-in-the-cloud-using-the-azure-toolkit-for-eclipse"></a>Distribuire un'app Web Hello World in un contenitore Linux nel cloud con Azure Toolkit for Eclipse
 
@@ -33,7 +33,7 @@ Questo articolo illustra i passaggi necessari per creare un'app Web Hello World 
 
 ## <a name="create-a-new-web-app-project"></a>Creare un nuovo progetto di app Web
 
-1. Avviare Eclipse e accedere al proprio account Azure usando la procedura descritta nelle [istruzioni di accesso per Azure Toolkit for Eclipse](/azure/developer/java/eclipse/sign-in-instructions).
+1. Avviare Eclipse e accedere al proprio account Azure usando la procedura descritta nelle [istruzioni di accesso per Azure Toolkit for Eclipse](/azure/developer/java/toolkit-for-eclipse/sign-in-instructions).
 
 1. Fare clic sul menu **File**, quindi su **New** (Nuovo) e infine su **Dynamic Web Project** (Progetto Web dinamico).
    
