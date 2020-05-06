@@ -103,7 +103,7 @@
       href: 'https://github.com/microsoft/ansiblelabs'
     - name: Esempi di playbook di Ansible Azure
       href: 'https://github.com/Azure-Samples/ansible-playbooks'
-- name: Informazioni di riferimento
+- name: Riferimento
   items:
     - name: Ruoli dei playbook
       items:

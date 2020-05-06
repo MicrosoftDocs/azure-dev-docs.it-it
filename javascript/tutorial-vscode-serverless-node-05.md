@@ -4,10 +4,10 @@ description: Parte 5 dell'esercitazione, pulire le risorse.
 ms.topic: conceptual
 ms.date: 09/23/2019
 ms.openlocfilehash: ab20f86fd01aaac65c44afd0901c62f61a6ce119
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.sourcegitcommit: 756e4873f904db954a56c20ebb2f1f5116ee4596
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/25/2019
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "74466516"
 ---
 # <a name="clean-up-resources"></a>Pulire le risorse

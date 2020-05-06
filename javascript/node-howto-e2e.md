@@ -5,10 +5,10 @@ ms.topic: article
 ms.date: 06/25/2017
 ms.custom: seo-javascript-september2019, seo-javascript-october2019
 ms.openlocfilehash: b8841e5259a49b45db1f526330e0238d1bd0d050
-ms.sourcegitcommit: 6fa28ea675ae17ffb9ac825415e2e26a3dfe7107
+ms.sourcegitcommit: 756e4873f904db954a56c20ebb2f1f5116ee4596
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/04/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "77002522"
 ---
 # <a name="develop-and-deploy-a-containerized-nodejs-app-with-visual-studio-code-and-azure"></a>Sviluppare e distribuire un'app Node.js in contenitore con Visual Studio Code e Azure
@@ -17,7 +17,7 @@ Questa esercitazione illustra la creazione di un contenitore Docker da un'app No
 
 L'esercitazione usa una semplice app Todo creata e pubblicata da [Scotch.io](https://scotch.io/tutorials/creating-a-single-page-todo-app-with-node-and-angular). Si tratta di un'app MEAN a singola pagina e quindi usa MongoDB come database, Node/Express per il server Web/API REST e Angular.js 1. x per l'interfaccia front-end. 
 
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>Prerequisiti
 
 Per seguire la demo è necessario avere installato il software seguente:
 
@@ -497,7 +497,7 @@ Oltre ad aumentare le prestazioni per le macchine virtuali, finché l'app Web è
 az appservice plan update -n nina-demo-plan --number-of-workers 2
 ```
 
-Quando si aumenta il numero di istanze di un'app Web come questa, il carico del traffico in ingresso viene bilanciato in modo trasparente tra tutte le istanze, aumentando così immediatamente la capacità senza modifiche al codice e senza preoccuparsi dell'infrastruttura necessaria.
+Quando si aumenta il numero di istanze di un'app Web come questa, il carico del traffico in ingresso viene bilanciato in modo trasparente tra tutte le istanze, incrementando così immediatamente la capacità senza modifiche al codice e senza preoccuparsi dell'infrastruttura necessaria.
 
 Le app Web senza stato sono considerate procedure consigliate perché rendono la scalabilità (aumento o riduzione delle prestazioni e aumento del numero di istanze) interamente deterministica, dato che nessuna macchina virtuale o istanza dell'app include uno stato necessario per il funzionamento.
 

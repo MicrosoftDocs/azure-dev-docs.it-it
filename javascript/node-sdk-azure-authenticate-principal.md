@@ -4,10 +4,10 @@ description: Informazioni su come usare l'autenticazione basata su entità servi
 ms.topic: article
 ms.date: 06/17/2017
 ms.openlocfilehash: 1a85d185d6272a72b0f8029822b01174f9a043ce
-ms.sourcegitcommit: 5c65d22b5203b0c17806463d349a6ede93a99fa0
+ms.sourcegitcommit: 756e4873f904db954a56c20ebb2f1f5116ee4596
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/12/2019
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "75010578"
 ---
 # <a name="create-an-azure-service-principal-with-nodejs"></a>Creare un'entità servizio di Azure con Node.js 

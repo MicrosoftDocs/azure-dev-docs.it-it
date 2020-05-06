@@ -21,7 +21,7 @@
           href: 'https://github.com/azure-samples/microprofile-hello-azure'
         - name: Origine di MicroProfile Config per Azure Key Vault
           href: 'https://github.com/Azure-Samples/microprofile-configsource-keyvault'
-    - name: Informazioni di riferimento
+    - name: Riferimento
       expanded: true
       items:
         - name: Eclipse MicroProfile

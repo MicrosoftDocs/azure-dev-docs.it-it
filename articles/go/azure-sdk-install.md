@@ -4,10 +4,10 @@ description: Come installare, eseguire il vendoring e configurare Azure SDK per 
 ms.date: 03/14/2018
 ms.topic: conceptual
 ms.openlocfilehash: 55b841101f2307e869a57193ce6d678f298b8e6e
-ms.sourcegitcommit: 31f6d047f244f1e447faed6d503afcbc529bd28c
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/26/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "80319798"
 ---
 # <a name="install-the-azure-sdk-for-go"></a>Installare Azure SDK per Go
