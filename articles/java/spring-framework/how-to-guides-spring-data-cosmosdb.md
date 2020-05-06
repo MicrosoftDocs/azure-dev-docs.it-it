@@ -6,10 +6,10 @@ ms.author: kuthapar
 ms.topic: conceptual
 ms.date: 1/9/2019
 ms.openlocfilehash: 838fb4efa79f5d3ef8a97977a0d239a809e2506d
-ms.sourcegitcommit: 0af39ee9ff27c37ceeeb28ea9d51e32995989591
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/21/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "81674287"
 ---
 # <a name="spring-data-azure-cosmos-db-developers-guide"></a>Guida per sviluppatori di Spring Data Azure Cosmos DB
@@ -30,7 +30,7 @@ Le sezioni seguenti descrivono le funzionalità attualmente disponibili.
 
 ### <a name="crudrepository-and-reactivecrudrepository-support"></a>Supporto di CrudRepository e ReactiveCrudRepository
 
-Spring Data Cosmos DB SDK include le interfacce `CosmosRepository` e `ReactiveCosmosRepository`, che estendono le interfacce `ReactiveCrudRepository` e `CrudRepository` di Spring Data.
+Spring Data Cosmos DB SDK include le interfacce `CosmosRepository` e `ReactiveCosmosRepository`, che estendono le interfacce `CrudRepository` e `ReactiveCrudRepository` di Spring Data.
 
 L'esempio seguente illustra come estendere queste interfacce.
 

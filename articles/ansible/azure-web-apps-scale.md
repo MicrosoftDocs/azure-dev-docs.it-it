@@ -5,10 +5,10 @@ keywords: ansible, azure, devops, bash, playbook, servizio app di Azure, app Web
 ms.topic: tutorial
 ms.date: 04/30/2019
 ms.openlocfilehash: beb9009fa02742ce39b15da9be60895acfbcd3cc
-ms.sourcegitcommit: eabc9e3fb8ad0f067be5ed878c2eacebd461b6ce
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/22/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "81743681"
 ---
 # <a name="tutorial-scale-apps-in-azure-app-service-using-ansible"></a>Esercitazione: Ridimensionare app nel servizio app di Azure tramite Ansible

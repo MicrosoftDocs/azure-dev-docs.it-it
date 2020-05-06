@@ -5,10 +5,10 @@ ms.topic: article
 ms.date: 11/07/2017
 ms.custom: seo-javascript-september2019, seo-javascript-october2019
 ms.openlocfilehash: 690ae9375a8ac8d929d610bde4e306061cd1ff8e
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/25/2019
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "74466835"
 ---
 # <a name="azure-tools-for-javascript-developers"></a>Strumenti di Azure per sviluppatori JavaScript
@@ -33,7 +33,7 @@ Modificare ed eseguire il debug delle app JavaScript in qualsiasi sistema operat
 ### <a name="azure-extensions"></a>Estensioni di Azure
 Per interagire con i servizi di Azure direttamente in Visual Studio Code, usare le estensioni gratuite seguenti.
 
-| Strumento | DESCRIZIONE  |
+| Strumento | Descrizione  |
 |:---------:|---------|
 | [Funzioni di Azure](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions) <br> [![Strumenti: Funzioni di Azure](media/node-azure-tools/icon-azure-functions.png)](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions) | Creare, gestire, visualizzare e distribuire funzioni ed eseguirne il debug|
 | [Servizio app di Azure](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azureappservice) <br> [![Strumenti: Servizio app](media/node-azure-tools/icon-azure-app-service.png)](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azureappservice) | Esplorare siti e il portale di Azure, creare nuovi siti ed eseguire la distribuzione in slot |

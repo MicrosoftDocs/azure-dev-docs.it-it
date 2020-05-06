@@ -5,10 +5,10 @@ ms.topic: article
 ms.date: 08/20/2019
 ms.custom: seo-javascript-september2019, seo-javascript-october2019
 ms.openlocfilehash: e7cb374b645738140ead924296ef7cef9b1b61d7
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/25/2019
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "74467236"
 ---
 # <a name="deploy-nodejs-web-apps-to-azure-app-service"></a>Distribuire app Web Node.js nel Servizio app di Azure

@@ -4,10 +4,10 @@ description: Parte 1 dell'esercitazione, introduzione e prerequisiti.
 ms.topic: conceptual
 ms.date: 09/23/2019
 ms.openlocfilehash: c63ff76f3572a7815b385b08b05e223eb681fbbe
-ms.sourcegitcommit: e6cdb0ce11a8272195a0072c7c91cc9b7e89b0b6
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/24/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "82138767"
 ---
 # <a name="deploy-a-static-website-to-azure-from-visual-studio-code"></a>Distribuire un sito Web statico in Azure da Visual Studio Code
@@ -23,7 +23,7 @@ Guardare questo video per una procedura dettagliata completa del contenuto di qu
 > [!NOTE]
 > Se si ha codice di server personalizzato, come un'app Node.js/Express, seguire in alternativa l'[esercitazione sul Servizio app](tutorial-vscode-azure-app-service-node-01.md).
 
-## <a name="prerequisites"></a>Prerequisiti
+## <a name="prerequisites"></a>Prerequisites
 
 - Una [sottoscrizione di Azure](#azure-subscription).
 - [Visual Studio Code](https://code.visualstudio.com/).

@@ -9,12 +9,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
 ms.custom: mvc
-ms.openlocfilehash: 5e6204d773ee8e140832361ad587e850e36b75f6
-ms.sourcegitcommit: 0af39ee9ff27c37ceeeb28ea9d51e32995989591
+ms.openlocfilehash: 570b33614f32ef80e11ddf9d2c6774513248416e
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81668817"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82166678"
 ---
 # <a name="deploy-a-spring-boot-application-to-linux-on-azure-app-service"></a>Distribuire un'applicazione Spring Boot in Linux nel Servizio app di Azure
 
@@ -97,15 +97,11 @@ La procedura seguente illustra come usare il portale di Azure per creare un'ista
 
    ![Creare una nuova istanza di Registro Azure Container][AR01]
 
-1. Quando viene visualizzata la pagina **Crea registro contenitori**, immettere **Nome del registro**, **Sottoscrizione**, **Gruppo di risorse** e **Percorso**. Selezionare **Abilita** per **Utente amministratore**. Fare quindi clic su **Crea**.
+1. Quando viene visualizzata la pagina **Crea registro contenitori**, immettere **Nome del registro**, **Sottoscrizione**, **Gruppo di risorse** e **Percorso**. Fare quindi clic su **Crea**.
 
    ![Configurare le impostazioni di Registro Azure Container][AR03]
 
-1. Dopo avere creato il registro contenitori, passare al registro contenitori stesso nel portale di Azure e fare clic su **Chiavi di accesso**. Prendere nota del nome utente e della password per i passaggi successivi.
-
-   ![Chiavi di accesso a Registro Azure Container][AR04]
-
-## <a name="configure-maven-to-use-your-azure-container-registry-access-keys"></a>Configurare Maven per l'uso delle chiavi di accesso di Registro Azure Container
+## <a name="configure-maven-to-build-image-to-your-azure-container-registry"></a>Configurare Maven per la creazione di immagini in Registro Azure Container
 
 1. Passare alla directory del progetto completato per l'applicazione Spring Boot (ad esempio "*C:\SpringBoot\gs-spring-boot-docker\complete*" o " */users/robert/SpringBoot/gs-spring-boot-docker/complete*") e aprire il file *pom.xml* con un editor di testo.
 
@@ -113,37 +109,29 @@ La procedura seguente illustra come usare il portale di Azure per creare un'ista
 
    ```xml
    <properties>
-      <jib-maven-plugin.version>1.7.0</jib-maven-plugin.version>
+      <jib-maven-plugin.version>2.2.0</jib-maven-plugin.version>
       <docker.image.prefix>wingtiptoysregistry.azurecr.io</docker.image.prefix>
       <java.version>1.8</java.version>
-      <username>wingtiptoysregistry</username>
-      <password>{put your Azure Container Registry access key here}</password>
    </properties>
    ```
 
-1. Aggiungere [jib-maven-plugin](https://github.com/GoogleContainerTools/jib/tree/master/jib-maven-plugin) alla raccolta `<plugins>` nel file *pom.xml*.  Questo esempio usa la versione 1.8.0.
+1. Aggiungere [jib-maven-plugin](https://github.com/GoogleContainerTools/jib/tree/master/jib-maven-plugin) alla raccolta `<plugins>` nel file *pom.xml*.  Questo esempio usa la versione 2.2.0.
 
    Specificare l'immagine di base in `<from>/<image>`, qui `mcr.microsoft.com/java/jre:8-zulu-alpine`. Specificare il nome dell'immagine finale da creare dalla base in `<to>/<image>`.  
 
    Il valore `{docker.image.prefix}` dell'autenticazione è il **Server di accesso** nella pagina del registro visualizzata in precedenza. Il valore `{project.artifactId}` indica il nome e il numero di versione del file JAR dalla prima compilazione Maven del progetto.
 
-   Specificare il nome utente e la password dal riquadro del registro nel nodo `<to>/<auth>`. Ad esempio:
-
    ```xml
    <plugin>
      <artifactId>jib-maven-plugin</artifactId>
      <groupId>com.google.cloud.tools</groupId>
-     <version>1.8.0</version>
+     <version>${jib-maven-plugin.version}</version>
      <configuration>
         <from>
             <image>mcr.microsoft.com/java/jre:8-zulu-alpine</image>
         </from>
         <to>
             <image>${docker.image.prefix}/${project.artifactId}</image>
-            <auth>
-               <username>${username}</username>
-               <password>${password}</password>
-            </auth>
         </to>
      </configuration>
    </plugin>
@@ -152,12 +140,12 @@ La procedura seguente illustra come usare il portale di Azure per creare un'ista
 1. Passare alla directory del progetto completato per l'applicazione Spring Boot ed eseguire il comando seguente per ricompilare l'applicazione ed effettuare il push del contenitore in Registro Azure Container:
 
    ```bash
-   mvn compile jib:build
+   az acr login -n wingtiptoysregistry && mvn compile jib:build
    ```
 
 > [!NOTE]
->
-> Quando si usa Jib per eseguire il push dell'immagine nel Registro Azure Container, l'immagine non userà *Dockerfile*. Per i dettagli, vedere [questo](https://cloudplatform.googleblog.com/2018/07/introducing-jib-build-java-docker-images-better.html) documento.
+> 1. Il comando `az acr login ...` proverà ad accedere a Registro Azure Container, altrimenti sarà necessario specificare `<username>` e `<password>` per jib-maven-plugin. Vedere [Metodi di autenticazione](https://github.com/GoogleContainerTools/jib/tree/master/jib-maven-plugin#authentication-methods) in jib.
+> 2. Quando si usa Jib per eseguire il push dell'immagine nel Registro Azure Container, l'immagine non userà *Dockerfile*. Per i dettagli, vedere [questo](https://cloudplatform.googleblog.com/2018/07/introducing-jib-build-java-docker-images-better.html) documento.
 >
 
 ## <a name="create-a-web-app-on-linux-on-azure-app-service-using-your-container-image"></a>Creare un'app Web in Linux nel servizio app di Azure usando l'immagine del contenitore
@@ -300,7 +288,6 @@ Per altri esempi sull'uso delle immagini personalizzate di Docker con Azure, ved
 [SB02]: media/deploy-spring-boot-java-app-on-linux/SB02.png
 [AR01]: media/deploy-spring-boot-java-app-on-linux/AR01.png
 [AR03]: media/deploy-spring-boot-java-app-on-linux/AR03.png
-[AR04]: media/deploy-spring-boot-java-app-on-linux/AR04.png
 [LX01]: media/deploy-spring-boot-java-app-on-linux/LX01.png
 [LX02]: media/deploy-spring-boot-java-app-on-linux/LX02.png
 [LX02-A]: media/deploy-spring-boot-java-app-on-linux/LX02-A.png

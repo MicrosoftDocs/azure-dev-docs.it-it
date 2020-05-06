@@ -9,10 +9,10 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.openlocfilehash: 9048fe69be5f12b19b547e275fd801733849a87f
-ms.sourcegitcommit: 858b061ed9ac883821a0485054b8076e2e719821
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "82209824"
 ---
 # <a name="deploy-a-hello-world-web-app-to-a-linux-container-in-the-cloud-using-the-azure-toolkit-for-eclipse"></a>Distribuire un'app Web Hello World in un contenitore Linux nel cloud con Azure Toolkit for Eclipse

@@ -5,10 +5,10 @@ keywords: ansible, azure, devops, bash, playbook, macchina virtuale, set di scal
 ms.topic: tutorial
 ms.date: 10/14/2019
 ms.openlocfilehash: cd66899b5d5f37bc056d251a68117456062c16cf
-ms.sourcegitcommit: eabc9e3fb8ad0f067be5ed878c2eacebd461b6ce
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/22/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "81743256"
 ---
 # <a name="tutorial-create-a-vm-or-virtual-machine-scale-set-from-the-azure-shared-image-gallery-using-ansible"></a>Esercitazione: Creare una VM o un set di scalabilità di macchine virtuali dalla Raccolta immagini condivise di Azure con Ansible

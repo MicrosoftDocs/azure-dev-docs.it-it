@@ -7,10 +7,10 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.openlocfilehash: accae3c9ab06eebe295aa745c62c4eff542d02d4
-ms.sourcegitcommit: 0af39ee9ff27c37ceeeb28ea9d51e32995989591
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/21/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "81674547"
 ---
 # <a name="sign-in-instructions-for-the-azure-toolkit-for-eclipse"></a>Istruzioni di accesso per Azure Toolkit for Eclipse
