@@ -10,7 +10,7 @@
       items:
         - name: Distribuire un'app Web in un contenitore Linux
           href: hello-world-web-app-linux.md
-    - name: Procedure
+    - name: Procedura
       expanded: true
       items:
         - name: Accedere con l'account Azure

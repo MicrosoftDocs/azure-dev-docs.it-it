@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.service: azure-cli
 ms.devlang: azurecli
 ms.openlocfilehash: 9a98da54f397c1fd03a7cc6b581a769afe84ef88
-ms.sourcegitcommit: 36e02e96b955ed0531f98b9c0f623f4acb508661
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/22/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "82031073"
 ---
 # <a name="install-azure-cli-on-linux-manually"></a>Installare manualmente l'interfaccia della riga di comando di Azure in Linux
@@ -24,7 +24,7 @@ Se non è disponibile un pacchetto per l'interfaccia della riga di comando di Az
 > [!NOTE]
 > Si consiglia vivamente di installare l'interfaccia della riga di comando con una gestione pacchetti. Uno strumento di gestione pacchetti consente di ottenere sempre gli aggiornamenti più recenti e garantisce la stabilità dei componenti dell'interfaccia della riga di comando. Verificare se esiste un pacchetto per la distribuzione prima di eseguire l'installazione manuale.
 
-## <a name="prerequisites"></a>Prerequisiti
+## <a name="prerequisites"></a>Prerequisites
 
 L'interfaccia della riga di comando richiede il software seguente:
 
@@ -52,7 +52,7 @@ Lo script può anche essere scaricato ed eseguito nell'ambiente locale. Potrebbe
 
 Per altre informazioni sui diversi metodi di autenticazione, vedere [Accedere con l'interfaccia della riga di comando di Azure](authenticate-azure-cli.md).
 
-## <a name="troubleshooting"></a>Risoluzione dei problemi
+## <a name="troubleshooting"></a>risoluzione dei problemi
 
 Di seguito sono riportati alcuni problemi comuni che possono verificarsi durante l'installazione manuale. Se si verifica un problema non trattato in questo articolo, [segnalarlo in GitHub](https://github.com/Azure/azure-cli/issues).
 

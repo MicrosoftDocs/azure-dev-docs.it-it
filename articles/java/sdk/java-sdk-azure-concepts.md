@@ -9,10 +9,10 @@ ms.service: multiple
 ms.assetid: f452468b-7aae-4944-abad-0b1aaf19170d
 ms.custom: seo-java-july2019, seo-java-september2019
 ms.openlocfilehash: 202b34a6b64d75e814a4fb586a44e471a9a9f118
-ms.sourcegitcommit: 0af39ee9ff27c37ceeeb28ea9d51e32995989591
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/21/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "81673917"
 ---
 # <a name="patterns-and-best-practices-for-development-with-the-azure-libraries-for-java"></a>Modelli e procedure consigliate per lo sviluppo con le librerie di Azure per Java 
@@ -80,7 +80,7 @@ I metodi i cui nomi includono verbi consentono di eseguire azioni immediate in A
 |--------|---------------|
 | create | `azure.virtualMachines().create(listOfVMCreatables)` |
 | apply  | `virtualMachineScaleSet.update().withCapacity(6).apply()` |
-| eliminare | `azure.disks().deleteById(id)` | 
+| delete | `azure.disks().deleteById(id)` | 
 | list   | `azure.sqlServers().list()` | 
 | get    | `VirtualMachine vm  = azure.virtualMachines().getByResourceGroup(group, vmName)` |
 

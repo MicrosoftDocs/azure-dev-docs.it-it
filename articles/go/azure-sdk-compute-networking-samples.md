@@ -4,10 +4,10 @@ description: Esempi selezionati per lavorare con risorse di calcolo come macchin
 ms.date: 09/05/2018
 ms.topic: sample
 ms.openlocfilehash: b53faed0735050e7a23de8aab17f2ee8beaf105c
-ms.sourcegitcommit: 3c69d7c3e5c5a00a01ee18e63b0659830c7d4ec0
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/23/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "82105052"
 ---
 # <a name="azure-sdk-for-go-samples-for-compute-and-networking"></a>Esempi di Azure SDK per Go per il calcolo e la rete

@@ -3,7 +3,7 @@
   items:
     - name: Introduzione
       href: create-hello-world-web-app.md
-    - name: Procedure
+    - name: Procedura
       expanded: true
       items:
         - name: Installare il toolkit

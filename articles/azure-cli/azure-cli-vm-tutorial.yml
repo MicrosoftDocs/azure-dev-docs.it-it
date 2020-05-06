@@ -17,10 +17,10 @@ metadata:
   ms.technology: azurecli
   clicktale: true
   ms.openlocfilehash: fb231b99b0f25760b84683d160a63e62c4f36276
-  ms.sourcegitcommit: 36e02e96b955ed0531f98b9c0f623f4acb508661
+  ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 04/22/2020
+  ms.lasthandoff: 05/05/2020
   ms.locfileid: "82030943"
 items:
 - durationInMinutes: 1

@@ -4,12 +4,12 @@ description: Parte 2 dell'esercitazione, creare l'app di esempio
 ms.topic: conceptual
 ms.date: 09/24/2019
 ms.author: buhollan
-ms.openlocfilehash: 69c0e7d6f43829546e5f23ec63a4ac35b71d7e78
-ms.sourcegitcommit: 44d1abfb836f90b8731d7ea5d5a5af09245b2b89
+ms.openlocfilehash: 81593d61126b34f002513deb02d9bf634a7e9dd6
+ms.sourcegitcommit: 756e4873f904db954a56c20ebb2f1f5116ee4596
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/17/2020
-ms.locfileid: "77422525"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82105132"
 ---
 # <a name="create-the-app"></a>Creare l'app
 
@@ -42,7 +42,7 @@ In questo passaggio si usa l'interfaccia della riga di comando di [Angular](http
     npm start
     ```
 
-1. Aprire un browser all'indirizzo [http://localhost:4200](http://localhost:4200) per verificare se l'app è in esecuzione:
+1. Aprire un browser all'indirizzo `http://localhost:4200` per verificare se l'app è in esecuzione:
 
     ![App Angular di esempio in esecuzione](media/static-website/local-app-angular.png)
 
@@ -71,7 +71,7 @@ In questo passaggio si usa l'interfaccia della riga di comando di [Angular](http
     npm start
     ```
 
-1. Aprire un browser all'indirizzo [http://localhost:3000](http://localhost:3000) per verificare se l'app è in esecuzione:
+1. Aprire un browser all'indirizzo `http://localhost:3000` per verificare se l'app è in esecuzione:
 
     ![L'app React di esempio in esecuzione](media/static-website/local-app-react.png)
 
@@ -102,7 +102,7 @@ Quando l'interfaccia della riga di comando visualizza domande relative alla conf
      npm run serve
      ```
 
-1. Aprire un browser all'indirizzo [http://localhost:8080](http://localhost:8080) per verificare se l'app è in esecuzione:
+1. Aprire un browser all'indirizzo `http://localhost:8080` per verificare se l'app è in esecuzione:
 
     ![App Vue di esempio in esecuzione](media/static-website/local-app-vue.png)
 
@@ -137,7 +137,7 @@ Quando l'interfaccia della riga di comando visualizza domande relative alla conf
      npm run dev
      ```
 
-1. Aprire un browser all'indirizzo [http://localhost:5000](http://localhost:5000) per verificare se l'app è in esecuzione:
+1. Aprire un browser all'indirizzo `http://localhost:5000` per verificare se l'app è in esecuzione:
 
     ![App Vue di esempio in esecuzione](media/static-website/local-app-svelte.png)
 

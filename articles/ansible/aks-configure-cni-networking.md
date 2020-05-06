@@ -5,10 +5,10 @@ keywords: ansible, azure, devops, bash, cloudshell, playbook, servizio Azure Kub
 ms.topic: tutorial
 ms.date: 04/30/2019
 ms.openlocfilehash: 6be7056a89b0ac0327ffc5ba39b77c31c23bb0fe
-ms.sourcegitcommit: eabc9e3fb8ad0f067be5ed878c2eacebd461b6ce
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/22/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "81743903"
 ---
 # <a name="tutorial-configure-azure-cni-networking-in-azure-kubernetes-service-aks-using-ansible"></a>Esercitazione: Configurare funzionalità di rete di Azure CNI nel servizio Azure Kubernetes usando Ansible

@@ -8,12 +8,12 @@ ms.service: active-directory
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: identity
-ms.openlocfilehash: 655e536d1194370fb0ade4fbd6b06da9f36201fd
-ms.sourcegitcommit: 0af39ee9ff27c37ceeeb28ea9d51e32995989591
+ms.openlocfilehash: ff89152b5cbcd8c0abeff74ce75c4ba21528613e
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81671347"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82138822"
 ---
 # <a name="tutorial-secure-a-java-web-app-using-the-spring-boot-starter-for-azure-active-directory"></a>Esercitazione: Proteggere un'app Web Java con l'utilità di avvio Spring Boot per Azure Active Directory
 
@@ -65,9 +65,9 @@ I prerequisiti seguenti sono necessari per completare le procedure disponibili i
 
 1. Immettere il **Nome organizzazione** e il **Nome di dominio iniziale**. Copiare l'URL completo della directory. L'URL verrà usato per aggiungere account utente più avanti in questa esercitazione, ad esempio: `wingtiptoysdirectory.onmicrosoft.com`. 
 
-Copiare l'URL completo della directory. L'URL verrà usato per aggiungere account utente più avanti in questa esercitazione, Ad esempio: wingtiptoysdirectory.onmicrosoft.com.
+    Copiare l'URL completo della directory. L'URL verrà usato per aggiungere account utente più avanti in questa esercitazione, Ad esempio: wingtiptoysdirectory.onmicrosoft.com.
 
-Al termine, fare clic su **Crea**. La creazione della nuova risorsa richiederà alcuni minuti.
+    Al termine, fare clic su **Crea**. La creazione della nuova risorsa richiederà alcuni minuti.
 
    ![Specificare i nomi di Azure Active Directory][create-directory-02]
 
@@ -95,7 +95,7 @@ Al termine, fare clic su **Crea**. La creazione della nuova risorsa richiederà 
 
 1. Fare clic su **Certificati e segreti** nel riquadro di spostamento sinistro.  Quindi fare clic su **Nuovo segreto client**.
 
-   ![Creare le chiavi della registrazione per l'app][create-app-registration-03.5]
+   ![Creare le chiavi della registrazione per l'app][create-app-registration-03-5]
 
 1. Aggiungere una **Descrizione** e selezionare durata nell'elenco **Scade**.  Scegliere **Aggiungi**. Il valore della chiave verrà compilato automaticamente.
 
@@ -103,11 +103,11 @@ Al termine, fare clic su **Crea**. La creazione della nuova risorsa richiederà 
 
 1. Copiare e salvare il valore del segreto client per configurare il file *application.properties* più avanti in questa esercitazione. Non sarà possibile recuperare questo valore in un secondo momento.
 
-   ![Specificare i parametri della chiave di registrazione per l'app][create-app-registration-04.5]
+   ![Specificare i parametri della chiave di registrazione per l'app][create-app-registration-04-5]
 
 1. Fare clic su **Autorizzazioni API** nel riquadro di spostamento sinistro. 
 
-1. Nella pagina **Autorizzazioni API** fare clic su **Fornisci il consenso amministratore** e quindi su **Sì** quando richiesto.
+1. Fare clic su **Microsoft Graph**, quindi selezionare **Accede alla directory come utente registrato** e **Accedi e leggi il profilo di un altro utente**. Fare clic su **Concedi autorizzazioni** e quindi su **Sì** quando richiesto.
 
    ![Concedere le autorizzazioni di accesso][create-app-registration-08]
 
@@ -377,9 +377,9 @@ Per altre informazioni su Spring e Azure, passare al centro di documentazione di
 [create-app-registration-01]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/create-app-registration-01.png
 [create-app-registration-02]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/create-app-registration-02.png
 [create-app-registration-03]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/create-app-registration-03.png
-[create-app-registration-03.5]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/create-app-registration-03.5.png
+[create-app-registration-03-5]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/create-app-registration-03-5.png
 [create-app-registration-04]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/create-app-registration-04.png
-[create-app-registration-04.5]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/create-app-registration-04.5.png
+[create-app-registration-04-5]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/create-app-registration-04-5.png
 [create-app-registration-05]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/create-app-registration-05.png
 [create-app-registration-06]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/create-app-registration-06.png
 [create-app-registration-07]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/create-app-registration-07.png
@@ -397,3 +397,5 @@ Per altre informazioni su Spring e Azure, passare al centro di documentazione di
 [build-application]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/build-application.png
 [hello-world]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/hello-world.png
 [update-password]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/update-password.png
+
+

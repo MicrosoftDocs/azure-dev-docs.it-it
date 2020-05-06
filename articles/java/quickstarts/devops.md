@@ -4,10 +4,10 @@ description: Elenco di articoli introduttivi della documentazione di Azure su De
 ms.date: 04/09/2020
 ms.topic: conceptual
 ms.openlocfilehash: 2920259ca64addb86a58c166f5a1ce1863ff9e9b
-ms.sourcegitcommit: 0af39ee9ff27c37ceeeb28ea9d51e32995989591
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/21/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "81673697"
 ---
 # <a name="devops-for-java-apps-on-azure"></a>DevOps per le app Java in Azure

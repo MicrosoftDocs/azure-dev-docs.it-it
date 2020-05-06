@@ -3,7 +3,7 @@
   items:
     - name: Servizi di calcolo
       href: compute.md
-    - name: Data
+    - name: data
       href: data.md
     - name: Archiviazione
       href: storage.md

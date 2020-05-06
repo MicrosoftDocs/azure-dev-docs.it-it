@@ -4,10 +4,10 @@ description: Elenco di articoli introduttivi della documentazione di Azure sui s
 ms.date: 04/09/2020
 ms.topic: conceptual
 ms.openlocfilehash: 6ae76c14fb420924a786972609f4a0bc902b2475
-ms.sourcegitcommit: eabc9e3fb8ad0f067be5ed878c2eacebd461b6ce
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/22/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "81743546"
 ---
 # <a name="compute-services-for-java-apps-on-azure"></a>Servizi di calcolo per le app Java in Azure
