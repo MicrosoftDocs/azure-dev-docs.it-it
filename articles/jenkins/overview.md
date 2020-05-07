@@ -4,12 +4,12 @@ description: Ospitare il server di automazione di compilazione e distribuzione J
 keywords: jenkins, azure, devops, panoramica
 ms.topic: overview
 ms.date: 10/23/2019
-ms.openlocfilehash: f630dd601cc384588ae4d3af1a051b5c706de0b6
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: 19bacd6e1b3d4ddee4e6fef27b2183f4a33545d6
+ms.sourcegitcommit: 8309822d57f784a9c2ca67428ad7e7330bb5e0d6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82171127"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82861304"
 ---
 # <a name="azure-and-jenkins"></a>Azure e Jenkins
 
@@ -34,7 +34,7 @@ Aggiungere agenti di compilazione alla distribuzione di Jenkins esistente per ri
 Una volta configurati con un'[entità servizio di Azure](/azure/azure-resource-manager/resource-group-overview), i processi e le pipeline di Jenkins possono usare questa credenziale per:
 
 - Archiviare in modo sicuro gli artefatti della compilazione in [Archiviazione di Azure](/azure/storage/common/storage-introduction) usando il [plug-in di Archiviazione di Azure](https://plugins.jenkins.io/windows-azure-storage). Vedere la [procedura di archiviazione Jenkins](azure-storage-blobs-as-build-artifact-repository.md) per altre informazioni.
-- Gestire e configurare le risorse di Azure con l'[interfaccia della riga di comando di Azure](/azure/jenkins/deploy-to-azure-app-service-using-azure-cli).
+- Gestire e configurare le risorse di Azure con l'[interfaccia della riga di comando di Azure](deploy-to-azure-app-service-using-azure-cli.md).
 
 ## <a name="deploy-your-code-into-azure-services"></a>Distribuire il codice nei servizi di Azure
 

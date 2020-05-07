@@ -4,12 +4,12 @@ description: Informazioni su come usare il servizio BLOB di Azure come repositor
 keywords: jenkins, azure, devops, archiviazione, cicd, artefatti di compilazione
 ms.topic: article
 ms.date: 08/13/2019
-ms.openlocfilehash: ac2ccc974c13a9dc19e1098d95ec484458377304
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: ceed42326faee6dcfab3790fd3af739b2f48d3da
+ms.sourcegitcommit: 8309822d57f784a9c2ca67428ad7e7330bb5e0d6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82170167"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82861204"
 ---
 # <a name="tutorial-use-azure-storage-for-build-artifacts"></a>Esercitazione: Usare Archiviazione di Azure per gli artefatti di compilazione
 
@@ -47,7 +47,7 @@ Di seguito sono indicati i vantaggi dell'utilizzo del servizio BLOB per ospitare
      
       Sebbene sia necessario configurare una tipica soluzione di Integrazione continuata Jenkins per eseguirla come servizio, ai fini di questa esercitazione sarà sufficiente eseguire il file WAR di Jenkins nella riga di comando.
 * Un account Azure. È possibile registrarsi per un account Azure all'indirizzo <https://www.azure.com>.
-* Un account di archiviazione di Azure. Se non si dispone di un account di archiviazione, è possibile crearne uno attenendosi ai passaggi illustrati in [Creare un account di archiviazione](/azure/storage/common/storage-account-create.md).
+* Un account di archiviazione di Azure. Se non si dispone di un account di archiviazione, è possibile crearne uno attenendosi ai passaggi illustrati in [Creare un account di archiviazione](/azure/storage/common/storage-account-create).
 * La conoscenza della soluzione di Integrazione continuata Jenkins è consigliata ma non richiesta, poiché nel contenuto seguente verrà usato un esempio semplice per illustrare i passaggi da seguire nell'uso del servizio BLOB come archivio per elementi di compilazione dell'Integrazione continuata Jenkins.
 
 ## <a name="how-to-use-the-blob-service-with-jenkins-ci"></a>Come usare il servizio BLOB con l'Integrazione continuata Jenkins
@@ -96,10 +96,10 @@ Ai fini di questa esercitazione, è necessario innanzitutto creare un processo c
 6. In **Storage Account Name**scegliere l'account di archiviazione da utilizzare.
 7. In **Container Name**specificare il nome del contenitore. Il contenitore verrà creato se non esiste già al momento del caricamento degli elementi di compilazione. È possibile usare variabili di ambiente, pertanto in questo esempio immettere `${JOB_NAME}` come nome del contenitore.
    
-    **Suggerimento**
-   
-    Sotto la sezione **Command** in cui è stato immesso uno script per **Execute Windows batch command** è presente un collegamento alle variabili di ambiente riconosciute da Jenkins. Fare clic sul collegamento per ottenere dettagli sui nomi e le descrizioni delle variabili di ambiente. Le variabili di ambiente che contengono caratteri speciali, ad esempio la variabile di ambiente **BUILD_URL** non sono ammesse come nome di contenitore o come percorso virtuale comune.
-8. Ai fini di questo esempio, fare clic su **Make new container public by default** (Rendi pubblico questo contenitore per impostazione predefinita). Se si intende usare un contenitore privato, è necessario creare una firma di accesso condiviso per consentire l'accesso, che esula dall'ambito di questo articolo. Per altre informazioni sulle firme di accesso condiviso, vedere [Uso delle firme di accesso condiviso](/azure//storage/common/storage-sas-overview.md).
+    > [!TIP]
+    > Sotto la sezione **Command** in cui è stato immesso uno script per **Execute Windows batch command** è presente un collegamento alle variabili di ambiente riconosciute da Jenkins. Fare clic sul collegamento per ottenere dettagli sui nomi e le descrizioni delle variabili di ambiente. Le variabili di ambiente che contengono caratteri speciali, ad esempio la variabile di ambiente **BUILD_URL** non sono ammesse come nome di contenitore o come percorso virtuale comune.
+    
+8. Ai fini di questo esempio, fare clic su **Make new container public by default** (Rendi pubblico questo contenitore per impostazione predefinita). Se si intende usare un contenitore privato, è necessario creare una firma di accesso condiviso per consentire l'accesso, che esula dall'ambito di questo articolo. Per altre informazioni sulle firme di accesso condiviso, vedere [Uso delle firme di accesso condiviso](/azure/storage/common/storage-sas-overview).
 9. [Facoltativo] Fare clic su **Clean container before uploading** (Pulisci contenitore prima del caricamento) se si vuole cancellare i contenuti dal contenitore prima di caricare gli artefatti di compilazione (lasciare questa casella deselezionata se non si vuole pulire i contenuti del contenitore).
 10. In **List of Artifacts to upload** (Elenco di artefatti da caricare) immettere `text/*.txt`.
 11. In **Common virtual path for uploaded artifacts** (Percorso virtuale comune per gli artefatti caricati), ai fini di questa esercitazione, immettere `${BUILD\_ID}/${BUILD\_NUMBER}`.

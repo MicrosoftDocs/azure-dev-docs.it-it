@@ -4,12 +4,12 @@ description: Informazioni su come configurare la compilazione e l'integrazione c
 keywords: jenkins, azure, devops, cicd, linux, service fabric, cluster
 ms.topic: tutorial
 ms.date: 07/31/2018
-ms.openlocfilehash: 0a1efc187b4080c4e0c1a992890203e954f81e06
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: eca6b1b446cda07c35f453f17d688a5e8708b8e7
+ms.sourcegitcommit: 8309822d57f784a9c2ca67428ad7e7330bb5e0d6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82171097"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82861274"
 ---
 # <a name="tutorial-deploy-to-a-service-fabric-cluster"></a>Esercitazione: Eseguire la distribuzione in un cluster di Service Fabric
 
@@ -35,9 +35,9 @@ Questa esercitazione illustra le diverse modalità di configurazione possibili p
 
 Se si aggiunge il plug-in Service Fabric in un ambiente Jenkins esistente, è necessario seguire questa procedura:
 
-- [Interfaccia della riga di comando di Service Fabric (sfctl)](/azure/service-fabric/service-fabric-cli.md). Installare l'interfaccia della riga di comando a livello di sistema anziché a livello di utente, in modo che Jenkins possa eseguire i comandi dell'interfaccia della riga di comando. 
-- Per distribuire applicazioni Java, installare [Gradle e Open JDK 8.0](/azure/service-fabric/service-fabric-get-started-linux.md#set-up-java-development). 
-- Per distribuire applicazioni .NET Core 2.0, installare [.NET Core 2.0 SDK](/azure/service-fabric/service-fabric-get-started-linux.md#set-up-net-core-20-development). 
+- [Interfaccia della riga di comando di Service Fabric (sfctl)](/azure/service-fabric/service-fabric-cli). Installare l'interfaccia della riga di comando a livello di sistema anziché a livello di utente, in modo che Jenkins possa eseguire i comandi dell'interfaccia della riga di comando. 
+- Per distribuire applicazioni Java, installare [Gradle e Open JDK 8.0](/azure/service-fabric/service-fabric-get-started-linux#set-up-java-development). 
+- Per distribuire applicazioni .NET Core 2.0, installare [.NET Core 2.0 SDK](/azure/service-fabric/service-fabric-get-started-linux#set-up-net-core-20-development). 
 
 Dopo avere installato i prerequisiti richiesti per l'ambiente, è possibile cercare il plug-in Azure Service Fabric nel Marketplace per Jenkins e installarlo.
 
@@ -199,13 +199,13 @@ I passaggi descritti in questa sezione mostrano come configurare un processo Jen
 1. Nella scheda **Source Code Management** (Gestione del codice sorgente) selezionare **Git**. Specificare l'URL del repository che ospita l'applicazione Java di Service Fabric che si vuole integrare nel flusso di integrazione continua e di distribuzione continua di Jenkins, ad esempio `https://github.com/{your-github-account}/service-fabric-java-getting-started`. È anche possibile specificare il ramo da compilare, ad esempio `/master`.
 1. Configurare il repository *GitHub* in modo che comunichi con Jenkins:
 
-   a. Nella pagina del repository GitHub passare a **Settings** (Impostazioni) > **Integrations and Services** (Integrazioni e servizi).
+   1. Nella pagina del repository GitHub passare a **Settings** (Impostazioni) > **Integrations and Services** (Integrazioni e servizi).
 
-   b. Selezionare **Add Service** (Aggiungi servizio), digitare **Jenkins** e selezionare il **plug-in GitHub per Jenkins**.
+   1. Selezionare **Add Service** (Aggiungi servizio), digitare **Jenkins** e selezionare il **plug-in GitHub per Jenkins**.
 
-   c. Immettere l'URL webhook di Jenkins (per impostazione predefinita, `http://<PublicIPorFQDN>:8081/github-webhook/`). Fare clic su **add/update service** (aggiungi/aggiorna il servizio).
+   1. Immettere l'URL webhook di Jenkins (per impostazione predefinita, `http://<PublicIPorFQDN>:8081/github-webhook/`). Fare clic su **add/update service** (aggiungi/aggiorna il servizio).
 
-   d. Verrà inviato un evento di test all'istanza di Jenkins. Accanto al webhook in GitHub verrà visualizzato un segno di spunta verde e il progetto verrà compilato.
+   1. Verrà inviato un evento di test all'istanza di Jenkins. Accanto al webhook in GitHub verrà visualizzato un segno di spunta verde e il progetto verrà compilato.
 
 1. Nella scheda **Build Triggers** (Trigger compilazione) in Jenkins selezionare l'opzione di compilazione da usare. Per questo esempio si vuole attivare una compilazione ogni volta che si verifica un push nel repository, pertanto selezionare **GitHub hook trigger for GITScm polling** (Trigger di hook GitHub per polling GITScm). Questa opzione era definita in precedenza **Build when a change is pushed to GitHub** (Compila in caso di push di modifiche in GitHub).
 1. Nella scheda **Build** (Compilazione) eseguire una di queste operazioni a seconda che si compili un'applicazione Java o un'applicazione .NET Core:
