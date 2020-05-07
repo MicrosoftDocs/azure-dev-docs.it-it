@@ -11,12 +11,12 @@ ms.service: app-service
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
-ms.openlocfilehash: d24300d02df1fdd079c7ba3c5f2ef3370db3c5e8
-ms.sourcegitcommit: 0af39ee9ff27c37ceeeb28ea9d51e32995989591
+ms.openlocfilehash: 6ec30d83352984181caff4984769ff62d07e4164
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81670577"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82105112"
 ---
 # <a name="deploy-a-java-based-microprofile-service-to-azure-web-app-for-containers"></a>Distribuire un servizio MicroProfile basato su Java in app Web per contenitori di Azure
 
@@ -127,7 +127,7 @@ Con l'uso dell'annotazione `@Path("/helloworld")` è possibile vedere che questo
 
 1. Eseguire `docker run -it --rm -p 8080:8080 <docker.registry>/<docker.name>:latest`, ad esempio `docker run -it --rm -p 8080:8080 jogilescr.azurecr.io/samples/docker-helloworld:latest`, se `docker.registry` è `jogilescr.azurecr.io` e `docker.name` è `samples/docker-helloworld`.
 
-1. Provare ad accedere a [http://localhost:8080/microprofile/api/helloworld](http://localhost:8080/microprofile/api/helloworld) e [http://localhost:8080/health](http://localhost:8080/health) nel Web browser. Se viene visualizzata la risposta "Hello, world!" prevista (e informazioni relative all'integrità per l'endpoint [/health](http://localhost:8080/health)), l'applicazione MicroProfile è stata distribuita correttamente nel computer locale.
+1. Provare ad accedere a `http://localhost:8080/microprofile/api/helloworld` e `http://localhost:8080/health` nel Web browser. Se viene visualizzata la risposta "Hello, world!" prevista (e informazioni relative all'integrità per l'endpoint `/health`), l'applicazione MicroProfile è stata distribuita correttamente nel computer locale.
 
 ## <a name="pushing-to-the-azure-container-registry"></a>Esecuzione del push in Registro Azure Container
 

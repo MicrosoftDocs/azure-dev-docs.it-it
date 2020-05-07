@@ -4,10 +4,10 @@ description: Distribuire una macchina virtuale tramite Azure SDK per Go.
 ms.date: 09/05/2018
 ms.topic: quickstart
 ms.openlocfilehash: d339681fc4eed55046f5a7c8fa45fffc948fa3bc
-ms.sourcegitcommit: 31f6d047f244f1e447faed6d503afcbc529bd28c
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/26/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "80319768"
 ---
 # <a name="quickstart-deploy-an-azure-virtual-machine-from-a-template-with-the-azure-sdk-for-go"></a>Guida introduttiva: Distribuire una macchina virtuale da un modello con Azure SDK per Go
@@ -260,7 +260,7 @@ La differenza principale è costituita dal valore restituito del metodo `deploym
 }
 ```
 
-Per questo esempio è consigliabile attendere il completamento dell'operazione. Per rimanere in attesa di un oggetto Future sono necessari sia un [contesto di ambiente](https://blog.golang.org/context), sia il client che ha creato `Future`. Possono verificarsi due tipi di errore, ovvero un errore provocato sul lato client durante il tentativo di chiamata del metodo e una risposta di errore dal server. Quest'ultimo tipo di errore viene restituito come parte della chiamata `deploymentFuture.Result`.
+Per questo esempio è consigliabile attendere il completamento dell'operazione. Per rimanere in attesa di un oggetto Future sono necessari sia un [contesto di ambiente](https://blog.golang.org/context), sia il client che ha creato `Future`. È possibile che si verifichino due tipi di errore, ovvero un errore provocato sul lato client durante il tentativo di chiamata del metodo e una risposta di errore dal server. Quest'ultimo tipo di errore viene restituito come parte della chiamata `deploymentFuture.Result`.
 
 ### <a name="get-the-assigned-ip-address"></a>Ottenere l'indirizzo IP assegnato
 

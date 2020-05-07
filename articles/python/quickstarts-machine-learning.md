@@ -4,10 +4,10 @@ description: Elenco di articoli introduttivi della documentazione di Azure su Ma
 ms.date: 03/17/2020
 ms.topic: conceptual
 ms.openlocfilehash: c76f2c8f16db20d40eee66930ec13259f51b9f92
-ms.sourcegitcommit: 1bd9ec6a4115e9162e33b76a933869788e6ab702
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/31/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "80442056"
 ---
 # <a name="machine-learning-for-python-apps-on-azure"></a>Machine Learning per le app Python in Azure

@@ -33,5 +33,5 @@ items:
         href: azure-sdk-sql-database-samples.md
       - name: Tutti gli esempi di Go
         href: 'http://github.com/azure-samples/azure-sdk-for-go-samples'
-  - name: Informazioni di riferimento
+  - name: Riferimento
     href: 'https://godoc.org/github.com/Azure/azure-sdk-for-go'

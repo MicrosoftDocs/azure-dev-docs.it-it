@@ -4,10 +4,10 @@ description: Esempi selezionati per l'uso di Istanze di Azure Container e del se
 ms.date: 09/05/2018
 ms.topic: sample
 ms.openlocfilehash: 58e87d4ae18a2d24f881822d44e003b6f292bcb4
-ms.sourcegitcommit: 31f6d047f244f1e447faed6d503afcbc529bd28c
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/26/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "80319718"
 ---
 # <a name="azure-sdk-for-go-samples-for-containers"></a>Esempi di Azure SDK per Go per i contenitori

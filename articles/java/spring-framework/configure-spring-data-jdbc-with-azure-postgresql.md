@@ -8,10 +8,10 @@ ms.service: postgresql
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.openlocfilehash: f259ac4b169f3533c0f5eabd179dd79cc45b708b
-ms.sourcegitcommit: 0af39ee9ff27c37ceeeb28ea9d51e32995989591
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/21/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "81669627"
 ---
 # <a name="how-to-use-spring-data-jdbc-with-azure-postgresql"></a>Come usare Spring Data JDBC con Azure PostgreSQL

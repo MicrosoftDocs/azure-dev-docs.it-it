@@ -9,10 +9,10 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
 ms.openlocfilehash: 252ef1e31a71d996cb9e3856b48232ba24b66903
-ms.sourcegitcommit: 0af39ee9ff27c37ceeeb28ea9d51e32995989591
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/21/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "81671187"
 ---
 # <a name="create-a-hello-world-web-app-for-azure-using-the-legacy-toolkit-for-eclipse"></a>Creare un'app Web Hello World per Azure con il toolkit legacy per Eclipse
@@ -117,10 +117,10 @@ Esistono diversi modi con cui è possibile distribuire un'applicazione Web Java 
        ![Finestra di dialogo Nuovo gruppo di risorse][08]
    * Nella casella di testo **Nome** specificare un nome per il nuovo gruppo di risorse.
    * Nel menu a discesa **Area** selezionare il percorso del data center di Azure appropriato per il gruppo di risorse.
-   * FACOLTATIVO: per impostazione predefinita, una distribuzione recente di Java 8 verrà distribuita da Azure automaticamente nel contenitore di app Web come JVM. Tuttavia, è possibile specificare una versione e una distribuzione di JVM diversa, se richiesto dall'app Web. Per specificare la versione JDK per l'app Web specifica, fare clic sulla scheda **JDK** e selezionare una delle opzioni seguenti:
-     * **Deploy the default JDK offered by Azure Web Apps service** (Distribuisci JDK predefinito fornito dal servizio app Web di Azure): questa opzione consente di implementare una distribuzione recente di Java.
-     * **Deploy a 3rd party JDK package available on Azure** (Distribuisci JDK di terze parti disponibile in Azure): questa opzione consente di scegliere dall'elenco di JDK forniti da Microsoft Azure.
-     * **Deploy my own JDK from this download location** (Distribuisci JDK personalizzato da questo percorso di download): questa opzione consente di specificare una distribuzione JDK personalizzata, che deve essere compressa come file ZIP e caricata in un percorso di download disponibile pubblicamente o in un account di Archiviazione di Azure per cui si dispone dell'accesso.
+   * FACOLTATIVO: per impostazione predefinita, una distribuzione recente di Java 8 verrà distribuita da Azure automaticamente nel contenitore di app web come JVM. Tuttavia, è possibile specificare una versione e una distribuzione di JVM diversa, se richiesto dall'app Web. Per specificare la versione JDK per l'app Web specifica, fare clic sulla scheda **JDK** e selezionare una delle opzioni seguenti:
+     * **Deploy the default JDK offered by Azure Web Apps service** (Distribuisci JDK predefinito fornito dal servizio app Web di Azure): questa opzione distribuirà una distribuzione recente di Java.
+     * **Deploy a 3rd party JDK available on Azure**(Distribuisci JDK di terze parti disponibile in Azure): questa opzione consente di scegliere dall'elenco di JDK forniti da Microsoft Azure.
+     * **Deploy my own JDK from this download location**(Distribuisci JDK personalizzato da questo percorso di download): questa opzione consente di specificare una distribuzione JDK personalizzata, che deve essere compressa come file ZIP e caricata in un percorso di download disponibile pubblicamente o in un account di Archiviazione di Azure per cui si dispone dell'accesso.
           
        ![Finestra di dialogo New Web App Container (Nuovo contenitore App Web)][07b]
 

@@ -4,10 +4,10 @@ description: Stampare tutte le immagini disponibili da usare per la creazione de
 ms.topic: conceptual
 ms.date: 6/15/2017
 ms.openlocfilehash: 5ce7525ffe87af544c6b8bb4b74dc9a3a0c035cb
-ms.sourcegitcommit: 1bd9ec6a4115e9162e33b76a933869788e6ab702
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/31/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "80441666"
 ---
 # <a name="list-images"></a>Elencare le immagini

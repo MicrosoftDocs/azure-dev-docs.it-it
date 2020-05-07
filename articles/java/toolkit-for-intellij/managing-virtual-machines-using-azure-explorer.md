@@ -7,10 +7,10 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.openlocfilehash: aea65c8a7edd8afc32cc87eb3ce1a5899e7d7487
-ms.sourcegitcommit: 0af39ee9ff27c37ceeeb28ea9d51e32995989591
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/21/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "81669927"
 ---
 # <a name="manage-virtual-machines-by-using-the-azure-explorer-for-intellij"></a>Gestire macchine virtuali con Azure Explorer per IntelliJ
@@ -38,19 +38,19 @@ Per creare una macchina virtuale con Azure Explorer, eseguire queste operazioni:
 
 4. Nella finestra **Selezionare un'immagine di macchina virtuale** immettere le informazioni seguenti:
 
-   * **Località**: specifica dove verrà creata la macchina virtuale, ad esempio *West US* (Stati Uniti occidentali). 
+   * **Località**: specifica dove verrà creata la macchina virtuale, ad esempio *Stati Uniti occidentali*. 
 
-   * **Recommended image** (Immagine consigliata): specifica che si sceglierà un'immagine in un elenco abbreviato delle immagini comunemente usate.
+   * **Recommended Image** (Immagine consigliata): specifica che si sceglie un'immagine da un elenco abbreviato di immagini di uso comune.
 
-   * **Custom image** (Immagine personalizzata): specifica che si sceglierà un'immagine personalizzata specificando le informazioni seguenti.
+   * **Immagine personalizzata**: specifica che si sceglie un'immagine personalizzata, fornendo le informazioni seguenti:
 
-      * **Publisher** (Editore): specifica l'editore che ha creato l'immagine che verrà usata per la macchina virtuale, ad esempio *Microsoft*.
+      * **Autore**: specifica l'autore che ha creato l'immagine che verrà usata per creare la macchina virtuale, ad esempio *Microsoft*.
 
-      * **Offer** (Offerta): specifica l'offerta di macchina virtuale dell'editore selezionato da usare, ad esempio *JDK*.
+      * **Offerta**: specifica la macchina virtuale offerta da usare dall'autore selezionato, ad esempio *JDK*.
 
-      * **Sku**: specifica lo SKU dell'offerta selezionata da usare, ad esempio *JDK_8*.
+      * **SKU**: specifica la SKU da usare nell'offerta selezionata, ad esempio *JDK_8*.
 
-      * **Version #** (N. versione): specifica la versione dello SKU selezionato da usare.
+      * **Versione #** (N. versione): specifica la versione della SKU selezionata.
 
    ![Finestra Selezionare un'immagine di macchina virtuale][CR03]
 
@@ -60,11 +60,11 @@ Per creare una macchina virtuale con Azure Explorer, eseguire queste operazioni:
 
    * **Nome macchina virtuale**: specifica il nome della nuova macchina virtuale, che deve iniziare con una lettera e contenere solo lettere, numeri e trattini.
 
-   * **Size**: specifica il numero di core e la quantità di memoria da allocare per la macchina virtuale.
+   * **Dimensioni**: specifica il numero di core e la quantità di memoria da allocare per la macchina virtuale.
 
    * **Nome utente**: specifica l'account amministratore da creare per la gestione della macchina virtuale.
 
-   * **Password** e **Confirm** (Conferma): specificano la password per l'account amministratore.
+   * **Password** e **Conferma**: specifica la password per l'account di amministratore.
 
    ![Finestra Impostazioni di base della macchina virtuale][CR04]
 
@@ -73,8 +73,8 @@ Per creare una macchina virtuale con Azure Explorer, eseguire queste operazioni:
 8. Nella finestra **Risorse associate** immettere le informazioni seguenti:
 
    * **Gruppo di risorse**: specifica il gruppo di risorse per la macchina virtuale. Selezionare una delle opzioni seguenti:
-      * **Crea nuovo**: specifica che si vuole creare un nuovo gruppo di risorse.
-      * **Use existing** (Usa esistente): specifica che si vuole effettuare una selezione da un elenco di gruppi di risorse associati all'account Azure.
+      * **Crea nuovo**: specifica che si intende creare un nuovo gruppo di risorse.
+      * **Usa esistente**: specifica che si vuole scegliere in un elenco i gruppi di risorse associati all'account di Azure.
 
        ![Finestra Risorse associate][CR07]
 
@@ -82,13 +82,13 @@ Per creare una macchina virtuale con Azure Explorer, eseguire queste operazioni:
 
       ![Finestra di dialogo Crea account di archiviazione][CR05]
 
-   * **Virtual Network** (Rete virtuale) e **Subnet**: specificano la rete virtuale e la subnet a cui si connetterà la macchina virtuale. È possibile usare una subnet e una rete esistente oppure creare una rete e una subnet nuove. Se si seleziona **Crea nuovo**, verrà visualizzata la finestra di dialogo seguente:
+   * **Rete virtuale** e **Subnet**: specifica la rete virtuale e la subnet a cui si connetterà la macchina virtuale. È possibile usare una subnet e una rete esistente oppure creare una rete e una subnet nuove. Se si seleziona **Crea nuovo**, verrà visualizzata la finestra di dialogo seguente:
 
       ![Finestra di dialogo Crea rete virtuale][CR06]
 
-   * **Indirizzo IP pubblico**: specifica un indirizzo IP con accesso all'esterno per la macchina virtuale. È possibile scegliere di creare un nuovo indirizzo IP o, se la macchina virtuale non avrà un indirizzo IP pubblico, è possibile selezionare **(Nessuno)** . 
+   * **Indirizzo IP pubblico**: specifica un indirizzo IP con connessione esterna per la macchina virtuale. È possibile scegliere di creare un nuovo indirizzo IP o, se la macchina virtuale non avrà un indirizzo IP pubblico, è possibile selezionare **(Nessuno)** . 
 
-   * **Network security group** (Gruppo di sicurezza di rete): specifica un firewall di rete facoltativo per la macchina virtuale. È possibile selezionare un firewall esistente oppure, se la macchina virtuale non usa un firewall di rete, è possibile selezionare **(Nessuno)** . 
+   * **Gruppo di sicurezza di rete**: specifica un firewall di rete facoltativo per la macchina virtuale. È possibile selezionare un firewall esistente oppure, se la macchina virtuale non usa un firewall di rete, è possibile selezionare **(Nessuno)** . 
 
    * **Set di disponibilità**: specifica un set di disponibilità facoltativo a cui può appartenere la macchina virtuale. È possibile selezionare un set di disponibilità esistente, creare un nuovo set di disponibilità o, se la macchina virtuale non apparterrà a un set di disponibilità, selezionare **(Nessuno)** .
 

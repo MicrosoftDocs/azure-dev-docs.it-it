@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 11/19/2019
 ms.author: dagrieve
 ms.openlocfilehash: c0a2f46f8a3249f6c9580e823e102a86291e15e7
-ms.sourcegitcommit: 0af39ee9ff27c37ceeeb28ea9d51e32995989591
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/21/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "81670637"
 ---
 # <a name="reasons-to-move-to-java-11"></a>Motivi per passare a Java 11
@@ -83,7 +83,7 @@ Per regolare correttamente la Garbage Collection, è necessaria una conoscenza a
 
 #### <a name="g1gc"></a>G1GC
 
-L'impostazione predefinita in Java 11 è G1 Garbage Collector (G1GC). Lo scopo di G1GC è quello di raggiungere un equilibrio tra latenza e velocità effettiva. Il Garbage Collector G1 prova a raggiungere una velocità effettiva elevata rispettando gli obiettivi del tempo di pausa con un'alta probabilità. G1GC è progettato per evitare raccolte complete, ma quando le raccolte simultanee non possono recuperare memoria con la velocità sufficiente, si verificherà un fallback della Garbage Collection completa. La Garbage Collection completa usa lo stesso numero di thread di lavoro paralleli delle raccolte di nuova generazione e miste.
+L'impostazione predefinita in Java 11 è G1 Garbage Collector (G1GC). Lo scopo di G1GC è quello di raggiungere un equilibrio tra latenza e velocità effettiva. Il Garbage Collector G1 prova a raggiungere una velocità effettiva elevata rispettando gli obiettivi del tempo di pausa con un'alta probabilità. G1GC è progettato per evitare raccolte complete, ma quando le raccolte simultanee non possono \'recuperare memoria con la velocità sufficiente, si verificherà un fallback della Garbage Collection completa. La Garbage Collection completa usa lo stesso numero di thread di lavoro paralleli delle raccolte di nuova generazione e miste.
 
 #### <a name="parallel-gc"></a>GC parallelo
 

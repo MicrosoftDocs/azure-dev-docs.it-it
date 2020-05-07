@@ -5,10 +5,10 @@ ms.topic: conceptual
 ms.date: 09/12/2019
 ms.custom: seo-python-october2019
 ms.openlocfilehash: 3f17fe3190857d1cc4faca84c9319e1c514cea4c
-ms.sourcegitcommit: 1bd9ec6a4115e9162e33b76a933869788e6ab702
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/31/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "80441206"
 ---
 # <a name="5-deploy-your-python-web-app-to-azure-app-service-on-linux"></a>5: Distribuire un'app Web Python nel Servizio app di Azure in Linux

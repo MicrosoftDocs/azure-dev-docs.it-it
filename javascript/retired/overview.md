@@ -4,10 +4,10 @@ description: Panoramica dei moduli di gestione e di servizi di Azure per JavaScr
 ms.date: 06/17/2017
 ms.topic: article
 ms.openlocfilehash: 54405e8406dffec7333ef22d5f837de0db9037b5
-ms.sourcegitcommit: 4cf22356d6d4817421b551bd53fcba76bdb44cc1
+ms.sourcegitcommit: 756e4873f904db954a56c20ebb2f1f5116ee4596
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/29/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "76872116"
 ---
 # <a name="azure-modules-for-javascript"></a>Moduli di Azure per JavaScript

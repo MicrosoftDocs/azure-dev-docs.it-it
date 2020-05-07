@@ -25,11 +25,11 @@
           href: java-sdk-azure-web-apps-samples.md
         - name: Database SQL
           href: java-sdk-azure-sql-database-samples.md
-        - name: Sicurezza
+        - name: Security
           href: java-sdk-azure-security-samples.md
         - name: Contenitori
           href: java-sdk-azure-containers-samples.md
         - name: Tutti gli esempi Java
           href: /samples/browse/?products=azure&languages=java
-    - name: Informazioni di riferimento
+    - name: Riferimento
       href: /java/api/?view=azure-java

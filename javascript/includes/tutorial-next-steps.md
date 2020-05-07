@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: 39238e72cf9f7048fb6000c3203a170dbe9567ea
-ms.sourcegitcommit: 21ddeb9bd9abd419d143dc2ca8a7c821a1758cf9
+ms.sourcegitcommit: 756e4873f904db954a56c20ebb2f1f5116ee4596
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/11/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "79128696"
 ---
 La procedura dettagliata è stata completata. È ora possibile vedere le altre estensioni di Azure.

@@ -5,10 +5,10 @@ keywords: ansible, azure, devops, bash, playbook, lab devtest
 ms.topic: tutorial
 ms.date: 04/30/2019
 ms.openlocfilehash: 832ff131822a5cd864c2b005c36480235a5e1971
-ms.sourcegitcommit: eabc9e3fb8ad0f067be5ed878c2eacebd461b6ce
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/22/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "81743664"
 ---
 # <a name="tutorial-configure-labs-in-azure-devtest-labs-using-ansible"></a>Esercitazione: Configurare lab in Azure DevTest Labs tramite Ansible

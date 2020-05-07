@@ -4,12 +4,12 @@ ms.service: app-service
 ms.topic: include
 ms.date: 03/31/2020
 ms.author: buhollan
-ms.openlocfilehash: 6cb841a9cf9563c3b7b3db86d907eac757c5d31d
-ms.sourcegitcommit: 36e02e96b955ed0531f98b9c0f623f4acb508661
+ms.openlocfilehash: c95177d6b4cb101b764acd8f8dad54f937a495eb
+ms.sourcegitcommit: 756e4873f904db954a56c20ebb2f1f5116ee4596
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "82072666"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82109683"
 ---
 1. In un prompt dei comandi del terminale passare alla posizione in cui creare la cartella dell'app.
 
@@ -37,7 +37,7 @@ ms.locfileid: "82072666"
     npm start
     ```
 
-1. Testare l'app aprendo un browser all'indirizzo [http://localhost:3000](http://localhost:3000). Ecco come dovrà essere il sito:
+1. Testare l'app aprendo un browser all'indirizzo `http://localhost:3000`. Ecco come dovrà essere il sito:
 
     ![Esecuzione dell'applicazione Express](../media/deploy-azure/express.png)
 

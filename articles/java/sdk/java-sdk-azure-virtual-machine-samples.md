@@ -9,10 +9,10 @@ ms.service: multiple
 ms.assetid: 1eeb166f-8253-4fde-82d2-43997fda7819
 ms.custom: ''
 ms.openlocfilehash: 5013de76abf7cbd22df4f922d959c6dceae9f3c7
-ms.sourcegitcommit: 0af39ee9ff27c37ceeeb28ea9d51e32995989591
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/21/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "81674237"
 ---
 # <a name="azure-management-libraries-for-java---virtual-machine-samples"></a>Librerie di gestione di Azure per Java - Esempi per macchine virtuali

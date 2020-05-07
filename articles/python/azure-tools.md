@@ -4,10 +4,10 @@ description: Integrazioni dell'IDE e interfacce della riga di comando per gli sv
 ms.topic: conceptual
 ms.date: 02/19/2020
 ms.openlocfilehash: 04616841d9e345a29209814f7a32576b54fc25da
-ms.sourcegitcommit: 1bd9ec6a4115e9162e33b76a933869788e6ab702
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/31/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "80441626"
 ---
 # <a name="azure-tools-for-python-developers"></a>Strumenti di Azure per sviluppatori Python

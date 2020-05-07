@@ -14,7 +14,7 @@
       href: quickstarts-app-hosting.md
     - name: Soluzioni per i dati
       href: quickstarts-data-solutions.md
-    - name: Machine Learning
+    - name: Machine learning
       href: quickstarts-machine-learning.md
     - name: Servizi cognitivi di Azure
       href: quickstarts-cognitive-services.md
@@ -110,5 +110,5 @@
       href: 'https://docs.microsoft.com/samples/browse/?languages=python&products=azure-search'
     - name: Tutti gli esempi
       href: 'https://docs.microsoft.com/samples/browse/?languages=python'
-- name: Informazioni di riferimento
+- name: Riferimento
   href: /python/api/?view=azure-python

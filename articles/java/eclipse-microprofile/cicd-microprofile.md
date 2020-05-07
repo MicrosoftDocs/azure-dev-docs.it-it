@@ -11,10 +11,10 @@ ms.tgt_pltfrm: multiple
 ms.topic: tutorial
 ms.workload: web
 ms.openlocfilehash: cdd704626b51105f93c19378511f4a267cb56649
-ms.sourcegitcommit: 0af39ee9ff27c37ceeeb28ea9d51e32995989591
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/21/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "81670297"
 ---
 # <a name="cicd-for-microprofile-apps-using-azure-pipelines"></a>CI/CD per app MicroProfile con Azure Pipelines
@@ -28,7 +28,7 @@ EXPOSE 8080
 ```
 Avviare il processo di inserimento in un contenitore di Azure Pipelines creando un'immagine Docker ed eseguendo il push dell'immagine del contenitore in un Registro Azure Container. Completare il processo creando una pipeline di versione Azure Pipelines e distribuendo l'immagine del contenitore in un'app Web.
 
-## <a name="prerequisites"></a>Prerequisiti
+## <a name="prerequisites"></a>Prerequisites
 
 1. Nel [portale di Azure](https://portal.azure.com) creare un [Registro Azure Container](https://azure.microsoft.com/services/container-registry).
    
@@ -99,7 +99,7 @@ Azure Pipelines usa un Dockerfile con un'immagine di base Payara Micro per crear
    > [!NOTE]
    > Se si usa Docker Hub o un altro registro, selezionare **Hub Docker** o **Altri** anziché **Registro Azure Container** accanto a **Tipo di registro**. Specificare quindi le credenziali e le informazioni di connessione per il registro contenitori.
    
-1. In **Comandi** selezionare **Compila**nell'elenco a discesa**Comando**.
+1. In **Comandi** selezionare **Compila** nell'elenco a discesa **Comando**.
    
 1. Selezionare i puntini di sospensione **...** accanto al campo**Dockerfile**, individuare e selezionare il **Dockerfile** dal repository GitHub e quindi fare clic su **OK**. 
    

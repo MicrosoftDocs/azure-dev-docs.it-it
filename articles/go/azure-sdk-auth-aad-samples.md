@@ -4,10 +4,10 @@ description: Esempi selezionati per lavorare con Azure Active Directory (AAD) e 
 ms.date: 09/05/2018
 ms.topic: sample
 ms.openlocfilehash: ccada2ed6812bf5139f8c1c34c16059e83b02f52
-ms.sourcegitcommit: 31f6d047f244f1e447faed6d503afcbc529bd28c
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/26/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "80319668"
 ---
 # <a name="azure-sdk-for-go-samples-for-authentication-and-aad"></a>Esempi di Azure SDK per Go per autenticazione e AAD

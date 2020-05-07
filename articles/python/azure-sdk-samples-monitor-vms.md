@@ -4,10 +4,10 @@ description: Controllare e configurare la creazione di report delle metriche da 
 ms.topic: conceptual
 ms.date: 6/15/2017
 ms.openlocfilehash: ed58b0a9c9da40d2898def089dd4e62aeb45e6dd
-ms.sourcegitcommit: 1bd9ec6a4115e9162e33b76a933869788e6ab702
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/31/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "80441636"
 ---
 # <a name="azure-monitor"></a>Monitoraggio di Azure

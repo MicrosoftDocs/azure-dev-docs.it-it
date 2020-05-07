@@ -10,10 +10,10 @@ ms.topic: article
 ms.workload: web
 ms.custom: seo-java-july2019, seo-java-august2019
 ms.openlocfilehash: b926b0bd1cb401f12f927abfea112e6004988812
-ms.sourcegitcommit: 0af39ee9ff27c37ceeeb28ea9d51e32995989591
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/21/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "81668397"
 ---
 # <a name="use-maven-for-azure-web-apps-to-deploy-a-containerized-spring-boot-app-to-azure"></a>Usare Maven per app Web di Azure per distribuire un'app Spring Boot in contenitore in Azure
@@ -27,7 +27,7 @@ Questo articolo illustra l'uso del [Maven Plugin for Azure Web Apps (Plug-in Mav
 > Il plug-in Maven per App Web di Azure è attualmente disponibile in anteprima. Per il momento è supportata solo la pubblicazione FTP, ma sono previste in futuro funzionalità aggiuntive.
 > 
 
-## <a name="prerequisites"></a>Prerequisiti
+## <a name="prerequisites"></a>Prerequisites
 
 Per completare la procedura di questa esercitazione, sono necessari i prerequisiti seguenti:
 
@@ -83,7 +83,7 @@ In questa sezione si clona e si testa in locale un'applicazione Spring Boot in c
    curl http://localhost:8080
    ```
 
-1. Dovrebbe essere visualizzato il messaggio **Hello Docker World**
+1. Dovrebbe essere visualizzato il messaggio seguente: **Hello Docker World**
 
 ## <a name="create-an-azure-service-principal"></a>Creare un'entità servizio di Azure
 

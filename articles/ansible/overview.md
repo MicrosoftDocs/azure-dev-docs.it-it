@@ -5,10 +5,10 @@ keywords: ansible, azure, devops, panoramica, provisioning cloud, gestione della
 ms.topic: overview
 ms.date: 04/30/2019
 ms.openlocfilehash: e37807ffd4d7479bccec0dc058760be2e1f1e6d5
-ms.sourcegitcommit: f89c59f772364ec717e751fb59105039e6fab60c
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/06/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "80741519"
 ---
 # <a name="using-ansible-with-azure"></a>Uso di Ansible con Azure

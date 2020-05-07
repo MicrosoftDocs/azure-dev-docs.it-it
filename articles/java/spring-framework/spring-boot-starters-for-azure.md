@@ -7,10 +7,10 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.openlocfilehash: 48e1381761311a4ed9b5bd6f764af6f19f008fc1
-ms.sourcegitcommit: 0af39ee9ff27c37ceeeb28ea9d51e32995989591
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/21/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "81670017"
 ---
 # <a name="spring-boot-starters-for-azure"></a>Utilità di avvio Spring Boot per Azure
@@ -40,7 +40,7 @@ Sono attualmente disponibili le utilità di avvio Spring Boot seguenti per Azure
 <a name="azure-support"></a>
 ## <a name="azure-support"></a>Supporto di Azure
 
-Questa utilità di avvio Spring Boot offre il supporto della configurazione automatica per i servizi di Azure, ad esempio per il bus di servizio, Archiviazione, Active Directory, Cosmos DB, Key Vault e così via.
+Questa utilità di avvio Spring Boot fornisce il supporto per la configurazione automatica di servizi di Azure, ad esempio bus di servizio, archiviazione, Active Directory, Cosmos DB, Key Vault e così via.
 
 Per esempi dell'uso delle diverse funzionalità di Azure fornite con questa utilità di avvio, vedere:
 

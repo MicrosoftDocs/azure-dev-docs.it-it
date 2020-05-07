@@ -9,10 +9,10 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: data-services
 ms.openlocfilehash: f46988e75d3230455796b2472010c3d93bff5c57
-ms.sourcegitcommit: 0af39ee9ff27c37ceeeb28ea9d51e32995989591
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/21/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "81669247"
 ---
 # <a name="how-to-use-the-spring-data-gremlin-starter-with-the-azure-cosmos-db-sql-api"></a>Come usare Spring Data Gremlin Starter con l'API SQL di Azure Cosmos DB
@@ -23,7 +23,7 @@ Spring Data Gremlin Starter fornisce il supporto Spring Data per il linguaggio d
 
 Questo articolo descrive la creazione di un database di Azure Cosmos DB con il portale di Azure per l'uso con l'API Gremlin, l'uso di **[Spring Initializr]** per creare un'applicazione Java personalizzata e quindi aggiungere la funzionalità di Spring Data Gremlin Starter all'applicazione personalizzata per l'archiviazione e il recupero di dati da Azure Cosmos DB con Gremlin.
 
-## <a name="prerequisites"></a>Prerequisiti
+## <a name="prerequisites"></a>Prerequisites
 
 I prerequisiti seguenti sono necessari per seguire le procedure disponibili in questo articolo:
 
@@ -513,7 +513,7 @@ Per altre informazioni sul supporto di Azure per Gremlin e l'API Graph, vedere g
 
 * [Supporto Gremlin Graph di Azure Cosmos DB](/azure/cosmos-db/gremlin-support)
 
-* [Azure Cosmos DB: creare un database di grafi con Java e il portale di Azure](/azure/cosmos-db/create-graph-java)
+* [Azure Cosmos DB: Creare un database a grafo con Java e il portale di Azure](/azure/cosmos-db/create-graph-java)
 
 * [Esercitazione: Eseguire query nell'API Graph di Azure Cosmos DB con Gremlin](/azure/cosmos-db/tutorial-query-graph)
 
@@ -523,7 +523,7 @@ Per altre informazioni sull'utilizzo di Azure Cosmos DB e Java, vedere gli artic
 
 * [Documentazione di Azure Cosmos DB].
 
-* [Azure Cosmos DB: Create a document database using Java and the Azure portal][Build a SQL API app with Java] (Aure Cosmos DB: creare un database di documenti con Java e il portale di Azure)
+* [Azure Cosmos DB: creare un database di documenti con Java e il portale di Azure][Build a SQL API app with Java]
 
 * [Spring Data per l'API SQL Azure Cosmos DB]
 

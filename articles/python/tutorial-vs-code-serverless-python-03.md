@@ -5,10 +5,10 @@ ms.topic: conceptual
 ms.date: 09/02/2019
 ms.custom: seo-python-october2019
 ms.openlocfilehash: 77dc4cb44158ded1dd5c6d1e19afb48272177a12
-ms.sourcegitcommit: 1bd9ec6a4115e9162e33b76a933869788e6ab702
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/31/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "80441336"
 ---
 # <a name="3-examine-the-python-code-files-in-visual-studio-code"></a>3: Esaminare i file di codice Python in Visual Studio Code
