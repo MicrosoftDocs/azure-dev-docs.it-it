@@ -4,12 +4,12 @@ description: Informazioni su come configurare Jenkins per l'integrazione continu
 keywords: jenkins, azure, devops, aks, servizio azure kubernetes, github
 ms.topic: article
 ms.date: 01/09/2019
-ms.openlocfilehash: 99c46e62e0d841d9ec6668fd5bcafdfa2cb6ba3a
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: cbde97c7796a7f89bfb8ec0cbe530e84bd750e04
+ms.sourcegitcommit: 8309822d57f784a9c2ca67428ad7e7330bb5e0d6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82170397"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82861184"
 ---
 # <a name="tutorial-deploy-from-github-to-azure-kubernetes-service-using-jenkins"></a>Esercitazione: Eseguire la distribuzione da GitHub nel servizio Azure Kubernetes con Jenkins
 
@@ -30,9 +30,9 @@ Per completare questa esercitazione, è necessario quanto segue:
 
 - Conoscenze di base di Kubernetes, Git, CI/CD e delle immagini di contenitore
 
-- Un [cluster del servizio Azure Kubernetes](/azure/aks/kubernetes-walkthrough.md) e `kubectl` configurati con le [credenziali del cluster del servizio Azure Kubernetes](/cli/azure/aks#az-aks-get-credentials).
+- Un [cluster del servizio Azure Kubernetes](/azure/aks/kubernetes-walkthrough) e `kubectl` configurati con le [credenziali del cluster del servizio Azure Kubernetes](/cli/azure/aks#az-aks-get-credentials).
 
-- Un [registro del servizio Registro Azure Container](/azure/container-registry/container-registry-get-started-azure-cli.md), il nome del server di accesso al servizio Registro Azure Container e il cluster del servizio Azure Kubernetes configurati per [eseguire l'autenticazione con il registro del servizio Registro Azure Container](/azure/aks/cluster-container-registry-integration.md).
+- Un [registro del servizio Registro Azure Container](/azure/container-registry/container-registry-get-started-azure-cli), il nome del server di accesso al servizio Registro Azure Container e il cluster del servizio Azure Kubernetes configurati per [eseguire l'autenticazione con il registro del servizio Registro Azure Container](/azure/aks/cluster-container-registry-integration).
 
 - Interfaccia della riga di comando di Azure versione 2.0.46 o successiva installata e configurata. Eseguire  `az --version` per trovare la versione. Se è necessario eseguire l'installazione o l'aggiornamento, vedere  [Installare l'interfaccia della riga di comando di Azure](/cli/azure/install-azure-cli).
 

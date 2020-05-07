@@ -3,12 +3,12 @@ title: 'Esercitazione: Archiviare lo stato di Terraform in Archiviazione di Azur
 description: Informazioni su come archiviare lo stato di Terraform in Archiviazione di Azure.
 ms.topic: tutorial
 ms.date: 11/07/2019
-ms.openlocfilehash: f2180a8e12632c0693dcf491d621121168fa99c8
-ms.sourcegitcommit: 756e4873f904db954a56c20ebb2f1f5116ee4596
+ms.openlocfilehash: e61787a80905507c16a5ac7f23cfe9ed852f6708
+ms.sourcegitcommit: 8309822d57f784a9c2ca67428ad7e7330bb5e0d6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82169697"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82861244"
 ---
 # <a name="tutorial-store-terraform-state-in-azure-storage"></a>Esercitazione: Archiviare lo stato Terraform in Archiviazione di Azure
 
@@ -73,7 +73,7 @@ Creare una variabile di ambiente denominata `ARM_ACCESS_KEY` con il valore della
 export ARM_ACCESS_KEY=<storage access key>
 ```
 
-Per proteggere ulteriormente la chiave di accesso dell'account di Archiviazione di Azure, salvarla in Azure Key Vault. La variabile di ambiente può quindi essere impostata usando un comando simile al seguente. Per altre informazioni su Azure Key Vault, vedere la [documentazione di Azure Key Vault](/azure/key-vault/secrets/quick-create-cli.md).
+Per proteggere ulteriormente la chiave di accesso dell'account di Archiviazione di Azure, salvarla in Azure Key Vault. La variabile di ambiente può quindi essere impostata usando un comando simile al seguente. Per altre informazioni su Azure Key Vault, vedere la [documentazione di Azure Key Vault](/azure/key-vault/secrets/quick-create-cli).
 
 ```bash
 export ARM_ACCESS_KEY=$(az keyvault secret show --name terraform-backend-key --vault-name myKeyVault --query value -o tsv)
@@ -124,7 +124,7 @@ Il blocco può essere visto quando si esamina il BLOB tramite il portale di Azur
 
 I dati archiviati in un BLOB di Azure vengono crittografati prima di diventare persistenti. Se necessario, Terraform recupera lo stato dal back-end e lo archivia nella memoria locale. Con questo modello, lo stato non viene mai scritto nel disco locale.
 
-Per altre informazioni sulla crittografia di Archiviazione di Azure, vedere [Crittografia del servizio Archiviazione di Azure per dati inattivi](/azure/storage/common/storage-service-encryption.md).
+Per altre informazioni sulla crittografia di Archiviazione di Azure, vedere [Crittografia del servizio Archiviazione di Azure per dati inattivi](/azure/storage/common/storage-service-encryption).
 
 ## <a name="next-steps"></a>Passaggi successivi
 

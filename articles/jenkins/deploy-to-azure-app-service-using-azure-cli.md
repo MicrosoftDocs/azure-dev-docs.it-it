@@ -4,12 +4,12 @@ description: Informazioni su come usare l'interfaccia della riga di comando di A
 keywords: jenkins, azure, devops, servizio app, interfaccia della riga di comando
 ms.topic: tutorial
 ms.date: 04/25/2020
-ms.openlocfilehash: 03eb896717350a242fb2f504a4da9b57ecc8a209
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: 242986ca95b36d95393b7ff688ebf60bb95985fa
+ms.sourcegitcommit: 8309822d57f784a9c2ca67428ad7e7330bb5e0d6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82169887"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82861234"
 ---
 # <a name="tutorial-deploy-to-azure-app-service-with-jenkins-and-the-azure-cli"></a>Esercitazione: Distribuire nel servizio app di Azure con Jenkins e l'interfaccia della riga di comando di Azure
 
@@ -183,7 +183,7 @@ Per verificare che il file WAR sia stato distribuito correttamente nell'app Web,
 
 Dopo aver usato l'interfaccia della riga di comando di Azure nella pipeline Jenkins, modificare lo script per eseguire la distribuzione in un'app Web di Azure in Linux. Le app Web in Linux supportano Docker. Di conseguenza, specificare un Dockerfile che assembla l'app Web con il runtime del servizio in un'immagine Docker. Il plug-in crea l'immagine, ne esegue il push in un registro Docker e la distribuisce nell'app Web.
 
-1. [Creare un'app Web di Azure eseguita in Linux](/azure/app-service/containers/quickstart-nodejs.md).
+1. [Creare un'app Web di Azure eseguita in Linux](/azure/app-service/containers/quickstart-nodejs).
 
 1. [Installare Docker in Jenkins](https://docs.docker.com/engine/installation/linux/ubuntu/).
 
