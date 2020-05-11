@@ -4,10 +4,10 @@ description: Parte 6 dell'esercitazione, apportare modifiche e ripetere la distr
 ms.topic: conceptual
 ms.date: 09/24/2019
 ms.openlocfilehash: 9702f10795893004965631fa99dfbfab181f2292
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/25/2019
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "74467166"
 ---
 # <a name="make-changes-and-redeploy"></a>Apportare modifiche e ripetere la distribuzione
