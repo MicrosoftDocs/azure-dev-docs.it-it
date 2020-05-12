@@ -1,0 +1,13 @@
+- name: Interazione tra Azure e GitHub
+  href: index.yml
+  items:
+    - name: GitHub Actions per Azure
+      href: github-actions.md
+    - name: Distribuire app da GitHub ad Azure
+      href: deploy-to-azure.md
+    - name: Integrazioni degli strumenti per GitHub Actions
+      href: deploy-with-visual-studio.md
+    - name: Integrazione di Azure DevOps e GitHub
+      href: integrate-azure-devops.md
+    - name: Connettersi da Azure a GitHub
+      href: connect-from-azure.md

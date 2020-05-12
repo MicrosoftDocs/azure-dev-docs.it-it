@@ -3,11 +3,15 @@
   items:
     - name: Panoramica
       href: migration-overview.md
-    - name: Da Spring a Servizio app di Azure
-      href: migrate-java-se-to-java-se-app-service.md
+    - name: Da Spring Boot a Servizio app di Azure
+      href: migrate-spring-boot-to-app-service.md
+    - name: Da Spring Boot al servizio Azure Kubernetes
+      href: migrate-spring-boot-to-azure-kubernetes-service.md
+    - name: Da Spring Cloud ad Azure Spring Cloud
+      href: migrate-spring-cloud-to-azure-spring-cloud.md
     - name: Da Tomcat a Servizio app di Azure
       href: migrate-tomcat-to-tomcat-app-service.md
-    - name: Da Tomcat ai contenitori nel servizio Azure Container
+    - name: Da Tomcat ai contenitori nel servizio Azure Kubernetes
       href: migrate-tomcat-to-containers-on-azure-kubernetes-service.md
     - name: Da WebLogic a macchine virtuali di Azure
       href: migrate-weblogic-to-virtual-machines.md

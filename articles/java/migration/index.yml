@@ -8,12 +8,12 @@ metadata:
   ms.author: karler
   ms.date: 04/03/2020
   ms.topic: landing-page
-  ms.openlocfilehash: 772bb5caba59d9f620d22d7d5fb945a617419095
-  ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+  ms.openlocfilehash: abd14e250416b5718537e1ca14b4ffdd8f3f3b5e
+  ms.sourcegitcommit: 226ebca0d0e3b918928f58a3a7127be49e4aca87
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 05/05/2020
-  ms.locfileid: "81675157"
+  ms.lasthandoff: 05/08/2020
+  ms.locfileid: "82988932"
 landingContent:
 - title: Eseguire la migrazione di applicazioni Java ad Azure
   linkLists:
@@ -25,15 +25,19 @@ landingContent:
   linkLists:
   - linkListType: how-to-guide
     links:
-    - text: Da Spring a Servizio app di Azure
-      url: migrate-java-se-to-java-se-app-service.md
+    - text: Da Spring Boot a Servizio app di Azure
+      url: migrate-spring-boot-to-app-service.md
+    - text: Da Spring Boot al servizio Azure Kubernetes
+      url: migrate-spring-boot-to-azure-kubernetes-service.md
+    - text: Da Spring Cloud ad Azure Spring Cloud
+      url: migrate-spring-cloud-to-azure-spring-cloud.md
 - title: Eseguire la migrazione di Tomcat ad Azure
   linkLists:
   - linkListType: how-to-guide
     links:
     - text: Da Tomcat a Servizio app di Azure
       url: migrate-tomcat-to-tomcat-app-service.md
-    - text: Da Tomcat ai contenitori nel servizio Azure Container
+    - text: Da Tomcat ai contenitori nel servizio Azure Kubernetes
       url: migrate-tomcat-to-containers-on-azure-kubernetes-service.md
 - title: Eseguire la migrazione di WebLogic ad Azure
   linkLists:
