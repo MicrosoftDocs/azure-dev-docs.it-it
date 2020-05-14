@@ -6,12 +6,12 @@ ms.date: 12/19/2018
 ms.service: postgresql
 ms.tgt_pltfrm: multiple
 ms.topic: conceptual
-ms.openlocfilehash: 77addcc8b35dc15fe6bc64722e0a5d61b67bd4a5
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: 723d98afd5f82a733011db207f8f462888c95e57
+ms.sourcegitcommit: a631b36ec1277ee9397a860c597ffdd5495d88e7
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81668957"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83369801"
 ---
 # <a name="how-to-use-spring-data-jpa-with-azure-postgresql"></a>Come usare Spring Data JPA con Azure PostgreSQL
 
@@ -93,7 +93,7 @@ I prerequisiti seguenti sono necessari per completare le procedure disponibili i
    | Parametro | Descrizione |
    |---|---|
    | `host` | Specifica il nome completo del server PostgreSQL dei passaggi precedenti di questo articolo. |
-   | `host` | Specifica la porta del server PostgreSQL, che per impostazione predefinita è `5432`. |
+   | `port` | Specifica la porta del server PostgreSQL, che per impostazione predefinita è `5432`. |
    | `username` | Specifica l'amministratore PostgreSQL e il nome abbreviato del server dei passaggi precedenti di questo articolo. |
    | `dbname` | Specifica che per il momento si vuole usare il database `postgres` predefinito. |
 

@@ -4,12 +4,12 @@ description: Informazioni su come usare il plug-in Azure Dev Spaces nella pipeli
 keywords: jenkins, azure, devops, azure dev spaces, aks, servizio azure kubernetes
 ms.topic: tutorial
 ms.date: 10/23/2019
-ms.openlocfilehash: 2528d362a9c95aecd00b938fdeed2756c8643fd4
-ms.sourcegitcommit: 8309822d57f784a9c2ca67428ad7e7330bb5e0d6
+ms.openlocfilehash: acc4fba8bc12c631f395bf980ca6ee8b42dc8f49
+ms.sourcegitcommit: a631b36ec1277ee9397a860c597ffdd5495d88e7
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82861254"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83369934"
 ---
 # <a name="tutorial-use-azure-dev-spaces-with-azure-kubernetes-service"></a>Esercitazione: Usare Azure Dev Spaces con il servizio Azure Kubernetes
 
@@ -202,7 +202,7 @@ La pipeline di esempio usa Helm e kubectl per eseguire la distribuzione nell'ist
 
 ### <a name="add-credentials-to-jenkins"></a>Aggiungere le credenziali in Jenkins
 
-1. Jenkins richiede un'entità servizio di Azure per l'autenticazione e l'accesso alle risorse di Azure. Per creare l'entità servizio, vedere la sezione [Creare l'entità servizio](https://docs.microsoft.com/azure/jenkins/deploy-from-github-to-azure-app-service#create-service-principal) dell'esercitazione Eseguire la distribuzione in Servizio app di Azure. Assicurarsi di salvare una copia dell'output di `create-for-rbac` perché queste informazioni saranno necessarie per completare il passaggio successivo. Verrà visualizzato un risultato simile al seguente:
+1. Jenkins richiede un'entità servizio di Azure per l'autenticazione e l'accesso alle risorse di Azure. Per creare l'entità servizio, vedere la sezione [Creare l'entità servizio](deploy-from-github-to-azure-app-service.md#create-service-principal) dell'esercitazione Eseguire la distribuzione in Servizio app di Azure. Assicurarsi di salvare una copia dell'output di `create-for-rbac` perché queste informazioni saranno necessarie per completare il passaggio successivo. Verrà visualizzato un risultato simile al seguente:
 
     ```json
     {
@@ -220,7 +220,7 @@ La pipeline di esempio usa Helm e kubectl per eseguire la distribuzione nell'ist
 
     ![Aggiungere le credenziali dell'entità servizio in Jenkins](media/azure-dev-spaces-and-aks/add-service-principal-credentials.png)
 
-    La **descrizione** è facoltativa. Per istruzioni più dettagliate, vedere la sezione[Aggiungere l'entità servizio a Jenkins](https://docs.microsoft.com/azure/jenkins/deploy-from-github-to-azure-app-service#add-service-principal-to-jenkins) dell'esercitazione Eseguire la distribuzione in Servizio app di Azure. 
+    La **descrizione** è facoltativa. Per istruzioni più dettagliate, vedere la sezione[Aggiungere l'entità servizio a Jenkins](deploy-from-github-to-azure-app-service.md#add-service-principal-to-jenkins) dell'esercitazione Eseguire la distribuzione in Servizio app di Azure. 
 
 
 

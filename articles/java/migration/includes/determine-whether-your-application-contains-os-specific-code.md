@@ -2,13 +2,13 @@
 author: edburns
 ms.author: edburns
 ms.date: 1/21/2020
-ms.openlocfilehash: 501d7da2e7af8b092018ec4827a0169b0253bcf8
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: 53ed325e26e6929106bd102341f3f446332e26f2
+ms.sourcegitcommit: 226ebca0d0e3b918928f58a3a7127be49e4aca87
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81672937"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82988818"
 ---
 ### <a name="determine-whether-your-application-contains-os-specific-code"></a>Determinare se l'applicazione contiene codice specifico del sistema operativo
 
-Se l'applicazione contiene codice con dipendenze dal sistema operativo host, sarà necessario effettuarne il refactoring per rimuovere tali dipendenze.
+[!INCLUDE [determine-whether-your-application-contains-os-specific-code-no-title](determine-whether-your-application-contains-os-specific-code-no-title.md)]
