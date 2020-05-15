@@ -1,20 +1,36 @@
 - name: Azure per sviluppatori Python
   href: index.yml
-- name: Panoramica
+- name: Sviluppo cloud con Azure
   items:
-    - name: Informazioni su Python SDK
+    - name: Cos'è Azure?
+      href: cloud-development-overview.md
+    - name: 'Provisioning, accesso e gestione delle risorse'
+      href: cloud-development-provisioning.md
+    - name: Flusso di sviluppo di Azure
+      href: cloud-development-flow.md
+- name: Configurare l'ambiente di sviluppo per Azure
+  href: configure-local-development-environment.md
+- name: Introduzione ad Azure SDK per Python
+  items:
+    - name: Panoramica
       href: azure-sdk-overview.md
-    - name: Strumenti di sviluppo
-      href: azure-tools.md
-- name: Avvi rapidi
+    - name: Installare le librerie SDK
+      href: azure-sdk-install.md
+    - name: 'Esempio: Creare un gruppo di risorse'
+      href: azure-sdk-example-resource-group.md
+    - name: 'Esempio: Usare l''archiviazione di Azure'
+      href: azure-sdk-example-storage.md
+    - name: 'Esempio: Effettuare il provisioning di un''app Web con il codice'
+      href: azure-sdk-example-web-app.md
+    - name: 'Esempio: Effettuare il provisioning di una macchina virtuale'
+      href: azure-sdk-example-virtual-machines.md
+- name: Avvii rapidi per i servizi di Azure
   items:
-    - name: Python SDK
-      href: azure-sdk-get-started.yml
     - name: Hosting di app
       href: quickstarts-app-hosting.md
     - name: Soluzioni per i dati
       href: quickstarts-data-solutions.md
-    - name: Machine learning
+    - name: Machine Learning
       href: quickstarts-machine-learning.md
     - name: Servizi cognitivi di Azure
       href: quickstarts-cognitive-services.md
@@ -22,9 +38,9 @@
       href: quickstarts-messaging.md
     - name: Sicurezza e integrazione
       href: quickstarts-security-integration.md
-- name: Esercitazioni
+- name: Esercitazioni specifiche per i vari scenari
   items:
-    - name: Eseguire la distribuzione nel servizio app con VS Code
+    - name: Distribuire un'app Web con VS Code
       items:
         - name: 1 - Introduzione e prerequisiti
           href: tutorial-deploy-app-service-on-linux-01.md
@@ -52,7 +68,7 @@
           href: tutorial-deploy-containers-04.md
         - name: 5 - Eseguire la pulizia delle risorse
           href: tutorial-deploy-containers-05.md
-    - name: Distribuire Funzioni di Azure con VS Code
+    - name: Distribuire Funzioni di Azure serverless con VS Code
       items:
         - name: 1 - Introduzione e prerequisiti
           href: tutorial-vs-code-serverless-python-01.md
@@ -72,11 +88,13 @@
           href: tutorial-vs-code-serverless-python-08.md
 - name: Guide pratiche
   items:
-    - name: Installare l'SDK
-      href: azure-sdk-install.md
-    - name: Authentication
+    - name: Autenticare app con Azure
       href: azure-sdk-authenticate.md
-    - name: Configurazione delle operazioni
+    - name: Gestire le entità servizio
+      href: how-to-manage-service-principals.md
+    - name: Assegnare le autorizzazioni di ruolo a entità di sicurezza
+      href: how-to-assign-role-permissions.md
+    - name: Configurare gli argomenti dell'API REST
       href: azure-sdk-operation-config.md
     - name: Sviluppo multi-cloud
       href: azure-sdk-multi-cloud.md
@@ -110,5 +128,5 @@
       href: 'https://docs.microsoft.com/samples/browse/?languages=python&products=azure-search'
     - name: Tutti gli esempi
       href: 'https://docs.microsoft.com/samples/browse/?languages=python'
-- name: Riferimento
+- name: Informazioni di riferimento
   href: /python/api/?view=azure-python
