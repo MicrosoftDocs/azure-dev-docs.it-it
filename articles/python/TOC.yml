@@ -129,4 +129,6 @@
     - name: Tutti gli esempi
       href: 'https://docs.microsoft.com/samples/browse/?languages=python'
 - name: Informazioni di riferimento
-  href: /python/api/?view=azure-python
+  items:
+    - name: Azure SDK
+      href: sdk.md
