@@ -99,7 +99,7 @@ Azure Pipelines usa un Dockerfile con un'immagine di base Payara Micro per crear
    > [!NOTE]
    > Se si usa Docker Hub o un altro registro, selezionare **Hub Docker** o **Altri** anziché **Registro Azure Container** accanto a **Tipo di registro**. Specificare quindi le credenziali e le informazioni di connessione per il registro contenitori.
    
-1. In **Comandi** selezionare **Compila** nell'elenco a discesa **Comando**.
+1. In **Comandi** selezionare **Compila**nell'elenco a discesa**Comando**.
    
 1. Selezionare i puntini di sospensione **...** accanto al campo**Dockerfile**, individuare e selezionare il **Dockerfile** dal repository GitHub e quindi fare clic su **OK**. 
    

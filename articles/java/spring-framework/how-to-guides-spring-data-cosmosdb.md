@@ -30,7 +30,7 @@ Le sezioni seguenti descrivono le funzionalità attualmente disponibili.
 
 ### <a name="crudrepository-and-reactivecrudrepository-support"></a>Supporto di CrudRepository e ReactiveCrudRepository
 
-Spring Data Cosmos DB SDK include le interfacce `CosmosRepository` e `ReactiveCosmosRepository`, che estendono le interfacce `CrudRepository` e `ReactiveCrudRepository` di Spring Data.
+Spring Data Cosmos DB SDK include le interfacce `CosmosRepository` e `ReactiveCosmosRepository`, che estendono le interfacce `ReactiveCrudRepository` e `CrudRepository` di Spring Data.
 
 L'esempio seguente illustra come estendere queste interfacce.
 
