@@ -3,15 +3,15 @@ title: 'Avvio rapido: Creare una VM Linux con infrastruttura in Azure tramite Te
 description: Informazioni su come usare Terraform per creare e gestire un ambiente completo per le macchine virtuali Linux in Azure.
 keywords: azure devops terraform linux vm macchina virtuale
 ms.topic: quickstart
-ms.date: 05/04/2020
-ms.openlocfilehash: d6763118179251c224e0ec3ae6e05a630cae7cde
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.date: 05/11/2020
+ms.openlocfilehash: 3485e899deaf84a63a2cf2d8085ac34b43f6fca9
+ms.sourcegitcommit: aa417af8b5f00cbc056666e481250ef45c661d52
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82801889"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83153715"
 ---
-# <a name="quickstart-create-a-linux-vm-with-infrastructure-in-azure-using-terraform"></a>Guida introduttiva: Creare una VM Linux con infrastruttura in Azure tramite Terraform
+# <a name="quickstart-create-a-linux-vm-with-infrastructure-in-azure-using-terraform"></a>Avvio rapido: Creare una VM Linux con infrastruttura in Azure tramite Terraform
 
 Terraform consente di definire e creare distribuzioni di infrastrutture complete in Azure. I modelli Terrraform, compilati dall'utente in un formato leggibile, creano e configurano le risorse di Azure in modo coerente e riproducibile. In questo articolo viene illustrato come creare un ambiente Linux completo e le risorse di supporto con Terraform. Verrà anche descritto come [installare e configurare Terraform](install-configure.md).
 
@@ -146,9 +146,9 @@ resource "azurerm_network_interface" "myterraformnic" {
 
     ip_configuration {
         name                          = "myNicConfiguration"
-        subnet_id                     = "azurerm_subnet.myterraformsubnet.id"
+        subnet_id                     = azurerm_subnet.myterraformsubnet.id
         private_ip_address_allocation = "Dynamic"
-        public_ip_address_id          = "azurerm_public_ip.myterraformpublicip.id"
+        public_ip_address_id          = azurerm_public_ip.myterraformpublicip.id
     }
 
     tags = {
@@ -412,8 +412,11 @@ resource "azurerm_linux_virtual_machine" "myterraformvm" {
 }
 ```
 
+**Note:**
 
-## <a name="build-and-deploy-the-infrastructure"></a>Compilare e distribuire l'infrastruttura
+- Per quanto riguarda il blocco `admin_ssh_key`, l'agente di macchine virtuali di Azure richiede che le chiavi SSH vengano scritte nel percorso seguente: `/home/{username}/.ssh/authorized_keys`. Per eseguire questo esempio in Windows, potrebbe essere necessario verificare l'esistenza della struttura di directory. Per altre informazioni sul blocco `admin_ssh_key`, vedere la [documentazione di azurerm_linux_virtual_machine su Terraform.io](https://www.terraform.io/docs/providers/azurerm/r/linux_virtual_machine.html).
+
+## <a name="build-and-deploy-the-infrastructure"></a>Creare e distribuire l'infrastruttura
 
 Con il modello Terraform creato, il primo passaggio consiste nell'inizializzare Terraform. Questo passaggio assicura che Terraform disponga di tutti i prerequisiti necessari per compilare il modello in Azure.
 
