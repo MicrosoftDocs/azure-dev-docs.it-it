@@ -5,12 +5,12 @@ author: yevster
 ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 1/20/2020
-ms.openlocfilehash: 1d7348530a163981f5c0a5f6cd6af26d01c55848
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: 8a6245f496b3a1371c43f764081f50b7b3f13dbd
+ms.sourcegitcommit: 226ebca0d0e3b918928f58a3a7127be49e4aca87
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81671597"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82988731"
 ---
 # <a name="migrate-tomcat-applications-to-containers-on-azure-kubernetes-service"></a>Eseguire la migrazione di applicazioni Tomcat ai contenitori nel servizio Azure Kubernetes
 
@@ -18,16 +18,16 @@ Questa guida descrive gli aspetti da considerare per la migrazione di un'applica
 
 ## <a name="pre-migration"></a>Pre-migrazione
 
+Per garantire una corretta migrazione, prima di iniziare completare i passaggi di valutazione e inventario descritti nelle sezioni seguenti.
+
 [!INCLUDE [inventory-external-resources](includes/inventory-external-resources.md)]
 
 [!INCLUDE [inventory-secrets](includes/inventory-secrets.md)]
 
-[!INCLUDE [inventory-persistence-usage](includes/inventory-persistence-usage.md)]
+[!INCLUDE [determine-whether-and-how-the-file-system-is-used](includes/determine-whether-and-how-the-file-system-is-used.md)]
 
 <!-- AKS-specific addendum to inventory-persistence-usage -->
-#### <a name="dynamic-or-internal-content"></a>Contenuto dinamico o interno
-
-Per i file scritti e letti di frequente dall'applicazione, ad esempio i file di dati temporanei, o i file statici visibili solo all'applicazione, è possibile montare le condivisioni di archiviazione di Azure come volumi persistenti. Per altre informazioni, vedere [Creare dinamicamente e usare un volume persistente con File di Azure nel servizio Azure Kubernetes](/azure/aks/azure-files-dynamic-pv).
+[!INCLUDE [dynamic-or-internal-content-aks](includes/dynamic-or-internal-content-aks.md)]
 
 ### <a name="identify-session-persistence-mechanism"></a>Identificare il meccanismo di persistenza delle sessioni
 

@@ -5,18 +5,20 @@ author: mriem
 ms.author: manriem
 ms.topic: conceptual
 ms.date: 2/28/2020
-ms.openlocfilehash: 279051f626c09e63637fdf99b323857f2751b813
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: 8f9dfe5168246dff64192ec802651a7fba022fc6
+ms.sourcegitcommit: 226ebca0d0e3b918928f58a3a7127be49e4aca87
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81673317"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82988851"
 ---
 # <a name="migrate-websphere-applications-to-wildfly-on-azure-kubernetes-service"></a>Eseguire la migrazione di applicazioni WebSphere a WildFly nel servizio Azure Kubernetes
 
 Questa guida descrive gli aspetti da considerare per la migrazione di un'applicazione WebSphere esistente da eseguire in WildFly in un contenitore del servizio Azure Kubernetes.
 
 ## <a name="pre-migration"></a>Pre-migrazione
+
+Per garantire una corretta migrazione, prima di iniziare completare i passaggi di valutazione e inventario descritti nelle sezioni seguenti.
 
 [!INCLUDE [inventory-server-capacity-aks](includes/inventory-server-capacity-aks.md)]
 
@@ -26,15 +28,7 @@ Controllare tutte le proprietà e i file di configurazione nei server di produzi
 
 [!INCLUDE [inventory-all-certificates](includes/inventory-all-certificates.md)]
 
-### <a name="validate-that-the-supported-java-version-works-correctly"></a>Verificare che la versione di Java supportata funzioni correttamente
-
-L'uso di WildFly nel servizio Azure Kubernetes richiede una versione specifica di Java. Pertanto, sarà necessario verificare che l'applicazione sia in grado di funzionare correttamente usando tale versione supportata. Questa convalida è particolarmente importante se il server corrente è usa una versione di JDK non supportata, ad esempio Oracle JDK o IBM OpenJ9.
-
-Per ottenere la versione corrente, accedere al server di produzione ed eseguire
-
-```bash
-java -version
-```
+[!INCLUDE [validate-that-the-supported-java-version-works-correctly-wildfly](includes/validate-that-the-supported-java-version-works-correctly-wildfly.md)]
 
 ### <a name="inventory-jndi-resources"></a>Inventario delle risorse JNDI
 
@@ -58,17 +52,9 @@ Per altre informazioni, vedere la sezione relativa alla [configurazione della co
 
 Qualsiasi utilizzo del file system nel server applicazioni richiede modifiche della configurazione o, in casi rari, dell'architettura. Il file system può essere usato da moduli WebSphere o dal codice dell'applicazione. È possibile identificare alcuni o tutti gli scenari descritti nelle sezioni seguenti.
 
-#### <a name="read-only-static-content"></a>Contenuto statico di sola lettura
+[!INCLUDE [static-content](includes/static-content.md)]
 
-Se l'applicazione attualmente distribuisce contenuto statico, è necessario modificarne la posizione. Si può scegliere di spostare il contenuto statico in Archiviazione BLOB di Azure e di aggiungere la rete di distribuzione dei contenuti di Azure per accelerare i download a livello globale. Per altre informazioni, vedere [Hosting di siti Web statici in Archiviazione di Azure](/azure/storage/blobs/storage-blob-static-website) e [Avvio rapido: Integrare un account di archiviazione di Azure con la rete CDN di Azure](/azure/cdn/cdn-create-a-storage-account-with-cdn).
-
-#### <a name="dynamically-published-static-content"></a>Contenuto statico pubblicato dinamicamente
-
-Se l'applicazione consente contenuto statico caricato/prodotto dall'applicazione ma non modificabile dopo la creazione, è possibile usare Archiviazione BLOB di Azure e la rete di distribuzione dei contenuti di Azure, come descritto sopra, con una funzione di Azure per gestire i caricamenti e l'aggiornamento della rete CDN. Nell'articolo [Caricamento e precaricamento nella rete CDN di contenuto statico con Funzioni di Azure](https://github.com/Azure-Samples/functions-java-push-static-contents-to-cdn) è riportata un'implementazione di esempio che è possibile usare.
-
-#### <a name="dynamic-or-internal-content"></a>Contenuto dinamico o interno
-
-Per i file scritti e letti di frequente dall'applicazione, ad esempio i file di dati temporanei, o i file statici visibili solo all'applicazione, è possibile montare le condivisioni di archiviazione di Azure come volumi persistenti. Per altre informazioni, vedere [Creare dinamicamente e usare un volume persistente con File di Azure nel servizio Azure Kubernetes](/azure/aks/azure-files-dynamic-pv).
+[!INCLUDE [dynamic-or-internal-content-aks](includes/dynamic-or-internal-content-aks.md)]
 
 [!INCLUDE [determine-whether-your-application-relies-on-scheduled-jobs](includes/determine-whether-your-application-relies-on-scheduled-jobs.md)]
 

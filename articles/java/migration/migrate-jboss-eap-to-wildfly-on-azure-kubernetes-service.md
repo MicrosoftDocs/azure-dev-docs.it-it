@@ -5,18 +5,20 @@ author: mriem
 ms.author: manriem
 ms.topic: conceptual
 ms.date: 3/16/2020
-ms.openlocfilehash: a1ebbee2127c283e990021da0b395e9fbb7d883c
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: 4ab902e61703d5abc093dc508a370777b69632ff
+ms.sourcegitcommit: 226ebca0d0e3b918928f58a3a7127be49e4aca87
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81672837"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82988948"
 ---
 # <a name="migrate-jboss-eap-applications-to-wildfly-on-azure-kubernetes-service"></a>Eseguire la migrazione di applicazioni JBoss EAP a WildFly nel servizio Azure Kubernetes
 
 Questa guida descrive gli aspetti da considerare per la migrazione di un'applicazione JBoss EAP esistente da eseguire in WildFly in un contenitore del servizio Azure Kubernetes.
 
 ## <a name="pre-migration"></a>Pre-migrazione
+
+Per garantire una corretta migrazione, prima di iniziare completare i passaggi di valutazione e inventario descritti nelle sezioni seguenti.
 
 [!INCLUDE [inventory-server-capacity-aks](includes/inventory-server-capacity-aks.md)]
 
@@ -28,17 +30,7 @@ Controllare tutte le proprietà e i file di configurazione nei server di produzi
 
 [!INCLUDE [inventory-all-certificates](includes/inventory-all-certificates.md)]
 
-### <a name="validate-that-the-supported-java-version-works-correctly"></a>Verificare che la versione di Java supportata funzioni correttamente
-
-L'uso di WildFly nel servizio Azure Kubernetes richiede una versione specifica di Java. Pertanto, sarà necessario verificare che l'applicazione sia in grado di funzionare correttamente usando tale versione supportata. Questa convalida è particolarmente importante se il server corrente è usa una versione di JDK non supportata, ad esempio Oracle JDK o IBM OpenJ9.
-
-Per ottenere la versione corrente, accedere al server di produzione ed eseguire questo comando:
-
-```bash
-java -version
-```
-
-Per informazioni sulla versione da usare per l'esecuzione di WildFly, vedere [Requisiti](http://docs.wildfly.org/19/Getting_Started_Guide.html#requirements).
+[!INCLUDE [validate-that-the-supported-java-version-works-correctly-wildfly](includes/validate-that-the-supported-java-version-works-correctly-wildfly.md)]
 
 ### <a name="inventory-jndi-resources"></a>Inventario delle risorse JNDI
 
@@ -66,17 +58,9 @@ Per altre informazioni, vedere la sezione relativa alle [origini dati di JBoss E
 
 Qualsiasi utilizzo del file system nel server applicazioni richiede modifiche della configurazione o, in casi rari, dell'architettura. Il file system può essere usato da moduli JBoss EAP o dal codice dell'applicazione. È possibile identificare alcuni o tutti gli scenari descritti nelle sezioni seguenti.
 
-#### <a name="read-only-static-content"></a>Contenuto statico di sola lettura
+[!INCLUDE [static-content](includes/static-content.md)]
 
-Se l'applicazione attualmente distribuisce contenuto statico, è necessario modificarne la posizione. Si può scegliere di spostare il contenuto statico in Archiviazione BLOB di Azure e di aggiungere la rete di distribuzione dei contenuti di Azure per accelerare i download a livello globale. Per altre informazioni, vedere [Hosting di siti Web statici in Archiviazione di Azure](/azure/storage/blobs/storage-blob-static-website) e [Avvio rapido: Integrare un account di archiviazione di Azure con la rete CDN di Azure](/azure/cdn/cdn-create-a-storage-account-with-cdn).
-
-#### <a name="dynamically-published-static-content"></a>Contenuto statico pubblicato dinamicamente
-
-Se l'applicazione consente contenuto statico caricato/prodotto dall'applicazione ma non modificabile dopo la creazione, è possibile usare Archiviazione BLOB di Azure e la rete di distribuzione dei contenuti di Azure, come descritto sopra, con una funzione di Azure per gestire i caricamenti e l'aggiornamento della rete CDN. Nell'articolo [Caricamento e precaricamento nella rete CDN di contenuto statico con Funzioni di Azure](https://github.com/Azure-Samples/functions-java-push-static-contents-to-cdn) è riportata un'implementazione di esempio che è possibile usare.
-
-#### <a name="dynamic-or-internal-content"></a>Contenuto dinamico o interno
-
-Per i file scritti e letti di frequente dall'applicazione, ad esempio i file di dati temporanei, o i file statici visibili solo all'applicazione, è possibile montare le condivisioni di archiviazione di Azure come volumi persistenti. Per altre informazioni, vedere [Creare dinamicamente e usare un volume persistente con File di Azure nel servizio Azure Kubernetes](/azure/aks/azure-files-dynamic-pv).
+[!INCLUDE [dynamic-or-internal-content-aks](includes/dynamic-or-internal-content-aks.md)]
 
 [!INCLUDE [determine-whether-your-application-relies-on-scheduled-jobs](includes/determine-whether-your-application-relies-on-scheduled-jobs.md)]
 
@@ -98,7 +82,7 @@ Se l'applicazione usa API specifiche di JBoss EAP, sarà necessario effettuarne 
 
 ### <a name="determine-whether-jca-connectors-are-in-use"></a>Determinare se vengono usati i connettori JCA
 
-Se l'applicazione usa connettori JCA, è necessario verificare che possano essere usati in WildFly. Se l'implementazione di JCA è vincolata a JBoss EAP, sarà necessario effettuare il refactoring dell'applicazione per rimuovere tale dipendenza. Se il connettore può essere usato, sarà necessario aggiungere i file JAR al classpath del server e inserire i file di configurazione necessari nella posizione corretta nelle directory del server WildFly per renderlo disponibile.
+Se l'applicazione usa connettori JCA, è necessario verificare che sia possibile usare il connettore JCA in WildFly. Se l'implementazione di JCA è vincolata a JBoss EAP, sarà necessario effettuare il refactoring dell'applicazione per rimuovere tale dipendenza. Se è possibile usare il connettore JCA, affinché sia disponibile sarà necessario aggiungere i file JAR al parametro classpath del server e includere i file di configurazione necessari nel percorso corretto nelle directory del server WildFly.
 
 [!INCLUDE [determine-whether-jaas-is-in-use](includes/determine-whether-jaas-is-in-use.md)]
 

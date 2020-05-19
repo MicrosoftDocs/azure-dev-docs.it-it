@@ -2,19 +2,19 @@
 author: mriem
 ms.author: manriem
 ms.date: 2/28/2020
-ms.openlocfilehash: 6d6f0f701e9507f5dee065c14b48b30be423e100
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: 08389c5802d2f6fef5360ac09adb11bb6494beb6
+ms.sourcegitcommit: 226ebca0d0e3b918928f58a3a7127be49e4aca87
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81672847"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82988813"
 ---
 ### <a name="create-a-docker-image-for-wildfly"></a>Creare un'immagine Docker per WildFly
 
 Per creare un Dockerfile, è necessario soddisfare i prerequisiti seguenti:
 
-* Una versione supportata di JDK
-* Un'installazione di WildFly
+* Una versione supportata di JDK.
+* Un'installazione di WildFly.
 * Le opzioni di runtime della JVM.
 * Un modo per passare le variabili di ambiente (se applicabile).
 

@@ -5,24 +5,24 @@ author: mriem
 ms.author: manriem
 ms.topic: conceptual
 ms.date: 2/28/2020
-ms.openlocfilehash: d17551aeb1041415e2c5b6d5fd8a43d3b7b670aa
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: b8df6a28083521bca900e5c1c939c6456546f349
+ms.sourcegitcommit: 226ebca0d0e3b918928f58a3a7127be49e4aca87
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81673387"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82988921"
 ---
 # <a name="migrate-weblogic-applications-to-wildfly-on-azure-kubernetes-service"></a>Eseguire la migrazione di applicazioni WebLogic a WildFly nel servizio Azure Kubernetes
 
 Questa guida descrive gli aspetti da considerare per la migrazione di un'applicazione WebLogic esistente da eseguire in WildFly in un contenitore del servizio Azure Kubernetes.
 
-## <a name="before-you-start"></a>Prima di iniziare
+## <a name="pre-migration"></a>Pre-migrazione
+
+Per garantire una corretta migrazione, prima di iniziare completare i passaggi di valutazione e inventario descritti nelle sezioni seguenti.
 
 Se non è possibile soddisfare i requisiti di pre-migrazione, vedere le guide alla migrazione complementari:
 
 * [Eseguire la migrazione di applicazioni WebLogic alle macchine virtuali di Azure](migrate-weblogic-to-virtual-machines.md)
-
-## <a name="pre-migration"></a>Pre-migrazione
 
 [!INCLUDE [inventory-server-capacity-aks](includes/inventory-server-capacity-aks.md)]
 
@@ -66,15 +66,7 @@ Se l'applicazione si basa sulla replica delle sessioni, con o senza Oracle Coher
 
 [!INCLUDE [identify-all-outside-processes-and-daemons-running-on-the-production-servers](includes/identify-all-outside-processes-and-daemons-running-on-the-production-servers.md)]
 
-### <a name="validate-that-the-supported-java-version-works-correctly"></a>Verificare che la versione di Java supportata funzioni correttamente
-
-L'uso di WildFly nel servizio Azure Kubernetes richiede una versione specifica di Java. Pertanto, sarà necessario verificare che l'applicazione sia in grado di funzionare correttamente usando tale versione supportata. Questa convalida è particolarmente importante se il server corrente è usa una versione di JDK non supportata, ad esempio Oracle JDK o IBM OpenJ9.
-
-Per ottenere la versione corrente, accedere al server di produzione ed eseguire il comando seguente:
-
-```bash
-java -version
-```
+[!INCLUDE [validate-that-the-supported-java-version-works-correctly-wildfly](includes/validate-that-the-supported-java-version-works-correctly-wildfly.md)]
 
 [!INCLUDE [determine-whether-your-application-relies-on-scheduled-jobs](includes/determine-whether-your-application-relies-on-scheduled-jobs.md)]
 
@@ -102,21 +94,13 @@ Se l'app è stata distribuita usando un piano di distribuzione, sarà necessario
 
 [!INCLUDE [determine-whether-ejb-timers-are-in-use](includes/determine-whether-ejb-timers-are-in-use.md)]
 
-### <a name="validate-whether-and-how-the-file-system-is-used"></a>Verificare se e come viene usato il file system
+### <a name="determine-whether-and-how-the-file-system-is-used"></a>Determinare se e come viene usato il file system
 
 Qualsiasi utilizzo del file system nel server applicazioni richiede modifiche della configurazione o, in casi rari, dell'architettura. Il file system può essere usato da moduli condivisi di WebLogic o dal codice dell'applicazione. È possibile identificare alcuni o tutti gli scenari descritti nelle sezioni seguenti.
 
-#### <a name="read-only-static-content"></a>Contenuto statico di sola lettura
+[!INCLUDE [static-content](includes/static-content.md)]
 
-Se l'applicazione attualmente distribuisce contenuto statico, è necessario modificarne la posizione. Si può scegliere di spostare il contenuto statico in Archiviazione BLOB di Azure e di aggiungere la rete di distribuzione dei contenuti di Azure per accelerare i download a livello globale. Per altre informazioni, vedere [Hosting di siti Web statici in Archiviazione di Azure](/azure/storage/blobs/storage-blob-static-website) e [Avvio rapido: Integrare un account di archiviazione di Azure con la rete CDN di Azure](/azure/cdn/cdn-create-a-storage-account-with-cdn).
-
-#### <a name="dynamically-published-static-content"></a>Contenuto statico pubblicato dinamicamente
-
-Se l'applicazione consente contenuto statico caricato/prodotto dall'applicazione ma non modificabile dopo la creazione, è possibile usare Archiviazione BLOB di Azure e la rete di distribuzione dei contenuti di Azure, come descritto sopra, con una funzione di Azure per gestire i caricamenti e l'aggiornamento della rete CDN. Nell'articolo [Caricamento e precaricamento nella rete CDN di contenuto statico con Funzioni di Azure](https://github.com/Azure-Samples/functions-java-push-static-contents-to-cdn) è riportata un'implementazione di esempio che è possibile usare.
-
-#### <a name="dynamic-or-internal-content"></a>Contenuto dinamico o interno
-
-Per i file scritti e letti di frequente dall'applicazione, ad esempio i file di dati temporanei, o i file statici visibili solo all'applicazione, è possibile montare le condivisioni di archiviazione di Azure come volumi persistenti. Per altre informazioni, vedere [Creare dinamicamente e usare un volume persistente con File di Azure nel servizio Azure Kubernetes](/azure/aks/azure-files-dynamic-pv).
+[!INCLUDE [dynamic-or-internal-content-aks](includes/dynamic-or-internal-content-aks.md)]
 
 ### <a name="determine-whether-jca-connectors-are-used"></a>Determinare se vengono usati i connettori JCA
 

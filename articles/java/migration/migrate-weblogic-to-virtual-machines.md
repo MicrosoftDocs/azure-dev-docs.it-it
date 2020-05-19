@@ -5,18 +5,20 @@ author: edburns
 ms.author: edburns
 ms.topic: conceptual
 ms.date: 1/27/2020
-ms.openlocfilehash: 10edb96e4e0781945da85d5a872b14178db3122f
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: b9d9a4ea8ef81af5c67b91281e892b4626f42f62
+ms.sourcegitcommit: 226ebca0d0e3b918928f58a3a7127be49e4aca87
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81673517"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82988908"
 ---
 # <a name="migrate-weblogic-applications-to-azure-virtual-machines"></a>Eseguire la migrazione di applicazioni WebLogic alle macchine virtuali di Azure
 
 Questa guida descrive gli aspetti da considerare per la migrazione di un'applicazione WebLogic esistente da eseguire nelle macchine virtuali di Azure.
 
 ## <a name="pre-migration"></a>Pre-migrazione
+
+Per garantire una corretta migrazione, prima di iniziare completare i passaggi di valutazione e inventario descritti nelle sezioni seguenti.
 
 ### <a name="define-what-you-mean-by-migration-complete"></a>Definire cosa si intende per "migrazione completata"
 
@@ -40,11 +42,11 @@ La versione di WebLogic esistente deve essere compatibile con la versione presen
 
 [!INCLUDE [inventory-all-certificates](includes/inventory-all-certificates.md)]
 
-[!INCLUDE [validate-that-the-supported-java-version-works-correctly](includes/validate-that-the-supported-java-version-works-correctly.md)]
+[!INCLUDE [validate-that-the-supported-java-version-works-correctly-weblogic](includes/validate-that-the-supported-java-version-works-correctly-weblogic.md)]
 
 [!INCLUDE [inventory-jndi-resources](includes/inventory-jndi-resources.md)]
 
-[!INCLUDE [domain-configuration](includes/domain-configuration.md)]
+[!INCLUDE [inspect-your-domain-configuration](includes/inspect-your-domain-configuration.md)]
 
 [!INCLUDE [determine-whether-session-replication-is-used](includes/determine-whether-session-replication-is-used.md)]
 
@@ -74,7 +76,11 @@ La versione di WebLogic esistente deve essere compatibile con la versione presen
 
 [!INCLUDE [determine-whether-wlst-is-used](includes/determine-whether-wlst-is-used.md)]
 
-[!INCLUDE [validate-whether-and-how-the-file-system-is-used](includes/validate-whether-and-how-the-file-system-is-used.md)]
+### <a name="determine-whether-and-how-the-file-system-is-used"></a>Determinare se e come viene usato il file system
+
+I file system delle VM funzionano allo stesso modo di quelli locali in termini di persistenza, avvio e arresto. Ciononostante, è importante tenere presenti i requisiti dei file system e assicurarsi che le VM abbiano dimensioni dello spazio di archiviazione e prestazioni adeguate.
+
+[!INCLUDE [static-content](includes/static-content.md)]
 
 [!INCLUDE [determine-the-network-topology](includes/determine-the-network-topology.md)]
 

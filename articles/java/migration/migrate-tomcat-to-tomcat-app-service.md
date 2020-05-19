@@ -5,31 +5,31 @@ author: yevster
 ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 1/20/2020
-ms.openlocfilehash: c6586f0ba2e651445e95fa3606daa35ee566df87
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: 6d2d18a6dbf87a97b806876a534a103dbbf88420
+ms.sourcegitcommit: 226ebca0d0e3b918928f58a3a7127be49e4aca87
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81673477"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82988798"
 ---
 # <a name="migrate-tomcat-applications-to-tomcat-on-azure-app-service"></a>Eseguire la migrazione di applicazioni Tomcat a Tomcat nel servizio app di Azure
 
 Questa guida descrive gli aspetti da considerare per la migrazione di un'applicazione Tomcat esistente da eseguire nel servizio app di Azure con Tomcat 9.0.
 
-## <a name="before-you-start"></a>Prima di iniziare
+## <a name="pre-migration"></a>Pre-migrazione
+
+Per garantire una corretta migrazione, prima di iniziare completare i passaggi di valutazione e inventario descritti nelle sezioni seguenti.
 
 Se non è possibile soddisfare i requisiti di pre-migrazione, vedere le guide alla migrazione complementari seguenti:
 
 * [Eseguire la migrazione di applicazioni Tomcat ai contenitori nel servizio Azure Kubernetes](migrate-tomcat-to-containers-on-azure-kubernetes-service.md)
 * Eseguire la migrazione di applicazioni Tomcat alle macchine virtuali di Azure (indicazioni in pianificazione)
 
-## <a name="pre-migration"></a>Pre-migrazione
-
 ### <a name="switch-to-a-supported-platform"></a>Passare a una piattaforma supportata
 
 Il servizio app offre versioni specifiche di Tomcat per versioni specifiche di Java. Per garantire la compatibilità, eseguire la migrazione dell'applicazione a una delle versioni supportate di Tomcat e Java nell'ambiente corrente prima di procedere con i passaggi rimanenti. Assicurarsi di testare completamente la configurazione risultante. Usare la versione stabile più recente della distribuzione Linux in questi test.
 
-[!INCLUDE [note-obtain-your-current-java-version](includes/note-obtain-your-current-java-version.md)]
+[!INCLUDE [note-obtain-your-current-java-version-app-service](includes/note-obtain-your-current-java-version-app-service.md)]
 
 Per ottenere la versione corrente di Java, accedere al server di produzione ed eseguire il comando seguente:
 
@@ -43,9 +43,11 @@ Per ottenere la versione corrente usata dal servizio app di Azure, scaricare [To
 
 [!INCLUDE [inventory-secrets](includes/inventory-secrets.md)]
 
+### <a name="inventory-certificates"></a>Inventario dei certificati
+
 [!INCLUDE [inventory-certificates](includes/inventory-certificates.md)]
 
-[!INCLUDE [inventory-persistence-usage](includes/inventory-persistence-usage.md)]
+[!INCLUDE [determine-whether-and-how-the-file-system-is-used](includes/determine-whether-and-how-the-file-system-is-used.md)]
 
 <!-- App-Service-specific addendum to inventory-persistence-usage -->
 #### <a name="dynamic-or-internal-content"></a>Contenuto dinamico o interno
@@ -72,7 +74,7 @@ Creare un inventario di tutti i processi pianificati, all'interno o all'esterno 
 
 #### <a name="determine-whether-your-application-contains-os-specific-code"></a>Determinare se l'applicazione contiene codice specifico del sistema operativo
 
-Se l'applicazione contiene codice con dipendenze dal sistema operativo host, sarà necessario effettuarne il refactoring per rimuovere tali dipendenze. Ad esempio, potrebbe essere necessario sostituire qualsiasi utilizzo di `/` o `\` nei percorsi del file system con [`File.Separator`](https://docs.oracle.com/javase/8/docs/api/java/io/File.html#separator) o [`Paths.get`](https://docs.oracle.com/javase/8/docs/api/java/nio/file/Paths.html#get-java.lang.String-java.lang.String...-).
+[!INCLUDE [determine-whether-your-application-contains-os-specific-code-no-title](includes/determine-whether-your-application-contains-os-specific-code-no-title.md)]
 
 #### <a name="determine-whether-tomcat-clustering-is-used"></a>Determinare se viene usato il clustering Tomcat
 
@@ -92,23 +94,23 @@ Per identificare i connettori HTTP usati dall'applicazione, cercare gli elementi
 
 #### <a name="determine-whether-memoryrealm-is-used"></a>Determinare se viene usato MemoryRealm
 
-[MemoryRealm](https://tomcat.apache.org/tomcat-9.0-doc/api/org/apache/catalina/realm/MemoryRealm.html) richiede un file XML persistente. Nel servizio app di Azure sarà necessario caricare questo file nella directory */home* o in una relativa sottodirectory oppure in una risorsa di archiviazione montata. Sarà necessario modificare il parametro `pathName` di conseguenza.
+[MemoryRealm](https://tomcat.apache.org/tomcat-9.0-doc/api/org/apache/catalina/realm/MemoryRealm.html) richiede un file XML persistente. Nel servizio app di Azure sarà necessario caricare questo file nella directory */home* o in una delle relative sottodirectory oppure in una risorsa di archiviazione montata. Sarà quindi necessario modificare il parametro `pathName` di conseguenza.
 
 Per determinare se `MemoryRealm` è attualmente in uso, esaminare i file *server.xml* e *context.xml* e cercare gli elementi `<Realm>` in cui l'attributo `className` è impostato su `org.apache.catalina.realm.MemoryRealm`.
 
 #### <a name="determine-whether-ssl-session-tracking-is-used"></a>Determinare se viene usato il monitoraggio delle sessioni SSL
 
-Il servizio app esegue l'offload della sessione all'esterno del runtime di Tomcat. Non è quindi possibile usare il [monitoraggio delle sessioni SSL](https://tomcat.apache.org/tomcat-9.0-doc/servletapi/javax/servlet/SessionTrackingMode.html#SSL). Usare invece una modalità di monitoraggio delle sessioni diversa (`COOKIE` o `URL`). Se il monitoraggio delle sessioni SSL è necessario, non usare il servizio app.
+Il servizio app esegue l'offload della sessione all'esterno del runtime di Tomcat, di conseguenza non è possibile usare il [monitoraggio della sessione SSL](https://tomcat.apache.org/tomcat-9.0-doc/servletapi/javax/servlet/SessionTrackingMode.html#SSL). Usare invece una modalità di monitoraggio delle sessioni diversa (`COOKIE` o `URL`). Se il monitoraggio delle sessioni SSL è necessario, non usare il servizio app.
 
 #### <a name="determine-whether-accesslogvalve-is-used"></a>Determinare se viene usato AccessLogValve
 
-Se si usa [AccessLogValve](https://tomcat.apache.org/tomcat-9.0-doc/api/org/apache/catalina/valves/AccessLogValve.html), è necessario impostare il parametro `directory` su `/home/LogFiles` o su una relativa sottodirectory.
+Se si usa [AccessLogValve](https://tomcat.apache.org/tomcat-9.0-doc/api/org/apache/catalina/valves/AccessLogValve.html), è necessario impostare il parametro `directory` su `/home/LogFiles` o su una delle relative sottodirectory.
 
 ## <a name="migration"></a>Migrazione
 
 ### <a name="parameterize-the-configuration"></a>Parametrizzare la configurazione
 
-Nella fase di pre-migrazione è probabile che nei file *server.xml* e *context.xml* siano stati identificati segreti e dipendenze esterne, ad esempio origini dati. Per ogni elemento di questo tipo identificato, sostituire l'eventuale nome utente, password, stringa di connessione o URL con una variabile di ambiente.
+Nei passaggi di pre-migrazione è probabile che nei file *server.xml* e *context.xml* siano stati identificati alcuni segreti e dipendenze esterne, ad esempio origini dati. Per ogni elemento di questo tipo identificato, sostituire l'eventuale nome utente, password, stringa di connessione o URL con una variabile di ambiente.
 
 Si supponga, ad esempio, che il file *context.xml* contenga l'elemento seguente:
 
@@ -211,10 +213,10 @@ Ora che è stata eseguita la migrazione dell'applicazione al servizio app di Azu
 
 * Se si è scelto di usare la directory */home* per l'archiviazione dei file, provare a [sostituirla con Archiviazione di Azure](/azure/app-service/containers/how-to-serve-content-from-azure-storage).
 
-* Se nella directory */home* è presente una configurazione contenente stringhe di connessione, chiavi SSL e altre informazioni segrete, provare a usare una combinazione di [Azure Key Vault](/azure/app-service/app-service-key-vault-references) e/o [injection di parametri con le impostazioni dell'applicazione](/azure/app-service/configure-common#configure-app-settings) laddove possibile.
+* Se nella directory */home* è presente una configurazione contenente stringhe di connessione, chiavi SSL e altre informazioni segrete, provare a usare una combinazione di [Azure Key Vault](/azure/app-service/app-service-key-vault-references) e/o [inserimento di parametri con le impostazioni dell'applicazione](/azure/app-service/configure-common#configure-app-settings) laddove possibile.
 
 * Provare a [usare gli slot di distribuzione](/azure/app-service/deploy-staging-slots) per distribuzioni affidabili senza tempi di inattività.
 
-* Progettare e implementare una strategia DevOps. Per mantenere l'affidabilità aumentando al tempo stesso la velocità di sviluppo, è consigliabile [automatizzare le distribuzioni e i test con Azure Pipelines](/azure/devops/pipelines/ecosystems/java-webapp). Se si usano gli slot di distribuzione, è possibile [automatizzare la distribuzione in uno slot](/azure/devops/pipelines/targets/webapp?view=azure-devops&tabs=yaml#deploy-to-a-slot) e lo scambio di slot successivo.
+* Progettare e implementare una strategia DevOps. Per mantenere l'affidabilità aumentando al tempo stesso la velocità di sviluppo, è consigliabile [automatizzare le distribuzioni e i test con Azure Pipelines](/azure/devops/pipelines/ecosystems/java-webapp). Se si usano gli slot di distribuzione, è possibile [automatizzare la distribuzione in uno slot](/azure/devops/pipelines/targets/webapp?view=azure-devops&tabs=yaml#deploy-to-a-slot), seguita dallo scambio di slot.
 
 * Progettare e implementare una strategia di continuità aziendale e ripristino di emergenza. Per le applicazioni cruciali, considerare un'[architettura di distribuzione in più aree](/azure/architecture/reference-architectures/app-service-web-app/multi-region).
