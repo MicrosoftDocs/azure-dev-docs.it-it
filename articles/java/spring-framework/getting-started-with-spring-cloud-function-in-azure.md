@@ -9,12 +9,12 @@ ms.date: 07/17/2019
 ms.service: azure-functions
 ms.tgt_pltfrm: multiple
 ms.topic: article
-ms.openlocfilehash: 10c36b30b1c0f175571c675951f63734495cd291
-ms.sourcegitcommit: aa417af8b5f00cbc056666e481250ef45c661d52
+ms.openlocfilehash: 258b3e8fef4202df3b151ca7058daf72d7be2b61
+ms.sourcegitcommit: 2760d3ca0ff0b939181d976a652f2b35ea5b3fb4
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83153913"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83426093"
 ---
 # <a name="getting-started-with-spring-cloud-function-in-azure"></a>Introduzione a Spring Cloud Function in Azure
 
@@ -71,7 +71,7 @@ Per l'applicazione è necessario personalizzare alcune proprietà:
     <stagingDirectory>${project.build.directory}/azure-functions/${functionAppName}</stagingDirectory>
     <functionResourceGroup>my-resource-group</functionResourceGroup>
     <start-class>com.example.HelloFunction</start-class>
-    <wrapper.version>1.0.24.RELEASE</wrapper.version>
+    <spring.boot.wrapper.version>1.0.24.RELEASE</spring.boot.wrapper.version>
 </properties>
 ```
 

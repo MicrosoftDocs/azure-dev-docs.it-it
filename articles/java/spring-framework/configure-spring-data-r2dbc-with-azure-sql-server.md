@@ -7,12 +7,12 @@ ms.service: sql-database
 ms.tgt_pltfrm: multiple
 ms.author: judubois
 ms.topic: article
-ms.openlocfilehash: 057f261de707adac2ab3ef9ac52834a9848362b6
-ms.sourcegitcommit: a631b36ec1277ee9397a860c597ffdd5495d88e7
+ms.openlocfilehash: 1dda447182867d6646e6b9637852f08b1d6fb124
+ms.sourcegitcommit: fbbc341a0b9e17da305bd877027b779f5b0694cc
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83369994"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83631639"
 ---
 # <a name="use-spring-data-r2dbc-with-azure-sql-database"></a>Usare Spring Data R2DBC con il database SQL di Azure
 
@@ -111,7 +111,7 @@ az sql db create \
 Per generare l'applicazione, immettere quanto segue sulla riga di comando:
 
 ```bash
-curl https://start.spring.io/starter.tgz -d dependencies=webflux,data-r2dbc -d baseDir=azure-database-workshop -d bootVersion=2.3.0.RC1 -d javaVersion=8 | tar -xzvf -
+curl https://start.spring.io/starter.tgz -d dependencies=webflux,data-r2dbc -d baseDir=azure-database-workshop -d bootVersion=2.3.0.RELEASE -d javaVersion=8 | tar -xzvf -
 ```
 
 ### <a name="add-the-reactive-azure-sql-database-driver-implementation"></a>Aggiungere l'implementazione del driver del database SQL di Azure reattivo

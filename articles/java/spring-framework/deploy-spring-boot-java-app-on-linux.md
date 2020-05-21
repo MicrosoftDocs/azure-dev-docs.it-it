@@ -9,12 +9,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
 ms.custom: mvc
-ms.openlocfilehash: 570b33614f32ef80e11ddf9d2c6774513248416e
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: e4c0c2ffb45303262b16179a726a8eb0526b3971
+ms.sourcegitcommit: 2760d3ca0ff0b939181d976a652f2b35ea5b3fb4
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82166678"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83426115"
 ---
 # <a name="deploy-a-spring-boot-application-to-linux-on-azure-app-service"></a>Distribuire un'applicazione Spring Boot in Linux nel Servizio app di Azure
 
@@ -42,8 +42,8 @@ I passaggi seguenti illustrano i passaggi necessari per creare una semplice appl
 1. Aprire un prompt dei comandi e creare una directory locale in cui contenere l'applicazione, quindi passare a tale directory. Ad esempio:
 
    ```bash
-   md /users/robert/SpringBoot
-   cd /users/robert/SpringBoot
+   mkdir SpringBoot
+   cd SpringBoot
    ```
 
 1. Clonare il progetto di esempio [Spring Boot on Docker Getting Started] (Introduzione a Spring Boot in Docker) nella directory appena creata, ad esempio:

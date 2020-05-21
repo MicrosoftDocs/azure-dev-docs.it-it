@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: multiple
 ms.assetid: b1e10b79-f75e-4605-aecd-eed64873e2d3
 ms.custom: seo-java-august2019
-ms.openlocfilehash: c03e458f9a91d13a3ed1c375e0b6cb0fefe15a3d
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: 80e83873150356b53c826d7920df1163e51f2636
+ms.sourcegitcommit: 486b55521d7c27666dbb8035bc46fb60d1cbcf0a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82105212"
+ms.lasthandoff: 05/18/2020
+ms.locfileid: "83550932"
 ---
 # <a name="get-started-with-cloud-development-using-java-on-azure"></a>Introduzione allo sviluppo per il cloud con Java in Azure
 
@@ -158,7 +158,7 @@ Aggiungere una voce `build` sotto l'elemento `project` di primo livello per usar
 
 - Dal menu **Help** (?) scegliere **Install New Software** (Installa nuovo software).
 
-- Nel campo **Usa:** immettere `http://dl.microsoft.com/eclipse` e premere INVIO.
+- Nel campo **Usa:** immettere `http://dl.microsoft.com/eclipse/` e premere INVIO.
 
 - Selezionare quindi la casella di controllo accanto ad **Azure toolkit for Java** e deselezionare la casella di controllo **Contact all update sites during install to find required software** (Contatta tutti i siti di aggiornamento durante l'installazione per trovare il software richiesto). Selezionare Next (Avanti).
 

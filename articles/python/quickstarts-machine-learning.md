@@ -1,14 +1,14 @@
 ---
 title: Guide di avvio rapido su Machine Learning per le app Python in Azure
 description: Elenco di articoli introduttivi della documentazione di Azure su Machine Learning per le app Python.
-ms.date: 03/17/2020
+ms.date: 05/12/2020
 ms.topic: conceptual
-ms.openlocfilehash: c76f2c8f16db20d40eee66930ec13259f51b9f92
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: 056667d6242ec040299ad28755fe42aaea33601d
+ms.sourcegitcommit: 2cdf597e5368a870b0c51b598add91c129f4e0e2
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "80442056"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83403717"
 ---
 # <a name="machine-learning-for-python-apps-on-azure"></a>Machine Learning per le app Python in Azure
 
