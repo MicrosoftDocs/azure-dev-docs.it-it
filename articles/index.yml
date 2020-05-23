@@ -10,12 +10,12 @@ metadata:
   ms.author: barbkess
   manager: barbkess
   ms.date: 04/15/2020
-  ms.openlocfilehash: 2afe0deb03a1aff2b40c2d739f873bd6a2bbcf0c
-  ms.sourcegitcommit: 226ebca0d0e3b918928f58a3a7127be49e4aca87
+  ms.openlocfilehash: 193bcf51848ac6fbf3c1f3fb263313bbde2784f8
+  ms.sourcegitcommit: fbbc341a0b9e17da305bd877027b779f5b0694cc
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 05/08/2020
-  ms.locfileid: "82988709"
+  ms.lasthandoff: 05/19/2020
+  ms.locfileid: "83631568"
 productDirectory:
   items:
   - title: Python
@@ -124,7 +124,7 @@ additionalContent:
     - title: Azure DevOps
       summary: Usare Azure DevOps per pianificare il lavoro, collaborare allo sviluppo del codice, nonché compilare e distribuire le applicazioni.
       url: https://docs.microsoft.com/azure/devops/?view=azure-devops
-    - title: Interazione tra Azure e GitHub
+    - title: Integrazione di Azure e GitHub
       summary: Usare GitHub e GitHub Actions per automatizzare, personalizzare ed eseguire i flussi di lavoro di sviluppo del software dall'interno del repository.
       url: https://docs.microsoft.com/azure/developer/github
     - title: Jenkins
@@ -141,7 +141,7 @@ additionalContent:
       url: https://docs.microsoft.com/azure/developer/chef/
     - title: Maven
       summary: Usare Maven per automatizzare la modalità di creazione e gestione di progetti Java. Funziona anche con altri linguaggi.
-      url: https://docs.microsoft.com/java/api/overview/azure/maven/README
+      url: https://github.com/Microsoft/azure-maven-plugins#readme
     - title: Toolkit di Azure per IntelliJ
       summary: Usare Azure Toolkit for IntelliJ per creare, sviluppare, testare e distribuire applicazioni Azure nell'IDE di IntelliJ.
       url: https://docs.microsoft.com/azure/developer/java/toolkit-for-intellij/
