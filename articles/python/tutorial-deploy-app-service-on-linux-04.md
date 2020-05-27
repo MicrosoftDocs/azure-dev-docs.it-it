@@ -1,15 +1,15 @@
 ---
 title: 'Passaggio 4: Configurare un file di avvio personalizzato per le app Python nel Servizio app di Azure in Linux'
-description: "Passaggio 4 dell'esercitazione: indicare al servizio app come avviare l'app Web."
+description: Passaggio 4 dell'esercitazione, che indica al servizio app come avviare l'app Web e include istruzioni specifiche per Django, Flask e altri framework.
 ms.topic: conceptual
-ms.date: 09/12/2019
+ms.date: 05/19/2020
 ms.custom: seo-python-october2019
-ms.openlocfilehash: d744b4a270c89b7feb826353366ba021345eac85
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: 0f2636b694b0bd187a43aa2d734e936a89b4d4fa
+ms.sourcegitcommit: fbbc341a0b9e17da305bd877027b779f5b0694cc
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "80441536"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83631737"
 ---
 # <a name="4-configure-a-custom-startup-file-for-python-apps-on-azure-app-service"></a>4: Configurare un file di avvio personalizzato per le app Python nel Servizio app di Azure
 
@@ -21,14 +21,17 @@ A seconda di come è stata strutturata l'app, può essere necessario creare un f
 
 I casi d'uso specifici di un comando di avvio personalizzato sono i seguenti:
 
-- Si usa un'app **Flask** in cui il nome del file di avvio e dell'oggetto app è **diverso** da *application.py* e `app`. In altre parole, a meno che non sia presente un file *application.py* nella cartella radice del progetto *e* il nome dell'oggetto app Flask non sia `app`, è necessario un comando di avvio personalizzato.
+- Si usa un'app Flask in cui i nomi del file di avvio e dell'oggetto app sono **diversi** rispettivamente da *application.py* e `app`. In altre parole, a meno che non sia presente un file *application.py* nella cartella radice del progetto *e* il nome dell'oggetto app Flask non sia `app`, è necessario un comando di avvio personalizzato.
 - Si vuole avviare il server Web Gunicorn con argomenti aggiuntivi diversi dalle impostazioni predefinite, ovvero `--bind=0.0.0.0 --timeout 600`.
+- L'app è compilata con un framework diverso da Flask o Django oppure si vuole usare un server Web diverso, nel qual caso è necessario personalizzare il comando di avvio.
 
 ## <a name="create-a-startup-file"></a>Creare un file di avvio
 
 Se è necessario un file di avvio personalizzato, attenersi alla procedura seguente:
 
-1. Creare nel progetto un file denominato *startup.txt* (o un altro nome a scelta) che contiene il comando di avvio. Per Flask, vedere [Comandi di avvio di Flask](#flask-startup-commands) nella sezione successiva. Le app Django non richiedono in genere alcuna personalizzazione.
+1. Creare nel progetto un file denominato *startup.txt*, *startup.sh* o un altro nome a scelta che contiene il comando o i comandi di avvio. Vedere le sezioni successive di questo articolo per informazioni specifiche su Django, Flask e altri framework.
+
+    Se necessario, un file di avvio può includere più comandi.
 
 1. Eseguire il commit del file nel repository del codice in modo che possa essere distribuito con il resto dell'app.
 
@@ -36,7 +39,7 @@ Se è necessario un file di avvio personalizzato, attenersi alla procedura segue
 
     ![Comando Open in Portal (Apri nel portale) in Application Settings (Impostazioni applicazione) nell'area App Service (Servizio app)](media/deploy-azure/open-application-settings-in-portal-for-app-service.png)
 
-1. Nel portale di Azure eseguire l'accesso se necessario e quindi nella pagina **Configurazione** selezionare **Impostazioni generali**, immettere il nome del file di avvio, ad esempio *startup.txt*, in **Impostazioni stack** >  **Comando di avvio** e infine selezionare **Salva**.
+1. Nel portale di Azure eseguire l'accesso se necessario e quindi nella pagina **Configurazione** selezionare **Impostazioni generali**, immettere il nome del file di avvio, ad esempio *startup.txt* o *startup.sh*, in **Impostazioni stack** > **Comando di avvio** e infine selezionare **Salva**.
 
     ![Impostazione del nome file in Comando di avvio nel portale di Azure](media/deploy-azure/enter-startup-file-for-app-service-in-the-azure-portal.png)
 
@@ -44,6 +47,8 @@ Se è necessario un file di avvio personalizzato, attenersi alla procedura segue
     > Invece di usare un file di comando di avvio, è anche possibile inserire il comando di avvio direttamente nel campo **Comando di avvio** nel portale di Azure. L'uso di un file è tuttavia preferibile in genere, perché consente di mantenere queste impostazioni di configurazione nel repository in cui è possibile controllare le modifiche e ridistribuirle in una diversa istanza del Servizio app.
 
 1. Il Servizio app viene riavviato quando si salvano le modifiche. Dal momento che il codice dell'app non è stato ancora distribuito, però, se si visita il sito a questo punto viene visualizzato un messaggio di errore di applicazione. Questo messaggio indica che il server Gunicorn è stato avviato ma non è riuscito a trovare l'app e quindi non risponde alle richieste HTTP. Il codice dell'app verrà distribuito nel passaggio successivo.
+
+Per specificare un comando di avvio, è anche possibile usare il comando [`az webapp create` ](/cli/azure/webapp?view=azure-cli-latest#az-webapp-create) dell'interfaccia della riga di comando di Azure specificando l'argomento `--startup-file`.
 
 ## <a name="django-startup-commands"></a>Comandi di avvio di Django
 
@@ -58,7 +63,9 @@ Se si intende modificare uno degli argomenti Gunicorn, ad esempio usando `--time
 
 ## <a name="flask-startup-commands"></a>Comandi di avvio di Flask
 
-Per impostazione predefinita, il contenitore del Servizio app in Linux presuppone che il file di avvio di un'app Flask sia denominato *application.py* e che risieda nella cartella radice dell'app. Presuppone inoltre che l'oggetto app Flask definito all'interno del file sia denominato `app`. Se l'app non è strutturata esattamente in questo modo, il comando di avvio personalizzato deve identificare il percorso dell'oggetto app:
+Per impostazione predefinita, il contenitore del Servizio app in Linux presuppone che l'interfaccia WSGI chiamabile dell'app Flask sia denominata `app`, sia contenuta in un file denominato *application.py* o *app.py* e risieda nella cartella radice dell'app.
+
+Se l'app non è strutturata esattamente in questo modo, il comando di avvio personalizzato deve identificare il percorso dell'oggetto app in formato*file:oggetto_app*:
 
 1. **Il nome file e/o il nome dell'oggetto app sono diversi**: ad esempio, se il nome del file di avvio dell'app è *hello.py* e quello dell'oggetto app è `myapp`, il comando di avvio è il seguente:
 
@@ -86,6 +93,22 @@ Per impostazione predefinita, il contenitore del Servizio app in Linux presuppon
     ```text
     gunicorn --bind=0.0.0.0 --timeout 600 startup:app
     ```
+
+## <a name="startup-commands-for-other-frameworks-and-web-servers"></a>Comandi di avvio per altri framework e server Web
+
+Django e Flask, unitamente al server Web gunicorn, sono installati per impostazione predefinita nel contenitore del servizio app che esegue le app Python.
+
+Per usare un framework diverso da Django o Flask (ad esempio Falcon, FastAPI e così via) o per usare un server Web diverso, seguire questa procedura:
+
+- Includere il framework e/o il server Web nel file *requirements.txt*.
+- Nel comando di avvio identificare l'interfaccia WSGI chiamabile come descritto nella [sezione precedente relativa a Flask](#flask-startup-commands).
+- Per avviare un server Web diverso da gunicorn, usare un comando `python -m` invece di richiamare direttamente il server. Ad esempio, il comando seguente avvia il server uvicorn, supponendo che l'interfaccia WSGI chiamabile sia denominata `app` e si trovi in *application.py*:
+
+    ```sh
+    python -m uvicorn application:app --host 0.0.0.0
+    ```
+
+    È necessario usare `python -m` perché i server Web installati tramite *requirements.txt* non vengono aggiunti all'ambiente globale Python e quindi non possono essere richiamati direttamente. Il comando `python -m` richiama il server dall'interno dell'ambiente virtuale corrente.
 
 > [!div class="nextstepaction"]
 > [Il file di avvio è stato configurato: procedere con il passaggio 5 >>>](tutorial-deploy-app-service-on-linux-05.md)

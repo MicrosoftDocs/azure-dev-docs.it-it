@@ -2,14 +2,14 @@
 title: 'Esercitazione: Creare e distribuire Funzioni di Azure serverless in Python con VS Code'
 description: "Passaggio 1 dell'esercitazione: introduzione e prerequisiti."
 ms.topic: conceptual
-ms.date: 09/02/2019
+ms.date: 05/19/2020
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 509e62b5bb8b23365dc30781b6f658a39894d56d
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: fcb9a520e10036d5059f060dedf49e8f222af184
+ms.sourcegitcommit: 089b87e1631a9db145583eb274edac6f80d16367
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "80441236"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83708585"
 ---
 # <a name="tutorial-create-and-deploy-serverless-azure-functions-in-python-with-visual-studio-code"></a>Esercitazione: Creare e distribuire Funzioni di Azure serverless in Python con Visual Studio Code
 
@@ -42,7 +42,7 @@ Durante l'installazione di Node.js, usare le opzioni predefinite e *non* selezio
 
 Installare il software seguente:
 
-- Python 3.7 o Python 3.6 come richiesto da Funzioni di Azure. [Python 3.7.5](https://www.python.org/downloads/release/python-375/) e [Python 3.6.8](https://www.python.org/downloads/release/python-368/) sono le versioni compatibili più recenti. Scorrere verso il basso in queste pagine per trovare i programmi di installazione. Durante l'installazione selezionare **Add Python 3.x to PATH** (Aggiungi Python 3.x a PATH) e usare le opzioni predefinite selezionando l'opzione **Install Now** (Installa ora). In Windows selezionare anche **Disable Path length limit** (Disabilita il limite di lunghezza del percorso) alla fine del processo.
+- Python 3.6, 3.7 o 3.8 come richiesto da Funzioni di Azure. Installare Python da [python.org](https://www.python.org/downloads). Durante l'installazione selezionare **Add Python 3.x to PATH** (Aggiungi Python 3.x a PATH) e usare le opzioni predefinite selezionando l'opzione **Install Now** (Installa ora). In Windows selezionare anche **Disable Path length limit** (Disabilita il limite di lunghezza del percorso) alla fine del processo.
 - [Visual Studio Code](https://code.visualstudio.com/).
 - [Estensione Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python) come descritto nella sezione dei [prerequisiti dell'esercitazione su Python in Visual Studio Code](https://code.visualstudio.com/docs/python/python-tutorial).
 - [Estensione Funzioni di Azure](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions). Per informazioni di carattere generale, visitare il [repository GitHub vscode-azurefunctions](https://github.com/Microsoft/vscode-azurefunctions).

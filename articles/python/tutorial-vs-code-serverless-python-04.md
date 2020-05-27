@@ -2,14 +2,14 @@
 title: 'Passaggio 4: Eseguire il debug in locale del codice Python in Funzioni di Azure con VS Code'
 description: "Passaggio 4 dell'esercitazione: esecuzione del debugger di VS Code in locale per verificare il codice Python."
 ms.topic: conceptual
-ms.date: 09/02/2019
+ms.date: 05/19/2020
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 51ef666bd529194670279deaae51ee073633fd3a
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: 167e1c2be4d379f7457d35f2e6fe4a226092ac08
+ms.sourcegitcommit: 089b87e1631a9db145583eb274edac6f80d16367
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "80441596"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83708570"
 ---
 # <a name="4-debug-the-azure-functions-python-code-locally"></a>4: Eseguire il debug in locale del codice Python in Funzioni di Azure
 
@@ -64,6 +64,11 @@ ms.locfileid: "80441596"
 1. Per testare il debug della funzione, impostare un punto di interruzione nella riga `name = req.params.get('name')` ed effettuare una nuova richiesta all'URL. Il debugger di Visual Studio Code dovrebbe arrestarsi su tale riga, consentendo di esaminare le variabili ed eseguire il codice un'istruzione alla volta. Per una breve procedura dettagliata sul debug di base, vedere l'[esercitazione sulla configurazione e l'esecuzione del debugger in Visual Studio Code](https://code.visualstudio.com/docs/python/python-tutorial#configure-and-run-the-debugger).
 
 1. Se si ritiene di aver testato la funzione in locale in modo esauriente, arrestare il debugger usando n il comando di menu **Debug** > **Arresta debug** oppure il comando **Disconnect** sulla barra degli strumenti di debug.
+
+> [!NOTE]
+> Se viene visualizzato l'errore "Failed to verify 'AzureWebJobsStorage' connection specified in 'local.settings.json'." (Non è stato possibile verificare la connessione 'AzureWebJobsStorage' specificata in 'local.settings.json'), il file *local.settings.json* nel progetto contiene la riga `"AzureWebJobsStorage": "UseDevelopmentStorage=true"`. Questa riga indica che il debugger prevede l'uso dell'Emulatore di archiviazione di Azure in locale, che però non è installato. In questo caso, è possibile [installare l'Emulatore di archiviazione di Azure](/azure/storage/common/storage-use-emulator#get-the-storage-emulator), [avviare e inizializzare l'emulatore](/azure/storage/common/storage-use-emulator#start-and-initialize-the-storage-emulator) e riavviare il debugger.
+>
+> In alternativa, modificare la riga nel file JSON in `"AzureWebJobsStorage": ""` e riavviare il debugger.
 
 > [!div class="nextstepaction"]
 > [Il debugger è stato eseguito in locale: procedere con il passaggio 5 >>>](tutorial-vs-code-serverless-python-05.md)

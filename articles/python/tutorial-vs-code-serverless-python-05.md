@@ -2,14 +2,14 @@
 title: 'Passaggio 5: Distribuire Funzioni di Azure in Python con VS Code'
 description: Passaggio 5 dell'esercitazione, distribuzione del codice di funzioni Python in Azure e informazioni sullo streaming di log e sulla sincronizzazione delle impostazioni tra un progetto locale e Azure.
 ms.topic: conceptual
-ms.date: 09/02/2019
+ms.date: 05/19/2020
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 425fb745cec74672cfabc6c3c5eab96821a43224
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: 3e51760f6f779ef244d5788a3df852bc98924946
+ms.sourcegitcommit: 089b87e1631a9db145583eb274edac6f80d16367
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "80441166"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83708615"
 ---
 # <a name="5-deploy-azure-functions-in-python"></a>5: Distribuire Funzioni di Azure in Python
 
@@ -25,9 +25,11 @@ Un'app per le funzioni richiede un account di archiviazione di Azure per i dati 
 
 1. Quando richiesto, selezionare **Create New Function App in Azure** (Crea una nuova app per le funzioni in Azure) e specificare un nome univoco in Azure, in genere usando il nome personale o della società insieme ad altri identificatori univoci. È possibile usare lettere, numeri e trattini. Se in precedenza è stata creata un'app per le funzioni, il relativo nome viene visualizzato in questo elenco di opzioni.
 
+1. Quando richiesto, selezionare una versione di Python e una località di Azure.
+
 1. L'estensione esegue le azioni seguenti, che è possibile osservare nei messaggi popup e nella finestra **Output** di Visual Studio Code. Il processo richiede alcuni minuti:
 
-    - Creare un gruppo di risorse usando il nome assegnato (rimuovendo i trattini).
+    - Creare un gruppo di risorse nella località selezionata usando il nome assegnato (rimuovendo i trattini).
     - In questo gruppo di risorse creare l'account di archiviazione, il piano di hosting e l'app per le funzioni. Per impostazione predefinita, viene creato un [piano a consumo](/azure/azure-functions/functions-scale#consumption-plan). Per eseguire le funzioni in un piano dedicato, è necessario [abilitare la pubblicazione con le opzioni di creazione avanzate](/azure/azure-functions/functions-develop-vs-code).
     - Distribuire il codice nell'app per le funzioni.
 
@@ -39,9 +41,9 @@ Un'app per le funzioni richiede un account di archiviazione di Azure per i dati 
 
     ![Messaggio che indica la corretta distribuzione con azioni aggiuntive](media/tutorial-vs-code-serverless-python/azure-functions-deployment-success-with-additional-actions.png)
 
-    Per **Stream logs** (Streaming di log) e **Upload settings** (Carica impostazioni), vedere le sezioni successive. Per **View output** (Visualizza output), vedere il passaggio 5 seguente.
+    Per **Stream logs** (Streaming di log) e **Upload settings** (Carica impostazioni), vedere le sezioni successive.
 
-1. Dopo la distribuzione, la finestra **Output** visualizza anche l'endpoint pubblico in Azure (l'URL dell'endpoint specifico corrisponderà al nome specificato per l'app per le funzioni):
+1. Selezionare **View output** (Visualizza output) per passare alla finestra **Output**. L'output mostra anche l'endpoint pubblico in Azure (l'URL dell'endpoint specifico corrisponderà al nome specificato per l'app per le funzioni):
 
     <pre>
     HTTP Trigger Urls:
