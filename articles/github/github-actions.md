@@ -6,12 +6,12 @@ ms.author: ushan
 ms.topic: conceptual
 ms.service: azure
 ms.date: 05/05/2020
-ms.openlocfilehash: 1b3906eeacf48e2561f49dc8480ce83565aeca3a
-ms.sourcegitcommit: fbbc341a0b9e17da305bd877027b779f5b0694cc
+ms.openlocfilehash: 3e6f6d447da93873a1278eaa42882a9d08a94d57
+ms.sourcegitcommit: 9330d5af796b4b114466bbe75b8e18a9206f218e
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83631673"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83862804"
 ---
 # <a name="deploy-to-azure-using-github-actions"></a>Distribuire in Azure con GitHub Actions
 
@@ -23,11 +23,6 @@ Inizia subito con un [account Azure gratuito](https://azure.com/free/open-source
 
 > [!NOTE]   
 > I collegamenti forniti in questo articolo si riferiscono a un articolo di GitHub o a un repository GitHub. 
-
-- [Azure/webapps-deploy](https://github.com/Azure/webapps-deploy), per eseguire la distribuzione in App Web di Azure e nell'app Web per contenitori di Azure 
-- [Azure/appservice-settings](https://github.com/Azure/appservice-settings), per configurare in blocco le impostazioni dell'app, le stringhe di connessione e altre impostazioni generali usando la sintassi JSON in App Web di Azure (Windows o Linux) o uno qualsiasi dei relativi slot di distribuzione.
-
-
 
 ## <a name="key-concepts"></a>Concetti chiave
 
@@ -53,10 +48,11 @@ Per GitHub Actions per Azure, vedere le pagine seguenti:
 
 ## <a name="connect-to-azure"></a>Connettersi ad Azure
 
-Per i flussi di lavoro di esempio per la connessione ad Azure, vedere le azioni di GitHub seguenti:  
+Per i flussi di lavoro di esempio per la connessione ad Azure e l'esecuzione di script basati sull'interfaccia della riga di comando Az o PowerShell Az, usare le azioni di GitHub seguenti:  
 
 - [Accesso ad Azure](https://github.com/Azure/login)  
-- [Interfaccia della riga di comando di Azure](https://github.com/Azure/CLI)  
+- [Interfaccia della riga di comando di Azure](https://github.com/Azure/CLI)
+- [Azure PowerShell](https://github.com/Azure/powershell)
 
 
 ## <a name="sample-apps-with-cicd-workflow-samples"></a>App di esempio con esempi di flusso di lavoro CI/CD 
@@ -69,15 +65,22 @@ Gli esempi seguenti forniscono flussi di lavoro end-to-end per creare e distribu
 - [Distribuire un'app Web Java](https://github.com/Azure-Samples/java-spring-petclinic)  
 - [Distribuire un'app Java Spring](https://github.com/Azure-Samples/Java-application-petstore-ee7)  
 - [Distribuire un'app Web Python](https://github.com/Azure-Samples/pythonSample_thecatsaidno)  
-- [Eseguire la distribuzione con Docker](https://github.com/Azure-Samples/Node_express_container)  
+- [Distribuire un'app Web in contenitori con Docker](https://github.com/Azure-Samples/Node_express_container)
 
 
 ## <a name="deploy-a-web-app"></a>Distribuire un'app Web
 
-- [App Web di Azure](https://github.com/Azure/webapps-deploy)  
+Eseguire la distribuzione in App Web di Azure e nell'app Web per contenitori:
+
+- [Azione Azure/webapps-deploy](https://github.com/Azure/webapps-deploy)
+
+Distribuire un'app Web statica:
+- [Azure/static-web-apps-deploy](https://docs.microsoft.com/azure/static-web-apps/getting-started?tabs=angular)
+
+
 Configurare le impostazioni dell'app e le stringhe di connessione usando le azioni:
 
-- [App Web per contenitori di Azure](https://github.com/Azure/webapps-container-deploy)  
+- [Azure/appservice-settings](https://github.com/Azure/appservice-settings) 
 - [Impostazioni di Servizio app di Azure](https://github.com/Azure/appservice-settings)  
 
 ## <a name="deploy-a-serverless-app"></a>Distribuire un'app serverless

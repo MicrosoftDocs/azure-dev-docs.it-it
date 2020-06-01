@@ -3,12 +3,12 @@ title: Provisioning, accesso e gestione delle risorse in Azure
 description: Panoramica dei metodi usati per accedere alle risorse di Azure, tra cui il portale di Azure, l'interfaccia della riga di comando di Azure e Azure SDK.
 ms.date: 05/12/2020
 ms.topic: conceptual
-ms.openlocfilehash: 585c40523ba2be311af2d65fc3d4cbb679ba6f60
-ms.sourcegitcommit: 2cdf597e5368a870b0c51b598add91c129f4e0e2
+ms.openlocfilehash: a56ea9c3f0165a15933d78ca7a049033b6e75fa9
+ms.sourcegitcommit: b69db02c3358ce7899cef105508e3d17fafc84b2
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83404974"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83759924"
 ---
 # <a name="provisioning-accessing-and-managing-resources-on-azure"></a>Provisioning, accesso e gestione delle risorse in Azure
 
@@ -78,7 +78,7 @@ Durante l'uso di Azure, si svilupperanno preferenze personali per l'organizzazio
 
 ### <a name="regions-and-geographies"></a>Aree e aree geografiche
 
-Una particolarità di un gruppo di risorse è che è sempre associato a una specifica *area* di Azure, che corrisponde alla località in cui è ubicato il data center specifico. Tutte le risorse dello stesso gruppo condividono lo stesso data center e possono quindi interagire in modo molto più efficace rispetto a quanto accadrebbe se si trovassero in aree diverse. Gli sviluppatori scelgono spesso le aree più vicine ai propri clienti, ottimizzando in tal modo la velocità di risposta di un'applicazione. Azure offre anche funzionalità di replica geografica per sincronizzare le copie dell'applicazione e dei database in più aree e soddisfare meglio una base di clienti globale.
+Una particolarità di un gruppo di risorse è che è sempre associato a una specifica *area* di Azure, che corrisponde alla località in cui è ubicato il data center specifico. Tutte le risorse dello stesso gruppo condividono lo stesso data center e possono quindi interagire in modo molto più efficiente rispetto a quanto accadrebbe se si trovassero in aree diverse. Gli sviluppatori scelgono spesso le aree più vicine ai propri clienti, ottimizzando in tal modo la velocità di risposta di un'applicazione. Azure offre anche funzionalità di replica geografica per sincronizzare le copie dell'applicazione e dei database in più aree e soddisfare meglio una base di clienti globale.
 
 A causa delle leggi e delle normative locali stabilite dall'*area geografica* in cui si crea una sottoscrizione, l'accesso potrebbe essere limitato solo ad alcune aree e tali aree potrebbero non supportare tutti i servizi di Azure. Per informazioni dettagliate, vedere [Infrastruttura globale di Azure](https://azure.microsoft.com/global-infrastructure/).
 

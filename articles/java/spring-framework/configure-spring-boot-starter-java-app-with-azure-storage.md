@@ -7,18 +7,18 @@ ms.date: 12/19/2018
 ms.service: storage
 ms.topic: article
 ms.workload: storage
-ms.openlocfilehash: e9546d2e65d198fe9ab92e5d588df8797fd97e16
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: 7375373696b59320100e8109b75cb1fdef6ed64b
+ms.sourcegitcommit: 5322c817033e6e20064f53f0fbedcf1f455f54d0
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81669237"
+ms.lasthandoff: 05/25/2020
+ms.locfileid: "83825193"
 ---
 # <a name="how-to-use-the-spring-boot-starter-for-azure-storage"></a>Come usare l'utilità di avvio Spring Boot per Archiviazione di Azure
 
 Questo articolo illustra la creazione di un'applicazione personalizzata con **Spring Initializr**, quindi l'aggiunta dell'utilità di avvio per Archiviazione di Azure e infine l'uso dell'applicazione per caricare un BLOB nell'account di archiviazione di Azure.
 
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>Prerequisiti
 
 I prerequisiti seguenti sono necessari per seguire le procedure disponibili in questo articolo:
 
@@ -105,11 +105,9 @@ La procedura seguente configura l'applicazione Spring Boot per l'uso dell'archiv
    <dependency>
       <groupId>com.microsoft.azure</groupId>
       <artifactId>spring-azure-starter-storage</artifactId>
-      <version>1.0.0.M2</version>
+      <version>1.2.5</version>
    </dependency>
    ```
-
-   ![Modificare il file pom.xml][SI03]
 
 1. Salvare e chiudere il file *pom.xml*.
 
@@ -207,8 +205,9 @@ La procedura seguente configura l'applicazione Spring Boot per l'uso dell'accoun
    ```yaml
    spring.cloud.azure.credential-file-path=my.azureauth
    spring.cloud.azure.resource-group=wingtiptoysresources
-   spring.cloud.azure.region=West US
+   spring.cloud.azure.region=westUS
    spring.cloud.azure.storage.account=wingtiptoysstorage
+   blob=azure-blob://containerName/blobName
    ```
    Dove:
 
@@ -218,8 +217,8 @@ La procedura seguente configura l'applicazione Spring Boot per l'uso dell'accoun
    |    `spring.cloud.azure.resource-group`    |           Specifica il gruppo di risorse di Azure contenente l'account di archiviazione di Azure.            |
    |        `spring.cloud.azure.region`        | Specifica l'area geografica indicata al momento della creazione dell'account di archiviazione di Azure. |
    |   `spring.cloud.azure.storage.account`    |            Specifica l'account di archiviazione di Azure creato in precedenza in questa esercitazione.             |
-
-
+   |                   `blob`                  |           Specifica i nomi del contenitore e del BLOB in cui archiviare i dati.         |
+    
 3. Salvare e chiudere il file *application.properties*.
 
 ## <a name="add-sample-code-to-implement-basic-azure-storage-functionality"></a>Aggiungere codice di esempio per implementare le funzionalità di archiviazione di Azure di base
@@ -254,17 +253,17 @@ In questa sezione si creano le classi Java necessarie per archiviare un BLOB nel
 
 1. Salvare e chiudere il file Java dell'applicazione main.
 
-### <a name="add-a-web-controller-class"></a>Aggiungere una classe controller Web
+### <a name="add-a-blob-controller-class"></a>Aggiungere una classe controller BLOB
 
-1. Creare un nuovo file Java denominato *WebController.java* nella directory del pacchetto dell'app, ad esempio:
+1. Creare un nuovo file Java denominato *BLObController.java* nella directory del pacchetto dell'app, ad esempio:
 
-   `C:\SpringBoot\storage\src\main\java\com\wingtiptoys\storage\WebController.java`
+   `C:\SpringBoot\storage\src\main\java\com\wingtiptoys\storage\BlobController.java`
 
    -oppure-
 
-   `/users/example/home/storage/src/main/java/com/wingtiptoys/storage/WebController.java`
+   `/users/example/home/storage/src/main/java/com/wingtiptoys/storage/BlobController.java`
 
-1. Aprire il file Java del controller Web in un editor di testo e aggiungervi le righe seguenti:  Sostituire *wingtiptoys* con il proprio gruppo di risorse e *storage* con il nome dell'artefatto.
+1. Aprire il file Java del controller BLOB in un editor di testo e aggiungervi le righe seguenti.  Sostituire *wingtiptoys* con il proprio gruppo di risorse e *storage* con il nome dell'artefatto.
 
    ```java
    package com.wingtiptoys.storage;
@@ -273,41 +272,37 @@ In questa sezione si creano le classi Java necessarie per archiviare un BLOB nel
    import org.springframework.core.io.Resource;
    import org.springframework.core.io.WritableResource;
    import org.springframework.util.StreamUtils;
-   import org.springframework.web.bind.annotation.GetMapping;
-   import org.springframework.web.bind.annotation.PostMapping;
-   import org.springframework.web.bind.annotation.RequestBody;
-   import org.springframework.web.bind.annotation.RestController;
+   import org.springframework.web.bind.annotation.*;
 
    import java.io.IOException;
    import java.io.OutputStream;
    import java.nio.charset.Charset;
 
    @RestController
-   public class WebController {
-
-      @Value("blob://test/myfile.txt")
-      private Resource blobFile;
-
-      @GetMapping(value = "/")
-      public String readBlobFile() throws IOException {
-         return StreamUtils.copyToString(
-            this.blobFile.getInputStream(),
-            Charset.defaultCharset()) + "\n";
-      }
-
-      @PostMapping(value = "/")
-      public String writeBlobFile(@RequestBody String data) throws IOException {
-         try (OutputStream os = ((WritableResource) this.blobFile).getOutputStream()) {
-            os.write(data.getBytes());
-         }
-         return "File was updated.\n";
-      }
+   @RequestMapping("blob")
+   public class BlobController {
+   
+       @Value("${blob}")
+       private Resource blobFile;
+   
+       @GetMapping
+       public String readBlobFile() throws IOException {
+           return StreamUtils.copyToString(
+                   this.blobFile.getInputStream(),
+                   Charset.defaultCharset());
+       }
+   
+       @PostMapping
+       public String writeBlobFile(@RequestBody String data) throws IOException {
+           try (OutputStream os = ((WritableResource) this.blobFile).getOutputStream()) {
+               os.write(data.getBytes());
+           }
+           return "file was updated";
+       }
    }
    ```
 
-   La sintassi `@Value("blob://[container]/[blob]")` definisce rispettivamente i nomi del contenitore e del BLOB in cui si vogliono archiviare i dati.
-
-1. Salvare e chiudere il file Java del controller Web.
+1. Salvare e chiudere il file Java del controller BLOB.
 
 1. Aprire un prompt dei comandi e cambiare la directory passando alla cartella in cui si trova il file *pom.xml*, ad esempio:
 
@@ -329,7 +324,7 @@ In questa sezione si creano le classi Java necessarie per archiviare un BLOB nel
    a. Inviare una richiesta POST per aggiornare il contenuto di un file:
 
       ```shell
-      curl -X POST -H "Content-Type: text/plain" -d "Hello World" http://localhost:8080/
+      curl -d 'new message' -H 'Content-Type: text/plain' localhost:8080/blob
       ```
 
       Verrà visualizzata una risposta che indica che il file è stato aggiornato.
@@ -373,4 +368,3 @@ Per informazioni dettagliate sulle altre API di archiviazione di Azure che è po
 
 [SI01]: media/configure-spring-boot-starter-java-app-with-azure-storage/create-project-01.png
 [SI02]: media/configure-spring-boot-starter-java-app-with-azure-storage/create-project-02.png
-[SI03]: media/configure-spring-boot-starter-java-app-with-azure-storage/create-project-03.png

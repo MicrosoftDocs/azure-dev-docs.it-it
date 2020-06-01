@@ -3,12 +3,12 @@ title: Effettuare il provisioning e usare Archiviazione di Azure con Azure SDK p
 description: Usare le librerie di Azure SDK per Python per effettuare il provisioning di un contenitore BLOB in un account di archiviazione di Azure e quindi caricarvi un file.
 ms.date: 05/12/2020
 ms.topic: conceptual
-ms.openlocfilehash: 9b26dd4c5708231c807ea57979bed6bdcd9de25f
-ms.sourcegitcommit: 2cdf597e5368a870b0c51b598add91c129f4e0e2
+ms.openlocfilehash: 904ca66f6e4c065fa0705d2e35b8a7bb46396a0d
+ms.sourcegitcommit: b69db02c3358ce7899cef105508e3d17fafc84b2
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83405104"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83759944"
 ---
 # <a name="example-use-the-azure-sdk-with-azure-storage"></a>Esempio: Usare Azure SDK con Archiviazione di Azure
 
@@ -282,7 +282,7 @@ Per questi motivi, per il codice di produzione è consigliabile usare il metodo 
         blob_client.upload_blob(data)
     ```
 
-1. Provare a eseguire il codice:
+1. Tentativo di eseguire il codice (che non riesce intenzionalmente):
 
     ```bash
     python use_blob_auth.py
@@ -316,7 +316,7 @@ Per questi motivi, per il codice di produzione è consigliabile usare il metodo 
 
     L'argomento `--scope` di questo comando usa anche le variabili di ambiente AZURE_CLIENT_ID e AZURE_SUBSCRIPTION_ID, che devono essere già state impostate nell'ambiente locale per l'entità servizio come descritto in [Configurare l'ambiente di sviluppo Python locale per Azure](configure-local-development-environment.md).
 
-1. Eseguire di nuovo il codice per verificare se adesso funziona. Se viene visualizzato di nuovo il messaggio di errore sulle autorizzazioni, attendere un minuto che le autorizzazioni vengano propagate e quindi riprovare a eseguire il codice.
+1. Dopo aver atteso uno o due minuti la propagazione delle autorizzazioni, eseguire di nuovo il codice per verificarne il funzionamento. Se l'errore delle autorizzazioni persiste, attendere un po' più a lungo, quindi riprovare a eseguire il codice.
 
 Per altre informazioni su ambiti e assegnazioni di ruolo, vedere [Come assegnare le autorizzazioni per i ruoli](how-to-assign-role-permissions.md).
 
