@@ -8,19 +8,19 @@
       href: cloud-development-provisioning.md
     - name: Flusso di sviluppo di Azure
       href: cloud-development-flow.md
-- name: Configurare l'ambiente di sviluppo per Azure
-  href: configure-local-development-environment.md
-- name: Introduzione ad Azure SDK per Python
+- name: Introduzione ad Azure con Python
   items:
-    - name: Panoramica e modelli di utilizzo
+    - name: Panoramica delle librerie di Azure
       href: azure-sdk-overview.md
-    - name: Installare le librerie SDK
-      href: azure-sdk-install.md
-    - name: 'Esempio: Creare un gruppo di risorse'
+    - name: Configurare l'ambiente di sviluppo
+      href: configure-local-development-environment.md
+    - name: Modelli di utilizzo delle librerie
+      href: azure-sdk-library-usage-patterns.md
+    - name: 'Esempio: Effettuare il provisioning di un gruppo di risorse'
       href: azure-sdk-example-resource-group.md
-    - name: 'Esempio: Usare l''archiviazione di Azure'
+    - name: 'Esempio: Effettuare il provisioning e usare archiviazione di Azure'
       href: azure-sdk-example-storage.md
-    - name: 'Esempio: Effettuare il provisioning di un''app Web con il codice'
+    - name: 'Esempio: Effettuare il provisioning e distribuire un''app Web'
       href: azure-sdk-example-web-app.md
     - name: 'Esempio: Effettuare il provisioning di una macchina virtuale'
       href: azure-sdk-example-virtual-machines.md
@@ -88,6 +88,8 @@
           href: tutorial-vs-code-serverless-python-08.md
 - name: Guide pratiche
   items:
+    - name: Installare i pacchetti di librerie
+      href: azure-sdk-install.md
     - name: Autenticare app con Azure
       href: azure-sdk-authenticate.md
     - name: Gestire le entità servizio
@@ -128,7 +130,5 @@
       href: 'https://docs.microsoft.com/samples/browse/?languages=python&products=azure-search'
     - name: Tutti gli esempi
       href: 'https://docs.microsoft.com/samples/browse/?languages=python'
-- name: Informazioni di riferimento
-  items:
-    - name: Azure SDK
-      href: sdk.md
+- name: Informazioni di riferimento sulle API delle librerie
+  href: sdk-library-api-reference.md
