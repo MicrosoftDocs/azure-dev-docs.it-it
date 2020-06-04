@@ -18,26 +18,30 @@
       href: azure-sdk-library-usage-patterns.md
     - name: 'Esempio: Effettuare il provisioning di un gruppo di risorse'
       href: azure-sdk-example-resource-group.md
-    - name: 'Esempio: Effettuare il provisioning e usare archiviazione di Azure'
+    - name: 'Esempio: Effettuare il provisioning dell''archiviazione di Azure'
       href: azure-sdk-example-storage.md
+    - name: 'Esempio: Usare l''archiviazione di Azure'
+      href: azure-sdk-example-storage-use.md
     - name: 'Esempio: Effettuare il provisioning e distribuire un''app Web'
       href: azure-sdk-example-web-app.md
     - name: 'Esempio: Effettuare il provisioning di una macchina virtuale'
       href: azure-sdk-example-virtual-machines.md
-- name: Avvii rapidi per i servizi di Azure
+- name: Esplorare specifici servizi di Azure
   items:
     - name: Hosting di app
       href: quickstarts-app-hosting.md
     - name: Soluzioni per i dati
       href: quickstarts-data-solutions.md
+    - name: Identità e sicurezza
+      href: quickstarts-identity-security.md
     - name: Machine Learning
       href: quickstarts-machine-learning.md
-    - name: Servizi cognitivi di Azure
+    - name: Intelligenza artificiale (Servizi cognitivi)
       href: quickstarts-cognitive-services.md
-    - name: Messaggistica
-      href: quickstarts-messaging.md
-    - name: Sicurezza e integrazione
-      href: quickstarts-security-integration.md
+    - name: Messaggistica e IoT
+      href: quickstarts-messaging-iot.md
+    - name: Altri servizi
+      href: quickstarts-other-services.md
 - name: Esercitazioni specifiche per i vari scenari
   items:
     - name: Distribuire un'app Web con VS Code
