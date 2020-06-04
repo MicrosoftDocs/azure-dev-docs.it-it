@@ -3,12 +3,12 @@ title: Distribuire Funzioni di Azure in Node.js da Visual Studio Code
 description: Parte 1 dell'esercitazione, introduzione e prerequisiti.
 ms.topic: conceptual
 ms.date: 09/23/2019
-ms.openlocfilehash: 23eff2eb672b7221ed74fc8085515647392d8525
-ms.sourcegitcommit: 756e4873f904db954a56c20ebb2f1f5116ee4596
+ms.openlocfilehash: eaf8ea2c121319693c4007d8301c95c9b9d3a6c1
+ms.sourcegitcommit: a9b9157bb3a802ecfe3699854788d010a3f08d7e
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82138777"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84202910"
 ---
 # <a name="deploy-azure-functions-from-visual-studio-code"></a>Distribuire Funzioni di Azure da Visual Studio Code
 
@@ -18,7 +18,7 @@ In questa esercitazione si usano Visual Studio Code e l'estensione Funzioni di A
 
 Guardare questo video per una procedura dettagliata completa del contenuto di questo articolo.
 
-> [!VIDEO https://channel9.msdn.com/Shows/Docs-Azure/Deploy-Azure-Functions-from-Visual-Studio-Code/player]
+> [!VIDEO https://channel9.msdn.com/Shows/Docs-Azure/Deploy-Azure-Functions-Visual-Studio-Code/player]
 
 ## <a name="prerequisites"></a>Prerequisiti
 

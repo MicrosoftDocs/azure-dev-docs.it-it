@@ -3,12 +3,12 @@ title: Esercitazione - Configurare l'estensione Azure Terraform di Visual Studio
 description: Questo articolo illustra come installare e usare l'estensione Azure Terraform in Visual Studio Code.
 ms.topic: tutorial
 ms.date: 10/26/2019
-ms.openlocfilehash: c33006fc2be87bfce42f15a6fc123c9c8326aa42
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: 9fd6d6b93537795109117198aa20063b556b8368
+ms.sourcegitcommit: db56786f046a3bde1bd9b0169b4f62f0c1970899
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82171257"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84329569"
 ---
 # <a name="tutorial-configure-the-azure-terraform-visual-studio-code-extension"></a>Esercitazione: Configurare l'estensione Azure Terraform di Visual Studio Code
 
@@ -25,7 +25,7 @@ In questo articolo vengono illustrate le operazioni seguenti:
 ## <a name="prerequisites"></a>Prerequisiti
 
 [!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
-- **Terraform**: [installare e configurare Terraform](install-configure.md).
+- **Terraform**: [installare e configurare Terraform](getting-started-cloud-shell.md).
 - **Visual Studio Code**: installare la versione di [Visual Studio Code](https://code.visualstudio.com/download) appropriata per l'ambiente.
 
 ## <a name="prepare-your-dev-environment"></a>Preparare l'ambiente di sviluppo

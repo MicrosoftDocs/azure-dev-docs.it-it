@@ -4,12 +4,12 @@ description: Passaggio 4 dell'esercitazione, che indica al servizio app come avv
 ms.topic: conceptual
 ms.date: 05/19/2020
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 0f2636b694b0bd187a43aa2d734e936a89b4d4fa
-ms.sourcegitcommit: fbbc341a0b9e17da305bd877027b779f5b0694cc
+ms.openlocfilehash: 1e724fa7d35c1b3488dbe6738a4840e20bbfbf96
+ms.sourcegitcommit: efab6be74671ea4300162e0b30aa8ac134d3b0a9
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83631737"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "84256446"
 ---
 # <a name="4-configure-a-custom-startup-file-for-python-apps-on-azure-app-service"></a>4: Configurare un file di avvio personalizzato per le app Python nel Servizio app di Azure
 
@@ -54,7 +54,7 @@ Per specificare un comando di avvio, è anche possibile usare il comando [`az we
 
 Per impostazione predefinita, il Servizio app individua automaticamente la cartella che contiene il file *wsgi.py* e avvia Gunicorn con il comando seguente:
 
-```bash
+```cmd
 # <module> is the path to the folder that contains wsgi.py
 gunicorn --bind=0.0.0.0 --timeout 600 <module>.wsgi
 ```

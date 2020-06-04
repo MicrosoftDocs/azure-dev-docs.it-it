@@ -3,12 +3,12 @@ title: Esercitazione - Creare una topologia di rete ibrida hub-spoke con Terrafo
 description: Informazioni su come creare un'intera architettura di riferimento di rete ibrida in Azure usando Terraform.
 ms.topic: tutorial
 ms.date: 10/26/2019
-ms.openlocfilehash: a5498c1fea00948a77d740f4ce498d6a7eb73577
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: 8e9a120168f922194f903cc9a6f4be7c933ee62b
+ms.sourcegitcommit: db56786f046a3bde1bd9b0169b4f62f0c1970899
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82170937"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84329349"
 ---
 # <a name="tutorial-create-a-hub-and-spoke-hybrid-network-topology-in-azure-using-terraform"></a>Esercitazione: Creare una topologia di rete ibrida hub-spoke con Terraform in Azure
 
@@ -32,7 +32,7 @@ Questa esercitazione illustra le attività seguenti:
 
 [!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
 
-- **Installare e configurare Terraform**: per eseguire il provisioning di macchine virtuali e altra infrastruttura in Azure, [installare e configurare Terraform](install-configure.md).
+- **Installare e configurare Terraform**: per eseguire il provisioning di macchine virtuali e altra infrastruttura in Azure, [installare e configurare Terraform](getting-started-cloud-shell.md).
 
 ## <a name="hub-and-spoke-topology-architecture"></a>Architettura della topologia hub-spoke
 

@@ -3,12 +3,12 @@ title: Esercitazione - Creare un'appliance di rete virtuale hub con Terraform in
 description: Informazioni su come creare una rete virtuale hub in Azure che funge da punto di connessione comune tra altre reti.
 ms.topic: tutorial
 ms.date: 10/26/2019
-ms.openlocfilehash: 6498010775fb4ee2d97041a04e80ff17c6bd2da8
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: 49af4bde3568185e1915edb49be3040ece89676f
+ms.sourcegitcommit: db56786f046a3bde1bd9b0169b4f62f0c1970899
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82170977"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84329314"
 ---
 # <a name="tutorial-create-a-hub-virtual-network-appliance-in-azure-using-terraform"></a>Esercitazione: Creare un'appliance di rete virtuale hub con Terraform in Azure
 
@@ -75,7 +75,7 @@ Creare il file di configurazione Terraform che dichiara una rete virtuale locale
       name     = "${local.prefix-hub-nva}-rg"
       location = local.hub-nva-location
 
-      tags {
+      tags = {
         environment = local.prefix-hub-nva
       }
     }
@@ -93,7 +93,7 @@ Creare il file di configurazione Terraform che dichiara una rete virtuale locale
         private_ip_address            = "10.0.0.36"
       }
 
-      tags {
+      tags = {
         environment = local.prefix-hub-nva
       }
     }
@@ -129,7 +129,7 @@ Creare il file di configurazione Terraform che dichiara una rete virtuale locale
         disable_password_authentication = false
       }
 
-      tags {
+      tags = {
         environment = local.prefix-hub-nva
       }
     }
@@ -152,7 +152,7 @@ Creare il file di configurazione Terraform che dichiara una rete virtuale locale
         }
     SETTINGS
 
-      tags {
+      tags = {
         environment = local.prefix-hub-nva
       }
     }
@@ -183,7 +183,7 @@ Creare il file di configurazione Terraform che dichiara una rete virtuale locale
         next_hop_in_ip_address = "10.0.0.36"
       }
 
-      tags {
+      tags = {
         environment = local.prefix-hub-nva
       }
     }
@@ -191,7 +191,7 @@ Creare il file di configurazione Terraform che dichiara una rete virtuale locale
     resource "azurerm_subnet_route_table_association" "hub-gateway-rt-hub-vnet-gateway-subnet" {
       subnet_id      = azurerm_subnet.hub-gateway-subnet.id
       route_table_id = azurerm_route_table.hub-gateway-rt.id
-      depends_on = ["azurerm_subnet.hub-gateway-subnet"]
+      depends_on = [azurerm_subnet.hub-gateway-subnet]
     }
 
     resource "azurerm_route_table" "spoke1-rt" {
@@ -213,7 +213,7 @@ Creare il file di configurazione Terraform che dichiara una rete virtuale locale
         next_hop_type  = "vnetlocal"
       }
 
-      tags {
+      tags = {
         environment = local.prefix-hub-nva
       }
     }
@@ -221,13 +221,13 @@ Creare il file di configurazione Terraform che dichiara una rete virtuale locale
     resource "azurerm_subnet_route_table_association" "spoke1-rt-spoke1-vnet-mgmt" {
       subnet_id      = azurerm_subnet.spoke1-mgmt.id
       route_table_id = azurerm_route_table.spoke1-rt.id
-      depends_on = ["azurerm_subnet.spoke1-mgmt"]
+      depends_on = [azurerm_subnet.spoke1-mgmt]
     }
 
     resource "azurerm_subnet_route_table_association" "spoke1-rt-spoke1-vnet-workload" {
       subnet_id      = azurerm_subnet.spoke1-workload.id
       route_table_id = azurerm_route_table.spoke1-rt.id
-      depends_on = ["azurerm_subnet.spoke1-workload"]
+      depends_on = [azurerm_subnet.spoke1-workload]
     }
 
     resource "azurerm_route_table" "spoke2-rt" {
@@ -249,7 +249,7 @@ Creare il file di configurazione Terraform che dichiara una rete virtuale locale
         next_hop_type  = "vnetlocal"
       }
 
-      tags {
+      tags = {
         environment = local.prefix-hub-nva
       }
     }
@@ -257,13 +257,13 @@ Creare il file di configurazione Terraform che dichiara una rete virtuale locale
     resource "azurerm_subnet_route_table_association" "spoke2-rt-spoke2-vnet-mgmt" {
       subnet_id      = azurerm_subnet.spoke2-mgmt.id
       route_table_id = azurerm_route_table.spoke2-rt.id
-      depends_on = ["azurerm_subnet.spoke2-mgmt"]
+      depends_on = [azurerm_subnet.spoke2-mgmt]
     }
 
     resource "azurerm_subnet_route_table_association" "spoke2-rt-spoke2-vnet-workload" {
       subnet_id      = azurerm_subnet.spoke2-workload.id
       route_table_id = azurerm_route_table.spoke2-rt.id
-      depends_on = ["azurerm_subnet.spoke2-workload"]
+      depends_on = [azurerm_subnet.spoke2-workload]
     }
 
     ```
