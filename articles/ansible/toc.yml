@@ -7,13 +7,13 @@
 - name: Avvi rapidi
   expanded: true
   items:
+    - name: Introduzione - Cloud Shell
+      href: getting-started-cloud-shell.md
     - name: Distribuire il modello di soluzione Ansible in CentOS
       href: solution-template-deploy.md
     - name: Installare Ansible in macchine virtuali Linux
       href: install-on-linux-vm.md
       maintainContext: true
-    - name: Eseguire playbook in Cloud Shell
-      href: cloudshell-run-playbook.md
     - name: Usare macchine virtuali Linux
       expanded: true
       items:
@@ -103,7 +103,7 @@
       href: 'https://github.com/microsoft/ansiblelabs'
     - name: Esempi di playbook di Ansible Azure
       href: 'https://github.com/Azure-Samples/ansible-playbooks'
-- name: Riferimento
+- name: Informazioni di riferimento
   items:
     - name: Ruoli dei playbook
       items:
