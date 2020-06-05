@@ -4,13 +4,11 @@
   items:
     - name: Informazioni su Terraform in Azure
       href: overview.md
-- name: Avvi rapidi
+- name: Avvii rapidi
   expanded: true
   items:
-    - name: Installare e configurare Terraform
-      href: install-configure.md
-    - name: Creare una macchina virtuale Linux
-      href: create-linux-virtual-machine-with-infrastructure.md
+    - name: Introduzione - Cloud Shell
+      href: getting-started-cloud-shell.md
 - name: Esercitazioni
   items:
     - name: Installazione e configurazione
@@ -31,16 +29,6 @@
       items:
         - name: Distribuire un'istanza di Azure Cosmos DB
           href: deploy-azure-cosmos-db-to-azure-container-instances.md
-    - name: Infrastruttura
-      items:
-        - name: Creare un cluster di VM con moduli Terraform
-          href: create-vm-cluster-module.md
-        - name: Creare un cluster di macchine virtuali con Terraform e HCL
-          href: create-vm-cluster-with-infrastructure.md
-        - name: Effettuare il provisioning di un set di scalabilità di macchine virtuali con l'infrastruttura
-          href: create-vm-scaleset-network-disks-hcl.md
-        - name: Effettuare il provisioning di un set di scalabilità di macchine virtuali da un'immagine personalizzata di Packer
-          href: create-vm-scaleset-network-disks-using-packer-hcl.md
     - name: Reti
       items:
         - name: Topologia hub-spoke
@@ -62,9 +50,21 @@
         - name: Installare l'estensione Terraform per Visual Studio Code
           href: configure-vs-code-extension-for-terraform.md
         - name: Creare un modello Terraform di base con Yeoman
-          href: create-a-base-template-using-yeoman.md
+          href: create-base-template-using-yeoman.md
         - name: Testare i moduli Terraform con Terratest
           href: test-modules-using-terratest.md
+    - name: Macchine virtuali
+      items:
+        - name: Macchina virtuale con infrastruttura
+          href: create-linux-virtual-machine-with-infrastructure.md
+        - name: Cluster di macchine virtuali con moduli Terraform
+          href: create-vm-cluster-module.md
+        - name: Cluster di macchine virtuali con Terraform e HCL
+          href: create-vm-cluster-with-infrastructure.md
+        - name: Set di scalabilità di macchine virtuali con infrastruttura
+          href: create-vm-scaleset-network-disks-hcl.md
+        - name: Set di scalabilità di macchine virtuali da immagine Packer
+          href: create-vm-scaleset-network-disks-using-packer-hcl.md
 - name: Esempi
   items:
     - name: Modelli di configurazione
