@@ -24,6 +24,8 @@
       href: azure-sdk-example-storage-use.md
     - name: 'Esempio: Effettuare il provisioning e distribuire un''app Web'
       href: azure-sdk-example-web-app.md
+    - name: 'Esempio: Effettuare il provisioning ed eseguire query su un database'
+      href: azure-sdk-example-database.md
     - name: 'Esempio: Effettuare il provisioning di una macchina virtuale'
       href: azure-sdk-example-virtual-machines.md
 - name: Esplorare specifici servizi di Azure
