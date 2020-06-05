@@ -16,18 +16,20 @@
       href: configure-local-development-environment.md
     - name: Modelli di utilizzo delle librerie
       href: azure-sdk-library-usage-patterns.md
-    - name: 'Esempio: Effettuare il provisioning di un gruppo di risorse'
-      href: azure-sdk-example-resource-group.md
-    - name: 'Esempio: Effettuare il provisioning dell''archiviazione di Azure'
-      href: azure-sdk-example-storage.md
-    - name: 'Esempio: Usare l''archiviazione di Azure'
-      href: azure-sdk-example-storage-use.md
-    - name: 'Esempio: Effettuare il provisioning e distribuire un''app Web'
-      href: azure-sdk-example-web-app.md
-    - name: 'Esempio: Effettuare il provisioning ed eseguire query su un database'
-      href: azure-sdk-example-database.md
-    - name: 'Esempio: Effettuare il provisioning di una macchina virtuale'
-      href: azure-sdk-example-virtual-machines.md
+    - name: Esempi
+      items:
+        - name: Effettuare il provisioning di un gruppo di risorse
+          href: azure-sdk-example-resource-group.md
+        - name: Effettuare il provisioning dell'archiviazione di Azure
+          href: azure-sdk-example-storage.md
+        - name: Usare l'archiviazione di Azure
+          href: azure-sdk-example-storage-use.md
+        - name: Effettuare il provisioning e distribuire un'app Web
+          href: azure-sdk-example-web-app.md
+        - name: Effettuare il provisioning ed eseguire query su un database
+          href: azure-sdk-example-database.md
+        - name: Effettuare il provisioning di una macchina virtuale
+          href: azure-sdk-example-virtual-machines.md
 - name: Esplorare specifici servizi di Azure
   items:
     - name: Hosting di app
@@ -102,6 +104,8 @@
       href: how-to-manage-service-principals.md
     - name: Assegnare le autorizzazioni di ruolo a entità di sicurezza
       href: how-to-assign-role-permissions.md
+    - name: Configurare la registrazione
+      href: azure-sdk-logging.md
     - name: Configurare gli argomenti dell'API REST
       href: azure-sdk-operation-config.md
     - name: Sviluppo multi-cloud
