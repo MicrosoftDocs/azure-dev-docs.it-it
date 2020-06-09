@@ -7,13 +7,15 @@
       href: migrate-spring-boot-to-app-service.md
     - name: Da Spring Boot al servizio Azure Kubernetes
       href: migrate-spring-boot-to-azure-kubernetes-service.md
+    - name: Da Spring Boot ad Azure Spring Cloud
+      href: migrate-spring-boot-to-azure-spring-cloud.md
     - name: Da Spring Cloud ad Azure Spring Cloud
       href: migrate-spring-cloud-to-azure-spring-cloud.md
     - name: Da Tomcat a Servizio app di Azure
       href: migrate-tomcat-to-tomcat-app-service.md
     - name: Da Tomcat ai contenitori nel servizio Azure Kubernetes
       href: migrate-tomcat-to-containers-on-azure-kubernetes-service.md
-    - name: Da WebLogic a macchine virtuali di Azure
+    - name: Da WebLogic a Macchine virtuali di Azure
       href: migrate-weblogic-to-virtual-machines.md
     - name: Da WildFly a WildFly nel servizio Azure Kubernetes
       href: migrate-wildfly-to-wildfly-on-azure-kubernetes-service.md
