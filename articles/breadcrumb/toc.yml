@@ -15,6 +15,9 @@
         - name: Python
           tocHref: /azure/developer/python
           topicHref: /azure/developer/python/index
+        - name: App per dispositivi mobili
+          tocHref: /azure/developer/mobile-apps
+          topicHref: /azure/developer/mobile-apps/index
         - name: Java
           tocHref: /azure/developer/java
           topicHref: /azure/developer/java/index
