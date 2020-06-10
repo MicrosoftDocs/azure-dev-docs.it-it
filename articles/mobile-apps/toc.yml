@@ -1,0 +1,55 @@
+- name: Documentazione di Azure per sviluppatori di app per dispositivi mobili
+  href: index.yml
+- name: Panoramica
+  expanded: true
+  items:
+    - name: Scegliere il framework di sviluppo per dispositivi mobili
+      href: choose-mobile-framework.md
+    - name: Fasi dello sviluppo cloud delle app per dispositivi mobili
+      href: mobile-cloud-development-stages.md
+- name: Concetti
+  items:
+    - name: Authentication
+      href: authentication.md
+    - name: Data
+      items:
+        - name: Archiviazione dei dati
+          href: data-storage.md
+        - name: Archiviazione di Azure
+          href: azure-storage.md
+        - name: Rete per la distribuzione di contenuti di Azure
+          href: azure-content-delivery-network.md
+    - name: Calcolo
+      items:
+        - name: Calcolo serverless
+          href: serverless-compute.md
+        - name: App in tempo reale
+          href: real-time-communication.md
+    - name: Controllo del codice sorgente
+      href: code-hosting-services.md
+    - name: DevOps
+      items:
+        - name: Che cos'è DevOps?
+          href: devops.md
+        - name: Compilazione e integrazione continue
+          href: continuous-integration.md
+        - name: Test su dispositivi reali
+          href: test-mobile-apps.md
+        - name: Recapito continuo
+          href: continuous-delivery.md
+    - name: Telemetria
+      items:
+        - name: Analizzare l'utilizzo e il comportamento degli utenti
+          href: analytics.md
+        - name: Report degli errori in tempo reale
+          href: diagnostics.md
+    - name: Notifiche push
+      href: push-notifications.md
+    - name: Machine Learning
+      items:
+        - name: Servizi cognitivi di Azure
+          href: cognitive-services.md
+        - name: Mappe di Azure
+          href: azure-maps.md
+        - name: Ricerca cognitiva di Azure
+          href: azure-search.md
