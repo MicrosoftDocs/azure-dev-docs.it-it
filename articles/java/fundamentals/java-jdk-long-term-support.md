@@ -4,29 +4,37 @@ description: Download e indicazione del supporto di Azure per lo sviluppo e l'es
 ms.date: 04/09/2019
 ms.topic: conceptual
 ms.custom: seo-java-september2019
-ms.openlocfilehash: 02915383dd72a18959dbb5ba0f925a0e10b691d7
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: 4722c64e3b328cb5b63b6b976bd25e5b91341117
+ms.sourcegitcommit: 367217792f3b16c769e2c39372358bc6b9c9c044
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81670647"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84292793"
 ---
-# <a name="java-long-term-support-for-azure-and-azure-stack"></a>Supporto a lungo termine di Java per Azure e Azure Stack
+# <a name="java-long-term-support-and-medium-term-support-for-azure-and-azure-stack"></a>Supporto a lungo e medio termine di Java per Azure e Azure Stack
 
 Gli sviluppatori Java in Azure e Azure Stack possono compilare ed eseguire applicazioni Java di produzione usando le build JDK [Azul Zulu per Azure - Enterprise Edition](https://www.azul.com/downloads/azure-only/zulu/) senza incorrere in costi di supporto aggiuntivi. È possibile usare qualsiasi runtime Java in Azure, ma se si sceglie Zulu si ottengono aggiornamenti di manutenzione gratuiti ed è possibile richiedere assistenza a Microsoft.
+
+Una versione designata per il supporto a lungo termine (LTS) corrisponde alle versioni LTS designate da Oracle e dalla community di OpenJDK. Per le versioni LTS sono offerti almeno otto anni di accesso alle correzioni di bug, agli aggiornamenti della sicurezza e ad eventuali altre correzioni necessarie ("supporto di produzione"), oltre a due anni di supporto aggiuntivo per consigliare e aiutare gli utenti a eseguire la migrazione a una versione più recente del JDK ("supporto esteso").
+
+Per le versioni progettate per il supporto a medio termine (MTS), il supporto per la produzione viene fornito per almeno un anno e mezzo dopo la disponibilità a livello generale della versione LTS successiva, oltre a un ulteriore anno di supporto esteso.
 
 > [!div class="nextstepaction"]
 > [Scaricare e installare Java](java-jdk-install.md)
 
-## <a name="long-term-support-lts"></a>Supporto a lungo termine
+## <a name="long-term-support-lts"></a>Supporto a lungo termine (LTS)
 
 * [Java 11](https://www.azul.com/downloads/azure-only/zulu/?&version=java-11-lts)
 * [Java 8](https://www.azul.com/downloads/azure-only/zulu/?&version=java-8-lts)
 * [Java 7](https://www.azul.com/downloads/azure-only/zulu/?&version=java-7-lts)
 
-## <a name="technical-preview"></a>Anteprima tecnica
+## <a name="medium-term-support-mts"></a>Supporto a medio termine (MTS)
 
 * [Java 13](https://www.azul.com/downloads/azure-only/zulu/?&version=java-13)
+
+## <a name="technical-preview"></a>Anteprima tecnica
+
+* [Java 14](https://www.azul.com/downloads/azure-only/zulu/?version=java-14)
 
 ## <a name="what-is-the-zulu-openjdk-for-azure"></a>Cos'è Zulu OpenJDK per Azure?
 
@@ -34,7 +42,7 @@ Le build Azul Zulu per Azure - Enterprise Edition di OpenJDK sono distribuzioni 
 
 * Sono build di OpenJDK completamente open source fornite come pacchetti JDK (Java Development Kit), JRE (Java Runtime Environment) e JRE headless. Questi binari sono build commerciali di Java Standard Edition (SE) pienamente compatibili e conformi che è possibile usare con applicazioni o componenti Java in Azure e Azure Stack.
 * Vengono fornite con supporto a lungo termine, tra cui correzioni di bug, miglioramenti delle prestazioni e patch di sicurezza.
-* Sono disponibili per lo sviluppo e l'esecuzione di applicazioni Java in Windows, Linux e MacOS.
+* Sono disponibili per lo sviluppo e l'esecuzione di applicazioni Java in Windows, Linux e macOS.
 * Sono disponibili come immagini di contenitori in Docker Hub e come macchine virtuali Windows e Linux in Azure Marketplace.
 * Vengono usate in Microsoft Azure per supportare molti servizi di Azure, ad esempio:
   * Servizio app in Windows
@@ -48,18 +56,17 @@ Le build Azul Zulu per Azure - Enterprise Edition di OpenJDK sono distribuzioni 
 
 ## <a name="supported-java-versions-and-update-schedule"></a>Versioni Java supportate e piano degli aggiornamenti
 
-Azul Systems fornisce build [Azul Zulu per Azure - Enterprise Edition](https://www.azul.com/downloads/azure-only/zulu/) completamente supportate per tutte le versioni di Java con supporto a lungo termine, a partire da Java SE 7, 8 e 11. Per altre informazioni, vedere il [comunicato stampa di Azul](https://www.azul.com/press_release/free-java-production-support-for-microsoft-azure-azure-stack).
+Azul Systems fornisce build [Azul Zulu per Azure - Enterprise Edition](https://www.azul.com/downloads/azure-only/zulu/) completamente supportate per tutte le versioni di Java con supporto a lungo termine (LTS), incluse Java SE 7, 8, 11 e 13. Per altre informazioni, vedere il [comunicato stampa di Azul](https://www.azul.com/press_release/free-java-production-support-for-microsoft-azure-azure-stack) e la roadmap sul [ciclo di vita del supporto per i prodotti Azul](https://www.azul.com/products/azul_support_roadmap/).
 
-|Supporto a lungo termine di Java SE  |Data di fine supporto  |
+|Versione di Java SE  |Data di fine supporto  |
 |---------|----------|
-|[![Versione Java supportata - Java 7](media/supported-java-versions-java-7.png)](https://www.azul.com/downloads/azure-only/zulu/?&version=java-7-lts) |Luglio 2023 |
-|[![Versione Java supportata - Java 8](media/supported-java-versions-java-8.png)](https://www.azul.com/downloads/azure-only/zulu/?&version=java-8-lts) |Marzo 2025|
-|[![Versione Java supportata - Java 11](media/supported-java-versions-java-11.png)](https://www.azul.com/downloads/azure-only/zulu/?&version=java-11-lts) |Settembre 2026|
-|[![Versione Java supportata - Java 13](media/supported-java-versions-java-13.png)](https://www.azul.com/downloads/azure-only/zulu/?&version=java-13) |**ANTEPRIMA**|
+|[![Versione Java supportata - LTS - Java 7](media/supported-java-versions-java-7.png)](https://www.azul.com/downloads/azure-only/zulu/?&version=java-7-lts) |Luglio 2023 - LTS|
+|[![Versione Java supportata - LTS - Java 8](media/supported-java-versions-java-8.png)](https://www.azul.com/downloads/azure-only/zulu/?&version=java-8-lts) |Dicembre 2030 - LTS|
+|[![Versione Java supportata - LTS - Java 11](media/supported-java-versions-java-11.png)](https://www.azul.com/downloads/azure-only/zulu/?&version=java-11-lts) |Settembre 2027 - LTS|
+|[![Versione Java supportata - MTS - Java 13](media/supported-java-versions-java-13.png)](https://www.azul.com/downloads/azure-only/zulu/?&version=java-13) |Marzo 2023 - MTS|
+|[![Versione Java supportata - Anteprima - Java 14](media/supported-java-versions-java-14.png)](https://www.azul.com/downloads/azure-only/zulu/?version=java-14) |**ANTEPRIMA**|
 
-Queste versioni di JDK prevedono aggiornamenti trimestrali di sicurezza e correzioni di bug, oltre a patch e aggiornamenti critici straordinari, se necessario.  Il supporto include il backporting a Java 7 e 8 degli aggiornamenti di sicurezza e delle correzioni di bug applicate alle versioni più recenti di Java, come Java 11, garantendo la continua stabilità e la sicurezza delle versioni precedenti di Java.  I clienti di Azure possono ottenere questi aggiornamenti di sicurezza e le correzioni di bug per la piattaforma senza incorrere in costi di sottoscrizione non pianificati per Java SE.
-
-Azul Systems mantiene una [roadmap Java SE](https://www.azul.com/products/azul_support_roadmap/) per queste versioni.
+Queste versioni di JDK con supporto a medio e lungo termine includono aggiornamenti trimestrali di sicurezza e correzioni di bug, oltre a eventuali patch e aggiornamenti critici straordinari necessari.  Il supporto include il backporting a Java 7 e 8 degli aggiornamenti di sicurezza e delle correzioni di bug applicate alle versioni più recenti di Java, come Java 11, garantendo la continua stabilità e la sicurezza delle versioni precedenti di Java.  I clienti di Azure possono ottenere questi aggiornamenti di sicurezza e le correzioni di bug per la piattaforma senza incorrere in costi di sottoscrizione non pianificati per Java SE.
 
 ## <a name="benefits-for-developers"></a>Vantaggi per gli sviluppatori
 
@@ -68,8 +75,8 @@ Le versioni degli SDK Azul Zulu per Azure - Enterprise Edition sono:
 1. Supporto assicurato sia da Microsoft che da Azul Systems
 
    * I binari Zulu sono pronti per la produzione e supportati da Microsoft e Azul Systems
-   * Zulu viene fornito con supporto a lungo termine gratuito per Java 7, 8 e 11. Il supporto a lungo termine verrà fornito anche per Java 17. È possibile aggiornare le versioni di Java solo quando è necessario.
-   * Java 7 è supportato fino a luglio 2023. Java 8 e 11 sono supportati oltre il 2024.
+   * Zulu viene fornito con supporto a lungo termine (LTS) gratuito per Java 7, 8 e 11 e supporto a medio termine (MTS) per Java 13. Il supporto a lungo termine (LTS) verrà fornito anche per Java 17. È possibile aggiornare le versioni di Java solo quando è necessario.
+   * Java 7 è supportato fino a luglio 2023. Java 8 e 11 sono supportati fino a settembre 2027. Java 13 è supportato fino a marzo 2023.
    * Microsoft è impegnata a eseguire Zulu internamente nei computer usati per fornire molti servizi di Azure.
 
 2. Pronte per la produzione
@@ -77,9 +84,9 @@ Le versioni degli SDK Azul Zulu per Azure - Enterprise Edition sono:
    * Build di OpenJDK completamente open source.
    * Soluzioni sostitutive per molte distribuzioni di Java SE senza richiedere modifiche.
    * JDK, JRE e JRE-headless
-   * Java 7, 8 e 11
+   * Java 7, 8, 11 e 13.
    * Conformità verificata alle specifiche di Java SE tramite Technology Compatibility Kit (TCK) della community OpenJDK.
-   * Gli sviluppatori continueranno a ricevere aggiornamenti di produzione per Java SE, tra cui correzioni di bug, miglioramenti delle prestazioni e patch di sicurezza, per Java SE 7, 8 e 11.
+   * Gli sviluppatori continueranno a ricevere aggiornamenti di produzione per Java SE, tra cui correzioni di bug, miglioramenti delle prestazioni e patch di sicurezza, per Java SE 7, 8, 11 e 13.
 
 3. Supporto multipiattaforma. Zulu supporta binari per più piattaforme e versioni, tra cui:
 
@@ -115,9 +122,9 @@ Le versioni degli SDK Azul Zulu per Azure - Enterprise Edition sono:
 4. Nessun costo
 
    * Microsoft fornisce tutto il necessario per creare e ridimensionare le app Java in Azure senza costi aggiuntivi. Tramite Zulu si riceveranno gratuitamente aggiornamenti di sicurezza e correzioni di bug della piattaforma per le app Java.
-   * [Java Flight Recorder e Mission Control](java-jdk-flight-recorder-and-mission-control.md) sono disponibili in Zulu Java 8, 11 e 12 (anteprima).
+   * [Java Flight Recorder e Mission Control](java-jdk-flight-recorder-and-mission-control.md) sono disponibili in Zulu Java 8, 11 e versioni successive.
 
-5. Anteprima tecnica di versioni senza supporto a lungo termine
+5. Anteprima tecnica di versioni senza supporto a lungo/medio termine
 
    * Le anteprime tecniche offrono la possibilità di testare progressivamente le nuove funzionalità non appena vengono distribuite in versioni a breve termine, che eventualmente passeranno al supporto a lungo termine di Java 17.
 

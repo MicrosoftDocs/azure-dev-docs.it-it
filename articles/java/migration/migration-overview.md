@@ -5,12 +5,12 @@ author: yevster
 ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 1/20/2020
-ms.openlocfilehash: 1eeb7d6a17bb21963f3203d484387c0aae6c402f
-ms.sourcegitcommit: 226ebca0d0e3b918928f58a3a7127be49e4aca87
+ms.openlocfilehash: bbc7dd44e975fd47b52df41baa1ec526ac1908f8
+ms.sourcegitcommit: a9b9157bb3a802ecfe3699854788d010a3f08d7e
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82988702"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84202830"
 ---
 # <a name="migrate-java-applications-to-azure"></a>Eseguire la migrazione di applicazioni Java ad Azure
 
@@ -74,9 +74,9 @@ Queste applicazioni vengono compresse in archivi con l'estensione *jar* (file JA
 
 Le sezioni seguenti illustrano quali destinazioni del servizio soddisfano i requisiti dell'applicazione e quali responsabilità comportano.
 
-### <a name="feature-grid"></a>Griglia delle funzionalità
+### <a name="hosting-options-grid"></a>Griglia di opzioni di hosting
 
-Usare la griglia seguente per identificare le destinazioni che supportano i tipi di applicazione e le funzionalità necessarie.
+Usare la griglia seguente per identificare possibili destinazioni per un tipo di applicazione. Come si può notare, il servizio Azure Kubernetes e le macchine virtuali supportano tutti i tipi di applicazioni, ma richiedono al team di assumersi più responsabilità, come illustrato nella sezione successiva.
 
 |   |App<br>Service<br>Java SE|App<br>Service<br>Tomcat|Azure<br>Spring<br>Cloud|Servizio Azure Kubernetes|Macchine virtuali|
 |---|---|---|---|---|---|---|

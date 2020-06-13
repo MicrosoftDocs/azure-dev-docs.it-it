@@ -1,35 +1,26 @@
 ---
-title: Guide di avvio rapido sui servizi cognitivi per le app Python in Azure
-description: Elenco di articoli introduttivi della documentazione di Azure sui servizi cognitivi per le app Python.
-ms.date: 05/12/2020
+title: Introduzione ai servizi cognitivi di intelligenza artificiale per le app Python in Azure
+description: Indice di articoli introduttivi della documentazione di Azure sui servizi cognitivi di intelligenza artificiale per le app Python.
+ms.date: 05/28/2020
 ms.topic: conceptual
-ms.openlocfilehash: 4b07e886fdb58f9a8abad48a6bd905cdf935e131
-ms.sourcegitcommit: 2cdf597e5368a870b0c51b598add91c129f4e0e2
+ms.openlocfilehash: 7192826524f647560f502fa0d01d136c0de945d1
+ms.sourcegitcommit: a9b9157bb3a802ecfe3699854788d010a3f08d7e
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83403746"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84202810"
 ---
-# <a name="cognitive-services-for-python-apps-on-azure"></a>Servizi cognitivi per le app Python in Azure
+# <a name="ai-service-for-python-apps-on-azure"></a>Servizio di intelligenza artificiale per le app di Python in Azure
 
-Gli articoli seguenti sono utili per iniziare a usare Servizi cognitivi di Azure, che rendono facilmente disponibili alle applicazioni funzionalità complete di intelligenza artificiale:
+I servizi cognitivi di Azure rendono disponibili numerose funzionalità di intelligenza artificiale per applicazioni in aree come la visione artificiale e l'elaborazione di immagini, l'analisi e la traduzione linguistica, il riconoscimento vocale, i processi decisionali e le ricerche complete.
 
-- **Panoramica**:
-  - [Moduli di Servizi cognitivi di Azure per Python](/python/api/overview/azure/cognitive-services?view=azure-python)
+Poiché i servizi cognitivi di Azure continuano a evolversi, il modo migliore per trovare materiale introduttivo per Python consiste nell'iniziare dalla [pagina dell'hub Servizi cognitivi di Azure](/azure/cognitive-services/). Selezionare un servizio di interesse, quindi espandere il nodo **Guide di avvio rapido**. In **Guide di avvio rapido** cercare le sottosezioni sull'uso delle librerie client o dell'API REST. Gli articoli di queste sottosezioni includono Python, se supportato.
 
-- **Elaborazione di immagini**:  
-  - [Analizzare un'immagine remota usando l'API REST Visione artificiale e Python](/azure/cognitive-services/Computer-vision/Quickstarts/python-analyze)
-  - [Creare un progetto di classificazione immagini con l'SDK Visione personalizzata per Python](/azure/cognitive-services/custom-vision-service/python-tutorial)
+> [!div class="nextstepaction"]
+> [Accedere alla pagina dell'hub Servizi cognitivi >>>](/azure/cognitive-services/)
 
-- **Riconoscimento facciale**:  
-  - [Riconoscimento facciale con Python](/azure/cognitive-services/face/quickstarts/python-sdk)
+Vedere anche gli articoli seguenti per Ricerca cognitiva di Azure, che si trova in una sezione separata della documentazione rispetto a Servizi cognitivi:
 
-- **Lingua, analisi del testo e ricerca**:
-  - [Creazione per Language Understanding (LUIS) per Python](/azure/cognitive-services/luis/sdk-authoring)
-  - [Usare la libreria client di Analisi del testo per Python](/azure/cognitive-services/text-analytics/quickstarts/text-analytics-sdk)
-  - [Usare la libreria client di Content Moderator per Python](/azure/cognitive-services/content-moderator/python-sdk-quickstart)
-  - [Suggerire query di ricerca con l'API REST Suggerimenti automatici Bing e Python](/azure/cognitive-services/bing-autosuggest/quickstarts/python)
-  - [Pagina dell'hub di ricerca](/azure/cognitive-services/bing-web-search/index)
+- [Creare un indice di Ricerca cognitiva di Azure in Python con Jupyter Notebooks](/azure/search/search-get-started-python).
+- [Usare Python e l'intelligenza artificiale per generare contenuto ricercabile dai BLOB di Azure](/azure/search/cognitive-search-tutorial-blob-python)
 
-- **Servizi Voce**
-  - [Pagina dell'hub del servizio Voce](/azure/cognitive-services/speech-service/index)

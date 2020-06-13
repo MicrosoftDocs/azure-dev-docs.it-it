@@ -1,21 +1,21 @@
 ---
 title: Come autenticare le applicazioni Python con i servizi di Azure
-description: Autenticare un'app Python con i servizi di Azure usando le librerie dell'SDK di gestione di Azure
+description: Come acquisire gli oggetti credenziali necessari per autenticare un'app Python con i servizi di Azure usando le librerie di Azure
 ms.date: 05/12/2020
 ms.topic: conceptual
-ms.openlocfilehash: 8dd434c0a18c0a263573188e04a54f48afcf2b0d
-ms.sourcegitcommit: 2cdf597e5368a870b0c51b598add91c129f4e0e2
+ms.openlocfilehash: 5a882a6cc18ef20a8a26650bacaa7bfe94e90771
+ms.sourcegitcommit: db56786f046a3bde1bd9b0169b4f62f0c1970899
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83403684"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84329429"
 ---
 # <a name="how-to-authenticate-python-apps-with-azure-services"></a>Come autenticare le app Python con i servizi di Azure
 
-Per scrivere codice dell'app con Azure SDK per Python, usare il modello seguente per accedere alle risorse di Azure:
+Per scrivere codice dell'app con le librerie di Azure per Python, usare il modello seguente per accedere alle risorse di Azure:
 
 1. Acquisire le credenziali (in genere un'operazione una tantum).
-1. Usare le credenziali per acquisire un oggetto client fornito dall'SDK per una risorsa.
+1. Usare le credenziali per acquisire l'oggetto cliente appropriato per una risorsa.
 1. Provare ad accedere o a modificare la risorsa tramite l'oggetto client. Viene generata una richiesta HTTP all'API REST della risorsa.
 
 La richiesta all'API REST è il punto in cui Azure autentica l'identità dell'app come descritto dall'oggetto credenziali. Azure controlla quindi se tale identità è autorizzata a eseguire l'azione richiesta. Se l'identità non ha l'autorizzazione, l'operazione non riesce. La concessione delle autorizzazioni dipende dal tipo di risorsa, ad esempio Azure Key Vault, Archiviazione di Azure e così via. Per altre informazioni, vedere la documentazione relativa al tipo di risorsa specifico.
@@ -33,10 +33,15 @@ import os
 from azure.identity import DefaultAzureCredential
 from azure.keyvault.secrets import SecretClient
 
-# Obtain the credential object
+# Obtain the credential object. When run locally, DefaultAzureCredential relies
+# on environment variables named AZURE_CLIENT_ID, AZURE_CLIENT_SECRET, and AZURE_TENANT_ID.
 credential = DefaultAzureCredential()
 
-# Create the SDK client object to access Key Vault secrets.
+# Create the client object using the credential
+#
+# **NOTE**: SecretClient here is only an example; the same process
+# applies to all other Azure client libraries.
+
 vault_url = os.environ["KEY_VAULT_URL"]
 secret_client = SecretClient(vault_url=vault_url, credential=credential)
 
@@ -137,11 +142,17 @@ Con questo metodo si crea un file JSON che contiene le credenziali necessarie pe
     Sostituire i quattro segnaposto con l'ID sottoscrizione di Azure, l'ID tenant, l'ID client e il segreto client.
 
     > [!TIP]
-    > Come illustrato in [Configurare l'ambiente di sviluppo locale](configure-local-development-environment.md#create-a-service-principal-for-development), è possibile usare il comando [az ad sp create-for-rbac](/cli/azure/ad/sp?view=azure-cli-latest#az-ad-sp-create-for-rbac) con il parametro `--sdk-auth` per generare direttamente questo formato JSON.
+    > Come illustrato in [Configurare l'ambiente di sviluppo locale](configure-local-development-environment.md#create-a-service-principal-and-environment-variables-for-development), è possibile usare il comando [az ad sp create-for-rbac](/cli/azure/ad/sp?view=azure-cli-latest#az-ad-sp-create-for-rbac) con il parametro `--sdk-auth` per generare direttamente questo formato JSON.
 
 1. Salvare il file con un nome come *credentials.json* in una posizione sicura accessibile al codice. Per proteggere le credenziali, assicurarsi di omettere questo file dal controllo del codice sorgente e di non condividerlo con altri sviluppatori. Ovvero l'ID tenant, l'ID client e il segreto client di un'entità servizio devono rimanere sempre isolati nella workstation di sviluppo.
 
 1. Creare una variabile di ambiente denominata `AZURE_AUTH_LOCATION` con il percorso del file JSON come valore:
+
+    # <a name="cmd"></a>[cmd](#tab/cmd)
+
+    ```cmd
+    set AZURE_AUTH_LOCATION=../credentials.json
+    ```
 
     # <a name="bash"></a>[Bash](#tab/bash)
 
@@ -149,15 +160,10 @@ Con questo metodo si crea un file JSON che contiene le credenziali necessarie pe
     AZURE_AUTH_LOCATION="../credentials.json"
     ```
 
-    # <a name="cmd"></a>[Cmd](#tab/cmd)
-
-    ```cmd
-    set AZURE_AUTH_LOCATION=../credentials.json
-    ```
+    ---
 
     Questi esempi presuppongono che il file JSON sia denominato *credentials.json* e che si trovi nella cartella padre del progetto.
 
-    ---
 
 1. Usare il metodo [get_client_from_auth_file](/python/api/azure-common/azure.common.client_factory?view=azure-python#get-client-from-auth-file-client-class--auth-path-none----kwargs-) per creare l'oggetto client:
 
@@ -211,7 +217,7 @@ subscription = next(subscription_client.subscriptions.list())
 print(subscription.subscription_id)
 ```
 
-Invece di usare un file, come descritto nella sezione precedente, è possibile creare i dati JSON necessari in una variabile e chiamare [get_client_from_json_dict](/python/api/azure-common/azure.common.client_factory?view=azure-python#get-client-from-json-dict-client-class--config-dict----kwargs-). Questo codice presuppone che siano state create le variabili di ambiente descritte in [Configurare l'ambiente di sviluppo locale](configure-local-development-environment.md#create-a-service-principal-for-development). Per il codice distribuito nel cloud, è possibile creare queste variabili di ambiente nella macchina virtuale server o tra le impostazioni dell'applicazione quando si usa un servizio della piattaforma come il servizio app di Azure e Funzioni di Azure.
+Invece di usare un file, come descritto nella sezione precedente, è possibile creare i dati JSON necessari in una variabile e chiamare [get_client_from_json_dict](/python/api/azure-common/azure.common.client_factory?view=azure-python#get-client-from-json-dict-client-class--config-dict----kwargs-). Questo codice presuppone che siano state create le variabili di ambiente descritte in [Configurare l'ambiente di sviluppo locale](configure-local-development-environment.md#create-a-service-principal-and-environment-variables-for-development). Per il codice distribuito nel cloud, è possibile creare queste variabili di ambiente nella macchina virtuale server o tra le impostazioni dell'applicazione quando si usa un servizio della piattaforma come il servizio app di Azure e Funzioni di Azure.
 
 È anche possibile archiviare i valori in Azure Key Vault e recuperarli in fase di esecuzione invece di usare variabili di ambiente.
 
@@ -236,7 +242,7 @@ subscription = next(subscription_client.subscriptions.list())
 print(subscription.subscription_id)
 ```
 
-Con questo metodo si crea un oggetto [`ServicePrincipalCredentials`](/python/api/msrestazure/msrestazure.azure_active_directory.serviceprincipalcredentials?view=azure-python) usando le credenziali ottenute da una risorsa di archiviazione sicura, come Azure Key Vault o le variabili di ambiente. Il codice precedente presuppone che siano state create le variabili di ambiente descritte in [Configurare l'ambiente di sviluppo locale](configure-local-development-environment.md#create-a-service-principal-for-development).
+Con questo metodo si crea un oggetto [`ServicePrincipalCredentials`](/python/api/msrestazure/msrestazure.azure_active_directory.serviceprincipalcredentials?view=azure-python) usando le credenziali ottenute da una risorsa di archiviazione sicura, come Azure Key Vault o le variabili di ambiente. Il codice precedente presuppone che siano state create le variabili di ambiente descritte in [Configurare l'ambiente di sviluppo locale](configure-local-development-environment.md#create-a-service-principal-and-environment-variables-for-development).
 
 Con questo metodo, è possibile usare un [cloud sovrano o nazionale di Azure](/azure/active-directory/develop/authentication-national-cloud) invece del cloud pubblico di Azure, specificando un argomento `base_url` per l'oggetto client:
 
@@ -320,4 +326,8 @@ Quando [Azure Active Directory Authentication Library (ADAL) per Python](https:/
 ## <a name="see-also"></a>Vedere anche
 
 - [Configurare l'ambiente di sviluppo Python locale per Azure](configure-local-development-environment.md)
-- [Esempio: Usare Azure SDK con Archiviazione di Azure](azure-sdk-example-storage.md)
+- [Esempio: Effettuare il provisioning di un gruppo di risorse](azure-sdk-example-resource-group.md)
+- [Esempio: Effettuare il provisioning e usare Archiviazione di Azure](azure-sdk-example-storage.md)
+- [Esempio: Effettuare il provisioning di un app Web e distribuire il codice](azure-sdk-example-web-app.md)
+- [Esempio: Effettuare il provisioning e usare un database MySQL](azure-sdk-example-database.md)
+- [Esempio: Effettuare il provisioning di una macchina virtuale](azure-sdk-example-virtual-machines.md)

@@ -1,21 +1,21 @@
 ---
-title: Connettersi a tutte le aree - Azure SDK per Python multi-cloud
-description: Usare Azure in tutte le aree
-ms.date: 05/04/2020
+title: Connettersi a tutte le aree con le librerie di Azure per Python multi-cloud
+description: Informazioni su come usare il modulo azure_cloud di msrestazure per connettersi ad Azure in diverse aree sovrane
+ms.date: 05/27/2020
 ms.topic: conceptual
 ms.custom: seo-python-october2019
-ms.openlocfilehash: b585cc6853c338ca1d1f97b8e477818368342f8e
-ms.sourcegitcommit: 2cdf597e5368a870b0c51b598add91c129f4e0e2
+ms.openlocfilehash: f24e2261c8002f3f34d28ee02e0f409e8632f825
+ms.sourcegitcommit: 79890367158a9931909f11da1c894daa11188cba
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83403680"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84146179"
 ---
-# <a name="multi-cloud-connect-to-all-regions-with-the-azure-sdk-for-python"></a>Multi-cloud: connettersi a tutte le aree con Azure SDK per Python
+# <a name="multi-cloud-connect-to-all-regions-with-the-azure-libraries-for-python"></a>Multi-cloud: connettersi a tutte le aree con le librerie di Azure per Python
 
-È possibile usare Azure SDK per Python per connettersi a tutte le aree in cui è disponibile [Azure](https://azure.microsoft.com/regions/services).
+È possibile usare le librerie di Azure per Python per connettersi a tutte le aree in cui Azure è [disponibile](https://azure.microsoft.com/regions/services).
 
-Per impostazione predefinita, Azure SDK per Python è configurato per la connessione ad Azure globale.
+Per impostazione predefinita, le librerie sono configurate per la connessione ad Azure globale.
 
 ## <a name="using-pre-declared-cloud-definition"></a>Uso di una definizione di cloud predichiarata
 

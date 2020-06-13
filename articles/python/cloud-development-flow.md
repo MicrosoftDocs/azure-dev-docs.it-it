@@ -3,12 +3,12 @@ title: Flusso di sviluppo di Azure
 description: Panoramica del ciclo di sviluppo per il cloud in Azure, che include provisioning, scrittura di codice, test, distribuzione e gestione.
 ms.date: 05/12/2020
 ms.topic: conceptual
-ms.openlocfilehash: 577b813e2b4ccd8d2cae3d7999d9bb959f88adc2
-ms.sourcegitcommit: 2cdf597e5368a870b0c51b598add91c129f4e0e2
+ms.openlocfilehash: d958659074a965b28d9898783f7810572e12248f
+ms.sourcegitcommit: 79890367158a9931909f11da1c894daa11188cba
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83404964"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84146169"
 ---
 # <a name="the-azure-development-flow-provision-code-test-deploy-and-manage"></a>Flusso di sviluppo di Azure: effettuare il provisioning, scrivere codice, testare, distribuire e gestire
 
@@ -20,11 +20,11 @@ Ora che si conosce il modello di servizi e risorse di Azure, è possibile capire
 
 Come descritto nell'[articolo precedente di questa serie](cloud-development-provisioning.md), il primo passaggio per lo sviluppo di un'applicazione consiste nell'effettuare il provisioning e la configurazione delle risorse che costituiscono l'ambiente di destinazione.
 
-Il provisioning inizia con la creazione di un gruppo di risorse in un'area di Azure appropriata. È possibile creare un gruppo di risorse tramite il portale di Azure o l'interfaccia della riga di comando di Azure oppure con uno script personalizzato che usa Azure SDK (o API REST).
+Il provisioning inizia con la creazione di un gruppo di risorse in un'area di Azure appropriata. È possibile creare un gruppo di risorse tramite il portale di Azure o l'interfaccia della riga di comando di Azure oppure con uno script personalizzato che usa le librerie di Azure (o API REST).
 
-All'interno di tale gruppo di risorse, è quindi possibile effettuare il provisioning e la configurazione delle singole risorse necessarie, sempre usando il portale, l'interfaccia della riga di comando o Azure SDK. La configurazione include l'impostazione di criteri di accesso che controllano quali identità (entità servizio e/o ID applicazione) sono in grado di accedere a tali risorse.
+All'interno di tale gruppo di risorse, è quindi possibile effettuare il provisioning e la configurazione delle singole risorse necessarie, sempre usando il portale, l'interfaccia della riga di comando o le librerie di Azure. La configurazione include l'impostazione di criteri di accesso che controllano quali identità (entità servizio e/o ID applicazione) sono in grado di accedere a tali risorse.
 
-Per la maggior parte degli scenari di sviluppo, è probabile che si creino script di provisioning con l'interfaccia della riga di comando di Azure e/o con codice Python usando Azure SDK. Tali script descrivono la totalità delle esigenze di risorse dell'applicazione e consentono di ricreare facilmente tali risorse all'interno di ambienti di sviluppo, test e produzione diversi, invece di eseguire manualmente molti passaggi ripetuti nel portale di Azure. Gli script facilitano inoltre il provisioning di un ambiente in un'area diversa o l'uso di gruppi di risorse diversi. È anche possibile gestire questi script nei repository del controllo del codice sorgente, in modo da avere il controllo completo e la cronologia delle modifiche.
+Per la maggior parte degli scenari di sviluppo, è probabile che si creino script di provisioning con l'interfaccia della riga di comando di Azure e/o con codice Python usando le librerie di Azure. Tali script descrivono la totalità delle esigenze di risorse dell'applicazione e consentono di ricreare facilmente tali risorse all'interno di ambienti di sviluppo, test e produzione diversi, invece di eseguire manualmente molti passaggi ripetuti nel portale di Azure. Gli script facilitano inoltre il provisioning di un ambiente in un'area diversa o l'uso di gruppi di risorse diversi. È anche possibile gestire questi script nei repository del controllo del codice sorgente, in modo da avere il controllo completo e la cronologia delle modifiche.
 
 ## <a name="step-2-write-your-app-code-to-use-resources"></a>Passaggio 2: Scrivere il codice dell'app per usare le risorse
 
@@ -32,9 +32,9 @@ Una volta effettuato il provisioning delle risorse necessarie per l'applicazione
 
 Nel passaggio di provisioning, ad esempio, è possibile che sia stato creato un account di archiviazione di Azure con un contenitore BLOB al suo interno e che siano stati impostati i criteri di accesso per l'applicazione in tale contenitore. Dal codice è ora possibile eseguire l'autenticazione con l'account di archiviazione e quindi creare, aggiornare o eliminare BLOB all'interno del contenitore. Questo processo è illustrato in [Esempio - Usare Archiviazione di Azure](azure-sdk-example-storage.md). Analogamente, è possibile che sia stato effettuato il provisioning di un database con uno schema e le autorizzazioni appropriate, per cui il codice dell'applicazione può connettersi al database ed eseguire le consuete operazioni di creazione, lettura, aggiornamento ed eliminazione.
 
-Gli sviluppatori Python possono in genere scrivere il codice dell'applicazione in Python usando Azure SDK per Python. Detto questo, qualsiasi parte indipendente di un'applicazione cloud può essere scritta in qualsiasi linguaggio supportato. Se si lavora in un team con varie competenze a livello di linguaggio, ad esempio, è possibile che alcune parti dell'applicazione vengano scritte in Python, altre in JavaScript, altre in Java e altre ancora in C#.
+Gli sviluppatori Python possono in genere scrivere il codice dell'applicazione in Python usando le librerie di Azure per Python. Detto questo, qualsiasi parte indipendente di un'applicazione cloud può essere scritta in qualsiasi linguaggio supportato. Se si lavora in un team con varie competenze a livello di linguaggio, ad esempio, è possibile che alcune parti dell'applicazione vengano scritte in Python, altre in JavaScript, altre in Java e altre ancora in C#.
 
-Si noti che il codice dell'applicazione può usare Azure SDK per le operazioni di provisioning e gestione, se necessario. Gli script di provisioning, analogamente, possono usare l'SDK per inizializzare le risorse con dati specifici o eseguire attività di manutenzione sulle risorse cloud anche quando tali script vengono eseguiti localmente.
+Si noti che il codice dell'applicazione può usare le librerie di Azure per le operazioni di provisioning e gestione, se necessario. Gli script di provisioning, analogamente, possono usare le librerie per inizializzare le risorse con dati specifici o eseguire attività di manutenzione sulle risorse cloud anche quando tali script vengono eseguiti localmente.
 
 ## <a name="step-3-test-and-debug-your-app-code-locally"></a>Passaggio 3: Eseguire test e debug del codice dell'app in locale
 
@@ -54,7 +54,7 @@ Comunque si esegua questa operazione, una volta distribuito nel cloud il codice 
 
 ## <a name="step-5-manage-monitor-and-revise"></a>Passaggio 5: Gestire, monitorare e ottimizzare
 
-Dopo la distribuzione, è necessario assicurarsi che l'applicazione venga eseguita come dovrebbe, rispondendo alle richieste dei clienti e usando in modo efficiente le risorse (e al costo più basso possibile). È possibile gestire il modo in cui Azure ridimensiona la distribuzione secondo necessità ed è possibile raccogliere e monitorare i dati sulle prestazioni tramite il portale di Azure, l'interfaccia della riga di comando di Azure o script personalizzati scritti con Azure SDK. È quindi possibile apportare modifiche in tempo reale alle risorse di cui è stato effettuato il provisioning per ottimizzarne le prestazioni, sempre usando uno di questi stessi strumenti.
+Dopo la distribuzione, è necessario assicurarsi che l'applicazione venga eseguita come dovrebbe, rispondendo alle richieste dei clienti e usando in modo efficiente le risorse (e al costo più basso possibile). È possibile gestire il modo in cui Azure ridimensiona la distribuzione secondo necessità ed è possibile raccogliere e monitorare i dati sulle prestazioni tramite il portale di Azure, l'interfaccia della riga di comando di Azure o script personalizzati scritti con le librerie di Azure. È quindi possibile apportare modifiche in tempo reale alle risorse di cui è stato effettuato il provisioning per ottimizzarne le prestazioni, sempre usando uno di questi stessi strumenti.
 
 Il monitoraggio offre informazioni dettagliate su come ristrutturare eventualmente l'applicazione cloud. Ad esempio, si potrebbe notare che alcune parti di un'app Web, come un gruppo di endpoint API, vengono usate solo occasionalmente rispetto alle parti principali. È quindi possibile scegliere di distribuire tali API separatamente come Funzioni di Azure serverless, in cui avranno risorse di calcolo di supporto specifiche senza entrare in conflitto con l'applicazione principale ma disponibili a un costo mensile minimo. L'applicazione principale diventa quindi più reattiva per più clienti, senza la necessità di passare a un livello di costo più alto.
 
@@ -62,7 +62,7 @@ Il monitoraggio offre informazioni dettagliate su come ristrutturare eventualmen
 
 A questo punto si ha familiarità con la struttura di base di Azure e con il flusso di sviluppo generale: effettuare il provisioning di risorse, scrivere e testare il codice, distribuire il codice in Azure e quindi monitorare e gestire tali risorse.
 
-Il passaggio successivo consiste nel fare in modo che la workstation sia completamente configurata per funzionare con tale flusso, dopodiché si è pronti per iniziare a usare Azure SDK.
+Il passaggio successivo consiste nel fare in modo che la workstation sia completamente configurata per funzionare con tale flusso, dopodiché si è pronti per iniziare a usare le librerie di Azure.
 
 > [!div class="nextstepaction"]
 > [Configurare l'ambiente di sviluppo locale >>>](configure-local-development-environment.md)

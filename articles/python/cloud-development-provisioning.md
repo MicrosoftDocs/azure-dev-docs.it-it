@@ -1,14 +1,14 @@
 ---
 title: Provisioning, accesso e gestione delle risorse in Azure
-description: Panoramica dei metodi usati per accedere alle risorse di Azure, tra cui il portale di Azure, l'interfaccia della riga di comando di Azure e Azure SDK.
-ms.date: 05/12/2020
+description: Panoramica dei metodi usati per usare le risorse di Azure, tra cui il portale di Azure, l'interfaccia della riga di comando di Azure e le librerie di Azure (SDK).
+ms.date: 05/27/2020
 ms.topic: conceptual
-ms.openlocfilehash: a56ea9c3f0165a15933d78ca7a049033b6e75fa9
-ms.sourcegitcommit: b69db02c3358ce7899cef105508e3d17fafc84b2
+ms.openlocfilehash: 7482b3ae29210c02382ddd20ee2f29b874e18ab5
+ms.sourcegitcommit: 79890367158a9931909f11da1c894daa11188cba
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83759924"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84146204"
 ---
 # <a name="provisioning-accessing-and-managing-resources-on-azure"></a>Provisioning, accesso e gestione delle risorse in Azure
 
@@ -26,7 +26,10 @@ La risposta è semplice. Come per la maggior parte dei sistemi operativi, è pos
 
 È possibile usare uno o tutti questi metodi complementari per creare, configurare e gestire tutte le risorse di Azure necessarie. In realtà, durante un progetto di sviluppo si usano in genere tutti e tre i metodi ed è quindi opportuno acquisire familiarità con ognuno di essi.
 
-In questo centro per sviluppatori viene illustrato principalmente l'uso dell'interfaccia della riga di comando e del codice Python che usa Azure SDK perché l'uso del portale è descritto approfonditamente nella documentazione di ogni singolo servizio.
+In questo centro per sviluppatori viene illustrato principalmente l'uso dell'interfaccia della riga di comando e del codice Python che usa le librerie di Azure, perché l'uso del portale è descritto approfonditamente nella documentazione di ogni singolo servizio.
+
+> [!NOTE]
+> Le librerie di Azure per Python sono talvolta denominate Azure SDK per Python. Tuttavia, non sono disponibili altri componenti dell'SDK oltre alle librerie, acquisite tramite lo strumento di gestione pacchetti Python, pip.
 
 ## <a name="azure-portal"></a>Portale di Azure
 
@@ -48,11 +51,11 @@ In sostituzione dell'interfaccia della riga di comando di Azure, è anche possib
 
 In sostituzione dell'interfaccia della riga di comando locale o di PowerShell, è possibile usare Azure Cloud Shell direttamente tramite [https://shell.azure.com/](https://shell.azure.com/). Dal momento che Cloud Shell non è un ambiente locale, però, è più adatto per le operazioni una tantum che per l'automazione.
 
-## <a name="azure-rest-api-and-azure-sdk"></a>API REST di Azure e Azure SDK
+## <a name="azure-rest-api-and-azure-libraries"></a>API REST di Azure e librerie di Azure
 
 L'[API REST di Azure](/rest/api/?view=Azure) è l'interfaccia a livello di codice di Azure, fornita tramite REST sicuro su HTTP perché i data center di Azure sono tutti intrinsecamente connessi a Internet. A ogni risorsa viene assegnato un URL univoco che supporta un'API specifica della risorsa, soggetta a rigorosi protocolli di autenticazione e criteri di accesso. Il funzionamento del portale di Azure e dell'interfaccia della riga di comando di Azure si basa, in realtà, proprio sull'API REST.
 
-Per gli sviluppatori, [Azure SDK](https://azure.microsoft.com/downloads/) include librerie specifiche del linguaggio che convertono le funzionalità dell'API REST in paradigmi di programmazione molto più pratici, come classi e oggetti. Per Python, le singole librerie dell'SDK vengono sempre installate con `pip install` invece di installare l'intero SDK.
+Per gli sviluppatori, le librerie di Azure includono librerie specifiche del linguaggio che convertono le funzionalità dell'API REST in paradigmi di programmazione molto più pratici, come classi e oggetti. Per Python, si installano sempre singole librerie con `pip install` invece di installare l'intero SDK. Per altri linguaggi, vedere i [download di Azure SDK](https://azure.microsoft.com/downloads/).
 
 **Vantaggi**: controllo accurato su tutte le operazioni, incluso un mezzo molto più diretto per usare l'output di un'operazione come input di un'altra. Per gli sviluppatori Python, consente di lavorare all'interno di paradigmi di linguaggio noti invece di usare l'interfaccia della riga di comando. Può essere usato anche dal codice dell'applicazione per automatizzare scenari di gestione.
   

@@ -4,12 +4,12 @@ description: Informazioni su come usare Ansible per configurare la sicurezza del
 keywords: ansible, azure, devops, key vault, sicurezza, credenziali, segreti, chiavi, certificati, moduli ansible per azure, gruppo di risorse, azure_rm_resourcegroup,
 ms.topic: tutorial
 ms.date: 04/20/2020
-ms.openlocfilehash: ce9adb7ea121425d410665e1f4cc225cfdb82bd8
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: 84ed514e742c8a8fa3a9acc9328fc71743dfc5cb
+ms.sourcegitcommit: 79890367158a9931909f11da1c894daa11188cba
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81755234"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84145969"
 ---
 # <a name="tutorial-use-azure-key-vault-with-a-linux-virtual-machine-in-ansible"></a>Esercitazione: Usare Azure Key Vault con una macchina virtuale Linux in Ansible
 
@@ -216,7 +216,7 @@ Il frammento di playbook Ansible seguente illustra come creare un segreto dell'i
 **Note:**
 
 - Per creare il segreto dell'insieme di credenziali delle chiavi viene usato il [modulo azure_rm_keyvaultsecret](https://docs.ansible.com/ansible/latest/modules/azure_rm_keyvaultsecret_module.html).
-- Per semplicità, la demo include `secret_name` e `secret_value`. Tuttavia, i playbook sono file di infrastruttura distribuita come codice (AiC) come qualsiasi codice sorgente per il progetto. Di conseguenza, i valori come questi non devono essere archiviati in file di testo non crittografato se usati in ambienti di produzione.
+- Per semplicità, la demo include `secret_name` e `secret_value`. Tuttavia, i playbook sono file di infrastruttura distribuita come codice (IaC) come qualsiasi codice sorgente per il progetto. Di conseguenza, i valori come questi non devono essere archiviati in file di testo non crittografato se usati in ambienti di produzione.
 - Dopo aver eseguito questo codice, la scheda **Segreti** per l'insieme di credenziali delle chiavi include il segreto appena aggiunto denominato `testsecret`. Per visualizzarlo, selezionare il segreto, selezionare la versione corrente e selezionare **Mostra il valore segreto**.
 
 ## <a name="get-a-key-vault-secret"></a>Ottenere un segreto dell'insieme di credenziali delle chiavi
@@ -242,7 +242,7 @@ tasks:
 
 - Per ottenere il segreto dell'insieme di credenziali delle chiavi viene usato il **modulo azure_rm_keyvaultsecret_info**. Questo modulo è disponibile solo se si usa la raccolta Ansible per i moduli di Azure. 
 - Se si riceve un errore durante l'esecuzione di questo frammento, assicurarsi di aver seguito tutte le istruzioni indicate nella sezione [Prerequisiti](#prerequisites).
-- Per semplicità, la demo include `secret_name` e `secret_value`. Tuttavia, i playbook sono file di infrastruttura distribuita come codice (AiC) come qualsiasi codice sorgente per il progetto. Di conseguenza, i valori come questi non devono essere archiviati in file di testo non crittografato se usati in ambienti di produzione.
+- Per semplicità, la demo include `secret_name` e `secret_value`. Tuttavia, i playbook sono file di infrastruttura distribuita come codice (IaC) come qualsiasi codice sorgente per il progetto. Di conseguenza, i valori come questi non devono essere archiviati in file di testo non crittografato se usati in ambienti di produzione.
 
 ## <a name="run-the-complete-playbook"></a>Eseguire il playbook completo
 

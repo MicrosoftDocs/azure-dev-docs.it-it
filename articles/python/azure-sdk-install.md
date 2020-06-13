@@ -1,55 +1,69 @@
 ---
-title: Installare Azure SDK per le librerie Python
+title: Come installare i pacchetti di librerie di Azure SDK per Python
 description: Informazioni su come installare, disinstallare e verificare Azure SDK per le librerie Python tramite pip. Sono inclusi i dettagli per l'installazione di versioni specifiche e pacchetti di anteprima.
-ms.date: 05/13/2020
+ms.date: 05/26/2020
 ms.topic: conceptual
-ms.openlocfilehash: 302d17211480f9c8793d7be1de20a6ab5dec3c95
-ms.sourcegitcommit: 2cdf597e5368a870b0c51b598add91c129f4e0e2
+ms.openlocfilehash: f50de734ab1d007c9e5efac8cd6559a2c03d83f5
+ms.sourcegitcommit: efab6be74671ea4300162e0b30aa8ac134d3b0a9
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83403668"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "84256256"
 ---
-# <a name="install-azure-sdk-for-python-libraries"></a>Installare Azure SDK per le librerie Python
+# <a name="how-to-install-azure-library-packages-for-python"></a>Come installare i pacchetti di librerie di Azure per Python
 
-Azure SDK per Python offre un'API tramite la quale è possibile interagire con Azure dal codice Python. I nomi di tutte le librerie correnti sono disponibili nella [pagina di indice di Azure SDK per Python](https://azure.github.io/azure-sdk/releases/latest/all/python.html).
+Azure SDK per Python è costituito esclusivamente da molte librerie singole, elencate nella [pagina di indice di Azure SDK per Python](https://azure.github.io/azure-sdk/releases/latest/all/python.html). Per installare i pacchetti di librerie specifici necessari per un progetto, usare `pip install`.
 
-Le librerie i cui nomi iniziano con `azure-mgmt` sono librerie di *gestione*, da usare per il provisioning e la gestione delle risorse di Azure come si farebbe tramite il [portale di Azure](https://portal.azure.com) o l'[interfaccia della riga di comando di Azure](/cli/azure/install-azure-cli). Ad esempio, per eseguire il provisioning e la gestione di risorse di Archiviazione di Azure, usare la libreria `azure-mgmt-storage`.
-
-Tutte le altre librerie dell'SDK sono librerie *client*, che servono per usare dal codice dell'applicazione le risorse già sottoposte a provisioning. Ad esempio, per usare i BLOB del servizio di archiviazione di Azure dal codice dell'applicazione, usare la libreria `azure-storage-blob`.
+Con queste librerie è possibile effettuare il provisioning e gestire le risorse nei servizi di Azure tramite le librerie di gestione, i cui nomi includono`-mgmt`, quindi connettersi a tali risorse dal codice dell'app tramite le librerie client.
 
 ## <a name="install-the-latest-version-of-a-library"></a>Installare l'ultima versione di una libreria
 
-```bash
+```cmd
 pip install azure-storage-blob
 ```
 
-`pip install` installa l'ultima versione di una libreria nell'ambiente Python corrente.
+```cmd
+pip install azure-mgmt-storage
+```
 
-Nei sistemi Linux, l'SDK non supporta l'uso di `sudo pip install` per installare una libreria per tutti gli utenti. Ogni utente deve usare `pip install` separatamente.
+`pip install` recupera l'ultima versione di una libreria nell'ambiente Python corrente.
+
+Nei sistemi Linux è necessario installare separatamente una libreria per ogni utente. L'installazione delle librerie per tutti gli utenti con `sudo pip install` non è supportata.
 
 ## <a name="install-specific-library-versions"></a>Installare versioni specifiche della libreria
 
-```bash
+```cmd
 pip install azure-storage-blob==12.0.0
+```
+
+```cmd
+pip install azure-mgmt-storage==10.0.0
 ```
 
 Specificare la versione sulla riga di comando con `pip install`.
 
 ## <a name="install-preview-packages"></a>Installare i pacchetti di anteprima
 
-```bash
+```cmd
 pip install --pre azure-storage-blob
+```
+
+```cmd
+pip install --pre azure-mgmt-storage
 ```
 
 Per installare l'anteprima più recente di una libreria, includere il flag `--pre` nella riga di comando.
 
-Microsoft rilascia regolarmente le librerie dell'SDK di anteprima che supportano funzionalità imminenti, con l'avvertenza che la libreria è soggetta a modifiche e non deve essere usata nei progetti di produzione.
+Microsoft rilascia regolarmente pacchetti di librerie in anteprima che supportano funzionalità imminenti, con l'avvertenza che la libreria è soggetta a modifiche e non deve essere usata nei progetti di produzione.
 
 ## <a name="verify-a-library-installation"></a>Verificare l'installazione di una libreria
 
-```bash
+```cmd
 pip show azure-storage-blob
+```
+
+```cmd
+pip show azure-mgmt-storage
 ```
 
 Usare `pip show <library>` per verificare se una libreria è installata. Se la libreria è installata, il comando visualizza la versione e altre informazioni riepilogative, altrimenti non visualizza nulla.
@@ -58,15 +72,8 @@ Usare `pip show <library>` per verificare se una libreria è installata. Se la l
 
 ## <a name="uninstall-a-library"></a>Disinstallare una libreria
 
-```bash
+```cmd
 pip uninstall azure-storage-blob
 ```
 
 Per disinstallare una libreria, usare `pip uninstall <library>`.
-
-## <a name="next-steps"></a>Passaggi successivi
-
-A questo punto si è pronti per scrivere ed eseguire codice, che è possibile eseguire usando uno degli esempi seguenti:
-
-> [!div class="nextstepaction"]
-> [Esempio: Creare un gruppo di risorse >>>](azure-sdk-example-resource-group.md)

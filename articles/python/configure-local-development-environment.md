@@ -1,14 +1,14 @@
 ---
 title: Configurare l'ambiente Python locale per lo sviluppo di Azure
-description: Come configurare un ambiente di sviluppo Python locale per l'uso con Azure, tra cui Visual Studio Code, Azure SDK e le credenziali necessarie per l'autenticazione dell'SDK.
-ms.date: 05/12/2020
+description: Come configurare un ambiente di sviluppo Python locale per l'uso con Azure, tra cui Visual Studio Code, le librerie di Azure SDK e le credenziali necessarie per l'autenticazione delle librerie.
+ms.date: 05/29/2020
 ms.topic: conceptual
-ms.openlocfilehash: 77bcffbef1e1e8d7eb6203b31a861449feb01dcd
-ms.sourcegitcommit: 2cdf597e5368a870b0c51b598add91c129f4e0e2
+ms.openlocfilehash: e3eb03182a45f3ceacc8b3ea09abca47d8fa2e81
+ms.sourcegitcommit: efab6be74671ea4300162e0b30aa8ac134d3b0a9
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83405014"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "84256456"
 ---
 # <a name="configure-your-local-python-dev-environment-for-azure"></a>Configurare l'ambiente di sviluppo Python locale per Azure
 
@@ -17,7 +17,7 @@ Gli sviluppatori di applicazioni cloud preferiscono in genere testare il codice 
 Questo articolo include le istruzioni di installazione da seguire una sola volta per creare e convalidare l'ambiente di sviluppo locale adatto per Python in Azure:
 
 - [Installare i componenti necessari](#required-components), ovvero un account Azure, Python e l'interfaccia della riga di comando di Azure.
-- [Configurare l'autenticazione](#configure-authentication) per l'uso delle librerie di Azure SDK per effettuare il provisioning, gestire e accedere alle risorse di Azure.
+- [Configurare l'autenticazione](#configure-authentication) per l'uso delle librerie di Azure per effettuare il provisioning, gestire e accedere alle risorse di Azure.
 - Esaminare il processo associato all'[uso di ambienti virtuali Python](#use-python-virtual-environments) per ogni progetto.
 
 Una volta configurata la workstation, sarà necessario aggiungere solo una configurazione minima per completare varie guide di avvio rapido ed esercitazioni altrove in questo centro per sviluppatori e nella documentazione di Azure.
@@ -30,11 +30,11 @@ Una volta configurata la workstation, sarà necessario aggiungere solo una confi
 | --- | --- |
 | [Account Azure con una sottoscrizione attiva](https://azure.microsoft.com/free/?utm_source=campaign&utm_campaign=python-dev-center&mktingSource=environment-setup) | Gli account e le sottoscrizioni sono gratuiti e includono molti servizi gratuiti. |
 | [Python 2.7 o 3.5.3 e versioni successive](https://www.python.org/downloads) | Runtime del linguaggio Python. È consigliabile usare l'ultima versione di Python 3.x a meno che non siano previsti requisiti specifici per la versione. |
-| [Interfaccia della riga di comando di Azure](/cli/azure/install-azure-cli) | Fornisce una serie completa di comandi dell'interfaccia della riga di comando per il provisioning e la gestione delle risorse di Azure. Gli sviluppatori Python usano comunemente l'interfaccia della riga di comando di Azure insieme a script Python personalizzati basati sulle librerie di gestione di Azure SDK. |
+| [Interfaccia della riga di comando di Azure](/cli/azure/install-azure-cli) | Fornisce una serie completa di comandi dell'interfaccia della riga di comando per il provisioning e la gestione delle risorse di Azure. Per usare le librerie di gestione di Azure, gli sviluppatori Python solitamente usano l'interfaccia della riga di comando di Azure con script Python personalizzati. |
 
 Note:
 
-- Le singole librerie di Azure SDK vengono installate per ogni progetto in base alle esigenze. È consigliabile [usare ambienti virtuali Python](#use-python-virtual-environments) per ogni progetto.
+- I singoli pacchetti di librerie di Azure si installano per ogni progetto in base alle esigenze. È consigliabile [usare ambienti virtuali Python](#use-python-virtual-environments) per ogni progetto. Non esiste alcun programma di installazione "SDK" autonomo per Python.
 - Anche se Azure PowerShell è in generale equivalente all'interfaccia della riga di comando di Azure, è consigliabile usare l'interfaccia della riga di comando di Azure quando si lavora con Python.
 
 ### <a name="recommended-components"></a>Componenti consigliati
@@ -77,11 +77,11 @@ L'interfaccia della riga di comando di Azure mantiene in genere l'accesso tra le
 
 Come descritto in [Come gestire le entità servizio - Informazioni di base sull'autorizzazione](how-to-manage-service-principals.md#basics-of-azure-authorization), ogni sviluppatore deve usare un'entità servizio come identità dell'applicazione durante i test del codice dell'app in locale.
 
-Le sezioni seguenti descrivono come creare un'entità servizio e le variabili di ambiente che forniscono le relative proprietà ad Azure SDK.
+Le sezioni seguenti descrivono come creare un'entità servizio e le variabili di ambiente che forniscono le relative proprietà alle librerie di Azure quando è necessario.
 
 Ogni sviluppatore dell'organizzazione dovrà eseguire questi passaggi singolarmente.
 
-### <a name="create-a-service-principal-for-development"></a>Creare un'entità servizio per lo sviluppo
+### <a name="create-a-service-principal-and-environment-variables-for-development"></a>Creare un'entità servizio e le variabili di ambiente per lo sviluppo
 
 1. Aprire un terminale o un prompt dei comandi in cui è stato eseguito l'accesso all'interfaccia della riga di comando di Azure (`az login`).
 
@@ -91,49 +91,37 @@ Ogni sviluppatore dell'organizzazione dovrà eseguire questi passaggi singolarme
     az ad sp create-for-rbac --name localtest-sp-rbac --skip-assignment --sdk-auth > local-sp.json
     ```
 
-    - Se si fa parte di un'organizzazione, è possibile che non si abbia l'autorizzazione nella sottoscrizione per eseguire questo comando. In tal caso, chiedere ai proprietari della sottoscrizione di creare l'entità servizio.
+    Questo comando salva l'output in *local-sp.json*. Per altri dettagli sul comando e sui relativi argomenti, vedere [Funzioni del comando create-for-rbac](#what-the-create-for-rbac-command-does).
 
-    - `ad` indica Azure Active Directory, `sp` significa "entità servizio" e `create-for-rbac` significa "crea per il controllo degli accessi in base al ruolo", il tipo principale di autorizzazione di Azure. Vedere le informazioni di riferimento del comando [az ad sp create-for-rbac](/cli/azure/ad/sp?view=azure-cli-latest#az-ad-sp-create-for-rbac).
+    Se si fa parte di un'organizzazione, è possibile che non si abbia l'autorizzazione nella sottoscrizione per eseguire questo comando. In tal caso, chiedere ai proprietari della sottoscrizione di creare l'entità servizio.
 
-    - L'argomento `--name` deve essere univoco all'interno dell'organizzazione e in genere corrisponde al nome dello sviluppatore che usa l'entità servizio. Se si omette questo argomento, l'interfaccia della riga di comando di Azure usa un nome generico in formato `azure-cli-<timestamp>`. Se si preferisce, è possibile rinominare l'entità servizio nel portale di Azure.
+1. Creare le variabili di ambiente necessarie per le librerie di Azure. L'oggetto `DefaultAzureCredential` della libreria azure-identity cerca queste variabili.
 
-    - L'argomento `--skip-assignment` crea un'entità servizio senza autorizzazioni predefinite. È quindi necessario assegnare autorizzazioni specifiche all'entità servizio per consentire al codice in esecuzione in locale di accedere alle risorse. Diverse guide di avvio rapido ed esercitazioni forniscono informazioni dettagliate su come autorizzare un'entità servizio per le risorse necessarie.
+    # <a name="cmd"></a>[cmd](#tab/cmd)
 
-    - Il comando fornisce un output JSON, che viene salvato in un file denominato *local-sp.json*.
+    ```cmd
+    set AZURE_SUBSCRIPTION_ID="aa11bb33-cc77-dd88-ee99-0918273645aa"
+    set AZURE_TENANT_ID=00112233-7777-8888-9999-aabbccddeeff
+    set AZURE_CLIENT_ID=12345678-1111-2222-3333-1234567890ab
+    set AZURE_CLIENT_SECRET=abcdef00-4444-5555-6666-1234567890ab
+    ```
 
-    - L'argomento `--sdk-auth` genera un output JSON simile ai valori seguenti. I valori di ID e il segreto saranno tutti diversi:
+    # <a name="bash"></a>[Bash](#tab/bash)
 
-        <pre>
-        {
-          "clientId": "12345678-1111-2222-3333-1234567890ab",
-          "clientSecret": "abcdef00-4444-5555-6666-1234567890ab",
-          "subscriptionId": "00000000-0000-0000-0000-000000000000",
-          "tenantId": "00112233-7777-8888-9999-aabbccddeeff",
-          "activeDirectoryEndpointUrl": "https://login.microsoftonline.com",
-          "resourceManagerEndpointUrl": "https://management.azure.com/",
-          "activeDirectoryGraphResourceId": "https://graph.windows.net/",
-          "sqlManagementEndpointUrl": "https://management.core.windows.net:8443/",
-          "galleryEndpointUrl": "https://gallery.azure.com/",
-          "managementEndpointUrl": "https://management.core.windows.net/"
-        }
-        </pre>
+    ```bash
+    AZURE_SUBSCRIPTION_ID="aa11bb33-cc77-dd88-ee99-0918273645aa"
+    AZURE_TENANT_ID="00112233-7777-8888-9999-aabbccddeeff"
+    AZURE_CLIENT_ID="12345678-1111-2222-3333-1234567890ab"
+    AZURE_CLIENT_SECRET="abcdef00-4444-5555-6666-1234567890ab"
+    ```
 
-        Senza l'argomento `--sdk-auth`, il comando genera un output più semplice:
+    ---
 
-        <pre>
-        {
-          "appId": "12345678-1111-2222-3333-1234567890ab",
-          "displayName": "localtest-sp-rbac",
-          "name": "http://localtest-sp-rbac",
-          "password": "abcdef00-4444-5555-6666-1234567890ab",
-          "tenant": "00112233-7777-8888-9999-aabbccddeeff"
-        }
-        </pre>
+    Sostituire i valori mostrati in questi comandi con quelli dell'entità servizio specifica.
 
-        In questo caso, `tenant` è l'ID tenant, `appId` è l'ID client e `password` è il segreto client.
+    Per recuperare l'ID sottoscrizione, eseguire il comando [`az account show`](/cli/azure/account?view=azure-cli-latest#az-account-show) e cercare la proprietà `id` nell'output.
 
-        > [!IMPORTANT]
-        > L'output di questo comando è l'unico punto in cui sarà visibile la password o il segreto client. Non è possibile recuperare la password o il segreto in un secondo momento. È tuttavia possibile aggiungere un nuovo segreto, se necessario, senza invalidare l'entità servizio o i segreti esistenti.
+    Per praticità, creare un file con estensione *sh* o *cmd* con questi comandi, che è possibile eseguire ogni volta che si apre un terminale o un prompt dei comandi per i test locali. Anche in questo caso, non aggiungere il file al controllo del codice sorgente in modo che rimanga solo nell'account utente.
 
 1. Proteggere l'ID client e il segreto client (e tutti i file in cui sono archiviati) in modo che rimangano sempre all'interno di un account utente specifico in una workstation. Non salvare mai queste proprietà nel controllo del codice sorgente né condividerle con altri sviluppatori. Se necessario, è possibile eliminare l'entità servizio e crearne una nuova.
 
@@ -141,35 +129,53 @@ Ogni sviluppatore dell'organizzazione dovrà eseguire questi passaggi singolarme
 
     Inoltre, un'entità servizio di sviluppo è idealmente autorizzata solo per risorse non di produzione o viene creata all'interno di una sottoscrizione di Azure usata solo a scopo di sviluppo. L'applicazione di produzione userebbe una sottoscrizione diversa e risorse di produzione distinte, autorizzate solo per l'applicazione cloud distribuita.
 
-Per modificare o eliminare le entità servizio in un secondo momento, vedere [Come gestire le entità servizio](how-to-manage-service-principals.md).
+1. Per modificare o eliminare le entità servizio in un secondo momento, vedere [Come gestire le entità servizio](how-to-manage-service-principals.md).
 
-### <a name="create-environment-variables-for-the-azure-sdk"></a>Creare variabili di ambiente per Azure SDK
+#### <a name="what-the-create-for-rbac-command-does"></a>Funzioni del comando create-for-rbac
 
-# <a name="bash"></a>[Bash](#tab/bash)
+Il `az ad create-for-rbac` comando crea un'entità servizio per l'autenticazione in base al ruolo (Controllo degli accessi in base al ruolo).
 
-```bash
-AZURE_SUBSCRIPTION_ID="aa11bb33-cc77-dd88-ee99-0918273645aa"
-AZURE_TENANT_ID="00112233-7777-8888-9999-aabbccddeeff"
-AZURE_CLIENT_ID="12345678-1111-2222-3333-1234567890ab"
-AZURE_CLIENT_SECRET="abcdef00-4444-5555-6666-1234567890ab"
-```
+- `ad` indica Azure Active Directory, `sp` significa "entità servizio" e `create-for-rbac` significa "crea per il controllo degli accessi in base al ruolo", il tipo principale di autorizzazione di Azure. Vedere le informazioni di riferimento del comando [az ad sp create-for-rbac](/cli/azure/ad/sp?view=azure-cli-latest#az-ad-sp-create-for-rbac).
 
-# <a name="cmd"></a>[Cmd](#tab/cmd)
+- L'argomento `--name` deve essere univoco all'interno dell'organizzazione e in genere corrisponde al nome dello sviluppatore che usa l'entità servizio. Se si omette questo argomento, l'interfaccia della riga di comando di Azure usa un nome generico in formato `azure-cli-<timestamp>`. Se si preferisce, è possibile rinominare l'entità servizio nel portale di Azure.
 
-```cmd
-set AZURE_SUBSCRIPTION_ID="aa11bb33-cc77-dd88-ee99-0918273645aa"
-set AZURE_TENANT_ID=00112233-7777-8888-9999-aabbccddeeff
-set AZURE_CLIENT_ID=12345678-1111-2222-3333-1234567890ab
-set AZURE_CLIENT_SECRET=abcdef00-4444-5555-6666-1234567890ab
-```
+- L'argomento `--skip-assignment` crea un'entità servizio senza autorizzazioni predefinite. È quindi necessario assegnare autorizzazioni specifiche all'entità servizio per consentire al codice in esecuzione in locale di accedere alle risorse. Diverse guide di avvio rapido ed esercitazioni forniscono informazioni dettagliate su come autorizzare un'entità servizio per le risorse necessarie.
 
----
+- Il comando genera un output JSON, che viene salvato in un file denominato *local-sp.json*.
 
-Sostituire i valori mostrati in questi comandi con quelli dell'entità servizio specifica.
+- L'argomento `--sdk-auth` genera un output JSON simile ai valori seguenti. I valori di ID e il segreto saranno tutti diversi:
 
-Per recuperare l'ID sottoscrizione, eseguire il comando [`az account show`](/cli/azure/account?view=azure-cli-latest#az-account-show) e cercare la proprietà `id` nell'output.
+    <pre>
+    {
+      "clientId": "12345678-1111-2222-3333-1234567890ab",
+      "clientSecret": "abcdef00-4444-5555-6666-1234567890ab",
+      "subscriptionId": "00000000-0000-0000-0000-000000000000",
+      "tenantId": "00112233-7777-8888-9999-aabbccddeeff",
+      "activeDirectoryEndpointUrl": "https://login.microsoftonline.com",
+      "resourceManagerEndpointUrl": "https://management.azure.com/",
+      "activeDirectoryGraphResourceId": "https://graph.windows.net/",
+      "sqlManagementEndpointUrl": "https://management.core.windows.net:8443/",
+      "galleryEndpointUrl": "https://gallery.azure.com/",
+      "managementEndpointUrl": "https://management.core.windows.net/"
+    }
+    </pre>
 
-Per praticità, creare un file con estensione *sh* o *cmd* con questi comandi, che è possibile eseguire ogni volta che si apre un terminale o un prompt dei comandi per i test locali. Anche in questo caso, non aggiungere il file al controllo del codice sorgente in modo che rimanga solo nell'account utente.
+    Senza l'argomento `--sdk-auth`, il comando genera un output più semplice:
+
+    <pre>
+    {
+      "appId": "12345678-1111-2222-3333-1234567890ab",
+      "displayName": "localtest-sp-rbac",
+      "name": "http://localtest-sp-rbac",
+      "password": "abcdef00-4444-5555-6666-1234567890ab",
+      "tenant": "00112233-7777-8888-9999-aabbccddeeff"
+    }
+    </pre>
+
+    In questo caso, `tenant` è l'ID tenant, `appId` è l'ID client e `password` è il segreto client.
+
+    > [!IMPORTANT]
+    > L'output di questo comando è l'unico punto in cui sarà visibile la password o il segreto client. Non è possibile recuperare la password o il segreto in un secondo momento. È tuttavia possibile aggiungere un nuovo segreto, se necessario, senza invalidare l'entità servizio o i segreti esistenti.
 
 ## <a name="use-python-virtual-environments"></a>Usare gli ambienti virtuali Python
 
@@ -181,13 +187,13 @@ Per ogni progetto, è consigliabile creare e attivare sempre un *ambiente virtua
 
 1. Creare l'ambiente virtuale:
 
-    # <a name="bash"></a>[Bash](#tab/bash)
+    # <a name="cmd"></a>[cmd](#tab/cmd)
 
     ```bash
     python -m venv .venv
     ```
 
-    # <a name="cmd"></a>[Cmd](#tab/cmd)
+    # <a name="bash"></a>[Bash](#tab/bash)
 
     ```bash
     python -m venv .venv
@@ -199,16 +205,16 @@ Per ogni progetto, è consigliabile creare e attivare sempre un *ambiente virtua
 
 1. Attivare l'ambiente virtuale:
 
+    # <a name="cmd"></a>[cmd](#tab/cmd)
+
+    ```bash
+    .venv\scripts\activate
+    ```
+
     # <a name="bash"></a>[Bash](#tab/bash)
 
     ```bash
     source .venv/scripts/activate
-    ```
-
-    # <a name="cmd"></a>[Cmd](#tab/cmd)
-
-    ```bash
-    .venv\scripts\activate
     ```
 
     ---
@@ -223,7 +229,7 @@ Nell'ambiente globale è consigliabile installare i pacchetti di strumenti da us
 
 È consigliabile creare un repository del controllo del codice sorgente ogni volta che si avvia un progetto. Se è installato Git, è sufficiente eseguire il comando seguente:
 
-```bash
+```cmd
 git init
 ```
 
@@ -239,7 +245,7 @@ Visual Studio Code include una serie di funzionalità Git predefinite. Per altre
 
 ## <a name="next-step"></a>Passaggio successivo
 
-Una volta implementato l'ambiente di sviluppo locale, vedere una rapida panoramica di Azure SDK.
+Una volta implementato l'ambiente di sviluppo locale, vedere una rapida panoramica sui modelli di utilizzo comuni delle librerie di Azure:
 
 > [!div class="nextstepaction"]
-> [Usare Azure SDK >>>](azure-sdk-overview.md)
+> [Esaminare i modelli di utilizzo comuni >>>](azure-sdk-library-usage-patterns.md)

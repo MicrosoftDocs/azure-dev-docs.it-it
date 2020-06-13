@@ -3,12 +3,12 @@ title: Gestire le entità servizio locali per lo sviluppo di Azure
 description: Come gestire le entità servizio create per lo sviluppo locale usando il portale di Azure o l'interfaccia della riga di comando di Azure.
 ms.date: 05/12/2020
 ms.topic: conceptual
-ms.openlocfilehash: b2e0c913b08c98994226d7a9de39ae83ae50ec21
-ms.sourcegitcommit: 2cdf597e5368a870b0c51b598add91c129f4e0e2
+ms.openlocfilehash: ffb526a0073667f5ea53631925f2565215f60787
+ms.sourcegitcommit: 79890367158a9931909f11da1c894daa11188cba
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83404884"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84146189"
 ---
 # <a name="how-to-manage-service-principals"></a>Come gestire le entità servizio
 
@@ -18,7 +18,7 @@ Nel tempo probabilmente sarà necessario eliminare, rinominare o gestire in altr
 
 ## <a name="basics-of-azure-authorization"></a>Nozioni di base sull'autorizzazione di Azure
 
-Ogni volta che il codice tenta di eseguire qualsiasi operazione sulle risorse di Azure (tramite le classi in Azure SDK), Azure garantisce che l'applicazione sia autorizzata a eseguire tale azione. Usare il [portale di Azure](https://portal.azure.com) o l'interfaccia della riga di comando di Azure per concedere autorizzazioni specifiche basate sui ruoli o sulle risorse all'identità dell'applicazione. Questa procedura evita di concedere autorizzazioni in eccesso all'applicazione che potrebbero essere sfruttate se la sicurezza dell'applicazione viene compromessa.
+Ogni volta che il codice tenta di eseguire qualsiasi operazione sulle risorse di Azure (tramite le classi delle librerie di Azure), Azure garantisce che l'applicazione sia autorizzata a eseguire tale azione. Usare il [portale di Azure](https://portal.azure.com) o l'interfaccia della riga di comando di Azure per concedere autorizzazioni specifiche basate sui ruoli o sulle risorse all'identità dell'applicazione. Questa procedura evita di concedere autorizzazioni in eccesso all'applicazione che potrebbero essere sfruttate se la sicurezza dell'applicazione viene compromessa.
 
 Quando viene distribuita in Azure, l'identità dell'applicazione è in genere identica al nome assegnato all'app all'interno del servizio che la ospita, ad esempio Servizio app di Azure, Funzioni di Azure, una macchina virtuale e così via, quando è abilitata l'identità gestita. Quando si esegue il codice localmente, tuttavia, non è incluso alcun servizio di hosting di questo tipo, pertanto è necessario usare con Azure un sostituto appropriato.
 
@@ -51,4 +51,4 @@ Usando l'interfaccia della riga di comando di Azure, è possibile eseguire molte
 
 Vedere anche la pagina relativa alla
 
-- [Eseguire l'autenticazione con Azure con Azure SDK](azure-sdk-authenticate.md)
+- [Eseguire l'autenticazione con Azure usando le librerie di Azure](azure-sdk-authenticate.md)
