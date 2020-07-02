@@ -4,12 +4,12 @@ description: In questo argomento di avvio rapido viene illustrato come eseguire 
 keywords: ansible, azure, devops, bash, cloudshell, playbook, bash
 ms.topic: quickstart
 ms.date: 06/01/2020
-ms.openlocfilehash: 2d53c2c5e3eb834e0296be167104e484d144fbd9
-ms.sourcegitcommit: 367217792f3b16c769e2c39372358bc6b9c9c044
+ms.openlocfilehash: f48342dc9abdaa1a93979a6026e453f41e0043a7
+ms.sourcegitcommit: 7da78b35a847db9929554962dfcc47860f472fb9
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84301152"
+ms.lasthandoff: 06/22/2020
+ms.locfileid: "85133634"
 ---
 # <a name="quickstart-getting-started-with-ansible---azure-cloud-shell"></a>Avvio rapido: Introduzione ad Ansible - Azure Cloud Shell
 

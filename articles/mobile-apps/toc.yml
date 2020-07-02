@@ -1,7 +1,6 @@
 - name: Documentazione di Azure per sviluppatori di app per dispositivi mobili
   href: index.yml
 - name: Panoramica
-  expanded: true
   items:
     - name: Scegliere il framework di sviluppo per dispositivi mobili
       href: choose-mobile-framework.md

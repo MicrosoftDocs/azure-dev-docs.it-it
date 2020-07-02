@@ -5,12 +5,12 @@ author: mriem
 ms.author: manriem
 ms.topic: conceptual
 ms.date: 4/10/2020
-ms.openlocfilehash: 6c2781914e65d28a57f2f80ed287921eab3b76ae
-ms.sourcegitcommit: a631b36ec1277ee9397a860c597ffdd5495d88e7
+ms.openlocfilehash: bb355fdd8436d6483ebd1ffeead4c522c9895e16
+ms.sourcegitcommit: 81577378a4c570ced1e9c6765f4a9eee8453c889
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83369981"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84507678"
 ---
 # <a name="migrate-spring-boot-applications-to-azure-kubernetes-service"></a>Eseguire la migrazione di applicazioni Spring Boot al servizio Azure Kubernetes
 
@@ -54,7 +54,7 @@ Se l'applicazione usa un database, esaminare le proprietà del database nel file
 
 Identificare le soluzioni di aggregazione dei log usate dalle applicazioni di cui si esegue la migrazione.
 
-### <a name="identify-application-performance-management-apm-agents"></a>Identificare gli agenti Application Performance Monitoring
+### <a name="identify-application-performance-management-apm-agents"></a>Identificare gli agenti di gestione delle prestazioni delle applicazioni
 
 Identificare gli agenti Application Performance Monitoring in uso con le applicazioni, ad esempio Dynatrace e Datadog. È necessario riconfigurare questi agenti Application Performance Monitoring in modo che siano inclusi in una configurazione Dockerfile o Jib oppure che usino l'agente Java in-process di Application Insights.
 
@@ -64,7 +64,7 @@ Determinare se l'applicazione ha dipendenze esplicite da Zipkin. Cercare le dipe
 
 ### <a name="inventory-external-resources"></a>Inventario delle risorse esterne
 
-Identificare le risorse esterne, ad esempio le origini dati, i broker dei messaggi JMS e gli URL di altri servizi. Nelle applicazioni Spring Boot la configurazione per tali risorse si trova di solito nella cartella *src/main/directory*, in un file generalmente denominato *application.properties* o *application.yml*.
+Identificare le risorse esterne, ad esempio le origini dati, i broker dei messaggi JMS e gli URL di altri servizi. Nelle applicazioni Spring Boot la configurazione per tali risorse si trova di solito nella cartella *src/main/directory*, in un file generalmente denominato *application.properties* o *application.yml*. Verificare inoltre le variabili di ambiente della distribuzione di produzione per rilevare eventuali impostazioni di configurazione pertinenti.
 
 [!INCLUDE [inventory-databases-spring-boot](includes/inventory-databases-spring-boot.md)]
 

@@ -3,12 +3,12 @@ title: 'Esercitazione: Creare un set di scalabilità di macchine virtuali di Azu
 description: Informazioni su come usare Terraform per configurare e controllare le versioni di un set di scalabilità di macchine virtuali di Azure.
 ms.topic: tutorial
 ms.date: 11/07/2019
-ms.openlocfilehash: 23b57d5b7161c318a154bfa2afcf133aa545a233
-ms.sourcegitcommit: db56786f046a3bde1bd9b0169b4f62f0c1970899
+ms.openlocfilehash: ce6922fe8bb5671afece009cd0228e8a3ff191da
+ms.sourcegitcommit: fb0564696f8067e6dfa8b9eaf819fadf321c2884
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84329579"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85327199"
 ---
 # <a name="tutorial-create-an-azure-virtual-machine-scale-set-using-terraform"></a>Esercitazione: Creare un set di scalabilità di macchine virtuali di Azure tramite Terraform
 
@@ -80,7 +80,7 @@ In Azure Cloud Shell seguire questa procedura:
     description = "The location where resources will be created"
    }
 
-   variable "tags" = {
+   variable "tags" {
     description = "A map of the tags to use for the resources that are deployed"
     type        = map(string)
 
