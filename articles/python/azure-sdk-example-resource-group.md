@@ -3,12 +3,12 @@ title: Effettuare il provisioning di un gruppo di risorse con le librerie di Azu
 description: Usare la libreria di gestione delle risorse di Azure SDK per Python per creare un gruppo di risorse dal codice Python.
 ms.date: 05/29/2020
 ms.topic: conceptual
-ms.openlocfilehash: 0d0ff5bf8a2417e38f9fd066b226ed26da87322b
-ms.sourcegitcommit: db56786f046a3bde1bd9b0169b4f62f0c1970899
+ms.openlocfilehash: 38c2f87511c040a04040844fb512fd436d566c15
+ms.sourcegitcommit: 499f7275446f006fa43c4eff3b1f0d001e9a98d9
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84329679"
+ms.lasthandoff: 06/05/2020
+ms.locfileid: "84453702"
 ---
 # <a name="example-use-the-azure-libraries-to-provision-a-resource-group"></a>Esempio: Usare le librerie di Azure per effettuare il provisioning di un gruppo di risorse
 
@@ -126,6 +126,6 @@ az group create -n PythonAzureExample-ResourceGroup-rg -l centralus
 
 - [Esempio: Effettuare il provisioning di Archiviazione di Azure](azure-sdk-example-storage.md)
 - [Esempio: Usare Archiviazione di Azure](azure-sdk-example-storage-use.md)
-- [Esempio: Effettuare il provisioning di un app Web e distribuire il codice](azure-sdk-example-web-app.md)
-- [Esempio: Effettuare il provisioning e usare un database MySQL](azure-sdk-example-database.md)
+- [Esempio: Effettuare il provisioning di un'app Web e distribuire il codice](azure-sdk-example-web-app.md)
+- [Esempio: Effettuare il provisioning ed eseguire query su un database](azure-sdk-example-database.md)
 - [Esempio: Effettuare il provisioning di una macchina virtuale](azure-sdk-example-virtual-machines.md)

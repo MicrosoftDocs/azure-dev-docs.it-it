@@ -1,17 +1,17 @@
 ---
-title: 'Esercitazione: Creare una VM Linux con infrastruttura in Azure tramite Terraform'
+title: Esercitazione - Creare una VM Linux con infrastruttura in Azure tramite Terraform
 description: Informazioni su come usare Terraform per creare e gestire un ambiente completo per le macchine virtuali Linux in Azure.
 keywords: azure devops terraform linux vm macchina virtuale
 ms.topic: tutorial
-ms.date: 05/31/2020
-ms.openlocfilehash: 40dfe97d2311e251e23468b5d7a6eede778d7b8e
-ms.sourcegitcommit: db56786f046a3bde1bd9b0169b4f62f0c1970899
+ms.date: 06/14/2020
+ms.openlocfilehash: 97b4381c45e67458e01093d735f9b32e97584149
+ms.sourcegitcommit: 2d6c9687b39e33a6b5e980d9a375c9f8f1f2cab7
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84329439"
+ms.lasthandoff: 06/15/2020
+ms.locfileid: "84779653"
 ---
-# <a name="tutorial--create-a-linux-vm-with-infrastructure-in-azure-using-terraform"></a>Esercitazione: Creare una VM Linux con infrastruttura in Azure tramite Terraform
+# <a name="tutorial-create-a-linux-vm-with-infrastructure-in-azure-using-terraform"></a>Esercitazione: Creare una VM Linux con infrastruttura in Azure tramite Terraform
 
 Terraform consente di definire e creare distribuzioni di infrastrutture complete in Azure. I modelli Terrraform, compilati dall'utente in un formato leggibile, creano e configurano le risorse di Azure in modo coerente e riproducibile. In questo articolo viene illustrato come creare un ambiente Linux completo e le risorse di supporto con Terraform. Verrà anche descritto come [installare e configurare Terraform](getting-started-cloud-shell.md).
 
@@ -463,10 +463,10 @@ Se tutte le impostazioni sono corrette e si è pronti a creare l'infrastruttura 
 terraform apply
 ```
 
-Al termine, l'infrastruttura per la macchina virtuale è pronta. Ottenere l'indirizzo IP pubblico della VM con [az vm show](/cli/azure/vm):
+Al termine, l'infrastruttura per la macchina virtuale è pronta. Ottenere l'indirizzo IP pubblico della VM con [az vm show](/cli/azure/vm#az-vm-show):
 
 ```azurecli-interactive
-az vm show --resource-group myResourceGroup --name myVM -d --query [publicIps] --o tsv
+az vm show --resource-group myResourceGroup --name myVM -d --query [publicIps] -o tsv
 ```
 
 È quindi possibile stabilire una connessione SSH alla VM:

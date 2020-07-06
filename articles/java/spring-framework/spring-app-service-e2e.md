@@ -6,12 +6,12 @@ ms.author: karler
 ms.date: 11/12/2019
 ms.service: app-service
 ms.topic: article
-ms.openlocfilehash: 7e90cd39bb50f5e83ee9bc3551252fe12086e750
-ms.sourcegitcommit: 8309822d57f784a9c2ca67428ad7e7330bb5e0d6
+ms.openlocfilehash: 19eb7a5633f51400e139ba8dd7ad0a1f5999a213
+ms.sourcegitcommit: 81577378a4c570ced1e9c6765f4a9eee8453c889
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82861194"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84507447"
 ---
 # <a name="deploy-a-spring-app-to-app-service-with-mysql"></a>Distribuire un'app Spring nel servizio app con MySQL
 
@@ -86,7 +86,7 @@ set TOMCAT_HOME=<Tomcat install directory>
 ```
 ---
 
-Aggiornare quindi il file *pom.xml* per configurare Maven per una distribuzione con file WAR Tomcat. Aggiungere il codice XML seguente come figlio dell'elemento `<plugins>` esistente. Se necessario, sostituire `1.7.11` con la versione corrente del [plug-in Cargo Maven 2](https://mvnrepository.com/artifact/org.codehaus.cargo/cargo-maven2-plugin).
+Aggiornare quindi il file *pom.xml* per la distribuzione del file WAR. Aggiungere il codice XML seguente come figlio dell'elemento `<plugins>` esistente. Se necessario, sostituire `1.7.11` con la versione corrente del [plug-in Cargo Maven 2](https://mvnrepository.com/artifact/org.codehaus.cargo/cargo-maven2-plugin).
 
 ```xml
 <plugin>

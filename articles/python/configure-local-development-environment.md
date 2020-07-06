@@ -3,12 +3,12 @@ title: Configurare l'ambiente Python locale per lo sviluppo di Azure
 description: Come configurare un ambiente di sviluppo Python locale per l'uso con Azure, tra cui Visual Studio Code, le librerie di Azure SDK e le credenziali necessarie per l'autenticazione delle librerie.
 ms.date: 05/29/2020
 ms.topic: conceptual
-ms.openlocfilehash: e3eb03182a45f3ceacc8b3ea09abca47d8fa2e81
-ms.sourcegitcommit: efab6be74671ea4300162e0b30aa8ac134d3b0a9
+ms.openlocfilehash: cf87c90bd36594ffa4e1f3837133238f89a77836
+ms.sourcegitcommit: 43e4b50f6f6f5806b2f162ca39367face0779ff6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84256456"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84421497"
 ---
 # <a name="configure-your-local-python-dev-environment-for-azure"></a>Configurare l'ambiente di sviluppo Python locale per Azure
 
@@ -21,6 +21,8 @@ Questo articolo include le istruzioni di installazione da seguire una sola volta
 - Esaminare il processo associato all'[uso di ambienti virtuali Python](#use-python-virtual-environments) per ogni progetto.
 
 Una volta configurata la workstation, sarà necessario aggiungere solo una configurazione minima per completare varie guide di avvio rapido ed esercitazioni altrove in questo centro per sviluppatori e nella documentazione di Azure.
+
+Questa configurazione per lo sviluppo locale è una questione diversa rispetto alle [risorse di provisioning](cloud-development-flow.md) che costituiscono l'*ambiente cloud* dell'applicazione in Azure. Nel processo di sviluppo viene eseguito codice nell'ambiente di sviluppo locale in grado di accedere a tali risorse nel cloud, ma il codice non è ancora distribuito in un [servizio di hosting appropriato](quickstarts-app-hosting.md) nel cloud. Il passaggio di distribuzione avviene in seguito, come descritto nell'articolo sul [flusso di sviluppo di Azure](cloud-development-flow.md).
 
 ## <a name="install-components"></a>Installazione dei componenti
 

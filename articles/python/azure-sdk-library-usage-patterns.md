@@ -1,18 +1,18 @@
 ---
 title: Modelli di utilizzo delle librerie di Azure per Python
 description: Panoramica dei modelli di utilizzo comuni delle librerie di Azure SDK per Python
-ms.date: 05/26/2020
+ms.date: 06/09/2020
 ms.topic: conceptual
-ms.openlocfilehash: f712dc41233b8301e370c9eb63786d8e2d7f8c70
-ms.sourcegitcommit: efab6be74671ea4300162e0b30aa8ac134d3b0a9
+ms.openlocfilehash: d1cd1b1c965fdf5b6907c9842260d4c029d625f5
+ms.sourcegitcommit: b3e506c6f140d91e6fdd9dcadf22ab1aa67f6978
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84256276"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "84942410"
 ---
 # <a name="azure-libraries-for-python-usage-patterns"></a>Modelli di utilizzo delle librerie di Azure per Python
 
-Azure SDK per Python è costituito esclusivamente da numerose librerie indipendenti, elencate nella [pagina di indice di Azure SDK per Python](https://azure.github.io/azure-sdk/releases/latest/all/python.html).
+Azure SDK per Python è costituito esclusivamente da numerose librerie indipendenti, elencate nell'[indice dei pacchetti delle librerie di Azure SDK per Python](azure-sdk-library-package-index.md).
 
 Tutte le librerie condividono alcune caratteristiche e modelli di utilizzo comuni, ad esempio l'installazione e l'uso di JSON inline per gli argomenti oggetto.
 
@@ -33,6 +33,79 @@ pip install azure-storage-blob
 `pip install` recupera l'ultima versione di una libreria nell'ambiente Python corrente.
 
 È anche possibile usare `pip` per disinstallare le librerie e installare versioni specifiche, incluse quelle di anteprima. Per altre informazioni, vedere [Come installare i pacchetti di librerie di Azure per Python](azure-sdk-install.md).
+
+## <a name="asynchronous-operations"></a>Operazioni asincrone
+
+Molte operazioni richiamate tramite oggetti client e di gestione client (ad esempio [`WebSiteManagementClient.web_apps.create_or_update`](/python/api/azure-mgmt-web/azure.mgmt.web.v2019_08_01.operations.webappsoperations?view=azure-python#create-or-update-resource-group-name--name--site-envelope--custom-headers-none--raw-false--polling-true----operation-config-)) restituiscono un oggetto di tipo `AzureOperationPoller[<type>]`, dove `<type>` è specifico dell'operazione in questione.
+
+Un tipo restituito [`AzureOperationPoller`](/python/api/msrestazure/msrestazure.azure_operation.azureoperationpoller?view=azure-python) indica che l'operazione è asincrona. Di conseguenza, è necessario chiamare il metodo `result` dello strumento per il polling per attendere che il risultato effettivo dell'operazione diventi disponibile.
+
+Il codice seguente, tratto da [Esempio: Effettuare il provisioning e la distribuzione di un'app Web](azure-sdk-example-web-app.md), illustra un esempio dell'utilizzo dello strumento per il polling per attendere un risultato:
+
+```python
+poller = app_service_client.web_apps.create_or_update(RESOURCE_GROUP_NAME,
+    WEB_APP_NAME,
+    {
+        "location": LOCATION,
+        "server_farm_id": plan_result.id,
+        "site_config": {
+            "linux_fx_version": "python|3.8"
+        }
+    }
+)
+
+web_app_result = poller.result()
+```
+
+In questo caso, il valore restituito di `create_or_update` è di tipo `AzureOperationPoller[Site]`, che indica che il valore restituito di `poller.result()` è un oggetto [Site](/python/api/azure-mgmt-web/azure.mgmt.web.v2019_08_01.models.site?view=azure-python).
+
+## <a name="exceptions"></a>Eccezioni
+
+In generale, le librerie di Azure generano eccezioni quando le operazioni non vengono eseguite come previsto, incluse le richieste HTTP non riuscite all'API REST di Azure. Per il codice dell'app, quindi, è possibile usare blocchi `try...except` per le operazioni della libreria.
+
+Per altre informazioni sul tipo di eccezioni che possono essere generate, consultare la documentazione relativa all'operazione in questione.
+
+## <a name="logging"></a>Registrazione
+
+Le librerie di Azure più recenti usano la libreria `logging` standard Python per generare l'output di registrazione. È possibile impostare il livello di registrazione per singole librerie, per gruppi di librerie o per tutte le librerie. Dopo aver registrato un gestore del flusso di registrazione, è possibile abilitare la registrazione per un oggetto client specifico o per un'operazione specifica. Per altre informazioni, vedere [Configurare la registrazione nelle librerie di Azure per Python](azure-sdk-logging.md).
+
+## <a name="proxy-configuration"></a>Configurazione proxy
+
+Per specificare un proxy è possibile usare variabili di ambiente o argomenti facoltativi. Per altre informazioni, vedere [Come configurare i proxy per le librerie di Azure](azure-sdk-configure-proxy.md).
+
+## <a name="optional-arguments-for-client-objects-and-methods"></a>Argomenti facoltativi per oggetti client e metodi
+
+Nella documentazione di riferimento delle librerie viene spesso visualizzato un argomento `**kwargs` o `**operation_config**` nella firma di un costruttore di oggetti client o di un metodo di operazione specifico. Questi segnaposto indicano che l'oggetto o il metodo in questione può supportare altri argomenti denominati. In genere la documentazione di riferimento indica gli argomenti specifici che è possibile usare. Sono inoltre spesso supportati alcuni argomenti generali descritti nelle sezioni seguenti.
+
+### <a name="arguments-for-libraries-based-on-azurecore"></a>Argomenti per le librerie basate su azure.core
+
+Questi argomenti si applicano alle librerie elencate in [Python - Nuove librerie](https://azure.github.io/azure-sdk/releases/latest/#python).
+
+| Nome                       | Type | Predefinito     | Descrizione |
+| ---                        | ---  | ---         | ---         |
+| logging_enable             | bool | False       | Abilita la registrazione. Per altre informazioni, vedere [Configurare la registrazione nelle librerie di Azure per Python](azure-sdk-logging.md). |
+| proxies                    | dict | {}          | URL del server proxy. Per altre informazioni, vedere [Come configurare i proxy per le librerie di Azure](azure-sdk-configure-proxy.md). |
+| use_env_settings           | bool | True        | Se True, consente l'uso delle variabili di ambiente `HTTP_PROXY` e `HTTPS_PROXY` per i proxy. Se False, le variabili di ambiente vengono ignorate. Per altre informazioni, vedere [Come configurare i proxy per le librerie di Azure](azure-sdk-configure-proxy.md). |
+| connection_timeout         | INT  | 300         | Timeout in secondi per stabilire una connessione agli endpoint dell'API REST di Azure. |
+| read_timeout               | INT  | 300         | Timeout in secondi per il completamento di un'operazione dell'API REST di Azure (ovvero attesa di una risposta). |
+| retry_total                | INT  | 10          | Numero di nuovi tentativi consentiti per le chiamate all'API REST. Usare `retry_total=0` per disabilitare i tentativi. |
+| retry_mode                 | enum | exponential | Applica l'intervallo dei tentativi in un modo lineare o esponenziale. Se "single", i tentativi vengono eseguiti a intervalli regolari. Se "exponential", ogni ripetizione attende il doppio del tempo del tentativo precedente. |
+
+Le singole librerie non devono obbligatoriamente supportare questi argomenti, quindi consultare sempre la documentazione di riferimento per ogni libreria per i dettagli esatti.
+
+### <a name="arguments-for-non-core-libraries"></a>Argomenti per le librerie non core
+
+| Nome               | Type | Predefinito | Descrizione |
+| ---                | ---  | ---     | ---         |
+| verify             | bool | True    | Verifica il certificato SSL. |
+| cert               | str  | nessuno    | Percorso del certificato locale per la verifica lato client. |
+| timeout            | INT  | 30      | Timeout in secondi per stabilire una connessione al server. |
+| allow_redirects    | bool | False   | Abilita i reindirizzamenti. |
+| max_redirects      | INT  | 30      | Numero massimo di reindirizzamenti consentiti. |
+| proxies            | dict | {}      | URL del server proxy. Per altre informazioni, vedere [Come configurare i proxy per le librerie di Azure](azure-sdk-configure-proxy.md). |
+| use_env_proxies    | bool | False   | Abilita la lettura delle impostazioni del proxy dalle variabili di ambiente locali. |
+| retries            | INT  | 10      | Numero totale di nuovi tentativi consentiti. |
+| enable_http_logger | bool | False   | Abilita i log di HTTP in modalità di debug. |
 
 ## <a name="inline-json-pattern-for-object-arguments"></a>Modello JSON inline per argomenti oggetto
 
@@ -115,7 +188,7 @@ operation = keyvault_client.vaults.create_or_update(
 )
 ```
 
-Poiché i due formati sono equivalenti, è possibile scegliere quello che si preferisce usare e anche combinarli.
+Poiché i due formati sono equivalenti, è possibile scegliere quello che si preferisce usare e persino combinarli.
 
 Se il formato JSON non è corretto, si riceve in genere un messaggio di errore analogo a "DeserializationError: Non è possibile deserializzare l'oggetto: tipo, AttributeError: all'oggetto 'str' non è associato un attributo 'Get'". Una causa comune di questo errore è che si specifica una singola stringa di una proprietà quando la libreria prevede un oggetto JSON annidato. Se ad esempio si usa `"sku": "standard"` nell'esempio precedente, questo errore viene generato perché il parametro `sku` è un oggetto `Sku` che prevede un oggetto JSON inline, in questo caso `{ "name": "standard"}`, che è mappato al tipo `SkuName` previsto.
 
@@ -125,7 +198,8 @@ Ora che si conoscono i modelli di utilizzo comuni delle librerie di Azure per Py
 
 - [Esempio: Creare un gruppo di risorse](azure-sdk-example-resource-group.md)
 - [Esempio: Usare Archiviazione di Azure](azure-sdk-example-storage.md)
-- [Esempio: Effettuare il provisioning di un app Web e distribuire il codice](azure-sdk-example-web-app.md)
+- [Esempio: Effettuare il provisioning di un'app Web e distribuire il codice](azure-sdk-example-web-app.md)
+- [Esempio: Effettuare il provisioning ed eseguire query su un database](azure-sdk-example-database.md)
 - [Esempio: Effettuare il provisioning di una macchina virtuale](azure-sdk-example-virtual-machines.md)
 
 È possibile provare questi esempi in qualsiasi ordine, perché non sono sequenziali né interdipendenti.

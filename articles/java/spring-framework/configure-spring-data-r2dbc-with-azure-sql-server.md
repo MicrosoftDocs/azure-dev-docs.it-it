@@ -7,12 +7,12 @@ ms.service: sql-database
 ms.tgt_pltfrm: multiple
 ms.author: judubois
 ms.topic: article
-ms.openlocfilehash: 1dda447182867d6646e6b9637852f08b1d6fb124
-ms.sourcegitcommit: fbbc341a0b9e17da305bd877027b779f5b0694cc
+ms.openlocfilehash: fbde7d54010bc68bf89ea757f08432a46e8f6fbb
+ms.sourcegitcommit: 81577378a4c570ced1e9c6765f4a9eee8453c889
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83631639"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84507768"
 ---
 # <a name="use-spring-data-r2dbc-with-azure-sql-database"></a>Usare Spring Data R2DBC con il database SQL di Azure
 
@@ -22,93 +22,13 @@ Questo argomento illustra come creare un'applicazione di esempio che usa [Spring
 
 [!INCLUDE [spring-data-prerequisites.md](includes/spring-data-prerequisites.md)]
 
-## <a name="prepare-the-working-environment"></a>Preparare l'ambiente di lavoro
-
-Prima di tutto, configurare alcune variabili di ambiente usando i comandi seguenti:
-
-```bash
-AZ_RESOURCE_GROUP=r2dbc-workshop
-AZ_DATABASE_NAME=<YOUR_DATABASE_NAME>
-AZ_LOCATION=<YOUR_AZURE_REGION>
-AZ_SQL_SERVER_USERNAME=spring
-AZ_SQL_SERVER_PASSWORD=<YOUR_AZURE_SQL_PASSWORD>
-AZ_LOCAL_IP_ADDRESS=<YOUR_LOCAL_IP_ADDRESS>
-```
-
-Sostituire i segnaposto con i valori seguenti, che vengono usati nell'intero articolo:
-
-- `<YOUR_DATABASE_NAME>`: il nome del server di database SQL di Azure. Deve essere univoco in Azure.
-- `<YOUR_AZURE_REGION>`: l'area di Azure da usare. È possibile usare `eastus` per impostazione predefinita, ma è consigliabile configurare un'area più vicina a dove si risiede. Per l'elenco completo di aree disponibili, immettere `az account list-locations`.
-- `<AZ_SQL_SERVER_PASSWORD>`: la password del server di database SQL di Azure. La password deve essere composta da un minimo di otto caratteri di tre categorie seguenti: lettere maiuscole, lettere minuscole, numeri (0-9) e caratteri non alfanumerici (!, $, #, % e così via).
-- `<YOUR_LOCAL_IP_ADDRESS>`: l'indirizzo IP del computer locale, da cui verrà eseguita l'applicazione Spring Boot. Un modo pratico per trovarlo è puntare il browser all'indirizzo [whatismyip.akamai.com](http://whatismyip.akamai.com/).
-
-Successivamente, creare un gruppo di risorse:
-
-```azurecli
-az group create \
-    --name $AZ_RESOURCE_GROUP \
-    --location $AZ_LOCATION \
-    | jq
-```
-
-> [!NOTE]
-> Per visualizzare i dati JSON e renderli più leggibili, viene usata l'utilità `jq`, installata per impostazione predefinita in [Azure Cloud Shell](https://shell.azure.com/).
-> Se non si preferisce usare questa utilità, è possibile rimuovere tranquillamente la parte `| jq` di tutti i comandi che verranno usati.
-
-## <a name="create-an-azure-sql-database-instance"></a>Creare un'istanza del database SQL di Azure
-
-Il primo componente che verrà creato è un server di database SQL di Azure gestito.
-
-> [!NOTE]
-> Per informazioni più dettagliate sulla creazione di server di database SQL di Azure, vedere [Avvio rapido: Creare un database SQL di Azure singolo](/azure/sql-database/sql-database-single-database-get-started).
-
-In [Azure Cloud Shell](https://shell.azure.com/) eseguire lo script seguente:
-
-```azurecli
-az sql server create \
-    --resource-group $AZ_RESOURCE_GROUP \
-    --name $AZ_DATABASE_NAME \
-    --location $AZ_LOCATION \
-    --admin-user $AZ_SQL_SERVER_USERNAME \
-    --admin-password $AZ_SQL_SERVER_PASSWORD \
-    | jq
-```
-
-Questo comando crea un database SQL di Azure.
-
-### <a name="configure-a-firewall-rule-for-your-azure-sql-database-server"></a>Configurare una regola del firewall per il server di database SQL di Azure
-
-Le istanze del database SQL di Azure sono protette per impostazione predefinita. Includono un firewall che non consente alcuna connessione in ingresso. Per poter usare il database, è necessario aggiungere una regola del firewall che consenta all'indirizzo IP locale di accedere al server di database.
-
-Poiché l'indirizzo IP locale è stato configurato all'inizio di questo articolo, è possibile aprire il firewall del server eseguendo:
-
-```azurecli
-az sql server firewall-rule create \
-    --resource-group $AZ_RESOURCE_GROUP \
-    --name $AZ_DATABASE_NAME-database-allow-local-ip \
-    --server $AZ_DATABASE_NAME \
-    --start-ip-address $AZ_LOCAL_IP_ADDRESS \
-    --end-ip-address $AZ_LOCAL_IP_ADDRESS \
-    | jq
-```
-
-### <a name="configure-a-azure-sql-database"></a>Configurare un database SQL di Azure
-
-Il database SQL di Azure creato in precedenza è vuoto. Non include nessun database che è possibile usare con l'applicazione Spring Boot. Creare un nuovo database denominato `demo`:
-
-```azurecli
-az sql db create \
-    --resource-group $AZ_RESOURCE_GROUP \
-    --name demo \
-    --server $AZ_DATABASE_NAME \
-    | jq
-```
+[!INCLUDE [spring-data-sql-server-setup.md](includes/spring-data-sql-server-setup.md)]
 
 [!INCLUDE [spring-data-create-reactive.md](includes/spring-data-create-reactive.md)]
 
 ### <a name="generate-the-application-by-using-spring-initializr"></a>Generare l'applicazione con Spring Initializr
 
-Per generare l'applicazione, immettere quanto segue sulla riga di comando:
+Per generare l'applicazione, immettere il comando seguente sulla riga di comando:
 
 ```bash
 curl https://start.spring.io/starter.tgz -d dependencies=webflux,data-r2dbc -d baseDir=azure-database-workshop -d bootVersion=2.3.0.RELEASE -d javaVersion=8 | tar -xzvf -
@@ -118,7 +38,7 @@ curl https://start.spring.io/starter.tgz -d dependencies=webflux,data-r2dbc -d b
 
 Aprire il file *pom.xml* del progetto generato per aggiungere il driver del database SQL di Azure reattivo dal [repository GitHub r2dbc-mssql](https://github.com/r2dbc/r2dbc-mssql).
 
-Dopo la dipendenza `spring-boot-starter-webflux` aggiungere il frammento di codice seguente:
+Dopo la dipendenza `spring-boot-starter-webflux` aggiungere il testo seguente:
 
 ```xml
 <dependency>
@@ -130,7 +50,7 @@ Dopo la dipendenza `spring-boot-starter-webflux` aggiungere il frammento di codi
 
 ### <a name="configure-spring-boot-to-use-azure-sql-database"></a>Configurare Spring Boot per l'uso del database SQL di Azure
 
-Aprire il file *src/main/resources/application.properties* e aggiungere:
+Aprire il file *src/main/resources/application.properties* e aggiungere il testo seguente:
 
 ```properties
 logging.level.org.springframework.data.r2dbc=DEBUG
@@ -140,13 +60,12 @@ spring.r2dbc.username=spring@$AZ_DATABASE_NAME
 spring.r2dbc.password=$AZ_SQL_SERVER_PASSWORD
 ```
 
-- Sostituire le due variabili `$AZ_DATABASE_NAME` con il valore configurato all'inizio di questo articolo.
-- Sostituire la variabile `$AZ_SQL_SERVER_PASSWORD` con il valore configurato all'inizio di questo articolo.
+Sostituire le due variabili `$AZ_DATABASE_NAME` e la variabile `$AZ_SQL_SERVER_PASSWORD` con i valori configurati all'inizio di questo articolo.
 
 > [!NOTE]
 > Per prestazioni più elevate, la proprietà `spring.r2dbc.url` viene configurata per l'uso di un pool di connessioni tramite [r2dbc-pool](https://github.com/r2dbc/r2dbc-pool).
 
-A questo punto dovrebbe essere possibile avviare l'applicazione usando il wrapper Maven fornito:
+A questo punto dovrebbe essere possibile avviare l'applicazione usando il wrapper Maven fornito, come segue:
 
 ```bash
 ./mvnw spring-boot:run
@@ -165,7 +84,7 @@ DROP TABLE IF EXISTS todo;
 CREATE TABLE todo (id INT IDENTITY PRIMARY KEY, description VARCHAR(255), details VARCHAR(4096), done BIT);
 ```
 
-Arrestare l'applicazione in esecuzione e quindi riavviarla. L'applicazione userà ora il database `demo` creato in precedenza e creerà una `todo` tabella al suo interno.
+Arrestare l'applicazione in esecuzione e quindi riavviarla usando il comando seguente. L'applicazione userà ora il database `demo` creato in precedenza e creerà una `todo` tabella al suo interno.
 
 ```bash
 ./mvnw spring-boot:run

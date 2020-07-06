@@ -4,12 +4,12 @@ description: "Passaggio 1 dell'esercitazione: introduzione e prerequisiti."
 ms.topic: conceptual
 ms.date: 05/19/2020
 ms.custom: seo-python-october2019
-ms.openlocfilehash: fcb9a520e10036d5059f060dedf49e8f222af184
-ms.sourcegitcommit: 089b87e1631a9db145583eb274edac6f80d16367
+ms.openlocfilehash: e05402123da0c95a7e3abed8d0f525ad0c065bbe
+ms.sourcegitcommit: 7474de4884bce076ce33ca77ae3584ba1598bbc6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83708585"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "85069376"
 ---
 # <a name="tutorial-create-and-deploy-serverless-azure-functions-in-python-with-visual-studio-code"></a>Esercitazione: Creare e distribuire Funzioni di Azure serverless in Python con Visual Studio Code
 
@@ -18,6 +18,8 @@ In questo articolo si usano Visual Studio Code e l'estensione Funzioni di Azure 
 Funzioni di Azure consente di eseguire il codice in un ambiente serverless senza dover effettuare il provisioning di una macchina virtuale o pubblicare un'app Web. L'estensione Funzioni di Azure per Visual Studio Code semplifica notevolmente il processo di utilizzo di Funzioni perché gestisce automaticamente numerosi problemi di configurazione.
 
 Se si riscontrano problemi con uno qualsiasi dei passaggi descritti in questa esercitazione, è possibile segnalarli. Per inviare feedback, usare il pulsante **Si è verificato un problema** alla fine di ogni articolo.
+
+Per una dimostrazione, vedere il video che spiega come <a href="https://www.youtube.com/watch?v=9bMsdBYy-D0&feature=youtu.be&ocid=AID3006292" target="_blank">compilare funzioni di Azure con VS Code</a> (youtube.com) tratto dalla conferenza virtuale PyCon 2020. Può essere interessante anche la sessione più lunga, che illustra come <a href="https://www.youtube.com/watch?v=PV7iy6FPjAY&feature=youtu.be&t=13&ocid=AID3006292" target="_blank">elaborare facilmente i dati con Funzioni di Azure</a> (youtube.com). 
 
 ## <a name="prerequisites"></a>Prerequisiti
 
@@ -42,7 +44,7 @@ Durante l'installazione di Node.js, usare le opzioni predefinite e *non* selezio
 
 Installare il software seguente:
 
-- Python 3.6, 3.7 o 3.8 come richiesto da Funzioni di Azure. Installare Python da [python.org](https://www.python.org/downloads). Durante l'installazione selezionare **Add Python 3.x to PATH** (Aggiungi Python 3.x a PATH) e usare le opzioni predefinite selezionando l'opzione **Install Now** (Installa ora). In Windows selezionare anche **Disable Path length limit** (Disabilita il limite di lunghezza del percorso) alla fine del processo.
+- Una versione a 64 bit di Python 3.6, 3.7 o 3.8 come richiesto da Funzioni di Azure. Installare Python da [python.org](https://www.python.org/downloads). Durante l'installazione selezionare **Add Python 3.x to PATH** (Aggiungi Python 3.x a PATH) e usare le opzioni predefinite selezionando l'opzione **Install Now** (Installa ora). In Windows selezionare anche **Disable Path length limit** (Disabilita il limite di lunghezza del percorso) alla fine del processo.
 - [Visual Studio Code](https://code.visualstudio.com/).
 - [Estensione Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python) come descritto nella sezione dei [prerequisiti dell'esercitazione su Python in Visual Studio Code](https://code.visualstudio.com/docs/python/python-tutorial).
 - [Estensione Funzioni di Azure](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions). Per informazioni di carattere generale, visitare il [repository GitHub vscode-azurefunctions](https://github.com/Microsoft/vscode-azurefunctions).

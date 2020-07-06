@@ -3,12 +3,12 @@ title: Provisioning, accesso e gestione delle risorse in Azure
 description: Panoramica dei metodi usati per usare le risorse di Azure, tra cui il portale di Azure, l'interfaccia della riga di comando di Azure e le librerie di Azure (SDK).
 ms.date: 05/27/2020
 ms.topic: conceptual
-ms.openlocfilehash: 7482b3ae29210c02382ddd20ee2f29b874e18ab5
-ms.sourcegitcommit: 79890367158a9931909f11da1c894daa11188cba
+ms.openlocfilehash: bc2fb2138c5ea5cf5438f2d892483b094e78eb8d
+ms.sourcegitcommit: b3e506c6f140d91e6fdd9dcadf22ab1aa67f6978
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84146204"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "84942420"
 ---
 # <a name="provisioning-accessing-and-managing-resources-on-azure"></a>Provisioning, accesso e gestione delle risorse in Azure
 
@@ -35,7 +35,7 @@ In questo centro per sviluppatori viene illustrato principalmente l'uso dell'int
 
 Il [portale di Azure](https://portal.azure.com) è l'interfaccia utente basata su browser completamente personalizzabile di Azure tramite la quale è possibile effettuare il provisioning delle risorse e gestirle con tutti i servizi di Azure. Per accedere al portale, è prima di tutto necessario accedere con un account Microsoft e quindi creare un account Azure gratuito con una sottoscrizione. Dopo aver eseguito l'accesso, è possibile selezionare l'icona **?** e selezionare **Avvia presentazione guidata** per una semplice presentazione delle principali funzionalità del portale.
 
-**Vantaggi**: l'interfaccia utente consente di esplorare facilmente i servizi e tutte le relative opzioni di configurazione. L'impostazione dei valori di configurazione è sicura perché le informazioni non vengono archiviate nella workstation locale.
+**Vantaggi**: l'interfaccia utente permette di esplorare facilmente i servizi e tutte le relative opzioni di configurazione. L'impostazione dei valori di configurazione è sicura perché le informazioni non vengono archiviate nella workstation locale.
 
 **Svantaggi**: l'uso del portale è un processo manuale e non può essere automatizzato. Per ricordare le operazioni eseguite per modificare una configurazione, ad esempio, è necessario prendere nota dei passaggi in un documento separato.
 
@@ -49,7 +49,7 @@ L'[interfaccia della riga di comando di Azure](/cli/azure/?view=azure-cli-latest
 
 In sostituzione dell'interfaccia della riga di comando di Azure, è anche possibile usare [Azure PowerShell](/powershell/), anche se gli sviluppatori di Python siano più a proprio agio con i comandi tipo Linux dell'interfaccia della riga di comando di Azure.
 
-In sostituzione dell'interfaccia della riga di comando locale o di PowerShell, è possibile usare Azure Cloud Shell direttamente tramite [https://shell.azure.com/](https://shell.azure.com/). Dal momento che Cloud Shell non è un ambiente locale, però, è più adatto per le operazioni una tantum che per l'automazione.
+In sostituzione dell'interfaccia della riga di comando locale o di PowerShell, è possibile usare Azure Cloud Shell direttamente tramite [https://shell.azure.com/](https://shell.azure.com/). È una soluzione pratica in quanto questo servizio viene autenticato automaticamente con Azure all'apertura e offre le stesse funzionalità del portale di Azure. Tuttavia, dal momento che Cloud Shell non è un ambiente locale, è più adatto per operazioni singolari per le quali si userebbe il portale piuttosto che l'automazione tramite script.
 
 ## <a name="azure-rest-api-and-azure-libraries"></a>API REST di Azure e librerie di Azure
 
@@ -71,13 +71,13 @@ Per altre informazioni, vedere le [Scalabilità automatica](/azure/architecture/
 
 Nel modello di risorse di Azure è possibile immaginare che, nel corso del tempo, si effettuerà il provisioning di molte risorse diverse in numerosi servizi di Azure per applicazioni diverse. È possibile organizzare queste risorse in tre livelli di gerarchia disponibili:
 
-1. **Sottoscrizioni**: ogni sottoscrizione di Azure prevede un proprio account di fatturazione e spesso rappresenta un team o un reparto distinto all'interno di un'organizzazione. In generale, si effettua il provisioning di tutte le risorse necessarie per una determinata applicazione all'interno della stessa sottoscrizione, in modo che possano trarre vantaggio da funzionalità quali l'autenticazione condivisa. Poiché, tuttavia, è possibile accedere a tutte le risorse tramite URL pubblici e i token di autorizzazione necessari, è certamente possibile distribuire le risorse tra più sottoscrizioni.
+1. **Sottoscrizioni**: ogni sottoscrizione di Azure ha il proprio account di fatturazione e spesso rappresenta un team o un reparto distinto all'interno di un'organizzazione. In generale, si effettua il provisioning di tutte le risorse necessarie per una determinata applicazione all'interno della stessa sottoscrizione, in modo che possano trarre vantaggio da funzionalità quali l'autenticazione condivisa. Poiché, tuttavia, è possibile accedere a tutte le risorse tramite URL pubblici e i token di autorizzazione necessari, è certamente possibile distribuire le risorse tra più sottoscrizioni.
 
-1. **Gruppi di risorse**: all'interno di una sottoscrizione, i gruppi di risorse costituiscono i contenitori per altre risorse, che è quindi possibile gestire *come* gruppo. Per questo motivo, un gruppo di risorse è in genere correlato a un progetto specifico. Quando si effettua il provisioning di una risorsa, è di fatto necessario specificare il gruppo a cui appartiene. Il primo passaggio con un nuovo progetto consiste in genere nel creare un gruppo di risorse appropriato. Eliminando il gruppo di risorse, si deallocano tutte le risorse contenute nel gruppo invece di doverle eliminare singolarmente. La mancata organizzazione dei gruppi di risorse può causare non pochi problemi in seguito quando non si riesce a ricordare il progetto a cui appartiene una risorsa.
+1. **Gruppi di risorse**: all'interno di una sottoscrizione, i gruppi di risorse costituiscono i contenitori per altre risorse, che possono quindi essere gestite come gruppo. Per questo motivo, un gruppo di risorse è in genere correlato a un progetto specifico. Di fatto, quando si effettua il provisioning di una risorsa, è necessario specificare il gruppo a cui appartiene. Il primo passaggio con un nuovo progetto consiste in genere nel creare un gruppo di risorse appropriato. Eliminando il gruppo di risorse, si deallocano tutte le risorse contenute nel gruppo invece di doverle eliminare singolarmente. La mancata organizzazione dei gruppi di risorse può causare non pochi problemi in seguito quando non si riesce a ricordare il progetto a cui appartiene una risorsa.
 
 1. **Assegnazione di nomi alle risorse**: all'interno di un gruppo di risorse, è possibile usare qualsiasi strategia di denominazione per esprimere aspetti in comune o relazioni tra le risorse. Poiché il nome viene spesso usato nell'URL della risorsa, potrebbero essere previste limitazioni in merito ai caratteri che è possibile usare. Con alcuni nomi, ad esempio, sono consentiti solo lettere e numeri, mentre con altri anche trattini e caratteri di sottolineatura.
 
-Durante l'uso di Azure, si svilupperanno preferenze personali per l'organizzazione delle risorse e convenzioni specifiche per l'assegnazione dei nomi a sottoscrizioni, gruppi di risorse e singoli gruppi di risorse.
+Durante l'uso di Azure, si svilupperanno preferenze personali per l'organizzazione delle risorse e convenzioni specifiche per l'assegnazione dei nomi a sottoscrizioni, gruppi di risorse e singole risorse.
 
 ### <a name="regions-and-geographies"></a>Aree e aree geografiche
 

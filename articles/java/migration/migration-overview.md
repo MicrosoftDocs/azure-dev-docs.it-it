@@ -5,12 +5,12 @@ author: yevster
 ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 1/20/2020
-ms.openlocfilehash: bbc7dd44e975fd47b52df41baa1ec526ac1908f8
-ms.sourcegitcommit: a9b9157bb3a802ecfe3699854788d010a3f08d7e
+ms.openlocfilehash: 51babfacd133ed0ba0d9b5bc728c4373e137022c
+ms.sourcegitcommit: 81577378a4c570ced1e9c6765f4a9eee8453c889
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84202830"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84507467"
 ---
 # <a name="migrate-java-applications-to-azure"></a>Eseguire la migrazione di applicazioni Java ad Azure
 
@@ -78,7 +78,7 @@ Le sezioni seguenti illustrano quali destinazioni del servizio soddisfano i requ
 
 Usare la griglia seguente per identificare possibili destinazioni per un tipo di applicazione. Come si può notare, il servizio Azure Kubernetes e le macchine virtuali supportano tutti i tipi di applicazioni, ma richiedono al team di assumersi più responsabilità, come illustrato nella sezione successiva.
 
-|   |App<br>Service<br>Java SE|App<br>Service<br>Tomcat|Azure<br>Spring<br>Cloud|Servizio Azure Kubernetes|Macchine virtuali|
+|   |App<br>Service<br>Java SE|App<br>Service<br>Tomcat|Azure<br>Spring<br>Cloud|Servizio Azure Kubernetes|Macchine<br>virtuali|
 |---|---|---|---|---|---|---|
 | Applicazioni Spring Boot/JAR                                    |&#x2714;|        |&#x2714;|&#x2714;|&#x2714;|
 | Spring Cloud/microservizi                                      |        |        |&#x2714;|&#x2714;|&#x2714;|
@@ -100,7 +100,7 @@ Il team è responsabile in maniera continuativa delle attività indicate con "&#
 > [!NOTE]
 > Questo non è un elenco completo di responsabilità.
 
-|                                                                       | Servizio app | Azure Spring Cloud | Servizio Azure Kubernetes | Macchine virtuali |
+|                                                                       | App<br>Service | Azure<br>Spring<br>Cloud | Servizio Azure Kubernetes | Macchine<br>virtuali |
 |---|---|---|---|---|
 | Aggiornamento delle librerie<br>(compresa la correzione delle vulnerabilità)                 | &#x1F449;   | &#x1F449;   | &#x1F449;   | &#x1F449; |
 | Aggiornamento del server applicazioni<br>(compresa la correzione delle vulnerabilità)    | ![Azure][1] | ![Azure][1] | &#x1F449;   | &#x1F449; |
@@ -140,9 +140,9 @@ Per eseguire la migrazione di un'app Web in Tomcat ad Azure Spring Cloud, conver
 
 |Destinazione&nbsp;→<br><br>Tipo di&nbsp;applicazione&nbsp;↓|App<br>Service<br>Java SE|App<br>Service<br>Tomcat|Azure<br>Spring<br>Cloud|Servizio Azure Kubernetes|Macchine virtuali|
 |---|---|---|---|---|---|---|
-| Spring Boot/<br>Applicazioni JAR | [indicazioni][5] | indicazioni<br>pianificato | indicazioni<br>pianificato | [indicazioni][14]      | indicazioni<br>pianificato |
-| Spring Cloud/<br>microservizi   | N/D           | N/D                 | [indicazioni][15]      | indicazioni<br>pianificato | indicazioni<br>pianificato |
-| Applicazioni Web<br>su Tomcat     | N/D           | [indicazioni][2]       | N/D                 | [indicazioni][3]       | indicazioni<br>pianificato |
+| Spring Boot/<br>Applicazioni JAR | [indicazioni][5] | indicazioni<br>pianificato | [indicazioni][16] | [indicazioni][14]      | indicazioni<br>pianificato |
+| Spring Cloud/<br>microservizi   | N/D           | N/D                 | [indicazioni][15] | indicazioni<br>pianificato | indicazioni<br>pianificato |
+| Applicazioni Web<br>su Tomcat     | N/D           | [indicazioni][2]       | N/D            | [indicazioni][3]       | indicazioni<br>pianificato |
 
 **Applicazioni Java EE**
 
@@ -171,3 +171,4 @@ Usare le righe seguenti per trovare il tipo di applicazione Java EE in esecuzion
 [13]: https://azure.microsoft.com/global-infrastructure/services/?products=virtual-machines
 [14]: migrate-spring-boot-to-azure-kubernetes-service.md
 [15]: migrate-spring-cloud-to-azure-spring-cloud.md
+[16]: migrate-spring-boot-to-azure-spring-cloud.md

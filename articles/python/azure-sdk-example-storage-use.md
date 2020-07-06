@@ -1,14 +1,14 @@
 ---
-title: Effettuare il provisioning e usare Archiviazione di Azure con Azure SDK per Python
+title: Usare Archiviazione di Azure con Azure SDK per Python
 description: Usare le librerie di Azure SDK per Python per accedere a un contenitore BLOB di cui è già stato effettuato il provisioning in un account di archiviazione di Azure e quindi caricarvi un file.
-ms.date: 05/29/2020
+ms.date: 06/15/2020
 ms.topic: conceptual
-ms.openlocfilehash: 50d9b781e0ec3a1a9f752a9ec193720d99b88f4d
-ms.sourcegitcommit: db56786f046a3bde1bd9b0169b4f62f0c1970899
+ms.openlocfilehash: 9015017b1e0b2839e4a3986950625fb8a498717e
+ms.sourcegitcommit: 74ff4dec3b0556201c243e8c2302555b08dd79e9
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84329659"
+ms.lasthandoff: 06/16/2020
+ms.locfileid: "84812670"
 ---
 # <a name="example-use-the-azure-libraries-with-azure-storage"></a>Esempio: Usare le librerie di Azure con Archiviazione di Azure
 
@@ -47,11 +47,11 @@ Hello there, Azure Storage. I'm a friendly file ready to be stored in a blob.
 
 ## <a name="4-use-blob-storage-from-app-code"></a>4: Usare l'archiviazione BLOB dal codice dell'app
 
-Le sezioni seguenti (4a e 4b) dimostrano due metodi per accedere al contenitore BLOB.
+Le sezioni seguenti (4a e 4b) illustrano due metodi per accedere al contenitore BLOB di cui è stato effettuato il provisioning in [Esempio: Effettuare il provisioning di Archiviazione di Azure](azure-sdk-example-storage.md).
 
-Il [primo metodo (4a)](#4a-use-blob-storage-with-authentication) autentica l'app con `DefaultAzureCredential`, come descritto in [Come autenticare le app Python](azure-sdk-authenticate.md#authenticate-with-defaultazurecredential). Con questo metodo è necessario prima di tutto assegnare le autorizzazioni appropriate all'identità dell'app, che è la procedura consigliata.
+Il [primo metodo (sezione 4a di seguito)](#4a-use-blob-storage-with-authentication) autentica l'app con `DefaultAzureCredential`, come descritto in [Come autenticare le app Python](azure-sdk-authenticate.md#authenticate-with-defaultazurecredential). Con questo metodo è necessario prima di tutto assegnare le autorizzazioni appropriate all'identità dell'app, che è la procedura consigliata.
 
-Il [secondo metodo (4b)](#4b-use-blob-storage-with-a-connection-string) usa una stringa di connessione per accedere direttamente all'account di archiviazione. Anche se questo metodo sembra più semplice, presenta due svantaggi significativi:
+Il [secondo metodo (sezione 4b di seguito)](#4b-use-blob-storage-with-a-connection-string) usa una stringa di connessione per accedere direttamente all'account di archiviazione. Anche se questo metodo sembra più semplice, presenta due svantaggi significativi:
 
 - Una stringa di connessione autentica intrinsecamente l'agente di connessione con l'*account* di archiviazione invece che con le singole risorse al suo interno. Di conseguenza, una stringa di connessione fornisce autorizzazioni più ampie di quelle che potrebbero essere necessarie.
 
@@ -116,7 +116,7 @@ Per questi motivi, per il codice di produzione è consigliabile usare il metodo 
 
     Poiché l'entità servizio locale in uso non ha l'autorizzazione per accedere al contenitore BLOB, viene visualizzato un messaggio di errore analogo al seguente: "L'operazione richiesta non è consentita con questa autorizzazione".
 
-1. Per concedere le autorizzazioni per il contenitore all'entità servizio, usare il comando [az role assignment create](/cli/azure/role/assignment?view=azure-cli-latest#az-role-assignment-create) dell'interfaccia della riga di comando di Azure (è molto lungo):
+1. Concedere le autorizzazioni per il contenitore all'entità servizio usando il comando [az role assignment create](/cli/azure/role/assignment?view=azure-cli-latest#az-role-assignment-create) dell'interfaccia della riga di comando di Azure (è molto lungo):
 
     # <a name="cmd"></a>[cmd](#tab/cmd)
 
@@ -197,7 +197,7 @@ Per eliminare un gruppo di risorse dal codice, è anche possibile usare il metod
 ## <a name="see-also"></a>Vedere anche
 
 - [Esempio: Effettuare il provisioning di un gruppo di risorse](azure-sdk-example-resource-group.md)
-- [Esempio: Effettuare il provisioning di un app Web e distribuire il codice](azure-sdk-example-web-app.md)
+- [Esempio: Effettuare il provisioning di un'app Web e distribuire il codice](azure-sdk-example-web-app.md)
 - [Esempio: Effettuare il provisioning di Archiviazione di Azure](azure-sdk-example-storage.md)
-- [Esempio: Effettuare il provisioning e usare un database MySQL](azure-sdk-example-database.md)
+- [Esempio: Effettuare il provisioning ed eseguire query su un database](azure-sdk-example-database.md)
 - [Esempio: Effettuare il provisioning di una macchina virtuale](azure-sdk-example-virtual-machines.md)

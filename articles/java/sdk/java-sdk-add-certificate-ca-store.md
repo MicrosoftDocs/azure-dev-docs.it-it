@@ -7,12 +7,12 @@ ms.service: multiple
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 11/13/2018
-ms.openlocfilehash: 5377aed7ee541f1954a95f992ffee03a7cb569a7
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: 0dc5459ab4898deecebbc199e62f5dccc8ee6f7d
+ms.sourcegitcommit: 553da4e9aa988e5bb823364244ea81961cee5bc7
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81672807"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85790739"
 ---
 # <a name="adding-a-root-certificate-to-the-java-ca-certificates-store"></a>Aggiunta di un certificato radice all'archivio certificati CA Java
 
@@ -44,7 +44,7 @@ Il certificato Baltimore potrebbe essere già installato nell'archivio cacerts. 
 
 ## <a name="to-add-a-root-certificate-to-the-cacerts-store"></a>Per aggiungere un certificato radice all'archivio cacerts
 
-1. Scaricare il certificato radice Baltimore CyberTrust da <https://cacert.omniroot.com/bc2025.crt> e salvarlo in un file locale con estensione *cer* nella cartella *jdk\jre\lib\security*. Per questo esempio, si supponga di aver scaricato il certificato radice Baltimore CyberTrust con il nome *bc2025.cer*.
+1. Scaricare il certificato radice Baltimore CyberTrust da <https://cacert.omniroot.com/bc2025.crt> e salvarlo in un file locale con estensione *crt* nella cartella *jdk\jre\lib\security*. Per questo esempio, si suppone che sia stato scaricato il certificato radice Baltimore CyberTrust con il nome *bc2025.crt*.
 
    > [!NOTE]
    > Il certificato radice Baltimore CyberTrust ha il numero di serie `02:00:00:b9` e l'identificazione personale SHA1 `d4:de:20:d0:5e:66:fc:53:fe:1a:50:88:2c:78:db:28:52:ca:e4:74`.
@@ -52,7 +52,7 @@ Il certificato Baltimore potrebbe essere già installato nell'archivio cacerts. 
 2. Importare il certificato nell'archivio cacerts con il comando seguente:
 
    ```shell
-   keytool -keystore cacerts -importcert -alias bc2025ca -file bc2025.cer
+   keytool -keystore cacerts -importcert -alias bc2025ca -file bc2025.crt
    ```
 
    Dove:

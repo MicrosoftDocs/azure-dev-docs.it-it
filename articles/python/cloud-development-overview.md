@@ -3,20 +3,20 @@ title: Sviluppo cloud con Azure - Che cos'è Azure?
 description: Panoramica dello sviluppo di applicazioni cloud in Microsoft Azure, a partire dalla correlazione tra data center, servizi e risorse.
 ms.date: 05/12/2020
 ms.topic: conceptual
-ms.openlocfilehash: 815da765aaed1e8364c37f621f17f279212bf77f
-ms.sourcegitcommit: 2cdf597e5368a870b0c51b598add91c129f4e0e2
+ms.openlocfilehash: 25b3e45dbc885dea4dd75a60ea0b7866f28e1710
+ms.sourcegitcommit: 0d492c9cc9b5295285ab75da55e5ab0577576287
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83404954"
+ms.lasthandoff: 06/25/2020
+ms.locfileid: "85370712"
 ---
 # <a name="cloud-development-on-azure"></a>Sviluppo cloud in Azure
 
-Se si è uno sviluppatore Python e si intende sviluppare applicazioni cloud per Microsoft Azure, questa serie di tre articoli consentiranno di orientarsi tra i concetti di base correlati allo sviluppo cloud in Azure per prepararsi a una carriera lunga e produttiva.
+Per gli sviluppatori Python che vogliono sviluppare applicazioni cloud per Microsoft Azure, questa serie di tre articoli consentiranno di orientarsi tra i concetti di base correlati allo sviluppo cloud in Azure per prepararsi a una carriera lunga e produttiva.
 
-## <a name="what-is-azure-data-centers-services-and-resources"></a>Che cos'è Azure? Data center, servizi e risorse
+## <a name="what-is-azure-data-centers-services-and-resources"></a>Cos'è Azure? Data center, servizi e risorse
 
-Satya Nadella, CEO di Microsoft, si riferisce spesso ad Azure come "computer del mondo". Un computer, come è noto, è un insieme di componenti hardware gestito da un sistema operativo, che offre una piattaforma su cui è possibile creare software per consentire agli utenti di applicare la potenza di calcolo del sistema a un numero qualsiasi di attività. È per questo motivo che si usa il termine "applicazione" per descrivere tale software.
+Satya Nadella, CEO di Microsoft, si riferisce spesso ad Azure come "computer del mondo". Un computer, come è noto, è un insieme di componenti hardware gestiti da un sistema operativo, che offre una piattaforma su cui è possibile creare software per consentire agli utenti di applicare la potenza di calcolo del sistema a un numero qualsiasi di attività. È per questo motivo che si usa il termine "applicazione" per descrivere tale software.
 
 Nel caso di Azure l'hardware del computer non è costituito da un singolo computer, ma da un enorme pool di computer server virtualizzati contenuti in [decine di data center di grandi dimensioni in tutto il mondo](https://azure.microsoft.com/global-infrastructure/regions/). Il "sistema operativo" di Azure è quindi costituito da *servizi* che allocano e deallocano in modo dinamico parti diverse del pool di risorse in base alle esigenze delle applicazioni. Ogni allocazione, sia essa potenza di calcolo (memoria e core CPU), spazio di archiviazione, database, reti e così via, corrisponde a una *risorsa*. A ogni risorsa discreta vengono quindi assegnati un *identificatore oggetto* univoco (GUID) e un URL univoco.
 

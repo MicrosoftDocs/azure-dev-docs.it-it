@@ -1,20 +1,28 @@
 ---
 title: Flusso di sviluppo di Azure
 description: Panoramica del ciclo di sviluppo per il cloud in Azure, che include provisioning, scrittura di codice, test, distribuzione e gestione.
-ms.date: 05/12/2020
+ms.date: 06/04/2020
 ms.topic: conceptual
-ms.openlocfilehash: d958659074a965b28d9898783f7810572e12248f
-ms.sourcegitcommit: 79890367158a9931909f11da1c894daa11188cba
+ms.openlocfilehash: 644cafc60619a1920e256c4c4f32f1b3308caa83
+ms.sourcegitcommit: 499f7275446f006fa43c4eff3b1f0d001e9a98d9
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84146169"
+ms.lasthandoff: 06/05/2020
+ms.locfileid: "84453742"
 ---
 # <a name="the-azure-development-flow-provision-code-test-deploy-and-manage"></a>Flusso di sviluppo di Azure: effettuare il provisioning, scrivere codice, testare, distribuire e gestire
 
 [Articolo precedente: provisioning, accesso e gestione delle risorse](cloud-development-provisioning.md)
 
 Ora che si conosce il modello di servizi e risorse di Azure, è possibile capire il flusso complessivo dello sviluppo di applicazioni cloud con Azure: **provisioning**, **scrittura di codice**, **test**, **distribuzione**e **gestione**.
+
+| Passaggio | Strumenti principali | attività |
+| --- | --- | --- |
+| Provisioning | Interfaccia della riga di comando di Azure, portale di Azure, Cloud Shell, script Python con librerie di gestione di Azure | Provisioning di gruppi di risorse; provisioning di risorse specifiche in tali gruppi; configurazione delle risorse affinché siano pronte per l'uso dal codice dell'app e/o pronte per ricevere il codice Python nelle distribuzioni. |
+| Codice | Editor di codice (ad esempio Visual Studio Code), librerie di Azure, documentazione di riferimento | Scrittura di codice Python usando le librerie client di Azure per interagire con le risorse di cui è stato effettuato il provisioning. |
+| Test | Runtime di Python, debugger | Esecuzione del codice Python in locale sulle risorse cloud attive (in genere risorse di sviluppo o test anziché risorse di produzione). Il codice stesso non è ancora ospitato in Azure per consentire l'esecuzione rapida di debug e iterazione. |
+| Distribuire | Interfaccia della riga di comando di Azure, GitHub, DevOps | Dopo che il codice è stato testato localmente, viene distribuito in un servizio di hosting di Azure appropriato, in cui il codice stesso può essere eseguito nel cloud. Il codice distribuito viene in genere eseguito sulle risorse di staging o di produzione. |
+| Gestione | Interfaccia della riga di comando di Azure, portale di Azure, script Python, Monitoraggio di Azure | Monitoraggio delle prestazioni e della velocità di risposta delle app, modifiche nell'ambiente di produzione, migrazione dei miglioramenti nell'ambiente di sviluppo per il ciclo di provisioning e sviluppo successivo. |
 
 ## <a name="step-1-provision-and-configure-resources"></a>Passaggio 1: Effettuare il provisioning e configurare le risorse
 
@@ -24,7 +32,7 @@ Il provisioning inizia con la creazione di un gruppo di risorse in un'area di Az
 
 All'interno di tale gruppo di risorse, è quindi possibile effettuare il provisioning e la configurazione delle singole risorse necessarie, sempre usando il portale, l'interfaccia della riga di comando o le librerie di Azure. La configurazione include l'impostazione di criteri di accesso che controllano quali identità (entità servizio e/o ID applicazione) sono in grado di accedere a tali risorse.
 
-Per la maggior parte degli scenari di sviluppo, è probabile che si creino script di provisioning con l'interfaccia della riga di comando di Azure e/o con codice Python usando le librerie di Azure. Tali script descrivono la totalità delle esigenze di risorse dell'applicazione e consentono di ricreare facilmente tali risorse all'interno di ambienti di sviluppo, test e produzione diversi, invece di eseguire manualmente molti passaggi ripetuti nel portale di Azure. Gli script facilitano inoltre il provisioning di un ambiente in un'area diversa o l'uso di gruppi di risorse diversi. È anche possibile gestire questi script nei repository del controllo del codice sorgente, in modo da avere il controllo completo e la cronologia delle modifiche.
+Per la maggior parte degli scenari relativi alle applicazioni, è probabile che si creino script di provisioning con l'interfaccia della riga di comando di Azure e/o con codice Python usando le librerie di Azure. Tali script descrivono la totalità delle esigenze dell'applicazione in termini di risorse. Uno script consente di ricreare facilmente lo stesso set di risorse all'interno di ambienti di sviluppo, test, staging e produzione diversi, anziché eseguire manualmente numerosi passaggi ripetuti nel portale di Azure. Gli script facilitano inoltre il provisioning di un ambiente in un'area diversa o l'uso di gruppi di risorse diversi. È anche possibile gestire questi script nei repository del controllo del codice sorgente, in modo da avere il controllo completo e la cronologia delle modifiche.
 
 ## <a name="step-2-write-your-app-code-to-use-resources"></a>Passaggio 2: Scrivere il codice dell'app per usare le risorse
 
@@ -32,7 +40,9 @@ Una volta effettuato il provisioning delle risorse necessarie per l'applicazione
 
 Nel passaggio di provisioning, ad esempio, è possibile che sia stato creato un account di archiviazione di Azure con un contenitore BLOB al suo interno e che siano stati impostati i criteri di accesso per l'applicazione in tale contenitore. Dal codice è ora possibile eseguire l'autenticazione con l'account di archiviazione e quindi creare, aggiornare o eliminare BLOB all'interno del contenitore. Questo processo è illustrato in [Esempio - Usare Archiviazione di Azure](azure-sdk-example-storage.md). Analogamente, è possibile che sia stato effettuato il provisioning di un database con uno schema e le autorizzazioni appropriate, per cui il codice dell'applicazione può connettersi al database ed eseguire le consuete operazioni di creazione, lettura, aggiornamento ed eliminazione.
 
-Gli sviluppatori Python possono in genere scrivere il codice dell'applicazione in Python usando le librerie di Azure per Python. Detto questo, qualsiasi parte indipendente di un'applicazione cloud può essere scritta in qualsiasi linguaggio supportato. Se si lavora in un team con varie competenze a livello di linguaggio, ad esempio, è possibile che alcune parti dell'applicazione vengano scritte in Python, altre in JavaScript, altre in Java e altre ancora in C#.
+Il codice dell'app usa in genere le variabili di ambiente per identificare i nomi e gli URL delle risorse da usare. Le variabili di ambiente consentono di passare facilmente tra gli ambienti cloud (sviluppo, test, staging e produzione) senza apportare modifiche al codice.
+
+Gli sviluppatori Python scrivono in genere il codice dell'applicazione in Python usando le librerie di Azure per Python. Detto questo, qualsiasi parte indipendente di un'applicazione cloud può essere scritta in qualsiasi linguaggio supportato. Se si lavora in un team con varie competenze a livello di linguaggio, ad esempio, è possibile che alcune parti dell'applicazione vengano scritte in Python, altre in JavaScript, altre in Java e altre ancora in C#.
 
 Si noti che il codice dell'applicazione può usare le librerie di Azure per le operazioni di provisioning e gestione, se necessario. Gli script di provisioning, analogamente, possono usare le librerie per inizializzare le risorse con dati specifici o eseguire attività di manutenzione sulle risorse cloud anche quando tali script vengono eseguiti localmente.
 
@@ -42,7 +52,7 @@ Gli sviluppatori in genere preferiscono testare il codice dell'app nelle worksta
 
 Eseguendo il codice localmente, è anche possibile sfruttare appieno le funzionalità di debug offerte da strumenti come Visual Studio Code e gestire il codice in un repository del controllo del codice sorgente.
 
-Non è necessario modificare il codice per i test locali: Azure include il supporto completo per lo sviluppo e il debug in locale con lo stesso codice distribuito nel cloud. Le variabili di ambiente sono la chiave: nel cloud il codice può accedere alle impostazioni delle risorse di hosting come variabili di ambiente. Creando queste stesse variabili di ambiente in locale, lo stesso codice viene eseguito senza modifiche. Questo modello è valido per le credenziali di autenticazione, gli URL delle risorse, le stringhe di connessione e un numero qualsiasi di altre impostazioni, semplificando l'uso delle risorse in un ambiente di sviluppo quando si esegue il codice in locale e quello delle risorse di produzione una volta distribuito il codice nel cloud.
+Non è necessario modificare il codice per i test locali: Azure include il supporto completo per lo sviluppo e il debug in locale con lo stesso codice distribuito nel cloud. Le variabili di ambiente sono di nuovo la chiave: nel cloud il codice può accedere alle impostazioni delle risorse di hosting come variabili di ambiente. Creando queste stesse variabili di ambiente in locale, lo stesso codice viene eseguito senza modifiche. Questo modello è valido per le credenziali di autenticazione, gli URL delle risorse, le stringhe di connessione e un numero qualsiasi di altre impostazioni, semplificando l'uso delle risorse in un ambiente di sviluppo quando si esegue il codice in locale e quello delle risorse di produzione una volta distribuito il codice nel cloud.
 
 ## <a name="step-4-deploy-your-app-code-to-azure"></a>Passaggio 4: Distribuire il codice dell'app in Azure
 
@@ -62,7 +72,7 @@ Il monitoraggio offre informazioni dettagliate su come ristrutturare eventualmen
 
 A questo punto si ha familiarità con la struttura di base di Azure e con il flusso di sviluppo generale: effettuare il provisioning di risorse, scrivere e testare il codice, distribuire il codice in Azure e quindi monitorare e gestire tali risorse.
 
-Il passaggio successivo consiste nel fare in modo che la workstation sia completamente configurata per funzionare con tale flusso, dopodiché si è pronti per iniziare a usare le librerie di Azure.
+Il passaggio successivo prevede l'acquisizione di familiarità con le librerie di Azure per Python, che verranno usate in molte parti del flusso.
 
 > [!div class="nextstepaction"]
-> [Configurare l'ambiente di sviluppo locale >>>](configure-local-development-environment.md)
+> [Informazioni su come usare le librerie di Azure per Python >>>](azure-sdk-overview.md)

@@ -1,19 +1,19 @@
 ---
-title: Esaminare i dati con Java Flight Recorder e Mission Control
-description: Istruzioni su come usare Java Flight Recorder e Mission Control per raccogliere e rivedere i dati delle app.
+title: Esaminare i dati con Zulu Flight Recorder e Mission Control
+description: Istruzioni per l'uso di Zulu Flight Recorder e Mission Control per raccogliere ed esaminare i dati delle app.
 ms.date: 04/09/2019
 ms.topic: conceptual
 ms.custom: seo-java-july2019, seo-java-august2019, seo-java-september2019
-ms.openlocfilehash: 23effea162bb4f39ca7ff9477695e21e6faeafdb
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: afd95e7f39fb9abdfe2261c8ef0f5ac961347ffb
+ms.sourcegitcommit: bbfa6e0dfb3c8e66e5f47b080590105787a6e74b
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81670867"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85418199"
 ---
-# <a name="monitor-and-manage-java-workloads-with-java-flight-recorder-jfr-and-zulu-mission-control"></a>Monitorare e gestire i carichi di lavoro Java con Java Flight Recorder (JFR) e Zulu Mission Control
+# <a name="monitor-and-manage-java-workloads-with-zulu-flight-recorder-and-zulu-mission-control"></a>Monitorare e gestire i carichi di lavoro Java con Zulu Flight Recorder e Zulu Mission Control
 
-Questo articolo illustra come monitorare e gestire i carichi di lavoro Java con JFR (Java Flight Recorder) e Zulu Mission Control.
+Questo articolo illustra come monitorare e gestire i carichi di lavoro Java con Zulu Flight Recorder e Zulu Mission Control.
 
 Zulu Mission Control è una build completamente testata di JDK Mission Control. La soluzione Mission Control è stata resa open source da Oracle nel 2018 e viene gestita come progetto nella famiglia OpenJDK. Insieme a Flight Recorder, Mission Control offre funzionalità interattive di monitoraggio e gestione con sovraccarico ridotto per i carichi di lavoro Java.
 

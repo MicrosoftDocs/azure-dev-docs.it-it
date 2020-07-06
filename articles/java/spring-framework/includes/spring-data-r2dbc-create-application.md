@@ -2,14 +2,14 @@
 author: judubois
 ms.date: 05/06/2020
 ms.author: judubois
-ms.openlocfilehash: d4b9becdce2b78e928b97b7d980024eac5871df2
-ms.sourcegitcommit: a631b36ec1277ee9397a860c597ffdd5495d88e7
+ms.openlocfilehash: e1bd45413368abe253ff4ac7733bbdcd3d0a4cc3
+ms.sourcegitcommit: 81577378a4c570ced1e9c6765f4a9eee8453c889
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83369817"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84507506"
 ---
-Creare una nuova classe Java `Todo` accanto alla classe `DemoApplication`:
+Creare una nuova classe Java `Todo` accanto alla classe `DemoApplication` usando il codice seguente:
 
 ```java
 package com.example.demo;
@@ -72,7 +72,7 @@ public class Todo {
 
 Questa classe è un modello di dominio mappato alla tabella `todo` creata in precedenza.
 
-Per gestire tale classe, è necessario un repository. Definire una nuova interfaccia `TodoRepository` nello stesso pacchetto:
+Per gestire tale classe, è necessario un repository. Definire una nuova interfaccia `TodoRepository` nello stesso pacchetto usando il codice seguente:
 
 ```java
 package com.example.demo;
@@ -118,7 +118,7 @@ public class TodoController {
 }
 ```
 
-Infine, arrestare l'applicazione e riavviarla:
+Infine, arrestare l'applicazione e quindi riavviarla usando il comando seguente:
 
 ```bash
 ./mvnw spring-boot:run
@@ -128,28 +128,28 @@ Infine, arrestare l'applicazione e riavviarla:
 
 Per testare l'applicazione, è possibile usare cURL.
 
-Creare prima di tutto un elemento "todo" nel database:
+Creare prima di tutto un elemento "todo" nel database con il comando seguente:
 
 ```bash
-curl  --header "Content-Type: application/json" \
-          --request POST \
-          --data '{"description":"configuration","details":"congratulations, you have set up R2DBC correctly!","done": "true"}' \
-          http://127.0.0.1:8080
+curl --header "Content-Type: application/json" \
+    --request POST \
+    --data '{"description":"configuration","details":"congratulations, you have set up R2DBC correctly!","done": "true"}' \
+    http://127.0.0.1:8080
 ```
 
-Questo comando restituirà l'elemento creato:
+Questo comando restituirà l'elemento creato, come illustrato qui:
 
 ```json
 {"id":1,"description":"configuration","details":"congratulations, you have set up R2DBC correctly!","done":true}
 ```
 
-Recuperare quindi i dati usando una nuova richiesta cURL:
+Recuperare quindi i dati usando una nuova richiesta cURL con il comando seguente:
 
 ```bash
 curl http://127.0.0.1:8080
 ```
 
-Questo comando restituirà l'elenco di elementi "todo", incluso quello creato:
+Questo comando restituirà l'elenco di elementi "todo", incluso quello creato, come illustrato qui:
 
 ```json
 [{"id":1,"description":"configuration","details":"congratulations, you have set up R2DBC correctly!","done":true}]
