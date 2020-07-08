@@ -11,12 +11,12 @@ metadata:
   author: codemillmatt
   ms.author: masoucou
   ms.date: 06/25/2020
-  ms.openlocfilehash: 6c7a1c2502ad8b1d24b074d291bb909c500a0727
-  ms.sourcegitcommit: 553da4e9aa988e5bb823364244ea81961cee5bc7
+  ms.openlocfilehash: 5d0d3c3aa4a1cca11ae54d1346e80aa790dd64b3
+  ms.sourcegitcommit: e9accb9d82b5c633dffffd148974911398f2d096
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 07/01/2020
-  ms.locfileid: "85790630"
+  ms.lasthandoff: 07/06/2020
+  ms.locfileid: "86018646"
 landingContent:
 - title: Introduzione all'uso dei dispositivi mobili in Azure
   linkLists:
@@ -84,10 +84,10 @@ landingContent:
       url: https://docs.microsoft.com/azure/notification-hubs/create-notification-hub-portal
   - linkListType: tutorial
     links:
+    - text: Inviare notifiche push ad app Xamarin.Forms con ASP.NET Core e Hub di notifica di Azure
+      url: https://docs.microsoft.com/azure/notification-hubs/notification-hubs-backend-service-xamarin-forms
     - text: Inviare notifiche push a dispositivi Android
       url: https://docs.microsoft.com/azure/notification-hubs/notification-hubs-android-push-notification-google-fcm-get-started
-    - text: Inviare notifiche a dispositivi specifici con Hub di notifica e Google Firebase Cloud Messaging
-      url: https://docs.microsoft.com/azure/notification-hubs/push-notifications-android-specific-devices-firebase-cloud-messaging
     - text: Eseguire il push di contenuti multimediali nei dispositivi
       url: https://docs.microsoft.com/azure/notification-hubs/notification-hubs-aspnet-backend-ios-apple-push-notification-service-apns-rich
 - title: Autenticare gli utenti
