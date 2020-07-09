@@ -6,12 +6,12 @@ ms.date: 02/01/2018
 ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
-ms.openlocfilehash: 762ac74b73a274e792ed19ac8ca7c2b68d98e778
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: 051704a83e0535a6754c3c4dbd82eb8dfcf8e3c4
+ms.sourcegitcommit: 7be67fb768fb5e19f7de573068cc1376b3d90d1f
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82105072"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85906430"
 ---
 # <a name="manage-storage-accounts-by-using-the-azure-explorer-for-intellij"></a>Gestire gli account di archiviazione usando Azure Explorer per IntelliJ
 
@@ -35,47 +35,23 @@ Per creare un account di archiviazione con Azure Explorer, eseguire queste opera
 
    ![Finestra di dialogo Crea un nuovo account di archiviazione][CS02]
 
-   * **Nome**: specifica il nome per il nuovo account di archiviazione.
+   * **Name**: specifica il nome del nuovo account di archiviazione.
 
-   * **Tipologia account**: specifica il tipo di account di archiviazione da creare, ad esempio "archiviazione BLOB". Per altre informazioni, vedere [Informazioni sugli account di archiviazione di Azure]. 
+   * **Account kind** (Tipologia account): specifica il tipo di account di archiviazione da creare, ad esempio "Blob storage" (Archiviazione BLOB). Per altre informazioni, vedere [Informazioni sugli account di archiviazione di Azure]. 
 
-   * **Prestazioni**: specifica l'account di archiviazione offerto da usare dall'autore selezionato, ad esempio "Premium". Per altre informazioni, vedere [Obiettivi di scalabilità e prestazioni per Archiviazione di Azure]. 
+   * **Prestazioni**: specifica l'offerta di account di archiviazione dell'editore selezionato da usare, ad esempio "Premium". Per altre informazioni, vedere [Obiettivi di scalabilità e prestazioni per Archiviazione di Azure]. 
 
-   * **Replica**: specifica la replica per l'account di archiviazione di account, ad esempio "Con ridondanza della zona". Per altre informazioni, vedere [Replica di Archiviazione di Azure]. 
+   * **Replica**: specifica la replica per l'account di archiviazione, ad esempio "Zone-Redundant" (Con ridondanza della zona). Per altre informazioni, vedere [Replica di Archiviazione di Azure]. 
 
-   * **Sottoscrizione**: specifica la sottoscrizione di Azure da usare per il nuovo account di archiviazione.
+   * **Sottoscrizione** specifica la sottoscrizione di Azure da usare per il nuovo account di archiviazione.
 
-   * **Località**: specifica la località in cui verrà creato l'account di archiviazione, ad esempio "Stati Uniti occidentali".
+   * **Località**: specifica la località in cui verrà creato l'account di archiviazione, ad esempio "West US" (Stati Uniti occidentali).
 
    * **Gruppo di risorse**: specifica il gruppo di risorse per la macchina virtuale. Selezionare una delle opzioni seguenti:
-      * **Crea nuovo**: specifica che si intende creare un nuovo gruppo di risorse.
-      * **Usa esistente**: specifica che sarà possibile scegliere in un elenco i gruppi di risorse associati all'account di Azure.
+      * **Crea nuovo**: specifica che si vuole creare un nuovo gruppo di risorse.
+      * **Use existing** (Usa esistente): specifica che verrà effettuata una selezione da un elenco di gruppi di risorse associati all'account Azure.
 
 4. Dopo avere specificato tutte le opzioni precedenti, fare clic su **OK**.
-
-## <a name="create-a-storage-container-in-intellij"></a>Creare un contenitore di archiviazione in IntelliJ
-
-Per creare un contenitore di archiviazione con Azure Explorer, eseguire queste operazioni:
-
-1. Nella visualizzazione Azure Explorer fare clic con il pulsante destro del mouse sull'account di archiviazione in cui si intende creare un contenitore e quindi fare clic su **Crea contenitore BLOB**.
-
-   ![Comando Crea contenitore BLOB][CC01]
-
-2. Nella finestra di dialogo **Crea contenitore BLOB** specificare il nome per il contenitore e quindi fare clic su **OK**. Per altre informazioni sulla denominazione dei contenitori di archiviazione, vedere l'articolo relativo alla [denominazione e riferimento a contenitori, BLOB e metadati].
-
-   ![Finestra di dialogo Crea contenitore di archiviazione][CC02]
-
-## <a name="delete-a-storage-container-in-intellij"></a>Eliminare un contenitore di archiviazione in IntelliJ
-
-Per eliminare un contenitore di archiviazione con Azure Explorer, eseguire queste operazioni:
-
-1. Nella visualizzazione Azure Explorer fare clic con il pulsante destro del mouse sul contenitore di archiviazione e quindi fare clic su **Elimina**.
-
-   ![Comando Elimina contenitore di archiviazione][DC01]
-
-2. Nella finestra di conferma fare clic su **Sì**.
-
-   ![Finestra di conferma dell'eliminazione del contenitore di archiviazione][DC02]
 
 ## <a name="delete-a-storage-account-in-intellij"></a>Eliminare un account di archiviazione in IntelliJ
 
@@ -111,7 +87,7 @@ Per altre informazioni sugli account di archiviazione, sulle dimensioni e sui pr
 [Informazioni sugli account di archiviazione di Azure]: /azure/storage/storage-create-storage-account
 [Replica di Archiviazione di Azure]: /azure/storage/storage-redundancy
 [Obiettivi di scalabilità e prestazioni per Archiviazione di Azure]: /azure/storage/storage-scalability-targets
-[Denominazione e riferimento a contenitori, BLOB e metadati]: https://go.microsoft.com/fwlink/?LinkId=255555
+[Naming and referencing containers, blobs, and metadata]: https://go.microsoft.com/fwlink/?LinkId=255555
 
 [Sizes for Windows storage accounts in Azure]: /azure/virtual-machines/virtual-machines-windows-sizes (Dimensioni degli account di archiviazione Windows in Azure)
 [Sizes for Linux storage accounts in Azure]: /azure/virtual-machines/virtual-machines-linux-sizes (Dimensioni degli account di archiviazione Linux in Azure)
