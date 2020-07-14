@@ -7,12 +7,12 @@ ms.service: postgresql
 ms.tgt_pltfrm: multiple
 ms.author: judubois
 ms.topic: article
-ms.openlocfilehash: bd3208cc68b863afe2ce39e83d62d358a4baea96
-ms.sourcegitcommit: 0d492c9cc9b5295285ab75da55e5ab0577576287
+ms.openlocfilehash: 6bc835ef46a85ec3988c2d7e750447054be9e9bc
+ms.sourcegitcommit: e9accb9d82b5c633dffffd148974911398f2d096
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/25/2020
-ms.locfileid: "85370732"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "86018659"
 ---
 # <a name="use-spring-data-r2dbc-with-azure-database-for-postgresql"></a>Usare Spring Data R2DBC con Database di Azure per PostgreSQL
 
@@ -21,6 +21,10 @@ Questo argomento illustra la creazione di un'applicazione di esempio che usa [Sp
 [R2DBC](https://r2dbc.io/) introduce le API reattive nei database relazionali tradizionali. È possibile usarlo con Spring WebFlux per creare applicazioni Spring Boot completamente reattive che usano API non bloccanti. Offre una migliore scalabilità rispetto all'approccio classico di "un thread per connessione".
 
 [!INCLUDE [spring-data-prerequisites.md](includes/spring-data-prerequisites.md)]
+
+## <a name="sample-application"></a>Applicazione di esempio
+
+In questo articolo si scriverà il codice per un'applicazione di esempio. Per procedere più rapidamente, è possibile usare l'applicazione già pronta, disponibile all'indirizzo [https://github.com/Azure-Samples/quickstart-spring-data-r2dbc-postgresql](https://github.com/Azure-Samples/quickstart-spring-data-r2dbc-postgresql).
 
 [!INCLUDE [spring-data-postgresql-setup.md](includes/spring-data-postgresql-setup.md)]
 
@@ -31,7 +35,7 @@ Questo argomento illustra la creazione di un'applicazione di esempio che usa [Sp
 Per generare l'applicazione, immettere il comando seguente sulla riga di comando:
 
 ```bash
-curl https://start.spring.io/starter.tgz -d dependencies=webflux,data-r2dbc -d baseDir=azure-database-workshop -d bootVersion=2.3.0.RELEASE -d javaVersion=8 | tar -xzvf -
+curl https://start.spring.io/starter.tgz -d dependencies=webflux,data-r2dbc -d baseDir=azure-database-workshop -d bootVersion=2.3.1.RELEASE -d javaVersion=8 | tar -xzvf -
 ```
 
 ### <a name="add-the-reactive-postgresql-driver-implementation"></a>Aggiungere l'implementazione del driver PostgreSQL reattivo
