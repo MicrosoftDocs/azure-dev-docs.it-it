@@ -1,12 +1,12 @@
 ---
-ms.openlocfilehash: ae3443ca54dc37e54b9c0bc5151cf35f5220a7ea
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: 2f95eecf230db14292c6e449ab419af6f0c338c0
+ms.sourcegitcommit: c6642cae6fdb5e3025ed66fcd4ef89792c3b436a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81671657"
+ms.lasthandoff: 07/15/2020
+ms.locfileid: "86407961"
 ---
-|  |  |
+| Esempio  | Descrizione |
 |---------|---------|
 | [Gestire i registri contenitori di Azure][1] | Creare un nuovo Registro Azure Container e aggiungere una nuova immagine. | 
 | [Gestire il servizio Azure Container][2] | Creare un servizio Azure Container con orchestrazione Kubernetes. | 

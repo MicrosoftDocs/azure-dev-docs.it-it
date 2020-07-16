@@ -3,16 +3,16 @@ title: Moduli di Azure per JavaScript
 description: Panoramica dei moduli di gestione e di servizi di Azure per JavaScript
 ms.date: 06/17/2017
 ms.topic: article
-ms.openlocfilehash: 193e2d3c92a9c2b8e3970e7a130246947a7cc4da
-ms.sourcegitcommit: 553da4e9aa988e5bb823364244ea81961cee5bc7
+ms.openlocfilehash: 2d01dcc2095bc91fb9695c0299b603b86c4719f0
+ms.sourcegitcommit: a7f2019727a954836b803493807664d4e4574ee3
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85792561"
+ms.lasthandoff: 07/13/2020
+ms.locfileid: "86286448"
 ---
 # <a name="azure-modules-for-javascript"></a>Moduli di Azure per JavaScript
 
-Gestire le risorse di Azure e connettersi ai servizi dalle applicazioni JavaScript con i moduli di Azure per JavaScript. Il codice è disponibile come moduli npm](/api/?view=azure-node-latest.md) da usare nei progetti.
+Gestire le risorse di Azure e connettersi ai servizi dalle applicazioni JavaScript con i moduli di Azure per JavaScript. Il codice è disponibile come [moduli npm](https://docs.microsoft.com/javascript/api/overview/azure/sql?view=azure-node-latest) da usare nei progetti.
 
 ## <a name="manage-azure-resources"></a>Gestire le risorse di Azure
 
@@ -75,7 +75,7 @@ msRestAzure.loginWithServicePrincipalSecret(clientId, secret, domain, function (
 });
 ```
 
-Vedere le [istruzioni di installazione](/api/?view=azure-node-latest) per ottenere un elenco completo dei moduli e l'[articolo introduttivo](../index.yml) per configurare l'autenticazione ed eseguire il codice di esempio per creare e aggiornare le risorse nella propria sottoscrizione di Azure.
+Vedere le [istruzioni di installazione](https://docs.microsoft.com/javascript/api/overview/azure/sql?view=azure-node-latest) per ottenere un elenco completo dei moduli e l'[articolo introduttivo](../index.yml) per configurare l'autenticazione ed eseguire il codice di esempio per creare e aggiornare le risorse nella propria sottoscrizione di Azure.
 
 ## <a name="connect-to-azure-services"></a>Connettersi ai servizi di Azure
 

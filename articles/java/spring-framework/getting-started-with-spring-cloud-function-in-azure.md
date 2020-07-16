@@ -9,12 +9,13 @@ ms.date: 07/17/2019
 ms.service: azure-functions
 ms.tgt_pltfrm: multiple
 ms.topic: article
-ms.openlocfilehash: 30c225ed4d8e17860fe169e326f994c70ebe7d85
-ms.sourcegitcommit: 0d492c9cc9b5295285ab75da55e5ab0577576287
+ms.custom: devx-track-java
+ms.openlocfilehash: 5cfdbb3542222a7ff9547b25836237d5d0991ddb
+ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/25/2020
-ms.locfileid: "85370722"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86378475"
 ---
 # <a name="getting-started-with-spring-cloud-function-in-azure"></a>Introduzione a Spring Cloud Function in Azure
 
@@ -64,7 +65,7 @@ Per l'applicazione è necessario personalizzare alcune proprietà:
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
-    <azure.functions.maven.plugin.version>1.5.0</azure.functions.maven.plugin.version>
+    <azure.functions.maven.plugin.version>1.6.0</azure.functions.maven.plugin.version>
     <functionAppName>my-spring-function</functionAppName>
     <functionAppRegion>westus</functionAppRegion>
     <stagingDirectory>${project.build.directory}/azure-functions/${functionAppName}</stagingDirectory>
@@ -348,7 +349,7 @@ Fare clic sulla funzione:
 A questo punto, come nella sezione precedente, usare cURL per accedere alla funzione in esecuzione. Sostituire `your-function-name` con il nome effettivo della funzione:
 
 ```bash
-curl https:/your-function-name.azurewebsites.net/api/hello -d "{\"name\":\"Azure\"}"
+curl https://your-function-name.azurewebsites.net/api/hello -d "{\"name\":\"Azure\"}"
 ```
 
 Come nella sezione precedente, la funzione dovrebbe rispondere con un oggetto `Greeting`, sempre in formato JSON:

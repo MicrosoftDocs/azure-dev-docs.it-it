@@ -6,12 +6,13 @@ ms.date: 12/19/2018
 ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
-ms.openlocfilehash: 48e1381761311a4ed9b5bd6f764af6f19f008fc1
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.custom: devx-track-java
+ms.openlocfilehash: 7bfd7edbdabd2298c84b3480292949e1fb351913
+ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81670017"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86378435"
 ---
 # <a name="spring-boot-starters-for-azure"></a>Utilità di avvio Spring Boot per Azure
 
@@ -44,7 +45,7 @@ Questa utilità di avvio Spring Boot fornisce il supporto per la configurazione 
 
 Per esempi dell'uso delle diverse funzionalità di Azure fornite con questa utilità di avvio, vedere:
 
-* <https://github.com/Microsoft/azure-spring-boot/tree/master/azure-spring-boot-samples>
+* <https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/spring/azure-spring-boot-samples>
 
 Quando si aggiunge questa utilità di avvio a un progetto Spring Boot, vengono apportate le modifiche seguenti al file *pom.xml*:
 
@@ -89,7 +90,7 @@ Questa utilità di avvio Spring Boot fornisce il supporto per la configurazione 
 
 Per esempi dell'uso delle funzionalità di Azure Active Directory fornite con questa utilità di avvio, vedere:
 
-* <https://github.com/Microsoft/azure-spring-boot/tree/master/azure-spring-boot-samples/azure-active-directory-spring-boot-sample>
+* <https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/spring/azure-spring-boot-samples/azure-spring-boot-sample-active-directory>
 
 Quando si aggiunge questa utilità di avvio a un progetto Spring Boot, vengono apportate le modifiche seguenti al file *pom.xml*:
 
@@ -134,7 +135,7 @@ Questa utilità di avvio Spring Boot fornisce il supporto dell'annotazione di va
 
 Per esempi dell'uso delle funzionalità di Azure Key Vault fornite con questa utilità di avvio, vedere:
 
-* <https://github.com/Microsoft/azure-spring-boot/tree/master/azure-spring-boot-samples/azure-keyvault-secrets-spring-boot-sample>
+* <https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/spring/azure-spring-boot-samples/azure-spring-boot-sample-keyvault-secrets>
 
 Quando si aggiunge questa utilità di avvio a un progetto Spring Boot, vengono apportate le modifiche seguenti al file *pom.xml*:
 
@@ -180,8 +181,7 @@ Questa utilità di avvio Spring Boot fornisce il supporto di integrazione di Spr
 Per esempi dell'uso delle funzionalità di Archiviazione di Azure fornite con questa utilità di avvio, vedere:
 
 * [Come usare l'utilità di avvio Spring Boot per Archiviazione di Azure](configure-spring-boot-starter-java-app-with-azure-storage.md)
-
-* <https://github.com/Microsoft/azure-spring-boot/tree/master/azure-spring-boot-samples/azure-storage-spring-boot-sample>
+* <https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/spring/azure-spring-boot-samples/azure-spring-boot-sample-storage-blob>
 
 Quando si aggiunge questa utilità di avvio a un progetto Spring Boot, vengono apportate le modifiche seguenti al file *pom.xml*:
 

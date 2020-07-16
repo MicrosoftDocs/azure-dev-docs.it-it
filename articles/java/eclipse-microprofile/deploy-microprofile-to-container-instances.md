@@ -10,12 +10,13 @@ ms.service: container-instances
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
-ms.openlocfilehash: e43ae2e589a4b729a2b9019b434b5224977fb184
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.custom: devx-track-java
+ms.openlocfilehash: 5823e2ee6a6467f0eb57b7e57108a191ff225896
+ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82105142"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86379885"
 ---
 # <a name="deploy-a-microprofile-application-to-the-cloud-with-docker-and-azure"></a>Distribuire un'applicazione MicroProfile nel cloud con Docker e Azure
 

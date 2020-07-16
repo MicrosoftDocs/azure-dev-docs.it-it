@@ -5,12 +5,13 @@ author: yevster
 ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 2/12/2020
-ms.openlocfilehash: c9b05ea7f7e7d181150e11afb7e145740fc5ab5a
-ms.sourcegitcommit: 81577378a4c570ced1e9c6765f4a9eee8453c889
+ms.custom: devx-track-java
+ms.openlocfilehash: fb6a7c108f99081eeeb2bd41f1366f4c38865fe6
+ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84507605"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86379735"
 ---
 # <a name="migrate-spring-cloud-applications-to-azure-spring-cloud"></a>Eseguire la migrazione delle applicazioni Spring Cloud ad Azure Spring Cloud
 
@@ -200,7 +201,7 @@ Se le applicazioni Spring Cloud richiedono l'autenticazione o l'autorizzazione, 
 
 * Se il provider di identità è Azure Active Directory, non è necessario apportare alcuna modifica.
 * Se il provider di identità è una foresta Active Directory locale, provare a implementare una soluzione di gestione delle identità ibrida con Azure Active Directory. Per indicazioni, vedere la [documentazione relativa alla soluzione ibrida di gestione delle identità](/azure/active-directory/hybrid/).
-* Se il provider di identità è un'altra soluzione locale, ad esempio PingFederate, vedere l'argomento [installazione personalizzata di Azure AD Connect](/azure/active-directory/hybrid/how-to-connect-install-custom) per configurare la Federazione con Azure Active Directory. In alternativa, valutare l'uso di Spring Security per usare il provider di identità personalizzato tramite [OAuth2/OpenID Connect](https://docs.spring.io/spring-security/site/docs/current/reference/html5/#oauth2) o [SAML](https://docs.spring.io/spring-security/site/docs/current/reference/html5/#servlet-saml2).
+* Se il provider di identità è un'altra soluzione locale, ad esempio PingFederate, vedere l'argomento [Installazione personalizzata di Azure AD Connect](/azure/active-directory/hybrid/how-to-connect-install-custom) per configurare la federazione con Azure Active Directory. In alternativa, valutare l'uso di Spring Security per usare il provider di identità personalizzato tramite [OAuth2/OpenID Connect](https://docs.spring.io/spring-security/site/docs/current/reference/html5/#oauth2) o [SAML](https://docs.spring.io/spring-security/site/docs/current/reference/html5/#servlet-saml2).
 
 ### <a name="update-client-applications"></a>Aggiornare le applicazioni client
 

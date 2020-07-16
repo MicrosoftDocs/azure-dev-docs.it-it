@@ -9,12 +9,13 @@ ms.date: 11/29/2019
 ms.service: azure-monitor
 ms.tgt_pltfrm: application-insights
 ms.topic: article
-ms.openlocfilehash: 85da0b92bbc5780e923fc447c66e5a0d2518e737
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.custom: devx-track-java
+ms.openlocfilehash: 687ecf87894a22e9300bf8ff4681e790db5a0d48
+ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82104822"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86379375"
 ---
 # <a name="configure-a-spring-boot-initializer-app-to-use-application-insights"></a>Configurare un'app Spring Boot Initializer per l'uso di Application Insights
 

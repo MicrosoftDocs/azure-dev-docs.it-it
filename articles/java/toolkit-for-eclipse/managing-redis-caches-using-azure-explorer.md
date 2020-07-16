@@ -6,12 +6,13 @@ ms.date: 02/01/2018
 ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
-ms.openlocfilehash: 80464f717dd50591c8cf3bbbdb7cd4fa569ba4a7
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.custom: devx-track-java
+ms.openlocfilehash: b9032685e00798f6a1600909b266b88674920e99
+ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81674427"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86378195"
 ---
 # <a name="managing-redis-caches-using-the-azure-explorer-for-eclipse"></a>Gestione delle Cache Redis con Azure Explorer per Eclipse
 
@@ -35,17 +36,17 @@ I passaggi seguenti illustrano come creare una Cache Redis con Azure Explorer.
 
    ![Finestra di dialogo Crea nuova Cache Redis][CR02]
 
-   a. **Nome DNS**: specifica il sottodominio DNS per la nuova Cache Redis che verrà anteposto a ".redis.cache.windows.net"; ad esempio: *wingtiptoys.redis.cache.windows.net*.
+   a. **Nome DNS**: specifica il sottodominio DNS per la nuova Cache Redis che verrà anteposto a ".redis.cache.windows.net", ad esempio *wingtiptoys.redis.cache.windows.net*.
 
-   b. **Sottoscrizione**: specifica la sottoscrizione di Azure da usare per la nuova Cache Redis.
+   b. **Sottoscrizione** Specifica la sottoscrizione di Azure da usare per la nuova Cache Redis.
 
    c. **Gruppo di risorse**: specifica il gruppo di risorse per la Cache Redis. Scegliere una delle opzioni indicate di seguito:
-      * **Crea nuovo**: specifica che si intende creare un nuovo gruppo di risorse.
-      * **Usa esistente**: specifica che sarà possibile scegliere in un elenco i gruppi di risorse associati all'account di Azure.
+      * **Create New** (Crea nuovo): specifica che si vuole creare un nuovo gruppo di risorse.
+      * **Use Existing** (Usa esistente): specifica che sarà possibile scegliere in un elenco i gruppi di risorse associati all'account di Azure.
 
-   d. **Posizione**: specifica la località in cui verrà creata la Cache Redis, ad esempio *Stati Uniti occidentali*.
+   d. **Località**: specifica la località in cui verrà creata la Cache Redis, ad esempio *Stati Uniti occidentali*.
 
-   e. **Piano tariffario**: specifica il piano tariffario usato dalla Cache Redis. Questa impostazione determina il numero di connessioni client (Per altre informazioni, vedere [Prezzi di Cache Redis].)
+   e. **Piano tariffario**: specifica il piano tariffario usato dalla Cache Redis. Questa impostazione determina il numero di connessioni client. (Per altre informazioni, vedere [Prezzi di Cache Redis].)
 
    f. **Porta non SSL**: specifica se la Cache Redis consente le connessioni non SSL. Per impostazione predefinita, sono consentite solo le connessioni SSL.
 

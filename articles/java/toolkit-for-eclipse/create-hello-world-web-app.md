@@ -12,12 +12,13 @@ ms.service: app-service
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
-ms.openlocfilehash: 25c46576e6c1c379d10cd5ce350ca73c5e28ab93
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.custom: devx-track-java
+ms.openlocfilehash: ea650fdf86f0a614303f94f67792f2c05827576e
+ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81671017"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86378395"
 ---
 # <a name="create-a-hello-world-web-app-for-azure-app-service-using-eclipse"></a>Creare un'app Web Hello World per Servizio app di Azure con Eclipse
 

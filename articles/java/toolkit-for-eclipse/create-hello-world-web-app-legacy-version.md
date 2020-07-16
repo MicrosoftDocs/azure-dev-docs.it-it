@@ -8,12 +8,13 @@ ms.service: app-service
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
-ms.openlocfilehash: 252ef1e31a71d996cb9e3856b48232ba24b66903
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.custom: devx-track-java
+ms.openlocfilehash: 55f980785ea8cf4988c6a82dfa700beef18e2dfc
+ms.sourcegitcommit: c6642cae6fdb5e3025ed66fcd4ef89792c3b436a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81671187"
+ms.lasthandoff: 07/15/2020
+ms.locfileid: "86405762"
 ---
 # <a name="create-a-hello-world-web-app-for-azure-using-the-legacy-toolkit-for-eclipse"></a>Creare un'app Web Hello World per Azure con il toolkit legacy per Eclipse
 
@@ -117,10 +118,10 @@ Esistono diversi modi con cui è possibile distribuire un'applicazione Web Java 
        ![Finestra di dialogo Nuovo gruppo di risorse][08]
    * Nella casella di testo **Nome** specificare un nome per il nuovo gruppo di risorse.
    * Nel menu a discesa **Area** selezionare il percorso del data center di Azure appropriato per il gruppo di risorse.
-   * FACOLTATIVO: per impostazione predefinita, una distribuzione recente di Java 8 verrà distribuita da Azure automaticamente nel contenitore di app web come JVM. Tuttavia, è possibile specificare una versione e una distribuzione di JVM diversa, se richiesto dall'app Web. Per specificare la versione JDK per l'app Web specifica, fare clic sulla scheda **JDK** e selezionare una delle opzioni seguenti:
-     * **Deploy the default JDK offered by Azure Web Apps service** (Distribuisci JDK predefinito fornito dal servizio app Web di Azure): questa opzione distribuirà una distribuzione recente di Java.
-     * **Deploy a 3rd party JDK available on Azure**(Distribuisci JDK di terze parti disponibile in Azure): questa opzione consente di scegliere dall'elenco di JDK forniti da Microsoft Azure.
-     * **Deploy my own JDK from this download location**(Distribuisci JDK personalizzato da questo percorso di download): questa opzione consente di specificare una distribuzione JDK personalizzata, che deve essere compressa come file ZIP e caricata in un percorso di download disponibile pubblicamente o in un account di Archiviazione di Azure per cui si dispone dell'accesso.
+   * FACOLTATIVO: per impostazione predefinita, una distribuzione recente di Java 8 verrà distribuita da Azure automaticamente nel contenitore di app Web come JVM. Tuttavia, è possibile specificare una versione e una distribuzione di JVM diversa, se richiesto dall'app Web. Per specificare la versione JDK per l'app Web specifica, fare clic sulla scheda **JDK** e selezionare una delle opzioni seguenti:
+     * **Deploy the default JDK offered by Azure Web Apps service** (Distribuisci JDK predefinito fornito dal servizio app Web di Azure): questa opzione consente di implementare una distribuzione recente di Java.
+     * **Deploy a 3rd party JDK package available on Azure** (Distribuisci JDK di terze parti disponibile in Azure): questa opzione consente di scegliere dall'elenco di JDK forniti da Microsoft Azure.
+     * **Deploy my own JDK from this download location** (Distribuisci JDK personalizzato da questo percorso di download): questa opzione consente di specificare una distribuzione JDK personalizzata, che deve essere compressa come file ZIP e caricata in un percorso di download disponibile pubblicamente o in un account di Archiviazione di Azure per cui si dispone dell'accesso.
           
        ![Finestra di dialogo New Web App Container (Nuovo contenitore App Web)][07b]
 
@@ -128,7 +129,7 @@ Esistono diversi modi con cui è possibile distribuire un'applicazione Web Java 
 
    h. Il menu a discesa **Piano di servizio app** elenca i piani di servizio app associati al gruppo di risorse selezionato. I piani di servizio app specificano informazioni come il percorso dell'app Web, il piano tariffario e le dimensioni dell'istanza di calcolo. È possibile usare un singolo piano di servizio app per più app Web. Per questo motivo viene gestito separatamente da una distribuzione di app Web specifica.
       
-       You can select an existing App Service Plan (if you have any) and skip to step h below, or use the following these steps to create a new App Service Plan:
+      È possibile selezionare un piano di servizio app esistente, se presente, e andare al passaggio h seguente o usare questa procedura per creare un nuovo piano di servizio app:
       
       * Fare clic su **New**
       * Verrà visualizzata la finestra di dialogo **Nuovo piano di servizio app** :

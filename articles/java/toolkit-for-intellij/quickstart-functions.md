@@ -3,12 +3,13 @@ title: Creare la prima funzione in Azure con IntelliJ IDEA
 description: Creare e pubblicare in Azure una semplice funzione attivata tramite HTTP usando Azure Toolkit for IntelliJ.
 ms.topic: quickstart
 ms.date: 03/26/2020
-ms.openlocfilehash: b8d8ae4093c03e3fb0e910a0b5dd21002b0e52ab
-ms.sourcegitcommit: 7da78b35a847db9929554962dfcc47860f472fb9
+ms.custom: devx-track-java
+ms.openlocfilehash: 1260d5cbaec821149468ef524af35e081c06ec52
+ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/22/2020
-ms.locfileid: "85133719"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86379965"
 ---
 # <a name="quickstart-create-an-azure-functions-project-using-intellij-idea"></a>Avvio rapido: Creare un progetto di Funzioni di Azure con IntelliJ IDEA
 

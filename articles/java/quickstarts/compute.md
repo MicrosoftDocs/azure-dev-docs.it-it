@@ -3,12 +3,13 @@ title: Guide di avvio rapido sui servizi di calcolo per le app Java in Azure
 description: Elenco di articoli introduttivi della documentazione di Azure sui servizi di calcolo per le app Java.
 ms.date: 04/09/2020
 ms.topic: conceptual
-ms.openlocfilehash: 6ae76c14fb420924a786972609f4a0bc902b2475
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.custom: devx-track-java
+ms.openlocfilehash: 37dee8493855f0a17c5b18e2c1ed2c85138687e7
+ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81743546"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86379645"
 ---
 # <a name="compute-services-for-java-apps-on-azure"></a>Servizi di calcolo per le app Java in Azure
 

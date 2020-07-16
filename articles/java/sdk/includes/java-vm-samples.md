@@ -1,13 +1,14 @@
 ---
-ms.openlocfilehash: 5d005f5a4906e5e2a55189d073383ab77f6c1860
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: a6e51b3fca9e2ae633a69b6372d7f622d2697812
+ms.sourcegitcommit: c6642cae6fdb5e3025ed66fcd4ef89792c3b436a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81674187"
+ms.lasthandoff: 07/15/2020
+ms.locfileid: "86405752"
 ---
-| **Creare macchine virtuali** || 
+| Esempio  | Descrizione |
 |---|---|
+| **Creare macchine virtuali** ||
 | [Gestire le macchine virtuali][1] | Creare, modificare, avviare, arrestare ed eliminare le macchine virtuali. |
 | [Creare una macchina virtuale da un'immagine personalizzata][2] | Creare un'immagine personalizzata di macchina virtuale e usarla per creare nuove macchine virtuali. | 
 | [Creare una macchina virtuale che usa un disco rigido virtuale specializzato da uno snapshot][3] | Creare snapshot dal sistema operativo e dai dischi dati della macchina virtuale, creare dischi gestiti dagli snapshot e quindi creare una macchina virtuale collegando i dischi gestiti. |  
