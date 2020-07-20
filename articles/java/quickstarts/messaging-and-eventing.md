@@ -3,14 +3,15 @@ title: Guide di avvio rapido sulla messaggistica e la gestione di eventi per le 
 description: Elenco di articoli introduttivi della documentazione di Azure sulla messaggistica e la gestione di eventi per le app Java.
 ms.date: 04/09/2020
 ms.topic: conceptual
-ms.openlocfilehash: fc45140d68493bd80093f361b478e485cc2ed42f
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.custom: devx-track-java
+ms.openlocfilehash: d5455c05872c67853b526fd30ecb4aee3c75954c
+ms.sourcegitcommit: c6642cae6fdb5e3025ed66fcd4ef89792c3b436a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81673647"
+ms.lasthandoff: 07/15/2020
+ms.locfileid: "86405642"
 ---
-# <a name="caching-for-java-apps-on-azure"></a>Memorizzazione nella cache per le app Java in Azure
+# <a name="messaging-and-eventing-for-java-apps-on-azure"></a>Messaggistica e gestione di eventi per le app Java in Azure
 
 Gli articoli seguenti contengono informazioni introduttive su varie opzioni di messaggistica e gestione di eventi disponibili in Azure:
 

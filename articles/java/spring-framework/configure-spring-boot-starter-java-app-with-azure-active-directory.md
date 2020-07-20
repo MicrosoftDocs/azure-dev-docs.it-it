@@ -8,12 +8,13 @@ ms.service: active-directory
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: identity
-ms.openlocfilehash: ff89152b5cbcd8c0abeff74ce75c4ba21528613e
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.custom: devx-track-java
+ms.openlocfilehash: 2714d4d4b8a614bcdbf951eb2a9dc4c2dc78dda2
+ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82138822"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86379425"
 ---
 # <a name="tutorial-secure-a-java-web-app-using-the-spring-boot-starter-for-azure-active-directory"></a>Esercitazione: Proteggere un'app Web Java con l'utilità di avvio Spring Boot per Azure Active Directory
 
@@ -124,9 +125,7 @@ I prerequisiti seguenti sono necessari per completare le procedure disponibili i
     ![Configurare il manifesto dell'app][create-app-registration-11]
 
     > [!NOTE]
-    > 
-    > Per altre informazioni sul parametro `oauth2AllowImplicitFlow` e su altre impostazioni dell'applicazione, vedere [Manifesto dell'applicazione Azure Active Directory][AAD app manifest]. 
-    >
+    > Per altre informazioni sul parametro `oauth2AllowImplicitFlow` e su altre impostazioni dell'applicazione, vedere [Manifesto dell'applicazione Azure Active Directory][AAD app manifest].
 
 ### <a name="add-a-user-account-to-your-directory-and-add-that-account-to-a-group"></a>Aggiungere un account utente alla directory e quindi aggiungere tale account al gruppo
 
@@ -139,11 +138,9 @@ I prerequisiti seguenti sono necessari per completare le procedure disponibili i
    ![Immettere le informazioni sull'account utente][create-user-02]
 
    > [!NOTE]
-   > 
    > È necessario specificare l'URL della directory salvato in precedenza in questa esercitazione quando si immette il nome utente. Ad esempio:
    >
    > `wingtipuser@wingtiptoysdirectory.onmicrosoft.com`
-   > 
 
 1. Fare clic su **Gruppi** quindi su **Crea un nuovo gruppo** per creare un gruppo da usare per l'autorizzazione nell'applicazione.
 
@@ -151,7 +148,7 @@ I prerequisiti seguenti sono necessari per completare le procedure disponibili i
 
    ![Selezionare l'utente per il gruppo][create-user-03]
 
-1. Tornare nel pannello **Utenti**, selezionare l'utente di test, fare clic su **Reimposta password**, quindi copiare la password, che verrà usata per l'accesso all'applicazione più avanti in questa esercitazione. 
+1. Tornare nel pannello **Utenti**, selezionare l'utente di test, fare clic su **Reimposta password**, quindi copiare la password, che verrà usata per l'accesso all'applicazione più avanti in questa esercitazione.
 
    ![Mostrare la password][create-user-04]
 
@@ -193,6 +190,7 @@ I prerequisiti seguenti sono necessari per completare le procedure disponibili i
    # Specifies the list of Active Directory groups to use for authorization:
    azure.activedirectory.active-directory-groups=Users
    ```
+
    Dove:
 
    | Parametro | Descrizione |
@@ -203,9 +201,7 @@ I prerequisiti seguenti sono necessari per completare le procedure disponibili i
    | `azure.activedirectory.active-directory-groups` | Contiene un elenco di gruppi di Active Directory da usare per l'autorizzazione. |
 
    > [!NOTE]
-   > 
    > Per un elenco completo dei valori disponibili nel file *application.properties*, vedere l'[esempio Spring Boot per Azure Active Directory][AAD Spring Boot Sample] in GitHub.
-   >
 
 1. Salvare e chiudere il file *application.properties*.
 
@@ -236,10 +232,10 @@ I prerequisiti seguenti sono necessari per completare le procedure disponibili i
       }
    }
    ```
+
    > [!NOTE]
-   > 
    > Il nome di gruppo specificato nel metodo `@PreAuthorize("hasRole('')")` deve contenere uno dei gruppi specificati nel campo `azure.activedirectory.active-directory-groups` del file *application.properties*.
-   > 
+   >
    > È anche possibile specificare impostazioni di autorizzazione diverse per mapping di richieste diversi, ad esempio:
    >
    > ``` java
@@ -262,7 +258,6 @@ I prerequisiti seguenti sono necessari per completare le procedure disponibili i
    >    }
    > }
    > ```
-   >    
 
 1. Creare una cartella denominata *security* nella cartella di origine Java per l'applicazione, ad esempio *src/main/java/com/wingtiptoys/security/security*.
 
@@ -319,20 +314,16 @@ I prerequisiti seguenti sono necessari per completare le procedure disponibili i
    ![Accesso all'applicazione][application-login]
 
    > [!NOTE]
-   > 
    > È possibile che venga richiesta la modifica della password se questo è il primo accesso per un nuovo account utente.
-   > 
+   >
    > ![Modifica della password][update-password]
-   > 
 
 1. Al termine dell'accesso, verrà visualizzato il testo "Hello World" di esempio dal controller.
 
    ![Accesso riuscito][hello-world]
 
    > [!NOTE]
-   > 
    > Agli account utente non autorizzati verrà visualizzato il messaggio **HTTP 403** di accesso non autorizzato.
-   >
 
 ## <a name="summary"></a>Summary
 
@@ -360,7 +351,7 @@ Per altre informazioni su Spring e Azure, passare al centro di documentazione di
 [Spring Boot]: http://projects.spring.io/spring-boot/
 [Spring Initializr]: https://start.spring.io/
 [Spring Framework]: https://spring.io/
-[AAD Spring Boot Sample]: https://github.com/Microsoft/azure-spring-boot/tree/master/azure-spring-boot-samples/azure-active-directory-spring-boot-backend-sample
+[AAD Spring Boot Sample]: https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/spring/azure-spring-boot-samples/azure-spring-boot-sample-active-directory-backend
 
 <!-- IMG List -->
 

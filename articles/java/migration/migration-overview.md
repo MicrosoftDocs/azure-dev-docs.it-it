@@ -5,12 +5,13 @@ author: yevster
 ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 1/20/2020
-ms.openlocfilehash: 51babfacd133ed0ba0d9b5bc728c4373e137022c
-ms.sourcegitcommit: 81577378a4c570ced1e9c6765f4a9eee8453c889
+ms.custom: devx-track-java
+ms.openlocfilehash: 3487cc326222a013c7f0acec396ed343c8bd9621
+ms.sourcegitcommit: c6642cae6fdb5e3025ed66fcd4ef89792c3b436a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84507467"
+ms.lasthandoff: 07/15/2020
+ms.locfileid: "86405712"
 ---
 # <a name="migrate-java-applications-to-azure"></a>Eseguire la migrazione di applicazioni Java ad Azure
 
@@ -78,7 +79,7 @@ Le sezioni seguenti illustrano quali destinazioni del servizio soddisfano i requ
 
 Usare la griglia seguente per identificare possibili destinazioni per un tipo di applicazione. Come si può notare, il servizio Azure Kubernetes e le macchine virtuali supportano tutti i tipi di applicazioni, ma richiedono al team di assumersi più responsabilità, come illustrato nella sezione successiva.
 
-|   |App<br>Service<br>Java SE|App<br>Service<br>Tomcat|Azure<br>Spring<br>Cloud|Servizio Azure Kubernetes|Macchine<br>virtuali|
+|Destinazione&nbsp;→<br><br>Tipo di&nbsp;applicazione&nbsp;↓|App<br>Service<br>Java SE|App<br>Service<br>Tomcat|Azure<br>Spring<br>Cloud|Servizio Azure Kubernetes|Macchine<br>virtuali|
 |---|---|---|---|---|---|---|
 | Applicazioni Spring Boot/JAR                                    |&#x2714;|        |&#x2714;|&#x2714;|&#x2714;|
 | Spring Cloud/microservizi                                      |        |        |&#x2714;|&#x2714;|&#x2714;|
@@ -95,12 +96,12 @@ Usare la griglia seguente per identificare possibili destinazioni per un tipo di
 
 Usare la griglia seguente per comprendere la responsabilità assegnata al team per ogni destinazione dopo la migrazione.
 
-Il team è responsabile in maniera continuativa delle attività indicate con "&#x1F449;". Si consiglia di implementare un processo solido e altamente automatizzato per soddisfare tutte queste responsabilità. 
+Il team è responsabile in maniera continuativa delle attività indicate con "&#x1F449;". Si consiglia di implementare un processo solido e altamente automatizzato per soddisfare tutte queste responsabilità.
 
 > [!NOTE]
 > Questo non è un elenco completo di responsabilità.
 
-|                                                                       | App<br>Service | Azure<br>Spring<br>Cloud | Servizio Azure Kubernetes | Macchine<br>virtuali |
+|Destinazione&nbsp;→<br><br>Attività&nbsp;↓                            | App<br>Service | Azure<br>Spring<br>Cloud | Servizio Azure Kubernetes | Macchine<br>virtuali |
 |---|---|---|---|---|
 | Aggiornamento delle librerie<br>(compresa la correzione delle vulnerabilità)                 | &#x1F449;   | &#x1F449;   | &#x1F449;   | &#x1F449; |
 | Aggiornamento del server applicazioni<br>(compresa la correzione delle vulnerabilità)    | ![Azure][1] | ![Azure][1] | &#x1F449;   | &#x1F449; |

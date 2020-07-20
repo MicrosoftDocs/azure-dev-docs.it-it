@@ -3,12 +3,12 @@ title: Come autenticare le applicazioni Python con i servizi di Azure
 description: Come acquisire gli oggetti credenziali necessari per autenticare un'app Python con i servizi di Azure usando le librerie di Azure
 ms.date: 05/12/2020
 ms.topic: conceptual
-ms.openlocfilehash: 5a882a6cc18ef20a8a26650bacaa7bfe94e90771
-ms.sourcegitcommit: db56786f046a3bde1bd9b0169b4f62f0c1970899
+ms.openlocfilehash: 337c520ba163c4029c4352c10d6ca865caf34755
+ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84329429"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86377995"
 ---
 # <a name="how-to-authenticate-python-apps-with-azure-services"></a>Come autenticare le app Python con i servizi di Azure
 
@@ -86,13 +86,15 @@ subscription = next(subscription_client.subscriptions.list())
 print(subscription.subscription_id)
 ```
 
-Attualmente, `DefaultAzureCredential` è compatibile solo con le librerie client ("piano dati") di Azure SDK e non funziona con le librerie di gestione di Azure SDK i cui nomi iniziano con `azure-mgmt`, come illustrato in questo esempio di codice. La chiamata a `subscription_client.subscriptions.list()` non riesce con un messaggio di errore piuttosto vago, analogo a "All'oggetto 'DefaultAzureCredential' non è associato alcun attributo 'signed_session'". Questo errore si verifica perché le librerie di gestione correnti dell'SDK presuppongono che l'oggetto credenziali contenga una proprietà `signed_session`, che risulta mancante in `DefaultAzureCredential`.
+Attualmente, `DefaultAzureCredential` è compatibile solo con le librerie client di Azure SDK ("piano dati") e non funziona con le librerie di gestione di Azure SDK i cui nomi iniziano con `azure-mgmt`, come illustrato in questo esempio di codice. Ovvero, con le librerie della versione corrente, la chiamata a `subscription_client.subscriptions.list()` non riesce con un messaggio di errore piuttosto vago, analogo a "All'oggetto 'DefaultAzureCredential' non è associato alcun attributo 'signed_session'". Questo errore si verifica perché le librerie di gestione correnti dell'SDK presuppongono che l'oggetto credenziali contenga una proprietà `signed_session`, che risulta mancante in `DefaultAzureCredential`.
 
-Fino a quando le librerie non verranno aggiornate alla fine del 2020, è possibile aggirare l'errore in due modi:
+È possibile risolvere l'errore usando le librerie di gestione di anteprima, come descritto nel post di blog [Introduzione alle nuove anteprime per le librerie di gestione di Azure](https://devblogs.microsoft.com/azure-sdk/introducing-new-previews-for-azure-management-libraries/).
+
+In alternativa, è possibile usare i metodi seguenti:
 
 1. Usare uno degli altri metodi di autenticazione descritti nelle sezioni successive di questo articolo, che può funzionare correttamente per il codice che usa *solo* le librerie di gestione dell'SDK e che non verrà distribuito nel cloud, nel qual caso è possibile fare affidamento esclusivamente sulle entità servizio locali.
 
-1. Invece di `DefaultAzureCredential`, usare la [classe CredentialWrapper (cred_wrapper.py)](https://gist.github.com/lmazuel/cc683d82ea1d7b40208de7c9fc8de59d) fornita da un membro del team di progettazione di Azure SDK. Quando Microsoft rilascerà le librerie di gestione aggiornate, sarà possibile riprendere semplicemente a usare `DefaultAzureCredential`. Il vantaggio di questo metodo è che è possibile usare le stesse credenziali sia per il client che per le librerie di gestione dell'SDK e che funziona sia in locale che nel cloud.
+1. Invece di `DefaultAzureCredential`, usare la [classe CredentialWrapper (cred_wrapper.py)](https://gist.github.com/lmazuel/cc683d82ea1d7b40208de7c9fc8de59d) fornita da un membro del team di progettazione di Azure SDK. Una volta terminata la fase di anteprima delle librerie di gestione aggiornate, sarà possibile riprendere semplicemente a usare `DefaultAzureCredential`. Il vantaggio di questo metodo è che è possibile usare le stesse credenziali sia per il client che per le librerie di gestione dell'SDK e che funziona sia in locale che nel cloud.
 
     Supponendo che sia stata scaricata una copia di *cred_wrapper.py* nella cartella del progetto, il codice precedente sarà come segue:
 
@@ -106,7 +108,7 @@ Fino a quando le librerie non verranno aggiornate alla fine del 2020, è possibi
     print(subscription.subscription_id)
     ```
 
-    Una volta aggiornate le librerie di gestione, è possibile usare direttamente `DefaultAzureCredential`.
+    Anche in questo caso, una volta terminata la fase di anteprima delle librerie di gestione aggiornate, sarà possibile usare direttamente `DefaultAzureCredential`.
 
 ## <a name="other-authentication-methods"></a>Altri metodi di autenticazione
 
@@ -328,6 +330,6 @@ Quando [Azure Active Directory Authentication Library (ADAL) per Python](https:/
 - [Configurare l'ambiente di sviluppo Python locale per Azure](configure-local-development-environment.md)
 - [Esempio: Effettuare il provisioning di un gruppo di risorse](azure-sdk-example-resource-group.md)
 - [Esempio: Effettuare il provisioning e usare Archiviazione di Azure](azure-sdk-example-storage.md)
-- [Esempio: Effettuare il provisioning di un app Web e distribuire il codice](azure-sdk-example-web-app.md)
+- [Esempio: Effettuare il provisioning di un'app Web e distribuire il codice](azure-sdk-example-web-app.md)
 - [Esempio: Effettuare il provisioning e usare un database MySQL](azure-sdk-example-database.md)
 - [Esempio: Effettuare il provisioning di una macchina virtuale](azure-sdk-example-virtual-machines.md)

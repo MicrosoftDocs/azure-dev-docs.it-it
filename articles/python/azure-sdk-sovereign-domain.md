@@ -1,15 +1,15 @@
 ---
 title: Connettersi a tutte le aree con le librerie di Azure per Python multi-cloud
 description: Informazioni su come usare il modulo azure_cloud di msrestazure per connettersi ad Azure in diverse aree sovrane
-ms.date: 06/09/2020
+ms.date: 07/13/2020
 ms.topic: conceptual
 ms.custom: seo-python-october2019
-ms.openlocfilehash: c8dc34260f4a37090af8c8408f7da70cf1de1f23
-ms.sourcegitcommit: b3e506c6f140d91e6fdd9dcadf22ab1aa67f6978
+ms.openlocfilehash: 25e8851a8812782712ff65ec4627a0d2ead848ae
+ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84947511"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86377905"
 ---
 # <a name="multi-cloud-connect-to-all-regions-with-the-azure-libraries-for-python"></a>Multi-cloud: connettersi a tutte le aree con le librerie di Azure per Python
 
@@ -17,9 +17,18 @@ ms.locfileid: "84947511"
 
 Per impostazione predefinita, le librerie sono configurate per la connessione ad Azure globale.
 
-## <a name="using-pre-declared-cloud-definition"></a>Uso di una definizione di cloud predichiarata
+## <a name="using-pre-defined-sovereign-cloud-constants"></a>Uso di costanti predefinite per il cloud sovrano
 
-Usare il modulo `azure_cloud` di `msrestazure` (0.4.11+):
+Le costanti predefinite per il cloud sovrano sono fornite dal modulo `azure_cloud` di `msrestazure` (0.4.11 e versioni successive):
+
+- `AZURE_PUBLIC_CLOUD`
+- `AZURE_CHINA_CLOUD`
+- `AZURE_US_GOV_CLOUD`
+- `AZURE_GERMAN_CLOUD`
+
+Per applicare una costante in tutto il codice, definire una variabile di ambiente denominata `AZURE_CLOUD` usando uno dei valori dell'elenco precedente. Il valore predefinito è `AZURE_PUBLIC_CLOUD`.
+
+Per applicare una costante all'interno di operazioni specifiche, importarla da `msrest.azure_cloud` e usarla quando si creano le credenziali e gli oggetti client:
 
 ```python
 from msrestazure.azure_cloud import AZURE_CHINA_CLOUD
@@ -33,16 +42,9 @@ client = ResourceManagementClient(credentials,
     subscription_id, base_url=AZURE_CHINA_CLOUD.endpoints.resource_manager)
 ```
   
-Le definizioni cloud disponibili sono:
-
-- `AZURE_PUBLIC_CLOUD`
-- `AZURE_CHINA_CLOUD`
-- `AZURE_US_GOV_CLOUD`
-- `AZURE_GERMAN_CLOUD`
-
 ## <a name="using-your-own-cloud-definition"></a>Uso di una definizione di cloud personalizzata
 
-In questo codice si usa `get_cloud_from_metadata_endpoint` con l'endpoint Azure Resource Manager per il cloud privato, ad esempio uno basato su Azure Stack:
+Nel codice seguente si usa `get_cloud_from_metadata_endpoint` con l'endpoint Azure Resource Manager per un cloud privato, ad esempio uno basato su Azure Stack:
 
 ```python
 from msrestazure.azure_cloud import get_cloud_from_metadata_endpoint
@@ -59,7 +61,7 @@ client = ResourceManagementClient(credentials, subscription_id,
 
 ## <a name="using-adal"></a>Uso di ADAL
 
-Per connettersi a un'altra area, è necessario prendere in considerazione alcuni aspetti:
+Quando ci si connette a un'altra area, considerare le domande seguenti:
 
 - A quale endpoint è necessario chiedere un token (autenticazione)?
 - In quale endpoint verrà usato questo token (utilizzo)?

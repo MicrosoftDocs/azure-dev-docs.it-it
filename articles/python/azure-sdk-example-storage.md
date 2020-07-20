@@ -3,14 +3,14 @@ title: Effettuare il provisioning di Archiviazione di Azure con le librerie di A
 description: Usare le librerie di Azure SDK per Python per effettuare il provisioning di un contenitore BLOB in un account di archiviazione di Azure e quindi caricarvi un file.
 ms.date: 05/29/2020
 ms.topic: conceptual
-ms.openlocfilehash: 74f6e21b80505cd0b63061a76f4811b0c687d1a9
-ms.sourcegitcommit: 5ebbc1c06f98e29a146764661efbf34957020fe8
+ms.openlocfilehash: 648abeb105f1c575d5454af09cd2279c059d7b98
+ms.sourcegitcommit: c6642cae6fdb5e3025ed66fcd4ef89792c3b436a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/11/2020
-ms.locfileid: "84716099"
+ms.lasthandoff: 07/15/2020
+ms.locfileid: "86405722"
 ---
-# <a name="example-use-the-azure-libraries-with-azure-storage"></a>Esempio: Usare le librerie di Azure con Archiviazione di Azure
+# <a name="example-provision-azure-storage-using-the-azure-libraries-for-python"></a>Esempio: Effettuare il provisioning di Archiviazione di Azure con le librerie di Azure per Python
 
 Questo articolo illustra come usare le librerie di gestione di Azure in uno script Python per effettuare il provisioning di un gruppo di risorse contenente l'account di archiviazione di Azure e un contenitore di archiviazione BLOB. I [comandi equivalenti dell'interfaccia della riga di comando di Azure](#for-reference-equivalent-azure-cli-commands) vengono descritti più avanti in questo articolo.
 
