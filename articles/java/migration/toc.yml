@@ -13,10 +13,15 @@
       href: migrate-spring-cloud-to-azure-spring-cloud.md
     - name: Da Tomcat a Servizio app di Azure
       href: migrate-tomcat-to-tomcat-app-service.md
-    - name: Da Tomcat ai contenitori nel servizio Azure Kubernetes
+    - name: Da Tomcat ai contenitori nel servizio Azure Container
       href: migrate-tomcat-to-containers-on-azure-kubernetes-service.md
-    - name: Da WebLogic a Macchine virtuali di Azure
-      href: migrate-weblogic-to-virtual-machines.md
+    - name: Da WebLogic ad Azure
+      expanded: true
+      items:
+        - name: Da WebLogic a macchine virtuali di Azure
+          href: migrate-weblogic-to-virtual-machines.md
+        - name: Da WebLogic ad Azure con AAD tramite LDAP
+          href: migrate-weblogic-with-aad-ldap.md
     - name: Da WildFly a WildFly nel servizio Azure Kubernetes
       href: migrate-wildfly-to-wildfly-on-azure-kubernetes-service.md
     - name: Da WebLogic a WildFly nel servizio Azure Kubernetes
