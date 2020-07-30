@@ -4,16 +4,16 @@ description: Informazioni su come usare Terraform per creare e gestire un ambien
 keywords: azure devops terraform linux vm macchina virtuale
 ms.topic: tutorial
 ms.date: 06/14/2020
-ms.openlocfilehash: 97b4381c45e67458e01093d735f9b32e97584149
-ms.sourcegitcommit: 2d6c9687b39e33a6b5e980d9a375c9f8f1f2cab7
+ms.openlocfilehash: 53580815deaaef30512ca9ccd2c506908d2192ca
+ms.sourcegitcommit: 8cd0ddf1651c3b64bb72dedc2890108c2cfe3bcb
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/15/2020
-ms.locfileid: "84779653"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87334436"
 ---
 # <a name="tutorial-create-a-linux-vm-with-infrastructure-in-azure-using-terraform"></a>Esercitazione: Creare una VM Linux con infrastruttura in Azure tramite Terraform
 
-Terraform consente di definire e creare distribuzioni di infrastrutture complete in Azure. I modelli Terrraform, compilati dall'utente in un formato leggibile, creano e configurano le risorse di Azure in modo coerente e riproducibile. In questo articolo viene illustrato come creare un ambiente Linux completo e le risorse di supporto con Terraform. Verrà anche descritto come [installare e configurare Terraform](getting-started-cloud-shell.md).
+Terraform consente di definire e creare distribuzioni di infrastrutture complete in Azure. I modelli Terrraform, compilati dall'utente in un formato leggibile, creano e configurano le risorse di Azure in modo coerente e riproducibile. In questo articolo viene illustrato come creare un ambiente Linux completo e le risorse di supporto con Terraform. Verrà anche descritto come [installare e configurare Terraform](get-started-cloud-shell.md).
 
 [!INCLUDE [hashicorp-support.md](includes/hashicorp-support.md)]
 
@@ -25,7 +25,7 @@ Terraform consente di definire e creare distribuzioni di infrastrutture complete
 
 Verranno ora esaminate le singole sezioni di un modello Terraform. È anche disponibile una versione completa del [modello Terraform](#complete-terraform-script) che può essere copiata e incollata.
 
-La sezione `provider` indica a Terraform di usare un provider di Azure. Per ottenere i valori di `subscription_id`, `client_id`, `client_secret` e `tenant_id`, vedere [Installare e configurare Terraform](getting-started-cloud-shell.md).
+La sezione `provider` indica a Terraform di usare un provider di Azure. Per ottenere i valori di `subscription_id`, `client_id`, `client_secret` e `tenant_id`, vedere [Installare e configurare Terraform](get-started-cloud-shell.md).
 
 > [!TIP]
 > Se si creano variabili di ambiente per i valori o si usa l'[esperienza Azure Cloud Shell Bash](/azure/cloud-shell/overview), non è necessario includere le dichiarazioni di variabili in questa sezione.

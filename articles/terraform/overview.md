@@ -3,12 +3,12 @@ title: Utilizzo di Terraform con Azure
 description: Informazioni su come usare Terraform per semplificare la distribuzione e il controllo delle versioni dell'infrastruttura in Azure.
 ms.topic: overview
 ms.date: 10/26/2019
-ms.openlocfilehash: ca5602d83ef1e8e4f201c6ae058dbdc004cb8fdb
-ms.sourcegitcommit: db56786f046a3bde1bd9b0169b4f62f0c1970899
+ms.openlocfilehash: 8819a20e9bfb381cb6eb4f5b610b4ffcaa1d63b2
+ms.sourcegitcommit: 8cd0ddf1651c3b64bb72dedc2890108c2cfe3bcb
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84329419"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87334496"
 ---
 # <a name="terraform-with-azure"></a>Utilizzo di Terraform con Azure
 
@@ -40,6 +40,6 @@ Terraform consente di distribuire un'infrastruttura tra più provider di servizi
 
 Dopo aver letto la panoramica su Terraform e i relativi vantaggi, ecco i passaggi successivi suggeriti:
 
-- Per iniziare, [installare Terraform e configurarlo per l'utilizzo in Azure](getting-started-cloud-shell.md).
+- Per iniziare, [installare Terraform e configurarlo per l'utilizzo in Azure](get-started-cloud-shell.md).
 - [Creare una macchina virtuale di Azure usando Terraform](create-linux-virtual-machine-with-infrastructure.md)
 - Esplorare il [modulo di Azure Resource Manager per Terraform](https://www.terraform.io/docs/providers/azurerm/). 
