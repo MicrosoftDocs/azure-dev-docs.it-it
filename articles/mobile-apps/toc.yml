@@ -43,7 +43,15 @@
         - name: Report degli errori in tempo reale
           href: diagnostics.md
     - name: Notifiche push
-      href: push-notifications.md
+      items:
+        - name: Interagire con gli utenti inviando notifiche push
+          href: push-notifications.md
+        - name: Usare Hub di notifica di Azure per inviare una notifica push a un'app Xamarin.Forms
+          href: notification-hubs-backend-service-xamarin-forms.md
+        - name: Usare Hub di notifica di Azure per inviare una notifica push a un'app React Native
+          href: notification-hubs-backend-service-react-native.md
+        - name: Usare Hub di notifica di Azure per inviare una notifica push a un'app Flutter
+          href: notification-hubs-backend-service-flutter.md
     - name: Machine Learning
       items:
         - name: Servizi cognitivi di Azure

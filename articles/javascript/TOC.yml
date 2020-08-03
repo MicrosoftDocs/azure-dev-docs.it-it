@@ -90,6 +90,10 @@
               href: /azure/cognitive-services/Computer-vision/Quickstarts/node-analyze?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
             - name: Riconoscimento vocale
               href: /azure/cognitive-services/speech-service/get-started?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
+        - name: Registrazione e metriche
+          items:
+            - name: Registrazione con Azure SDK
+              href: node-sdk-logging.md
     - name: Esercitazioni
       items:
         - name: Distribuire Funzioni di Azure con VS Code
@@ -220,5 +224,7 @@
           href: 'https://docs.microsoft.com/samples/browse/?languages=javascript%2Cnodejs&products=azure-search'
         - name: Tutti gli esempi
           href: 'https://docs.microsoft.com/samples/browse/?languages=javascript%2Cnodejs'
-    - name: Informazioni di riferimento
-      href: /javascript/api/?view=azure-node-latest
+    - name: Informazioni di riferimento sulle API delle librerie
+      href: /javascript/api/overview/azure/?view=azure-node-latest
+    - name: SDK più recenti
+      href: 'https://azure.github.io/azure-sdk/releases/latest/index.html#javascript'

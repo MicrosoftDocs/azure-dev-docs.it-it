@@ -50,7 +50,9 @@
       href: quickstarts-other-services.md
 - name: Esercitazioni specifiche per i vari scenari
   items:
-    - name: Distribuire un'app Web con VS Code
+    - name: Distribuire un'app Web e un database (portale)
+      href: tutorial-python-postgresql-app-portal.md
+    - name: Distribuire un'app Web (VS Code)
       items:
         - name: 1 - Introduzione e prerequisiti
           href: tutorial-deploy-app-service-on-linux-01.md
@@ -66,7 +68,7 @@
           href: tutorial-deploy-app-service-on-linux-06.md
         - name: 7 - Eseguire la pulizia delle risorse
           href: tutorial-deploy-app-service-on-linux-07.md
-    - name: Distribuire contenitori con VS Code
+    - name: Distribuire contenitori (VS Code)
       items:
         - name: 1 - Introduzione e prerequisiti
           href: tutorial-deploy-containers-01.md
@@ -78,7 +80,7 @@
           href: tutorial-deploy-containers-04.md
         - name: 5 - Eseguire la pulizia delle risorse
           href: tutorial-deploy-containers-05.md
-    - name: Distribuire Funzioni di Azure serverless con VS Code
+    - name: Distribuire funzioni serverless (VS Code)
       items:
         - name: 1 - Introduzione e prerequisiti
           href: tutorial-vs-code-serverless-python-01.md
