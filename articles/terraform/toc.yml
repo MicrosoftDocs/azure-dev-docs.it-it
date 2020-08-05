@@ -7,16 +7,12 @@
 - name: Avvii rapidi
   expanded: true
   items:
-    - name: Introduzione - Cloud Shell
+    - name: Introduzione - Azure Cloud Shell
       href: get-started-cloud-shell.md
-    - name: Introduzione - PowerShell
+    - name: Introduzione - Windows PowerShell
       href: get-started-powershell.md
-- name: Esercitazioni
+- name: Guide pratiche
   items:
-    - name: Installazione e configurazione
-      items:
-        - name: Archiviare lo stato Terraform in Archiviazione di Azure
-          href: store-state-in-azure-storage.md
     - name: Servizio app
       items:
         - name: Terraform e slot di distribuzione per provider di Azure
@@ -31,6 +27,30 @@
       items:
         - name: Distribuire un'istanza di Azure Cosmos DB
           href: deploy-azure-cosmos-db-to-azure-container-instances.md
+    - name: Strumenti
+      items:
+        - name: Installare l'estensione Terraform per Visual Studio Code
+          href: configure-vs-code-extension-for-terraform.md
+        - name: Creare un modello Terraform di base con Yeoman
+          href: create-base-template-using-yeoman.md
+    - name: Macchine virtuali
+      items:
+        - name: Macchina virtuale con infrastruttura
+          href: create-linux-virtual-machine-with-infrastructure.md
+        - name: Cluster di macchine virtuali con moduli Terraform
+          href: create-vm-cluster-module.md
+        - name: Cluster di macchine virtuali con Terraform e HCL
+          href: create-vm-cluster-with-infrastructure.md
+        - name: Set di scalabilità di macchine virtuali con infrastruttura
+          href: create-vm-scaleset-network-disks-hcl.md
+        - name: Set di scalabilità di macchine virtuali da immagine Packer
+          href: create-vm-scaleset-network-disks-using-packer-hcl.md
+- name: Esercitazioni
+  items:
+    - name: Installazione e configurazione
+      items:
+        - name: Archiviare lo stato Terraform in Archiviazione di Azure
+          href: store-state-in-azure-storage.md
     - name: Reti
       items:
         - name: Topologia hub-spoke
@@ -47,26 +67,16 @@
               href: hub-spoke-spoke-network.md
             - name: 6. Convalidare la connettività della topologia di rete
               href: hub-spoke-validation.md
-    - name: Strumenti
+    - name: Test di progetti Terraform
       items:
-        - name: Installare l'estensione Terraform per Visual Studio Code
-          href: configure-vs-code-extension-for-terraform.md
-        - name: Creare un modello Terraform di base con Yeoman
-          href: create-base-template-using-yeoman.md
-        - name: Testare i moduli Terraform con Terratest
-          href: test-modules-using-terratest.md
-    - name: Macchine virtuali
-      items:
-        - name: Macchina virtuale con infrastruttura
-          href: create-linux-virtual-machine-with-infrastructure.md
-        - name: Cluster di macchine virtuali con moduli Terraform
-          href: create-vm-cluster-module.md
-        - name: Cluster di macchine virtuali con Terraform e HCL
-          href: create-vm-cluster-with-infrastructure.md
-        - name: Set di scalabilità di macchine virtuali con infrastruttura
-          href: create-vm-scaleset-network-disks-hcl.md
-        - name: Set di scalabilità di macchine virtuali da immagine Packer
-          href: create-vm-scaleset-network-disks-using-packer-hcl.md
+        - name: 1. Panoramica dei test di Terraform
+          href: best-practices-testing-overview.md
+        - name: 2. Test di integrazione
+          href: best-practices-integration-testing.md
+        - name: 3. Test di conformità
+          href: best-practices-compliance-testing.md
+        - name: 4. Test end-to-end
+          href: best-practices-end-to-end-testing.md
 - name: Esempi
   items:
     - name: Modelli di configurazione

@@ -8,13 +8,13 @@ metadata:
   author: TomArcherMsft
   ms.author: tarcher
   ms.topic: landing-page
-  ms.date: 04/26/2020
-  ms.openlocfilehash: c85e77d0e2cebd0cc8c5b9a0485e6002cb3014ee
-  ms.sourcegitcommit: 8cd0ddf1651c3b64bb72dedc2890108c2cfe3bcb
+  ms.date: 07/31/2020
+  ms.openlocfilehash: 40e1650488552387f5a62cf02a754dde89fed773
+  ms.sourcegitcommit: e451e4360d9c5956cc6a50880b3a7a55aa4efd2f
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 07/28/2020
-  ms.locfileid: "87334506"
+  ms.lasthandoff: 07/31/2020
+  ms.locfileid: "87478541"
 landingContent:
 - title: Informazioni su Terraform in Azure
   linkLists:
@@ -30,21 +30,33 @@ landingContent:
   linkLists:
   - linkListType: get-started
     links:
-    - text: Cloud Shell e interfaccia della riga di comando di Azure
+    - text: Introduzione - Azure Cloud Shell
       url: get-started-cloud-shell.md
-    - text: Windows e PowerShell
+    - text: Introduzione - Windows PowerShell
       url: get-started-powershell.md
-  - linkListType: tutorial
+  - linkListType: how-to-guide
     links:
     - text: Installare l'estensione Terraform per Visual Studio Code
       url: configure-vs-code-extension-for-terraform.md
     - text: Creare un modello Terraform di base con Yeoman
       url: create-base-template-using-yeoman.md
-    - text: Testare i moduli Terraform con Terratest
-      url: test-modules-using-terratest.md
+- title: Test di progetti Terraform
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Panoramica dei test di Terraform
+      url: best-practices-testing-overview.md
+  - linkListType: tutorial
+    links:
+    - text: Test di integrazione
+      url: best-practices-integration-testing.md
+    - text: Test di conformità
+      url: best-practices-compliance-testing.md
+    - text: Test end-to-end
+      url: best-practices-end-to-end-testing.md
 - title: Gestire il servizio Azure Kubernetes
   linkLists:
-  - linkListType: tutorial
+  - linkListType: how-to-guide
     links:
     - text: Creare un cluster Kubernetes con il servizio Azure Kubernetes
       url: create-k8s-cluster-with-tf-and-aks.md
@@ -56,7 +68,7 @@ landingContent:
     links:
     - text: Creare una macchina virtuale Linux
       url: create-linux-virtual-machine-with-infrastructure.md
-  - linkListType: tutorial
+  - linkListType: how-to-guide
     links:
     - text: Creare un cluster di VM con moduli Terraform
       url: create-vm-cluster-module.md
@@ -84,7 +96,7 @@ landingContent:
       url: hub-spoke-validation.md
 - title: Gestire i database
   linkLists:
-  - linkListType: tutorial
+  - linkListType: how-to-guide
     links:
     - text: Distribuire un'istanza di Azure Cosmos DB
       url: deploy-azure-cosmos-db-to-azure-container-instances.md
