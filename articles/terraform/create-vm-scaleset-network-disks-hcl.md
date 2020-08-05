@@ -3,12 +3,12 @@ title: 'Esercitazione: Creare un set di scalabilità di macchine virtuali di Azu
 description: Informazioni su come usare Terraform per configurare e controllare le versioni di un set di scalabilità di macchine virtuali di Azure.
 ms.topic: tutorial
 ms.date: 11/07/2019
-ms.openlocfilehash: ce6922fe8bb5671afece009cd0228e8a3ff191da
-ms.sourcegitcommit: fb0564696f8067e6dfa8b9eaf819fadf321c2884
+ms.openlocfilehash: 057fbec811c842b27823395735186120612bc6c5
+ms.sourcegitcommit: 8cd0ddf1651c3b64bb72dedc2890108c2cfe3bcb
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85327199"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87334406"
 ---
 # <a name="tutorial-create-an-azure-virtual-machine-scale-set-using-terraform"></a>Esercitazione: Creare un set di scalabilità di macchine virtuali di Azure tramite Terraform
 
@@ -32,7 +32,7 @@ In questa esercitazione verranno illustrate le procedure per:
 
 [!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
 
-- **Installare Terraform**: Seguire le indicazioni nell'articolo su [Terraform e configurazione dell'accesso ad Azure](getting-started-cloud-shell.md)
+- **Installare Terraform**: Seguire le indicazioni nell'articolo su [Terraform e configurazione dell'accesso ad Azure](get-started-cloud-shell.md)
 
 - **Creare una coppia di chiavi SSH**: Per altre informazioni, vedere [Come creare e usare una coppia di chiavi SSH pubblica e privata per le macchine virtuali Linux in Azure](/azure/virtual-machines/linux/mac-create-ssh-keys).
 
@@ -378,7 +378,7 @@ In Cloud Shell seguire questa procedura:
 
 1. Salvare il file ( **&lt;CTRL+S**) e uscire dall'editor ( **&lt;CTRL+Q**).
 
-1. Creare un piano Terraform per visualizzare la distribuzione del set di scalabilità di macchine virtuali. È necessario specificare una password a scelta, nonché la posizione per le risorse.
+1. Creare un piano Terraform per visualizzare la distribuzione del set di scalabilità di macchine virtuali. È necessario specificare una password e la posizione per le risorse.
 
     ```bash
     terraform plan

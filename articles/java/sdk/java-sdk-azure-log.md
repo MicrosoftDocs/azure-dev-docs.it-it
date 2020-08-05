@@ -8,12 +8,12 @@ ms.date: 03/25/2020
 ms.topic: article
 ms.service: multiple
 ms.custom: devx-track-java
-ms.openlocfilehash: 5dbe0235143621587b111f4537a49b36f88115f1
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: 5bb7f711eae230a08893d2f94c242a06af809f88
+ms.sourcegitcommit: cf23d382eee2431a3958b1c87c897b270587bde0
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86379445"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87400619"
 ---
 # <a name="configure-logging-with-the-azure-sdk-for-java"></a>Configurare la registrazione con Azure SDK per Java
 
@@ -26,17 +26,30 @@ Le librerie client di Azure SDK per Java usano [Simple Logging Facade for Java](
 
 ## <a name="declare-a-logging-framework"></a>Dichiarare un framework di registrazione
 
-Prima di implementare questi logger, è necessario dichiarare il framework pertinente come dipendenza nel progetto. Per altre informazioni, vedere il [manuale dell'utente di SLF4J](http://www.slf4j.org/manual.html#projectDep).
+Prima di implementare questi logger, è necessario dichiarare il framework pertinente come dipendenza nel progetto. Per altre informazioni, vedere il [manuale dell'utente di SLF4J](https://www.slf4j.org/manual.html#projectDep).
 
-## <a name="configure-log4j-or-log4j-2"></a>Configurare Log4j o Log4j 2
+Le sezioni seguenti includono esempi di configurazione per i framework di registrazione più comuni.
 
-È possibile configurare la registrazione di Log4j e log4j 2 in un file di proprietà o in un file XML. Per informazioni dettagliate sulla registrazione di Log4j e log4j 2, vedere il [manuale di Apache Log4j 2](https://logging.apache.org/log4j/2.x/manual/configuration.html).
+## <a name="use-log4j"></a>Usare Log4j
 
-### <a name="use-a-properties-file"></a>Usare un file di proprietà
+Gli esempi seguenti illustrano le configurazioni per il framework di registrazione log4j. Per altre informazioni, vedere la [documentazione di Log4j](https://logging.apache.org/log4j/1.2/).
 
-Nella directory *./src/main/resource* del progetto creare un nuovo file denominato *log4j.properties* o *log4j2.properties* (quest'ultimo per Logj4 2). Usare questi esempi per iniziare.
+**Abilitare log4j aggiungendo una dipendenza Maven**
 
-Esempio di Log4j:
+Aggiungere quanto segue al file *pom.xml* del progetto:
+
+```xml
+<!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-log4j12 -->
+<dependency>
+    <groupId>org.slf4j</groupId>
+    <artifactId>slf4j-log4j12</artifactId>
+    <version>[1.0,)</version> <!-- Version number 1.0 and above -->
+</dependency>
+```
+
+**Abilitare Log4j usando un file delle proprietà**
+
+Creare un file *log4j.properties* nella directory *./src/main/resource* del progetto e aggiungere il contenuto seguente:
 
 ```properties
 log4j.rootLogger=INFO, A1
@@ -46,47 +59,70 @@ log4j.appender.A1.layout.ConversionPattern=%m%n
 log4j.logger.com.azure.core=ERROR
 ```
 
-Esempio di Log4j 2:
+**Abilitare log4j usando un file XML**
 
-```properties
-appender.console.type = Console
-appender.console.name = LogToConsole
-appender.console.layout.type = PatternLayout
-appender.console.layout.pattern = %msg%n
-logger.app.name=com.azure.core
-logger.app.level=ERROR
-```
-
-### <a name="use-an-xml-file"></a>Usare un file XML
-
-In alternativa, è possibile usare un file XML per configurare Log4j e Log4j 2. Nella directory *./src/main/resource* del progetto creare un nuovo file denominato *log4j.xml* o *log4j2.xml* (quest'ultimo per Logj4 2). Usare questi esempi per iniziare.
-
-Esempio di Log4j:
+Creare un file *log4j.xml* nella directory *./src/main/resource* del progetto e aggiungere il contenuto seguente:
 
 ```xml
 <!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
 <log4j:configuration debug="true" xmlns:log4j='http://jakarta.apache.org/log4j/'>
 
-  <appender name="console" class="org.apache.log4j.ConsoleAppender">
-    <param name="Target" value="System.out"/>
-    <layout class="org.apache.log4j.PatternLayout">
-    <param name="ConversionPattern" value="%m%n" />
-    </layout>
-  </appender>
-  <logger name="com.azure.core" additivity="true">
-    <level value="ERROR" />
-    <appender-ref ref="console" />
-  </logger>
+    <appender name="console" class="org.apache.log4j.ConsoleAppender">
+        <param name="Target" value="System.out"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%m%n" />
+        </layout>
+    </appender>
+    <logger name="com.azure.core">
+        <level value="ERROR" />
+        <appender-ref ref="console" />
+    </logger>
 
-  <root>
-    <priority value ="info"></priority>
-    <appender-ref ref="console"></appender>
-  </root>
+    <root>
+        <level value="info" />
+        <appender-ref ref="console" />
+    </root>
 
 </log4j:configuration>
 ```
 
-Esempio di Log4j 2:
+## <a name="use-log4j-2"></a>Usare Log4j 2
+
+Gli esempi seguenti illustrano le configurazioni per il framework di registrazione log4j 2. Per altre informazioni, vedere la [documentazione di Log4j 2](https://logging.apache.org/log4j/2.x/manual/configuration.html).
+
+**Abilitare log4j 2 aggiungendo una dipendenza Maven**
+
+Aggiungere quanto segue al file *pom.xml* del progetto:
+
+```
+<!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-slf4j-impl -->
+<dependency>
+    <groupId>org.apache.logging.log4j</groupId>
+    <artifactId>log4j-slf4j-impl</artifactId>
+    <version>[2.0,)</version> <!-- Version number 2.0 and above -->
+</dependency>
+```
+
+**Abilitare Log4j 2 usando un file delle proprietà**
+
+Creare un file *log4j2.properties* nella directory *./src/main/resource* del progetto e aggiungere il contenuto seguente:
+
+```properties
+appender.console.type = Console
+appender.console.name = STDOUT
+appender.console.layout.type = PatternLayout
+appender.console.layout.pattern = %msg%n
+logger.app.name=com.azure.core
+logger.app.level=ERROR
+
+rootLogger.level = info
+rootLogger.appenderRefs = stdout
+rootLogger.appenderRef.stdout.ref = STDOUT
+```
+
+**Abilitare log4j 2 usando un file XML**
+
+Creare un file *log4j2.xml* nella directory *./src/main/resource* del progetto e aggiungere il contenuto seguente:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -108,14 +144,28 @@ Esempio di Log4j 2:
 </Configuration>
 ```
 
-## <a name="configure-logback"></a>Configurare Logback
+## <a name="use-logback"></a>Usare Logback
 
-[Logback](https://logback.qos.ch/manual/introduction.html) è uno dei framework di registrazione più diffusi e un'implementazione nativa di SLF4J. Per configurare Logback, creare un nuovo file XML denominato *logback.xml* nella directory *./src/main/resources* del progetto. Per altre informazioni sulle opzioni di configurazione, vedere il [sito Web del progetto Logback](https://logback.qos.ch/manual/configuration.html).
+Gli esempi seguenti illustrano le configurazioni per il framework di registrazione Logback. Per altre informazioni, vedere la [documentazione di Logback](https://logback.qos.ch/manual/configuration.html).
 
-Ecco un esempio di configurazione di Logback:
+**Abilitare Logback aggiungendo una dipendenza Maven**
+
+Aggiungere quanto segue al file *pom.xml* del progetto:
+
+```
+<!-- https://mvnrepository.com/artifact/ch.qos.logback/logback-classic -->
+<dependency>
+    <groupId>ch.qos.logback</groupId>
+    <artifactId>logback-classic</artifactId>
+    <version>[0.2.5,)</version> <!-- Version number 0.2.5 and above -->
+</dependency>
+```
+
+**Abilitare Logback usando un file XML**
+
+Creare un file *logback.xml* nella directory *./src/main/resource* del progetto e aggiungere il contenuto seguente:
 
 ```xml
-<?xml version="1.0" encoding="UTF-8"?>
 <configuration>
   <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
     <encoder>
@@ -131,9 +181,19 @@ Ecco un esempio di configurazione di Logback:
 </configuration>
 ```
 
-Ecco una semplice configurazione di Logback per la registrazione nella console:
+## <a name="use-logback-in-a-spring-boot-application"></a>Usare Logback in un'applicazione Spring Boot
 
-```xml
+Gli esempi seguenti illustrano alcune configurazioni per l'uso di Logback con Spring. In genere le configurazioni della registrazione si aggiungono a un file *logback.xml* nella directory *./src/main/resources* del progetto. Spring esamina questo file per trovare varie configurazioni, inclusa quella della registrazione. Per altre informazioni, vedere la [documentazione di Logback](https://logback.qos.ch/manual/configuration.html).
+
+È possibile configurare l'applicazione in modo da leggere le configurazioni di Logback da qualsiasi file. Per collegare il file *logback.xml* all'applicazione Spring, creare un file *application.properties* nella directory *./src/main/resources* del progetto e aggiungere il contenuto seguente:
+
+```properties
+logging.config=classpath:logback.xml
+```
+
+Per creare una configurazione di Logback per la registrazione nella console, aggiungere quanto segue al file *logback.xml*:
+
+```xml 
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
   <appender name="Console"
@@ -151,7 +211,7 @@ Ecco una semplice configurazione di Logback per la registrazione nella console:
 </configuration>
 ```
 
-Ecco una configurazione per la registrazione in un file di cui viene eseguito il rollback dopo ogni ora e che viene archiviato in formato di file GZIP:
+Per configurare la registrazione in un file di cui viene eseguito il rollover dopo ogni ora e che viene archiviato in formato gzip, aggiungere quanto segue al file *logback.xml*:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -175,14 +235,6 @@ Ecco una configurazione per la registrazione in un file di cui viene eseguito il
     <appender-ref ref="RollingFile" />
   </root>
 </configuration>
-```
-
-### <a name="configure-logback-for-a-spring-boot-application"></a>Configurare Logback per un'applicazione Spring Boot
-
-Spring cerca le configurazioni del progetto, inclusa la registrazione, nel file *application.properties*, che si trova nella directory *./src/main/resources*. Nel file *application.properties* aggiungere la riga seguente per collegare il file *logback.xml* all'applicazione Spring Boot:
-
-```properties
-logging.config=classpath:logback.xml
 ```
 
 ## <a name="configure-fallback-logging-for-temporary-debugging"></a>Configurare la registrazione di fallback per il debug temporaneo

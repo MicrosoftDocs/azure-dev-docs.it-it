@@ -1,14 +1,14 @@
 ---
 title: "Esercitazione: Creare un set di scalabilità di macchine virtuali di Azure da un'immagine personalizzata Packer usando Terraform"
-description: Informazioni su come usare Terraform per configurare e controllare la versione di un set di scalabilità di macchine virtuali di Azure da un'immagine personalizzata generata da Packer (con una rete virtuale e dischi collegati gestiti).
+description: Informazioni su come usare Terraform per configurare un set di scalabilità di macchine virtuali di Azure da un'immagine personalizzata generata da Packer
 ms.topic: tutorial
 ms.date: 11/07/2019
-ms.openlocfilehash: d9db8f47cdb4c295ef5625450980938ff348b5fb
-ms.sourcegitcommit: 553da4e9aa988e5bb823364244ea81961cee5bc7
+ms.openlocfilehash: f72d8ab828259e4408ceb78528ce310a214e05ad
+ms.sourcegitcommit: 8cd0ddf1651c3b64bb72dedc2890108c2cfe3bcb
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85790840"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87334396"
 ---
 # <a name="tutorial-create-an-azure-virtual-machine-scale-set-from-a-packer-custom-image-by-using-terraform"></a>Esercitazione: Creare un set di scalabilità di macchine virtuali di Azure da un'immagine personalizzata Packer usando Terraform
 
@@ -29,7 +29,7 @@ In questa esercitazione verranno illustrate le procedure per:
 ## <a name="prerequisites"></a>Prerequisiti
 
 [!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
-- **Terraform**: [installare Terraform e configurare l'accesso ad Azure](getting-started-cloud-shell.md).
+- **Terraform**: [installare Terraform e configurare l'accesso ad Azure](get-started-cloud-shell.md).
 - **Coppia di chiavi SSH**: [creare una coppia di chiavi SSH](/azure/virtual-machines/linux/mac-create-ssh-keys).
 - **Packer**:  [installare Packer](https://learn.hashicorp.com/packer/getting-started/install).
 
