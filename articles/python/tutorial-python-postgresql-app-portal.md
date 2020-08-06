@@ -5,12 +5,12 @@ ms.devlang: python
 ms.topic: tutorial
 ms.date: 07/23/2020
 ms.custom: tracking-python
-ms.openlocfilehash: 7d155d307f1984861188ac7daab82db5104a6a7a
-ms.sourcegitcommit: cf23d382eee2431a3958b1c87c897b270587bde0
+ms.openlocfilehash: f3c667ab720a3e8c82b59dc439b8033697b4fc2a
+ms.sourcegitcommit: b224b276a950b1d173812f16c0577f90ca2fbff4
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87401578"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87810594"
 ---
 # <a name="tutorial-deploy-a-django-web-app-with-postgresql-using-the-azure-portal"></a>Esercitazione: Distribuire un'app Web Django con PostgreSQL tramite il portale di Azure
 
@@ -279,4 +279,4 @@ Per continuare a eseguire attività di sviluppo, è possibile lasciare l'app e i
 Vedere le informazioni sul modo in cui il servizio app esegue un'app Python:
 
 > [!div class="nextstepaction"]
-> [Configurare un'app Python](/azure/app-service/containers/how-to-configure-python.md)
+> [Configurare un'app Python](https://docs.microsoft.com/azure/app-service/containers/how-to-configure-python)

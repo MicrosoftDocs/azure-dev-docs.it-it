@@ -6,12 +6,12 @@ ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 2/12/2020
 ms.custom: devx-track-java
-ms.openlocfilehash: fb6a7c108f99081eeeb2bd41f1366f4c38865fe6
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: c52326b29aca3b12310f8a1a0acd86566c45ecf8
+ms.sourcegitcommit: b224b276a950b1d173812f16c0577f90ca2fbff4
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86379735"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87810634"
 ---
 # <a name="migrate-spring-cloud-applications-to-azure-spring-cloud"></a>Eseguire la migrazione delle applicazioni Spring Cloud ad Azure Spring Cloud
 
@@ -94,7 +94,7 @@ Dopo aver identificato i broker in uso, trovare le impostazioni corrispondenti. 
 
 Identificare tutti i provider di identità e tutte le applicazioni Spring Cloud che richiedono l'autenticazione e/o l'autorizzazione. Per informazioni sul modo in cui è possibile configurare i provider di identità, consultare gli argomenti seguenti:
 
-* Per la configurazione di OAuth2, vedere la guida di [avvio rapido su Spring Cloud Security](https://cloud.spring.io/spring-cloud-static/spring-cloud-security/current/reference/html/#_quickstart).
+* Per la configurazione di OAuth2, vedere la guida di [avvio rapido su Spring Cloud Security](https://cloud.spring.io/spring-cloud-security/2.1.x/multi/multi__quickstart.html#_quickstart).
 * Per la configurazione di Auth0 Spring Security, vedere la [documentazione di Auth0 Spring Security](https://auth0.com/docs/quickstart/backend/java-spring-security5/01-authorization).
 * Per la configurazione della sicurezza di PingFederate Spring Security, vedere le [istruzioni di Auth0 PingFederate](https://auth0.com/authenticate/java-spring-security/ping-federate/).
 

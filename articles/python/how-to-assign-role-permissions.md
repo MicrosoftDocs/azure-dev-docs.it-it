@@ -3,12 +3,13 @@ title: Assegnare le autorizzazioni del ruolo a un'identità dell'app o a un'enti
 description: Come concedere le autorizzazioni a un'entità servizio o a un'identità dell'app usando l'interfaccia della riga di comando di Azure
 ms.date: 05/12/2020
 ms.topic: conceptual
-ms.openlocfilehash: 4eedf982d16f9991bd884d6b575f0f8d8ee97bd2
-ms.sourcegitcommit: efab6be74671ea4300162e0b30aa8ac134d3b0a9
+ms.custom: devx-track-azurecli
+ms.openlocfilehash: 46856cef77058ec3eb48aa6da806adb0bba26327
+ms.sourcegitcommit: e451e4360d9c5956cc6a50880b3a7a55aa4efd2f
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84256436"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87478381"
 ---
 # <a name="how-to-assign-role-permissions-to-an-app-identity-or-service-principal"></a>Come assegnare le autorizzazioni del ruolo a un'identità dell'app o a un'entità servizio
 

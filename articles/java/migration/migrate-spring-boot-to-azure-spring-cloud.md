@@ -6,12 +6,12 @@ ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 5/26/2020
 ms.custom: devx-track-java
-ms.openlocfilehash: c779a85f49ccd7507882fbd123a329addca60a7c
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: 7bc4a5188181f3b4b6d98b5308a5027a42bbac5e
+ms.sourcegitcommit: b224b276a950b1d173812f16c0577f90ca2fbff4
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86379745"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87810584"
 ---
 # <a name="migrate-spring-boot-applications-to-azure-spring-cloud"></a>Eseguire la migrazione di applicazioni Spring Boot ad Azure Spring Cloud
 
@@ -134,7 +134,7 @@ Ora che è stata completata la migrazione, verificare che l'applicazione funzion
 
 * Valutare se consentire l'uso dell'applicazione con Spring Cloud Registry. In questo modo l'applicazione potrà essere individuata dinamicamente da altri microservizi e client distribuiti. Per altre informazioni, vedere [Esercitazione: Preparare un'app Java Spring per la distribuzione](/azure/spring-cloud/spring-cloud-tutorial-prepare-app-deployment). Modificare quindi tutti i client dell'applicazione per l'uso del servizio di bilanciamento del carico del client Spring. In questo modo il client può ottenere gli indirizzi di tutte le istanze dell'applicazione in esecuzione e trovarne una che funziona, se un'altra risulta danneggiata o non risponde. Per altre informazioni, vedere [Suggerimenti su Spring: Spring Cloud LoadBalancer](https://spring.io/blog/2020/03/25/spring-tips-spring-cloud-loadbalancer) nel blog di Spring.
 
-* Invece di rendere pubblica l'applicazione, è consigliabile aggiungere un'istanza di [Spring Cloud Gateway](https://cloud.spring.io/spring-cloud-static/spring-cloud-gateway/current/reference/html/). Spring Cloud Gateway fornisce un singolo endpoint per tutte le applicazioni o i microservizi distribuiti nell'istanza di Azure Spring Cloud. Se Spring Cloud Gateway è già stato distribuito, assicurarsi che sia configurato per instradare il traffico all'applicazione appena distribuita.
+* Invece di rendere pubblica l'applicazione, è consigliabile aggiungere un'istanza di [Spring Cloud Gateway](https://cloud.spring.io/spring-cloud-gateway/reference/html/). Spring Cloud Gateway fornisce un singolo endpoint per tutte le applicazioni o i microservizi distribuiti nell'istanza di Azure Spring Cloud. Se Spring Cloud Gateway è già stato distribuito, assicurarsi che sia configurato per instradare il traffico all'applicazione appena distribuita.
 
 * È consigliabile aggiungere un server Spring Cloud Config per gestire centralmente la configurazione e controllarne la versione per tutti i microservizi di Spring Cloud. Prima di tutto, creare un repository Git in cui ospitare la configurazione e configurare l'istanza di Azure Spring Cloud per usarlo. Per altre informazioni, vedere [Esercitazione: Configurare un'istanza di Spring Cloud Config Server per il servizio](/azure/spring-cloud/spring-cloud-tutorial-config-server). Eseguire quindi la migrazione della configurazione seguendo questa procedura:
 

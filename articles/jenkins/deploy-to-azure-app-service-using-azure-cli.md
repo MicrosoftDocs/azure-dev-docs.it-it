@@ -4,12 +4,13 @@ description: Informazioni su come usare l'interfaccia della riga di comando di A
 keywords: jenkins, azure, devops, servizio app, interfaccia della riga di comando
 ms.topic: tutorial
 ms.date: 04/25/2020
-ms.openlocfilehash: 242986ca95b36d95393b7ff688ebf60bb95985fa
-ms.sourcegitcommit: 8309822d57f784a9c2ca67428ad7e7330bb5e0d6
+ms.custom: devx-track-azurecli
+ms.openlocfilehash: 63a5097358001e0312af13053e3d7310fe413cc7
+ms.sourcegitcommit: e451e4360d9c5956cc6a50880b3a7a55aa4efd2f
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82861234"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87478341"
 ---
 # <a name="tutorial-deploy-to-azure-app-service-with-jenkins-and-the-azure-cli"></a>Esercitazione: Distribuire nel servizio app di Azure con Jenkins e l'interfaccia della riga di comando di Azure
 

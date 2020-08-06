@@ -1,17 +1,17 @@
 ---
-title: "Esercitazione: Effettuare il provisioning dell'infrastruttura con slot di distribuzione di Azure tramite Terraform"
+title: Effettuare il provisioning dell'infrastruttura con slot di distribuzione di Azure tramite Terraform
 description: Informazioni su come usare Terraform con gli slot di distribuzione del provider di Azure.
 keywords: azure devops terraform slot di distribuzione
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/09/2020
-ms.openlocfilehash: 8f5597684a9d61474685f8117fa584405fa0979e
-ms.sourcegitcommit: 756e4873f904db954a56c20ebb2f1f5116ee4596
+ms.openlocfilehash: 8ae9f51b82f7868e4df11f1586664f203aa5403b
+ms.sourcegitcommit: e451e4360d9c5956cc6a50880b3a7a55aa4efd2f
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82171957"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87478484"
 ---
-# <a name="tutorial-provision-infrastructure-with-azure-deployment-slots-using-terraform"></a>Esercitazione: Effettuare il provisioning dell'infrastruttura con slot di distribuzione di Azure tramite Terraform
+# <a name="provision-infrastructure-with-azure-deployment-slots-using-terraform"></a>Effettuare il provisioning dell'infrastruttura con slot di distribuzione di Azure tramite Terraform
 
 È possibile usare [slot di distribuzione di Azure](/azure/app-service/deploy-staging-slots) per alternare versioni diverse di un'app. Queste funzionalità consentono di ridurre al minimo l'impatto delle distribuzioni non funzionanti. 
 

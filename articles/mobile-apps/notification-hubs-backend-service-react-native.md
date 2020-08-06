@@ -6,12 +6,12 @@ ms.service: mobile-services
 ms.topic: tutorial
 ms.date: 07/27/2020
 ms.author: alstrakh
-ms.openlocfilehash: ddc35adf00b41dd421cbcd64437a7366bf4c74b1
-ms.sourcegitcommit: cf23d382eee2431a3958b1c87c897b270587bde0
+ms.openlocfilehash: 1fbfd29cce90222334309cd24339eb196a3aaa36
+ms.sourcegitcommit: b224b276a950b1d173812f16c0577f90ca2fbff4
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87401618"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87810644"
 ---
 # <a name="tutorial-send-push-notifications-to-react-native-apps-using-azure-notification-hubs-via-a-backend-service"></a>Esercitazione: Inviare notifiche push alle app React Native con Hub di notifica di Azure tramite un servizio back-end  
 
@@ -64,7 +64,7 @@ Non occorre avere un'esperienza precedente per seguire i passaggi di questo esem
 * [Portale Apple Developer](https://developer.apple.com)
 * [ASP.NET Core](https://docs.microsoft.com/aspnet/core/introduction-to-aspnet-core?view=aspnetcore-3.1)
 * [Google Firebase Console](https://console.firebase.google.com/u/0/)
-* [Microsoft Azure](https://portal.azure.com) e [Inviare notifiche push alle app iOS con Hub di notifica di Azure](/azure/notification-hubs/ios-sdk-get-started.md).
+* [Microsoft Azure](https://portal.azure.com) e [Inviare notifiche push alle app iOS con Hub di notifica di Azure](https://docs.microsoft.com/azure/notification-hubs/ios-sdk-get-started).
 * [React Native](https://reactnative.dev/docs/getting-started).
 
 I passaggi descritti sono relativi a [Visual Studio per Mac](https://visualstudio.microsoft.com/vs/mac/) e [Visual Studio Code](https://code.visualstudio.com/download), ma è possibile seguire l'esercitazione anche usando [Visual Studio 2019](https://visualstudio.microsoft.com/vs).
@@ -117,16 +117,16 @@ A questo punto è possibile testare l'invio di notifiche tramite il servizio bac
 
 ## <a name="related-links"></a>Collegamenti correlati
 
-* [Panoramica di Hub di notifica di Azure](/azure/notification-hubs/notification-hubs-push-notification-overview.md)
+* [Panoramica di Hub di notifica di Azure](https://docs.microsoft.com/azure/notification-hubs/notification-hubs-push-notification-overview)
 * [Installazione di Visual Studio per Mac](https://docs.microsoft.com/visualstudio/mac/installation?view=vsmac-2019)
 * [Installazione di Visual Studio Code](https://code.visualstudio.com/download)
 * [Configurazione dell'ambiente di sviluppo per React Native](https://reactnative.dev/docs/environment-setup)
 * [SDK di Hub di notifica per le operazioni back-end](https://www.nuget.org/packages/Microsoft.Azure.NotificationHubs/)
 * [SDK di Hub di notifica su GitHub](https://github.com/Azure/azure-notificationhubs)
-* [Registrazione con il back-end dell'applicazione](/azure/notification-hubs/notification-hubs-ios-aspnet-register-user-from-backend-to-push-notification.md)
-* [Gestione delle registrazioni](/azure/notification-hubs/notification-hubs-push-notification-registration-management.md)
-* [Uso dei tag](/azure/notification-hubs/notification-hubs-tags-segment-push-message.md)
-* [Uso di modelli personalizzati](/azure/notification-hubs/notification-hubs-templates-cross-platform-push-messages.md)
+* [Registrazione con il back-end dell'applicazione](https://docs.microsoft.com/azure/notification-hubs/notification-hubs-ios-aspnet-register-user-from-backend-to-push-notification)
+* [Gestione delle registrazioni](https://docs.microsoft.com/azure/notification-hubs/notification-hubs-push-notification-registration-management)
+* [Uso dei tag](https://docs.microsoft.com/azure/notification-hubs/notification-hubs-tags-segment-push-message)
+* [Uso di modelli personalizzati](https://docs.microsoft.com/azure/notification-hubs/notification-hubs-templates-cross-platform-push-messages)
 
 ## <a name="next-steps"></a>Passaggi successivi
 
