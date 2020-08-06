@@ -7,12 +7,12 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: d05e5f5c6680e4a33bfd66289437d6967fe34e88
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: 65f0c827fec68bc6a11d7dcaf380738967e16a92
+ms.sourcegitcommit: 300251b3d866bac9c7d2dfc3133efaaea8e0ce04
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86378065"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87438478"
 ---
 # <a name="manage-virtual-machines-by-using-the-azure-explorer-for-intellij"></a>Gestire macchine virtuali con Azure Explorer per IntelliJ
 
@@ -39,7 +39,7 @@ Per creare una macchina virtuale con Azure Explorer, eseguire queste operazioni:
 
 4. Nella finestra **Selezionare un'immagine di macchina virtuale** immettere le informazioni seguenti:
 
-   * **Località**: specifica dove verrà creata la macchina virtuale, ad esempio *Stati Uniti occidentali*. 
+   * **Località**: specifica dove verrà creata la macchina virtuale, ad esempio *West US* (Stati Uniti occidentali). 
 
    * **Recommended Image** (Immagine consigliata): specifica che si sceglie un'immagine da un elenco abbreviato di immagini di uso comune.
 
@@ -47,11 +47,11 @@ Per creare una macchina virtuale con Azure Explorer, eseguire queste operazioni:
 
       * **Autore**: specifica l'autore che ha creato l'immagine che verrà usata per creare la macchina virtuale, ad esempio *Microsoft*.
 
-      * **Offerta**: specifica la macchina virtuale offerta da usare dall'autore selezionato, ad esempio *JDK*.
+      * **Offer** (Offerta): specifica l'offerta di macchina virtuale dell'editore selezionato da usare, ad esempio *JDK*.
 
-      * **SKU**: specifica la SKU da usare nell'offerta selezionata, ad esempio *JDK_8*.
+      * **Sku**: specifica lo SKU dell'offerta selezionata da usare, ad esempio *JDK_8*.
 
-      * **Versione #** (N. versione): specifica la versione della SKU selezionata.
+      * **Version #** (N. versione): specifica la versione dello SKU selezionato da usare.
 
    ![Finestra Selezionare un'immagine di macchina virtuale][CR03]
 
@@ -61,11 +61,11 @@ Per creare una macchina virtuale con Azure Explorer, eseguire queste operazioni:
 
    * **Nome macchina virtuale**: specifica il nome della nuova macchina virtuale, che deve iniziare con una lettera e contenere solo lettere, numeri e trattini.
 
-   * **Dimensioni**: specifica il numero di core e la quantità di memoria da allocare per la macchina virtuale.
+   * **Size**: specifica il numero di core e la quantità di memoria da allocare per la macchina virtuale.
 
    * **Nome utente**: specifica l'account amministratore da creare per la gestione della macchina virtuale.
 
-   * **Password** e **Conferma**: specifica la password per l'account di amministratore.
+   * **Password** e **Confirm** (Conferma): specificano la password per l'account amministratore.
 
    ![Finestra Impostazioni di base della macchina virtuale][CR04]
 
@@ -74,7 +74,7 @@ Per creare una macchina virtuale con Azure Explorer, eseguire queste operazioni:
 8. Nella finestra **Risorse associate** immettere le informazioni seguenti:
 
    * **Gruppo di risorse**: specifica il gruppo di risorse per la macchina virtuale. Selezionare una delle opzioni seguenti:
-      * **Crea nuovo**: specifica che si intende creare un nuovo gruppo di risorse.
+      * **Crea nuovo**: specifica che si vuole creare un nuovo gruppo di risorse.
       * **Usa esistente**: specifica che si vuole scegliere in un elenco i gruppi di risorse associati all'account di Azure.
 
        ![Finestra Risorse associate][CR07]
@@ -83,13 +83,13 @@ Per creare una macchina virtuale con Azure Explorer, eseguire queste operazioni:
 
       ![Finestra di dialogo Crea account di archiviazione][CR05]
 
-   * **Rete virtuale** e **Subnet**: specifica la rete virtuale e la subnet a cui si connetterà la macchina virtuale. È possibile usare una subnet e una rete esistente oppure creare una rete e una subnet nuove. Se si seleziona **Crea nuovo**, verrà visualizzata la finestra di dialogo seguente:
+   * **Virtual Network** (Rete virtuale) e **Subnet**: specificano la rete virtuale e la subnet a cui si connetterà la macchina virtuale. È possibile usare una subnet e una rete esistente oppure creare una rete e una subnet nuove. Se si seleziona **Crea nuovo**, verrà visualizzata la finestra di dialogo seguente:
 
       ![Finestra di dialogo Crea rete virtuale][CR06]
 
-   * **Indirizzo IP pubblico**: specifica un indirizzo IP con connessione esterna per la macchina virtuale. È possibile scegliere di creare un nuovo indirizzo IP o, se la macchina virtuale non avrà un indirizzo IP pubblico, è possibile selezionare **(Nessuno)** . 
+   * **Indirizzo IP pubblico**: specifica un indirizzo IP con accesso all'esterno per la macchina virtuale. È possibile scegliere di creare un nuovo indirizzo IP o, se la macchina virtuale non avrà un indirizzo IP pubblico, è possibile selezionare **(Nessuno)** . 
 
-   * **Gruppo di sicurezza di rete**: specifica un firewall di rete facoltativo per la macchina virtuale. È possibile selezionare un firewall esistente oppure, se la macchina virtuale non usa un firewall di rete, è possibile selezionare **(Nessuno)** . 
+   * **Network security group** (Gruppo di sicurezza di rete): specifica un firewall di rete facoltativo per la macchina virtuale. È possibile selezionare un firewall esistente oppure, se la macchina virtuale non usa un firewall di rete, è possibile selezionare **(Nessuno)** . 
 
    * **Set di disponibilità**: specifica un set di disponibilità facoltativo a cui può appartenere la macchina virtuale. È possibile selezionare un set di disponibilità esistente, creare un nuovo set di disponibilità o, se la macchina virtuale non apparterrà a un set di disponibilità, selezionare **(Nessuno)** .
 
@@ -150,8 +150,8 @@ Per altre informazioni sulle dimensioni e sui prezzi delle macchine virtuali in 
 <!-- URL List -->
 
 [Istruzioni di accesso per Azure Toolkit for IntelliJ]: ./sign-in-instructions.md
-[Dimensioni per le macchine virtuali Windows in Azure]: /azure/virtual-machines/virtual-machines-windows-sizes
-[Dimensioni delle macchine virtuali Linux in Azure]: /azure/virtual-machines/virtual-machines-linux-sizes
+[Dimensioni per le macchine virtuali Windows in Azure]: https://docs.microsoft.com/azure/virtual-machines/sizes
+[Dimensioni delle macchine virtuali Linux in Azure]: https://docs.microsoft.com/azure/virtual-machines/sizes
 [Prezzi delle macchine virtuali in Windows]: https://azure.microsoft.com/pricing/details/virtual-machines/windows/
 [Prezzi delle macchine virtuali in Linux]: https://azure.microsoft.com/pricing/details/virtual-machines/linux/
 
