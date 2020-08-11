@@ -1,17 +1,17 @@
 ---
-title: 'Avvio rapido: Introduzione a Terraform con PowerShell'
+title: 'Avvio rapido: Introduzione a Terraform con Windows e PowerShell'
 description: Questo argomento di avvio rapido illustra come installare e configurare Terraform per la creazione di risorse di Azure.
 keywords: azure devops terraform installazione configurazione windows inizializzazione piano applicare esecuzione portale accesso controllo degli accessi in base al ruolo entità servizio script automatizzato powershell
 ms.topic: quickstart
 ms.date: 07/27/2020
-ms.openlocfilehash: 40663f23d79066354cb7a78318eba7a8998676c5
-ms.sourcegitcommit: cf23d382eee2431a3958b1c87c897b270587bde0
+ms.openlocfilehash: 055d3fcdbe095ddc3e5e1f5b90efcbd4950d43f6
+ms.sourcegitcommit: e451e4360d9c5956cc6a50880b3a7a55aa4efd2f
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87400659"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87478581"
 ---
-# <a name="quickstart-get-started-with-terraform-using-powershell"></a>Avvio rapido: Introduzione a Terraform con PowerShell
+# <a name="quickstart-get-started-with-terraform-using-windows-and-powershell"></a>Avvio rapido: Introduzione a Terraform con Windows e PowerShell
  
 [!INCLUDE [terraform-intro.md](includes/terraform-intro.md)]
 

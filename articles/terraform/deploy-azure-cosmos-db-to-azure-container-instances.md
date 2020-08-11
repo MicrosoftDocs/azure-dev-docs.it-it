@@ -1,18 +1,18 @@
 ---
-title: "Esercitazione: Distribuire un'istanza di Azure Cosmos DB in Istanze di Azure Container"
+title: Distribuire un'istanza di Azure Cosmos DB in Istanze di Azure Container
 description: Informazioni su come usare Terraform per distribuire un'istanza di Azure Cosmos DB in Istanze di Azure Container
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 04/26/2020
-ms.openlocfilehash: d0a175d3b465de640c151bd2b8ce339f0b5ade5b
-ms.sourcegitcommit: 8cd0ddf1651c3b64bb72dedc2890108c2cfe3bcb
+ms.openlocfilehash: 4534de7d57b86adefee36f5f6c0f455126a033c3
+ms.sourcegitcommit: e451e4360d9c5956cc6a50880b3a7a55aa4efd2f
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87334366"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87478601"
 ---
-# <a name="tutorial-deploy-an-azure-cosmos-db-to-azure-container-instances"></a>Esercitazione: Distribuire un'istanza di Azure Cosmos DB in Istanze di Azure Container
+# <a name="deploy-an-azure-cosmos-db-to-azure-container-instances"></a>Distribuire un'istanza di Azure Cosmos DB in Istanze di Azure Container
 
-In questa esercitazione verranno create risorse di Azure con Terraform. I passaggi descritti in questo articolo illustrano come creare le risorse seguenti:
+In questo articolo verranno create risorse di Azure con Terraform. I passaggi descritti in questo articolo illustrano come creare le risorse seguenti:
 
 > [!div class="checklist"]
 > * Istanza di Azure Cosmos DB
@@ -170,7 +170,7 @@ Per testare l'applicazione, passare al nome di dominio completo dell'istanza di 
 
 Quando non sono più necessarie, eliminare le risorse create in questo articolo.
 
-Eseguire il comando [terraform destroy](https://www.terraform.io/docs/commands/destroy.html) per rimuovere le risorse di Azure create in questa esercitazione:
+Eseguire il comando [terraform destroy](https://www.terraform.io/docs/commands/destroy.html) per rimuovere le risorse di Azure create in questo articolo:
 
 ```bash
 terraform destroy -auto-approve
