@@ -3,18 +3,18 @@ title: 'Esercitazione: Creare una rete virtuale hub in Azure con Terraform'
 description: Informazioni su come creare una rete virtuale hub in Azure che funge da punto di connessione comune tra altre reti.
 ms.topic: tutorial
 ms.date: 10/26/2019
-ms.openlocfilehash: deef7a1462662b8f9f6ebbca013929102fa4ba95
-ms.sourcegitcommit: db56786f046a3bde1bd9b0169b4f62f0c1970899
+ms.openlocfilehash: ed2b391075dc04b7ef16d3f305ef4ff86abed4ae
+ms.sourcegitcommit: e451e4360d9c5956cc6a50880b3a7a55aa4efd2f
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84329699"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87478571"
 ---
 # <a name="tutorial-create-a-hub-virtual-network-in-azure-by-using-terraform"></a>Esercitazione: Creare una rete virtuale hub in Azure con Terraform
 
-La rete virtuale hub funge da punto centrale di connettività per la rete locale. La rete virtuale ospita servizi condivisi utilizzati dai carichi di lavoro ospitati nelle reti virtuali spoke. Per scopi dimostrativi, in questa esercitazione non vengono implementati servizi condivisi.
+La rete virtuale hub funge da punto centrale di connettività per la rete locale. La rete virtuale ospita servizi condivisi utilizzati dai carichi di lavoro ospitati nelle reti virtuali spoke. Per scopi dimostrativi, in questo articolo non vengono implementati servizi condivisi.
 
-Questa esercitazione illustra le attività seguenti:
+Questo articolo illustra le attività seguenti:
 
 > [!div class="checklist"]
 > * Usare HCL (HashiCorp Configuration Language) per implementare la rete virtuale hub in una topologia hub-spoke.

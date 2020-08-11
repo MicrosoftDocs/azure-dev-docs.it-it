@@ -1,21 +1,21 @@
 ---
-title: 'Esercitazione: Creare un cluster Kubernetes con il servizio Azure Kubernetes usando Terraform'
+title: Creare un cluster Kubernetes con il servizio Azure Kubernetes usando Terraform
 description: Informazioni su come creare un cluster Kubernetes con il servizio Azure Kubernetes e Terraform.
 keywords: azure devops terraform servizio azure kubernetes kubernetes
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/09/2020
-ms.openlocfilehash: 6056b6990e820d863404eea7394adc483de0cd3c
-ms.sourcegitcommit: 8cd0ddf1651c3b64bb72dedc2890108c2cfe3bcb
+ms.openlocfilehash: 0f0d8eb512f4ba6d2e4245ad61dcb41d969cf4b8
+ms.sourcegitcommit: da9fab1b718c71e40c7cbe0a08526c316dcdd6df
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87334453"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87525806"
 ---
-# <a name="tutorial-create-a-kubernetes-cluster-with-azure-kubernetes-service-using-terraform"></a>Esercitazione: Creare un cluster Kubernetes con il servizio Azure Kubernetes usando Terraform
+# <a name="create-a-kubernetes-cluster-with-azure-kubernetes-service-using-terraform"></a>Creare un cluster Kubernetes con il servizio Azure Kubernetes usando Terraform
 
 Il [servizio Azure Kubernetes](/azure/aks/) gestisce l'ambiente Kubernetes ospitato, che consente di distribuire e gestire applicazioni in contenitori senza avere competenze nell'orchestrazione di contenitori. Permette inoltre di eseguire molte operazioni di manutenzione comuni senza portare offline l'app, tra cui il provisioning, l'aggiornamento e il ridimensionamento delle risorse su richiesta.
 
-In questa esercitazione si apprenderà come eseguire le attività seguenti:
+In questo articolo si apprenderà come eseguire le attività seguenti:
 
 > [!div class="checklist"]
 > * Usare HCL (linguaggio HashiCorp) per definire un cluster Kubernetes
@@ -147,7 +147,7 @@ Creare il file di configurazione Terraform che dichiara le risorse per il cluste
         default_node_pool {
             name            = "agentpool"
             node_count      = var.agent_count
-            vm_size         = "Standard_DS1_v2"
+            vm_size         = "Standard_D2_v2"
         }
 
         service_principal {
@@ -160,6 +160,11 @@ Creare il file di configurazione Terraform che dichiara le risorse per il cluste
             enabled                    = true
             log_analytics_workspace_id = azurerm_log_analytics_workspace.test.id
             }
+        }
+        
+        network_profile {
+        load_balancer_sku = "Standard"
+        network_plugin = "kubenet"
         }
 
         tags = {
@@ -334,7 +339,7 @@ Questa sezione illustra come usare il comando `terraform init` per creare le ris
 
     ![Esempio di risultati di "terraform plan"](./media/create-k8s-cluster-with-tf-and-aks/terraform-plan-complete.png)
 
-1. Eseguire il comando `terraform apply` per applicare il piano per la creazione del cluster Kubernetes. Il processo di creazione di un cluster Kubernetes può richiedere diversi minuti, con il conseguente timeout della sessione di Cloud Shell. In caso di timeout della sessione di Cloud Shell, è possibile seguire la procedura descritta nella sezione "Ripristino da un timeout di Cloud Shell" per completare l'esercitazione.
+1. Eseguire il comando `terraform apply` per applicare il piano per la creazione del cluster Kubernetes. Il processo di creazione di un cluster Kubernetes può richiedere diversi minuti, con il conseguente timeout della sessione di Cloud Shell. In caso di timeout della sessione di Cloud Shell, è possibile seguire la procedura descritta nella sezione "Ripristino da un timeout di Cloud Shell" per completare il processo.
 
     ```bash
     terraform apply out.plan

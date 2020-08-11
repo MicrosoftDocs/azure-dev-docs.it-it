@@ -1,19 +1,19 @@
 ---
-title: 'Esercitazione: Creare un cluster di macchine virtuali di Azure con Terraform e HCL'
+title: Creare un cluster di macchine virtuali di Azure con Terraform e HCL
 description: Informazioni su come usare Terraform e HCL per creare un cluster di macchine virtuali Linux con un servizio di bilanciamento del carico in Azure.
 keywords: azure devops terraform vm macchina virtuale cluster
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/09/2020
-ms.openlocfilehash: 7f19d28270f911cac7bc96a9159f1b927ceb0235
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: f970bdd0f3d37d32cae9e556094c199cfb82df2e
+ms.sourcegitcommit: e451e4360d9c5956cc6a50880b3a7a55aa4efd2f
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82170477"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87478489"
 ---
-# <a name="tutorial-create-an-azure-vm-cluster-with-terraform-and-hcl"></a>Esercitazione: Creare un cluster di macchine virtuali di Azure con Terraform e HCL
+# <a name="create-an-azure-vm-cluster-with-terraform-and-hcl"></a>Creare un cluster di macchine virtuali di Azure con Terraform e HCL
 
-Questa esercitazione illustra come creare un piccolo cluster di elaborazione con [HCL](https://www.terraform.io/docs/configuration/syntax.html). 
+Questo articolo illustra come creare un piccolo cluster di elaborazione con [HCL](https://www.terraform.io/docs/configuration/syntax.html). 
 
 Si apprenderà come eseguire le attività seguenti:
 
@@ -236,7 +236,7 @@ Terraform determina le azioni necessarie per ottenere lo stato specificato nel f
 
 ## <a name="4-apply-the-terraform-execution-plan"></a>4. Applicare un piano di esecuzione Terraform
 
-Il passaggio finale di questa esercitazione consiste nell'usare il [comando terraform apply](https://www.terraform.io/docs/commands/apply.html) per applicare il set di azioni generate dal comando `terraform plan`.
+Il passaggio finale di questo articolo consiste nell'usare il [comando terraform apply](https://www.terraform.io/docs/commands/apply.html) per applicare il set di azioni generate dal comando `terraform plan`.
 
 Se si vuole applicare il piano di esecuzione più recente, eseguire il comando seguente:
 

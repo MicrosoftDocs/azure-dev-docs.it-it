@@ -3,20 +3,20 @@ title: Esercitazione - Creare un'appliance di rete virtuale hub con Terraform in
 description: Informazioni su come creare una rete virtuale hub in Azure che funge da punto di connessione comune tra altre reti.
 ms.topic: tutorial
 ms.date: 10/26/2019
-ms.openlocfilehash: 49af4bde3568185e1915edb49be3040ece89676f
-ms.sourcegitcommit: db56786f046a3bde1bd9b0169b4f62f0c1970899
+ms.openlocfilehash: 71599c3d62ba3c3e0c6132cdf5197b87927cec91
+ms.sourcegitcommit: e451e4360d9c5956cc6a50880b3a7a55aa4efd2f
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84329314"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87478561"
 ---
 # <a name="tutorial-create-a-hub-virtual-network-appliance-in-azure-using-terraform"></a>Esercitazione: Creare un'appliance di rete virtuale hub con Terraform in Azure
 
-Un **dispositivo VPN** è un dispositivo che fornisce connettività esterna a una rete locale. Il dispositivo VPN può essere un dispositivo hardware o una soluzione software. Un esempio di soluzione software è il servizio Routing e Accesso remoto (RRAS) in Windows Server 2012. Per altre informazioni sulle appliance VPN, vedere [Informazioni sui dispositivi VPN per le connessioni di gateway VPN](/azure/vpn-gateway/vpn-gateway-about-vpn-devices).
+Un *dispositivo VPN* è un dispositivo che fornisce connettività esterna a una rete locale. Il dispositivo VPN può essere un dispositivo hardware o una soluzione software. Un esempio di soluzione software è il servizio Routing e Accesso remoto (RRAS) in Windows Server 2012. Per altre informazioni sulle appliance VPN, vedere [Informazioni sui dispositivi VPN per le connessioni di gateway VPN](/azure/vpn-gateway/vpn-gateway-about-vpn-devices).
 
-Azure supporta un'ampia gamma di appliance di rete virtuale. Per questa esercitazione si usa un'immagine Ubuntu. Per altre informazioni sulla vasta gamma di soluzioni per dispositivi supportate in Azure, vedere la [home page delle appliance di rete](https://azure.microsoft.com/solutions/network-appliances/).
+Azure supporta un'ampia gamma di appliance di rete virtuale. Per questo articolo, verrà usata un'immagine Ubuntu. Per altre informazioni sulla vasta gamma di soluzioni per dispositivi supportate in Azure, vedere la [home page delle appliance di rete](https://azure.microsoft.com/solutions/network-appliances/).
 
-Questa esercitazione illustra le attività seguenti:
+Questo articolo illustra le attività seguenti:
 
 > [!div class="checklist"]
 > * Usare HCL (HashiCorp Language) per implementare la rete virtuale hub nella topologia hub-spoke

@@ -4,12 +4,12 @@ description: Questo argomento di avvio rapido illustra come installare e configu
 keywords: azure devops terraform installazione configurazione cloud shell init piano applicare esecuzione portale accesso controllo degli accessi in base al ruolo entità servizio script automatizzato
 ms.topic: quickstart
 ms.date: 07/26/2020
-ms.openlocfilehash: 381313edf386ac33dca137191c9eefef48f92931
-ms.sourcegitcommit: 8cd0ddf1651c3b64bb72dedc2890108c2cfe3bcb
+ms.openlocfilehash: dbe290fbb7909d116d2ff0cec8e01a3b145ded30
+ms.sourcegitcommit: e451e4360d9c5956cc6a50880b3a7a55aa4efd2f
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87335268"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87478591"
 ---
 # <a name="quickstart-get-started-with-terraform-using-azure-cloud-shell"></a>Avvio rapido: Introduzione all'uso di Terraform in Azure Cloud Shell
  
@@ -35,7 +35,7 @@ Questo articolo descrive come iniziare a usare [Terraform in Azure](https://www.
 
 1. Se Cloud Shell non è stato usato in precedenza, configurare le impostazioni dell'ambiente e di archiviazione. In questa articolo si usa l'ambiente Bash.
 
-Note:
+**Note**:
 - In Cloud Shell è installata automaticamente la versione più recente di Terraform. Terraform usa inoltre automaticamente le informazioni della sottoscrizione di Azure corrente. Di conseguenza, non è necessaria alcuna operazione di installazione o configurazione.
 
 ## <a name="authenticate-to-azure"></a>Eseguire l'autenticazione ad Azure
@@ -55,7 +55,7 @@ Se si chiama `az login` senza parametri, vengono visualizzati un URL e un codice
 az login
 ```
 
-Note:
+**Note**:
 
 - Dopo l'accesso, `az login` visualizza un elenco delle sottoscrizioni di Azure associate all'account Microsoft connesso.
 - Viene visualizzato un elenco di proprietà per ogni sottoscrizione di Azure disponibile. La proprietà `isDefault` identifica la sottoscrizione di Azure in uso. Per informazioni su come passare a un'altra sottoscrizione di Azure, vedere la sezione [Impostare la sottoscrizione corrente di Azure](#set-the-current-azure-subscription).
@@ -74,7 +74,7 @@ Immettere il comando seguente, sostituendo `<subscription_id>` con l'ID dell'acc
 az ad sp create-for-rbac --role="Contributor" --scopes="/subscriptions/<subscription_id>"
 ```
 
-Note:
+**Note**:
 
 - Al termine, `az ad sp create-for-rbac` visualizza diversi valori. I valori `name`, `password` e `tenant` vengono usati nel passaggio successivo.
 - Se viene persa, questa password non può essere recuperata. Di conseguenza, è consigliabile archiviarla in un luogo sicuro. Se si dimentica la password, è necessario [reimpostare le credenziali dell'entità servizio](/cli/azure/create-an-azure-service-principal-azure-cli#reset-credentials).
@@ -107,7 +107,7 @@ Un account Microsoft può essere associato a più sottoscrizioni di Azure. I pas
     az account set --subscription="<subscription_id>"
     ```
 
-    Note:
+    **Note**:
 
     - La chiamata a `az account set` non visualizza i risultati del passaggio alla sottoscrizione di Azure specificata. È però possibile usare `az account show` per confermare che la sottoscrizione di Azure corrente è cambiata.
 
@@ -154,7 +154,7 @@ Questa sezione illustra come creare un file di configurazione di Terraform che c
     }
     ```
 
-    Note:
+    **Note**:
 
     - Il blocco `provider` specifica che viene usato il [provider di Azure (`azurerm`)](https://www.terraform.io/docs/providers/azurerm/index.html).
     - All'interno del blocco del provider `azurerm` vengono impostati gli attributi `version` e `features`. Come indicato nel commento, l'utilizzo di questi attributo dipende dalla versione. Per altre informazioni su come impostare questi attributi per l'ambiente in uso, vedere la [versione 2.0 del provider AzureRM](https://www.terraform.io/docs/providers/azurerm/guides/2.0-upgrade-guide.html).
@@ -174,13 +174,13 @@ Una volta creati i file di configurazione, in questa sezione viene spiegato come
     terraform init
     ```
 
-1. Per visualizzare in anteprima le azioni da completare in Terraform, usare il comando [terraform plan](https://www.terraform.io/docs/commands/plan.html).
+1. Eseguire [terraform plan](https://www.terraform.io/docs/commands/plan.html) per creare un piano di esecuzione e visualizzare i risultati in anteprima.
 
     ```bash
     terraform plan
     ```
 
-    Note:
+    **Note**:
 
     - Il comando `terraform plan` consente di creare un piano di esecuzione, ma non di eseguirlo. Determina invece le azioni necessarie per creare la configurazione specificata nei file di configurazione.
     - Con il comando `terraform plan` è possibile verificare se il piano di esecuzione corrisponde alle aspettative prima di apportare modifiche alle risorse effettive.
@@ -200,7 +200,7 @@ Una volta creati i file di configurazione, in questa sezione viene spiegato come
     az group show -n "QuickstartTerraformTest-rg"
     ```
 
-    Note:
+    **Note**:
 
     - Se l'operazione è riuscita, `az group show` visualizza diverse proprietà del gruppo di risorse appena creato.
 
@@ -232,11 +232,11 @@ Nei passaggi seguenti viene illustrato lo schema di base per l'uso di questa fun
     terraform apply QuickstartTerraformTest.tfplan
     ```
 
-Note:
-
-- Per consentire l'uso con l'automazione, l'esecuzione di `terraform apply <filename>` non richiede la conferma.
-- Se si decide di usare questa funzionalità, leggere la [sezione sugli avvisi di sicurezza](https://www.terraform.io/docs/commands/plan.html#security-warning).
-
+    **Note**:
+    
+    - Per consentire l'uso con l'automazione, l'esecuzione di `terraform apply <filename>` non richiede la conferma.
+    - Se si decide di usare questa funzionalità, leggere la [sezione sugli avvisi di sicurezza](https://www.terraform.io/docs/commands/plan.html#security-warning).
+    
 ## <a name="clean-up-resources"></a>Pulire le risorse
 
 Quando non sono più necessarie, eliminare le risorse create in questo articolo.
@@ -247,7 +247,7 @@ Quando non sono più necessarie, eliminare le risorse create in questo articolo.
     terraform plan -destroy -out QuickstartTerraformTest.destroy.tfplan
     ```
 
-    **Note:**
+    **Note**:
     - Il comando `terraform plan` consente di creare un piano di esecuzione, ma non di eseguirlo. Determina invece le azioni necessarie per creare la configurazione specificata nei file di configurazione. In questo modo è possibile verificare se il piano di esecuzione corrisponde alle aspettative prima di apportare modifiche alle risorse effettive.
     - Il parametro `-destroy` genera un piano per eliminare definitivamente le risorse.
     - Il parametro `-out` facoltativo consente di specificare un file di output per il piano. È consigliabile usare sempre il parametro `-out`, perché garantisce che il piano esaminato sia esattamente quello che viene applicato.

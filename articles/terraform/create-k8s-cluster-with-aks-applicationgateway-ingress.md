@@ -1,23 +1,23 @@
 ---
-title: 'Esercitazione: Creare un controller del traffico in ingresso del gateway applicazione nel servizio Azure Kubernetes'
+title: Creare un controller di ingresso del gateway applicazione nel servizio Azure Kubernetes
 description: Informazioni su come creare un cluster Kubernetes con il servizio Azure Kubernetes con Gateway applicazione come controller in ingresso.
 keywords: azure devops terraform gateway applicazione ingresso servizio azure kubernetes kubernetes
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/09/2020
-ms.openlocfilehash: a98d9af5c8d3bd63451f007f66a8793d9f38a61d
-ms.sourcegitcommit: 8cd0ddf1651c3b64bb72dedc2890108c2cfe3bcb
+ms.openlocfilehash: 4e34942257baa1e530a7ed0990a6d30a5297dadf
+ms.sourcegitcommit: e451e4360d9c5956cc6a50880b3a7a55aa4efd2f
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87334450"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87478521"
 ---
-# <a name="tutorial-create-an-application-gateway-ingress-controller-in-azure-kubernetes-service"></a>Esercitazione: Creare un controller di ingresso del gateway applicazione nel servizio Azure Kubernetes
+# <a name="create-an-application-gateway-ingress-controller-in-azure-kubernetes-service"></a>Creare un controller di ingresso del gateway applicazione nel servizio Azure Kubernetes
 
 Il [servizio Azure Kubernetes](/azure/aks/) gestisce l'ambiente Kubernetes ospitato, consentendo di distribuire e gestire applicazioni in contenitori in modo semplice e rapido senza competenze nell'orchestrazione di contenitori. Elimina inoltre la necessità di portare offline le applicazioni per le attività operative e di manutenzione. Con il servizio Azure Kubernetes queste attività, incluse le attività di provisioning, aggiornamento e ridimensionamento delle risorse, possono essere eseguite su richiesta.
 
 Un controller di ingresso fornisce varie funzionalità per i servizi Kubernetes. Queste funzionalità includono il proxy inverso, il routing del traffico configurabile e la terminazione TLS. Le risorse di ingresso Kubernetes vengono usate per configurare le regole di ingresso per i singoli servizi Kubernetes. Usando un controller di ingresso e regole di ingresso, un singolo indirizzo IP può instradare il traffico a più servizi in un cluster Kubernetes. Tutte queste funzionalità vengono fornite dal [gateway applicazione](/azure/Application-Gateway/) di Azure, che è quindi un controller di ingresso ideale per Kubernetes in Azure. 
 
-In questa esercitazione si apprenderà come eseguire le attività seguenti:
+In questo articolo si apprenderà come eseguire le attività seguenti:
 
 > [!div class="checklist"]
 > * Creare un cluster [Kubernetes](https://www.redhat.com/en/topics/containers/what-is-kubernetes) usando il servizio Azure Kubernetes con il gateway applicazione come controller di ingresso.
@@ -604,7 +604,7 @@ Questa sezione illustra come usare il comando `terraform init` per creare le ris
 
     ![Esempio di risultati di "terraform plan"](./media/terraform-k8s-cluster-appgw-with-tf-aks/terraform-plan-complete.png)
 
-1. Eseguire il comando `terraform apply` per applicare il piano per la creazione del cluster Kubernetes. Il processo di creazione di un cluster Kubernetes può richiedere diversi minuti, con il conseguente timeout della sessione di Cloud Shell. In caso di timeout della sessione di Cloud Shell, è possibile seguire la procedura descritta nella sezione "Ripristino da un timeout di Cloud Shell" per completare l'esercitazione.
+1. Eseguire il comando `terraform apply` per applicare il piano per la creazione del cluster Kubernetes. Il processo di creazione di un cluster Kubernetes può richiedere diversi minuti, con il conseguente timeout della sessione di Cloud Shell. In caso di timeout della sessione di Cloud Shell, è possibile seguire la procedura descritta nella sezione "Ripristino da un timeout di Cloud Shell" per completare il processo.
 
     ```bash
     terraform apply out.plan

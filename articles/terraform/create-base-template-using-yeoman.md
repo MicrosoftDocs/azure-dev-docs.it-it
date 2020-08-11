@@ -1,18 +1,18 @@
 ---
-title: Esercitazione - Creare un modello Terraform di base in Azure con Yeoman
+title: Creare un modello Terraform di base in Azure con Yeoman
 description: Informazioni su come creare un modello Terraform di base in Azure con Yeoman.
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 05/25/2020
-ms.openlocfilehash: 8e9c4444d95f052fc5872565b316ec15e033be82
-ms.sourcegitcommit: 8cd0ddf1651c3b64bb72dedc2890108c2cfe3bcb
+ms.openlocfilehash: e43c28232009f3dec274ad2c1749d9ab5d88957b
+ms.sourcegitcommit: e451e4360d9c5956cc6a50880b3a7a55aa4efd2f
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87334466"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87478531"
 ---
-# <a name="tutorial-create-a-terraform-base-template-in-azure-using-yeoman"></a>Esercitazione: Creare un modello Terraform di base in Azure con Yeoman
+# <a name="create-a-terraform-base-template-in-azure-using-yeoman"></a>Creare un modello Terraform di base in Azure con Yeoman
 
-In questa esercitazione si apprenderà come usare la combinazione di [Terraform](/azure/terraform/) e [Yeoman](https://yeoman.io/). Terraform è uno strumento per la creazione di un'infrastruttura in Azure. Yeoman semplifica la creazione di moduli Terraform.
+Questo articolo illustra come usare la combinazione di [Terraform](/azure/terraform/) e [Yeoman](https://yeoman.io/). Terraform è uno strumento per la creazione di un'infrastruttura in Azure. Yeoman semplifica la creazione di moduli Terraform.
 
 In questo articolo si apprenderà come eseguire le attività seguenti:
 > [!div class="checklist"]
@@ -32,7 +32,7 @@ In questo articolo si apprenderà come eseguire le attività seguenti:
 - **Linguaggio di programmazione Go**: [installare Go](https://golang.org/) in quanto i test case generati da Yeoman sono codice in cui viene usato il linguaggio Go.
 
 >[!NOTE]
->La maggior parte delle procedure riportate in questa esercitazione prevede l'uso dell'interfaccia della riga di comando. I passaggi descritti si applicano a tutti i sistemi operativi e gli strumenti da riga di comando. Per gli esempi, sono stati scelti PowerShell per l'ambiente locale e Git Bash per l'ambiente Cloud Shell.
+>La maggior parte delle procedure riportate in questo articolo prevede l'uso dell'interfaccia della riga di comando. I passaggi descritti si applicano a tutti i sistemi operativi e gli strumenti da riga di comando. Per gli esempi, sono stati scelti PowerShell per l'ambiente locale e Git Bash per l'ambiente Cloud Shell.
 
 ## <a name="prepare-your-environment"></a>Preparare l'ambiente
 
