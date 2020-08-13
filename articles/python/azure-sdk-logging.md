@@ -3,12 +3,13 @@ title: Configurare la registrazione nelle librerie di Azure per Python
 description: Le librerie di Azure usano il modulo di registrazione Python standard, che è configurato per singola libreria o per singola operazione.
 ms.date: 06/04/2020
 ms.topic: conceptual
-ms.openlocfilehash: b6456a1bf4bdbf8469483eb181b3df603263aa55
-ms.sourcegitcommit: 39da5bec7ef824a34aa04514afc1141b75466547
+ms.custom: devx-track-python
+ms.openlocfilehash: 0c08ba9c514bf9bca3c982ccf3ef3182f203e247
+ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84741430"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87983315"
 ---
 # <a name="configure-logging-in-the-azure-libraries-for-python"></a>Configurare la registrazione nelle librerie di Azure per Python
 

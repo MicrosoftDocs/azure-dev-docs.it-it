@@ -3,13 +3,13 @@ title: 'Passaggio 6: Streaming dei log dal servizio app di Azure in VS Code'
 description: "Passaggio 6 dell'esercitazione: streaming dei log delle app in Visual Studio Code"
 ms.topic: conceptual
 ms.date: 09/12/2019
-ms.custom: seo-python-october2019
-ms.openlocfilehash: f2e19a52b673ddcef927165191d610776e06a32f
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.custom: devx-track-python, seo-python-october2019
+ms.openlocfilehash: e6955e849fbec2d3d3c3546b00fb3745b6a0b8f3
+ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "80441896"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87983553"
 ---
 # <a name="6-stream-logs-from-azure-app-service-into-visual-studio-code"></a>6: Eseguire lo streaming dei log dal Servizio app di Azure in Visual Studio Code
 

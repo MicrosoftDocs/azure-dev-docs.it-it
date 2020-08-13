@@ -3,12 +3,13 @@ title: Effettuare il provisioning di un database MySQL di Azure usando le librer
 description: Usare le librerie di gestione incluse nelle librerie di Azure SDK per Python per effettuare il provisioning di un database MySQL di Azure, PostgreSQL o MariaDB.
 ms.date: 06/02/2020
 ms.topic: conceptual
-ms.openlocfilehash: 2e46bb8a83ffde3ce06659f13a744c0c926be976
-ms.sourcegitcommit: db56786f046a3bde1bd9b0169b4f62f0c1970899
+ms.custom: devx-track-python
+ms.openlocfilehash: 04e80a2b5ab6e6a1dc0adbe546132cf861667995
+ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84329939"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87982653"
 ---
 # <a name="example-use-the-azure-libraries-to-provision-a-database"></a>Esempio: Usare le librerie di Azure per effettuare il provisioning di un database
 

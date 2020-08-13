@@ -3,12 +3,13 @@ title: Introduzione alle soluzioni per i dati per le app Python in Azure
 description: Indice di articoli introduttivi della documentazione di Azure sulle soluzioni per i dati per le app Python.
 ms.date: 05/28/2020
 ms.topic: conceptual
-ms.openlocfilehash: 9880025bcbe2d019d04469e6cff0b415cbbdc744
-ms.sourcegitcommit: a9b9157bb3a802ecfe3699854788d010a3f08d7e
+ms.custom: devx-track-python
+ms.openlocfilehash: bdd55f180b6ba72386bee64fb8f6bfd0b916af02
+ms.sourcegitcommit: 5051b25ad32be891800b23fc7ae12a4ca85cbb73
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84202890"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88147342"
 ---
 # <a name="data-solutions-for-python-apps-on-azure"></a>Soluzioni per i dati per le app Python in Azure
 
@@ -18,7 +19,7 @@ Gli articoli seguenti contengono informazioni introduttive su varie soluzioni pe
 
 - **PostgreSQL**:
   - [Usare Python per connettersi ai dati ed eseguire query in Database di Azure per PostgreSQL](/azure/postgresql/connect-python)
-  - [Eseguire un'app Web Python (Django) con PostgreSQL nel Servizio app di Azure](/azure/app-service/containers/tutorial-python-postgresql-app)
+  - [Eseguire un'app Web Python (Django) con PostgreSQL nel Servizio app di Azure](/azure/app-service/tutorial-python-postgresql-app)
 
 - **MySQL**:
   - [Usare Python per connettersi ed eseguire query sui dati con Database di Azure per MySQL](/azure/mysql/connect-python)

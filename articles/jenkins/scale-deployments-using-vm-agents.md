@@ -4,12 +4,12 @@ description: Informazioni su come aggiungere altra capacità alle pipeline di Je
 keywords: jenkins, azure, devops, macchina virtuale, agenti
 ms.topic: tutorial
 ms.date: 07/31/2018
-ms.openlocfilehash: 488569312a665d6efb91e995490254289024a745
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: c5ea0c3782414abfda47810ba68ad1092cd7b0d5
+ms.sourcegitcommit: f65561589d22b9ba2d69b290daee82eb47b0b20f
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82170537"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88162050"
 ---
 # <a name="tutorial-scale-jenkins-deployments-with-azure-vm-agents"></a>Esercitazione: Scalabilità delle distribuzioni di Jenkins con agenti di macchine virtuali di Azure
 
@@ -28,9 +28,6 @@ In questa esercitazione si apprenderà come:
 > [!VIDEO https://channel9.msdn.com/Shows/Azure-Friday/Continuous-Integration-with-Jenkins-Using-Azure-VM-Agents/player]
 
 ## <a name="install-azure-vm-agents-plugin"></a>Installare il plug-in Agenti di macchine virtuali di Azure
-
-> [!TIP]
-> Se Jenkins è stato implementato in Azure usando il [modello di soluzione](configure-on-linux-vm.md), il plug-in di Agente di macchine virtuali di Azure è già installato.
 
 1. Dal dashboard di Jenkins selezionare **Manage Jenkins** (Gestione Jenkins), quindi selezionare **Manage Plugins** (Gestione plug-in).
 
@@ -81,7 +78,7 @@ In questa esercitazione si apprenderà come:
             }
      ```
 
-    L'entità servizio completata dovrebbe usare il campo `id` per **ID sottoscrizione**, il valore `appId` per **ID client**, `password` per **Segreto client** e `tenant` per **ID tenant** . Selezionare **Aggiungi** per aggiungere l'entità servizio, quindi configurare il plug-in per usare le nuove credenziali create.
+    L'entità servizio completata dovrebbe usare il campo `id` per **ID sottoscrizione**, il valore `appId` per **ID client**, `password` per **Segreto client** e `tenant` per **ID tenant **. Selezionare **Aggiungi** per aggiungere l'entità servizio, quindi configurare il plug-in per usare le nuove credenziali create.
 
     ![Configurare un'entità servizio di Azure](./media/scale-deployments-using-vm-agents/new-service-principal.png)
 
@@ -106,7 +103,7 @@ Configurare un modello da usare per definire un agente di macchine virtuali di A
 
 ## <a name="configure-agent-operating-system-and-tools"></a>Configurare il sistema operativo e gli strumenti di un agente
 
-Nella sezione **Image Configuration** (Configurazione dell'immagine) della configurazione del plug-in, selezionare **Ubuntu 16.04 LTS**. Selezionare le caselle accanto a **Install Git (Latest)** (Installare Git, versione più recente) e **installare Maven (V3.5.0)** , e **Installare Docker** per installare questi strumenti per gli agenti appena creati.
+Nella sezione **Image Configuration** (Configurazione dell'immagine) della configurazione del plug-in, selezionare **Ubuntu 16.04 LTS**. Selezionare le caselle accanto a **Install Git (Latest)** (Installare Git, versione più recente) e **installare Maven (V3.5.0)**, e **Installare Docker** per installare questi strumenti per gli agenti appena creati.
 
 ![Configurazione del sistema operativo e degli strumenti della macchina virtuale](./media/scale-deployments-using-vm-agents/jenkins-os-config.png)
 

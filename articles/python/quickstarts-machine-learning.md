@@ -3,12 +3,13 @@ title: Materiale introduttivo su Machine Learning per le app Python in Azure
 description: Indice di articoli introduttivi della documentazione di Azure su Machine Learning per le app Python.
 ms.date: 05/28/2020
 ms.topic: conceptual
-ms.openlocfilehash: ec3bc0f47a93a008fdd521397af0f7a9c3c36f34
-ms.sourcegitcommit: a9b9157bb3a802ecfe3699854788d010a3f08d7e
+ms.custom: devx-track-python
+ms.openlocfilehash: 3d20a8be663a410337f900ce6dca6e15986a9374
+ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84202820"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87982993"
 ---
 # <a name="machine-learning-for-python-apps-on-azure"></a>Machine Learning per le app Python in Azure
 

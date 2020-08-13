@@ -3,12 +3,13 @@ title: Monitoraggio di Azure
 description: Controllare e configurare la creazione di report delle metriche da Monitoraggio di Azure.
 ms.topic: conceptual
 ms.date: 6/15/2017
-ms.openlocfilehash: ed58b0a9c9da40d2898def089dd4e62aeb45e6dd
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.custom: devx-track-python
+ms.openlocfilehash: 53823a1709e1f1411609957569b79d10d7bdefd1
+ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "80441636"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87982583"
 ---
 # <a name="azure-monitor"></a>Monitoraggio di Azure
 

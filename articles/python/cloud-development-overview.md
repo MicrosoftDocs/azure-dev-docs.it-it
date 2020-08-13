@@ -3,12 +3,13 @@ title: Sviluppo cloud con Azure - Che cos'è Azure?
 description: Panoramica dello sviluppo di applicazioni cloud in Microsoft Azure, a partire dalla correlazione tra data center, servizi e risorse.
 ms.date: 05/12/2020
 ms.topic: conceptual
-ms.openlocfilehash: 25b3e45dbc885dea4dd75a60ea0b7866f28e1710
-ms.sourcegitcommit: 0d492c9cc9b5295285ab75da55e5ab0577576287
+ms.custom: devx-track-python
+ms.openlocfilehash: e776ce3aa84921dcfcb1be1e8613ae7332fe61a8
+ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/25/2020
-ms.locfileid: "85370712"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87983175"
 ---
 # <a name="cloud-development-on-azure"></a>Sviluppo cloud in Azure
 

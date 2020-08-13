@@ -3,13 +3,13 @@ title: 'Passaggio 4: Configurare un file di avvio personalizzato per le app Pyth
 description: Passaggio 4 dell'esercitazione, che indica al servizio app come avviare l'app Web e include istruzioni specifiche per Django, Flask e altri framework.
 ms.topic: conceptual
 ms.date: 05/19/2020
-ms.custom: seo-python-october2019
-ms.openlocfilehash: 1e724fa7d35c1b3488dbe6738a4840e20bbfbf96
-ms.sourcegitcommit: efab6be74671ea4300162e0b30aa8ac134d3b0a9
+ms.custom: devx-track-python, seo-python-october2019
+ms.openlocfilehash: 5de5f7f52fbf8c88bf05c7cb300952aee81a8439
+ms.sourcegitcommit: 5051b25ad32be891800b23fc7ae12a4ca85cbb73
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84256446"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88147382"
 ---
 # <a name="4-configure-a-custom-startup-file-for-python-apps-on-azure-app-service"></a>4: Configurare un file di avvio personalizzato per le app Python nel Servizio app di Azure
 
@@ -17,7 +17,7 @@ ms.locfileid: "84256446"
 
 Questo articolo illustra come configurare un file di avvio personalizzato per un'app Python in un servizio app di Azure.
 
-A seconda di come è stata strutturata l'app, può essere necessario creare un file di comando di avvio personalizzato per l'app, come descritto in [Configurare le app Python per il Servizio app in Linux](https://docs.microsoft.com/azure/app-service/containers/how-to-configure-python) nella documentazione di Azure.
+A seconda di come è stata strutturata l'app, può essere necessario creare un file di comando di avvio personalizzato per l'app, come descritto in [Configurare le app Python per il Servizio app in Linux](/azure/app-service/configure-language-python) nella documentazione di Azure.
 
 I casi d'uso specifici di un comando di avvio personalizzato sono i seguenti:
 
