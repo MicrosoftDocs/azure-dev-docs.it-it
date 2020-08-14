@@ -7,9 +7,9 @@
 - name: Avvii rapidi
   expanded: true
   items:
-    - name: Introduzione - Azure Cloud Shell
+    - name: Configurare Terraform con Azure Cloud Shell
       href: get-started-cloud-shell.md
-    - name: Introduzione - Windows PowerShell
+    - name: Configurare Terraform con Azure PowerShell
       href: get-started-powershell.md
 - name: Guide pratiche
   items:

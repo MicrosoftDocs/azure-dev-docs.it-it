@@ -7,7 +7,7 @@
 - name: Avvi rapidi
   expanded: true
   items:
-    - name: Creare un server Jenkins
+    - name: Configurare Jenkins con l'interfaccia della riga di comando di Azure
       href: configure-on-linux-vm.md
 - name: Esercitazioni
   items:
