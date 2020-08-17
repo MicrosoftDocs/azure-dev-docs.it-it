@@ -3,13 +3,13 @@ title: Panoramica di Jenkins e Azure
 description: Ospitare il server di automazione di compilazione e distribuzione Jenkins in Azure e usare le risorse di calcolo e archiviazione di Azure per estendere le pipeline di integrazione continua e distribuzione continua (CI/CD).
 keywords: jenkins, azure, devops, panoramica
 ms.topic: overview
-ms.date: 10/23/2019
-ms.openlocfilehash: 19bacd6e1b3d4ddee4e6fef27b2183f4a33545d6
-ms.sourcegitcommit: 8309822d57f784a9c2ca67428ad7e7330bb5e0d6
+ms.date: 08/08/2020
+ms.openlocfilehash: 2592ad806d58b3cbfcf930f180fa582945be3196
+ms.sourcegitcommit: f65561589d22b9ba2d69b290daee82eb47b0b20f
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82861304"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88162040"
 ---
 # <a name="azure-and-jenkins"></a>Azure e Jenkins
 
@@ -19,13 +19,7 @@ Questo articolo offre un'introduzione all'uso di Azure con Jenkins, con dettagli
 
 ## <a name="host-your-jenkins-servers-in-azure"></a>Ospitare i server Jenkins in Azure
 
-Ospitare Jenkins in Azure per centralizzare l'automazione della compilazione e ridimensionare la distribuzione con l'aumentare dei requisiti dei progetti software. È possibile distribuire Jenkins in Azure tramite:
- 
-- [Il modello di soluzione Jenkins](configure-on-linux-vm.md) in Azure Marketplace.
-- [Macchine virtuali di Azure](/azure/virtual-machines/linux/overview). Vedere l'[esercitazione](pipeline-with-github-and-docker.md) per creare un'istanza di Jenkins in una macchina virtuale.
-- Per i cluster Kubernetes in esecuzione nel [servizio Azure Container](/azure/container-service/kubernetes/container-service-kubernetes-walkthrough), vedere la [procedura](/azure/container-service/kubernetes/container-service-kubernetes-jenkins) correlata.
-
-Monitorare e gestire la distribuzione di Jenkins di Azure tramite i [log di Monitoraggio di Azure](/azure/log-analytics/log-analytics-overview) e l'[interfaccia della riga di comando di Azure](/cli/azure).
+Ospitare Jenkins in Azure per centralizzare l'automazione della compilazione e ridimensionare la distribuzione con l'aumentare dei requisiti dei progetti software. Per informazioni su come installare e configurare Jenkins in una VM Linux, vedere [Avvio rapido - Introduzione a Jenkins](configure-on-linux-vm.md). Monitorare e gestire la distribuzione di Jenkins di Azure tramite i [log di Monitoraggio di Azure](/azure/log-analytics/log-analytics-overview) e l'[interfaccia della riga di comando di Azure](/cli/azure).
 
 ## <a name="scale-your-build-automation-on-demand"></a>Ridimensionare l'automazione della compilazione su richiesta
 

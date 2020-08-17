@@ -3,14 +3,14 @@ title: "Esercitazione: Eseguire la distribuzione nel servizio app di Azure con J
 description: Informazioni su come usare l'interfaccia della riga di comando di Azure per distribuire un'app web di Java in Azure in Jenkins Pipeline
 keywords: jenkins, azure, devops, servizio app, interfaccia della riga di comando
 ms.topic: tutorial
-ms.date: 04/25/2020
+ms.date: 08/08/2020
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 63a5097358001e0312af13053e3d7310fe413cc7
-ms.sourcegitcommit: e451e4360d9c5956cc6a50880b3a7a55aa4efd2f
+ms.openlocfilehash: b26adfa3fd4639efa5de20ffcf93f1730a992a12
+ms.sourcegitcommit: f65561589d22b9ba2d69b290daee82eb47b0b20f
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87478341"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88162070"
 ---
 # <a name="tutorial-deploy-to-azure-app-service-with-jenkins-and-the-azure-cli"></a>Esercitazione: Distribuire nel servizio app di Azure con Jenkins e l'interfaccia della riga di comando di Azure
 
@@ -26,7 +26,7 @@ Per distribuire un'app Web di Java in Azure, è possibile usare l'interfaccia de
 
 ## <a name="create-and-configure-jenkins-instance"></a>Creare e configurare un'istanza di Jenkins
 
-Se non si dispone ancora di un master Jenkins, installarlo con il [modello di soluzione Jenkins](configure-on-linux-vm.md). Per impostazione predefinita, il modello installa il plug-in per [credenziali di Azure](https://plugins.jenkins.io/azure-credentials) necessario. 
+Se non è già disponibile un master Jenkins, [installare Jenkins in una VM Linux](configure-on-linux-vm.md).
 
 Il plug-in delle credenziali di Azure consente di archiviare le credenziali dell'entità servizio di Microsoft Azure in Jenkins. Nella versione 1.2 è stato aggiunto il supporto affinché Jenkins Pipeline possa ottenere le credenziali di Azure. 
 
@@ -46,7 +46,7 @@ sudo apt-get install -y maven
 
 Per eseguire l'interfaccia della riga di comando di Azure è necessaria una credenziale di Azure.
 
-* Nel dashboard di Jenkins fare clic su **Credentials -> System ->** . Fare clic su **Global credentials(unrestricted)** .
+* Nel dashboard di Jenkins fare clic su **Credentials -> System ->**. Fare clic su **Global credentials(unrestricted)**.
 * Fare clic su **Add Credentials** per aggiungere un'[entità servizio di Microsoft Azure](https://docs.microsoft.com/cli/azure/create-an-azure-service-principal-azure-cli?toc=%2fazure%2fazure-resource-manager%2ftoc.json), immettendo: Subscription ID (ID sottoscrizione), Client ID (ID client), Client Secret (Segreto client) e OAuth 2.0 Token Endpoint (Endpoint di token OAuth 2.0). Indicare un ID per l'uso nel passaggio successivo.
 
 ![Add Credentials](./media/deploy-to-azure-app-service-using-azure-cli/add-credentials.png)
@@ -167,7 +167,7 @@ Per verificare che il file WAR sia stato distribuito correttamente nell'app Web,
 
 1. Aprire un Web browser:
 
-1. Passare a `http://&lt;app_name>.azurewebsites.net/api/calculator/ping`
+1. Passare a `http://&lt;app_name>.azurewebsites.net/api/calculator/ping`.
 
 1. L'output dovrebbe essere simile al testo seguente:
 

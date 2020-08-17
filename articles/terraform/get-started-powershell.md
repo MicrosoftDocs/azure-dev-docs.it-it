@@ -3,19 +3,32 @@ title: 'Avvio rapido: Introduzione a Terraform con Windows e PowerShell'
 description: Questo argomento di avvio rapido illustra come installare e configurare Terraform per la creazione di risorse di Azure.
 keywords: azure devops terraform installazione configurazione windows inizializzazione piano applicare esecuzione portale accesso controllo degli accessi in base al ruolo entità servizio script automatizzato powershell
 ms.topic: quickstart
-ms.date: 07/27/2020
-ms.openlocfilehash: 055d3fcdbe095ddc3e5e1f5b90efcbd4950d43f6
-ms.sourcegitcommit: e451e4360d9c5956cc6a50880b3a7a55aa4efd2f
+ms.date: 08/08/2020
+ms.openlocfilehash: 7ba60acf445f9ba29836e76aa50626985695bf2c
+ms.sourcegitcommit: 6a8485d659d6239569c4e3ecee12f924c437b235
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87478581"
+ms.lasthandoff: 08/09/2020
+ms.locfileid: "88026154"
 ---
 # <a name="quickstart-get-started-with-terraform-using-windows-and-powershell"></a>Avvio rapido: Introduzione a Terraform con Windows e PowerShell
  
 [!INCLUDE [terraform-intro.md](includes/terraform-intro.md)]
 
 Questo articolo descrive come iniziare a usare [Terraform in Azure](https://www.terraform.io/docs/providers/azurerm/index.html) con PowerShell.
+
+In questo articolo vengono illustrate le operazioni seguenti:
+> [!div class="checklist"]
+> * Installare la versione più recente di PowerShell
+> * Installare il nuovo modulo Az di PowerShell
+> * Installare l'interfaccia della riga di comando di Azure
+> * Installazione di Terraform
+> * Creare un'entità servizio di Azure per finalità di autenticazione
+> * Accedere ad Azure con un'entità servizio 
+> * Configurare le variabili di ambiente in modo che Terraform esegua correttamente l'autenticazione nella sottoscrizione di Azure
+> * Scrivere uno script di Terraform per creare un gruppo di risorse di Azure
+> * Creare e applicare un piano di esecuzione di Terraform
+> * Usare il flag `terraform plan -destroy` per ripristinare un piano di esecuzione
 
 [!INCLUDE [hashicorp-support.md](includes/hashicorp-support.md)]
 
@@ -119,6 +132,16 @@ Per accedere a una sottoscrizione di Azure tramite un'entità servizio, chiamare
     Connect-AzAccount -Credential $spCredential -Tenant "<azure_subscription_tenant_id>" -ServicePrincipal
     ```
 
+## <a name="set-environment-variables"></a>Impostare le variabili di ambiente
+
+Affinché Terraform usi la sottoscrizione di Azure prevista, impostare le variabili di ambiente. È possibile impostare le variabili di ambiente a livello di sistema Windows o all'interno di una sessione di PowerShell specifica. Per impostare le variabili di ambiente per una sessione specifica, usare il codice seguente. Sostituire i segnaposto con i valori appropriati per l'ambiente.
+
+```powershell
+$env:ARM_CLIENT_ID=<service_principle_app_id>
+$env:ARM_SUBSCRIPTION_ID=<azure_subscription_id>
+$env:ARM_TENANT_ID=<azure_subscription_tenant_id>
+```
+
 ## <a name="create-a-terraform-configuration-file"></a>Creare un file di configurazione Terraform
 
 In questa sezione verrà scritto il codice di un file di configurazione di Terraform che crea un gruppo di risorse di Azure.
@@ -162,16 +185,6 @@ In questa sezione verrà scritto il codice di un file di configurazione di Terra
     - All'interno del blocco del provider `azurerm` vengono impostati gli attributi `version` e `features`. Come indicato nel commento, l'utilizzo di questi attributo dipende dalla versione. Per altre informazioni su come impostare questi attributi, vedere la [versione 2.0 del provider AzureRM](https://www.terraform.io/docs/providers/azurerm/guides/2.0-upgrade-guide.html).
     - L'unica [dichiarazione di risorse](https://www.terraform.io/docs/configuration/resources.html) è relativa a un tipo di risorsa di [azurerm_resource_group](https://www.terraform.io/docs/providers/azurerm/r/resource_group.html). I due argomenti obbligatori per azure_resource_group sono name e location.
 
-## <a name="set-environment-variables"></a>Impostare le variabili di ambiente
-
-Affinché Terraform usi la sottoscrizione di Azure prevista, impostare le variabili di ambiente. È possibile impostare le variabili di ambiente a livello di sistema Windows o all'interno di una sessione di PowerShell specifica. Per impostare le variabili di ambiente per una sessione specifica, usare il codice seguente. Sostituire i segnaposto con i valori appropriati per l'ambiente.
-
-```powershell
-$env:ARM_CLIENT_ID=<service_principle_app_id>
-$env:ARM_SUBSCRIPTION_ID=<azure_subscription_id>
-$env:ARM_TENANT_ID=<azure_subscription_tenant_id>
-```
-
 ## <a name="create-and-apply-a-terraform-execution-plan"></a>Creare e applicare un piano di esecuzione di Terraform
 
 In questa sezione viene creato un *piano di esecuzione*, che viene applicato all'infrastruttura cloud.
@@ -205,7 +218,9 @@ In questa sezione viene creato un *piano di esecuzione*, che viene applicato all
     Get-AzResourceGroup -Name QuickstartTerraformTest-rg
     ```
 
-    Se l'operazione è riuscita, il comando visualizza diverse proprietà del gruppo di risorse appena creato.
+    **Note**:
+
+    - Se l'operazione è riuscita, il comando visualizza diverse proprietà del gruppo di risorse appena creato.
 
 ## <a name="clean-up-resources"></a>Pulire le risorse
 

@@ -3,13 +3,13 @@ title: 'Esercitazione: Eseguire la distribuzione da GitHub nel servizio app di A
 description: Informazioni su come configurare Jenkins per l'integrazione continua (CI) da GitHub e la distribuzione continua (CD) nel servizio app di Azure per le app Web Java
 keywords: jenkins, azure, devops, servizio app
 ms.topic: tutorial
-ms.date: 10/23/2019
-ms.openlocfilehash: 6516f5481f6170a9d15d43113ac0f3f234174931
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.date: 08/10/2020
+ms.openlocfilehash: 3961d413a573d416777f649cef44ceccdecb0b01
+ms.sourcegitcommit: e792f681ab66c54e6fd0c7f3cb71816206216d72
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82170027"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88075714"
 ---
 # <a name="tutorial-deploy-from-github-to-azure-app-service-using-jenkins"></a>Esercitazione: Eseguire la distribuzione da GitHub nel servizio app di Azure con Jenkins
 
@@ -116,31 +116,20 @@ Creare quindi l'entità servizio di Azure usata da Jenkins per l'autenticazione 
 
 ## <a name="create-service-principal"></a>Creare un'entità servizio
 
-In una sezione successiva si creerà un processo di pipeline Jenkins che compila l'app da GitHub e la distribuisce in Servizio app di Azure. Per fare in modo che Jenkins acceda ad Azure senza dover immettere le credenziali dell'utente, creare un'[entità servizio](https://docs.microsoft.com/azure/active-directory/develop/app-objects-and-service-principals) in Azure Active Directory per Jenkins. Un'entità servizio è un'identità separata che Jenkins può usare per autenticare l'accesso alle risorse di Azure. Per creare questa entità servizio, eseguire il comando dell'interfaccia della riga di comando di Azure [ **`az ad sp create-for-rbac`** ](https://docs.microsoft.com/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest), dalla riga di comando locale o da Azure Cloud Shell, ad esempio: 
+In una sezione successiva si creerà un processo di pipeline Jenkins che compila l'app da GitHub e la distribuisce in Servizio app di Azure. Per fare in modo che Jenkins acceda ad Azure senza dover immettere le credenziali dell'utente è necessaria un'[entità servizio](/active-directory/develop/app-objects-and-service-principals). Se si ha già un'entità servizio da usare per questo articolo, è possibile ignorare questa sezione.
+
+Per creare l'entità servizio, eseguire il comando [az ad sp create-for-rbac](/cli/azure/ad/sp?#az-ad-sp-create-for-rbac) dell'interfaccia della riga di comando di Azure.
 
 ```azurecli-interactive
-az ad sp create-for-rbac --name "yourAzureServicePrincipalName" --password yourSecurePassword
+az ad sp create-for-rbac
 ```
 
-Assicurarsi di racchiudere tra virgolette il nome dell'entità servizio. Creare inoltre una password complessa basata su [regole e restrizioni per le password di Azure Active Directory](/azure/active-directory/active-directory-passwords-policy). Se non si specifica una password, la password viene creata automaticamente dall'interfaccia della riga di comando di Azure. 
+**Note**:
 
-Ecco l'output generato dal comando **`create-for-rbac`** : 
+- Al termine, `az ad sp create-for-rbac` visualizza diversi valori. I valori `name`, `password` e `tenant` vengono usati nel passaggio successivo.
+- Per impostazione predefinita, un'entità servizio viene creata con il ruolo **Collaboratore**, che include autorizzazioni complete per la lettura e la scrittura in un account Azure. Per altre informazioni sul controllo degli accessi in base al ruolo e i ruoli, vedere [Controllo degli accessi in base al ruolo: ruoli predefiniti](/azure/active-directory/role-based-access-built-in-roles).
+- Se viene persa, questa password non può essere recuperata. Di conseguenza, è consigliabile archiviarla in un luogo sicuro. Se si dimentica la password, è necessario [reimpostare le credenziali dell'entità servizio](/cli/azure/create-an-azure-service-principal-azure-cli#reset-credentials).
 
-```json
-{
-   "appId": "yourAzureServicePrincipal-ID", // A GUID such as AAAAAAAA-AAAA-AAAA-AAAA-AAAAAAAAAAAA
-   "displayName": "yourAzureServicePrincipalName", // A user-friendly name for your Azure service principal
-   "name": "http://yourAzureServicePrincipalName",
-   "password": "yourSecurePassword",
-   "tenant": "yourAzureActiveDirectoryTenant-ID" // A GUID such as BBBBBBBB-BBBB-BBBB-BBBB-BBBBBBBBBBBB
-}
-```
-
-> [!TIP]
-> 
-> Se si ha già un'entità servizio, è possibile riutilizzarla.
-> Quando si forniscono i valori dell'entità servizio per l'autenticazione, usare i valori delle proprietà `appId`, `password` e `tenant`. 
-> Quando si cerca un'entità servizio esistente, usare il valore della proprietà `displayName`.
 
 ## <a name="add-service-principal-to-jenkins"></a>Aggiungere l'entità servizio a Jenkins
 
@@ -156,7 +145,7 @@ Ecco l'output generato dal comando **`create-for-rbac`** :
 
    ![Aggiungere le credenziali dell'entità servizio di Azure](media/deploy-from-github-to-azure-app-service/add-service-principal-credentials.png)
 
-   | Proprietà | valore | Descrizione | 
+   | Proprietà | Valore | Descrizione | 
    |----------|-------|-------------| 
    | **ID sottoscrizione** | <*ID-SottoscrizioneAzure*> | Valore GUID per la sottoscrizione di Azure <p>**Suggerimento**: se non si conosce l'ID sottoscrizione di Azure, eseguire questo comando dell'interfaccia della riga di comando di Azure dalla riga di comando o in Cloud Shell e quindi usare il valore GUID `id`: <p>`az account list` | 
    | **ID client** | <*ID-EntitàServizioAzure*> | Valore GUID `appId` generato in precedenza per l'entità servizio di Azure | 

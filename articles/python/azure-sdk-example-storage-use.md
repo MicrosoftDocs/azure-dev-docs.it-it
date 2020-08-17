@@ -1,16 +1,17 @@
 ---
 title: Usare Archiviazione di Azure con Azure SDK per Python
 description: Usare le librerie di Azure SDK per Python per accedere a un contenitore BLOB di cui è già stato effettuato il provisioning in un account di archiviazione di Azure e quindi caricarvi un file.
-ms.date: 06/15/2020
+ms.date: 08/05/2020
 ms.topic: conceptual
-ms.openlocfilehash: 41c2c586678084e30f9f5b2bff3c773b46f5463d
-ms.sourcegitcommit: c6642cae6fdb5e3025ed66fcd4ef89792c3b436a
+ms.custom: devx-track-python
+ms.openlocfilehash: bcb8d680950e2c42d3d7f092478c4d6096454b12
+ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/15/2020
-ms.locfileid: "86405732"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87982693"
 ---
-# <a name="example-access-azure-storage-using-the-azure-libraries-for-pyhon"></a>Esempio: Accedere ad Archiviazione di Azure con le librerie di Azure per Python
+# <a name="example-access-azure-storage-using-the-azure-libraries-for-python"></a>Esempio: Accedere ad Archiviazione di Azure con le librerie di Azure per Python
 
 Questo esempio illustra come usare le librerie client di Azure nel codice applicativo di Python per caricare un file nel contenitore di archiviazione BLOB. L'esempio presuppone che sia stato effettuato il provisioning delle risorse, come illustrato in [Esempio: Effettuare il provisioning di Archiviazione di Azure](azure-sdk-example-storage.md).
 
