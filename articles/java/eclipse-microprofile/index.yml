@@ -3,17 +3,17 @@ title: Documentazione di Eclipse MicroProfile in Azure
 summary: MicroProfile è un progetto di Eclipse Foundation volto a sfruttare e sviluppare tecnologie Java Enterprise, come Java EE, nella direzione delle architetture distribuite di microservizi, producendo innovazione attraverso molteplici implementazioni e collaborando su aree di interesse comune con l'obiettivo della standardizzazione.
 metadata:
   title: Documentazione di Eclipse MicroProfile in Azure
-  description: Introduzione all'uso di Eclipse MicroProfile per lo sviluppo di app in Azure.
+  description: Iniziare a usare Eclipse MicroProfile per sviluppare app in Azure sfruttando ed evolvendo le tecnologie Enterprise Java.
   author: brborges
   ms.author: brborges
   ms.date: 03/13/2020
   ms.topic: landing-page
-  ms.openlocfilehash: e17e2d97494e2043c9925283adb53c2449224586
-  ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+  ms.openlocfilehash: 0b0bb28c4ec0751b1a6d29ff89fadaf53fe57ccd
+  ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 05/05/2020
-  ms.locfileid: "81675207"
+  ms.lasthandoff: 08/14/2020
+  ms.locfileid: "88240913"
 landingContent:
 - title: Guide introduttive
   linkLists:
