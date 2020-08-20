@@ -3,12 +3,13 @@ title: Esercitazione - Creare una topologia di rete ibrida hub-spoke con Terrafo
 description: Informazioni su come creare un'intera architettura di riferimento di rete ibrida in Azure usando Terraform.
 ms.topic: tutorial
 ms.date: 10/26/2019
-ms.openlocfilehash: 4c85ef46ed6fc5d6002f8eb0d1b0dc0e47992e6d
-ms.sourcegitcommit: 8cd0ddf1651c3b64bb72dedc2890108c2cfe3bcb
+ms.custom: devx-track-terraform
+ms.openlocfilehash: 7fd6de18404f6c71184f17510699c6eb2a7be16b
+ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87334316"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88241123"
 ---
 # <a name="tutorial-create-a-hub-and-spoke-hybrid-network-topology-in-azure-using-terraform"></a>Esercitazione: Creare una topologia di rete ibrida hub-spoke con Terraform in Azure
 

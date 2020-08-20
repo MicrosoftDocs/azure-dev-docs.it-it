@@ -3,12 +3,13 @@ title: Esercitazione - Creare una rete virtuale locale in Azure con Terraform
 description: Informazioni su come implementare in Azure una rete virtuale locale che ospita risorse locali.
 ms.topic: tutorial
 ms.date: 10/26/2019
-ms.openlocfilehash: 0f336a9dae0c063cb8498f0aae4db3d82d1dbcac
-ms.sourcegitcommit: db56786f046a3bde1bd9b0169b4f62f0c1970899
+ms.custom: devx-track-terraform
+ms.openlocfilehash: 63ad0ef21ee9a6474710bf7ac40282d442105567
+ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84329599"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88241103"
 ---
 # <a name="tutorial-create-on-premises-virtual-network-in-azure-using-terraform"></a>Esercitazione: Creare una rete virtuale locale in Azure con Terraform
 

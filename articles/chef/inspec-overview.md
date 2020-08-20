@@ -4,12 +4,13 @@ description: Informazioni su come usare InSpec per rilevare problemi nelle distr
 keywords: azure, chef, devops, macchine virtuali, panoramica, automazione, inspec
 ms.date: 03/19/2019
 ms.topic: article
-ms.openlocfilehash: 096ea093c96187a4a88ba4ce408d2cf2edbf469d
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.custom: devx-track-chef
+ms.openlocfilehash: 0c50cd07473565609084db24b9e537519194a0c2
+ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "80893000"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88240723"
 ---
 # <a name="use-inspec-for-compliance-automation-of-your-azure-infrastructure"></a>Usare InSpec per l'automazione della conformità dell'infrastruttura di Azure
 

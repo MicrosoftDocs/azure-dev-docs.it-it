@@ -3,12 +3,13 @@ title: Distribuire il codice dell'app nel Servizio app di Azure tramite l'interf
 description: Parte 4 dell'esercitazione, distribuire il sito Web
 ms.topic: conceptual
 ms.date: 09/24/2019
-ms.openlocfilehash: 668d055a56eae2eb365884a41fcc515aae5fb229
-ms.sourcegitcommit: 553da4e9aa988e5bb823364244ea81961cee5bc7
+ms.custom: devx-track-javascript
+ms.openlocfilehash: e794388280c537261e428195ac3943379f04866b
+ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85792461"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88217947"
 ---
 # <a name="deploy-the-app-to-app-service"></a>Distribuire l'app nel Servizio app
 

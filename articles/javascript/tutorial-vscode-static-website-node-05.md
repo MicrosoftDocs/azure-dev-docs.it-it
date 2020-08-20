@@ -4,14 +4,15 @@ description: Parte 5 dell'esercitazione, apportare modifiche e ripetere la distr
 ms.topic: conceptual
 ms.date: 09/24/2019
 ms.author: buhollan
-ms.openlocfilehash: d0f6be1d57c9d378a4428a5a05da0428314f76c0
-ms.sourcegitcommit: 553da4e9aa988e5bb823364244ea81961cee5bc7
+ms.custom: devx-track-javascript
+ms.openlocfilehash: 918f96376a03d17792c7a462d37ea47330e60d39
+ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85792701"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88218322"
 ---
-# <a name="make-changes-and-redeploy"></a>Apportare modifiche e ripetere la distribuzione
+# <a name="part-5-make-changes-and-redeploy"></a>Parte 5: Apportare modifiche e ripetere la distribuzione
 
 [Passaggio precedente: Eseguire la distribuzione in Archiviazione di Azure](tutorial-vscode-static-website-node-04.md)
 

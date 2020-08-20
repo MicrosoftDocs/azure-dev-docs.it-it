@@ -3,12 +3,13 @@ title: 'Esercitazione: Panoramica dei test di Terraform'
 description: Informazioni sulle diverse opzioni di test che è possibile configurare per convalidare i progetti di Terraform.
 ms.topic: overview
 ms.date: 07/31/2020
-ms.openlocfilehash: e32d8f6c71045392b016699fa63d790995918201
-ms.sourcegitcommit: e451e4360d9c5956cc6a50880b3a7a55aa4efd2f
+ms.custom: devx-track-terraform
+ms.openlocfilehash: 29f128361030b64da38124f7f7d723619306f582
+ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87507071"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88241273"
 ---
 # <a name="tutorial-terraform-testing-overview"></a>Esercitazione: Panoramica dei test di Terraform
 

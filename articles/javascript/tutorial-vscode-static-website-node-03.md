@@ -3,12 +3,13 @@ title: Creare un account di Archiviazione di Azure per un sito Web Node.js stati
 description: Parte 3 dell'esercitazione, creare un account di Archiviazione di Azure
 ms.topic: conceptual
 ms.date: 09/24/2019
-ms.openlocfilehash: 4adca67f850497777abce7d550e39532e59257d9
-ms.sourcegitcommit: 553da4e9aa988e5bb823364244ea81961cee5bc7
+ms.custom: devx-track-javascript
+ms.openlocfilehash: f0aa6a8cbfc0a5d286d0b7c93a12cbd48b68d620
+ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85792721"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88218350"
 ---
 # <a name="create-an-azure-storage-account"></a>Creare un account di Archiviazione di Azure
 

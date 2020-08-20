@@ -3,12 +3,13 @@ title: Esercitazione - Test di integrazione con Terraform e Azure
 description: Informazioni sui test di integrazione e su come usare Azure DevOps per configurare l'integrazione continua per i progetti Terraform.
 ms.topic: tutorial
 ms.date: 07/31/2020
-ms.openlocfilehash: 562e7a493d94d9544a734704b96c406b7ceddb9c
-ms.sourcegitcommit: e451e4360d9c5956cc6a50880b3a7a55aa4efd2f
+ms.custom: devx-track-terraform
+ms.openlocfilehash: 3d305fb63deffb8f56ebd2cb1503bac543c5b84b
+ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87506991"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88241303"
 ---
 # <a name="tutorial-configure-integration-tests-for-terraform-projects-in-azure"></a>Esercitazione: Configurare i test di integrazione per i progetti Terraform in Azure
 

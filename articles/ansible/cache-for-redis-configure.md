@@ -4,12 +4,13 @@ description: Informazioni su come usare Ansible per creare, ridimensionare, riav
 keywords: ansible, azure, devops, bash, playbook, cache, redis
 ms.topic: tutorial
 ms.date: 04/30/2019
-ms.openlocfilehash: 0101d9afc3f9d6e4466455aa56ae069a009bfa6f
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.custom: devx-track-ansible
+ms.openlocfilehash: e5e3211dc2625670937a583d3db0018c6222ae19
+ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81743461"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88240333"
 ---
 # <a name="tutorial-configure-caches-in-azure-cache-for-redis-using-ansible"></a>Esercitazione: Configurare le cache nella Cache di Azure per Redis usando Ansible
 

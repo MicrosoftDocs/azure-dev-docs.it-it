@@ -3,12 +3,13 @@ title: Creare un set di scalabilità di macchine virtuali di Azure da un'immagin
 description: Informazioni su come usare Terraform per configurare un set di scalabilità di macchine virtuali di Azure da un'immagine personalizzata generata da Packer
 ms.topic: how-to
 ms.date: 11/07/2019
-ms.openlocfilehash: 541d294a3098e2da7c76855de4db0c425b408e0e
-ms.sourcegitcommit: e451e4360d9c5956cc6a50880b3a7a55aa4efd2f
+ms.custom: devx-track-terraform
+ms.openlocfilehash: de8f22311edefcef1f25571731f17e5e5bc96348
+ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87478471"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88241193"
 ---
 # <a name="create-an-azure-virtual-machine-scale-set-from-a-packer-custom-image-by-using-terraform"></a>Creare un set di scalabilità di macchine virtuali di Azure da un'immagine personalizzata Packer usando Terraform
 

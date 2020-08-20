@@ -3,13 +3,13 @@ title: Distribuire app Web Node.js in Azure
 description: Introduzione a Servizio app di Azure e ad altre opzioni di hosting per app Web, incluse le app Web progressive
 ms.topic: article
 ms.date: 08/20/2019
-ms.custom: seo-javascript-september2019, seo-javascript-october2019
-ms.openlocfilehash: e7cb374b645738140ead924296ef7cef9b1b61d7
-ms.sourcegitcommit: 553da4e9aa988e5bb823364244ea81961cee5bc7
+ms.custom: seo-javascript-september2019, seo-javascript-october2019, devx-track-javascript
+ms.openlocfilehash: 379960ccbeec1fc5fdd0030e7460a97acb149066
+ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85792341"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88218645"
 ---
 # <a name="deploy-nodejs-web-apps-to-azure-app-service"></a>Distribuire app Web Node.js nel Servizio app di Azure
 

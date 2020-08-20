@@ -3,12 +3,13 @@ title: Utilizzo di Terraform con Azure
 description: Informazioni su come usare Terraform per semplificare la distribuzione e il controllo delle versioni dell'infrastruttura in Azure.
 ms.topic: overview
 ms.date: 10/26/2019
-ms.openlocfilehash: 8819a20e9bfb381cb6eb4f5b610b4ffcaa1d63b2
-ms.sourcegitcommit: 8cd0ddf1651c3b64bb72dedc2890108c2cfe3bcb
+ms.custom: devx-track-terraform
+ms.openlocfilehash: d5089a9e27f9f17ebde6a2e9847908157018e08c
+ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87334496"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88241053"
 ---
 # <a name="terraform-with-azure"></a>Utilizzo di Terraform con Azure
 

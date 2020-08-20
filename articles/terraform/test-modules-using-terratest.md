@@ -3,12 +3,13 @@ title: Esercitazione - Testare i moduli Terraform in Azure con Terratest
 description: Informazioni su come usare Terratest per testare i moduli Terraform.
 ms.topic: tutorial
 ms.date: 10/26/2019
-ms.openlocfilehash: 75462d5aec46ea647d4a6ddd1d2c47ba40c6fa32
-ms.sourcegitcommit: 756e4873f904db954a56c20ebb2f1f5116ee4596
+ms.custom: devx-track-terraform
+ms.openlocfilehash: f174c6c3a4a91fe47ded8ade8826ce9c4c09af65
+ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82172057"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88241063"
 ---
 # <a name="tutorial-test-terraform-modules-in-azure-using-terratest"></a>Esercitazione: Testare i moduli Terraform in Azure con Terratest
 

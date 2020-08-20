@@ -3,12 +3,13 @@ title: Distribuire l'applicazione di Funzioni di Azure da Visual Studio Code
 description: Parte 4 dell'esercitazione, distribuire l'app per le funzioni nel cloud.
 ms.topic: conceptual
 ms.date: 09/23/2019
-ms.openlocfilehash: 78f6f044397cc29f22949525e4e7e860d5c101f9
-ms.sourcegitcommit: 553da4e9aa988e5bb823364244ea81961cee5bc7
+ms.custom: devx-track-javascript
+ms.openlocfilehash: baf5ba17bb302da193a6eb1bb24e1a4a68c4a37b
+ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85792850"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88218360"
 ---
 # <a name="deploy-the-functions-app"></a>Distribuire l'app per le funzioni
 

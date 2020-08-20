@@ -3,12 +3,13 @@ title: Distribuire app Node.js nel Servizio app di Azure tramite l'interfaccia d
 description: Parte 1 dell'esercitazione, introduzione e prerequisiti.
 ms.topic: conceptual
 ms.date: 09/24/2019
-ms.openlocfilehash: 7abe3bf3d59072acf8b448b66e68908b5d824a8c
-ms.sourcegitcommit: 553da4e9aa988e5bb823364244ea81961cee5bc7
+ms.custom: devx-track-javascript
+ms.openlocfilehash: 51fb29a80ba69dd59ca18dd94eaaeb6f09e53074
+ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85793010"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88218077"
 ---
 # <a name="deploy-to-azure-app-service-using-the-azure-cli"></a>Eseguire la distribuzione nel Servizio app di Azure tramite l'interfaccia della riga di comando di Azure
 

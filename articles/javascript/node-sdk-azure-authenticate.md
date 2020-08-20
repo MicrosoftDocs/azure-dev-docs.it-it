@@ -3,12 +3,13 @@ title: Eseguire l'autenticazione con i moduli di gestione di Azure per Node.js
 description: Eseguire l'autenticazione con un'entità servizio nei moduli di gestione di Azure per Node.js
 ms.topic: article
 ms.date: 06/17/2017
-ms.openlocfilehash: 76233fb6e6d15829783ff98b3af672abc7eba226
-ms.sourcegitcommit: 553da4e9aa988e5bb823364244ea81961cee5bc7
+ms.custom: devx-track-javascript
+ms.openlocfilehash: 6697e96264a09db1b1b74a74932b6fff78fa8443
+ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85792281"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88218870"
 ---
 # <a name="authenticate-with-the-azure-modules-for-nodejs"></a>Eseguire l'autenticazione con i moduli di Azure per Node.js
 

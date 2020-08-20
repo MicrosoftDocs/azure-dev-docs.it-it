@@ -4,12 +4,13 @@ description: Informazioni su come usare Ansible per la creazione e la configuraz
 keywords: ansible, azure, devops, bash, playbook, mysql, database
 ms.topic: tutorial
 ms.date: 04/30/2019
-ms.openlocfilehash: e8aad724edd55bda7284eda5f9630e5ffbe9f74c
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.custom: devx-track-ansible
+ms.openlocfilehash: 6264ca6158017fc919e64fa2e33852076c523fc6
+ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81743403"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88239983"
 ---
 # <a name="tutorial-configure-databases-in-azure-database-for-mysql-using-ansible"></a>Esercitazione: Configurare i database in Database di Azure per MySQL tramite Ansible
 

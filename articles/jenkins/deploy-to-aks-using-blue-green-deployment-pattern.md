@@ -4,12 +4,13 @@ description: Di seguito viene spiegato come eseguire la distribuzione nel serviz
 keywords: jenkins, azure, devops, kubernetes, k8s, servizio Azure Kubernetes, distribuzione di tipo blu-verde, recapito continuo, cd
 ms.topic: tutorial
 ms.date: 10/23/2019
-ms.openlocfilehash: 051a1531c9e973231ca56256603df63f60e21cf9
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.custom: devx-track-jenkins
+ms.openlocfilehash: 9a81b47d0e3828bb7c1cd809a66b2245f5a83771
+ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82169947"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88240993"
 ---
 # <a name="tutorial-deploy-to-azure-kubernetes-service-aks-using-the-bluegreen-deployment-pattern"></a>Esercitazione: Eseguire la distribuzione nel servizio Azure Kubernetes usando il modello di distribuzione blu/verde
 
@@ -189,7 +190,7 @@ Per creare un cluster Kubernetes gestito con l'[interfaccia della riga di comand
 
 In questa sezione verrà illustrato come preparare il server Jenkins per eseguire una compilazione corretta per i test. Tuttavia, è necessario utilizzare un [agente di macchina virtuale di Azure](https://plugins.jenkins.io/azure-vm-agents) o un [agente di contenitore di Azure](https://plugins.jenkins.io/azure-container-agents) per eseguire la creazione di un agente in Azure che si occupi dell’esecuzione di compilazioni. Per ulteriori informazioni, vedere l'articolo Jenkins sulle [implicazioni per la sicurezza di compilazione su master](https://wiki.jenkins.io/display/JENKINS/Security+implication+of+building+on+master).
 
-1. Distribuire un [master Jenkins in Azure](https://aka.ms/jenkins-on-azure).
+1. Distribuire un [master Jenkins in Azure](https://azuremarketplace.microsoft.com/marketplace/apps/bitnami.production-jenkins).
 
 1. Connettersi al server tramite SSH e installare gli strumenti di compilazione sul server in cui si esegue la compilazione.
    

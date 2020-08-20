@@ -4,13 +4,13 @@ description: Informazioni su come usare l'interfaccia della riga di comando di A
 keywords: jenkins, azure, devops, azure spring cloud, interfaccia della riga di comando di azure
 ms.topic: tutorial
 ms.date: 08/10/2020
-ms.custom: devx-track-azurecli,devx-track-jenkins
-ms.openlocfilehash: 5561f1bb107c8f197b2cb04566f62ed1e37d3b3c
-ms.sourcegitcommit: f65561589d22b9ba2d69b290daee82eb47b0b20f
+ms.custom: devx-track-jenkins,devx-track-azurecli
+ms.openlocfilehash: 769067c03fce08e462364314d2e4712ab6ffe155
+ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88162060"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88240833"
 ---
 # <a name="tutorial-deploy-apps-to-azure-spring-cloud-using-jenkins-and-the-azure-cli"></a>Esercitazione: Distribuire app in Azure Spring Cloud con Jenkins e l'interfaccia della riga di comando di Azure
 

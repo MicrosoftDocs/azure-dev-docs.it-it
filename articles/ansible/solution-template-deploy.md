@@ -4,12 +4,13 @@ description: In questo argomento di avvio rapido viene illustrato come distribui
 keywords: ansible, azure, devops, modello di soluzione, macchina virtuale, Identità gestite per le risorse di azure, centos, red hat
 ms.topic: quickstart
 ms.date: 04/30/2019
-ms.openlocfilehash: 79638c8ae4bd8d1a54448d2cf8aef1a391a91e44
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.custom: devx-track-ansible
+ms.openlocfilehash: e984d95c86541f84d56ede4d47d2f5acabee7a58
+ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81743921"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88240073"
 ---
 # <a name="quickstart-deploy-the-ansible-solution-template-for-azure-to-centos"></a>Guida introduttiva: Distribuire il modello di soluzione Ansible per Azure in CentOS
 

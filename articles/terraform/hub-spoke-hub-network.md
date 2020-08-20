@@ -3,12 +3,13 @@ title: 'Esercitazione: Creare una rete virtuale hub in Azure con Terraform'
 description: Informazioni su come creare una rete virtuale hub in Azure che funge da punto di connessione comune tra altre reti.
 ms.topic: tutorial
 ms.date: 10/26/2019
-ms.openlocfilehash: ed2b391075dc04b7ef16d3f305ef4ff86abed4ae
-ms.sourcegitcommit: e451e4360d9c5956cc6a50880b3a7a55aa4efd2f
+ms.custom: devx-track-terraform
+ms.openlocfilehash: 0833497301865506592639838c7d6075813bcf6e
+ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87478571"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88241143"
 ---
 # <a name="tutorial-create-a-hub-virtual-network-in-azure-by-using-terraform"></a>Esercitazione: Creare una rete virtuale hub in Azure con Terraform
 

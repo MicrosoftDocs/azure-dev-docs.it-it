@@ -4,12 +4,13 @@ description: Informazioni su come eseguire la distribuzione in Funzioni di Azure
 keywords: jenkins, azure, devops, java, funzioni di azure
 ms.topic: tutorial
 ms.date: 10/23/2019
-ms.openlocfilehash: 4dbd37b9527a3c41c6f1d5b40edf974b6adda6c3
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.custom: devx-track-jenkins
+ms.openlocfilehash: fa63ebf5a41a3c515f92b0c551ee63d683b665c7
+ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82169797"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88240932"
 ---
 # <a name="tutorial-deploy-to-azure-functions-using-jenkins"></a>Esercitazione: Eseguire la distribuzione in Funzioni di Azure con Jenkins
 
@@ -51,7 +52,7 @@ La procedura seguente mostra come creare una funzione Java tramite l'interfaccia
 
 La procedura seguente descrive come preparare il server Jenkins:
 
-1. Distribuire un [server Jenkins](https://aka.ms/jenkins-on-azure) in Azure. Se non è già installata un'istanza del server Jenkins, l'articolo [Creare un server Jenkins in Azure](./configure-on-linux-vm.md) descrive in modo dettagliato questo processo.
+1. Distribuire un [server Jenkins](https://azuremarketplace.microsoft.com/marketplace/apps/bitnami.production-jenkins) in Azure. Se non è già installata un'istanza del server Jenkins, l'articolo [Creare un server Jenkins in Azure](./configure-on-linux-vm.md) descrive in modo dettagliato questo processo.
 
 1. Accedere all'istanza di Jenkins con SSH.
 

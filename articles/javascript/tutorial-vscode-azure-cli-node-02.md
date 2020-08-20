@@ -3,12 +3,13 @@ title: Creare un'app Node.js da distribuire in Azure tramite l'interfaccia della
 description: Parte 2 dell'esercitazione, creare il codice dell'app.
 ms.topic: conceptual
 ms.date: 09/24/2019
-ms.openlocfilehash: 160b543abee59bdd7504aa356a3b11eb7bde3da8
-ms.sourcegitcommit: 553da4e9aa988e5bb823364244ea81961cee5bc7
+ms.custom: devx-track-javascript
+ms.openlocfilehash: c4efa8f2c9e467e0bddeb43dd227eb9b9ecb6f99
+ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85793011"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88217916"
 ---
 # <a name="create-the-app-code-using-express"></a>Creare il codice dell'app usando Express
 

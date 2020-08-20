@@ -4,12 +4,13 @@ description: Informazioni su come usare Terraform con gli slot di distribuzione 
 keywords: azure devops terraform slot di distribuzione
 ms.topic: how-to
 ms.date: 03/09/2020
-ms.openlocfilehash: 8ae9f51b82f7868e4df11f1586664f203aa5403b
-ms.sourcegitcommit: e451e4360d9c5956cc6a50880b3a7a55aa4efd2f
+ms.custom: devx-track-terraform
+ms.openlocfilehash: bed68e64bb6948f4ab021035bd113ea9fb007950
+ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87478484"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88241213"
 ---
 # <a name="provision-infrastructure-with-azure-deployment-slots-using-terraform"></a>Effettuare il provisioning dell'infrastruttura con slot di distribuzione di Azure tramite Terraform
 
