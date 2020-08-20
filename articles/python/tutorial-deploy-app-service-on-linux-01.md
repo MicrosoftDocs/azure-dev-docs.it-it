@@ -4,12 +4,12 @@ description: "Passaggio 1 dell'esercitazione: introduzione, prerequisiti e acces
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: 88335c081375e0a3830de7676e137f5b1038a98c
-ms.sourcegitcommit: 5051b25ad32be891800b23fc7ae12a4ca85cbb73
+ms.openlocfilehash: 255e94d863f0c144ff4de402a2d775a21645b95a
+ms.sourcegitcommit: 815cf2acff71e849735f7afce54723f03ffa5df3
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88147402"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88501376"
 ---
 # <a name="tutorial-deploy-python-apps-to-azure-app-service-on-linux-from-visual-studio-code"></a>Esercitazione: Distribuire app Python nel Servizio app di Azure in Linux da Visual Studio Code
 
@@ -47,4 +47,4 @@ Installare il software seguente:
 > [!div class="nextstepaction"]
 > [L'accesso ad Azure è stato eseguito: procedere con il passaggio 2 >>>](tutorial-deploy-app-service-on-linux-02.md)
 
-[Si è verificato un problema](https://www.research.net/r/PWZWZ52?tutorial=vscode-appservice-python&step=01-verify-prerequisites)
+[Problemi? Segnalarli](https://aka.ms/FlaskVSCQuickstartHelp).

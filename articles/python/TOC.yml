@@ -108,10 +108,10 @@
       items:
         - name: Autenticare app con Azure
           href: azure-sdk-authenticate.md
-        - name: Gestire le entità servizio
-          href: how-to-manage-service-principals.md
         - name: Assegnare le autorizzazioni di ruolo a entità di sicurezza
           href: how-to-assign-role-permissions.md
+        - name: Gestire le entità servizio
+          href: how-to-manage-service-principals.md
     - name: Installare i pacchetti
       href: azure-sdk-install.md
     - name: Indice dei pacchetti

@@ -4,12 +4,12 @@ description: "Passaggio 7 dell'esercitazione: pulizia delle risorse di Azure"
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: 49c0d32326010de66e8855c800d715dcb456e48f
-ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
+ms.openlocfilehash: ba8d4b3ae6411b2bced31689513b17ee1bad9efd
+ms.sourcegitcommit: 815cf2acff71e849735f7afce54723f03ffa5df3
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87983596"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88501436"
 ---
 # <a name="7-clean-up-resources-after-deploying-to-azure-app-service-on-linux-from-visual-studio-code"></a>7: Pulire le risorse dopo la distribuzione nel Servizio app di Azure in Linux da Visual Studio Code
 
@@ -41,4 +41,4 @@ Alcune estensioni comuni sono:
 > [!div class="nextstepaction"]
 > [Fatto](https://docs.microsoft.com/python/azure/?view=azure-python) 
 
-[Si è verificato un problema](https://www.research.net/r/PWZWZ52?tutorial=vscode-appservice-python&step=07-clean-up-resources)
+[Problemi? Segnalarli](https://aka.ms/FlaskVSCQuickstartHelp).

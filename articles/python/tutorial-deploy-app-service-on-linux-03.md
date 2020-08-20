@@ -4,12 +4,12 @@ description: "Passaggio 3 dell'esercitazione: creazione del servizio app dall'es
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: de70e026398797cbbb406924ed2a3184f627de92
-ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
+ms.openlocfilehash: b94d128360eb929b59c3c555b78b2cee4708c8d4
+ms.sourcegitcommit: 815cf2acff71e849735f7afce54723f03ffa5df3
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87983626"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88501446"
 ---
 # <a name="3-create-the-app-service-from-visual-studio-code"></a>3: Creare il servizio app da Visual Studio Code
 
@@ -55,4 +55,4 @@ Se si ha un file di definizioni delle variabili di ambiente, è possibile usarlo
 > [!div class="nextstepaction"]
 > [Il servizio app è stato creato: procedere con il passaggio 4 >>>](tutorial-deploy-app-service-on-linux-04.md)
 
-[Si è verificato un problema](https://www.research.net/r/PWZWZ52?tutorial=vscode-appservice-python&step=03-create-app-service)
+[Problemi? Segnalarli](https://aka.ms/FlaskVSCQuickstartHelp).

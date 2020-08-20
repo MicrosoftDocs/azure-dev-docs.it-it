@@ -4,12 +4,12 @@ description: Passaggio 4 dell'esercitazione, che indica al servizio app come avv
 ms.topic: conceptual
 ms.date: 05/19/2020
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: 5de5f7f52fbf8c88bf05c7cb300952aee81a8439
-ms.sourcegitcommit: 5051b25ad32be891800b23fc7ae12a4ca85cbb73
+ms.openlocfilehash: 45c24711131f03c2475d3ecb2a5538cadd6e7c56
+ms.sourcegitcommit: 815cf2acff71e849735f7afce54723f03ffa5df3
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88147382"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88501426"
 ---
 # <a name="4-configure-a-custom-startup-file-for-python-apps-on-azure-app-service"></a>4: Configurare un file di avvio personalizzato per le app Python nel Servizio app di Azure
 
@@ -113,4 +113,4 @@ Per usare un framework diverso da Django o Flask (ad esempio Falcon, FastAPI e c
 > [!div class="nextstepaction"]
 > [Il file di avvio è stato configurato: procedere con il passaggio 5 >>>](tutorial-deploy-app-service-on-linux-05.md)
 
-[Si è verificato un problema](https://www.research.net/r/PWZWZ52?tutorial=vscode-appservice-python&step=04-startup-command)
+[Problemi? Segnalarli](https://aka.ms/FlaskVSCQuickstartHelp).
