@@ -1,17 +1,18 @@
 ---
-title: Avvio rapido - Introduzione a Jenkins
+title: Avvio rapido - Configurare Jenkins con l'interfaccia della riga di comando di Azure
 description: Informazioni su come installare Jenkins in una macchina virtuale Linux di Azure e compilare un'applicazione Java di esempio.
 keywords: jenkins, azure, devops, portale, linux, macchina virtuale
 ms.topic: quickstart
-ms.date: 08/07/2020
-ms.openlocfilehash: 06d2365f51df76861a3a154702c4b82f962f7038
-ms.sourcegitcommit: f65561589d22b9ba2d69b290daee82eb47b0b20f
+ms.date: 08/19/2020
+ms.custom: devx-track-jenkins
+ms.openlocfilehash: b5be59dc1ed3fab69051a8ddd23576e27c966a7b
+ms.sourcegitcommit: 800c5e05ad3c0b899295d381964dd3d47436ff90
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88162090"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88614561"
 ---
-# <a name="quickstart-get-started-with-jenkins"></a>Avvio rapido: Introduzione a Jenkins
+# <a name="quickstart-configure-jenkins-using-azure-cli"></a>Avvio rapido: Configurare Jenkins con l'interfaccia della riga di comando di Azure
 
 Questa guida introduttiva illustra come installare [Jenkins](https://jenkins.io) in una VM Ubuntu Linux con gli strumenti e i plug-in configurati per usare Azure.
 
@@ -64,19 +65,36 @@ Se si verificano problemi durante la configurazione di Jenkins, vedere la [pagin
 1. Creare un gruppo di risorse usando [az group create](/cli/azure/group#az-group-create). Potrebbe essere necessario sostituire il parametro `--location` con il valore appropriato per l'ambiente.
 
     ```azurecli
-    az group create --name QuickstartJenkins-rg --location eastus
+    az group create \
+    --name QuickstartJenkins-rg \
+    --location eastus
     ```
 
 1. Creare una macchina virtuale con [az vm create](/cli/azure/vm#az-vm-create).
 
     ```azurecli
-    az vm create --resource-group QuickstartJenkins-rg --name QuickstartJenkins-vm --image UbuntuLTS --admin-username "azureuser" --generate-ssh-keys --custom-data cloud-init-jenkins.txt
+    az vm create \
+    --resource-group QuickstartJenkins-rg \
+    --name QuickstartJenkins-vm \
+    --image UbuntuLTS \
+    --admin-username "azureuser" \
+    --generate-ssh-keys \
+    --custom-data cloud-init-jenkins.txt
+    ```
+
+1. Verificare la creazione e lo stato della nuova macchina virtuale usando [az vm list](/cli/azure/vm#az-vm-list).
+
+    ```azurecli
+    az vm list -d -o table --query "[?name=='QuickstartJenkins-vm']"
     ```
 
 1. Aprire la porta 8080 nella nuova macchina virtuale usando [az vm open](/cli/azure/vm#az-vm-open-port).
 
     ```azurecli
-    az vm open-port --resource-group QuickstartJenkins-rg --name QuickstartJenkins-vm  --port 8080 --priority 1010
+    az vm open-port \
+    --resource-group QuickstartJenkins-rg \
+    --name QuickstartJenkins-vm  \
+    --port 8080 --priority 1010
     ```
 
 ## <a name="configure-jenkins"></a>Configurare Jenkins
@@ -84,7 +102,11 @@ Se si verificano problemi durante la configurazione di Jenkins, vedere la [pagin
 1. Ottenere l'indirizzo IP pubblico per la macchina virtuale di esempio usando [az vm show](/cli/azure/vm#az-vm-show).
 
     ```azurecli
-    az vm show --resource-group QuickstartJenkins-rg --name QuickstartJenkins-vm -d --query [publicIps] --output tsv
+    az vm show \
+    --resource-group QuickstartJenkins-rg \
+    --name QuickstartJenkins-vm -d \
+    --query [publicIps] \
+    --output tsv
     ```
 
     **Note**:
@@ -124,6 +146,8 @@ Se si verificano problemi durante la configurazione di Jenkins, vedere la [pagin
     ![Selezionare l'opzione per installare i plug-in selezionati](./media/configure-on-linux-vm/select-plugins.png)
 
 1. Nella casella del filtro nella parte superiore della pagina immettere `github`. Selezionare il plug-in di GitHub e quindi selezionare **Install** (Installa).
+
+    ![Installare i plug-in di GitHub](./media/configure-on-linux-vm/install-github-plugin.png)
 
 1. Immettere le informazioni per il primo utente amministratore e quindi selezionare **Save and Continue** (Salva e continua).
 

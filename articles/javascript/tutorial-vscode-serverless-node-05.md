@@ -3,18 +3,19 @@ title: Pulire le risorse dopo la distribuzione dell'applicazione di Funzioni di 
 description: Parte 5 dell'esercitazione, pulire le risorse.
 ms.topic: conceptual
 ms.date: 09/23/2019
-ms.openlocfilehash: ab20f86fd01aaac65c44afd0901c62f61a6ce119
-ms.sourcegitcommit: 553da4e9aa988e5bb823364244ea81961cee5bc7
+ms.custom: devx-track-javascript
+ms.openlocfilehash: 67745cdc9ac27b6f8c1bdfbd6f4dbaff0f39ce4a
+ms.sourcegitcommit: 815cf2acff71e849735f7afce54723f03ffa5df3
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85791579"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88501492"
 ---
-# <a name="clean-up-resources"></a>Pulire le risorse
+# <a name="clean-up-resources-after-deploying-an-azure-functions-app-with-visual-studio-code"></a>Pulire le risorse dopo la distribuzione di un'app di Funzioni di Azure con Visual Studio Code
 
 [Passaggio precedente: Distribuire l'app per le funzioni](tutorial-vscode-serverless-node-04.md)
 
-L'app per le funzioni creata include risorse che possono comportare costi minimi (vedere [Prezzi di Funzioni di Azure](https://azure.microsoft.com/pricing/details/functions/)). Per pulire le risorse, fare clic con il pulsante destro del mouse sull'app per le funzioni nell'area **Azure: Funzioni** e scegliere **Delete Function App** (Elimina app per le funzioni).
+L'app di Funzioni di Azure creata include risorse che possono comportare costi minimi (vedere [Prezzi di Funzioni di Azure](https://azure.microsoft.com/pricing/details/functions/)). Per pulire le risorse, fare clic con il pulsante destro del mouse sull'app per le funzioni nell'area **Azure: Funzioni** e scegliere **Delete Function App** (Elimina app per le funzioni).
 
 È anche possibile visitare il [portale di Azure](https://portal.azure.com), selezionare **Gruppi di risorse** nel riquadro di spostamento sinistro, selezionare il gruppo di risorse creato nella procedura di questa esercitazione e quindi usare il comando **Elimina gruppo di risorse**.
 

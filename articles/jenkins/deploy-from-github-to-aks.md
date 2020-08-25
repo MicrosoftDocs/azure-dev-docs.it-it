@@ -4,12 +4,13 @@ description: Informazioni su come configurare Jenkins per l'integrazione continu
 keywords: jenkins, azure, devops, aks, servizio azure kubernetes, github
 ms.topic: article
 ms.date: 01/09/2019
-ms.openlocfilehash: cbde97c7796a7f89bfb8ec0cbe530e84bd750e04
-ms.sourcegitcommit: 8309822d57f784a9c2ca67428ad7e7330bb5e0d6
+ms.custom: devx-track-jenkins
+ms.openlocfilehash: c73e5c567f237c6f859b52230742ae74b87326f5
+ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82861184"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88241003"
 ---
 # <a name="tutorial-deploy-from-github-to-azure-kubernetes-service-using-jenkins"></a>Esercitazione: Eseguire la distribuzione da GitHub nel servizio Azure Kubernetes con Jenkins
 
@@ -227,8 +228,8 @@ Fare clic su **OK** e tornare al portale di Jenkins.
 Nella home page del portale di Jenkins selezionare **New item** (Nuovo elemento) nella parte sinistra:
 
 1. Immettere *azure-vote* come nome del processo. Scegliere **Freestyle project** (Progetto Freestyle) e quindi selezionare **OK**
-1. Nella sezione **General** (Generale) selezionare il progetto **GitHub** e immettere l'URL della copia del repository creata tramite fork, ad esempio *https:\//github.com/\<your-github-account\>/azure-voting-app-redis*
-1. Nella sezione **Source code management** (Gestione del codice sorgente) selezionare **Git** e immettere l'URL con estensione *git* del repository copiato tramite fork, ad esempio *https:\//github.com/\<your-github-account\>/azure-voting-app-redis.git*
+1. Nella sezione **General** (Generale) selezionare **GitHub project** (Progetto GitHub) e immettere l'URL del repository copiato tramite fork, ad esempio *https:\//github.com/\<your-github-account\>/azure-voting-app-redis*
+1. Nella sezione **Source code management** (Gestione del codice sorgente) selezionare **Git** e immettere l'URL con estensione *.git* del repository copiato tramite fork, ad esempio *https:\//github.com/\<your-github-account\>/azure-voting-app-redis.git*
 
 1. Nella sezione **Build Triggers** (Trigger di compilazione) selezionare **GitHub hook trigger for GITScm polling** (Trigger di hook GitHub per polling GITScm).
 1. In **Build Environment** (Ambiente di compilazione) selezionare **Use secret texts or files** (Usa testi o file segreti).

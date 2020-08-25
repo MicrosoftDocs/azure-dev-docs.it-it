@@ -8,12 +8,12 @@ ms.date: 04/21/2020
 ms.topic: article
 ms.service: azure-cli
 ms.devlang: azurecli
-ms.openlocfilehash: 10dfdc316ba00f8a7019f0724aab231e344c1c6d
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: 74262a0be1062f32f63a225521f92657334c9994
+ms.sourcegitcommit: 815cf2acff71e849735f7afce54723f03ffa5df3
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82031313"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88501266"
 ---
 # <a name="azure-cli-release-notes"></a>Note sulla versione dell'interfaccia della riga di comando di Azure
 
@@ -1425,7 +1425,7 @@ Versione 2.0.68
 
 * Aggiornamento di ADLS versione (0.0.45)
 
-### <a name="feedback"></a>Commenti e suggerimenti
+### <a name="feedback-command"></a>Comando feedback
 
 * Quando viene segnalato un comando dell'estensione non riuscito, `az feedback` ora prova ad aprire nel browser l'URL del progetto/repository dell'estensione dall'indice
 
@@ -1801,7 +1801,7 @@ Versione 2.0.63
 ### <a name="cdn"></a>RETE CDN
 * Aggiunta del supporto per `Microsoft_Standard` e `Standard_ChinaCdn`
 
-### <a name="feedback"></a>Commenti e suggerimenti
+### <a name="feedback-command"></a>Comando feedback
 * Modifica di `feedback` per visualizzare i metadati dei comandi eseguiti di recente
 * Modifica di `feedback` per chiedere all'utente di assistere nel processo di creazione di problemi aprendo un browser e usando un modello di invio
 * Modifica di `feedback` per stampare il corpo di un problema quando viene eseguito con '--verbose'
@@ -3867,7 +3867,7 @@ Versione 2.0.27
 * Aggiunta del supporto per il parametro `--pip-proxy` ai comandi `az extension [add|update]`
 * Aggiunta del supporto per l'argomento `--pip-extra-index-urls` ai comandi `az extension [add|update]`
 
-### <a name="feedback"></a>Commenti e suggerimenti
+### <a name="feedback-command"></a>Comando feedback
 
 * Aggiunta di informazioni sulle estensioni ai dati di telemetria
 

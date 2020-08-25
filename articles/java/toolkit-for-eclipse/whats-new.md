@@ -1,6 +1,6 @@
 ---
 title: Novità di Azure Toolkit for Eclipse
-description: Informazioni su come usare Azure Toolkit for Eclipse.
+description: Informazioni sugli aggiornamenti più recenti per Azure Toolkit for Eclipse. Questo articolo include i miglioramenti apportati al toolkit e ai collegamenti per informazioni aggiuntive.
 documentationcenter: java
 ms.assetid: 16b066ea-aae7-4c30-9a12-fa0c3711b93e
 ms.date: 11/13/2018
@@ -8,12 +8,12 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: 9c15441396a0475c97c3d5362f30ee19a62af648
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: e7ebd13d811a30d8b6db5c1bc8b530f9545d87fa
+ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86379905"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88241033"
 ---
 # <a name="whats-new-in-the-azure-toolkit-for-eclipse"></a>Novità di Azure Toolkit for Eclipse
 

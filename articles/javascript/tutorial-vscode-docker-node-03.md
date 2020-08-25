@@ -1,16 +1,17 @@
 ---
-title: Creare un'immagine del contenitore per un'app Node.js da Visual Studio Code
+title: Creare un'immagine del contenitore per un'app JavaScript da Visual Studio Code
 description: Parte 3 dell'esercitazione, creare ed eseguire un'app Node.js in locale
 ms.topic: conceptual
 ms.date: 03/22/2020
-ms.openlocfilehash: b072c610144c266e2483963974cd8997f5879535
-ms.sourcegitcommit: 553da4e9aa988e5bb823364244ea81961cee5bc7
+ms.custom: devx-track-javascript
+ms.openlocfilehash: 77f6c96c7bd817815177c2684f994cb75986d1eb
+ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85792990"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88218400"
 ---
-# <a name="create-and-run-a-local-nodejs-app"></a>Creare ed eseguire un'app Node.js in locale
+# <a name="create-and-run-a-local-nodejs-app-from-visual-studio-code"></a>Creare ed eseguire un'app Node.js locale da Visual Studio Code
 
 [Passaggio precedente: Usare un registro contenitori](tutorial-vscode-docker-node-02.md)
 

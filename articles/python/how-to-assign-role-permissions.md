@@ -4,12 +4,12 @@ description: Come concedere le autorizzazioni a un'entità servizio o a un'ident
 ms.date: 05/12/2020
 ms.topic: conceptual
 ms.custom: devx-track-python, devx-track-azurecli
-ms.openlocfilehash: 3eb81eac5ee9a7f2f85e50494efa2e04bbcbe439
-ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
+ms.openlocfilehash: facfa1663e6f62a7458f99ee20c86f66ee67b17d
+ms.sourcegitcommit: 800c5e05ad3c0b899295d381964dd3d47436ff90
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87983133"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88614488"
 ---
 # <a name="how-to-assign-role-permissions-to-an-app-identity-or-service-principal"></a>Come assegnare le autorizzazioni del ruolo a un'identità dell'app o a un'entità servizio
 
@@ -17,7 +17,7 @@ Il sistema di controllo degli accessi in base al ruolo di Azure gestisce autoriz
 
 In pratica, assegnare sempre solo i ruoli che un'entità di sicurezza necessita effettivamente nell'ambito più specifico. Evitare di assegnare ruoli più ampi in ambiti più ampi anche se inizialmente sembra più pratico. Limitando i ruoli e gli ambiti, si limitano le risorse a rischio se l'entità di sicurezza viene compromessa, ovvero se le credenziali per tale entità sono esposte a una violazione dei dati o ad altri incidenti di sicurezza.
 
-Poiché si usano entità di sicurezza diverse nello sviluppo e nella produzione, è necessario ripetere le assegnazioni di ruolo in ogni ambiente. Ovvero, durante lo sviluppo vengo in genere assegnati i ruoli all'entità servizio locale creata nella workstation (vedere [Configurare l'ambiente di sviluppo Python locale - Autenticazione](configure-local-development-environment.md#configure-authentication)). In produzione vengono assegnati i ruoli all'identità dell'applicazione o all'entità servizio prima della distribuzione per assicurarsi che l'applicazione abbia accesso all'avvio.
+Poiché si usano entità di sicurezza diverse nello sviluppo e nella produzione, è necessario ripetere le assegnazioni di ruolo in ogni ambiente. Ovvero, durante lo sviluppo vengo in genere assegnati i ruoli all'entità servizio locale creata nella workstation (vedere [Configurare l'ambiente di sviluppo Python locale - Autenticazione](configure-local-development-environment.md#configure-authentication)). Nell'ambiente di produzione i ruoli vengono assegnati all'entità servizio o all'identità gestita dell'applicazione prima della distribuzione per assicurarsi che l'applicazione abbia accesso all'avvio. Per altre informazioni, vedere [Autenticazione - Identità dell'app durante l'esecuzione in Azure](azure-sdk-authenticate.md#identity-when-running-the-app-on-azure).
 
 Per altre informazioni sul controllo degli accessi in base al ruolo in generale, vedere [Che cos'è il controllo degli accessi in base al ruolo di Azure?](/azure/role-based-access-control/overview).
 
@@ -64,7 +64,7 @@ Per i dettagli completi e una procedura dettagliata dell'interfaccia utente, ved
 
 ## <a name="identify-scope-and-assign-a-role-through-the-azure-cli"></a><a name="azure-cli"></a>Identificare l'ambito e assegnare un ruolo tramite l'interfaccia della riga di comando di Azure
 
-L'assegnazione di ruolo con l'interfaccia della riga di comando di Azure usa il comando [`az role assignment`](/cli/azure/role/assignment?view=azure-cli-latest). Usare `az role assignment create` per aggiungere un'assegnazione e `az role assignment delete` per rimuoverla. 
+L'assegnazione di ruolo con l'interfaccia della riga di comando di Azure usa il comando [`az role assignment`](/cli/azure/role/assignment?view=azure-cli-latest). Usare `az role assignment create` per aggiungere un'assegnazione e `az role assignment delete` per rimuoverla.
 
 Sebbene il processo completo sia descritto in [Aggiungere o rimuovere assegnazioni di ruolo di Azure tramite l'interfaccia della riga di comando di Azure](/azure/role-based-access-control/role-assignments-cli), il riepilogo seguente fornisce esempi specifici relativi ad altri articoli in questo Centro per sviluppatori.
 

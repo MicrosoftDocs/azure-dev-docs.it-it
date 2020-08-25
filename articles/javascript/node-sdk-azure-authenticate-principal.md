@@ -3,12 +3,13 @@ title: Creare un'entità servizio di Azure con Node.js
 description: Informazioni su come usare l'autenticazione basata su entità servizio in Azure con Node.js e JavaScript
 ms.topic: article
 ms.date: 06/17/2017
-ms.openlocfilehash: 1a85d185d6272a72b0f8029822b01174f9a043ce
-ms.sourcegitcommit: 553da4e9aa988e5bb823364244ea81961cee5bc7
+ms.custom: devx-track-javascript
+ms.openlocfilehash: 9343d1bfaa48e5b2307c5f442107b91613663e94
+ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85792221"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88218887"
 ---
 # <a name="create-an-azure-service-principal-with-nodejs"></a>Creare un'entità servizio di Azure con Node.js 
 
@@ -46,7 +47,7 @@ Per creare un'entità servizio usando l'[interfaccia della riga di comando di Az
 
 4. La chiamata a `az login` restituisce un URL e un codice. Passare all'URL specificato, immettere il codice e accedere con l'identità di Azure. Questa operazione potrebbe venire eseguita automaticamente se l'accesso è già stato eseguito. Sarà quindi possibile accedere all'account tramite l'interfaccia della riga di comando.
 
-5. Ottenere l'ID sottoscrizione e tenant:
+5. Ottenere l'ID della sottoscrizione e del tenant:
 
     ```shell
     $ az account list

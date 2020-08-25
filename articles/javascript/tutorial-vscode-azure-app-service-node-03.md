@@ -1,20 +1,21 @@
 ---
-title: Distribuire app Node.js nel Servizio app di Azure da Visual Studio Code
+title: Distribuire app nel Servizio app di Azure da Visual Studio Code
 description: Parte 3 dell'esercitazione, distribuire il sito Web
 ms.topic: conceptual
 ms.date: 03/04/2020
-ms.openlocfilehash: 2a1089a88a27d1ae02b2ce4f0e201ef02f21c74e
-ms.sourcegitcommit: 553da4e9aa988e5bb823364244ea81961cee5bc7
+ms.custom: devx-track-javascript
+ms.openlocfilehash: 5d812f9aa6efb308cafcb5d3e3ccb1ce852e93f1
+ms.sourcegitcommit: 815cf2acff71e849735f7afce54723f03ffa5df3
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85792211"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88501506"
 ---
 # <a name="deploy-the-app-to-azure"></a>Distribuire l'app in Azure
 
 [Passaggio precedente: Creare l'app](tutorial-vscode-azure-app-service-node-02.md)
 
-In questo passaggio l'app Node.js viene distribuita in Azure usando git deploy tramite VS Code e l'estensione Servizio app di Azure. Per realizzare questo obiettivo, inizializzare prima di tutto un repository git locale, quindi creare un'app Web in Azure e infine configurare VS Code per l'uso di git deploy.
+In questo passaggio l'app Node.js viene distribuita in Azure usando Git deploy tramite VS Code e l'estensione Servizio app di Azure. A questo scopo, è necessario prima inizializzare un repository Git locale, quindi creare un'app Web in Azure e infine configurare VS Code per l'uso di Git deploy.
 
 1. Nel terminale assicurarsi di trovarsi nella cartella *expressApp1*, quindi avviare Visual Studio Code con il comando seguente:
 
@@ -22,7 +23,7 @@ In questo passaggio l'app Node.js viene distribuita in Azure usando git deploy t
     code .
     ```
 
-1. In VS Code selezionare l'icona del controllo del codice sorgente per aprire l'area **Controllo del codice sorgente**, quindi selezionare **+** per inizializzare un repository git locale:
+1. In VS Code selezionare l'icona del controllo del codice sorgente per aprire l'area di esplorazione **Controllo del codice sorgente** e quindi selezionare **+** per inizializzare un repository Git locale:
 
     ![Inizializzare repository git](media/deploy-azure/git-init.png)
 
@@ -49,7 +50,7 @@ In questo passaggio l'app Node.js viene distribuita in Azure usando git deploy t
 
     ![Notifica sul completamento della creazione dell'app Web](media/deploy-azure/creation-complete.png)
 
-1. Dopo aver creato l'app Web, indicare a VS Code di distribuire il codice dal repository git locale. Selezionare l'icona di Azure per aprire l'area **Servizio app di Azure**, espandere il nodo della sottoscrizione, fare clic con il pulsante destro del mouse sul nome dell'app Web appena creata e scegliere **Configure Deployment Source** (Configura l'origine della distribuzione).
+1. Dopo aver creato l'app Web, indicare a VS Code di distribuire il codice dal repository Git locale. Selezionare l'icona di Azure per aprire l'area **Servizio app di Azure**, espandere il nodo della sottoscrizione, fare clic con il pulsante destro del mouse sul nome dell'app Web appena creata e scegliere **Configure Deployment Source** (Configura l'origine della distribuzione).
 
     ![Comando per configurare l'origine della distribuzione per un'app Web](media/deploy-azure/configure-deployment-source.png)
 

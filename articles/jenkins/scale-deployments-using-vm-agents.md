@@ -3,13 +3,14 @@ title: 'Esercitazione: Scalabilità delle distribuzioni di Jenkins con agenti di
 description: Informazioni su come aggiungere altra capacità alle pipeline di Jenkins usando macchine virtuali di Azure con il plug-in Jenkins per agenti di VM di Azure.
 keywords: jenkins, azure, devops, macchina virtuale, agenti
 ms.topic: tutorial
-ms.date: 07/31/2018
-ms.openlocfilehash: c5ea0c3782414abfda47810ba68ad1092cd7b0d5
-ms.sourcegitcommit: f65561589d22b9ba2d69b290daee82eb47b0b20f
+ms.date: 08/19/2020
+ms.custom: devx-track-jenkins
+ms.openlocfilehash: d081861eac98495d125a1a5eb5dd9700fb7783a8
+ms.sourcegitcommit: 800c5e05ad3c0b899295d381964dd3d47436ff90
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88162050"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88614540"
 ---
 # <a name="tutorial-scale-jenkins-deployments-with-azure-vm-agents"></a>Esercitazione: Scalabilità delle distribuzioni di Jenkins con agenti di macchine virtuali di Azure
 
@@ -26,6 +27,10 @@ In questa esercitazione si apprenderà come:
 > * Eseguire il processo in un agente di macchine virtuali di Azure
 
 > [!VIDEO https://channel9.msdn.com/Shows/Azure-Friday/Continuous-Integration-with-Jenkins-Using-Azure-VM-Agents/player]
+
+## <a name="prerequisites"></a>Prerequisites
+
+- **Installazione di Jenkins**: se non è possibile accedere all'installazione di Jenkins, [configurare Jenkins con l'interfaccia della riga di comando di Azure](configure-on-linux-vm.md).
 
 ## <a name="install-azure-vm-agents-plugin"></a>Installare il plug-in Agenti di macchine virtuali di Azure
 
@@ -81,8 +86,6 @@ In questa esercitazione si apprenderà come:
     L'entità servizio completata dovrebbe usare il campo `id` per **ID sottoscrizione**, il valore `appId` per **ID client**, `password` per **Segreto client** e `tenant` per **ID tenant **. Selezionare **Aggiungi** per aggiungere l'entità servizio, quindi configurare il plug-in per usare le nuove credenziali create.
 
     ![Configurare un'entità servizio di Azure](./media/scale-deployments-using-vm-agents/new-service-principal.png)
-
-    
 
 1. Nella sezione **Nome gruppo di risorse**, mantenere selezionato **Crea nuovo oggetto** e immettere `myJenkinsAgentGroup`.
 1. Selezionare **Verifica configurazione** per connettersi ad Azure e verificare le impostazioni del profilo.

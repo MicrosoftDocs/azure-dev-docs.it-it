@@ -1,17 +1,18 @@
 ---
-title: 'Avvio rapido: Introduzione a Terraform con Windows e PowerShell'
+title: Avvio rapido - Configurare Terraform con Azure PowerShell
 description: Questo argomento di avvio rapido illustra come installare e configurare Terraform per la creazione di risorse di Azure.
 keywords: azure devops terraform installazione configurazione windows inizializzazione piano applicare esecuzione portale accesso controllo degli accessi in base al ruolo entità servizio script automatizzato powershell
 ms.topic: quickstart
-ms.date: 08/08/2020
-ms.openlocfilehash: 7ba60acf445f9ba29836e76aa50626985695bf2c
-ms.sourcegitcommit: 6a8485d659d6239569c4e3ecee12f924c437b235
+ms.date: 08/18/2020
+ms.custom: devx-track-terraform
+ms.openlocfilehash: e58c53876ed05416f16a40d0ee23344bcde43b39
+ms.sourcegitcommit: 800c5e05ad3c0b899295d381964dd3d47436ff90
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/09/2020
-ms.locfileid: "88026154"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88614520"
 ---
-# <a name="quickstart-get-started-with-terraform-using-windows-and-powershell"></a>Avvio rapido: Introduzione a Terraform con Windows e PowerShell
+# <a name="quickstart-configure-terraform-using-azure-powershell"></a>Avvio rapido: Configurare Terraform con Azure PowerShell
  
 [!INCLUDE [terraform-intro.md](includes/terraform-intro.md)]
 
@@ -115,14 +116,14 @@ Per accedere a una sottoscrizione di Azure tramite un'entità servizio, chiamare
     1. Chiamare [Get-Credential](https://docs.microsoft.com/powershell/module/microsoft.powershell.security/get-credential) e immettere il nome e la password di un'entità servizio quando richiesto:
 
         ```powershell
-        $psCredential = Get-Credential
+        $spCredential = Get-Credential
         ```
 
     1. Creare un oggetto `PsCredential` in memoria. Sostituire i segnaposto con i valori appropriati per l'entità servizio. Questo modello è il modo in cui si accede da uno script.
 
         ```powershell
-        $spName = "<service_principle_name>"
-        $spPassword = ConvertTo-SecureString "<service_principle_password>" -AsPlainText -Force
+        $spName = "<service_principal_name>"
+        $spPassword = ConvertTo-SecureString "<service_principal_password>" -AsPlainText -Force
         $spCredential = New-Object System.Management.Automation.PSCredential($spName , $spPassword)
         ```
 
@@ -137,9 +138,9 @@ Per accedere a una sottoscrizione di Azure tramite un'entità servizio, chiamare
 Affinché Terraform usi la sottoscrizione di Azure prevista, impostare le variabili di ambiente. È possibile impostare le variabili di ambiente a livello di sistema Windows o all'interno di una sessione di PowerShell specifica. Per impostare le variabili di ambiente per una sessione specifica, usare il codice seguente. Sostituire i segnaposto con i valori appropriati per l'ambiente.
 
 ```powershell
-$env:ARM_CLIENT_ID=<service_principle_app_id>
-$env:ARM_SUBSCRIPTION_ID=<azure_subscription_id>
-$env:ARM_TENANT_ID=<azure_subscription_tenant_id>
+$env:ARM_CLIENT_ID="<service_principal_app_id>"
+$env:ARM_SUBSCRIPTION_ID="<azure_subscription_id>"
+$env:ARM_TENANT_ID="<azure_subscription_tenant_id>"
 ```
 
 ## <a name="create-a-terraform-configuration-file"></a>Creare un file di configurazione Terraform

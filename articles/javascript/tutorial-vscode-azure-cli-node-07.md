@@ -3,14 +3,15 @@ title: Pulire le risorse dopo aver distribuito un'app Node.js in Azure tramite l
 description: Parte 7 dell'esercitazione, pulire le risorse
 ms.topic: conceptual
 ms.date: 09/24/2019
-ms.openlocfilehash: 183539b8e2f0246bd812e5fa364a885b75626819
-ms.sourcegitcommit: 553da4e9aa988e5bb823364244ea81961cee5bc7
+ms.custom: devx-track-javascript
+ms.openlocfilehash: fb78f369d80ff40fef1d4a21df68ea79fafa2dbc
+ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85791608"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88218535"
 ---
-# <a name="clean-up-resources"></a>Pulire le risorse
+# <a name="part-7-clean-up-resources"></a>Parte 7: Pulire le risorse
 
 [Passaggio precedente: Apportare modifiche e ripetere la distribuzione](tutorial-vscode-docker-node-06.md)
 

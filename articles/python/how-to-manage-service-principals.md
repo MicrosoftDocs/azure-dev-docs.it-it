@@ -1,31 +1,21 @@
 ---
 title: Gestire le entità servizio locali per lo sviluppo di Azure
 description: Come gestire le entità servizio create per lo sviluppo locale usando il portale di Azure o l'interfaccia della riga di comando di Azure.
-ms.date: 05/12/2020
+ms.date: 08/18/2020
 ms.topic: conceptual
 ms.custom: devx-track-python, devx-track-azurecli
-ms.openlocfilehash: 8901a7ef9de7bbca31c5ba0352c79a4ee2c5cdf9
-ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
+ms.openlocfilehash: b6d3ffbb7e78b7c4f2405e5363446c1906913aa9
+ms.sourcegitcommit: 800c5e05ad3c0b899295d381964dd3d47436ff90
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87983103"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88614516"
 ---
 # <a name="how-to-manage-service-principals"></a>Come gestire le entità servizio
 
-Per motivi di sicurezza, è sempre opportuno gestire con attenzione il modo in cui il codice dell'app è autorizzato ad accedere e modificare le risorse di Azure. Quando si esegue il test del codice localmente, è consigliabile usare sempre un'*entità servizio* locale invece di eseguire il test come utente con privilegi completi, come descritto in [Configurare l'ambiente di sviluppo Python locale - Autenticazione](configure-local-development-environment.md#configure-authentication).
+Come illustrato nella sezione [Come autenticare un'app](azure-sdk-authenticate.md), spesso si usano le entità servizio per identificare un'app con Azure, tranne quando si usa l'identità gestita.
 
-Nel tempo probabilmente sarà necessario eliminare, rinominare o gestire in altro modo queste entità servizio, operazione che è possibile eseguire tramite il portale di Azure o tramite l'interfaccia della riga di comando di Azure.
-
-## <a name="basics-of-azure-authorization"></a>Nozioni di base sull'autorizzazione di Azure
-
-Ogni volta che il codice tenta di eseguire qualsiasi operazione sulle risorse di Azure (tramite le classi delle librerie di Azure), Azure garantisce che l'applicazione sia autorizzata a eseguire tale azione. Usare il [portale di Azure](https://portal.azure.com) o l'interfaccia della riga di comando di Azure per concedere autorizzazioni specifiche basate sui ruoli o sulle risorse all'identità dell'applicazione. Questa procedura evita di concedere autorizzazioni in eccesso all'applicazione che potrebbero essere sfruttate se la sicurezza dell'applicazione viene compromessa.
-
-Quando viene distribuita in Azure, l'identità dell'applicazione è in genere identica al nome assegnato all'app all'interno del servizio che la ospita, ad esempio Servizio app di Azure, Funzioni di Azure, una macchina virtuale e così via, quando è abilitata l'identità gestita. Quando si esegue il codice localmente, tuttavia, non è incluso alcun servizio di hosting di questo tipo, pertanto è necessario usare con Azure un sostituto appropriato.
-
-A questo scopo, si usa un'*entità servizio* locale, ovvero un altro nome per un'identità dell'app, anziché un'identità utente. L'entità servizio ha un nome, un identificatore "tenant" (essenzialmente un ID per l'organizzazione), un identificatore app o "client" e un segreto o una password. Queste credenziali sono sufficienti per autenticare l'identità con Azure, che può quindi verificare se tale identità è autorizzata ad accedere a una determinata risorsa.
-
-Ogni sviluppatore deve avere la propria entità servizio che è protetta all'interno del proprio account utente nella propria workstation e che non deve mai essere archiviata in un repository del controllo del codice sorgente. Se un'entità servizio viene rubata o compromessa, è possibile eliminarla facilmente nel portale di Azure per revocare tutte le relative autorizzazioni e quindi ricreare l'entità servizio per tale sviluppatore.
+Nel tempo è in genere necessario eliminare, rinominare o gestire in altro modo queste entità servizio, operazione che è possibile eseguire attraverso il portale di Azure o tramite l'interfaccia della riga di comando di Azure.
 
 ## <a name="manage-service-principals-using-the-azure-portal"></a>Gestire le entità servizio usando il portale di Azure
 

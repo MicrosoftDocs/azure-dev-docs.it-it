@@ -3,14 +3,15 @@ title: Apportare modifiche al codice dell'app e ridistribuirla in Azure
 description: Parte 6 dell'esercitazione, apportare modifiche e ripetere la distribuzione
 ms.topic: conceptual
 ms.date: 09/24/2019
-ms.openlocfilehash: 9702f10795893004965631fa99dfbfab181f2292
-ms.sourcegitcommit: 553da4e9aa988e5bb823364244ea81961cee5bc7
+ms.custom: devx-track-javascript
+ms.openlocfilehash: e6747551ec80fc7b04873445557e2d2153e3b358
+ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85792160"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88217919"
 ---
-# <a name="make-changes-and-redeploy"></a>Apportare modifiche e ripetere la distribuzione
+# <a name="part-6-make-changes-and-redeploy"></a>Parte 6: Apportare modifiche e ripetere la distribuzione
 
 [Passaggio precedente: Eseguire lo streaming dei log](tutorial-vscode-azure-cli-node-05.md)
 

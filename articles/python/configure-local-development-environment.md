@@ -4,12 +4,12 @@ description: Come configurare un ambiente di sviluppo Python locale per l'uso co
 ms.date: 05/29/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 8d20960df802dc4671f6b432173a56f6dc88c38c
-ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
+ms.openlocfilehash: d95584758900eae2c50df5e731fd84f8bca00897
+ms.sourcegitcommit: 800c5e05ad3c0b899295d381964dd3d47436ff90
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87983143"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88614502"
 ---
 # <a name="configure-your-local-python-dev-environment-for-azure"></a>Configurare l'ambiente di sviluppo Python locale per Azure
 
@@ -78,7 +78,7 @@ L'interfaccia della riga di comando di Azure mantiene in genere l'accesso tra le
 
 ## <a name="configure-authentication"></a>Configurare l'autenticazione
 
-Come descritto in [Come gestire le entità servizio - Informazioni di base sull'autorizzazione](how-to-manage-service-principals.md#basics-of-azure-authorization), ogni sviluppatore deve usare un'entità servizio come identità dell'applicazione durante i test del codice dell'app in locale.
+Come illustrato nella sezione [Come autenticare le app](azure-sdk-authenticate.md#identity-when-running-the-app-locally), ogni sviluppatore deve usare un'entità servizio come identità dell'applicazione durante i test del codice dell'app in locale.
 
 Le sezioni seguenti descrivono come creare un'entità servizio e le variabili di ambiente che forniscono le relative proprietà alle librerie di Azure quando è necessario.
 
@@ -98,7 +98,7 @@ Ogni sviluppatore dell'organizzazione dovrà eseguire questi passaggi singolarme
 
     Se si fa parte di un'organizzazione, è possibile che non si abbia l'autorizzazione nella sottoscrizione per eseguire questo comando. In tal caso, chiedere ai proprietari della sottoscrizione di creare l'entità servizio.
 
-1. Creare le variabili di ambiente necessarie per le librerie di Azure. L'oggetto `DefaultAzureCredential` della libreria azure-identity cerca queste variabili.
+1. Usare i comandi seguenti per creare le variabili di ambiente necessarie per le librerie di Azure. L'oggetto `DefaultAzureCredential` della libreria azure-identity cerca queste variabili.
 
     # <a name="cmd"></a>[cmd](#tab/cmd)
 
@@ -124,7 +124,7 @@ Ogni sviluppatore dell'organizzazione dovrà eseguire questi passaggi singolarme
 
     Per recuperare l'ID sottoscrizione, eseguire il comando [`az account show`](/cli/azure/account?view=azure-cli-latest#az-account-show) e cercare la proprietà `id` nell'output.
 
-    Per praticità, creare un file con estensione *sh* o *cmd* con questi comandi, che è possibile eseguire ogni volta che si apre un terminale o un prompt dei comandi per i test locali. Anche in questo caso, non aggiungere il file al controllo del codice sorgente in modo che rimanga solo nell'account utente.
+    Per comodità, creare un file di script della riga di comando, ad esempio *setenv.sh* in macOS/Linux o *setenv.cmd* in Windows, che contenga questi stessi comandi. È quindi possibile eseguire lo script per impostare le variabili ogni volta che si apre un terminale o un prompt dei comandi per i test locali. Anche in questo caso, non aggiungere il file di script al controllo del codice sorgente in modo che rimanga solo nell'account utente.
 
 1. Proteggere l'ID client e il segreto client (e tutti i file in cui sono archiviati) in modo che rimangano sempre all'interno di un account utente specifico in una workstation. Non salvare mai queste proprietà nel controllo del codice sorgente né condividerle con altri sviluppatori. Se necessario, è possibile eliminare l'entità servizio e crearne una nuova.
 

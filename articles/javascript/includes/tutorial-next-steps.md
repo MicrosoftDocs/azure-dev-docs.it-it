@@ -1,10 +1,11 @@
 ---
-ms.openlocfilehash: fdce0ef5f2acbd4766fce441cd2d9cd801b9fb02
-ms.sourcegitcommit: 553da4e9aa988e5bb823364244ea81961cee5bc7
+ms.custom: devx-track-javascript
+ms.openlocfilehash: 3f0706cad38bd9c410c5f877c44cb0c0e6652c3b
+ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85791578"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88501491"
 ---
 La procedura dettagliata è stata completata. È ora possibile vedere le altre estensioni di Azure.
 
