@@ -6,12 +6,12 @@ ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 01/22/2019
 ms.custom: devx-track-java
-ms.openlocfilehash: f5edea5267bd79db7de890b6030db3e5d02f0ea2
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: 5bd1611418cca94c5f580b085a067df35d7a1248
+ms.sourcegitcommit: 2f832baf90c208a8a69e66badef5f126d23bbaaf
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86379765"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88725235"
 ---
 # <a name="migrate-spring-boot-applications-to-azure-app-service"></a>Eseguire la migrazione di applicazioni Spring Boot a Servizio app di Azure
 
@@ -162,7 +162,7 @@ Ora che è stata eseguita la migrazione dell'applicazione al servizio app di Azu
 
 ### <a name="recommendations"></a>Consigli
 
-* Se si è scelto di usare la directory */home* per l'archiviazione dei file, provare a [sostituirla con Archiviazione di Azure](/azure/app-service/containers/how-to-serve-content-from-azure-storage).
+* Se si è scelto di usare la directory */home* per l'archiviazione dei file, provare a [sostituirla con Archiviazione di Azure](/azure/app-service/configure-connect-to-azure-storage).
 
 * Se nella directory */home* è presente una configurazione contenente stringhe di connessione, chiavi SSL e altre informazioni segrete, valutare se usare una combinazione di [Azure Key Vault](/azure/app-service/app-service-key-vault-references) e/o [inserimento di parametri con le impostazioni dell'applicazione](/azure/app-service/configure-common#configure-app-settings) laddove possibile.
 

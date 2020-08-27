@@ -5,12 +5,12 @@ keywords: jenkins, azure, devops, servizio app
 ms.topic: tutorial
 ms.date: 08/10/2020
 ms.custom: devx-track-jenkins
-ms.openlocfilehash: 6b7f1693eb02b51107e595365bc800540f98f20e
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: dea9ebe0976b45332f166034f3ff5c92ca4cfe99
+ms.sourcegitcommit: 2f832baf90c208a8a69e66badef5f126d23bbaaf
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88241023"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88725205"
 ---
 # <a name="tutorial-deploy-from-github-to-azure-app-service-using-jenkins"></a>Esercitazione: Eseguire la distribuzione da GitHub nel servizio app di Azure con Jenkins
 
@@ -117,7 +117,7 @@ Creare quindi l'entità servizio di Azure usata da Jenkins per l'autenticazione 
 
 ## <a name="create-service-principal"></a>Creare un'entità servizio
 
-In una sezione successiva si creerà un processo di pipeline Jenkins che compila l'app da GitHub e la distribuisce in Servizio app di Azure. Per fare in modo che Jenkins acceda ad Azure senza dover immettere le credenziali dell'utente è necessaria un'[entità servizio](/active-directory/develop/app-objects-and-service-principals). Se si ha già un'entità servizio da usare per questo articolo, è possibile ignorare questa sezione.
+In una sezione successiva si creerà un processo di pipeline Jenkins che compila l'app da GitHub e la distribuisce in Servizio app di Azure. Per fare in modo che Jenkins acceda ad Azure senza dover immettere le credenziali dell'utente è necessaria un'[entità servizio](/azure/active-directory/develop/app-objects-and-service-principals). Se si ha già un'entità servizio da usare per questo articolo, è possibile ignorare questa sezione.
 
 Per creare l'entità servizio, eseguire il comando [az ad sp create-for-rbac](/cli/azure/ad/sp?#az-ad-sp-create-for-rbac) dell'interfaccia della riga di comando di Azure.
 

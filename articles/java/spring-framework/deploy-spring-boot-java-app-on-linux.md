@@ -9,12 +9,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
 ms.custom: mvc, devx-track-java
-ms.openlocfilehash: 307a80fa11d397a77804f8fe126e58232e9f0cf5
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: f6f90deebd214d0381f3a66c6808dbc4f848aa13
+ms.sourcegitcommit: 2f832baf90c208a8a69e66badef5f126d23bbaaf
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86378605"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88725145"
 ---
 # <a name="deploy-a-spring-boot-application-to-linux-on-azure-app-service"></a>Distribuire un'applicazione Spring Boot in Linux nel Servizio app di Azure
 
@@ -268,7 +268,7 @@ Per altri esempi sull'uso delle immagini personalizzate di Docker con Azure, ved
 [Azure per sviluppatori Java]: /azure/developer/java/
 [Azure portal]: https://portal.azure.com/
 [Creare un registro per contenitori Docker privati con il portale di Azure]: /azure/container-registry/container-registry-get-started-portal
-[Uso di un'immagine Docker personalizzata per App Web di Azure in Linux]: /azure/app-service-web/app-service-linux-using-custom-docker-image
+[Uso di un'immagine Docker personalizzata per App Web di Azure in Linux]: /azure/app-service/tutorial-custom-container
 [Docker]: https://www.docker.com/
 [Account Azure gratuito]: https://azure.microsoft.com/pricing/free-trial/
 [Git]: https://github.com/
