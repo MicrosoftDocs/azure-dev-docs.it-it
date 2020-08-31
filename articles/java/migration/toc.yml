@@ -15,6 +15,8 @@
       href: migrate-tomcat-to-tomcat-app-service.md
     - name: Da Tomcat ai contenitori nel servizio Azure Container
       href: migrate-tomcat-to-containers-on-azure-kubernetes-service.md
+    - name: Da Tomcat ad Azure Spring Cloud
+      href: migrate-tomcat-to-azure-spring-cloud.md
     - name: Da WebLogic ad Azure
       expanded: true
       items:

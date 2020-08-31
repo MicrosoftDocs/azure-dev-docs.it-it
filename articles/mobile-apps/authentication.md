@@ -7,12 +7,12 @@ ms.service: mobile-services
 ms.topic: article
 ms.date: 06/08/2020
 ms.author: masoucou
-ms.openlocfilehash: 782123b4b567010a43ce72c622f7db5a65679db9
-ms.sourcegitcommit: f02ff55cef47581303a217cf1d310879cd722237
+ms.openlocfilehash: 2afdf7c4194052aff1fe7c7f915540b270ce588e
+ms.sourcegitcommit: c012db9b6e369813c56f35a0ddbb1d3a73db5c4d
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84632583"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88889235"
 ---
 # <a name="add-authentication-and-manage-user-identities-in-your-mobile-apps"></a>Aggiungere l'autenticazione e gestire le identità degli utenti nelle app per dispositivi mobili
 
@@ -45,14 +45,14 @@ Usare i servizi seguenti per abilitare l'autenticazione degli utenti nelle app p
 
 [Azure Active Directory](https://azure.microsoft.com/services/active-directory/) è il servizio di gestione di identità e accessi basato sul cloud di Microsoft, che consente ai dipendenti di accedere e usare:
 
-- Risorse esterne, come Microsoft Office 365, il portale di Azure e migliaia di altre applicazioni SaaS (software distribuito come servizio).
+- Risorse esterne, come Microsoft 365, il portale di Azure e migliaia di altre applicazioni SaaS (software distribuito come servizio).
 - Risorse interne, tra cui app nella rete e nella Intranet aziendale, oltre a eventuali app cloud sviluppate dall'organizzazione.
 
 ### <a name="azure-active-directory-features"></a>Funzionalità di Azure Active Directory
 
 - Accesso trasparente e altamente sicuro connettendo gli utenti alle applicazioni necessarie.
 - Protezione completa e sicurezza avanzata per le identità e accesso in base a utente, località, dispositivo, dati e contesto dell'applicazione.
-- Migliaia di app commerciali e personalizzate preintegrate, come Office 365, Salesforce.com e Box.
+- Migliaia di app commerciali e personalizzate preintegrate, come Microsoft 365, Salesforce.com e Box.
 - Possibilità di gestire l'accesso su larga scala.
 
 ### <a name="azure-active-directory-references"></a>Informazioni di riferimento per Azure Active Directory

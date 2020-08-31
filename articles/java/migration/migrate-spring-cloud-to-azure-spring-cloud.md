@@ -6,12 +6,12 @@ ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 2/12/2020
 ms.custom: devx-track-java
-ms.openlocfilehash: c52326b29aca3b12310f8a1a0acd86566c45ecf8
-ms.sourcegitcommit: b224b276a950b1d173812f16c0577f90ca2fbff4
+ms.openlocfilehash: e07bc23a7316352017e1ea99dd87253f0639a559
+ms.sourcegitcommit: 95fdc444c424f4a7d7d53437837e9532a0b897e9
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87810634"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88662982"
 ---
 # <a name="migrate-spring-cloud-applications-to-azure-spring-cloud"></a>Eseguire la migrazione delle applicazioni Spring Cloud ad Azure Spring Cloud
 
@@ -98,12 +98,12 @@ Identificare tutti i provider di identità e tutte le applicazioni Spring Cloud 
 * Per la configurazione di Auth0 Spring Security, vedere la [documentazione di Auth0 Spring Security](https://auth0.com/docs/quickstart/backend/java-spring-security5/01-authorization).
 * Per la configurazione della sicurezza di PingFederate Spring Security, vedere le [istruzioni di Auth0 PingFederate](https://auth0.com/authenticate/java-spring-security/ping-federate/).
 
-#### <a name="resources-configured-through-pivotal-cloud-foundry-pcf"></a>Risorse configurate tramite Pivotal Cloud Foundry (PCF)
+#### <a name="resources-configured-through-vmware-tanzu-application-service-tas-formerly-pivotal-cloud-foundry"></a>Risorse configurate tramite il servizio VMware TAS (Tanzu Application Service) (in precedenza Pivotal Cloud Foundry)
 
-Per le applicazioni gestite con Pivotal Cloud Foundry, le risorse esterne, incluse le risorse descritte in precedenza, vengono spesso configurate tramite le associazioni del servizio Pivotal Cloud Foundry. Per esaminare la configurazione di tali risorse, usare l'[interfaccia della riga di comando di Cloud Foundry](https://docs.cloudfoundry.org/cf-cli/) per visualizzare la variabile `VCAP_SERVICES` per l'applicazione.
+Per le applicazioni gestite con TAS, le risorse esterne, incluse quelle descritte in precedenza, vengono spesso configurate tramite le associazioni del servizio TAS. Per esaminare la configurazione di tali risorse, usare l'[interfaccia della riga di comando di TAS (Cloud Foundry)](https://docs.cloudfoundry.org/cf-cli/) per visualizzare la variabile `VCAP_SERVICES` per l'applicazione.
 
 ```bash
-# Log into PCF, if needed (enter credentials when prompted)
+# Log into TAS, if needed (enter credentials when prompted)
 cf login -a <API endpoint>
 
 # Set the organization and space containing the application, if not already selected during login.
@@ -114,7 +114,7 @@ cf target space <space name>
 cf env <Application Name>
 ```
 
-Esaminare `VCAP_SERVICES` per le impostazioni di configurazione dei servizi esterni associati all'applicazione. Per altre informazioni, vedere la [documentazione di Pivotal Cloud Foundry](https://docs.cloudfoundry.org/devguide/deploy-apps/environment-variable.html#VCAP-SERVICES).
+Esaminare la variabile `VCAP_SERVICES` per le impostazioni di configurazione dei servizi esterni associati all'applicazione. Per altre informazioni, vedere la [documentazione di TAS (Cloud Foundry)](https://docs.cloudfoundry.org/devguide/deploy-apps/environment-variable.html#VCAP-SERVICES).
 
 #### <a name="all-other-external-resources"></a>Tutte le altre risorse esterne
 

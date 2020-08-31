@@ -9,12 +9,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: identity
 ms.custom: devx-track-java
-ms.openlocfilehash: f449df07048dfcc20e173bc4103995ac989e38fe
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: e8d9cf1c1fcc834b74f265c94ef5aae361100dbe
+ms.sourcegitcommit: 2f832baf90c208a8a69e66badef5f126d23bbaaf
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88240943"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88725225"
 ---
 # <a name="tutorial-secure-a-java-web-app-using-the-spring-boot-starter-for-azure-active-directory"></a>Esercitazione: Proteggere un'app Web Java con l'utilità di avvio Spring Boot per Azure Active Directory
 
@@ -116,7 +116,7 @@ I prerequisiti seguenti sono necessari per completare le procedure disponibili i
 
     ![Modificare gli URL di risposta][create-app-registration-09]
 
-1. Immettere <http:<span></span>//localhost:8080/login/oauth2/code/azure> come nuovo **URI di reindirizzamento**, quindi fare clic su **Configura**.
+1. Immettere 'http://localhost:8080/login/oauth2/code/azure 'come nuovo **URI di reindirizzamento** e quindi fare clic su **Configura**.
 
     ![Aggiungere un nuovo URL di risposta][create-app-registration-10]
 

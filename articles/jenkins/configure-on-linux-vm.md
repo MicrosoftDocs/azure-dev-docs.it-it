@@ -3,14 +3,14 @@ title: Avvio rapido - Configurare Jenkins con l'interfaccia della riga di comand
 description: Informazioni su come installare Jenkins in una macchina virtuale Linux di Azure e compilare un'applicazione Java di esempio.
 keywords: jenkins, azure, devops, portale, linux, macchina virtuale
 ms.topic: quickstart
-ms.date: 08/19/2020
+ms.date: 08/21/2020
 ms.custom: devx-track-jenkins
-ms.openlocfilehash: b5be59dc1ed3fab69051a8ddd23576e27c966a7b
-ms.sourcegitcommit: 800c5e05ad3c0b899295d381964dd3d47436ff90
+ms.openlocfilehash: 4e2250e6ca76c804f08a4f6ab4715ae4fc094570
+ms.sourcegitcommit: 2f832baf90c208a8a69e66badef5f126d23bbaaf
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88614561"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88725215"
 ---
 # <a name="quickstart-configure-jenkins-using-azure-cli"></a>Avvio rapido: Configurare Jenkins con l'interfaccia della riga di comando di Azure
 
@@ -22,7 +22,7 @@ In questo avvio rapido verranno completate le attività seguenti:
 > * Creare un file di configurazione che scarica e installa Jenkins
 > * Creare un gruppo di risorse
 > * Crea una macchina virtuale con il file di configurazione
-> * Aprire la porta 8080 in modo che sia possibile connettersi tramite SSH alla macchina virtuale
+> * Aprire la porta 8080 per accedere a Jenkins nella macchina virtuale
 > * Connettersi alla macchina virtuale tramite SSH
 > * Configurare un processo Jenkins di esempio basato su una semplice app Java in GitHub
 > * Compilare il processo Jenkins di esempio
@@ -88,7 +88,7 @@ Se si verificano problemi durante la configurazione di Jenkins, vedere la [pagin
     az vm list -d -o table --query "[?name=='QuickstartJenkins-vm']"
     ```
 
-1. Aprire la porta 8080 nella nuova macchina virtuale usando [az vm open](/cli/azure/vm#az-vm-open-port).
+1. Per impostazione predefinita, Jenkins viene eseguito sulla porta 8080. Aprire quindi la porta 8080 nella nuova macchina virtuale usando il comando [az vm open](/cli/azure/vm#az-vm-open-port).
 
     ```azurecli
     az vm open-port \
