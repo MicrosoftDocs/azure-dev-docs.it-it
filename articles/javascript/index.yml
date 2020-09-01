@@ -14,19 +14,19 @@ metadata:
   ms.service: multiple
   ms.devlang: javascript
   ms.custom: 2020Aug21Redesign
-  ms.openlocfilehash: 886b00c75b2c653f458e68c475e6c775eb8cce03
-  ms.sourcegitcommit: 09e1952776c83e1f67005f144fd8181f5681889b
+  ms.openlocfilehash: f83322b246d8af3b89742d450db708845b4a4a10
+  ms.sourcegitcommit: 9b4fb8594e6659a8f7a3df0227b1df0636a7681c
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 08/24/2020
-  ms.locfileid: "88781803"
+  ms.lasthandoff: 08/31/2020
+  ms.locfileid: "89176315"
 landingContent:
 - title: Hosting
   linkLists:
   - linkListType: tutorial
     links:
     - text: App front-end
-      url: /azure/static-web-apps/getting-started.md
+      url: /azure/static-web-apps/getting-started
     - text: Node.js con il servizio app
       url: tutorial-vscode-azure-app-service-node-01.md
     - text: Deno con il servizio app
@@ -52,37 +52,37 @@ landingContent:
   - linkListType: quickstart
     links:
     - text: MongoDB
-      url: /azure/cosmos-db/create-mongodb-nodejs.md?toc=/azure/javascript/toc.json&bc=/azure/javascript/breadcrumb/toc.json
+      url: /azure/cosmos-db/create-mongodb-nodejs?toc=/azure/javascript/toc.json&bc=/azure/javascript/breadcrumb/toc.json
     - text: MySQL
-      url: /azure/mysql/connect-nodejs.md
+      url: /azure/mysql/connect-nodejs
     - text: PostgreSQL
-      url: /azure/postgresql/connect-nodejs.md
+      url: /azure/postgresql/connect-nodejs
     - text: Cache Redis
-      url: /azure/azure-cache-for-redis/cache-nodejs-get-started.md?toc=/azure/developer/javascript/toc.json&bc=/
+      url: /azure/azure-cache-for-redis/cache-nodejs-get-started?toc=/azure/developer/javascript/toc.json&bc=/
     - text: SQL Server
-      url: /azure/azure-sql/database/connect-query-nodejs.md
+      url: /azure/azure-sql/database/connect-query-nodejs
     - text: Archiviare file
-      url: /azure/storage/blobs/storage-quickstart-blobs-nodejs.md?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
+      url: /azure/storage/blobs/storage-quickstart-blobs-nodejs?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
 - title: Servizi cognitivi
   linkLists:
   - linkListType: quickstart
     links:
     - text: Riconoscimento vocale
-      url: /azure/cognitive-services/speech-service/quickstarts/speech-to-text-from-file.md?tabs=linux%2Cbrowser%2Cwindowsinstall&pivots=programming-language-javascript
+      url: /azure/cognitive-services/speech-service/quickstarts/speech-to-text-from-file?tabs=linux%2Cbrowser%2Cwindowsinstall&pivots=programming-language-javascript
     - text: Traduci testo
-      url: /azure/cognitive-services/translator/quickstart-translate.md?pivots=programming-language-javascript
+      url: /azure/cognitive-services/translator/quickstart-translate?pivots=programming-language-javascript
     - text: Rilevare oggetti in un'immagine
-      url: /azure/cognitive-services/computer-vision/quickstarts-sdk/client-library.md?pivots=programming-language-javascript
+      url: /azure/cognitive-services/computer-vision/quickstarts-sdk/client-library?pivots=programming-language-javascript
 - title: Sicurezza, messaggistica e log
   linkLists:
   - linkListType: quickstart
     links:
     - text: Autenticazione
-      url: /azure/active-directory/develop/quickstart-v2-javascript.md
+      url: /azure/active-directory/develop/quickstart-v2-javascript
     - text: Code di messaggi
-      url: /azure/service-bus-messaging/service-bus-nodejs-how-to-use-queues-new-package.md
+      url: /azure/service-bus-messaging/service-bus-nodejs-how-to-use-queues-new-package
     - text: Registrazione e analisi
-      url: /azure/azure-monitor/learn/nodejs-quick-start.md
+      url: /azure/azure-monitor/learn/nodejs-quick-start
 - title: Usare le librerie client di Azure (SDK)
   linkLists:
   - linkListType: get-started
