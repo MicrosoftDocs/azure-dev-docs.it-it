@@ -6,12 +6,12 @@ ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 1/20/2020
 ms.custom: devx-track-java
-ms.openlocfilehash: 3487cc326222a013c7f0acec396ed343c8bd9621
-ms.sourcegitcommit: c6642cae6fdb5e3025ed66fcd4ef89792c3b436a
+ms.openlocfilehash: 005fc97633135f8458b0650b9a3afb49e841001d
+ms.sourcegitcommit: 4036ac08edd7fc6edf8d11527444061b0e4531ef
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/15/2020
-ms.locfileid: "86405712"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89061990"
 ---
 # <a name="migrate-java-applications-to-azure"></a>Eseguire la migrazione di applicazioni Java ad Azure
 
@@ -89,7 +89,7 @@ Usare la griglia seguente per identificare possibili destinazioni per un tipo di
 | Persistenza a lungo termine nel file system locale                         |&#x2714;|&#x2714;|        |&#x2714;|&#x2714;|
 | Clustering delle applicazioni a livello di server                               |        |        |        |&#x2714;|&#x2714;|
 | Processi batch/pianificati                                            |        |        |&#x2714;|&#x2714;|&#x2714;|
-| Integrazione rete virtuale/Connettività ibrida                              |Anteprima |Anteprima |        |&#x2714;|&#x2714;|
+| Integrazione rete virtuale/Connettività ibrida                              |&#x2714;|&#x2714;|Anteprima |&#x2714;|&#x2714;|
 | Disponibilità a livello di area di Azure                | [Dettagli][10] | [Dettagli][10] | [Dettagli][11] |[Dettagli][12]|[Dettagli][13]|
 
 ### <a name="ongoing-responsibility-grid"></a>Griglia di responsabilità continuative
@@ -143,7 +143,7 @@ Per eseguire la migrazione di un'app Web in Tomcat ad Azure Spring Cloud, conver
 |---|---|---|---|---|---|---|
 | Spring Boot/<br>Applicazioni JAR | [indicazioni][5] | indicazioni<br>pianificato | [indicazioni][16] | [indicazioni][14]      | indicazioni<br>pianificato |
 | Spring Cloud/<br>microservizi   | N/D           | N/D                 | [indicazioni][15] | indicazioni<br>pianificato | indicazioni<br>pianificato |
-| Applicazioni Web<br>su Tomcat     | N/D           | [indicazioni][2]       | N/D            | [indicazioni][3]       | indicazioni<br>pianificato |
+| Applicazioni Web<br>su Tomcat     | N/D           | [indicazioni][2]       | [indicazioni][17] | [indicazioni][3]       | indicazioni<br>pianificato |
 
 **Applicazioni Java EE**
 
@@ -173,3 +173,4 @@ Usare le righe seguenti per trovare il tipo di applicazione Java EE in esecuzion
 [14]: migrate-spring-boot-to-azure-kubernetes-service.md
 [15]: migrate-spring-cloud-to-azure-spring-cloud.md
 [16]: migrate-spring-boot-to-azure-spring-cloud.md
+[17]: migrate-tomcat-to-azure-spring-cloud.md

@@ -6,12 +6,12 @@ ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 1/20/2020
 ms.custom: devx-track-java
-ms.openlocfilehash: 227908087ffdbdc3ce27a3da721464ff91b6b085
-ms.sourcegitcommit: 2f832baf90c208a8a69e66badef5f126d23bbaaf
+ms.openlocfilehash: 7a8de3191551be1557b68cab55b6d91afcf41feb
+ms.sourcegitcommit: 4036ac08edd7fc6edf8d11527444061b0e4531ef
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88725195"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89062000"
 ---
 # <a name="migrate-tomcat-applications-to-tomcat-on-azure-app-service"></a>Eseguire la migrazione di applicazioni Tomcat a Tomcat nel servizio app di Azure
 
@@ -44,8 +44,6 @@ Per ottenere la versione corrente usata dal servizio app di Azure, scaricare [To
 
 [!INCLUDE [inventory-secrets](includes/inventory-secrets.md)]
 
-### <a name="inventory-certificates"></a>Inventario dei certificati
-
 [!INCLUDE [inventory-certificates](includes/inventory-certificates.md)]
 
 [!INCLUDE [determine-whether-and-how-the-file-system-is-used](includes/determine-whether-and-how-the-file-system-is-used.md)]
@@ -62,6 +60,10 @@ Per identificare il gestore di persistenza delle sessioni in uso, esaminare i fi
 Le implementazioni predefinite di [PersistentManager](https://tomcat.apache.org/tomcat-9.0-doc/config/manager.html) di Tomcat, ad esempio [StandardManager](https://tomcat.apache.org/tomcat-9.0-doc/config/manager.html#Standard_Implementation) o [FileStore](https://tomcat.apache.org/tomcat-9.0-doc/config/manager.html#Nested_Components), non sono progettate per l'uso con una piattaforma distribuita e scalabile come il servizio app. Poiché il servizio app può bilanciare il carico tra diverse istanze e riavviare in modo trasparente qualsiasi istanza in qualsiasi momento, non è consigliabile rendere persistente lo stato modificabile di un file system.
 
 Se è richiesta la persistenza delle sessioni, è necessario usare un'implementazione di `PersistentManager` alternativa che scriverà in un archivio dati esterno, ad esempio VMware Tanzu Session Manager con Cache Redis. Per altre informazioni, vedere [Usare Redis come cache di sessione con Tomcat](/azure/app-service/containers/configure-language-java#use-redis-as-a-session-cache-with-tomcat).
+
+[!INCLUDE [identify-all-outside-processes-and-daemons-running-on-the-production-servers](includes/identify-all-outside-processes-and-daemons-running-on-the-production-servers.md)]
+
+[!INCLUDE [identify-all-outside-processes-and-daemons-running-on-the-production-servers](includes/identify-all-outside-processes-and-daemons-running-on-the-production-servers.md)]
 
 ### <a name="special-cases"></a>Casi speciali
 
@@ -82,10 +84,6 @@ Creare un inventario di tutti i processi pianificati, all'interno o all'esterno 
 Il [clustering Tomcat](https://tomcat.apache.org/tomcat-9.0-doc/cluster-howto.html) non è supportato nel servizio app di Azure. È invece possibile configurare e gestire il ridimensionamento e il bilanciamento del carico tramite il servizio app di Azure senza funzionalità specifiche di Tomcat. È possibile salvare in modo permanente lo stato della sessione in un percorso alternativo per renderlo disponibile tra le repliche. Per altre informazioni, vedere [Identificare il meccanismo di persistenza delle sessioni](#identify-session-persistence-mechanism).
 
 Per determinare se l'applicazione usa il clustering, cercare l'elemento `<Cluster>` all'interno degli elementi `<Host>` o `<Engine>` nel file *server.xml*.
-
-#### <a name="identify-all-outside-processesdaemons-running-on-the-production-servers"></a>Identificare tutti i processi/daemon esterni in esecuzione nei server di produzione
-
-Sarà necessario eseguire la migrazione altrove o eliminare i processi in esecuzione all'esterno del server applicazioni, ad esempio i daemon di monitoraggio.
 
 #### <a name="determine-whether-non-http-connectors-are-used"></a>Determinare se vengono usati i connettori non HTTP
 

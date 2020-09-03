@@ -3,14 +3,14 @@ title: Distribuire app in Azure Spring Cloud con Jenkins e l'interfaccia della r
 description: Informazioni su come usare l'interfaccia della riga di comando di Azure in una pipeline di integrazione e distribuzione continue per distribuire i microservizi nel servizio Azure Spring Cloud
 keywords: jenkins, azure, devops, azure spring cloud, interfaccia della riga di comando di azure
 ms.topic: tutorial
-ms.date: 08/10/2020
+ms.date: 09/01/2020
 ms.custom: devx-track-jenkins,devx-track-azurecli
-ms.openlocfilehash: 707af403bf789ccd85e52f7bb5880389f61e8f15
-ms.sourcegitcommit: 2f832baf90c208a8a69e66badef5f126d23bbaaf
+ms.openlocfilehash: 7c6b9d526b2fe42a0210daf70ec8ba919641ced9
+ms.sourcegitcommit: 324da872a9dfd4c55b34739824fc6a6598f2ae12
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88725165"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89374562"
 ---
 # <a name="tutorial-deploy-apps-to-azure-spring-cloud-using-jenkins-and-the-azure-cli"></a>Esercitazione: Distribuire app in Azure Spring Cloud con Jenkins e l'interfaccia della riga di comando di Azure
 
@@ -23,16 +23,13 @@ In questa esercitazione si completeranno le attività seguenti:
 > * Preparare il server Jenkins
 > * Usare l'interfaccia della riga di comando di Azure in una pipeline Jenkins per compilare e distribuire le applicazioni di microservizi 
 
->[!Note]
-> Azure Spring Cloud è attualmente disponibile come anteprima pubblica. Le offerte di anteprima pubblica consentono ai clienti di sperimentare le nuove funzionalità prima del rilascio della versione ufficiale.  I servizi e le funzionalità di anteprima pubblica non sono destinati all'uso in produzione.  Per altre informazioni sul supporto durante le anteprime, vedere le [domande frequenti](https://azure.microsoft.com/support/faq/) o inviare una [richiesta di supporto](/azure/azure-portal/supportability/how-to-create-azure-support-request).
-
 ## <a name="prerequisites"></a>Prerequisiti
 
 [!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
 
-**Jenkins**: [Installare Jenkins in una VM Linux](configure-on-linux-vm.md)
+- **Jenkins**: [Installare Jenkins in una VM Linux](configure-on-linux-vm.md)
 
-**Account GitHub**: Se non si ha un account GitHub, crearne [uno gratuito](https://github.com/) prima di iniziare.
+- **Account GitHub**: Se non si ha un account GitHub, crearne [uno gratuito](https://github.com/) prima di iniziare.
 
 ## <a name="provision-a-service-instance-and-launch-a-java-spring-application"></a>Effettuare il provisioning di un'istanza del servizio e avviare un'applicazione Java Spring
 

@@ -4,14 +4,14 @@ description: includere file
 author: tomarchermsft
 ms.service: terraform
 ms.topic: include
-ms.date: 06/01/2020
+ms.date: 08/31/2020
 ms.author: tarcher
-ms.openlocfilehash: 65428c50cf49dcc6385b708c911384bbcc841f30
-ms.sourcegitcommit: 367217792f3b16c769e2c39372358bc6b9c9c044
+ms.openlocfilehash: c8ee3c94632c6f9b339c365dfb3fb2be6060f646
+ms.sourcegitcommit: 2f98cf2a394d4fd82ddc917ac1041c1dc08473b6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84301142"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89275161"
 ---
 ## <a name="open-cloud-shell"></a>Aprire Cloud Shell
 
