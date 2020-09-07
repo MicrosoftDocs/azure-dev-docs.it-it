@@ -14,28 +14,28 @@ metadata:
   ms.service: multiple
   ms.devlang: python
   ms.custom: devx-track-python
-  ms.openlocfilehash: 1a89da5a7ce092de4d8194db2136d390fec22928
-  ms.sourcegitcommit: 5051b25ad32be891800b23fc7ae12a4ca85cbb73
+  ms.openlocfilehash: 2dbd633555e7841eb28f58813a9ba292da989dd6
+  ms.sourcegitcommit: 324da872a9dfd4c55b34739824fc6a6598f2ae12
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 08/12/2020
-  ms.locfileid: "88147252"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89374542"
 landingContent:
-- title: Distribuire funzioni serverless
+- title: Funzioni senza server
   linkLists:
   - linkListType: how-to-guide
     links:
-    - text: Uso di Visual Studio Code
+    - text: Eseguire la distribuzione con Visual Studio
       url: tutorial-vs-code-serverless-python-01.md
-    - text: Uso della riga di comando
+    - text: Distribuire tramite la riga di comando
       url: /azure/azure-functions/functions-create-first-azure-function-azure-cli?pivots=programming-language-python
     - text: Connettersi alle risorse di archiviazione con Visual Studio Code
       url: /azure/azure-functions/functions-add-output-binding-storage-queue-vs-code?pivots=programming-language-python
     - text: Connettersi alle risorse di archiviazione con la riga di comando
       url: /azure/azure-functions/functions-add-output-binding-storage-queue-cli?tabs=bash%2Cbrowser&pivots=programming-language-python
-- title: Distribuire app Web
+- title: App Web
   linkLists:
-  - linkListType: how-to-guide
+  - linkListType: deploy
     links:
     - text: Flask con Visual Studio Code
       url: tutorial-deploy-app-service-on-linux-01.md
@@ -47,9 +47,9 @@ landingContent:
       url: /azure/app-service/tutorial-python-postgresql-app
     - text: Contenitori con Visual Studio Code
       url: tutorial-deploy-containers-01.md
-    - text: Creare una pipeline CI/CD
+    - text: Pipeline CI/CD
       url: /azure/devops/pipelines/ecosystems/python-webapp
-- title: Distribuire modelli di Machine Learning
+- title: Machine Learning
   linkLists:
   - linkListType: how-to-guide
     links:
@@ -63,9 +63,9 @@ landingContent:
       url: quickstarts-cognitive-services.md
     - text: Altro...
       url: quickstarts-machine-learning.md
-- title: Distribuire dati e risorse di archiviazione
+- title: Dati e risorse di archiviazione
   linkLists:
-  - linkListType: how-to-guide
+  - linkListType: deploy
     links:
     - text: Database SQL
       url: quickstarts-data-solutions.md#sql-databases
@@ -73,7 +73,7 @@ landingContent:
       url: quickstarts-data-solutions.md#tables-blobs-files-nosql
     - text: Big Data e analisi
       url: quickstarts-data-solutions.md#big-data-and-analytics
-- title: Usare le librerie di Azure (SDK)
+- title: Librerie di Azure (SDK)
   linkLists:
   - linkListType: get-started
     links:
@@ -85,7 +85,9 @@ landingContent:
       url: azure-sdk-overview.md
     - text: Informazioni sui criteri di utilizzo delle librerie
       url: azure-sdk-library-usage-patterns.md
-- title: Esplorare gli strumenti di sviluppo
+    - text: Eseguire l'autenticazione con i servizi di Azure
+      url: walkthrough-tutorial-authentication-01.md
+- title: Strumenti di sviluppo
   linkLists:
   - linkListType: get-started
     links:
