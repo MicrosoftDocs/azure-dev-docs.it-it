@@ -4,16 +4,16 @@ description: Usare le librerie di Azure SDK per Python per effettuare il provisi
 ms.date: 05/29/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 6a956cf0f4f4689e653307f95d5f0900c8d01589
-ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
+ms.openlocfilehash: b774d986b886aae528c97c4583511a8d6c0ba0a5
+ms.sourcegitcommit: 2f98cf2a394d4fd82ddc917ac1041c1dc08473b6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87983433"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89275205"
 ---
 # <a name="example-provision-azure-storage-using-the-azure-libraries-for-python"></a>Esempio: Effettuare il provisioning di Archiviazione di Azure con le librerie di Azure per Python
 
-Questo articolo illustra come usare le librerie di gestione di Azure in uno script Python per effettuare il provisioning di un gruppo di risorse contenente l'account di archiviazione di Azure e un contenitore di archiviazione BLOB. I [comandi equivalenti dell'interfaccia della riga di comando di Azure](#for-reference-equivalent-azure-cli-commands) vengono descritti più avanti in questo articolo.
+Questo articolo illustra come usare le librerie di gestione di Azure in uno script Python per effettuare il provisioning di un gruppo di risorse contenente l'account di archiviazione di Azure e un contenitore di archiviazione BLOB. I [comandi equivalenti dell'interfaccia della riga di comando di Azure](#for-reference-equivalent-azure-cli-commands) vengono descritti più avanti in questo articolo. Se si preferisce usare il portale di Azure, vedere [Creare un account di archiviazione di Azure](/azure/storage/common/storage-account-create?tabs=azure-portal) e [Creare un contenitore BLOB](/azure/storage/blobs/storage-quickstart-blobs-portal).
 
 Dopo aver effettuato il provisioning delle risorse, vedere [Esempio: Usare Archiviazione di Azure](azure-sdk-example-storage-use.md) usare le librerie client di Azure nel codice dell'applicazione Python per caricare un file nel contenitore di archiviazione BLOB.
 

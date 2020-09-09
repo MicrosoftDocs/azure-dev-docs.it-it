@@ -4,16 +4,16 @@ description: Usare le librerie di gestione incluse nelle librerie di Azure SDK p
 ms.date: 06/02/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 04e80a2b5ab6e6a1dc0adbe546132cf861667995
-ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
+ms.openlocfilehash: e9a08761fb9af300b5d3f2c4a9704bc7f10e1158
+ms.sourcegitcommit: 2f98cf2a394d4fd82ddc917ac1041c1dc08473b6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87982653"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89275124"
 ---
 # <a name="example-use-the-azure-libraries-to-provision-a-database"></a>Esempio: Usare le librerie di Azure per effettuare il provisioning di un database
 
-Questo esempio illustra come usare le librerie di gestione di Azure SDK in uno script Python per effettuare il provisioning di un database MySQL di Azure. I [comandi equivalenti dell'interfaccia della riga di comando di Azure](#for-reference-equivalent-azure-cli-commands) vengono descritti più avanti in questo articolo. Fornisce anche uno script semplice per eseguire query sul database usando la libreria mysql-connector (non inclusa in Azure SDK).
+Questo esempio illustra come usare le librerie di gestione di Azure SDK in uno script Python per effettuare il provisioning di un database MySQL di Azure. Fornisce anche uno script semplice per eseguire query sul database usando la libreria mysql-connector (non inclusa in Azure SDK). I [comandi equivalenti dell'interfaccia della riga di comando di Azure](#for-reference-equivalent-azure-cli-commands) vengono descritti più avanti in questo articolo. Se si preferisce usare il portale di Azure, vedere [Creare un server PostgreSQL](/azure/postgresql/quickstart-create-server-database-portal) o [Creare un server MariaDB](/azure/mariadb/quickstart-create-mariadb-server-database-using-azure-portal).
 
 È possibile usare codice simile per effettuare il provisioning di un database PostgreSQL o MariaDB.
 
@@ -60,9 +60,6 @@ from azure.mgmt.resource import ResourceManagementClient
 from azure.mgmt.rdbms.mysql import MySQLManagementClient
 
 from azure.mgmt.rdbms.mysql.models import ServerForCreate, ServerPropertiesForDefaultCreate, ServerVersion
-
-# Retrieve subscription ID from environment variable
-subscription_id = os.environ["AZURE_SUBSCRIPTION_ID"]
 
 # Constants we need in multiple places: the resource group name and the region
 # in which we provision resources. You can change these values however you want.

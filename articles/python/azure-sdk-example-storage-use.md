@@ -4,12 +4,12 @@ description: Usare le librerie di Azure SDK per Python per accedere a un conteni
 ms.date: 08/05/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: bcb8d680950e2c42d3d7f092478c4d6096454b12
-ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
+ms.openlocfilehash: 8bbbb03a4bbbdb24e2c45692a0a982341fbcd7a5
+ms.sourcegitcommit: 2f98cf2a394d4fd82ddc917ac1041c1dc08473b6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87982693"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89275135"
 ---
 # <a name="example-access-azure-storage-using-the-azure-libraries-for-python"></a>Esempio: Accedere ad Archiviazione di Azure con le librerie di Azure per Python
 
@@ -21,7 +21,16 @@ Tutti i comandi di questo articolo funzionano allo stesso modo nella shell Bash 
 
 Se non è già stato fatto, seguire tutte le istruzioni riportate in [Configurare l'ambiente di sviluppo Python locale per Azure](configure-local-development-environment.md).
 
-Assicurarsi di creare un'entità servizio per lo sviluppo locale e di creare e attivare un ambiente virtuale per questo progetto.
+Assicurarsi di creare un'entità servizio per lo sviluppo locale, di impostare le variabili di ambiente per l'entità servizio (vedere di seguito) e di creare e attivare un ambiente virtuale per questo progetto.
+
+Questo esempio presuppone che siano già state impostate le variabili di ambiente seguenti:
+
+| Nome variabile | Valore previsto |
+| --- | --- |
+| AZURE_SUBSCRIPTION_ID | Il GUID della sottoscrizione di Azure. |
+| AZURE_CLIENT_ID | L'ID client dell'entità servizio locale. |
+| AZURE_CLIENT_SECRET | Il segreto client dell'entità servizio. |
+| AZURE_TENANT_ID | L'ID tenant dell'entità servizio. |
 
 ## <a name="2-install-library-packages"></a>2: Installare i pacchetti di librerie
 

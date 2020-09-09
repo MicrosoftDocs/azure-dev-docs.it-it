@@ -8,12 +8,12 @@ ms.date: 04/21/2020
 ms.topic: article
 ms.service: azure-cli
 ms.devlang: azurecli
-ms.openlocfilehash: 74262a0be1062f32f63a225521f92657334c9994
-ms.sourcegitcommit: 815cf2acff71e849735f7afce54723f03ffa5df3
+ms.openlocfilehash: 4dcc1bcfb6e42089e221a1ebd7eb5abc0d37a4e3
+ms.sourcegitcommit: 324da872a9dfd4c55b34739824fc6a6598f2ae12
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88501266"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89374552"
 ---
 # <a name="azure-cli-release-notes"></a>Note sulla versione dell'interfaccia della riga di comando di Azure
 
