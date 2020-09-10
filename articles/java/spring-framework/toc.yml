@@ -89,11 +89,9 @@
           href: 'https://github.com/Microsoft/todo-app-java-on-azure/'
         - name: Elenco attività con MySQL
           href: 'https://github.com/Azure-Samples/mysql-spring-boot-todo'
-        - name: Archiviazione di Azure con Java SDK
-          href: configure-spring-boot-starter-java-app-with-azure-storage-api.md
         - name: Spring Initializr
           href: 'https://start.spring.io/'
-    - name: Informazioni di riferimento
+    - name: Riferimento
       items:
         - name: Spring Framework
           href: 'https://spring.io/'
