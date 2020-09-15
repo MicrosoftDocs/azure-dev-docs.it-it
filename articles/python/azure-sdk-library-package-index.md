@@ -1,15 +1,15 @@
 ---
 title: Indice dei pacchetti per le librerie di Azure SDK per Python
 description: Elenco dei nomi di pacchetto, dei collegamenti pypi, dei collegamenti alla documentazione e dei collegamenti al codice sorgente per tutte le librerie include in Azure SDK per Python.
-ms.date: 06/11/2020
+ms.date: 09/10/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 1a7bfecd024c6a733afe3d5b393151c2cd4ea8f9
-ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
+ms.openlocfilehash: c7a0e4d1d36ec685e46f134483443812f7d202c0
+ms.sourcegitcommit: 5205d15c697bbfd4ecb3f45b5de093f709d11979
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87983353"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90026402"
 ---
 # <a name="azure-libraries-package-index"></a>Indice dei pacchetti delle librerie di Azure
 
