@@ -4,12 +4,12 @@ description: Passaggio 3 dell'esercitazione, la procedura semplice per ricompila
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: c23676dd0d8b3741881f38d1a3bbee367f7d6c58
-ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
+ms.openlocfilehash: 6a2c09e861da9fedaa90f1229f212f02f95a349e
+ms.sourcegitcommit: 9e282fc2ec967bee181c3034e7e70b28ae308905
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87982883"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89473492"
 ---
 # <a name="2-redeploy-a-container-to-azure-app-service-after-making-changes"></a>2: Ridistribuire un contenitore nel Servizio app di Azure dopo aver apportato modifiche
 
@@ -32,4 +32,4 @@ Dal momento che inevitabilmente si apportano modifiche all'app, si finisce per r
 > [!div class="nextstepaction"]
 > [Sono state apportate modifiche ed è stata ripetuta la distribuzione: procedere con il passaggio 4 >>>](tutorial-deploy-containers-04.md)
 
-[Si è verificato un problema](https://www.research.net/r/PWZWZ52?tutorial=vscode-appservice-containers&step=03-make-changes-redeploy)
+o problemi Inviare un problema GitHub usando il feedback "Questa pagina" nella parte inferiore della pagina.

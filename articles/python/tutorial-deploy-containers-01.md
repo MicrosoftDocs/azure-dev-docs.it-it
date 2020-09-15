@@ -1,15 +1,15 @@
 ---
 title: 'Esercitazione: Distribuire contenitori Docker nel servizio app di Azure con Visual Studio Code'
-description: "Passaggio 1 dell'esercitazione: introduzione e prerequisiti."
+description: Passaggio 1 dell'esercitazione, uso dei contenitori, introduzione e prerequisiti.
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: fe98ff2007be9f817cc8e9bd0210761579eef536
-ms.sourcegitcommit: 5051b25ad32be891800b23fc7ae12a4ca85cbb73
+ms.openlocfilehash: f0fb983a596ca1828809d1d829af5517e8af66df
+ms.sourcegitcommit: 9e282fc2ec967bee181c3034e7e70b28ae308905
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88147412"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89473556"
 ---
 # <a name="tutorial-deploy-docker-containers-to-azure-app-service-with-visual-studio-code"></a>Esercitazione: Distribuire contenitori Docker nel servizio app di Azure con Visual Studio Code
 
@@ -34,4 +34,4 @@ Per una dimostrazione, vedere il video che illustra le <a href="https://www.yout
 > [!div class="nextstepaction"]
 > [L'accesso ad Azure è stato eseguito: procedere con il passaggio 2 >>>](tutorial-deploy-containers-02.md)
 
-[Si è verificato un problema](https://www.research.net/r/PWZWZ52?tutorial=vscode-appservice-containers&step=01-verify-prerequisites)
+o problemi Inviare un problema GitHub usando il feedback "Questa pagina" nella parte inferiore della pagina.

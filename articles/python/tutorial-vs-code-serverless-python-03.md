@@ -4,12 +4,12 @@ description: Passaggio 3 dell'esercitazione, informazioni sul codice Python del 
 ms.topic: conceptual
 ms.date: 05/19/2020
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: 61d7074b49cf84bbc63180f9a4549f59f12bb006
-ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
+ms.openlocfilehash: 29802cf346a53d7230a2b6f46e8f39127be70d0a
+ms.sourcegitcommit: 9e282fc2ec967bee181c3034e7e70b28ae308905
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87982843"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89473536"
 ---
 # <a name="3-examine-the-python-code-files-in-visual-studio-code"></a>3: Esaminare i file di codice Python in Visual Studio Code
 
@@ -93,4 +93,4 @@ Di seguito sono riportate le parti importanti del codice:
 > [!div class="nextstepaction"]
 > [I file di codice sono stati esaminati: procedere con il passaggio 4 >>>](tutorial-vs-code-serverless-python-04.md)
 
-[Si è verificato un problema](https://www.research.net/r/PWZWZ52?tutorial=vscode-functions-python&step=03-examine-code-files)
+o problemi Inviare un problema GitHub usando il feedback "Questa pagina" nella parte inferiore della pagina.

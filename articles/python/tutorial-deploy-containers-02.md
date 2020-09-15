@@ -4,12 +4,12 @@ description: Passaggio 2 dell'esercitazione, distribuzione dell'immagine Docker 
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: 1a8afac614f930e3d26424d5d776ff5d97019324
-ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
+ms.openlocfilehash: 080f3f5aa82d9944b5f26d3a54fb6f10bfe914cb
+ms.sourcegitcommit: 9e282fc2ec967bee181c3034e7e70b28ae308905
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87983533"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89473546"
 ---
 # <a name="2-deploy-a-container-image-to-azure-app-service"></a>2: Distribuire un'immagine del contenitore nel Servizio app di Azure
 
@@ -48,4 +48,4 @@ Con un'immagine del contenitore in un registro, è possibile usare l'estensione 
 > [!div class="nextstepaction"]
 > [L'immagine è stata distribuita: procedere con il passaggio 3 >>>](tutorial-deploy-containers-03.md)
 
-[Si è verificato un problema](https://www.research.net/r/PWZWZ52?tutorial=vscode-appservice-containers&step=02-deploy-container)
+o problemi Inviare un problema GitHub usando il feedback "Questa pagina" nella parte inferiore della pagina.

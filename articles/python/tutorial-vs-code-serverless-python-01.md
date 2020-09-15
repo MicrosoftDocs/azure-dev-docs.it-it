@@ -1,15 +1,15 @@
 ---
 title: 'Esercitazione: Creare e distribuire Funzioni di Azure serverless in Python con VS Code'
-description: "Passaggio 1 dell'esercitazione: introduzione e prerequisiti."
+description: Passaggio 1 dell'esercitazione, uso di Funzioni di Azure, introduzione e prerequisiti.
 ms.topic: conceptual
 ms.date: 05/19/2020
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: 25ae33cef961b35747ee614a52ff80ebf1e96d62
-ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
+ms.openlocfilehash: 740a64785c57694be34f37ef6aa6571b0b3304b7
+ms.sourcegitcommit: 9e282fc2ec967bee181c3034e7e70b28ae308905
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87982983"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89473606"
 ---
 # <a name="tutorial-create-and-deploy-serverless-azure-functions-in-python-with-visual-studio-code"></a>Esercitazione: Creare e distribuire Funzioni di Azure serverless in Python con Visual Studio Code
 
@@ -71,4 +71,4 @@ Il comando `func` funziona tramite il file *func.cmd* che viene installato nella
 > [!div class="nextstepaction"]
 > [L'accesso ad Azure è stato eseguito: procedere con il passaggio 2 >>>](tutorial-vs-code-serverless-python-02.md)
 
-[Si è verificato un problema](https://www.research.net/r/PWZWZ52?tutorial=vscode-functions-python&step=01-verify-prerequisites)
+o problemi Inviare un problema GitHub usando il feedback "Questa pagina" nella parte inferiore della pagina.

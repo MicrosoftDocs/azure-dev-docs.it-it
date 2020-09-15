@@ -4,12 +4,12 @@ description: Passaggio 7 dell'esercitazione, aggiunta di un binding in Python pe
 ms.topic: conceptual
 ms.date: 05/19/2020
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: 211d1534d617b649b574f9f3d23e8c5ffd5ac414
-ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
+ms.openlocfilehash: a8e320b42221b1f1d30859d41b8e56f52c18072a
+ms.sourcegitcommit: 9e282fc2ec967bee181c3034e7e70b28ae308905
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87982811"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89473616"
 ---
 # <a name="7-add-a-storage-binding-for-azure-functions-in-python"></a>7: Aggiungere un binding di archiviazione per Funzioni di Azure in Python
 
@@ -99,4 +99,4 @@ In questa sezione viene aggiunto un binding di archiviazione alla funzione HttpE
 > [!div class="nextstepaction"]
 > [Il binding di archiviazione è stato aggiunto: procedere con il passaggio 8 >>>](tutorial-vs-code-serverless-python-08.md)
 
-[Si è verificato un problema](https://www.research.net/r/PWZWZ52?tutorial=python-functions-extension&step=07-storage-binding)
+o problemi Inviare un problema GitHub usando il feedback "Questa pagina" nella parte inferiore della pagina.

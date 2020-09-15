@@ -4,12 +4,12 @@ description: Parte 4 dell'esercitazione, visualizzazione dei log del servizio ap
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: aeaaafbb271689babd03c2ccc3216703c3580ebc
-ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
+ms.openlocfilehash: 92af617452aa8892f61e110a69be53a9208f3883
+ms.sourcegitcommit: 9e282fc2ec967bee181c3034e7e70b28ae308905
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87983503"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89473506"
 ---
 # <a name="4-stream-logs-from-azure-app-service-for-a-container"></a>4: Streaming dei log dal Servizio app di Azure per un contenitore
 
@@ -41,4 +41,4 @@ In VS Code è possibile visualizzare i log del sito in esecuzione nel servizio a
 > [!div class="nextstepaction"]
 > [I log vengono visualizzati: procedere con il passaggio 5 >>>](tutorial-deploy-containers-05.md)
 
-[Si è verificato un problema](https://www.research.net/r/PWZWZ52?tutorial=vscode-appservice-containers&step=04-stream-logs)
+o problemi Inviare un problema GitHub usando il feedback "Questa pagina" nella parte inferiore della pagina.
