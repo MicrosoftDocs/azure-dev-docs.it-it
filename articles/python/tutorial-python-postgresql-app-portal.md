@@ -5,12 +5,12 @@ ms.devlang: python
 ms.topic: tutorial
 ms.date: 07/23/2020
 ms.custom: devx-track-python
-ms.openlocfilehash: 4ad5086e0bc0500a7b7a117142a153e56ee4b481
-ms.sourcegitcommit: 5ab6e90e20a87f9a8baea652befc74158a9b6613
+ms.openlocfilehash: 19c0dda48b0fb7b5b0c3af75a1d94d3c9b9e4080
+ms.sourcegitcommit: 4824cea71195b188b4e8036746f58bf8b70dc224
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89614286"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89753767"
 ---
 # <a name="tutorial-deploy-a-django-web-app-with-postgresql-using-the-azure-portal"></a>Esercitazione: Distribuire un'app Web Django con PostgreSQL tramite il portale di Azure
 
@@ -230,15 +230,15 @@ Con il codice distribuito e il database implementato, l'app è quasi pronta per 
 
 A questo punto è possibile eseguire un rapido test dell'app per verificare che funzioni con il database PostgreSQL.
 
-1. Nella finestra o nella scheda del browser per l'app Web tornare alla pagina **Panoramica**, quindi selezionare l'**URL** per l'app Web nel formato `http:\//\<app-name>.azurewebsites.net`.
+1. Nella finestra o nella scheda del browser per l'app Web tornare alla pagina **Panoramica**, quindi selezionare l'**URL** per l'app Web nel formato `http://<app-name>.azurewebsites.net`.
 
 1. L'app dovrebbe visualizzare un messaggio che indica che non sono disponibili sondaggi perché nel database non sono ancora presenti sondaggi specifici.
 
-1. Passare a `http:\//\<app-name>.azurewebsites.net/admin`, la pagina di amministrazione di Django, e accedere usando le credenziali di utente con privilegi avanzati della sezione precedente (`root` e `Pollsdb1`).
+1. Passare a `http://<app-name>.azurewebsites.net/admin`, la pagina di amministrazione di Django, e accedere usando le credenziali di utente con privilegi avanzati della sezione precedente (`root` e `Pollsdb1`).
 
 1. In **Polls** (Sondaggi) selezionare **Add** (Aggiungi) accanto a **Questions** (Domande) e creare una domanda del sondaggio con alcune scelte.
 
-1. Passare di nuovo a `http:\//\<app-name>.azurewebsites.net/` per verificare se le domande ora vengono presentate all'utente. Rispondere alle domande come desiderato per generare alcuni dati nel database.
+1. Passare di nuovo a `http://<app-name>.azurewebsites.net/` per verificare se le domande ora vengono presentate all'utente. Rispondere alle domande come desiderato per generare alcuni dati nel database.
 
 **Congratulazioni** Un'app Web Python Django è ora in esecuzione nel servizio app di Azure per Linux, con un database PostgreSQL attivo.
 

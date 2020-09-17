@@ -10,12 +10,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
 ms.custom: seo-java-july2019, seo-java-august2019, seo-java-september2019, devx-track-java
-ms.openlocfilehash: 88e1c8d6a09c73c784593393fe682b38bba88b86
-ms.sourcegitcommit: 09e1952776c83e1f67005f144fd8181f5681889b
+ms.openlocfilehash: 3bd3eab54fa231fc06805cd44b61fcb121a4ad31
+ms.sourcegitcommit: bfaeacc2fb68f861a9403585d744e51a8f99829c
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/24/2020
-ms.locfileid: "88781813"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90681762"
 ---
 # <a name="use-maven-for-azure-web-apps-to-deploy-a-spring-boot-app-in-azure-container-registry-to-azure-app-service"></a>Usare Maven per app Web di Azure per distribuire un'app Spring Boot di Registro Azure Container nel servizio app di Azure
 
@@ -287,7 +287,7 @@ Aprire il file `pom.xml` per l'applicazione Spring Boot in un editor di testo e 
    <plugin>
       <groupId>com.microsoft.azure</groupId>
       <artifactId>azure-webapp-maven-plugin</artifactId>
-      <version>0.1.3</version>
+      <version>1.10.0</version>
       <configuration>
          <authentication>
             <serverId>azure-auth</serverId>
