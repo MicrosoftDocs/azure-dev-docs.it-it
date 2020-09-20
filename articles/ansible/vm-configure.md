@@ -5,12 +5,12 @@ keywords: terraform, devops, macchina virtuale
 ms.topic: tutorial
 ms.date: 04/30/2019
 ms.custom: devx-track-ansible
-ms.openlocfilehash: c9f6d9a954b8bdbd05ede42cc69a0078eae3cea2
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 6ef5b2799218e3edb008d19102985d38ca6646d6
+ms.sourcegitcommit: bfaeacc2fb68f861a9403585d744e51a8f99829c
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88240433"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90681942"
 ---
 # <a name="quickstart-configure-linux-virtual-machines-in-azure-using-ansible"></a>Guida introduttiva: Configurare macchine virtuali Linux in Azure tramite Ansible
 
@@ -58,10 +58,6 @@ La sezione del playbook Ansible di esempio seguente crea una subnet denominata `
 ```
 
 ## <a name="create-a-public-ip-address"></a>Creare un indirizzo IP pubblico
-
-
-
-
 
 Gli [indirizzi IP pubblici](/azure/virtual-network/virtual-network-ip-addresses-overview-arm) permettono la comunicazione in ingresso da risorse Internet a risorse di Azure, Gli indirizzi IP pubblici consentono anche alle risorse di Azure di comunicare in uscita con servizi pubblici di Azure. In entrambi i casi, un indirizzo IP assegnato alla risorsa a cui si accede. L'indirizzo è dedicato alla risorsa finché non si annulla l'assegnazione. Se un indirizzo IP pubblico non è assegnato a una risorsa, la risorsa può comunque comunicare in uscita con Internet. La connessione viene stabilita da Azure in modo dinamico assegnando un indirizzo IP disponibile. L'indirizzo assegnato in modo dinamico non è dedicato alla risorsa.
 
@@ -282,6 +278,10 @@ Questa sezione descrive in modo dettagliato l'esecuzione del playbook Ansible di
     ```bash
     ssh azureuser@<ip-address>
     ```
+
+## <a name="clean-up-resources"></a>Pulire le risorse
+
+[!INCLUDE [ansible-delete-resource-group.md](includes/ansible-delete-resource-group.md)]
 
 ## <a name="next-steps"></a>Passaggi successivi
 
