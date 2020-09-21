@@ -10,7 +10,9 @@
       items:
         - name: Hosting di app
           items:
-            - name: Siti statici
+            - name: App Web statiche di Azure
+              href: /azure/static-web-apps/getting-started
+            - name: Siti statici dall'archiviazione
               href: tutorial-vscode-static-website-node-01.md
             - name: App Web e API Node.js
               href: tutorial-vscode-azure-app-service-node-01.md
