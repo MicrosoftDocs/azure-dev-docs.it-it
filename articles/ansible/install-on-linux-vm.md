@@ -5,12 +5,12 @@ keywords: ansible, azure, devops, bash, cloudshell, playbook, interfaccia della 
 ms.topic: quickstart
 ms.date: 08/13/2020
 ms.custom: devx-track-ansible,devx-track-cli
-ms.openlocfilehash: aa1758e6b9670640c218976f6369d9935aa6381b
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 50fbcb4d086679265d728f14061a5c4c649fa48d
+ms.sourcegitcommit: bfaeacc2fb68f861a9403585d744e51a8f99829c
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88240163"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90682034"
 ---
 # <a name="quickstart-configure-ansible-using-azure-cli"></a>Avvio rapido: Configurare Ansible con l'interfaccia della riga di comando di Azure
 
@@ -118,7 +118,7 @@ ssh -i <ssh_private_key_filename> azureuser@<vm_ip_address>
 
 Per configurare le credenziali di Ansible, sono necessarie le informazioni seguenti:
 
-* L'ID sottoscrizione di Azure 
+* L'ID sottoscrizione di Azure
 * I valori dell'entità servizio
 
 Se si usa Ansible Tower o Jenkins, dichiarare i valori dell'entità servizio come variabili di ambiente.
@@ -168,7 +168,11 @@ In questa sezione vengono esportati i valori dell'entità servizio per configura
     export AZURE_TENANT=<security-principal-tenant>
     ```
 
+## <a name="test-ansible-installation"></a>Testare l'installazione di Ansible
+
 È ora disponibile una macchina virtuale con Ansible installato e configurato.
+
+[!INCLUDE [ansible-test-configuration.md](includes/ansible-test-configuration.md)]
 
 ## <a name="next-steps"></a>Passaggi successivi
 

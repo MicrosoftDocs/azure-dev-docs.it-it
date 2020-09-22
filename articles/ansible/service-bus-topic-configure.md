@@ -5,12 +5,12 @@ keywords: ansible, azure, devops, bash, playbook, bus di servizio, argomenti, so
 ms.topic: tutorial
 ms.date: 04/30/2019
 ms.custom: devx-track-ansible
-ms.openlocfilehash: 8dad002f52ded3baaf66d96a516a3d23dac91d56
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: a6cc84b17a5971ba487e304822de9f366826274b
+ms.sourcegitcommit: bfaeacc2fb68f861a9403585d744e51a8f99829c
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88240063"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90681979"
 ---
 # <a name="tutorial-configure-topics-in-azure-service-bus-using-ansible"></a>Esercitazione: Configurare argomenti nel bus di servizio di Azure tramite Ansible
 
@@ -70,7 +70,7 @@ Salvare il playbook seguente come `servicebus_topic.yml`:
           var: topic
 ```
 
-Eseguire il playbook usando il comando `ansible-playbook`:
+Eseguire il playbook con [ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html)
 
 ```bash
 ansible-playbook servicebus_topic.yml
@@ -103,7 +103,7 @@ Il codice del playbook di esempio crea la sottoscrizione in un argomento del bus
 
 Salvare il playbook seguente come `servicebus_subscription.yml`:
 
-Eseguire il playbook usando il comando `ansible-playbook`:
+Eseguire il playbook con [ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html)
 
 ```bash
 ansible-playbook servicebus_subscription.yml
@@ -140,7 +140,7 @@ Salvare il playbook seguente come `servicebus_topic_policy.yml`:
           var: policy
 ```
 
-Eseguire il playbook usando il comando `ansible-playbook`:
+Eseguire il playbook con [ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html)
 
 ```bash
 ansible-playbook servicebus_topic_policy.yml
@@ -173,7 +173,7 @@ Salvare il playbook seguente come `servicebus_namespace_info.yml`:
 Prima di eseguire il playbook, vedere le note seguenti:
 - Il valore `show_sas_policies` indica se visualizzare i criteri di firma di accesso condiviso nello spazio dei nomi specificato. Per impostazione predefinita, il valore è `False` per evitare un sovraccarico di rete aggiuntivo.
 
-Eseguire il playbook usando il comando `ansible-playbook`:
+Eseguire il playbook con [ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html)
 
 ```bash
 ansible-playbook servicebus_namespace_info.yml
@@ -220,7 +220,7 @@ Salvare il playbook seguente come `servicebus_list.yml`:
 Prima di eseguire il playbook, vedere le note seguenti:
 - Il valore `show_sas_policies` indica se visualizzare i criteri di firma di accesso condiviso nella coda specificata. Per impostazione predefinita, il valore è impostato su `False` per evitare un sovraccarico di rete aggiuntivo.
 
-Eseguire il playbook usando il comando `ansible-playbook`:
+Eseguire il playbook con [ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html)
 
 ```bash
 ansible-playbook servicebus_list.yml
@@ -249,7 +249,7 @@ Salvare il playbook seguente come `servicebus_queue_policy_delete.yml`:
           state: absent
 ```
 
-Eseguire il playbook usando il comando `ansible-playbook`:
+Eseguire il playbook con [ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html)
 
 ```bash
 ansible-playbook servicebus_topic_policy_delete.yml
@@ -295,7 +295,7 @@ Salvare il codice seguente come `cleanup.yml`:
           force_delete_nonempty: yes
 ```
 
-Eseguire il playbook usando il comando `ansible-playbook`:
+Eseguire il playbook con [ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html)
 
 ```bash
 ansible-playbook cleanup.yml

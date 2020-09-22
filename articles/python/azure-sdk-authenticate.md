@@ -4,12 +4,12 @@ description: Come acquisire gli oggetti credenziali necessari per autenticare un
 ms.date: 08/18/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 50f13c09d1c3932446d90420399b18c3247f1640
-ms.sourcegitcommit: 800c5e05ad3c0b899295d381964dd3d47436ff90
+ms.openlocfilehash: 746a948077c7def12aae5053355c445b7592eae0
+ms.sourcegitcommit: 4824cea71195b188b4e8036746f58bf8b70dc224
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88614470"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89753746"
 ---
 # <a name="how-to-authenticate-and-authorize-python-apps-on-azure"></a>Come autenticare e autorizzare le app Python in Azure
 
@@ -110,13 +110,13 @@ retrieved_secret = secret_client.get_secret("secret-name-01")
 
 Anche in questo caso non viene eseguita alcuna autenticazione o autorizzazione finché il codice non invia una richiesta specifica all'API REST di Azure tramite un oggetto client. L'istruzione per creare `DefaultAzureCredential` (vedere la sezione successiva) crea solo un oggetto lato client in memoria, ma non esegue altri controlli. 
 
-La creazione dell'oggetto [`SecretClient`](/python/api/azure-keyvault-secrets/azure.keyvault.secrets.secretclient?view=azure-python) dell'SDK non prevede nemmeno comunicazioni con la risorsa in questione. L'oggetto `SecretClient` è semplicemente un wrapper per l'API REST di Azure sottostante ed esiste solo nella memoria di runtime dell'app. 
+La creazione dell'oggetto [`SecretClient`](/python/api/azure-keyvault-secrets/azure.keyvault.secrets.secretclient) dell'SDK non prevede nemmeno comunicazioni con la risorsa in questione. L'oggetto `SecretClient` è semplicemente un wrapper per l'API REST di Azure sottostante ed esiste solo nella memoria di runtime dell'app. 
 
-È solo quando il codice chiama il metodo [`get_secret`](/python/api/azure-keyvault-secrets/azure.keyvault.secrets.secretclient?view=azure-python#get-secret-name--version-none----kwargs-) che l'oggetto client genera la chiamata API REST appropriata per Azure. L'endpoint di Azure per `get_secret` autentica quindi l'identità del chiamante e controlla l'autorizzazione.
+È solo quando il codice chiama il metodo [`get_secret`](/python/api/azure-keyvault-secrets/azure.keyvault.secrets.secretclient#get-secret-name--version-none----kwargs-) che l'oggetto client genera la chiamata API REST appropriata per Azure. L'endpoint di Azure per `get_secret` autentica quindi l'identità del chiamante e controlla l'autorizzazione.
 
 ## <a name="authenticate-with-defaultazurecredential"></a>Eseguire l'autenticazione con DefaultAzureCredential
 
-Per la maggior parte delle applicazioni, la classe [`DefaultAzureCredential`](/python/api/azure-identity/azure.identity.defaultazurecredential?view=azure-python) della libreria [`azure-identity`](/python/api/azure-identity/azure.identity?view=azure-python) fornisce il metodo di autenticazione più semplice e consigliato. `DefaultAzureCredential` usa automaticamente l'identità gestita dell'app nel cloud e carica automaticamente un'entità servizio locale dalle variabili di ambiente durante l'esecuzione in locale.
+Per la maggior parte delle applicazioni, la classe [`DefaultAzureCredential`](/python/api/azure-identity/azure.identity.defaultazurecredential) della libreria [`azure-identity`](/python/api/azure-identity/azure.identity) fornisce il metodo di autenticazione più semplice e consigliato. `DefaultAzureCredential` usa automaticamente l'identità gestita dell'app nel cloud e carica automaticamente un'entità servizio locale dalle variabili di ambiente durante l'esecuzione in locale.
 
 ```python
 import os
@@ -228,7 +228,7 @@ Con questo metodo si crea un file JSON che contiene le credenziali necessarie pe
     Sostituire i quattro segnaposto con l'ID sottoscrizione di Azure, l'ID tenant, l'ID client e il segreto client.
 
     > [!TIP]
-    > Come illustrato in [Configurare l'ambiente di sviluppo locale](configure-local-development-environment.md#create-a-service-principal-and-environment-variables-for-development), è possibile usare il comando [az ad sp create-for-rbac](/cli/azure/ad/sp?view=azure-cli-latest#az-ad-sp-create-for-rbac) con il parametro `--sdk-auth` per generare direttamente questo formato JSON.
+    > Come illustrato in [Configurare l'ambiente di sviluppo locale](configure-local-development-environment.md#create-a-service-principal-and-environment-variables-for-development), è possibile usare il comando [az ad sp create-for-rbac](/cli/azure/ad/sp#az-ad-sp-create-for-rbac) con il parametro `--sdk-auth` per generare direttamente questo formato JSON.
 
 1. Salvare il file con un nome come *credentials.json* in una posizione sicura accessibile al codice. Per proteggere le credenziali, assicurarsi di omettere questo file dal controllo del codice sorgente e di non condividerlo con altri sviluppatori. Ovvero l'ID tenant, l'ID client e il segreto client di un'entità servizio devono rimanere sempre isolati nella workstation di sviluppo.
 
@@ -250,7 +250,7 @@ Con questo metodo si crea un file JSON che contiene le credenziali necessarie pe
 
     Questi esempi presuppongono che il file JSON sia denominato *credentials.json* e che si trovi nella cartella padre del progetto.
 
-1. Usare il metodo [get_client_from_auth_file](/python/api/azure-common/azure.common.client_factory?view=azure-python#get-client-from-auth-file-client-class--auth-path-none----kwargs-) per creare l'oggetto client:
+1. Usare il metodo [get_client_from_auth_file](/python/api/azure-common/azure.common.client_factory#get-client-from-auth-file-client-class--auth-path-none----kwargs-) per creare l'oggetto client:
 
     ```python
     from azure.common.client_factory import get_client_from_auth_file
@@ -302,7 +302,7 @@ subscription = next(subscription_client.subscriptions.list())
 print(subscription.subscription_id)
 ```
 
-Invece di usare un file, come descritto nella sezione precedente, è possibile creare i dati JSON necessari in una variabile e chiamare [get_client_from_json_dict](/python/api/azure-common/azure.common.client_factory?view=azure-python#get-client-from-json-dict-client-class--config-dict----kwargs-). Questo codice presuppone che siano state create le variabili di ambiente descritte in [Configurare l'ambiente di sviluppo locale](configure-local-development-environment.md#create-a-service-principal-and-environment-variables-for-development). Per il codice distribuito nel cloud, è possibile creare queste variabili di ambiente nella macchina virtuale server o tra le impostazioni dell'applicazione quando si usa un servizio della piattaforma come il servizio app di Azure e Funzioni di Azure.
+Invece di usare un file, come descritto nella sezione precedente, è possibile creare i dati JSON necessari in una variabile e chiamare [get_client_from_json_dict](/python/api/azure-common/azure.common.client_factory#get-client-from-json-dict-client-class--config-dict----kwargs-). Questo codice presuppone che siano state create le variabili di ambiente descritte in [Configurare l'ambiente di sviluppo locale](configure-local-development-environment.md#create-a-service-principal-and-environment-variables-for-development). Per il codice distribuito nel cloud, è possibile creare queste variabili di ambiente nella macchina virtuale server o tra le impostazioni dell'applicazione quando si usa un servizio della piattaforma come il servizio app di Azure e Funzioni di Azure.
 
 È anche possibile archiviare i valori in Azure Key Vault e recuperarli in fase di esecuzione invece di usare variabili di ambiente.
 
@@ -327,7 +327,7 @@ subscription = next(subscription_client.subscriptions.list())
 print(subscription.subscription_id)
 ```
 
-Con questo metodo si crea un oggetto [`ServicePrincipalCredentials`](/python/api/msrestazure/msrestazure.azure_active_directory.serviceprincipalcredentials?view=azure-python) usando le credenziali ottenute da una risorsa di archiviazione sicura, come Azure Key Vault o le variabili di ambiente. Il codice precedente presuppone che siano state create le variabili di ambiente descritte in [Configurare l'ambiente di sviluppo locale](configure-local-development-environment.md#create-a-service-principal-and-environment-variables-for-development).
+Con questo metodo si crea un oggetto [`ServicePrincipalCredentials`](/python/api/msrestazure/msrestazure.azure_active_directory.serviceprincipalcredentials) usando le credenziali ottenute da una risorsa di archiviazione sicura, come Azure Key Vault o le variabili di ambiente. Il codice precedente presuppone che siano state create le variabili di ambiente descritte in [Configurare l'ambiente di sviluppo locale](configure-local-development-environment.md#create-a-service-principal-and-environment-variables-for-development).
 
 Con questo metodo, è possibile usare un [cloud sovrano o nazionale di Azure](/azure/active-directory/develop/authentication-national-cloud) invece del cloud pubblico di Azure, specificando un argomento `base_url` per l'oggetto client:
 
@@ -400,13 +400,13 @@ print(subscription.subscription_id)
 
 Con questo metodo si crea un oggetto client usando le credenziali dell'utente che ha eseguito l'accesso con il comando `az login` dell'interfaccia della riga di comando di Azure. L'applicazione verrà autorizzata per tutte le operazioni dell'utente.
 
-L'SDK usa l'ID sottoscrizione predefinito oppure è possibile impostare la sottoscrizione usando [`az account`](https://docs.microsoft.com/cli/azure/manage-azure-subscriptions-azure-cli)
+L'SDK usa l'ID sottoscrizione predefinito oppure è possibile impostare la sottoscrizione prima di eseguire il codice usando [`az account`](https://docs.microsoft.com/cli/azure/manage-azure-subscriptions-azure-cli). Se è necessario fare riferimento a sottoscrizioni diverse nello stesso script, usare i metodi ['get_client_from_auth_file'](#authenticate-with-a-json-file) o [`get_client_from_json_dict`](#authenticate-with-a-json-dictionary) descritti in precedenza in questo articolo.
 
-Questo metodo dovrebbe essere usato solo per le fasi iniziali di sperimentazione e sviluppo, perché un utente che ha eseguito l'accesso ha in genere privilegi di proprietario o amministratore e può accedere alla maggior parte delle risorse senza autorizzazioni aggiuntive. Per altre informazioni, vedere la nota precedente sull'[uso delle credenziali dell'interfaccia della riga di comando con `DefaultAzureCredential`](#cli-auth-note).
+La funzione `get_client_from_cli_profile` deve essere usata solo per le fasi iniziali di sperimentazione e sviluppo, perché un utente che ha eseguito l'accesso ha in genere privilegi di proprietario o amministratore e può accedere alla maggior parte delle risorse senza autorizzazioni aggiuntive. Per altre informazioni, vedere la nota precedente sull'[uso delle credenziali dell'interfaccia della riga di comando con `DefaultAzureCredential`](#cli-auth-note).
 
 ### <a name="deprecated-authenticate-with-userpasscredentials"></a>Deprecato: Eseguire l'autenticazione con UserPassCredentials
 
-Quando [Azure Active Directory Authentication Library (ADAL) per Python](https://github.com/AzureAD/azure-activedirectory-library-for-python) non era ancora disponibile, era necessario usare la classe [`UserPassCredentials`](/python/api/msrestazure/msrestazure.azure_active_directory.userpasscredentials?view=azure-python) ora deprecata. Questa classe non supporta l'autenticazione a due fattori e non deve più essere usata.
+Quando [Azure Active Directory Authentication Library (ADAL) per Python](https://github.com/AzureAD/azure-activedirectory-library-for-python) non era ancora disponibile, era necessario usare la classe [`UserPassCredentials`](/python/api/msrestazure/msrestazure.azure_active_directory.userpasscredentials) ora deprecata. Questa classe non supporta l'autenticazione a due fattori e non deve più essere usata.
 
 ## <a name="see-also"></a>Vedere anche
 

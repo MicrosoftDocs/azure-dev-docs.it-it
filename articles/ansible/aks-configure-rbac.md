@@ -5,12 +5,12 @@ keywords: ansible, azure, devops, bash, cloudshell, playbook, servizio Azure Kub
 ms.topic: tutorial
 ms.date: 04/30/2019
 ms.custom: devx-track-ansible
-ms.openlocfilehash: aa2c897a1581a75bcd9bacaa26c34f14474708b0
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 7fef950e1b0b953d73ffd28f59e23fd2c715db2c
+ms.sourcegitcommit: bfaeacc2fb68f861a9403585d744e51a8f99829c
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88239763"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90681784"
 ---
 # <a name="tutorial-configure-role-based-access-control-rbac-roles-in-azure-kubernetes-service-aks-using-ansible"></a>Esercitazione: Configurare ruoli Controllo degli accessi in base al ruolo nel servizio Azure Kubernetes con Ansible
 
@@ -258,7 +258,7 @@ Salvare il codice seguente come `cleanup.yml`:
             path: "aks-{{ name }}-kubeconfig"
 ```
 
-Eseguire il playbook usando il comando `ansible-playbook`:
+Eseguire il playbook con [ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html)
 
 ```bash
 ansible-playbook cleanup.yml

@@ -5,12 +5,12 @@ keywords: ansible, azure, devops, bash, playbook, apache hadoop, hdinsight
 ms.topic: tutorial
 ms.date: 04/30/2019
 ms.custom: devx-track-ansible
-ms.openlocfilehash: 922d1a26daa7b956c2f73210a4ba372d2819d635
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 199603354ff602683b9a6c38f9ff64ebfbe0bd97
+ms.sourcegitcommit: bfaeacc2fb68f861a9403585d744e51a8f99829c
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88240283"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90682049"
 ---
 # <a name="tutorial-configure-a-cluster-in-azure-hdinsight-using-ansible"></a>Esercitazione: Configurare un cluster in Azure HDInsight tramite Ansible
 
@@ -352,7 +352,7 @@ In questa sezione, eseguire il playbook per testare varie funzionalità illustra
 Prima di eseguire il playbook, apportare le modifiche seguenti:
 - Nella sezione `vars` sostituire il segnaposto `{{ resource_group_name }}` con il nome del proprio gruppo di risorse.
 
-Eseguire il playbook usando il comando `ansible-playbook`:
+Eseguire il playbook con [ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html)
 
 ```bash
 ansible-playbook hdinsight.yml
@@ -360,27 +360,7 @@ ansible-playbook hdinsight.yml
 
 ## <a name="clean-up-resources"></a>Pulire le risorse
 
-Quando non sono più necessarie, eliminare le risorse create in questo articolo. 
-
-Salvare il codice seguente come `cleanup.yml`:
-
-```yml
-- hosts: localhost
-  vars:
-    resource_group: myResourceGroup
-  tasks:
-    - name: Delete a resource group
-      azure_rm_resourcegroup:
-        name: "{{ resource_group }}"
-        force_delete_nonempty: yes
-        state: absent
-```
-
-Eseguire il playbook usando il comando `ansible-playbook`:
-
-```bash
-ansible-playbook cleanup.yml
-```
+[!INCLUDE [ansible-delete-resource-group.md](includes/ansible-delete-resource-group.md)]
 
 ## <a name="next-steps"></a>Passaggi successivi
 

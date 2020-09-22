@@ -9,12 +9,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: tutorial
 ms.workload: identity
 ms.custom: devx-track-java
-ms.openlocfilehash: 17a154fe7f41e4079fd9c6dcf1358c2acd50367b
-ms.sourcegitcommit: 035f485f182405fdf3e274ec4f70abfcf5fc9641
+ms.openlocfilehash: efe17eba034b92d771d979a896585d4d5362a11d
+ms.sourcegitcommit: a139e25190960ba89c9e31f861f0996a6067cd6c
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/07/2020
-ms.locfileid: "89511059"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90534399"
 ---
 # <a name="tutorial-reading-a-secret-from-azure-key-vault-in-a-spring-boot-application"></a>Esercitazione: Lettura di un segreto da Azure Key Vault in un'applicazione Spring Boot
 
@@ -34,7 +34,7 @@ Questa esercitazione descrive come creare un'app Spring Boot che legge un valore
 
 * Una sottoscrizione di Azure attiva.
   * Se non si ha una sottoscrizione di Azure, [creare un account gratuito](https://azure.microsoft.com/free/).
-* [Installare l'interfaccia della riga di comando di Azure versione 2.0.67 o successiva](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest) e l'estensione Azure Spring Cloud con il comando `az extension add --name spring-cloud`
+* [Installare l'interfaccia della riga di comando di Azure versione 2.0.67 o successiva](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest&preserve-view=true) e l'estensione Azure Spring Cloud con il comando `az extension add --name spring-cloud`
 * Java Development Kit (JDK) supportato. Per altre informazioni sulle versioni di JDK utilizzabili per lo sviluppo in Azure, vedere <https://aka.ms/azure-jdks>.
 * [Apache Maven](http://maven.apache.org/), versione 3.0 o versione successiva.
 * Il comando `curl`.  Nella maggior parte dei sistemi operativi di tipo UNIX questo comando è preinstallato.  I client specifici del sistema operativo sono disponibili nel [sito Web ufficiale di curl](https://curl.haxx.se/).
@@ -185,6 +185,9 @@ La procedura seguente crea e inizializza l'istanza di Key Vault.
    | name | Nome dell'istanza Key Vault. |
    | spn | Il valore `name` dell'output del comando `az ad sp create-for-rbac` precedente. |
    | secret-permissions | Elenco di operazioni da consentire dell'entità di sicurezza denominata. |
+
+    > [!NOTE]
+    > Anche se il principio dei privilegi minimi suggerisce di concedere a una risorsa il set di privilegi più ridotto possibile, per l'integrazione di Key Vault sono richieste almeno le operazioni `get` e `list`.
 
 1. Archiviare un segreto nella nuova istanza di Key Vault.  Un caso d'uso comune consiste nell'archiviare una stringa di connessione JDBC.  Ad esempio:
 

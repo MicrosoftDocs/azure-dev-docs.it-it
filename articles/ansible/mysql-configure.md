@@ -5,12 +5,12 @@ keywords: ansible, azure, devops, bash, playbook, mysql, database
 ms.topic: tutorial
 ms.date: 04/30/2019
 ms.custom: devx-track-ansible
-ms.openlocfilehash: 6264ca6158017fc919e64fa2e33852076c523fc6
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 1fb753658486a0a1c8f5c44c01f6c4c33c8ecaf0
+ms.sourcegitcommit: bfaeacc2fb68f861a9403585d744e51a8f99829c
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88239983"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90682006"
 ---
 # <a name="tutorial-configure-databases-in-azure-database-for-mysql-using-ansible"></a>Esercitazione: Configurare i database in Database di Azure per MySQL tramite Ansible
 
@@ -57,7 +57,7 @@ Prima di eseguire il playbook, vedere le note seguenti:
 * Viene creato un gruppo di risorse denominato `myResourceGroup`.
 * Il gruppo di risorse viene creato nella posizione `eastus`:
 
-Eseguire il playbook usando il comando `ansible-playbook`:
+Eseguire il playbook con [ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html)
 
 ```bash
 ansible-playbook rg.yml
@@ -106,7 +106,7 @@ Prima di eseguire il playbook, vedere le note seguenti:
 * Nella sezione `vars` il valore di `mysqlserver_name` deve essere univoco.
 * Nella sezione `vars` sostituire `<server_admin_password>` con una password.
 
-Eseguire il playbook usando il comando `ansible-playbook`:
+Eseguire il playbook con [ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html)
 
 ```bash
 ansible-playbook mysql_create.yml
@@ -148,7 +148,7 @@ Prima di eseguire il playbook, vedere le note seguenti:
 * Le connessioni al database di Azure per MySQL comunicano sulla porta 3306. Se si tenta di connettersi da una rete aziendale, il traffico in uscita sulla porta 3306 potrebbe non essere consentito. In tal caso, non sarà possibile connettersi al server a meno che il reparto IT non apra la porta 3306.
 * Il playbook usa il modulo `azure_rm_resource`, che consente l'uso diretto dell'API REST.
 
-Eseguire il playbook usando il comando `ansible-playbook`:
+Eseguire il playbook con [ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html)
 
 ```bash
 ansible-playbook mysql_firewall.yml
@@ -248,7 +248,7 @@ Salvare il playbook seguente come `mysql_query.yml`:
         var: mysqldatabasefacts
 ```
 
-Eseguire il playbook usando il comando `ansible-playbook`:
+Eseguire il playbook con [ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html)
 
 ```bash
 ansible-playbook mysql_query.yml
@@ -316,26 +316,7 @@ Viene inoltre visualizzato l'output seguente per il database MySQL:
 
 ## <a name="clean-up-resources"></a>Pulire le risorse
 
-Quando non sono più necessarie, eliminare le risorse create in questo articolo. 
-
-Salvare il playbook seguente come `cleanup.yml`:
-
-```yml
-- hosts: localhost
-  vars:
-    resource_group: myResourceGroup
-  tasks:
-    - name: Delete a resource group
-      azure_rm_resourcegroup:
-        name: "{{ resource_group }}"
-        state: absent
-```
-
-Eseguire il playbook usando il comando `ansible-playbook`:
-
-```bash
-ansible-playbook cleanup.yml
-```
+[!INCLUDE [ansible-delete-resource-group.md](includes/ansible-delete-resource-group.md)]
 
 ## <a name="next-steps"></a>Passaggi successivi
 

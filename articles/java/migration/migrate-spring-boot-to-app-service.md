@@ -6,12 +6,12 @@ ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 01/22/2019
 ms.custom: devx-track-java
-ms.openlocfilehash: 5bd1611418cca94c5f580b085a067df35d7a1248
-ms.sourcegitcommit: 2f832baf90c208a8a69e66badef5f126d23bbaaf
+ms.openlocfilehash: a8e9f883e76f3c79a9b5470c18907276d9262d03
+ms.sourcegitcommit: bfaeacc2fb68f861a9403585d744e51a8f99829c
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88725235"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90682156"
 ---
 # <a name="migrate-spring-boot-applications-to-azure-app-service"></a>Eseguire la migrazione di applicazioni Spring Boot a Servizio app di Azure
 
@@ -113,7 +113,7 @@ Sarà necessario creare un'app Web nel piano di servizio app, scegliendo "Java S
 
 #### <a name="maven-applications"></a>Applicazioni Maven
 
-Se l'applicazione viene compilata da un file POM Maven, [usare il plug-in Webapp per Maven](/azure/developer/java/spring-framework/deploy-spring-boot-java-app-with-maven-plugin#configure-maven-plugin-for-azure-app-service) per creare l'app Web e distribuire l'applicazione.
+Se l'applicazione viene compilata da un file POM Maven, usare il plug-in Webapp per Maven per creare l'app Web e distribuire l'applicazione. Per altre informazioni, vedere [Avvio rapido: Creare un'app Java nel Servizio app di Azure](/azure/app-service/quickstart-java?tabs=javase&pivots=platform-linux).
 
 #### <a name="non-maven-applications"></a>Applicazioni non Maven
 

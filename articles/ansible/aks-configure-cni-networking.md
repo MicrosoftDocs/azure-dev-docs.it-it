@@ -1,16 +1,16 @@
 ---
 title: Esercitazione - Configurare funzionalità di rete di Azure CNI nel servizio Azure Kubernetes con Ansible
-description: Informazioni su come usare Ansible per configurare funzionalità di rete kubenet nel cluster del servizio Azure Kubernetes
+description: Informazioni su come usare Ansible per configurare funzionalità di rete Azure CNI nel cluster del servizio Azure Kubernetes
 keywords: ansible, azure, devops, bash, cloudshell, playbook, servizio Azure Kubernetes, contenitore, servizio Azure Kubernetes, kubernetes
 ms.topic: tutorial
 ms.date: 04/30/2019
 ms.custom: devx-track-ansible
-ms.openlocfilehash: f3892b9c25b952d2d8c71e4e44857557c0a1813b
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 1f58c8c5964a6e015de9cb1e3990274791037599
+ms.sourcegitcommit: bfaeacc2fb68f861a9403585d744e51a8f99829c
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88239953"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90682113"
 ---
 # <a name="tutorial-configure-azure-cni-networking-in-azure-kubernetes-service-aks-using-ansible"></a>Esercitazione: Configurare funzionalità di rete di Azure CNI nel servizio Azure Kubernetes usando Ansible
 
@@ -245,37 +245,7 @@ localhost                  : ok=9    changed=4    unreachable=0    failed=0    s
 
 ## <a name="clean-up-resources"></a>Pulire le risorse
 
-Quando non sono più necessarie, eliminare le risorse create in questo articolo. 
-
-Il codice del playbook di esempio in questa sezione viene usato per:
-
-- Eliminare un gruppo di risorse a cui si è fatto riferimento nella sezione `vars`.
-
-Salvare il playbook seguente come `cleanup.yml`:
-
-```yml
----
-- hosts: localhost
-  vars:
-      resource_group: {{ resource_group_name }}
-  tasks:
-      - name: Clean up resource group
-        azure_rm_resourcegroup:
-            name: "{{ resource_group }}"
-            state: absent
-            force: yes
-```
-
-Quando si usa il playbook di esempio, è necessario tenere conto di alcuni concetti fondamentali:
-
-- Sostituire il segnaposto `{{ resource_group_name }}` con il nome del proprio gruppo di risorse.
-- Tutte le risorse nel gruppo di risorse specificato verranno eliminate.
-
-Eseguire il playbook usando il comando ansible-playbook:
-
-```bash
-ansible-playbook cleanup.yml
-```
+[!INCLUDE [ansible-delete-resource-group.md](includes/ansible-delete-resource-group.md)]
 
 ## <a name="next-steps"></a>Passaggi successivi
 

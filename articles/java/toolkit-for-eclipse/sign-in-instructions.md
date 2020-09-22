@@ -7,12 +7,12 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: 3be8734755455dfaebcf1478f4441058496f7999
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: d0dbc16a16ca3a5ff367e6c67fceabcb37e2cce6
+ms.sourcegitcommit: a139e25190960ba89c9e31f861f0996a6067cd6c
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86379975"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90534425"
 ---
 # <a name="sign-in-instructions-for-the-azure-toolkit-for-eclipse"></a>Istruzioni di accesso per Azure Toolkit for Eclipse
 
@@ -27,20 +27,19 @@ Sono anche disponibili metodi di [**disconnessione**](#sign-out-of-your-azure-ac
 
 ## <a name="sign-in-to-your-azure-account-by-device-login"></a>Accedere all'account Azure tramite accesso dispositivo
 
-Per accedere ad Azure tramite accesso dispositivo, procedere come segue:
+Questa sezione illustra il processo di accesso ad Azure con l'accesso dispositivo.
 
 1. Aprire il progetto con Eclipse.
 
-2. Fare clic su **Tools** (Strumenti), su **Azure** e quindi fare clic su **Sign In** (Accedi).
-   ![Menu di Eclipse per l'accesso ad Azure][I01]
+1. Fare clic su **Tools** (Strumenti), su **Azure** e quindi fare clic su **Sign In** (Accedi).
 
-3. Nella finestra **Azure Sign In** (Accesso ad Azure), selezionare **Device Login** (Accesso dispositivo) e quindi fare clic su **Sign In** (Accedi).
+      :::image type="content" source="media/sign-in-instructions/eclipse-azure-signin.png" alt-text="Accesso ad Azure nell'IDE di Eclipse.":::
+
+1. Nella finestra **Azure Sign In** (Accesso ad Azure), selezionare **Device Login** (Accesso dispositivo) e quindi fare clic su **Sign In** (Accedi).
 
    ![Finestra di accesso ad Azure con l'accesso dispositivo selezionato][I02]
 
-4. Nella finestra di dialogo **Azure Device Login** (Accesso dispositivo Azure) fare clic su **Copy&Open** (Copia e apri).
-
-   ![Finestra di dialogo di accesso ad Azure][I03]
+1. Nella finestra di dialogo **Azure Device Login** (Accesso dispositivo Azure) fare clic su **Copy&Open** (Copia e apri).
 
 > [!NOTE]
 >
@@ -51,13 +50,11 @@ Per accedere ad Azure tramite accesso dispositivo, procedere come segue:
 > 2. Selezionare il browser che si preferisce usare
 >
 
-5. Nel browser incollare il codice dispositivo (copiato facendo clic su **Copy&Open** nell'ultimo passaggio) e quindi fare clic su **Avanti**.
+1. Nel browser incollare il codice dispositivo (copiato facendo clic su **Copy&Open** nell'ultimo passaggio) e quindi fare clic su **Avanti**.
 
-   ![Accesso al dispositivo nel browser][I04]
+1. Selezionare l'account Azure e completare le procedure di autenticazione necessarie per eseguire l'accesso.
 
-6. Infine, nella finestra di dialogo **Select Subscriptions** (Seleziona sottoscrizioni) selezionare le sottoscrizioni da usare e quindi fare clic su **OK**.
-
-   ![Finestra di dialogo Seleziona sottoscrizioni][I05]
+1. Dopo l'accesso, chiudere il browser e tornare all'IDE di Eclipse. Nella finestra di dialogo **Select Subscriptions** (Seleziona sottoscrizioni) selezionare le sottoscrizioni da usare e quindi fare clic su **OK**.
 
 ## <a name="sign-in-to-your-azure-account-by-service-principal"></a>Accedere all'account Azure tramite entità servizio
 
@@ -66,15 +63,14 @@ La sezione seguente illustra come creare un file di credenziali che contiene i d
 1. Aprire il progetto con Eclipse.
 
 2. Fare clic su **Tools** (Strumenti), su **Azure** e quindi fare clic su **Sign In** (Accedi).
-   ![Comando di accesso ad Azure in Eclipse][A01]
+
+      :::image type="content" source="media/sign-in-instructions/eclipse-azure-signin.png" alt-text="Accesso ad Azure nell'IDE di Eclipse.":::
 
 3. Nella finestra **Azure Sign In** (Accesso ad Azure) selezionare **Service Principal** (Entità servizio). Se il file di autenticazione dell'entità servizio non è già disponibile, fare clic su **New** (Nuovo) per crearne uno. Altrimenti è possibile fare clic su **Browse** (Sfoglia) per aprirlo e procedere con il passaggio 8.
 
    ![Finestra di accesso ad Azure con l'entità servizio selezionata][A02]
 
 4. Nella finestra di dialogo **Azure Device Login** (Accesso dispositivo Azure) fare clic su **Copy&Open** (Copia e apri).
-
-   ![Finestra di dialogo di accesso ad Azure][A08]
 
 > [!NOTE]
 >
@@ -87,15 +83,9 @@ La sezione seguente illustra come creare un file di credenziali che contiene i d
 
 5. Nel browser incollare il codice dispositivo (copiato facendo clic su **Copy&Open** nell'ultimo passaggio) e quindi fare clic su **Avanti**.
 
-   ![Accesso al dispositivo nel browser][A03]
-
 6. Nella finestra **Create authentication files** (Crea file di autenticazione) selezionare le sottoscrizioni da usare, scegliere la directory di destinazione e quindi fare cli su **Start** (Avvio).
 
-   ![Finestra di creazione dei file di autenticazione][A04]
-
 7. Nella finestra di dialogo **Service Principal Creation Status** (Stato creazione entità servizio) fare clic su **OK** al termine della creazione dei file.
-
-   ![Finestra di dialogo sullo stato di creazione dell'entità servizio][A05]
 
 8. L'indirizzo del file creato verrà inserito automaticamente nella finestra **Azure Sign In** (Accesso ad Azure). Fare clic su **Sign in** (Accedi).
 
@@ -103,7 +93,6 @@ La sezione seguente illustra come creare un file di credenziali che contiene i d
 
 9. Infine, nella finestra di dialogo **Select Subscriptions** (Seleziona sottoscrizioni) selezionare le sottoscrizioni da usare e quindi fare clic su **OK**.
 
-   ![Finestra di dialogo Seleziona sottoscrizioni][A07]
 
 ## <a name="sign-out-of-your-azure-account"></a>Disconnettersi dall'account Azure
 
@@ -111,11 +100,7 @@ Dopo avere configurato l'account usando i passaggi precedenti, l'accesso verrà 
 
 1. In Eclipse fare clic su **Tools** (Strumenti), su **Azure** e quindi su **Sign Out** (Disconnetti).
 
-   ![Menu di Eclipse per la disconnessione da Azure][L01]
-
 2. Quando viene visualizzata la finestra di dialogo **Azure Sign Out** (Disconnessione da Azure), fare clic su **Yes** (Sì).
-
-   ![Finestra di dialogo di disconnessione][L02]
 
 ## <a name="next-steps"></a>Passaggi successivi
 
@@ -126,21 +111,7 @@ Dopo avere configurato l'account usando i passaggi precedenti, l'accesso verrà 
 
 <!-- IMG List -->
 
-[I01]: media/sign-in-instructions/I01.png
 [I02]: media/sign-in-instructions/I02.png
-[I03]: media/sign-in-instructions/I03.png
-[I04]: media/sign-in-instructions/I04.png
-[I05]: media/sign-in-instructions/I05.png
 
-[A01]: media/sign-in-instructions/A01.png
 [A02]: media/sign-in-instructions/A02.png
-[A03]: media/sign-in-instructions/A03.png
-[A04]: media/sign-in-instructions/A04.png
-[A05]: media/sign-in-instructions/A05.png
 [A06]: media/sign-in-instructions/A06.png
-[A07]: media/sign-in-instructions/A07.png
-[A08]: media/sign-in-instructions/A08.png
-
-[L01]: media/sign-in-instructions/L01.png
-[L02]: media/sign-in-instructions/L02.png
-[L03]: media/sign-in-instructions/L03.png

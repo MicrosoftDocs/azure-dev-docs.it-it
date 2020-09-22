@@ -5,12 +5,12 @@ keywords: ansible, azure, devops, bash, playbook, bus di servizio, coda
 ms.topic: tutorial
 ms.date: 04/30/2019
 ms.custom: devx-track-ansible
-ms.openlocfilehash: 438c5787469a31403285f8884452d5293f1460f4
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 2f58dac776de66d0d4f449bf4fe34a7c9d30c8fe
+ms.sourcegitcommit: bfaeacc2fb68f861a9403585d744e51a8f99829c
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88239993"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90681991"
 ---
 # <a name="tutorial-configure-queues-in-azure-service-bus-using-ansible"></a>Esercitazione: Configurare code nel bus di servizio di Azure tramite Ansible
 
@@ -69,7 +69,7 @@ Salvare il playbook seguente come `servicebus_queue.yml`:
           var: queue
 ```
 
-Eseguire il playbook usando il comando `ansible-playbook`:
+Eseguire il playbook con [ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html)
 
 ```bash
 ansible-playbook servicebus_queue.yml
@@ -106,7 +106,7 @@ Salvare il playbook seguente come `servicebus_queue_policy.yml`:
 Prima di eseguire il playbook, vedere le note seguenti:
 - Il valore `rights` rappresenta il privilegio di un utente per la coda. Specificare uno di questi valori: `manage`, `listen`, `send` o `listen_send`.
 
-Eseguire il playbook usando il comando `ansible-playbook`:
+Eseguire il playbook con [ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html)
 
 ```bash
 ansible-playbook servicebus_queue_policy.yml
@@ -139,7 +139,7 @@ Salvare il playbook seguente come `servicebus_namespace_info.yml`:
 Prima di eseguire il playbook, vedere le note seguenti:
 - Il valore `show_sas_policies` indica se visualizzare i criteri di firma di accesso condiviso nello spazio dei nomi specificato. Per impostazione predefinita, il valore è `False` per evitare un sovraccarico di rete aggiuntivo.
 
-Eseguire il playbook usando il comando `ansible-playbook`:
+Eseguire il playbook con [ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html)
 
 ```bash
 ansible-playbook servicebus_namespace_info.yml
@@ -174,7 +174,7 @@ Salvare il playbook seguente come `servicebus_queue_info.yml`:
 Prima di eseguire il playbook, vedere le note seguenti:
 - Il valore `show_sas_policies` indica se visualizzare i criteri di firma di accesso condiviso nella coda specificata. Per impostazione predefinita, il valore è impostato su `False` per evitare un sovraccarico di rete aggiuntivo.
 
-Eseguire il playbook usando il comando `ansible-playbook`:
+Eseguire il playbook con [ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html)
 
 ```bash
 ansible-playbook servicebus_queue_info.yml
@@ -203,7 +203,7 @@ Salvare il playbook seguente come `servicebus_queue_policy_delete.yml`:
           state: absent
 ```
 
-Eseguire il playbook usando il comando `ansible-playbook`:
+Eseguire il playbook con [ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html)
 
 ```bash
 ansible-playbook servicebus_queue_policy_delete.yml
@@ -241,7 +241,7 @@ Salvare il codice seguente come `cleanup.yml`:
           force_delete_nonempty: yes
 ```
 
-Eseguire il playbook usando il comando `ansible-playbook`:
+Eseguire il playbook con [ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html)
 
 ```bash
 ansible-playbook cleanup.yml

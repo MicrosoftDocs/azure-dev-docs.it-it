@@ -7,22 +7,22 @@ documentationcenter: java
 author: selvasingh
 ms.assetid: 20d41e88-9eab-462e-8ee3-89da71e7a33f
 ms.reviewer: asirveda
-ms.date: 02/01/2018
+ms.date: 08/25/2020
 ms.service: app-service
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
 ms.custom: devx-track-java
-ms.openlocfilehash: ea650fdf86f0a614303f94f67792f2c05827576e
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: 053bca7e41ef9c95a8ad0e20b40d682552d0b384
+ms.sourcegitcommit: a139e25190960ba89c9e31f861f0996a6067cd6c
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86378395"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90534520"
 ---
 # <a name="create-a-hello-world-web-app-for-azure-app-service-using-eclipse"></a>Creare un'app Web Hello World per Servizio app di Azure con Eclipse
 
-Usando il plug-in open source [Azure Toolkit for Eclipse](https://marketplace.eclipse.org/content/azure-toolkit-eclipse), è possibile creare e distribuire in pochi minuti un'applicazione Hello World di base come app Web in Servizio app di Azure.
+Questo articolo illustra i passaggi necessari per creare un'app Web Hello World di base e pubblicarla in Servizio app di Azure usando [Azure Toolkit for Eclipse](https://marketplace.eclipse.org/content/azure-toolkit-eclipse).
 
 > [!NOTE]
 >
@@ -37,64 +37,80 @@ Usando il plug-in open source [Azure Toolkit for Eclipse](https://marketplace.ec
 
 ## <a name="installation-and-sign-in"></a>Installazione e accesso
 
-1. Trascinare il pulsante seguente nell'area di lavoro di Eclipse in esecuzione per installare il plug-in Azure Toolkit for Eclipse ([altre opzioni di installazione](installation.md)).
+La procedura seguente illustra il processo di accesso ad Azure nell'ambiente di sviluppo Eclipse.
 
-    [![Trascinare nell'area di lavoro Eclipse* in esecuzione. *Richiede Eclipse Marketplace Client](https://marketplace.eclipse.org/sites/all/themes/solstice/public/images/marketplace/btn-install.png)](http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1919278 "Trascinare nell'area di lavoro Eclipse* in esecuzione. *Richiede Eclipse Marketplace Client")
+1. Se non è stato installato il plug-in, vedere [Installazione di Azure Toolkit for Eclipse](installation.md).
 
 1. Per accedere all'account Azure, fare clic su **Tools** (Strumenti), su **Azure** e quindi su **Sign In** (Accedi).
-   ![Menu di Eclipse per l'accesso ad Azure][I01]
+
+   :::image type="content" source="media/sign-in-instructions/eclipse-azure-signin.png" alt-text="Accesso ad Azure nell'IDE di Eclipse.":::
 
 1. Nella finestra **Azure Sign In** (Accesso ad Azure) selezionare **Device Login** (Accesso dispositivo) e quindi fare clic su **Sign in** (Accedi) ([altre opzioni di accesso](sign-in-instructions.md)).
 
-   ![Finestra di accesso ad Azure con l'accesso dispositivo selezionato][I02]
-
 1. Nella finestra di dialogo **Azure Device Login** (Accesso dispositivo Azure) fare clic su **Copy&Open** (Copia e apri).
-
-   ![Finestra di dialogo di accesso ad Azure][I03]
 
 1. Nel browser incollare il codice dispositivo (copiato facendo clic su **Copy&Open** nell'ultimo passaggio) e quindi fare clic su **Avanti**.
 
-   ![Accesso al dispositivo nel browser][I04]
+1. Selezionare l'account Azure e completare le procedure di autenticazione necessarie per eseguire l'accesso.
 
-1. Infine, nella finestra di dialogo **Select Subscriptions** (Seleziona sottoscrizioni) selezionare le sottoscrizioni da usare e quindi fare clic su **OK**.
+1. Dopo l'accesso, chiudere il browser e tornare all'IDE di Eclipse. Nella finestra di dialogo **Select Subscriptions** (Seleziona sottoscrizioni) selezionare le sottoscrizioni da usare e quindi fare clic su **OK**.
 
-   ![Finestra di dialogo Seleziona sottoscrizioni][I05]
+### <a name="install-required-software-optional"></a>Installare il software necessario *(facoltativo)*
 
-## <a name="creating-web-app-project"></a>Creazione del progetto di app Web
+Per assicurarsi che i componenti necessari funzionino con i progetti di app Web, seguire questa procedura:
 
-1. Fare clic su **File**, **New** (Nuovo) e quindi su **Dynamic Web Project** (Progetto Web dinamico). Se **Dynamic Web Project** non è elencato tra i progetti disponibili dopo aver fatto clic su **File** e **New**, fare clic su **File**, **New**, **Project...** , espandere **Web**, fare clic su **Dynamic Web Project** e fare clic su **Next**.
+1. Fare clic sul menu **Help** (?) e quindi scegliere **Install New Software** (Installa nuovo software).
 
-   ![Creazione di un nuovo progetto Web dinamico][file-new-dynamic-web-project]
+1. Nella finestra di dialogo **Available Software** (Software disponibile) fare clic su **Manage** (Gestisci) e assicurarsi che sia selezionata la versione più recente di Eclipse, ad esempio *2020-06*.
 
-2. Ai fini di questa esercitazione, denominare il progetto **MyWebApp**. L'aspetto della schermata sarà simile al seguente:
+1. Fare clic su **Apply and Close** (Applica e chiudi). Espandere il menu a discesa *Work with* (Compatibile con) per visualizzare i siti suggeriti. Selezionare il sito della versione di Eclipse più recente per eseguire una query sul software disponibile.
+
+1. Scorrere l'elenco verso il basso e selezionare l'elemento **Web, XML, Java EE and OSGi Enterprise Development** (Web, XML, Java EE e OSGi Enterprise Development). Fare clic su **Avanti**.
+
+1. Nella finestra Install Details (Dettagli installazione) fare clic su **Next** (Avanti).
+
+1. Nella finestra di dialogo Revisione licenze leggere le condizioni dei contratti di licenza. Se si accettano le condizioni dei contratti di licenza, fare clic su **I accept the terms of the license agreements** (Accetto le condizioni dei contratti di licenza) e quindi fare clic su **Finish** (Fine). 
+
+   > [!NOTE]
+   > È possibile controllare lo stato di avanzamento dell'installazione nell'angolo in basso a destra dell'area di lavoro di Eclipse.
+
+1. Se viene chiesto di riavviare Eclipse per completare l'installazione, fare clic su **Riavvia ora**.
+
+## <a name="creating-a-web-app-project"></a>Creazione di un progetto di app Web
+
+1. Fare clic su **File**, espandere **New** (Nuovo) e quindi fare clic su **Project** (Progetto). Nella finestra di dialogo New Project (Nuovo progetto) espandere **Web**, selezionare **Dynamic Web Project** (Progetto Web dinamico) e fare clic su **Next** (Avanti).
+
+   > [!TIP]
+   > Se **Web** non è indicato nell'elenco tra i progetti disponibili, vedere [questa sezione](#install-required-software-optional) per assicurarsi che il software Eclipse richiesto sia disponibile.
+
+1. Ai fini di questa esercitazione, denominare il progetto **MyWebApp**. L'aspetto della schermata sarà simile al seguente:
    
    ![Proprietà del nuovo progetto Web dinamico][dynamic-web-project-properties]
 
-3. Fare clic su **Fine**.
+1. Fare clic su **Fine**.
 
-4. Nella visualizzazione Project Explorer (Esplora progetti) di Eclipse espandere **MyWebApp**. Fare clic con il pulsante destro del mouse su **WebContent**, scegliere **New** e quindi fare clic su **JSP File**.
+1. Nel riquadro di esplorazione pacchetti a sinistra espandere **MyWebApp**. Fare clic con il pulsante destro del mouse su **WebContent**, passare con il puntatore del mouse su **New** (Nuovo) e quindi fare clic su **Other** (Altro).
 
-   ![Creare un nuovo file JSP][create-new-jsp-file]
+1. Espandere **Web** per trovare l'opzione **JSP File** (File JSP). Fare clic su **Avanti**.
 
-5. Nella finestra di dialogo **New JSP File** (Nuovo file JSP) denominare il file **index.jsp**, mantenere il nome **MyWebApp/WebContent** per la cartella padre, quindi fare clic su **Next** (Avanti).
+1. Nella finestra di dialogo **New JSP File** (Nuovo file JSP) denominare il file **index.jsp**, mantenere il nome **MyWebApp/WebContent** per la cartella padre, quindi fare clic su **Next** (Avanti).
 
    ![Finestra di dialogo New JSP File (Nuovo file JSP)][new-jsp-file-dialog]
 
-6. Per le finalità di questa esercitazione, nella finestra di dialogo **Select JSP Template** (Seleziona modello JSP) selezionare **New JSP File (html)** (Nuovo file JSP - html), quindi fare clic su **Finish** (Fine).
+1. Per le finalità di questa esercitazione, nella finestra di dialogo **Select JSP Template** (Seleziona modello JSP) selezionare **New JSP File (html 5)** (Nuovo file JSP - html 5) e quindi fare clic su **Finish** (Fine).
 
-   ![Selezionare il modello JSP][select-jsp-template]
-
-7. Quando in Eclipse viene aperto il file index.jsp, aggiungere testo in modo da visualizzare dinamicamente **Hello World!** all'interno dell'elemento `<body>` esistente. Il contenuto `<body>` aggiornato deve avere un aspetto simile all'esempio seguente:
+1. Quando in Eclipse viene aperto il file index.jsp, aggiungere testo in modo da visualizzare dinamicamente **Hello World!** all'interno dell'elemento `<body>` esistente. Il contenuto `<body>` aggiornato deve avere un aspetto simile all'esempio seguente:
    
    ```jsp
-   <body><b><% out.println("Hello World!"); %></b></body>
+   <body>
+   <b><% out.println("Hello World!"); %></b>
+   </body>
    ```
+1. Salvare index.jsp.
 
-8. Salvare index.jsp.
+## <a name="deploying-the-web-app-to-azure"></a>Distribuzione dell'app Web in Azure
 
-## <a name="deploying-web-app-to-azure"></a>Distribuzione dell'app Web in Azure
-
-1. Nella visualizzazione Project Explorer (Esplora progetti) di Eclipse fare clic con il pulsante destro del mouse sul progetto e scegliere **Azure**, quindi fare clic su **Publish as Azure Web App** (Pubblica come app Web di Azure).
+1. Nel riquadro di esplorazione pacchetti a sinistra fare clic con il pulsante destro del mouse sul progetto e scegliere **Azure** e quindi fare clic su **Publish as Azure Web App** (Pubblica come app Web di Azure).
    
    ![Publish as Azure Web App][publish-as-azure-web-app]
 
@@ -102,37 +118,27 @@ Usando il plug-in open source [Azure Toolkit for Eclipse](https://marketplace.ec
 
    * Selezionare un'app Web esistente, se presente.
 
-      ![Selezionare un servizio app][select-app-service]
+   * Se non esiste già un'app Web, fare clic su **Create** (Crea).
 
-   * Fare clic su **Create New App** (Crea nuova app).
-
-      ![Creare un servizio app][create-app-service]
+      In questa finestra di dialogo è possibile configurare l'ambiente di runtime, il gruppo di risorse del piano di servizio dell'app e le impostazioni dell'app. Se necessario, creare nuove risorse.
 
       Specificare le informazioni necessarie per l'app Web nella finestra di dialogo **Create App Service** (Crea servizio app) e quindi fare clic su **Create** (Crea).
 
-      In questa finestra di dialogo è possibile configurare l'ambiente di runtime, le impostazioni dell'app, il piano di servizio e il gruppo di risorse.
-
-      ![Finestra di dialogo Crea servizio app][create-app-service-dialog]
-
 1. Selezionare l'app Web e quindi fare clic su **Deploy** (Distribuisci).
 
-   ![Distribuire il servizio app][deploy-app-service]
-
 1. Dopo aver distribuito l'app Web, il toolkit visualizza lo stato come **Pubblicato** sotto la scheda **Log attività di Azure**, come collegamento ipertestuale all'URL dell'app Web distribuita.
-
-   ![Stato della pubblicazione][publish-status]
 
 1. È possibile passare all'app Web usando il collegamento contenuto nel messaggio di stato.
 
    ![Collegamento all'app Web][browse-web-app]
-
-[!INCLUDE [show-azure-explorer](includes/show-azure-explorer.md)]
 
 ## <a name="cleaning-up-resources"></a>Pulizia delle risorse
 
 1. Dopo aver pubblicato l'app Web in Azure, è possibile gestirla facendo clic con il pulsante destro del mouse in Azure Explorer e scegliendo una delle opzioni del menu di scelta rapida. È ad esempio possibile **eliminare** l'app Web per pulire le risorse per l'esercitazione.
 
    ![Gestire il servizio app][manage-app-service]
+
+[!INCLUDE [show-azure-explorer](includes/show-azure-explorer.md)]
 
 ## <a name="next-steps"></a>Passaggi successivi
 
@@ -151,23 +157,10 @@ Per altre informazioni sulla creazione di App Web di Azure, vedere la [Panoramic
 [Legacy Version]: create-hello-world-web-app-legacy-version.md
 
 <!-- IMG List -->
-[I01]: media/sign-in-instructions/I01.png
-[I02]: media/sign-in-instructions/I02.png
-[I03]: media/sign-in-instructions/I03.png
-[I04]: media/sign-in-instructions/I04.png
-[I05]: media/sign-in-instructions/I05.png
 
 [browse-web-app]: media/create-hello-world-web-app/browse-web-app.png
-[file-new-dynamic-web-project]: media/create-hello-world-web-app/file-new-dynamic-web-project.png
 [dynamic-web-project-properties]: media/create-hello-world-web-app/dynamic-web-project-properties.png
-[create-new-jsp-file]: media/create-hello-world-web-app/create-new-jsp-file.png
 [new-jsp-file-dialog]: media/create-hello-world-web-app/new-jsp-file-dialog.png
-[select-jsp-template]: media/create-hello-world-web-app/select-jsp-template.png
 [publish-as-azure-web-app]: media/create-hello-world-web-app/publish-as-azure-web-app.png
-[deploy-web-app-dialog]: media/create-hello-world-web-app/deploy-web-app-dialog.png
-[select-app-service]: media/create-hello-world-web-app/select-app-service.png
-[create-app-service-dialog]: media/create-hello-world-web-app/create-app-service-dialog.png
 [publish-status]: media/create-hello-world-web-app/publish-status.png
-[create-app-service]: media/create-hello-world-web-app/create-app-service.png
-[deploy-app-service]: media/create-hello-world-web-app/deploy-app-service.png
 [manage-app-service]: media/create-hello-world-web-app/manage-app-service.png

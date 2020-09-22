@@ -2,40 +2,39 @@
 title: Gestire macchine virtuali con Azure Explorer per IntelliJ
 description: Informazioni su come gestire macchine virtuali di Azure con Azure Explorer per IntelliJ.
 documentationcenter: java
-ms.date: 11/13/2018
+ms.date: 09/09/2020
 ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: 65f0c827fec68bc6a11d7dcaf380738967e16a92
-ms.sourcegitcommit: 300251b3d866bac9c7d2dfc3133efaaea8e0ce04
+ms.openlocfilehash: 058842e8f7d50d885d2a5d28c56ee144072e637a
+ms.sourcegitcommit: a139e25190960ba89c9e31f861f0996a6067cd6c
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87438478"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90534364"
 ---
 # <a name="manage-virtual-machines-by-using-the-azure-explorer-for-intellij"></a>Gestire macchine virtuali con Azure Explorer per IntelliJ
 
 Azure Explorer, che fa parte di Azure Toolkit for IntelliJ, offre agli sviluppatori Java una soluzione di facile uso per la gestione delle macchine virtuali con il proprio account Azure nell'ambiente di sviluppo integrato (IDE) di IntelliJ.
 
+Questo articolo illustra come creare e gestire macchine virtuali tramite Azure Explorer in IntelliJ.
+
 [!INCLUDE [prerequisites](includes/prerequisites.md)]
 
 [!INCLUDE [show-azure-explorer](includes/show-azure-explorer.md)]
 
-## <a name="create-a-virtual-machine-in-intellij"></a>Creare una macchina virtuale in IntelliJ
+## <a name="create-a-virtual-machine"></a>Creare una macchina virtuale
 
 Per creare una macchina virtuale con Azure Explorer, eseguire queste operazioni: 
 
 1. Accedere al proprio account Azure tramite la procedura descritta nell'articolo [Istruzioni di accesso per Azure Toolkit for IntelliJ].
 
 2. Nella visualizzazione **Azure Explorer** espandere il nodo **Azure**, fare clic con il pulsante destro del mouse su **Macchine virtuali** e quindi fare clic su **Crea macchina virtuale**. 
-
-   ![Comando Crea macchina virtuale][CR01]  
-    Viene visualizzata la procedura guidata **Creare una nuova macchina virtuale**.
+ 
+   :::image type="content" source="media/managing-virtual-machines-using-azure-explorer/CR01.png" alt-text="Opzione Crea macchina virtuale in Azure Explorer.":::
 
 3. Nella finestra **Scegliere una sottoscrizione** selezionare la sottoscrizione e fare clic su **Avanti**. 
-
-   ![Finestra di dialogo Scegliere una sottoscrizione][CR02]
 
 4. Nella finestra **Selezionare un'immagine di macchina virtuale** immettere le informazioni seguenti:
 
@@ -53,8 +52,6 @@ Per creare una macchina virtuale con Azure Explorer, eseguire queste operazioni:
 
       * **Version #** (N. versione): specifica la versione dello SKU selezionato da usare.
 
-   ![Finestra Selezionare un'immagine di macchina virtuale][CR03]
-
 5. Fare clic su **Avanti**. 
 
 6. Nella finestra **Impostazioni di base della macchina virtuale** immettere le informazioni seguenti:
@@ -65,9 +62,7 @@ Per creare una macchina virtuale con Azure Explorer, eseguire queste operazioni:
 
    * **Nome utente**: specifica l'account amministratore da creare per la gestione della macchina virtuale.
 
-   * **Password** e **Confirm** (Conferma): specificano la password per l'account amministratore.
-
-   ![Finestra Impostazioni di base della macchina virtuale][CR04]
+   * **Password**: specificano la password per l'account amministratore. Immettere di nuovo la password nella casella **Conferma** per convalidare le credenziali.
 
 7. Fare clic su **Avanti**. 
 
@@ -77,15 +72,9 @@ Per creare una macchina virtuale con Azure Explorer, eseguire queste operazioni:
       * **Crea nuovo**: specifica che si vuole creare un nuovo gruppo di risorse.
       * **Usa esistente**: specifica che si vuole scegliere in un elenco i gruppi di risorse associati all'account di Azure.
 
-       ![Finestra Risorse associate][CR07]
-
    * **Account di archiviazione**: specifica l'account di archiviazione da usare per archiviare la macchina virtuale. È possibile usare un account di archiviazione esistente o crearne uno nuovo. Se si sceglie **Crea nuovo**, verrà visualizzata la finestra di dialogo seguente:
 
-      ![Finestra di dialogo Crea account di archiviazione][CR05]
-
    * **Virtual Network** (Rete virtuale) e **Subnet**: specificano la rete virtuale e la subnet a cui si connetterà la macchina virtuale. È possibile usare una subnet e una rete esistente oppure creare una rete e una subnet nuove. Se si seleziona **Crea nuovo**, verrà visualizzata la finestra di dialogo seguente:
-
-      ![Finestra di dialogo Crea rete virtuale][CR06]
 
    * **Indirizzo IP pubblico**: specifica un indirizzo IP con accesso all'esterno per la macchina virtuale. È possibile scegliere di creare un nuovo indirizzo IP o, se la macchina virtuale non avrà un indirizzo IP pubblico, è possibile selezionare **(Nessuno)** . 
 
@@ -93,42 +82,33 @@ Per creare una macchina virtuale con Azure Explorer, eseguire queste operazioni:
 
    * **Set di disponibilità**: specifica un set di disponibilità facoltativo a cui può appartenere la macchina virtuale. È possibile selezionare un set di disponibilità esistente, creare un nuovo set di disponibilità o, se la macchina virtuale non apparterrà a un set di disponibilità, selezionare **(Nessuno)** .
 
-9. Fare clic su **Fine**.  
-    La nuova macchina virtuale viene visualizzata nella finestra dello strumento Azure Explorer. 
+9. Fare clic su **Fine**. La nuova macchina virtuale viene visualizzata nella finestra dello strumento Azure Explorer. 
 
-   ![Nuova macchina virtuale nella visualizzazione Azure Explorer][CR08]
-
-## <a name="restart-a-virtual-machine-in-intellij"></a>Riavviare una macchina virtuale in IntelliJ
+## <a name="restart-a-virtual-machine"></a>Riavviare una macchina virtuale
 
 Per riavviare una macchina virtuale con Azure Explorer in IntelliJ, eseguire queste operazioni:
 
 1. Nella visualizzazione **Azure Explorer** fare clic con il pulsante destro del mouse sulla macchina virtuale e quindi selezionare **Riavvia**.
 
-   ![Comando di riavvio della macchina virtuale][RE01]
-
 2. Nella finestra di conferma fare clic su **Sì**. 
 
    ![Finestra di conferma del riavvio della macchina virtuale][RE02]
 
-## <a name="shut-down-a-virtual-machine-in-intellij"></a>Arrestare una macchina virtuale in IntelliJ
+## <a name="shut-down-a-virtual-machine"></a>Arrestare una macchina virtuale
 
 Per arrestare una macchina virtuale in esecuzione con Azure Explorer in IntelliJ, eseguire queste operazioni:
 
 1. Nella visualizzazione **Azure Explorer** fare clic con il pulsante destro del mouse sulla macchina virtuale e quindi selezionare **Chiudi**.
 
-   ![Comando di arresto della macchina virtuale][SH01]
-
 2. Nella finestra di conferma fare clic su **Sì**. 
 
    ![Finestra di conferma dell'arresto della macchina virtuale][SH02]
 
-## <a name="delete-a-virtual-machine-in-intellij"></a>Eliminare una macchina virtuale in IntelliJ
+## <a name="delete-a-virtual-machine"></a>Eliminare una macchina virtuale
 
 Per eliminare una macchina virtuale con Azure Explorer in IntelliJ, eseguire queste operazioni:
 
 1. Nella visualizzazione **Azure Explorer** fare clic con il pulsante destro del mouse sulla macchina virtuale e quindi selezionare **Elimina**.
-
-   ![Comando di eliminazione della macchina virtuale][DE01]
 
 2. Nella finestra di conferma fare clic su **Sì**. 
 

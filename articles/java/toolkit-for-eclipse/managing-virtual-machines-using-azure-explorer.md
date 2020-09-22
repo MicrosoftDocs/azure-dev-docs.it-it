@@ -2,17 +2,17 @@
 title: Gestire macchine virtuali con Azure Explorer per Eclipse
 description: Informazioni su come gestire macchine virtuali di Azure con Azure Explorer per Eclipse.
 documentationcenter: java
-ms.date: 11/13/2018
+ms.date: 08/25/2020
 ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: 5d561d59b4bc84e26fc405135c26de6ec0f4f27f
-ms.sourcegitcommit: 300251b3d866bac9c7d2dfc3133efaaea8e0ce04
+ms.openlocfilehash: 28b0e304ee64cb24f098908e83a92d230657741f
+ms.sourcegitcommit: a139e25190960ba89c9e31f861f0996a6067cd6c
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87438343"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90534609"
 ---
 # <a name="manage-virtual-machines-by-using-the-azure-explorer-for-eclipse"></a>Gestire macchine virtuali con Azure Explorer per Eclipse
 
@@ -22,26 +22,19 @@ Incluso in Toolkit di Azure per Eclipse, Azure Explorer offre agli sviluppatori 
 
 [!INCLUDE [show-azure-explorer](includes/show-azure-explorer.md)]
 
-## <a name="create-a-virtual-machine-in-eclipse"></a>Creare una macchina virtuale in Eclipse
-
-Per creare una macchina virtuale con Azure Explorer, eseguire queste operazioni:
+## <a name="create-a-virtual-machine"></a>Creare una macchina virtuale
 
 1. Accedere al proprio account Azure seguendo le [Istruzioni di accesso ad Azure per il Toolkit di Azure per Eclipse](/azure/developer/java/toolkit-for-eclipse/sign-in-instructions).
 
-2. Nella visualizzazione **Azure Explorer** espandere il nodo **Azure**, fare clic con il pulsante destro del mouse su **Macchine virtuali** e quindi fare clic su **Crea macchina virtuale**.
+1. Nella visualizzazione **Azure Explorer** espandere il nodo **Azure**, fare clic con il pulsante destro del mouse su **Macchine virtuali** e quindi fare clic su **Crea macchina virtuale**.
 
-   ![Comando Crea macchina virtuale][CR01]  
+   :::image type="content" source="media/managing-virtual-machines-using-azure-explorer/CR01.png" alt-text="Opzione Crea macchina virtuale in Azure Explorer.":::
 
-   Viene visualizzata la procedura guidata **Creare una nuova macchina virtuale**.
+1. Nella finestra **Scegliere una sottoscrizione** selezionare la sottoscrizione e fare clic su **Avanti**.
 
-3. Nella finestra **Scegliere una sottoscrizione** selezionare la sottoscrizione e fare clic su **Avanti**.
+1. Nella finestra **Selezionare un'immagine per la macchina virtuale** selezionare un valore per **Località**, ad esempio *Stati Uniti occidentali*. Sarà possibile scegliere se procedere con un'immagine consigliata o selezionare un'immagine personalizzata. Per questa guida di avvio rapido si procederà con l'immagine consigliata. 
 
-   ![Finestra di dialogo Scegliere una sottoscrizione][CR02]
-
-4. Nella finestra **Selezionare un'immagine di macchina virtuale** immettere le informazioni seguenti:
-
-   * **Località**: specifica dove verrà creata la macchina virtuale, ad esempio *West US* (Stati Uniti occidentali).
-
+   Se si sceglie di selezionare un'immagine personalizzata, immettere le informazioni seguenti:
    * **Publisher** (Editore): specifica l'editore che ha creato l'immagine che verrà usata per creare la macchina virtuale, ad esempio *Microsoft*.
 
    * **Offer** (Offerta): specifica l'offerta di macchina virtuale dell'editore selezionato da usare, ad esempio *JDK*.
@@ -50,11 +43,9 @@ Per creare una macchina virtuale con Azure Explorer, eseguire queste operazioni:
 
    * **Version #** (N. versione): specifica la versione dello SKU selezionato da usare.
 
-   ![Finestra Selezionare un'immagine di macchina virtuale][CR03]
+1. Fare clic su **Avanti**.
 
-5. Fare clic su **Avanti**.
-
-6. Nella finestra **Impostazioni di base della macchina virtuale** immettere le informazioni seguenti:
+1. Nella finestra **Impostazioni di base della macchina virtuale** immettere le informazioni seguenti:
 
    * **Virtual Machine Name** (Nome macchina virtuale): specifica il nome della nuova macchina virtuale, che deve iniziare con una lettera e contenere solo lettere, numeri e trattini.
 
@@ -62,27 +53,18 @@ Per creare una macchina virtuale con Azure Explorer, eseguire queste operazioni:
 
    * **Nome utente**: specifica l'account amministratore da creare per la gestione della macchina virtuale.
 
-   * **Password** e **Confirm** (Conferma): specificano la password per l'account amministratore.
+   * **Password**: specificano la password per l'account amministratore. Immettere di nuovo la password nella casella **Conferma** per convalidare le credenziali.
 
-   ![Finestra Impostazioni di base della macchina virtuale][CR04]
+1. Fare clic su **Avanti**.
 
-7. Fare clic su **Avanti**.
-
-8. Nella finestra **Crea un nuovo account di archiviazione** immettere le informazioni seguenti:
-
+1. Nella finestra **Risorse associate** immettere le informazioni seguenti:
    * **Gruppo di risorse**: specifica il gruppo di risorse per la macchina virtuale. Selezionare una delle opzioni seguenti:
-     * **Crea nuovo**: specifica che si vuole creare un nuovo gruppo di risorse.
-     * **Use existing** (Usa esistente): specifica che si vuole selezionare un gruppo di risorse già associato all'account Azure.
-
-       ![Finestra di dialogo Crea un nuovo account di archiviazione][CR05]
+      * **Crea nuovo**: specifica che si vuole creare un nuovo gruppo di risorse.
+      * **Use existing** (Usa esistente): specifica che si vuole selezionare un gruppo di risorse già associato all'account Azure.
 
    * **Account di archiviazione**: specifica l'account di archiviazione da usare per archiviare la macchina virtuale. È possibile usare un account di archiviazione esistente o crearne uno nuovo.
 
    * **Virtual Network** (Rete virtuale) e **Subnet**: specificano la rete virtuale e la subnet a cui si connetterà la macchina virtuale. È possibile usare una subnet e una rete esistente oppure creare una rete e una subnet nuove. Se si seleziona **Crea nuovo**, verrà visualizzata la finestra di dialogo seguente:
-
-      ![Finestra di dialogo Crea una nuova rete virtuale][CR06]
-
-9. Nella finestra **Risorse associate** immettere le informazioni seguenti:
 
    * **Indirizzo IP pubblico**: specifica un indirizzo IP con accesso all'esterno per la macchina virtuale. È possibile scegliere di creare un nuovo indirizzo IP o, se la macchina virtuale non avrà un indirizzo IP pubblico, è possibile selezionare **(Nessuno)** .
 
@@ -90,49 +72,40 @@ Per creare una macchina virtuale con Azure Explorer, eseguire queste operazioni:
 
    * **Set di disponibilità**: specifica un set di disponibilità facoltativo a cui può appartenere la macchina virtuale. È possibile selezionare un set di disponibilità esistente, creare un nuovo set di disponibilità o, se la macchina virtuale non apparterrà a un set di disponibilità, selezionare **(Nessuno)** .
 
-   ![Finestra Risorse associate][CR07]
-
 10. Fare clic su **Fine**.  
 
-    La nuova macchina virtuale viene visualizzata nella finestra dello strumento Azure Explorer.
+      > [!NOTE]
+      > È possibile controllare lo stato di avanzamento della creazione nell'angolo in basso a destra dell'area di lavoro di Eclipse.
 
-    ![Nuova macchina virtuale][CR08]
-
-## <a name="restart-a-virtual-machine-in-eclipse"></a>Riavvio di una macchina virtuale in Eclipse
+## <a name="restart-a-virtual-machine"></a>Riavviare una macchina virtuale
 
 Per riavviare una macchina virtuale con Azure Explorer in Eclipse, eseguire queste operazioni:
 
 1. Nella visualizzazione **Azure Explorer** fare clic con il pulsante destro del mouse sulla macchina virtuale e quindi selezionare **Riavvia**.
 
-   ![Comando di riavvio della macchina virtuale][RE01]
+1. Nella finestra di conferma fare clic su **OK**.
 
-1. Nella finestra di conferma fare clic su **Sì**.
+   ![Finestra di conferma del riavvio della macchina virtuale](media/managing-virtual-machines-using-azure-explorer/RE02.png)
 
-   ![Finestra di conferma del riavvio][RE02]
-
-## <a name="shut-down-a-virtual-machine-in-eclipse"></a>Arrestare una macchina virtuale in Eclipse
+## <a name="shut-down-a-virtual-machine"></a>Arrestare una macchina virtuale
 
 Per arrestare una macchina virtuale in esecuzione con Azure Explorer in Eclipse, eseguire queste operazioni:
 
 1. Nella visualizzazione **Azure Explorer** fare clic con il pulsante destro del mouse sulla macchina virtuale e quindi selezionare **Chiudi**.
 
-   ![Comando di arresto della macchina virtuale][SH01]
+1. Nella finestra di conferma fare clic su **OK**.
 
-1. Nella finestra di conferma fare clic su **Sì**.
+   ![Finestra di conferma dell'arresto della macchina virtuale](media/managing-virtual-machines-using-azure-explorer/SH02.png)
 
-   ![Finestra di conferma dell'arresto della macchina virtuale][SH02]
-
-## <a name="delete-a-virtual-machine-in-eclipse"></a>Eliminare una macchina virtuale in Eclipse
+## <a name="delete-a-virtual-machine"></a>Eliminare una macchina virtuale
 
 Per eliminare una macchina virtuale con Azure Explorer in Eclipse, eseguire queste operazioni:
 
 1. Nella visualizzazione **Azure Explorer** fare clic con il pulsante destro del mouse sulla macchina virtuale e quindi selezionare **Elimina**.
 
-   ![Comando di eliminazione della macchina virtuale][DE01]
-
 1. Nella finestra di conferma fare clic su **Sì**.
 
-   ![Finestra di conferma dell'eliminazione della macchina virtuale][DE02]
+   ![Finestra di conferma dell'eliminazione della macchina virtuale](media/managing-virtual-machines-using-azure-explorer/DE02.png)
 
 ## <a name="next-steps"></a>Passaggi successivi
 

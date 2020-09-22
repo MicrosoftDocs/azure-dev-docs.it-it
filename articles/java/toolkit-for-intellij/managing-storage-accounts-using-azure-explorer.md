@@ -2,19 +2,22 @@
 title: Gestire gli account di archiviazione con Azure Explorer per IntelliJ
 description: Informazioni su come gestire gli account di archiviazione di Azure con Azure Explorer per IntelliJ.
 documentationcenter: java
-ms.date: 02/01/2018
+ms.date: 09/09/2020
 ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: a692081032781a530d80c8fa2ff77792611e2673
-ms.sourcegitcommit: 300251b3d866bac9c7d2dfc3133efaaea8e0ce04
+ms.openlocfilehash: 5152b1bfedd02c821d2a9138fa3e20325b5ea086
+ms.sourcegitcommit: a139e25190960ba89c9e31f861f0996a6067cd6c
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87438468"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90534319"
 ---
 # <a name="manage-storage-accounts-by-using-the-azure-explorer-for-intellij"></a>Gestire gli account di archiviazione usando Azure Explorer per IntelliJ
+
+> [!NOTE]
+> La funzionalità Account di archiviazione in Azure Explorer è deprecata. È possibile usare il portale di Azure per creare e gestire account di archiviazione e contenitori. Per le guide di avvio rapido relative alla gestione degli account di archiviazione, vedere la documentazione di [Archiviazione di Azure](/azure/storage/blobs/storage-quickstart-blobs-portal).
 
 Incluso in Azure Toolkit for IntelliJ, Azure Explorer offre agli sviluppatori Java una soluzione di facile uso per la gestione degli account di archiviazione con il proprio account Azure nell'ambiente di sviluppo integrato (IDE) di IntelliJ.
 
@@ -22,7 +25,7 @@ Incluso in Azure Toolkit for IntelliJ, Azure Explorer offre agli sviluppatori Ja
 
 [!INCLUDE [show-azure-explorer](includes/show-azure-explorer.md)]
 
-## <a name="create-a-storage-account-in-intellij"></a>Creare un account di archiviazione in IntelliJ
+## <a name="create-a-storage-account"></a>Creare un account di archiviazione
 
 Per creare un account di archiviazione con Azure Explorer, eseguire queste operazioni:
 
@@ -30,11 +33,7 @@ Per creare un account di archiviazione con Azure Explorer, eseguire queste opera
 
 2. Nella visualizzazione **Azure Explorer** espandere il nodo **Azure**, fare clic con il pulsante destro del mouse su **Account di archiviazione** e quindi fare clic su **Crea account di archiviazione**.
 
-   ![Comando Crea account di archiviazione][CS01]
-
 3. Nella finestra di dialogo **Crea account di archiviazione** specificare le opzioni seguenti:
-
-   ![Finestra di dialogo Crea un nuovo account di archiviazione][CS02]
 
    * **Name**: specifica il nome del nuovo account di archiviazione.
 
@@ -54,17 +53,14 @@ Per creare un account di archiviazione con Azure Explorer, eseguire queste opera
 
 4. Dopo avere specificato tutte le opzioni precedenti, fare clic su **OK**.
 
-## <a name="delete-a-storage-account-in-intellij"></a>Eliminare un account di archiviazione in IntelliJ
+## <a name="delete-a-storage-account"></a>Eliminare un account di archiviazione
 
 Per eliminare un account di archiviazione con Azure Explorer, eseguire queste operazioni:
 
 1. Nella visualizzazione **Azure Explorer** fare clic con il pulsante destro del mouse sull'account di archiviazione e quindi selezionare **Elimina**.
 
-   ![Menu per l'eliminazione dell'account di archiviazione][DS01]
-
 2. Nella finestra di conferma fare clic su **Sì**.
 
-   ![Finestra di conferma dell'eliminazione dell'account di archiviazione][DS02]
 
 ## <a name="next-steps"></a>Passaggi successivi
 

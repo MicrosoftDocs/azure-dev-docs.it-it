@@ -5,12 +5,12 @@ keywords: ansible, azure, devops, bash, playbook, scalabilità, scalabilità aut
 ms.topic: tutorial
 ms.date: 04/30/2019
 ms.custom: devx-track-ansible
-ms.openlocfilehash: 32e7f8029a361f9559a61a32bb078b2bd3a3ecd5
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 62b2eb84ba7328e87896f9da448717856cb75c80
+ms.sourcegitcommit: bfaeacc2fb68f861a9403585d744e51a8f99829c
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88240683"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90681887"
 ---
 # <a name="tutorial-autoscale-virtual-machine-scale-sets-in-azure-using-ansible"></a>Esercitazione: Ridimensionare automaticamente i set di scalabilità di macchine virtuali in Azure con Ansible
 
@@ -78,7 +78,7 @@ Salvare il playbook seguente come `vmss-auto-scale.yml`:
               - '10'
 ```
 
-Eseguire il playbook usando il comando `ansible-playbook`:
+Eseguire il playbook con [ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html)
 
 ```bash
 ansible-playbook vmss-auto-scale.yml
@@ -172,7 +172,7 @@ Salvare il playbook seguente come `vmss-auto-scale-metrics.yml`:
             value: '1'
 ```
 
-Eseguire il playbook usando il comando `ansible-playbook`:
+Eseguire il playbook con [ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html)
 
 ```bash
 ansible-playbook vmss-auto-scale-metrics.yml
@@ -200,7 +200,7 @@ Salvare il playbook seguente come `vmss-auto-scale-get-settings.yml`:
         var: autoscale_query.autoscales[0]
 ```
 
-Eseguire il playbook usando il comando `ansible-playbook`:
+Eseguire il playbook con [ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html)
 
 ```bash
 ansible-playbook vmss-auto-scale-get-settings.yml
@@ -227,7 +227,7 @@ Salvare il playbook seguente come `vmss-auto-scale-delete-setting.yml`:
          state: absent
 ```
 
-Eseguire il playbook usando il comando `ansible-playbook`:
+Eseguire il playbook con [ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html)
 
 ```bash
 vmss-auto-scale-delete-setting.yml

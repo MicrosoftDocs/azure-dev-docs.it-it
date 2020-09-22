@@ -5,12 +5,12 @@ keywords: ansible, azure, devops, bash, playbook, macchina virtuale, set di scal
 ms.topic: tutorial
 ms.date: 04/30/2019
 ms.custom: devx-track-ansible
-ms.openlocfilehash: e9ac4604b10f73e85290162eaf47803f4c4021c0
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 357de61099b8b3673022857a933a18632cff7e40
+ms.sourcegitcommit: bfaeacc2fb68f861a9403585d744e51a8f99829c
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88240653"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90681870"
 ---
 # <a name="tutorial-configure-virtual-machine-scale-sets-in-azure-using-ansible"></a>Esercitazione: Configurare set di scalabilità di macchine virtuali in Azure tramite Ansible
 
@@ -146,7 +146,7 @@ Prima di eseguire il playbook, vedere le note seguenti:
 
 * Nella sezione `vars` sostituire il segnaposto `{{ admin_password }}` con la propria password.
 
-Eseguire il playbook usando il comando `ansible-playbook`:
+Eseguire il playbook con [ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html)
 
 ```bash
 ansible-playbook vmss-create.yml
@@ -244,7 +244,7 @@ Il codice del playbook in questa sezione consente di recuperare informazioni sul
       azure_rm_virtualmachinescaleset: "{{ body }}"
 ```
 
-Eseguire il playbook usando il comando `ansible-playbook`:
+Eseguire il playbook con [ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html)
 
 ```bash
 ansible-playbook vmss-scale-out.yml

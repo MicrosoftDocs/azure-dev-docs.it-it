@@ -5,12 +5,12 @@ keywords: ansible, azure, devops, bash, playbook, cosmo db, database
 ms.topic: tutorial
 ms.date: 04/30/2019
 ms.custom: devx-track-ansible
-ms.openlocfilehash: 7c09f0dd28dbcbdf62219a62295b05758b4c8372
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 7d6c7aed7c1401600fca14cefbb77d86588e485b
+ms.sourcegitcommit: bfaeacc2fb68f861a9403585d744e51a8f99829c
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88240343"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90681671"
 ---
 # <a name="tutorial-configure-azure-cosmos-db-accounts-using-ansible"></a>Esercitazione: Configurare gli account Azure Cosmos DB tramite Ansible
 
@@ -234,7 +234,7 @@ Prima di eseguire il playbook, apportare le modifiche seguenti:
 - Nella sezione `vars` sostituire il segnaposto `{{ resource_group_name }}` con il nome del proprio gruppo di risorse.
 - Verificare che `cosmosdbaccount_name contenga solo caratteri minuscoli e sia globalmente univoco.
 
-Eseguire il playbook usando il comando `ansible-playbook`:
+Eseguire il playbook con [ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html)
 
 ```bash
 ansible-playbook cosmosdb.yml
@@ -242,27 +242,7 @@ ansible-playbook cosmosdb.yml
 
 ## <a name="clean-up-resources"></a>Pulire le risorse
 
-Quando non sono più necessarie, eliminare le risorse create in questo articolo. 
-
-Salvare il codice seguente come `cleanup.yml`:
-
-```yml
-- hosts: localhost
-  vars:
-    resource_group: myResourceGroup
-  tasks:
-    - name: Delete a resource group
-      azure_rm_resourcegroup:
-        name: "{{ resource_group }}"
-        force_delete_nonempty: yes
-        state: absent
-```
-
-Eseguire il playbook usando il comando `ansible-playbook`:
-
-```bash
-ansible-playbook cleanup.yml
-```
+[!INCLUDE [ansible-delete-resource-group.md](includes/ansible-delete-resource-group.md)]
 
 ## <a name="next-steps"></a>Passaggi successivi
 

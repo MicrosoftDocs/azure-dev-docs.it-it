@@ -5,12 +5,12 @@ keywords: ansible, azure, devops, bash, playbook, Servizio app di Azure, App Web
 ms.topic: tutorial
 ms.date: 04/30/2019
 ms.custom: devx-track-ansible
-ms.openlocfilehash: 83bd47fca1e04aa55bbebca84b3f52bdc9f52ecc
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 13ef1291f2d61f5792d2d21fa105a1dcd9f1e2d3
+ms.sourcegitcommit: bfaeacc2fb68f861a9403585d744e51a8f99829c
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88240373"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90681751"
 ---
 # <a name="tutorial-configure-apps-in-azure-app-service-using-ansible"></a>Esercitazione: Configurare app nel servizio app di Azure tramite Ansible
 
@@ -72,7 +72,7 @@ Salvare il playbook seguente come `firstwebapp.yml`:
               java_container_version: 8.5
 ```
 
-Eseguire il playbook usando il comando `ansible-playbook`:
+Eseguire il playbook con [ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html)
 
 ```bash
 ansible-playbook firstwebapp.yml
@@ -196,7 +196,7 @@ Salvare il playbook seguente come `webapp.yml`:
       target_resource_id: "{{ webapp.webapps[0].id }}"
 ```
 
-Eseguire il playbook usando il comando `ansible-playbook`:
+Eseguire il playbook con [ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html)
 
 ```bash
 ansible-playbook webapp.yml

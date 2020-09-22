@@ -4,17 +4,17 @@ titleSuffix: Azure Toolkit for IntelliJ
 description: Eseguire un'app Web Hello World di base in un contenitore Linux e distribuirla sul cloud tramite Azure Toolkit for IntelliJ.
 services: app-service\web
 documentationcenter: java
-ms.date: 12/20/2018
+ms.date: 09/09/2020
 ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: 7b6d393f44034794494f4e77a6365bf0d7bf6c1d
-ms.sourcegitcommit: 8cd0ddf1651c3b64bb72dedc2890108c2cfe3bcb
+ms.openlocfilehash: 0dd1b0202442a4af5322513f038ddcc9908a7dd1
+ms.sourcegitcommit: a139e25190960ba89c9e31f861f0996a6067cd6c
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87334426"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90534712"
 ---
 # <a name="deploy-java-app-to-azure-web-apps-for-containers-using-azure-toolkit-for-intellij"></a>Distribuire un'app Java in app Web di Azure per contenitori tramite Azure Toolkit for IntelliJ
 
@@ -32,29 +32,52 @@ Questo articolo indica i passaggi necessari per creare un'app Web Hello World di
 > ![Menu delle impostazioni di Docker][docker-settings-menu]
 >
 
-## <a name="create-a-new-web-app-project"></a>Creare un nuovo progetto di app Web
+## <a name="installation-and-sign-in"></a>Installazione e accesso
 
-1. Avviare IntelliJ e accedere all'account Azure seguendo i passaggi contenuti nell'articolo [Istruzioni di accesso per Azure Toolkit for IntelliJ](sign-in-instructions.md).
+La procedura seguente illustra il processo di accesso ad Azure nell'ambiente di sviluppo IntelliJ.
 
-1. Scegliere **New** (Nuovo) dal menu **File** e quindi fare clic su **Project** (Progetto).
-   
-   ![Creare un nuovo progetto][file-new-project]
+1. Se non è stato installato il plug-in, vedere [Installazione di Azure Toolkit for IntelliJ](installation.md).
 
-1. Nella finestra di dialogo **New Project** (Nuovo progetto) selezionare **Maven**, **maven-archetype-webapp** e quindi fare clic su **Next** (Avanti).
-   
-   ![Scegliere l'app Web di sistema Maven][maven-archetype-webapp]
-   
-1. Specificare i valori per **GroupId** e **ArtifactId** per l'app Web e quindi fare clic su **Next** (Avanti).
-   
-   ![Specificare GroupId e ArtifactId][groupid-and-artifactid]
+1. Per accedere all'account Azure, passare alla barra laterale sinistra di **Azure Explorer** e quindi fare clic sull'icona **Azure Sign In** (Accesso ad Azure). In alternativa, è possibile passare a **Tools** (Strumenti), espandere **Azure** e fare clic su **Azure Sign in** (Accesso ad Azure).
 
-1. Personalizzare qualsiasi impostazione per Maven o accettare quelle predefinite e quindi fare clic su **Next** (Avanti).
-   
-   ![Specificare le impostazioni per Maven][maven-options]
+   :::image type="content" source="media/sign-in-instructions/I01.png" alt-text="Accesso ad Azure in IntelliJ."::: 
 
-1. Specificare il nome e il percorso del progetto e quindi fare clic su **Finish** (Fine).
-   
-   ![Specificare il nome del progetto][project-name]
+1. Nella finestra **Azure Sign In** (Accesso ad Azure) selezionare **Device Login** (Accesso dispositivo) e quindi fare clic su **Sign in** (Accedi) ([altre opzioni di accesso](sign-in-instructions.md)).
+
+1. Nella finestra di dialogo **Azure Device Login** (Accesso dispositivo Azure) fare clic su **Copy&Open** (Copia e apri).
+
+1. Nel browser incollare il codice dispositivo (copiato facendo clic su **Copy&Open** nell'ultimo passaggio) e quindi fare clic su **Avanti**.
+
+1. Selezionare l'account Azure e completare le procedure di autenticazione necessarie per eseguire l'accesso.
+
+1. Dopo l'accesso, chiudere il browser e tornare all'IDE di IntelliJ. Nella finestra di dialogo **Select Subscriptions** (Seleziona sottoscrizioni) selezionare le sottoscrizioni da usare e quindi fare clic su **OK**.
+
+## <a name="creating-a-new-web-app-project"></a>Creazione di un nuovo progetto di app Web
+
+1. Fare clic su **File**, espandere **New** (Nuovo) e quindi fare clic su **Project** (Progetto).
+
+1. Nella finestra di dialogo **New Project** (Nuovo progetto) selezionare **Maven** e assicurarsi che l'opzione **Create from Archetype** (Crea da archetipo) sia selezionata. Nell'elenco selezionare **maven-archetype-webapp** e quindi fare clic su **Next** (Avanti).
+
+   :::image type="content" source="media/create-hello-world-web-app/maven-archetype-webapp.png" alt-text="Selezionare l'opzione maven-archetype-webapp."::: 
+
+1. Espandere l'elenco a discesa **Artifact Coordinates** (Coordinate artefatto) per visualizzare tutti i campi di input, specificare le informazioni seguenti per la nuova app Web e fare clic su **Next** (Avanti):
+
+   * **Name**: nome dell'app Web. Questo valore verrà inserito automaticamente nel campo **ArtifactId** dell'app Web.
+   * **GroupId** (ID gruppo): nome del gruppo di artefatti, in genere un dominio aziendale, ad esempio *com.microsoft.azure*.
+   * **Versione**: mantenere la versione predefinita, ovvero *1.0-SNAPSHOT*.
+
+1. Personalizzare eventuali impostazioni di Maven o accettare quelle predefinite e quindi fare clic su **Finish** (Fine).
+
+1. Passare al progetto nella scheda **Project** (Progetto) a sinistra e aprire il file **src/main/webapp/WEB-INF/index.jsp**. Sostituire il codice con quello seguente e **salvare le modifiche**:
+
+   ```html
+   <html>
+    <body>
+      <b><% out.println("Hello World!"); %></b>
+    </body>
+   </html>
+   ```
+   :::image type="content" source="media/create-hello-world-web-app/open-index-page.png" alt-text="Aprire il file index.jsp.":::
 
 ## <a name="create-an-azure-container-registry-to-use-as-a-private-docker-registry"></a>Creare un'istanza di Registro Azure Container da usare come registro Docker privato
 
@@ -69,27 +92,37 @@ La procedura seguente illustra come usare il portale di Azure per creare un'ista
 
    Dopo aver effettuato l'accesso all'account nel portale di Azure, è possibile seguire la procedura illustrata nell'articolo [Creare un registro per contenitori Docker privati con il portale di Azure], parafrasata per semplicità nei passaggi seguenti.
 
-1. Fare clic sull'icona di menu **+ Crea una risorsa**, quindi su **Contenitori** e infine su **Registro Container**.
-   
-   ![Creare una nuova istanza di Registro Azure Container][create-container-registry-01]
+1. Fare clic sull'icona di menu **+ Crea una risorsa**, quindi sulla categoria **Contenitori** e infine su **Registro contenitori**.
 
-1. Quando viene visualizzata la pagina **Crea registro contenitori**, immettere **Nome registro** e **Gruppo di risorse**, scegliere **Abilita** per **Utente amministratore** e quindi fare clic su **Crea**.
+1. Quando viene visualizzata la pagina **Crea registro contenitori** specificare le informazioni seguenti:
 
-   ![Configurare le impostazioni di Registro Azure Container][create-container-registry-02]
+   * **Sottoscrizione** specifica la sottoscrizione di Azure da usare per il nuovo registro contenitori.
+
+   * **Gruppo di risorse**: specifica il gruppo di risorse per il registro contenitori. Selezionare una delle opzioni seguenti:
+      * **Create New** (Crea nuovo): specifica che si vuole creare un nuovo gruppo di risorse.
+      * **Use Existing** (Usa esistente): specifica che verrà effettuata una selezione da un elenco di gruppi di risorse associati all'account Azure.
+
+   * **Nome registro**: specifica il nome del nuovo registro contenitori.
+
+   * **Località**: specifica l'area in cui verrà creato il registro contenitori, ad esempio "Stati Uniti occidentali".
+
+   * **SKU**: specifica il livello di servizio per il registro contenitori. Per questa esercitazione selezionare *Basic*. Per altre informazioni, vedere [Livelli di servizio di Registro Azure Container](/azure/container-registry/container-registry-skus).
+
+1. Fare clic su **Rivedi e crea** e verificare che le informazioni siano corrette. Per finire, fare clic su **Crea**.
 
 ## <a name="deploy-your-web-app-in-a-docker-container"></a>Distribuire l'app Web in un contenitore Docker
 
-1. Fare clic con il pulsante destro del mouse sul progetto in Project Explorer (Esplora progetti) e scegliere **Azure**, quindi fare clic su **Add Docker Support** (Aggiungi supporto per Docker).
+La procedura seguente consente di configurare il supporto Docker per l'app Web e di distribuire l'app Web.
+
+1. Passare al progetto nella scheda **Project** (Progetto) a sinistra e fare clic con il pulsante destro del mouse sul progetto. Espandere **Azure** e fare clic su **Add Docker Support** (Aggiungi supporto Docker).
 
    Verrà automaticamente creato un file Docker con una configurazione predefinita.
 
-   ![Aggiungere il supporto di Docker][add-docker-support]
+   :::image type="content" source="media/hello-world-web-app-linux/docker-support-file.png" alt-text="File di supporto Docker.":::
 
-1. Dopo aver aggiunto il supporto per Docker, fare clic con il pulsante destro del mouse in Project Explorer (Esplora progetti), scegliere **Azure** e quindi fare clic su **Run on Web App for Containers** (Esegui in app Web per contenitori).
+1. Dopo aver aggiunto il supporto per Docker, fare clic con il pulsante destro del mouse in Project Explorer (Esplora progetti), espandere **Azure** e quindi fare clic su **Run on Web App for Containers** (Esegui in app Web per contenitori).
 
-   ![Esecuzione in un'app Web per contenitori][run-on-web-app-for-containers]
-
-1. Quando viene visualizzata la finestra di dialogo **Run on Web App for Containers** (Esegui in app Web per contenitori), inserire le informazioni necessarie.
+1. Nella finestra di dialogo **Run on Web App for Containers** (Esegui in app Web per contenitori) immettere le informazioni seguenti:
 
    * **Name**: specifica il nome descrittivo visualizzato in Azure Toolkit. 
 
@@ -105,11 +138,7 @@ La procedura seguente illustra come usare il portale di Azure per creare un'ista
 
    * **App Service Plan** (Piano di servizio app): specifica se usare un piano di servizio app esistente o crearne uno nuovo. 
 
-   ![Esecuzione in un'app Web per contenitori][run-on-web-app-linux]
-
 1. Al termine della configurazione delle impostazioni indicate sopra, fare clic su **Run** (Esegui). Al completamento della distribuzione dell'app Web, lo stato verrà visualizzato nella finestra **Run** (Esegui).
-
-   ![Distribuzione dell'app Web completata][successfully-deployed]
 
 1. Dopo la pubblicazione dell'app Web, è possibile passare all'URL specificato in precedenza per l'app Web, ad esempio *wingtiptoys.azurewebsites.net*.
 
@@ -119,11 +148,9 @@ La procedura seguente illustra come usare il portale di Azure per creare un'ista
 
 1. Dopo aver pubblicato l'app Web, le impostazioni verranno salvate come predefinite e sarà possibile eseguire l'applicazione su Azure facendo clic sulla freccia verde sulla barra degli strumenti. È possibile modificare queste impostazioni facendo clic sul menu a discesa per l'app Web e quindi scegliendo **Edit Configurations** (Modifica configurazioni).
 
-   ![Menu Edit Configurations (Modifica configurazioni)][edit-configuration-menu]
+    :::image type="content" source="media/create-hello-world-web-app/edit-configuration-menu.png" alt-text="Menu Edit Configurations (Modifica configurazioni).":::
 
 1. Quando viene visualizzata la finestra di dialogo **Run/Debug Configurations** (Esecuzione/debug configurazioni), è possibile modificare qualsiasi impostazione predefinita e quindi fare clic su **OK**.
-
-   ![Finestra di dialogo Edit Configurations (Modifica configurazioni)][edit-configuration-dialog]
 
 ## <a name="next-steps"></a>Passaggi successivi
 
@@ -144,18 +171,5 @@ Per altre risorse per Docker, vedere il [sito Web Docker][Docker] ufficiale.
 
 <!-- IMG List -->
 
-[add-docker-support]: media/hello-world-web-app-linux/add-docker-support.png
 [browsing-to-web-app]:  media/hello-world-web-app-linux/browsing-to-web-app.png
-[create-container-registry-01]: media/hello-world-web-app-linux/create-container-registry-01.png
-[create-container-registry-02]: media/hello-world-web-app-linux/create-container-registry-02.png
 [docker-settings-menu]: media/hello-world-web-app-linux/docker-settings-menu.png
-[edit-configuration-dialog]: media/hello-world-web-app-linux/edit-configuration-dialog.png
-[edit-configuration-menu]: media/hello-world-web-app-linux/edit-configuration-menu.png
-[file-new-project]: media/hello-world-web-app-linux/file-new-project.png
-[groupid-and-artifactid]: media/hello-world-web-app-linux/groupid-and-artifactid.png
-[maven-archetype-webapp]: media/hello-world-web-app-linux/maven-archetype-webapp.png
-[maven-options]: media/hello-world-web-app-linux/maven-options.png
-[project-name]: media/hello-world-web-app-linux/project-name.png
-[run-on-web-app-for-containers]: media/hello-world-web-app-linux/run-on-web-app-for-containers.png
-[run-on-web-app-linux]: media/hello-world-web-app-linux/run-on-web-app-linux.png
-[successfully-deployed]: media/hello-world-web-app-linux/successfully-deployed.png

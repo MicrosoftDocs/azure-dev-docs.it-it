@@ -5,12 +5,12 @@ keywords: ansible, azure, devops, bash, playbook, rete, route, tabella di route
 ms.topic: tutorial
 ms.date: 04/30/2019
 ms.custom: devx-track-ansible
-ms.openlocfilehash: 28302e5e8fc6a46193d96c791080797559a566e9
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 6eca7aa93716e41d62ca5dae0211fa1467eec2ef
+ms.sourcegitcommit: bfaeacc2fb68f861a9403585d744e51a8f99829c
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88240023"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90681998"
 ---
 # <a name="tutorial-configure-azure-route-tables-using-ansible"></a>Esercitazione: Configurare tabelle di route di Azure tramite Ansible
 
@@ -47,7 +47,7 @@ Salvare il playbook seguente come `route_table_create.yml`:
         resource_group: "{{ resource_group }}"
 ```
 
-Eseguire il playbook usando il comando `ansible-playbook`:
+Eseguire il playbook con [ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html)
 
 ```bash
 ansible-playbook route_table_create.yml
@@ -104,7 +104,7 @@ Salvare il playbook seguente come `route_table_associate.yml`:
         route_table: "{ route_table_name }"
 ```
 
-Eseguire il playbook usando il comando `ansible-playbook`:
+Eseguire il playbook con [ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html)
 
 ```bash
 ansible-playbook route_table_associate.yml
@@ -133,7 +133,7 @@ Salvare il playbook seguente come `route_table_dissociate.yml`:
         address_prefix_cidr: "10.1.0.0/24"
 ```
 
-Eseguire il playbook usando il comando `ansible-playbook`:
+Eseguire il playbook con [ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html)
 
 ```bash
 ansible-playbook route_table_dissociate.yml
@@ -166,7 +166,7 @@ Prima di eseguire il playbook, vedere le note seguenti:
 * `virtual_network_gateway` viene definito come `next_hop_type`. Per altre informazioni su come vengono selezionate le route in Azure, vedere [Panoramica del routing](/azure/virtual-network/virtual-networks-udr-overview).
 * `address_prefix` viene definito come `10.1.0.0/16`. Il prefisso non può essere duplicato all'interno della tabella di route.
 
-Eseguire il playbook usando il comando `ansible-playbook`:
+Eseguire il playbook con [ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html)
 
 ```bash
 ansible-playbook route_create.yml
@@ -193,7 +193,7 @@ Salvare il playbook seguente come `route_delete.yml`:
         state: absent
 ```
 
-Eseguire il playbook usando il comando `ansible-playbook`:
+Eseguire il playbook con [ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html)
 
 ```bash
 ansible-playbook route_delete.yml
@@ -221,7 +221,7 @@ Salvare il playbook seguente come `route_table_facts.yml`:
          var: query.route_tables[0]
 ```
 
-Eseguire il playbook usando il comando `ansible-playbook`:
+Eseguire il playbook con [ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html)
 
 ```bash
 ansible-playbook route_table_facts.yml
@@ -250,7 +250,7 @@ Salvare il playbook seguente come `route_table_delete.yml`:
         state: absent
 ```
 
-Eseguire il playbook usando il comando `ansible-playbook`:
+Eseguire il playbook con [ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html)
 
 ```bash
 ansible-playbook route_table_delete.yml
