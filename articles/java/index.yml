@@ -7,19 +7,19 @@ metadata:
   description: Esercitazioni e strumenti per sviluppatori Java per lo sviluppo di app per il cloud.
   ms.topic: hub-page
   ms.date: 04/08/2020
-  ms.openlocfilehash: b6bce3af7a5d7dcd5faaa8e588ec06098f52a2d5
-  ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
+  ms.openlocfilehash: bcbd1b0b40aa6b10df1db7db0e4695e600160647
+  ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 08/14/2020
-  ms.locfileid: "88218911"
+  ms.lasthandoff: 09/21/2020
+  ms.locfileid: "90830437"
 conceptualContent:
   items:
   - title: Guide di avvio rapido di Azure per Java
     links:
     - text: Distribuire un'app Web Java SE in Linux
       itemType: quickstart
-      url: /azure/developer/java/spring-framework/deploy-spring-boot-java-app-with-maven-plugin
+      url: /azure/app-service/quickstart-java?pivots=platform-linux%252cplatform-linux
     - text: Creare una funzione serverless
       itemType: quickstart
       url: /azure/azure-functions/functions-create-first-java-maven
@@ -81,7 +81,7 @@ conceptualContent:
       url: /azure/app-service/containers/configure-language-java
     - text: Distribuire un'app Spring con MySQL
       itemType: tutorial
-      url: /azure/developer/java/spring-framework/spring-app-service-e2e
+      url: ./spring-framework/spring-app-service-e2e.md
     footerLink:
       text: Vedere la documentazione del Servizio app di Azure
       url: /azure/app-service/containers/
@@ -109,7 +109,7 @@ conceptualContent:
       url: spring-framework/how-to-guides-spring-data-cosmosdb.md
     - text: Distribuire un'app Spring Boot
       itemType: tutorial
-      url: spring-framework/deploy-spring-boot-java-app-with-maven-plugin.md
+      url: /azure/app-service/quickstart-java?pivots=platform-linux%252cplatform-linux
     footerLink:
       text: Altre informazioni
       url: spring-framework/index.yml
@@ -120,7 +120,7 @@ conceptualContent:
       url: /azure/azure-functions/functions-create-first-function-vs-code?pivots=programming-language-java
     - text: Creare una funzione Spring Cloud
       itemType: tutorial
-      url: /azure/developer/java/spring-framework/getting-started-with-spring-cloud-function-in-azure
+      url: ./spring-framework/getting-started-with-spring-cloud-function-in-azure.md
     - text: Guida per sviluppatori
       itemType: reference
       url: /azure/azure-functions/functions-reference-java
@@ -134,7 +134,7 @@ conceptualContent:
       url: /azure/azure-monitor/app/java-in-process-agent
     - text: Introduzione a ELK
       itemType: tutorial
-      url: /azure/developer/java/fundamentals/java-get-started-with-logzio
+      url: ./fundamentals/java-get-started-with-logzio.md
     - text: Monitorare app Spring
       itemType: how-to-guide
       url: /azure/spring-cloud/diagnostic-services

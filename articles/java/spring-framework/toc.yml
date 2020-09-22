@@ -70,7 +70,7 @@
     - name: Esercitazioni
       items:
         - name: Eseguire la distribuzione nel servizio app con Maven
-          href: deploy-spring-boot-java-app-with-maven-plugin.md
+          href: /azure/app-service/quickstart-java?pivots=platform-linux%252cplatform-linux
         - name: Eseguire la distribuzione in Kubernetes
           href: deploy-spring-boot-java-app-on-kubernetes.md
         - name: Eseguire la distribuzione in App Web per contenitori
