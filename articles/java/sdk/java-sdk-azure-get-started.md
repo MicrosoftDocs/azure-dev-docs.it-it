@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: multiple
 ms.assetid: b1e10b79-f75e-4605-aecd-eed64873e2d3
 ms.custom: seo-java-august2019, devx-track-java
-ms.openlocfilehash: d8f173fca56af289fb83012a101bc5cb99e4ed12
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: 9ae476b38768789eb8ecef915d3c68d93302bdc6
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86379515"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831787"
 ---
 # <a name="get-started-with-cloud-development-using-java-on-azure"></a>Introduzione allo sviluppo per il cloud con Java in Azure
 
@@ -144,7 +144,7 @@ Aggiungere una voce `build` sotto l'elemento `project` di primo livello per usar
 
 ### <a name="install-the-azure-toolkit-for-intellij"></a>Installare Azure Toolkit for IntelliJ
 
-[Azure Toolkit](/azure/developer/java/toolkit-for-intellij/installation) è necessario se si prevede di distribuire app Web o API a livello di codice, ma non viene attualmente usato per altri tipi di sviluppo. Di seguito è riportato un riepilogo della procedura di installazione. Per una guida di avvio rapido, vedere [Azure Toolkit for IntelliJ](/azure/developer/java/toolkit-for-intellij/create-hello-world-web-app).
+[Azure Toolkit](../toolkit-for-intellij/installation.md) è necessario se si prevede di distribuire app Web o API a livello di codice, ma non viene attualmente usato per altri tipi di sviluppo. Di seguito è riportato un riepilogo della procedura di installazione. Per una guida di avvio rapido, vedere [Azure Toolkit for IntelliJ](../toolkit-for-intellij/create-hello-world-web-app.md).
 
 - Selezionare il menu **File** e quindi selezionare **Settings** (Impostazioni).
 
@@ -154,7 +154,7 @@ Aggiungere una voce `build` sotto l'elemento `project` di primo livello per usar
 
 ### <a name="install-the-azure-toolkit-for-eclipse"></a>Installare Azure Toolkit for Eclipse
 
-[Azure Toolkit](/azure/developer/java/toolkit-for-eclipse) è necessario se si prevede di distribuire app Web o API a livello di codice, ma non viene attualmente usato per altri tipi di sviluppo. Di seguito è riportato un riepilogo della procedura di installazione. Per una guida di avvio rapido, vedere [Azure Toolkit for Eclipse](/azure/developer/java/toolkit-for-eclipse/create-hello-world-web-app).
+[Azure Toolkit](../toolkit-for-eclipse/index.yml) è necessario se si prevede di distribuire app Web o API a livello di codice, ma non viene attualmente usato per altri tipi di sviluppo. Di seguito è riportato un riepilogo della procedura di installazione. Per una guida di avvio rapido, vedere [Azure Toolkit for Eclipse](../toolkit-for-eclipse/create-hello-world-web-app.md).
 
 - Dal menu **Help** (?) scegliere **Install New Software** (Installa nuovo software).
 

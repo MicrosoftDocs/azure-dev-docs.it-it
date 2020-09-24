@@ -4,16 +4,16 @@ description: Eseguire l'autenticazione con un'entità servizio nei moduli di ges
 ms.topic: article
 ms.date: 06/17/2017
 ms.custom: devx-track-javascript
-ms.openlocfilehash: 6697e96264a09db1b1b74a74932b6fff78fa8443
-ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
+ms.openlocfilehash: 1d3f0d2930d397c24177f0cee7a9e276c4df9d67
+ms.sourcegitcommit: b03cb337db8a35e6e62b063c347891e44a8a5a13
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88218870"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91110423"
 ---
 # <a name="authenticate-with-the-azure-modules-for-nodejs"></a>Eseguire l'autenticazione con i moduli di Azure per Node.js
 
-Tutte le API di un servizio richiedono l'autenticazione tramite un oggetto `credentials` quando ne viene creata un'istanza. Esistono tre modi per autenticare e creare le credenziali necessarie tramite Azure SDK per Node.js: 
+Tutte le API di un servizio richiedono l'autenticazione tramite un oggetto `credentials` quando ne viene creata un'istanza. Esistono tre modi per autenticare e creare le credenziali necessarie tramite Azure SDK per Node.js:
 
 - Autenticazione di base
 - Accesso interattivo
@@ -23,18 +23,18 @@ Tutte le API di un servizio richiedono l'autenticazione tramite un oggetto `cred
 
 ## <a name="basic-authentication"></a>Autenticazione di base
 
-Per eseguire l'autenticazione a livello di codice usando le credenziali dell'account Azure, usare la funzione `loginWithUsernamePassword`. Il frammento di codice JavaScript seguente illustra come usare l'autenticazione di base usando le credenziali archiviate come variabili di ambiente. 
+Per eseguire l'autenticazione a livello di codice usando le credenziali dell'account Azure, usare la funzione `loginWithUsernamePassword`. Il frammento di codice JavaScript seguente illustra come usare l'autenticazione di base usando le credenziali archiviate come variabili di ambiente.
 
 ```javascript
 const Azure = require('azure');
 const MsRest = require('ms-rest-azure');
 
-MsRest.loginWithUsernamePassword(process.env.AZURE_USER, 
-                                 process.env.AZURE_PASS, 
+MsRest.loginWithUsernamePassword(process.env.AZURE_USER,
+                                 process.env.AZURE_PASS,
                                  (err, credentials) => {
   if (err) throw err;
 
-  let storageClient = Azure.createARMStorageManagementClient(credentials, 
+  let storageClient = Azure.createARMStorageManagementClient(credentials,
                                                              '<azure-subscription-id>');
 
   // ..use the client instance to manage service resources.
@@ -60,4 +60,8 @@ MsRest.interactiveLogin((err, credentials) => {
 
 ## <a name="service-principal-authentication"></a>Autenticazione di un'entità servizio
 
-L'[accesso interattivo](#interactive-login) è il modo più semplice per eseguire l'autenticazione. Quando tuttavia si usa Node.js SDK, è consigliabile usare l'autenticazione basata su entità servizio invece di specificare le credenziali dell'account. L'argomento [Create an Azure service principal with Node.js](./node-sdk-azure-authenticate-principal.md) (Creare un'entità servizio di Azure con Node.js) illustra diverse tecniche per creare (e usare) un'entità servizio. 
+L'[accesso interattivo](#interactive-login) è il modo più semplice per eseguire l'autenticazione. Quando tuttavia si usa Node.js SDK, è consigliabile usare l'autenticazione basata su entità servizio invece di specificare le credenziali dell'account. L'argomento [Create an Azure service principal with Node.js](./node-sdk-azure-authenticate-principal.md) (Creare un'entità servizio di Azure con Node.js) illustra diverse tecniche per creare (e usare) un'entità servizio.
+
+## <a name="next-steps"></a>Passaggi successivi
+
+* [Distribuire un sito Web statico in Azure da Visual Studio Code](tutorial-vscode-static-website-node-01.md)

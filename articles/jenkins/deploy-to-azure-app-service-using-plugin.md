@@ -5,12 +5,12 @@ keywords: jenkins, azure, devops, servizio app
 ms.topic: tutorial
 ms.date: 08/10/2018
 ms.custom: devx-track-jenkins
-ms.openlocfilehash: f165c1b4402d49ca0c52d6229c4b3ded45842e2f
-ms.sourcegitcommit: f65561589d22b9ba2d69b290daee82eb47b0b20f
+ms.openlocfilehash: 1be8e126a5fee2dd83682ece559998a45645ac36
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88162080"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831687"
 ---
 # <a name="tutorial-deploy-to-azure-app-service-using-the-jenkins-plugin"></a>Esercitazione: Eseguire la distribuzione nel servizio app di Azure con il plug-in Jenkins
 
@@ -280,4 +280,4 @@ Se si rilevano bug con i plug-in Jenkins, segnalare un problema in [Jenkins JIRA
 ## <a name="next-steps"></a>Passaggi successivi
 
 > [!div class="nextstepaction"]
-> [Jenkins in Azure](/azure/developer/jenkins)
+> [Jenkins in Azure](./index.yml)

@@ -3,12 +3,13 @@ title: Distribuire contenitori Docker nel Servizio app di Azure da Visual Studio
 description: Parte 1 dell'esercitazione, introduzione e prerequisiti.
 ms.topic: conceptual
 ms.date: 09/20/2019
-ms.openlocfilehash: 816228d73ac6b21c2c3e144c3f7783de0377e73e
-ms.sourcegitcommit: 553da4e9aa988e5bb823364244ea81961cee5bc7
+ms.custom: devx-track-javascript
+ms.openlocfilehash: df92b27e88b750956b7e46cc944cf627e077f1dd
+ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85791615"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "91110508"
 ---
 # <a name="deploy-containers-to-azure-app-service"></a>Distribuire contenitori nel servizio app di Azure
 

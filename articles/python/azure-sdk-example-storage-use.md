@@ -4,12 +4,12 @@ description: Usare le librerie di Azure SDK per Python per accedere a un conteni
 ms.date: 08/05/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 8bbbb03a4bbbdb24e2c45692a0a982341fbcd7a5
-ms.sourcegitcommit: 2f98cf2a394d4fd82ddc917ac1041c1dc08473b6
+ms.openlocfilehash: 161e27f1323053b45c687e60ade90e863ce71c64
+ms.sourcegitcommit: b03cb337db8a35e6e62b063c347891e44a8a5a13
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89275135"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91110493"
 ---
 # <a name="example-access-azure-storage-using-the-azure-libraries-for-python"></a>Esempio: Accedere ad Archiviazione di Azure con le librerie di Azure per Python
 
@@ -197,7 +197,7 @@ Dopo aver eseguito il codice di uno dei due metodi, nel [portale di Azure](https
 ## <a name="6-clean-up-resources"></a>6: Pulire le risorse
 
 ```azurecli
-az group delete -n PythonAzureExample-Storage-rg
+az group delete -n PythonAzureExample-Storage-rg  --no-wait
 ```
 
 Se non è necessario mantenere le risorse di cui è stato effettuato il provisioning in questo esempio, eseguire questo comando per evitare addebiti ricorrenti nella sottoscrizione.

@@ -7,12 +7,12 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: 5152b1bfedd02c821d2a9138fa3e20325b5ea086
-ms.sourcegitcommit: a139e25190960ba89c9e31f861f0996a6067cd6c
+ms.openlocfilehash: a209f532069741e9c6302bca97dc8c72cde0e396
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90534319"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831947"
 ---
 # <a name="manage-storage-accounts-by-using-the-azure-explorer-for-intellij"></a>Gestire gli account di archiviazione usando Azure Explorer per IntelliJ
 
@@ -86,8 +86,8 @@ Per altre informazioni sugli account di archiviazione, sulle dimensioni e sui pr
 [Obiettivi di scalabilità e prestazioni per Archiviazione di Azure]: /azure/storage/storage-scalability-targets
 [Naming and referencing containers, blobs, and metadata]: https://go.microsoft.com/fwlink/?LinkId=255555
 
-[Sizes for Windows storage accounts in Azure]: https://docs.microsoft.com/azure/virtual-machines/sizes (Dimensioni degli account di archiviazione Windows in Azure)
-[Sizes for Linux storage accounts in Azure]: https://docs.microsoft.com/azure/virtual-machines/sizes (Dimensioni degli account di archiviazione Linux in Azure)
+[Sizes for Windows storage accounts in Azure]: /azure/virtual-machines/sizes (Dimensioni degli account di archiviazione Windows in Azure)
+[Sizes for Linux storage accounts in Azure]: /azure/virtual-machines/sizes (Dimensioni degli account di archiviazione Linux in Azure)
 [Prezzi per gli account di archiviazione Windows]: https://azure.microsoft.com/pricing/details/virtual-machines/windows/
 [Prezzi per gli account di archiviazione Linux]: https://azure.microsoft.com/pricing/details/virtual-machines/linux/
 

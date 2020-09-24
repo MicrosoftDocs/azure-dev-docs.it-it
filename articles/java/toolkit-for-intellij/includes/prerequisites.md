@@ -1,16 +1,16 @@
 ---
-ms.openlocfilehash: 11e2f8c598f961b3a99c078a66d5b07b5b800bdd
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: 81ee40a0f67f28bf0afe977239e2d3746eb35cca
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81669957"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831932"
 ---
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>Prerequisiti
 
 Per completare la procedura illustrata in questo articolo, sarà necessario installare Azure Toolkit for IntelliJ, che richiede i componenti software seguenti:
 
-* [Java Development Kit (JDK) supportato da Azure](https://aka.ms/azure-jdks)
+* [Java Development Kit (JDK) supportato da Azure](../../fundamentals/java-jdk-long-term-support.md)
 * [IntelliJ IDEA](https://www.jetbrains.com/idea/download/) Ultimate Edition o Community Edition installato
 * [Azure Toolkit for IntelliJ](https://plugins.jetbrains.com/plugin/8053) installato, vedere la [guida alla gestione dei plug-in di IntelliJ](https://www.jetbrains.com/help/idea/managing-plugins.html) per altre informazioni
 * [Accesso](../sign-in-instructions.md) all'account Azure per Azure Toolkit for IntelliJ

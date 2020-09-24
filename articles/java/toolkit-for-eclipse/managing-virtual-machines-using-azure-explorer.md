@@ -7,12 +7,12 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: 28b0e304ee64cb24f098908e83a92d230657741f
-ms.sourcegitcommit: a139e25190960ba89c9e31f861f0996a6067cd6c
+ms.openlocfilehash: e457d4fe152f9fa5fa64bafaa4f49311e8ff4475
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90534609"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831887"
 ---
 # <a name="manage-virtual-machines-by-using-the-azure-explorer-for-eclipse"></a>Gestire macchine virtuali con Azure Explorer per Eclipse
 
@@ -24,7 +24,7 @@ Incluso in Toolkit di Azure per Eclipse, Azure Explorer offre agli sviluppatori 
 
 ## <a name="create-a-virtual-machine"></a>Creare una macchina virtuale
 
-1. Accedere al proprio account Azure seguendo le [Istruzioni di accesso ad Azure per il Toolkit di Azure per Eclipse](/azure/developer/java/toolkit-for-eclipse/sign-in-instructions).
+1. Accedere al proprio account Azure seguendo le [Istruzioni di accesso ad Azure per il Toolkit di Azure per Eclipse](./sign-in-instructions.md).
 
 1. Nella visualizzazione **Azure Explorer** espandere il nodo **Azure**, fare clic con il pulsante destro del mouse su **Macchine virtuali** e quindi fare clic su **Crea macchina virtuale**.
 
@@ -122,8 +122,8 @@ Per altre informazioni sulle dimensioni e sui prezzi delle macchine virtuali in 
 
 <!-- URL List -->
 
-[Dimensioni per le macchine virtuali Windows in Azure]: https://docs.microsoft.com/azure/virtual-machines/sizes
-[Dimensioni delle macchine virtuali Linux in Azure]: https://docs.microsoft.com/azure/virtual-machines/sizes
+[Dimensioni per le macchine virtuali Windows in Azure]: /azure/virtual-machines/sizes
+[Dimensioni delle macchine virtuali Linux in Azure]: /azure/virtual-machines/sizes
 [Prezzi delle macchine virtuali in Windows]: https://azure.microsoft.com/pricing/details/virtual-machines/windows/
 [Prezzi delle macchine virtuali in Linux]: https://azure.microsoft.com/pricing/details/virtual-machines/linux/
 

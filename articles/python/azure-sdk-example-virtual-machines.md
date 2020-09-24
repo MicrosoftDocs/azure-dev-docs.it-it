@@ -4,12 +4,12 @@ description: Come effettuare il provisioning di una macchina virtuale di Azure u
 ms.date: 05/29/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 08e055e282016db1c3cbf57b956a51f17b7a854a
-ms.sourcegitcommit: 2f98cf2a394d4fd82ddc917ac1041c1dc08473b6
+ms.openlocfilehash: f51bb154106a50c708d8d37a024144d7d53aec0e
+ms.sourcegitcommit: b03cb337db8a35e6e62b063c347891e44a8a5a13
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89275195"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91110477"
 ---
 # <a name="example-use-the-azure-libraries-to-provision-a-virtual-machine"></a>Esempio: Usare le librerie di Azure per effettuare il provisioning di una macchina virtuale
 
@@ -293,7 +293,7 @@ az vm create -g PythonAzureExample-VM-rg -n ExampleVM -l "centralus" \
 ## <a name="6-clean-up-resources"></a>6: Pulire le risorse
 
 ```azurecli
-az group delete -n PythonAzureExample-VM-rg
+az group delete -n PythonAzureExample-VM-rg  --no-wait
 ```
 
 Eseguire questo comando se non è necessario mantenere le risorse create in questo esempio per evitare addebiti ricorrenti nella sottoscrizione.

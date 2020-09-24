@@ -5,12 +5,12 @@ keywords: jenkins, azure, devops, cicd, linux, service fabric, cluster
 ms.topic: tutorial
 ms.date: 07/31/2018
 ms.custom: devx-track-jenkins
-ms.openlocfilehash: 6ce3714220a5c1cdff3a40cb8590a36356167616
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: cc42d33b68b0c8e8417d5eb0245b33d12bb53b52
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88240863"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831547"
 ---
 # <a name="tutorial-deploy-to-a-service-fabric-cluster"></a>Esercitazione: Eseguire la distribuzione in un cluster di Service Fabric
 
@@ -280,12 +280,12 @@ Per gli ambienti di produzione, è vivamente consigliato configurare le credenzi
 
 Per gli ambienti di sviluppo e test, è possibile configurare le credenziali di Azure o l'endpoint di gestione del cluster per distribuire l'applicazione. Per maggiori dettagli su come configurare un endpoint di gestione del cluster, vedere [Configurare la distribuzione tramite l'endpoint di gestione del cluster](#configure-deployment-using-cluster-management-endpoint).   
 
-1. Per creare un'entità servizio di Azure Active Directory e assegnarvi le autorizzazioni nella sottoscrizione di Azure, seguire i passaggi descritti in [Usare il portale per creare un'applicazione Azure Active Directory e un'entità servizio](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-create-service-principal-portal). Prestare attenzione a quanto descritto di seguito:
+1. Per creare un'entità servizio di Azure Active Directory e assegnarvi le autorizzazioni nella sottoscrizione di Azure, seguire i passaggi descritti in [Usare il portale per creare un'applicazione Azure Active Directory e un'entità servizio](/azure/azure-resource-manager/resource-group-create-service-principal-portal). Prestare attenzione a quanto descritto di seguito:
 
    * Quando si seguono i passaggi descritti nell'argomento, assicurarsi di copiare e salvare i valori seguenti: *ID applicazione*, *Chiave applicazione*, *ID directory (ID Tenant)* e *ID sottoscrizione*, necessari per configurare le credenziali di Azure in Jenkins.
-   * Se non si dispone delle [autorizzazioni richieste](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-create-service-principal-portal#required-permissions) per la directory, sarà necessario chiedere a un amministratore di concedere tali autorizzazioni o di creare l'entità servizio per l'utente oppure sarà necessario configurare l'endpoint di gestione per il cluster nelle **azioni di post-compilazione** per il processo in Jenkins.
-   * Nella sezione [Creare un'applicazione Azure Active Directory](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-create-service-principal-portal#create-an-azure-active-directory-application) è possibile immettere qualsiasi URL ben formato nella casella **URL di accesso**.
-   * Nella sezione [Assegnare l'applicazione al ruolo](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-create-service-principal-portal) è possibile assegnare all'applicazione il ruolo *Lettore* per il gruppo di risorse per il cluster.
+   * Se non si dispone delle [autorizzazioni richieste](/azure/azure-resource-manager/resource-group-create-service-principal-portal#required-permissions) per la directory, sarà necessario chiedere a un amministratore di concedere tali autorizzazioni o di creare l'entità servizio per l'utente oppure sarà necessario configurare l'endpoint di gestione per il cluster nelle **azioni di post-compilazione** per il processo in Jenkins.
+   * Nella sezione [Creare un'applicazione Azure Active Directory](/azure/azure-resource-manager/resource-group-create-service-principal-portal#create-an-azure-active-directory-application) è possibile immettere qualsiasi URL ben formato nella casella **URL di accesso**.
+   * Nella sezione [Assegnare l'applicazione al ruolo](/azure/azure-resource-manager/resource-group-create-service-principal-portal) è possibile assegnare all'applicazione il ruolo *Lettore* per il gruppo di risorse per il cluster.
 
 1. Tornando al processo Jenkins, fare clic sulla scheda **Post-build Actions** (Azioni post-compilazione).
 1. Nell'elenco a discesa **Post-Build Actions** (Azioni post-compilazione) selezionare **Deploy Service Fabric Project** (Distribuisci progetto di Service Fabric). 

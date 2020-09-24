@@ -4,18 +4,18 @@ description: Controllare e configurare la creazione di report delle metriche da 
 ms.topic: conceptual
 ms.date: 6/15/2017
 ms.custom: devx-track-python
-ms.openlocfilehash: 53823a1709e1f1411609957569b79d10d7bdefd1
-ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
+ms.openlocfilehash: 81cb21f3dca640f8c9db2a5556b88c82ea0ffc47
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87982583"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90832037"
 ---
 # <a name="azure-monitor"></a>Monitoraggio di Azure
 
 Questo esempio recupera le metriche di una risorsa in Azure (VM e così via).
 
-Per un elenco completo delle parole chiave disponibili per i filtri, vedere [qui](https://msdn.microsoft.com/library/azure/mt743622.aspx)
+Per un elenco completo delle parole chiave disponibili per i filtri, vedere [qui](/rest/api/monitor/metrics)
 
 ```python
 import datetime

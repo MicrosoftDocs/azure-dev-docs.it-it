@@ -5,12 +5,12 @@ keywords: jenkins, azure, devops, kubernetes, k8s, servizio Azure Kubernetes, di
 ms.topic: tutorial
 ms.date: 10/23/2019
 ms.custom: devx-track-jenkins
-ms.openlocfilehash: 9a81b47d0e3828bb7c1cd809a66b2245f5a83771
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 6a33227f7a5a0aa3e82e48d821e9f37bdfeadd6e
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88240993"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90832047"
 ---
 # <a name="tutorial-deploy-to-azure-kubernetes-service-aks-using-the-bluegreen-deployment-pattern"></a>Esercitazione: Eseguire la distribuzione nel servizio Azure Kubernetes usando il modello di distribuzione blu/verde
 
@@ -29,7 +29,7 @@ In questa esercitazione è possibile scoprire come si eseguono le seguenti attiv
 
 ## <a name="prerequisites"></a>Prerequisiti
 - [Account GitHub](https://github.com): è necessario per clonare il repository di esempio.
-- [Interfaccia della riga di comando di Azure 2.0](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest): viene usata per creare il cluster Kubernetes.
+- [Interfaccia della riga di comando di Azure 2.0](/cli/azure/install-azure-cli?view=azure-cli-latest): viene usata per creare il cluster Kubernetes.
 - [Chocolatey](https://chocolatey.org): un sistema di gestione pacchetti usato per installare kubectl.
 - [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/): interfaccia della riga di comando usata per l'esecuzione di comandi per i cluster Kubernetes.
 - [jq](https://stedolan.github.io/jq/download/): processore JSON leggero da riga di comando.
@@ -81,7 +81,7 @@ In questa sezione si segue questa procedura:
 - Creare un’istanza del servizio di Registro Azure Container.
 
 ### <a name="use-the-azure-cli-20-to-create-a-managed-kubernetes-cluster"></a>Usare l'interfaccia della riga di comando di Azure 2.0 per creare un cluster Kubernetes gestito
-Per creare un cluster Kubernetes gestito con l'[interfaccia della riga di comando di Azure 2.0](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest), assicurarsi di usare la versione dell'interfaccia della riga di comando di Azure 2.0.25 o successiva.
+Per creare un cluster Kubernetes gestito con l'[interfaccia della riga di comando di Azure 2.0](/cli/azure/install-azure-cli?view=azure-cli-latest), assicurarsi di usare la versione dell'interfaccia della riga di comando di Azure 2.0.25 o successiva.
 
 1. Accedere all'account Azure. Dopo avere immesso il seguente comando, vengono fornite le istruzioni che illustrano come completare l'accesso. 
     

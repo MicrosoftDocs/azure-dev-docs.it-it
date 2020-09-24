@@ -8,12 +8,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 11/13/2018
 ms.custom: devx-track-java
-ms.openlocfilehash: 6807374dac927d8a93e1ecf1ac2b1e3fa54877ac
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: 2f40f013d7323c51c25d5ecf97f097824d75e914
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86379545"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831677"
 ---
 # <a name="adding-a-root-certificate-to-the-java-ca-certificates-store"></a>Aggiunta di un certificato radice all'archivio certificati CA Java
 
@@ -79,6 +79,6 @@ Dopo aver aggiunto il certificato radice a JDK, è possibile comprimere il conte
 
 Per altre informazioni sull'utilità keytool, vedere <https://docs.oracle.com/javase/7/docs/technotes/tools/windows/keytool.html>.
 
-Per altre informazioni su Java, vedere [Azure for Java developers](/azure/developer/java) (Azure per sviluppatori Java).
+Per altre informazioni su Java, vedere [Azure for Java developers](../index.yml) (Azure per sviluppatori Java).
 
 Per altre informazioni sulle versioni di JDK supportate e utilizzabili per lo sviluppo in Azure, vedere <https://aka.ms/azure-jdks>.
