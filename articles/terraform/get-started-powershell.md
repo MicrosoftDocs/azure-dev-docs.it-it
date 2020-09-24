@@ -5,12 +5,12 @@ keywords: azure devops terraform installazione configurazione windows inizializz
 ms.topic: quickstart
 ms.date: 08/18/2020
 ms.custom: devx-track-terraform
-ms.openlocfilehash: e58c53876ed05416f16a40d0ee23344bcde43b39
-ms.sourcegitcommit: 800c5e05ad3c0b899295d381964dd3d47436ff90
+ms.openlocfilehash: 401a6c4cc8827e48858a936a10c9c7f62af15aab
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88614520"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90830057"
 ---
 # <a name="quickstart-configure-terraform-using-azure-powershell"></a>Avvio rapido: Configurare Terraform con Azure PowerShell
  
@@ -39,13 +39,13 @@ In questo articolo vengono illustrate le operazioni seguenti:
 
 ## <a name="configure-your-environment"></a>Configurare l'ambiente
 
-1. Il modulo di PowerShell più recente che consente l'interazione con le risorse di Azure è denominato [Az di Azure PowerShell](https://docs.microsoft.com/powershell/azure/new-azureps-module-az). Quando si usa il modulo Az di Azure PowerShell, la versione consigliata è PowerShell 7 (o successiva) in tutte le piattaforme. Se PowerShell è installato, è possibile verificare la versione immettendo il comando seguente al prompt di PowerShell.
+1. Il modulo di PowerShell più recente che consente l'interazione con le risorse di Azure è denominato [Az di Azure PowerShell](/powershell/azure/new-azureps-module-az). Quando si usa il modulo Az di Azure PowerShell, la versione consigliata è PowerShell 7 (o successiva) in tutte le piattaforme. Se PowerShell è installato, è possibile verificare la versione immettendo il comando seguente al prompt di PowerShell.
 
     ```powershell
     $PSVersionTable.PSVersion
     ```
 
-1. [Installare PowerShell](https://docs.microsoft.com/powershell/scripting/install/installing-powershell-core-on-windows?view=powershell-7). Questa demo è stata testata con PowerShell 7.0.2 in Windows 10.
+1. [Installare PowerShell](/powershell/scripting/install/installing-powershell-core-on-windows?view=powershell-7). Questa demo è stata testata con PowerShell 7.0.2 in Windows 10.
 
 1. Per eseguire l'[autenticazione di Terraform in Azure](https://www.terraform.io/docs/providers/azurerm/guides/azure_cli.html), è necessario [installare l'interfaccia della riga di comando di Azure](/cli/azure/install-azure-cli-windows?view=azure-cli-latest). Questa demo è stata testata con la versione 2.9.1 dell'interfaccia della riga di comando di Azure.
 
@@ -70,9 +70,9 @@ Se si usano PowerShell e Terraform, è necessario accedere tramite un'entità se
 
 per accedere a una sottoscrizione di Azure usando un'entità servizio, occorre prima di tutto avere accesso a un'entità servizio. Se si ha già un'entità servizio, è possibile ignorare questa sezione.
 
-Sono disponibili diverse opzioni per [creare un'entità servizio con PowerShell](https://docs.microsoft.com/powershell/azure/create-azure-service-principal-azureps). Per questo articolo si creerà un'entità servizio con il ruolo **Collaboratore**. Il ruolo **Collaboratore** (il ruolo predefinito) ha autorizzazioni complete per operazioni di lettura e scrittura in un account Azure. Per altre informazioni sul controllo degli accessi in base al ruolo e i ruoli, vedere [Controllo degli accessi in base al ruolo: ruoli predefiniti](/azure/active-directory/role-based-access-built-in-roles).
+Sono disponibili diverse opzioni per [creare un'entità servizio con PowerShell](/powershell/azure/create-azure-service-principal-azureps). Per questo articolo si creerà un'entità servizio con il ruolo **Collaboratore**. Il ruolo **Collaboratore** (il ruolo predefinito) ha autorizzazioni complete per operazioni di lettura e scrittura in un account Azure. Per altre informazioni sul controllo degli accessi in base al ruolo e i ruoli, vedere [Controllo degli accessi in base al ruolo: ruoli predefiniti](/azure/active-directory/role-based-access-built-in-roles).
 
-Chiamando [New-AzADServicePrincipal](https://docs.microsoft.com/powershell/module/Az.Resources/New-AzADServicePrincipal) viene creata un'entità servizio per la sottoscrizione specificata. Al termine vengono visualizzate le informazioni dell'entità servizio, come i nomi dell'entità servizio e il nome visualizzato. Se si chiama `New-AzADServicePrincipal` senza specificare le credenziali di autenticazione, viene generata automaticamente una password. Questa password non viene però visualizzata poiché viene restituita come tipo `SecureString`. Occorre pertanto chiamare `New-AzADServicePrincipal`, i cui risultati vengono passati a una variabile. È quindi possibile convertire la variabile in testo normale per visualizzarla.
+Chiamando [New-AzADServicePrincipal](/powershell/module/Az.Resources/New-AzADServicePrincipal) viene creata un'entità servizio per la sottoscrizione specificata. Al termine vengono visualizzate le informazioni dell'entità servizio, come i nomi dell'entità servizio e il nome visualizzato. Se si chiama `New-AzADServicePrincipal` senza specificare le credenziali di autenticazione, viene generata automaticamente una password. Questa password non viene però visualizzata poiché viene restituita come tipo `SecureString`. Occorre pertanto chiamare `New-AzADServicePrincipal`, i cui risultati vengono passati a una variabile. È quindi possibile convertire la variabile in testo normale per visualizzarla.
 
 1. Ottenere l'ID della sottoscrizione di Azure da usare. Se non si conosce l'ID sottoscrizione, è possibile ottenere il valore nel [portale di Azure](https://portal.azure.com/).
 
@@ -82,7 +82,7 @@ Chiamando [New-AzADServicePrincipal](https://docs.microsoft.com/powershell/modul
 
 1. Avviare PowerShell.
 
-1. Creare una nuova entità servizio usando [New-AzADServicePrincipal](https://docs.microsoft.com/powershell/module/az.resources/new-azadserviceprincipal). Sostituire `<azure_subscription_id>` con l'ID della sottoscrizione di Azure da usare.
+1. Creare una nuova entità servizio usando [New-AzADServicePrincipal](/powershell/module/az.resources/new-azadserviceprincipal). Sostituire `<azure_subscription_id>` con l'ID della sottoscrizione di Azure da usare.
 
     ```powershell
     $sp = New-AzADServicePrincipal -Scope /subscriptions/<azure_subscription_id>
@@ -94,7 +94,7 @@ Chiamando [New-AzADServicePrincipal](https://docs.microsoft.com/powershell/modul
     $sp.ServicePrincipalNames
     ```
 
-1. Visualizzare la password generata automaticamente come testo, [ConvertFrom-SecureString](https://docs.microsoft.com/powershell/module/microsoft.powershell.security/convertfrom-securestring).
+1. Visualizzare la password generata automaticamente come testo, [ConvertFrom-SecureString](/powershell/module/microsoft.powershell.security/convertfrom-securestring).
 
     ```powershell
     $UnsecureSecret = ConvertFrom-SecureString -SecureString $sp.Secret -AsPlainText
@@ -103,17 +103,17 @@ Chiamando [New-AzADServicePrincipal](https://docs.microsoft.com/powershell/modul
 **Note**:
 
 - I valori di nome e password dell'entità servizio sono necessari per accedere alla sottoscrizione tramite l'entità servizio.
-- Se viene persa, questa password non può essere recuperata. Di conseguenza, è consigliabile archiviarla in un luogo sicuro. Se si dimentica la password, è necessario [reimpostare le credenziali dell'entità servizio](https://docs.microsoft.com/powershell/azure/create-azure-service-principal-azureps#reset-credentials).
+- Se viene persa, questa password non può essere recuperata. Di conseguenza, è consigliabile archiviarla in un luogo sicuro. Se si dimentica la password, è necessario [reimpostare le credenziali dell'entità servizio](/powershell/azure/create-azure-service-principal-azureps#reset-credentials).
 
 ## <a name="log-in-to-azure-using-a-service-principal"></a>Accedere ad Azure tramite un'entità servizio
 
-Per accedere a una sottoscrizione di Azure tramite un'entità servizio, chiamare [Connect-AzAccount](https://docs.microsoft.com/powershell/module/az.accounts/Connect-AzAccount) specificando un oggetto di tipo [PsCredential](https://docs.microsoft.com/dotnet/api/system.management.automation.pscredential).
+Per accedere a una sottoscrizione di Azure tramite un'entità servizio, chiamare [Connect-AzAccount](/powershell/module/az.accounts/Connect-AzAccount) specificando un oggetto di tipo [PsCredential](/dotnet/api/system.management.automation.pscredential).
 
 1. Avviare PowerShell.
 
-1. Ottenere un oggetto [PsCredential](https://docs.microsoft.com/dotnet/api/system.management.automation.pscredential) usando una delle tecniche seguenti.
+1. Ottenere un oggetto [PsCredential](/dotnet/api/system.management.automation.pscredential) usando una delle tecniche seguenti.
 
-    1. Chiamare [Get-Credential](https://docs.microsoft.com/powershell/module/microsoft.powershell.security/get-credential) e immettere il nome e la password di un'entità servizio quando richiesto:
+    1. Chiamare [Get-Credential](/powershell/module/microsoft.powershell.security/get-credential) e immettere il nome e la password di un'entità servizio quando richiesto:
 
         ```powershell
         $spCredential = Get-Credential
@@ -213,7 +213,7 @@ In questa sezione viene creato un *piano di esecuzione*, che viene applicato all
     terraform apply QuickstartTerraformTest.tfplan
     ```
 
-1. Una volta applicato il piano di esecuzione, è possibile verificare se il gruppo di risorse è stato creato correttamente usando [Get-AzResourceGroup](https://docs.microsoft.com/powershell/module/az.resources/Get-AzResourceGroup).
+1. Una volta applicato il piano di esecuzione, è possibile verificare se il gruppo di risorse è stato creato correttamente usando [Get-AzResourceGroup](/powershell/module/az.resources/Get-AzResourceGroup).
 
     ```powershell
     Get-AzResourceGroup -Name QuickstartTerraformTest-rg
@@ -245,7 +245,7 @@ Quando non sono più necessarie, eliminare le risorse create in questo articolo.
     terraform apply QuickstartTerraformTest.destroy.tfplan
     ```
 
-1. Verificare se il gruppo di risorse è stato eliminato usando [Get-AzResourceGroup](https://docs.microsoft.com/powershell/module/az.resources/Get-AzResourceGroup).
+1. Verificare se il gruppo di risorse è stato eliminato usando [Get-AzResourceGroup](/powershell/module/az.resources/Get-AzResourceGroup).
 
     ```powershell
     Get-AzResourceGroup -Name QuickstartTerraformTest-rg

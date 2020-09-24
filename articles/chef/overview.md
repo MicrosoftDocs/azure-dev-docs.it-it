@@ -5,12 +5,12 @@ keywords: azure, chef, devops, macchine virtuali, panoramica, automazione
 ms.date: 02/22/2020
 ms.topic: article
 ms.custom: devx-track-chef
-ms.openlocfilehash: 86678436612f97e2928228ec9dd47ac9185d9b72
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 2c24bba7d3da9976d5bd21a7a10bbb0de0887667
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88240923"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831437"
 ---
 # <a name="using-chef-with-azure"></a>Uso di Chef con Azure
 
@@ -20,7 +20,7 @@ Questo articolo descrive i vantaggi dell'uso di Chef nella gestione dell'infrast
 
 ## <a name="chef-extension-on-azure"></a>Estensione Chef per Azure
 
-Effettuare il provisioning di una macchina virtuale con un client Chef in esecuzione come servizio in background con l'[estensione Chef](https://docs.microsoft.com/azure/chef/chef-extension-portal) nel [portale di Azure](https://go.microsoft.com/fwlink/p/?LinkID=525040). Al termine del provisioning, queste macchine virtuali sono pronte per essere gestite da un server Chef.
+Effettuare il provisioning di una macchina virtuale con un client Chef in esecuzione come servizio in background con l'[estensione Chef](/azure/chef/chef-extension-portal) nel [portale di Azure](https://go.microsoft.com/fwlink/p/?LinkID=525040). Al termine del provisioning, queste macchine virtuali sono pronte per essere gestite da un server Chef.
 
 ## <a name="chef-cloud-shell"></a>Chef Cloud Shell
 

@@ -1,13 +1,13 @@
 ---
-author: mriem
+author: mnriem
 ms.author: manriem
 ms.date: 2/28/2020
-ms.openlocfilehash: 4d2df28d5c752d20454c28a6d4a53698aa7ff5b6
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: e4370e6db3589e6050395fe806541505fa3eb8bb
+ms.sourcegitcommit: 850856d3fa2ddd8f96616ee6a1f092d8e0aedab3
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81673017"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90738141"
 ---
 ### <a name="determine-whether-your-application-relies-on-scheduled-jobs"></a>Determinare se l'applicazione si basa su processi pianificati
 

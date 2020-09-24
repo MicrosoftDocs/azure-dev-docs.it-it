@@ -1,11 +1,11 @@
 ---
 ms.custom: devx-track-javascript
-ms.openlocfilehash: 3f0706cad38bd9c410c5f877c44cb0c0e6652c3b
-ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
+ms.openlocfilehash: f53c3e372259a01942863827bb8b03abab4db10f
+ms.sourcegitcommit: 69933dcce571b2686897b295b7822e207d944617
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88501491"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90772580"
 ---
 La procedura dettagliata è stata completata. È ora possibile vedere le altre estensioni di Azure.
 
@@ -19,9 +19,9 @@ La procedura dettagliata è stata completata. È ora possibile vedere le altre e
 
 Per altre informazioni sull'uso di Azure con Node.js, visitare le risorse seguenti:
 
-* [Centro per sviluppatori di Azure per Node.js](https://docs.microsoft.com/azure/developer/javascript).
-* [Binding di Azure Cosmos DB per Funzioni di Azure 2.x](https://docs.microsoft.com/azure/azure-functions/functions-bindings-cosmosdb-v2?tabs=javascript)
-* [Guida per gli sviluppatori JavaScript di Funzioni di Azure](https://docs.microsoft.com/azure/azure-functions/functions-reference-node)
+* [Centro per sviluppatori di Azure per Node.js](../index.yml).
+* [Binding di Azure Cosmos DB per Funzioni di Azure 2.x](/azure/azure-functions/functions-bindings-cosmosdb-v2?tabs=javascript)
+* [Guida per gli sviluppatori JavaScript di Funzioni di Azure](/azure/azure-functions/functions-reference-node)
 * [Post di blog: Creazione di un'applicazione CRUD con Funzioni di Azure e MongoDB - Dev.to](https://dev.to/azure/ezra-s-potluck-day-4-of-25daysofserverless-challenge-4pd6)
 * [Video: Migrazione dell'API a un ambiente serverless con Funzioni di Azure - YouTube](https://youtu.be/89WXgaY-NqY)
 * [Canale YouTube ufficiale - Funzioni di Azure](https://www.youtube.com/channel/UCtUYj6As_XFkOooUFnsJbYg)

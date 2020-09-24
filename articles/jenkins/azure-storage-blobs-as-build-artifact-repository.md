@@ -5,12 +5,12 @@ keywords: jenkins, azure, devops, archiviazione, cicd, artefatti di compilazione
 ms.topic: article
 ms.date: 08/13/2019
 ms.custom: devx-track-jenkins
-ms.openlocfilehash: 783d6870eff461ccf4936aff9bfd76577816e5bf
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: e3e290b7135f1207ffa91e8a228e2af91e91f878
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88240973"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831357"
 ---
 # <a name="tutorial-use-azure-storage-for-build-artifacts"></a>Esercitazione: Usare Archiviazione di Azure per gli artefatti di compilazione
 
@@ -135,7 +135,7 @@ Questa sezione offre una panoramica delle componenti del servizio BLOB.
 
 * **Account di archiviazione**: l'accesso ad Archiviazione di Azure viene eseguito esclusivamente tramite un account di archiviazione. Un account di archiviazione è il livello più alto dello spazio dei nomi per accedere ai BLOB. Un account può contenere un numero illimitato di contenitori, purché la dimensione totale di questi sia inferiore a 100 TB.
 * **Contenitore**: Un contenitore fornisce un raggruppamento di un set di BLOB. Tutti i BLOB devono essere inclusi in un contenitore. Un account può contenere un numero illimitato di contenitori. In un contenitore è possibile archiviare un numero illimitato di BLOB.
-* **BLOB**: file di qualsiasi tipo e dimensioni. Esistono due tipi di oggetti BLOB che è possibile archiviare in Archiviazione di Azure: BLOB in blocchi e BLOB di pagine. La maggior parte dei file sono BLOB in blocchi. Un singolo BLOB in blocchi può raggiungere fino a 200 GB di dimensione. In questa esercitazione vengono utilizzati BLOB in blocchi. I BLOB di pagine, di altro tipo, possono raggiungere dimensioni fino a 1 TB e risultano più efficienti quando all'interno di un file vi sono intervalli di byte soggetti a modifiche frequenti. Per altre informazioni sui BLOB, vedere [Informazioni sui BLOB in blocchi, sui BLOB di aggiunta e sui BLOB di pagine](https://msdn.microsoft.com/library/azure/ee691964.aspx).
+* **BLOB**: file di qualsiasi tipo e dimensioni. Esistono due tipi di oggetti BLOB che è possibile archiviare in Archiviazione di Azure: BLOB in blocchi e BLOB di pagine. La maggior parte dei file sono BLOB in blocchi. Un singolo BLOB in blocchi può raggiungere fino a 200 GB di dimensione. In questa esercitazione vengono utilizzati BLOB in blocchi. I BLOB di pagine, di altro tipo, possono raggiungere dimensioni fino a 1 TB e risultano più efficienti quando all'interno di un file vi sono intervalli di byte soggetti a modifiche frequenti. Per altre informazioni sui BLOB, vedere [Informazioni sui BLOB in blocchi, sui BLOB di aggiunta e sui BLOB di pagine](/rest/api/storageservices/Understanding-Block-Blobs--Append-Blobs--and-Page-Blobs).
 * **Formato URL**: è possibile fare riferimento ai BLOB usando il formato di URL seguente:
   
     `http://storageaccount.blob.core.windows.net/container_name/blob_name`

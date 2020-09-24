@@ -7,12 +7,12 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: 7bfd7edbdabd2298c84b3480292949e1fb351913
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: 0d4615b3d6b05ee54538befdf6a7a7d220e77917
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86378435"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831007"
 ---
 # <a name="spring-boot-starters-for-azure"></a>Utilità di avvio Spring Boot per Azure
 
@@ -224,7 +224,7 @@ Quando si aggiunge questa utilità di avvio a un progetto Spring Boot, vengono a
 Per altre informazioni su Spring e Azure, passare al centro di documentazione di Spring in Azure.
 
 > [!div class="nextstepaction"]
-> [Spring in Azure](/azure/developer/java/spring-framework)
+> [Spring in Azure](./index.yml)
 
 ### <a name="additional-resources"></a>Risorse aggiuntive
 
@@ -236,10 +236,10 @@ Per iniziare a usare proprie applicazioni Spring Boot, vedere **Spring Initializ
 
 <!-- URL List -->
 
-[Azure per sviluppatori Java]: /azure/developer/java/
+[Azure per sviluppatori Java]: ../index.yml
 [Uso di Azure DevOps e Java]: /azure/devops/
 [Spring Boot]: http://projects.spring.io/spring-boot/
-[Spring in Azure]: /azure/developer/java/spring-framework/
+[Spring in Azure]: ./index.yml
 [Spring Framework]: https://spring.io/
 [Spring Initializr]: https://start.spring.io/
 

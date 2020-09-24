@@ -2,14 +2,14 @@
 title: 'Passaggio 5: Distribuire Funzioni di Azure in Python con VS Code'
 description: Passaggio 5 dell'esercitazione, distribuzione del codice di funzioni Python in Azure e informazioni sullo streaming di log e sulla sincronizzazione delle impostazioni tra un progetto locale e Azure.
 ms.topic: conceptual
-ms.date: 05/19/2020
+ms.date: 09/17/2020
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: e4108ff7b705be96f62c06a02e301bce9247c048
-ms.sourcegitcommit: 9e282fc2ec967bee181c3034e7e70b28ae308905
+ms.openlocfilehash: 8acf168ecc858410677b8f55b7b84ed14416c005
+ms.sourcegitcommit: 69933dcce571b2686897b295b7822e207d944617
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89473596"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90772864"
 ---
 # <a name="5-deploy-azure-functions-in-python"></a>5: Distribuire Funzioni di Azure in Python
 
@@ -23,7 +23,9 @@ Un'app per le funzioni richiede un account di archiviazione di Azure per i dati 
 
     ![Distribuire la funzione Python in un app per le funzioni di Azure](media/tutorial-vs-code-serverless-python/deploy-a-python-fuction-to-azure-function-app.png)
 
-1. Quando richiesto, selezionare **Create New Function App in Azure** (Crea una nuova app per le funzioni in Azure) e specificare un nome univoco in Azure, in genere usando il nome personale o della società insieme ad altri identificatori univoci. È possibile usare lettere, numeri e trattini. Se in precedenza è stata creata un'app per le funzioni, il relativo nome viene visualizzato in questo elenco di opzioni.
+1. Quando richiesto, selezionare **Create New Function App in Azure** (Crea una nuova app per le funzioni in Azure) e specificare un nome univoco in Azure, in genere usando il nome personale o della società insieme ad altri identificatori univoci. È possibile usare lettere, numeri e trattini.
+
+    Se in precedenza è stata creata un'app per le funzioni, il relativo nome viene visualizzato in questo elenco di opzioni.
 
 1. Quando richiesto, selezionare una versione di Python e una località di Azure.
 
@@ -75,4 +77,3 @@ Per applicare le modifiche apportate tramite il portale o tramite **Azure Explor
 > [!div class="nextstepaction"]
 > [Le funzioni sono state distribuite: procedere con il passaggio 6 >>>](tutorial-vs-code-serverless-python-06.md)
 
-o problemi Inviare un problema GitHub usando il feedback "Questa pagina" nella parte inferiore della pagina.

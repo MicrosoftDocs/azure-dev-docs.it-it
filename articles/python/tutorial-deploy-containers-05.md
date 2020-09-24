@@ -4,12 +4,12 @@ description: "Passaggio 5 dell'esercitazione: pulizia delle risorse di Azure per
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: cc5540570bc914d39a17bd102dc0f86f6674025a
-ms.sourcegitcommit: 9e282fc2ec967bee181c3034e7e70b28ae308905
+ms.openlocfilehash: 9140f5b695fe4b20e1e9417fe1d5e6ad115bb4eb
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89473526"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831417"
 ---
 # <a name="5-clean-up-azure-resources"></a>5: Pulire le risorse di Azure
 
@@ -23,7 +23,7 @@ Le risorse di Azure create in questa esercitazione possono comportare addebiti r
 
 Per altre informazioni sulle estensioni di Docker e del Servizio app, visitare i rispettivi repository in GitHub: [vscode-docker](https://github.com/Microsoft/vscode-docker) e [vscode-azureappservice](https://github.com/Microsoft/vscode-azureappservice). Le segnalazioni di problemi e i contributi sono molto apprezzati.
 
-Per altre informazioni sui servizi di Azure che è possibile usare da Python, tra cui l'archiviazione di dati con servizi di intelligenza artificiale e Machine Learning, visitare la pagina dedicata ad [Azure per sviluppatori Python](https://docs.microsoft.com/python/azure/?view=azure-python).
+Per altre informazioni sui servizi di Azure che è possibile usare da Python, tra cui l'archiviazione di dati con servizi di intelligenza artificiale e Machine Learning, visitare la pagina dedicata ad [Azure per sviluppatori Python](/python/azure/?preserve-view=true&view=azure-python).
 
 Sono inoltre disponibili altre estensioni di Azure per VS Code che possono risultare utili. È sufficiente cercare "Azure" nell'area delle estensioni:
 
@@ -37,6 +37,4 @@ Alcune estensioni comuni sono:
 - [Strumenti di Azure Resource Manager](https://marketplace.visualstudio.com/items?itemName=msazurermtools.azurerm-vscode-tools)
 
 > [!div class="nextstepaction"]
-> [Fatto](https://docs.microsoft.com/python/azure/?view=azure-python)
-
-o problemi Inviare un problema GitHub usando il feedback "Questa pagina" nella parte inferiore della pagina.
+> [Fatto](/python/azure/?preserve-view=true&view=azure-python)

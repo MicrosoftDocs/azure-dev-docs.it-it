@@ -1,16 +1,16 @@
 ---
-ms.openlocfilehash: dea8cf8da093159c257fc09caea4f4e2992799a7
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: a137e28a81a5175109b6f91b4d29e533b182a85c
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81670917"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90830008"
 ---
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>Prerequisiti
 
 Per completare la procedura illustrata in questo articolo, sarà necessario installare Azure Toolkit for Eclipse, che richiede i componenti software seguenti:
 
-* [Java Development Kit (JDK) supportato da Azure](https://aka.ms/azure-jdks)
+* [Java Development Kit (JDK) supportato da Azure](../../fundamentals/java-jdk-long-term-support.md)
 * [IDE Eclipse](http://www.eclipse.org/downloads/)
 * [Azure Toolkit for Eclipse](https://marketplace.eclipse.org/content/azure-toolkit-eclipse), vedere la [guida all'installazione](../installation.md) per altre informazioni
 * [Accesso](../sign-in-instructions.md) all'account Azure per Azure Toolkit for Eclipse

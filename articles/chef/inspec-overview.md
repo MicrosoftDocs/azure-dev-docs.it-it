@@ -5,12 +5,12 @@ keywords: azure, chef, devops, macchine virtuali, panoramica, automazione, inspe
 ms.date: 03/19/2019
 ms.topic: article
 ms.custom: devx-track-chef
-ms.openlocfilehash: 0c50cd07473565609084db24b9e537519194a0c2
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: baabe7530c2f54d89b1d14023a4f9a34e4eeb809
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88240723"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831447"
 ---
 # <a name="use-inspec-for-compliance-automation-of-your-azure-infrastructure"></a>Usare InSpec per l'automazione della conformità dell'infrastruttura di Azure
 
@@ -30,7 +30,7 @@ La modalità di rilevamento senza agenti di InSpec consente di valutare rapidame
 
 ## <a name="audit-azure-virtual-machines-with-policy-guest-configuration"></a>Controllare le macchine virtuali di Azure con Configurazione guest dei criteri
 
-Azure supporta direttamente l'uso di definizioni di Chef InSpec per controllare macchine virtuali di Azure tramite [Configurazione guest di Criteri di Azure](https://docs.microsoft.com/azure/governance/policy/concepts/guest-configuration). La funzionalità Configurazione guest valuta una macchina virtuale Linux in base a una definizione di Chef InSpec specificata e segnala la conformità tramite Criteri di Azure. I risultati di questi controlli vengono segnalati anche tramite i log di Monitoraggio di Azure, abilitando gli avvisi e altri scenari di automazione.
+Azure supporta direttamente l'uso di definizioni di Chef InSpec per controllare macchine virtuali di Azure tramite [Configurazione guest di Criteri di Azure](/azure/governance/policy/concepts/guest-configuration). La funzionalità Configurazione guest valuta una macchina virtuale Linux in base a una definizione di Chef InSpec specificata e segnala la conformità tramite Criteri di Azure. I risultati di questi controlli vengono segnalati anche tramite i log di Monitoraggio di Azure, abilitando gli avvisi e altri scenari di automazione.
 
 ## <a name="satisfy-audits"></a>Soddisfare i controlli
 

@@ -5,12 +5,12 @@ keywords: ansible, azure, devops, bash, cloudshell, playbook, interfaccia della 
 ms.topic: quickstart
 ms.date: 08/13/2020
 ms.custom: devx-track-ansible,devx-track-cli
-ms.openlocfilehash: 50fbcb4d086679265d728f14061a5c4c649fa48d
-ms.sourcegitcommit: bfaeacc2fb68f861a9403585d744e51a8f99829c
+ms.openlocfilehash: bdda836789e9230cffdc14a6ee4bd87ddb2ce5ef
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "90682034"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831173"
 ---
 # <a name="quickstart-configure-ansible-using-azure-cli"></a>Avvio rapido: Configurare Ansible con l'interfaccia della riga di comando di Azure
 
@@ -177,4 +177,4 @@ In questa sezione vengono esportati i valori dell'entità servizio per configura
 ## <a name="next-steps"></a>Passaggi successivi
 
 > [!div class="nextstepaction"]
-> [Ansible in Azure](/azure/developer/Ansible)
+> [Ansible in Azure](./index.yml)

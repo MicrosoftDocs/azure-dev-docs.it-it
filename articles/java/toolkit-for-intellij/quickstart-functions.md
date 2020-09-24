@@ -4,12 +4,12 @@ description: Creare e pubblicare in Azure una semplice funzione attivata tramite
 ms.topic: quickstart
 ms.date: 03/26/2020
 ms.custom: devx-track-java
-ms.openlocfilehash: 1260d5cbaec821149468ef524af35e081c06ec52
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: b27655657d763e295a1817acf200a67c090ff67d
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86379965"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831407"
 ---
 # <a name="quickstart-create-an-azure-functions-project-using-intellij-idea"></a>Avvio rapido: Creare un progetto di Funzioni di Azure con IntelliJ IDEA
 
@@ -20,7 +20,7 @@ In questo articolo si usa IntelliJ IDEA per creare una funzione che risponde a r
 Prima di iniziare, verificare che siano soddisfatti i requisiti seguenti:
 
 + Un account Azure con una sottoscrizione attiva. [Creare un account gratuitamente](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio).
-+ [Java Development Kit (JDK) supportato da Azure](https://aka.ms/azure-jdks) per Java 8
++ [Java Development Kit (JDK) supportato da Azure](../fundamentals/java-jdk-long-term-support.md) per Java 8
 + [IntelliJ IDEA](https://www.jetbrains.com/idea/download/) Ultimate Edition o Community Edition installato
 + [Maven 3.5.0+](https://maven.apache.org/download.cgi)
 + Ultima versione di [Function Core Tools](https://github.com/Azure/azure-functions-core-tools)

@@ -4,12 +4,12 @@ description: "Passaggio 7 dell'esercitazione: pulizia delle risorse di Azure"
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: ba8d4b3ae6411b2bced31689513b17ee1bad9efd
-ms.sourcegitcommit: 815cf2acff71e849735f7afce54723f03ffa5df3
+ms.openlocfilehash: cc1acdd316406d9269c97a4f5b25f465d0303509
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88501436"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831477"
 ---
 # <a name="7-clean-up-resources-after-deploying-to-azure-app-service-on-linux-from-visual-studio-code"></a>7: Pulire le risorse dopo la distribuzione nel Servizio app di Azure in Linux da Visual Studio Code
 
@@ -25,7 +25,7 @@ La procedura dettagliata per la distribuzione di codice Python nel Servizio app 
 
 Come indicato in precedenza, è possibile ottenere altre informazioni sull'estensione Servizio app visitando il relativo repository in GitHub, [vscode-azureappservice](https://github.com/Microsoft/vscode-azureappservice). Le segnalazioni di problemi e i contributi sono molto apprezzati.
 
-Per altre informazioni sui servizi di Azure che è possibile usare da Python, tra cui l'archiviazione di dati con servizi di intelligenza artificiale e Machine Learning, visitare la pagina dedicata ad [Azure per sviluppatori Python](https://docs.microsoft.com/python/azure/?view=azure-python).
+Per altre informazioni sui servizi di Azure che è possibile usare da Python, tra cui l'archiviazione di dati con servizi di intelligenza artificiale e Machine Learning, visitare la pagina dedicata ad [Azure per sviluppatori Python](/python/azure/?view=azure-python).
 
 Sono inoltre disponibili altre estensioni di Azure per VS Code che possono risultare utili. È sufficiente cercare "Azure" nell'area delle estensioni:
 
@@ -39,6 +39,6 @@ Alcune estensioni comuni sono:
 - [Azure Resource Manager Tools](https://marketplace.visualstudio.com/items?itemName=msazurermtools.azurerm-vscode-tools)
 
 > [!div class="nextstepaction"]
-> [Fatto](https://docs.microsoft.com/python/azure/?view=azure-python) 
+> [Fatto](/python/azure/?view=azure-python) 
 
 [Problemi? Segnalarli](https://aka.ms/FlaskVSCQuickstartHelp).

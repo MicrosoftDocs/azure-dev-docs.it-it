@@ -5,12 +5,12 @@ keywords: jenkins, azure, devops, pipeline, cicd, docker
 ms.topic: tutorial
 ms.date: 03/27/2017
 ms.custom: devx-track-jenkins
-ms.openlocfilehash: 2a9bc23852a04b42b72628adda116585d354f860
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 8a29533b8589d91d095a3d591e6346f87dde4e52
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88240703"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831217"
 ---
 # <a name="tutorial-create-a-jenkins-pipeline-using-github-and-docker"></a>Esercitazione: Creare una pipeline Jenkins con GitHub e Docker
 
@@ -24,12 +24,12 @@ Per automatizzare le fasi di compilazione e test dello sviluppo di un'applicazio
 > * Creare un'immagine Docker per l'app
 > * Verificare che i commit GitHub compilino una nuova immagine Docker e gli aggiornamenti che eseguono l'app
 
-Questa esercitazione usa l'interfaccia della riga di comando all'interno di [Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview), che viene costantemente aggiornato alla versione più recente. Per aprire Cloud Shell, selezionare **Prova** nella parte superiore di qualsiasi blocco di codice.
+Questa esercitazione usa l'interfaccia della riga di comando all'interno di [Azure Cloud Shell](/azure/cloud-shell/overview), che viene costantemente aggiornato alla versione più recente. Per aprire Cloud Shell, selezionare **Prova** nella parte superiore di qualsiasi blocco di codice.
 
 Se si sceglie di installare e usare l'interfaccia della riga di comando in locale, per questa esercitazione è necessario eseguire l'interfaccia della riga di comando di Azure versione 2.0.30 o successiva. Eseguire `az --version` per trovare la versione. Se è necessario eseguire l'installazione o l'aggiornamento, vedere [Installare l'interfaccia della riga di comando di Azure]( /cli/azure/install-azure-cli).
 
 ## <a name="create-jenkins-instance"></a>Creare l'istanza di Jenkins
-In un'esercitazione precedente, [How to customize a Linux virtual machine on first boot](/azure/virtual-machines/linux/tutorial-automate-vm-deployment) (Come personalizzare una macchina virtuale Linux al primo avvio), è stato descritto come personalizzare una macchina virtuale al primo avvio con cloud-init. Questa esercitazione usa un file cloud-init per installare Jenkins e Docker in una macchina virtuale. Jenkins è un server di automazione open source molto diffuso che si integra uniformemente con Azure per consentire l'integrazione continua e il recapito continuo. Per altre esercitazioni sull'uso di Jenkins, vedere [Jenkins in Azure](https://docs.microsoft.com/azure/jenkins/).
+In un'esercitazione precedente, [How to customize a Linux virtual machine on first boot](/azure/virtual-machines/linux/tutorial-automate-vm-deployment) (Come personalizzare una macchina virtuale Linux al primo avvio), è stato descritto come personalizzare una macchina virtuale al primo avvio con cloud-init. Questa esercitazione usa un file cloud-init per installare Jenkins e Docker in una macchina virtuale. Jenkins è un server di automazione open source molto diffuso che si integra uniformemente con Azure per consentire l'integrazione continua e il recapito continuo. Per altre esercitazioni sull'uso di Jenkins, vedere [Jenkins in Azure](/azure/jenkins/).
 
 Nella shell corrente creare un file denominato *cloud-init-jenkins.txt* e incollare la configurazione seguente. Ad esempio, creare il file in Cloud Shell anziché nel computer locale. Immettere `sensible-editor cloud-init-jenkins.txt` per creare il file e visualizzare un elenco degli editor disponibili. Assicurarsi che l'intero file cloud-init venga copiato correttamente, in particolare la prima riga:
 

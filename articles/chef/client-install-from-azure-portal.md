@@ -5,12 +5,12 @@ keywords: azure, chef, devops, client, installare, portale
 ms.date: 02/22/2020
 ms.topic: article
 ms.custom: devx-track-chef
-ms.openlocfilehash: 3fb282914bad8992a5f4df76019df89824675da0
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: c84804628be0904deb1781006b7a66c7c402deb8
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88240823"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831467"
 ---
 # <a name="install-the-chef-client-from-the-azure-portal"></a>Installare il client Chef dal portale di Azure
 È possibile aggiungere l'estensione client Chef direttamente su un computer Windows o Linux dal portale di Azure. Questo articolo illustra nel dettaglio il processo usando una macchina virtuale Linux nuova.
@@ -51,7 +51,7 @@ In questa sezione si usa il portale di Azure per creare una macchina virtuale Li
 1. Nella scheda **Generale** specificare i valori seguenti e quindi scegliere **OK**.
 
    - **Nome**: specificare un nome per la nuova macchina virtuale.
-   - **Tipo di disco della macchina virtuale**: specificare **SSD** o **HDD** per il tipo di disco di archiviazione. Per altre informazioni sui tipi di disco di macchina virtuale in Azure, vedere l'articolo [Selezionare un tipo di disco](https://docs.microsoft.com/azure/virtual-machines/windows/disks-types).
+   - **Tipo di disco della macchina virtuale**: specificare **SSD** o **HDD** per il tipo di disco di archiviazione. Per altre informazioni sui tipi di disco di macchina virtuale in Azure, vedere l'articolo [Selezionare un tipo di disco](/azure/virtual-machines/windows/disks-types).
    - **Nome utente**: immettere un nome utente con privilegi di amministratore nella macchina virtuale.
    - **Tipo di autenticazione**: selezionare **Password**. È anche possibile selezionare **Chiave pubblica SSH** e specificare un valore di chiave pubblica SSH. Ai fini di questa demo (e nelle schermate) è selezionata l'opzione **Password**.
    - **Password** e **Conferma password**: immettere una password per l'utente.

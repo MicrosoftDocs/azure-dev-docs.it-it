@@ -2,14 +2,14 @@
 title: 'Passaggio 4: Eseguire il debug in locale del codice Python in Funzioni di Azure con VS Code'
 description: "Passaggio 4 dell'esercitazione: esecuzione del debugger di VS Code in locale per verificare il codice Python."
 ms.topic: conceptual
-ms.date: 05/19/2020
+ms.date: 09/17/2020
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: f96e2065f4864423470c1eda9ad48cad086e0fe6
-ms.sourcegitcommit: 9e282fc2ec967bee181c3034e7e70b28ae308905
+ms.openlocfilehash: 4a5cb6bb8eedca93ce1e7675d3e7e1959ca066f6
+ms.sourcegitcommit: 69933dcce571b2686897b295b7822e207d944617
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89473586"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90773029"
 ---
 # <a name="4-debug-the-azure-functions-python-code-locally"></a>4: Eseguire il debug in locale del codice Python in Funzioni di Azure
 
@@ -29,7 +29,9 @@ ms.locfileid: "89473586"
             HttpExample: [GET,POST] http://localhost:7071/api/HttpExample
     </pre>
 
-1. Usare **CTRL+clic** o **CMD+clic** sull'URL visualizzato nella finestra **Output** di Visual Studio Code per aprire l'indirizzo in un browser oppure avviare un browser e incollarvi lo stesso URL. In entrambi i casi l'endpoint è `api/<function_name>`, ma in questo caso è `api/HttpExample`. Dal momento però che l'URL non include alcun parametro name, nella finestra del browser dovrebbe essere visualizzato "Please pass a name on the query string or in the request body" (Passare un nome nella stringa di query o nel corpo della richiesta) a seconda del percorso nel codice.
+1. Usare **CTRL+clic** o **CMD+clic** sull'URL visualizzato nella finestra **Output** di Visual Studio Code per aprire l'indirizzo in un browser oppure avviare un browser e incollarvi lo stesso URL.
+
+    In entrambi i casi l'endpoint è `api/<function_name>`, ma in questo caso è `api/HttpExample`. Dal momento però che l'URL non include alcun parametro name, nella finestra del browser dovrebbe essere visualizzato "Please pass a name on the query string or in the request body" (Passare un nome nella stringa di query o nel corpo della richiesta) a seconda del percorso nel codice.
 
     > [!TIP]
     > Se non si è in grado di accedere all'URL, l'esecuzione avviene dietro un proxy aziendale, (pertanto è possibile che siano impostate le variabili di ambiente `HTTP_PROXY` e `HTTPS_PROXY`), quindi impostare una variabile di ambiente denominata `NO_PROXY` su `localhost,127.0.0.1` e riprovare.
@@ -47,7 +49,7 @@ ms.locfileid: "89473586"
         --data {"""name""":"""Visual Studio Code"""} http://localhost:7071/api/HttpExample
     ```
 
-    In PowerShell è anche possibile usare il [cmdlet Invoke-WebRequest](/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-6).
+    In PowerShell è anche possibile usare il [cmdlet Invoke-WebRequest](/powershell/module/microsoft.powershell.utility/invoke-webrequest).
 
     # <a name="bash"></a>[Bash](#tab/bash)
 
@@ -61,7 +63,11 @@ ms.locfileid: "89473586"
 
     In alternativa, creare un file come *data.json* che contenga `{"name":"Visual Studio Code"}` e usare il comando `curl --header "Content-Type: application/json" --request POST --data @data.json http://localhost:7071/api/HttpExample`.
 
-1. Per testare il debug della funzione, impostare un punto di interruzione nella riga `name = req.params.get('name')` ed effettuare una nuova richiesta all'URL. Il debugger di Visual Studio Code dovrebbe arrestarsi su tale riga, consentendo di esaminare le variabili ed eseguire il codice un'istruzione alla volta. Per una breve procedura dettagliata sul debug di base, vedere l'[esercitazione sulla configurazione e l'esecuzione del debugger in Visual Studio Code](https://code.visualstudio.com/docs/python/python-tutorial#configure-and-run-the-debugger).
+1. Per testare il debug della funzione, impostare un punto di interruzione nella riga `name = req.params.get('name')` ed effettuare una nuova richiesta all'URL.
+
+    Il debugger di Visual Studio Code dovrebbe arrestarsi su tale riga, consentendo di esaminare le variabili ed eseguire il codice un'istruzione alla volta.
+
+    Per una breve procedura dettagliata sul debug di base, vedere l'[esercitazione sulla configurazione e l'esecuzione del debugger in Visual Studio Code](https://code.visualstudio.com/docs/python/python-tutorial#configure-and-run-the-debugger).
 
 1. Se si ritiene di aver testato la funzione in locale in modo esauriente, arrestare il debugger usando n il comando di menu **Debug** > **Arresta debug** oppure il comando **Disconnect** sulla barra degli strumenti di debug.
 
@@ -73,4 +79,3 @@ ms.locfileid: "89473586"
 > [!div class="nextstepaction"]
 > [Il debugger è stato eseguito in locale: procedere con il passaggio 5 >>>](tutorial-vs-code-serverless-python-05.md)
 
-o problemi Inviare un problema GitHub usando il feedback "Questa pagina" nella parte inferiore della pagina.

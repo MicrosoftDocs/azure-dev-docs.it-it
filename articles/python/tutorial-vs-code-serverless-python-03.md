@@ -2,14 +2,14 @@
 title: 'Passaggio 3: Esaminare i file di codice Python per Funzioni di Azure in VS Code'
 description: Passaggio 3 dell'esercitazione, informazioni sul codice Python del modello fornito da Funzioni di Azure.
 ms.topic: conceptual
-ms.date: 05/19/2020
+ms.date: 09/17/2020
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: 29802cf346a53d7230a2b6f46e8f39127be70d0a
-ms.sourcegitcommit: 9e282fc2ec967bee181c3034e7e70b28ae308905
+ms.openlocfilehash: 1734a89ed2c71604fba5583020e0e93810c900a0
+ms.sourcegitcommit: 69933dcce571b2686897b295b7822e207d944617
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89473536"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90772524"
 ---
 # <a name="3-examine-the-python-code-files-in-visual-studio-code"></a>3: Esaminare i file di codice Python in Visual Studio Code
 
@@ -86,11 +86,10 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
 Di seguito sono riportate le parti importanti del codice:
 
 - È necessario importare il modulo `azure.functions`. L'importazione del modulo di registrazione è un'operazione facoltativa ma consigliata.
-- La funzione Python `main` necessaria riceve un oggetto `func.HttpRequest` denominato `req` e restituisce un valore di tipo `func.HttpResponse`. È possibile ottenere altre informazioni sulle funzionalità di questi oggetti nella documentazione di riferimento per [func.HttpRequest](/python/api/azure-functions/azure.functions.httprequest?view=azure-python) e [func.HttpResponse](/python/api/azure-functions/azure.functions.httpresponse?view=azure-python).
+- La funzione Python `main` necessaria riceve un oggetto `func.HttpRequest` denominato `req` e restituisce un valore di tipo `func.HttpResponse`. È possibile ottenere altre informazioni sulle funzionalità di questi oggetti nella documentazione di riferimento per [func.HttpRequest](/python/api/azure-functions/azure.functions.httprequest?view=azure-python&preserve-view=true) e [func.HttpResponse](/python/api/azure-functions/azure.functions.httpresponse?view=azure-python&preserve-view=true).
 - Il corpo di `main` elabora quindi la richiesta e genera una risposta. In questo caso, il codice cerca un parametro `name` nell'URL. Se non lo trova, verifica se il corpo della richiesta contiene codice JSON (usando `func.HttpRequest.get_json`) e se il codice JSON contiene un valore `name` (usando il metodo `get` dell'oggetto JSON restituito da `get_json`).
 - Se il nome viene trovato, il codice restituisce la stringa "Hello" con il nome aggiunto alla fine; in caso contrario, restituisce un messaggio generico.
 
 > [!div class="nextstepaction"]
 > [I file di codice sono stati esaminati: procedere con il passaggio 4 >>>](tutorial-vs-code-serverless-python-04.md)
 
-o problemi Inviare un problema GitHub usando il feedback "Questa pagina" nella parte inferiore della pagina.

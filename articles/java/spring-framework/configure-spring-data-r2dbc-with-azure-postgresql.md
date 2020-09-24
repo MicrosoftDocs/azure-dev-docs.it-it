@@ -8,12 +8,12 @@ ms.tgt_pltfrm: multiple
 ms.author: judubois
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: 281ce33914c4f8aa4116721020f1e14a41868930
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: cdda538a986dde8b2a436980298e98a914ef1bb0
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86378725"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831347"
 ---
 # <a name="use-spring-data-r2dbc-with-azure-database-for-postgresql"></a>Usare Spring Data R2DBC con Database di Azure per PostgreSQL
 
@@ -119,4 +119,4 @@ Congratulazioni! È stata creata un'applicazione Spring Boot completamente reatt
 
 Per altre informazioni su Spring Data R2DBC, vedere la [documentazione di riferimento](https://docs.spring.io/spring-data/r2dbc/docs/current/reference/html/#reference) di Spring.
 
-Per altre informazioni sull'uso di Azure con Java, vedere [Azure per sviluppatori Java](/azure/developer/java/) e la documentazione relativa all'[uso di Azure DevOps e Java](/azure/devops/).
+Per altre informazioni sull'uso di Azure con Java, vedere [Azure per sviluppatori Java](../index.yml) e la documentazione relativa all'[uso di Azure DevOps e Java](/azure/devops/).

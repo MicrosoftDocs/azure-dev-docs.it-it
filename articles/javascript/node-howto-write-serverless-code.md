@@ -4,12 +4,12 @@ description: Indicazioni su come usare Funzioni di Azure per creare e distribuir
 ms.topic: article
 ms.date: 08/19/2019
 ms.custom: seo-javascript-september2019, seo-javascript-october2019, devx-track-javascript
-ms.openlocfilehash: 8b0fa5aac45d95780da4327d72cea6b6533c971e
-ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
+ms.openlocfilehash: 5f69fa073647527516452e7a5cdf77d6b5a8caa8
+ms.sourcegitcommit: 69933dcce571b2686897b295b7822e207d944617
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88218615"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90772954"
 ---
 # <a name="use-azure-functions-to-write-serverless-nodejs-code-on-azure"></a>Usare Funzioni di Azure per scrivere codice Node.js serverless in Azure
 
@@ -31,7 +31,7 @@ A questo punto, approfondire la conoscenza delle operazioni supportate in Funzio
 
 Da qui è possibile accedere a molte altre risorse che consentono di esplorare ulteriormente il codice serverless:
 
-- Modulo Microsoft Learn: [Abilitare gli aggiornamenti automatici in un'app Web con Funzioni di Azure e il Servizio SignalR](https://docs.microsoft.com/learn/modules/automatic-update-of-a-webapp-using-azure-functions-and-signalr/)
+- Modulo Microsoft Learn: [Abilitare gli aggiornamenti automatici in un'app Web con Funzioni di Azure e il Servizio SignalR](/learn/modules/automatic-update-of-a-webapp-using-azure-functions-and-signalr/)
 
 - Informazioni sull'uso di diversi trigger per eseguire codice serverless:
 

@@ -2,14 +2,14 @@
 title: 'Passaggio 7: Aggiungere un binding di archiviazione per Funzioni di Azure in Python con VS Code'
 description: Passaggio 7 dell'esercitazione, aggiunta di un binding in Python per scrivere messaggi nell'archiviazione di Azure.
 ms.topic: conceptual
-ms.date: 05/19/2020
+ms.date: 09/17/2020
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: a8e320b42221b1f1d30859d41b8e56f52c18072a
-ms.sourcegitcommit: 9e282fc2ec967bee181c3034e7e70b28ae308905
+ms.openlocfilehash: ad242e5c9c2258e438846a7d393163871d14db9e
+ms.sourcegitcommit: 69933dcce571b2686897b295b7822e207d944617
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89473616"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90772854"
 ---
 # <a name="7-add-a-storage-binding-for-azure-functions-in-python"></a>7: Aggiungere un binding di archiviazione per Funzioni di Azure in Python
 
@@ -21,7 +21,9 @@ Il binding viene definito nel file *function.json* e può rappresentare sia l'in
 
 In questa sezione viene aggiunto un binding di archiviazione alla funzione HttpExample creata in precedenza in questa esercitazione. La funzione usa questo binding per scrivere messaggi nell'archiviazione a ogni richiesta. L'archiviazione in questione usa lo stesso account di archiviazione predefinito usato dall'app per le funzioni. Se si prevede di usare l'archiviazione in modo intensivo, tuttavia, è consigliabile creare un account separato.
 
-1. Sincronizzare le impostazioni remote per il progetto Funzioni di Azure nel file *local.settings.json* aprendo il riquadro comandi e selezionando **Funzioni di Azure: Download Remote Settings** (Scarica impostazioni remote). Aprire il file *local.settings.json* e verificare che contenga un valore per `AzureWebJobsStorage`. Questo valore è la stringa di connessione per l'account di archiviazione.
+1. Sincronizzare le impostazioni remote per il progetto Funzioni di Azure nel file *local.settings.json* aprendo il riquadro comandi e selezionando **Funzioni di Azure: Download Remote Settings** (Scarica impostazioni remote).
+ 
+    Aprire il file *local.settings.json* e verificare che contenga un valore per `AzureWebJobsStorage`. Questo valore è la stringa di connessione per l'account di archiviazione.
 
 1. Nella cartella `HttpExample` fare clic con il pulsante destro del mouse sul file *function.json* e scegliere **Aggiungi binding**:
 
@@ -49,7 +51,9 @@ In questa sezione viene aggiunto un binding di archiviazione alla funzione HttpE
         }
     ```
 
-1. Una volta configurato il binding, è possibile usarlo nel codice della funzione. Anche in questo caso, il binding appena definito viene visualizzato nel codice come argomento della funzione `main` in *\_\_init\_\_.py*. Ad esempio, è possibile modificare il file *\_\_init\_\_.py* in HttpExample in modo che corrisponda a quanto segue, che mostra l'uso dell'argomento `msg` per scrivere un messaggio con timestamp con il nome usato nella richiesta. I commenti illustrano le modifiche specifiche:
+1. Una volta configurato il binding, è possibile usarlo nel codice della funzione. Anche in questo caso, il binding appena definito viene visualizzato nel codice come argomento della funzione `main` in *\_\_init\_\_.py*.
+
+    Ad esempio, è possibile modificare il file *\_\_init\_\_.py* in HttpExample in modo che corrisponda a quanto segue, che mostra l'uso dell'argomento `msg` per scrivere un messaggio con timestamp con il nome usato nella richiesta. I commenti illustrano le modifiche specifiche:
 
     ```python
     import logging
@@ -82,7 +86,9 @@ In questa sezione viene aggiunto un binding di archiviazione alla funzione HttpE
             )
     ```
 
-1. Per testare queste modifiche in locale, avviare di nuovo il debugger in Visual Studio Code premendo F5 o selezionando il comando di menu **Debug** > **Avvia debug**. Come prima, la finestra **Output** dovrebbe mostrare gli endpoint del progetto.
+1. Per testare queste modifiche in locale, avviare di nuovo il debugger in Visual Studio Code premendo F5 o selezionando il comando di menu **Debug** > **Avvia debug**.
+
+    Come prima, la finestra **Output** dovrebbe mostrare gli endpoint del progetto.
 
 1. In un browser visitare l'URL `http://localhost:7071/api/HttpExample?name=VS%20Code` per creare una richiesta all'endpoint HttpExample, che dovrebbe anche scrivere un messaggio nella coda.
 
@@ -99,4 +105,3 @@ In questa sezione viene aggiunto un binding di archiviazione alla funzione HttpE
 > [!div class="nextstepaction"]
 > [Il binding di archiviazione è stato aggiunto: procedere con il passaggio 8 >>>](tutorial-vs-code-serverless-python-08.md)
 
-o problemi Inviare un problema GitHub usando il feedback "Questa pagina" nella parte inferiore della pagina.

@@ -1,10 +1,11 @@
 ---
-ms.openlocfilehash: e58e36b140c1512600497bffbbd149334904981f
-ms.sourcegitcommit: 553da4e9aa988e5bb823364244ea81961cee5bc7
+ms.custom: devx-track-javascript
+ms.openlocfilehash: 45c027d261a091e6c5e2abaa1ea1d4f55f5ad23f
+ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85792171"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "90773089"
 ---
 Dopo aver installato l'estensione di Azure in VS Code, accedere al proprio account Azure passando all'area **Azure**. Selezionare **Accedi ad Azure** e seguire le istruzioni visualizzate. Se sono installate più estensioni di Azure, selezionare quella relativa all'area in cui si lavora, ad esempio Servizio app, Funzioni e così via.
 

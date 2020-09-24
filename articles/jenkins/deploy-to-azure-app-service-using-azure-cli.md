@@ -5,12 +5,12 @@ keywords: jenkins, azure, devops, servizio app, interfaccia della riga di comand
 ms.topic: tutorial
 ms.date: 08/08/2020
 ms.custom: devx-track-jenkins, devx-track-azurecli
-ms.openlocfilehash: 9c5f3b30507cda764dd29f0c133d4997dbc2bb53
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 4a6fde1eb8830c897c438fa89e7da6fe93b5a3a8
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88240953"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831337"
 ---
 # <a name="tutorial-deploy-to-azure-app-service-with-jenkins-and-the-azure-cli"></a>Esercitazione: Distribuire nel servizio app di Azure con Jenkins e l'interfaccia della riga di comando di Azure
 
@@ -47,7 +47,7 @@ sudo apt-get install -y maven
 Per eseguire l'interfaccia della riga di comando di Azure è necessaria una credenziale di Azure.
 
 * Nel dashboard di Jenkins fare clic su **Credentials -> System ->**. Fare clic su **Global credentials(unrestricted)**.
-* Fare clic su **Add Credentials** per aggiungere un'[entità servizio di Microsoft Azure](https://docs.microsoft.com/cli/azure/create-an-azure-service-principal-azure-cli?toc=%2fazure%2fazure-resource-manager%2ftoc.json), immettendo: Subscription ID (ID sottoscrizione), Client ID (ID client), Client Secret (Segreto client) e OAuth 2.0 Token Endpoint (Endpoint di token OAuth 2.0). Indicare un ID per l'uso nel passaggio successivo.
+* Fare clic su **Add Credentials** per aggiungere un'[entità servizio di Microsoft Azure](/cli/azure/create-an-azure-service-principal-azure-cli?toc=%252fazure%252fazure-resource-manager%252ftoc.json), immettendo: Subscription ID (ID sottoscrizione), Client ID (ID client), Client Secret (Segreto client) e OAuth 2.0 Token Endpoint (Endpoint di token OAuth 2.0). Indicare un ID per l'uso nel passaggio successivo.
 
 ![Add Credentials](./media/deploy-to-azure-app-service-using-azure-cli/add-credentials.png)
 

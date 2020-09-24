@@ -5,12 +5,12 @@ keywords: ansible, azure, devops, bash, playbook, macchina virtuale, set di scal
 ms.topic: tutorial
 ms.date: 01/13/2020
 ms.custom: devx-track-ansible
-ms.openlocfilehash: 161592c9f437de0f72204051b222c7ed8c5f99e0
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 2ea2dbf740025797e6dd8514330e5b0c0de0df84
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88240843"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831097"
 ---
 # <a name="tutorial-deploy-apps-to-virtual-machine-scale-sets-in-azure-using-ansible"></a>Esercitazione: Distribuire app in set di scalabilità di macchine virtuali in Azure tramite Ansible
 
@@ -33,7 +33,7 @@ ms.locfileid: "88240843"
 [!INCLUDE [ansible-prereqs-cloudshell-use-or-vm-creation2.md](includes/ansible-prereqs-cloudshell-use-or-vm-creation2.md)] 
 [!INCLUDE [ansible-prereqs-vm-scale-set.md](includes/ansible-prereqs-vm-scale-set.md)]
 - **git** - [git](https://git-scm.com) viene usato per scaricare un esempio di Java usato in questa esercitazione.
-- **Java SE Development Kit (JDK)** - [JDK](https://aka.ms/azure-jdks) viene usato per compilare il progetto Java di esempio.
+- **Java SE Development Kit (JDK)** - [JDK](../java/fundamentals/java-jdk-long-term-support.md) viene usato per compilare il progetto Java di esempio.
 - **Apache Maven** - [Apache Maven](https://maven.apache.org/download.cgi) viene usato per compilare il progetto Java di esempio.
 
 ## <a name="get-host-information"></a>Ottenere informazioni sugli host

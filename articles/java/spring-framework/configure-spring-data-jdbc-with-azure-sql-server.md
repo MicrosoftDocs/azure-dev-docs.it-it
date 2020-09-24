@@ -8,16 +8,16 @@ ms.tgt_pltfrm: multiple
 ms.author: judubois
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: a6eabc4e7aca4a79ba41b0061721bf8431d312bf
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: abf197e0626925dd836243a207ddf0c49ee32470
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86378905"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831247"
 ---
 # <a name="use-spring-data-jdbc-with-azure-sql-database"></a>Usare Spring Data JDBC con Database SQL di Azure
 
-Questo argomento illustra la creazione di un'applicazione di esempio che usa [Spring Data JDBC](https://spring.io/projects/spring-data-jdbc) per archiviare e recuperare le informazioni in [Database SQL di Azure](https://docs.microsoft.com/azure/sql-database/).
+Questo argomento illustra la creazione di un'applicazione di esempio che usa [Spring Data JDBC](https://spring.io/projects/spring-data-jdbc) per archiviare e recuperare le informazioni in [Database SQL di Azure](/azure/sql-database/).
 
 [JDBC](https://en.wikipedia.org/wiki/Java_Database_Connectivity) è l'API Java standard per la connessione ai database relazionali tradizionali.
 
@@ -99,4 +99,4 @@ Congratulazioni! È stata creata un'applicazione Spring Boot che usa JDBC per ar
 
 Per altre informazioni su Spring Data JDBC, vedere la [documentazione di riferimento](https://docs.spring.io/spring-data/jdbc/docs/current/reference/html/#reference) di Spring.
 
-Per altre informazioni sull'uso di Azure con Java, vedere [Azure per sviluppatori Java](/azure/developer/java/) e la documentazione relativa all'[uso di Azure DevOps e Java](/azure/devops/).
+Per altre informazioni sull'uso di Azure con Java, vedere [Azure per sviluppatori Java](../index.yml) e la documentazione relativa all'[uso di Azure DevOps e Java](/azure/devops/).

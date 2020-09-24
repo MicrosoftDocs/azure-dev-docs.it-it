@@ -3,16 +3,17 @@ title: Distribuire un sito Web Node.js statico in Azure da Visual Studio Code
 description: Parte 1 dell'esercitazione, introduzione e prerequisiti.
 ms.topic: conceptual
 ms.date: 09/23/2019
-ms.openlocfilehash: c63ff76f3572a7815b385b08b05e223eb681fbbe
-ms.sourcegitcommit: 553da4e9aa988e5bb823364244ea81961cee5bc7
+ms.custom: devx-track-javascript
+ms.openlocfilehash: d2c66383e654624cf7edce542461340cc248ba62
+ms.sourcegitcommit: 69933dcce571b2686897b295b7822e207d944617
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85792740"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90773090"
 ---
 # <a name="deploy-a-static-website-to-azure-from-visual-studio-code"></a>Distribuire un sito Web statico in Azure da Visual Studio Code
 
-In questa esercitazione viene creato un sito Web statico e distribuito in Azure usando [Archiviazione di Azure](https://docs.microsoft.com/azure/storage). Un sito Web statico è composto da file HTML, CSS, JavaScript e altri file statici come immagini o tipi di carattere. Un sito statico è solitamente un'[applicazione a pagina singola](https://en.wikipedia.org/wiki/Single-page_application) scritta in Angular, React o Vue. Tuttavia, l'app viene progettata e i file vengono ospitati e gestiti direttamente dall'_archiviazione_ invece che tramite un server Web. L'hosting nell'archiviazione è più semplice e meno costoso rispetto alla gestione di un server Web.
+In questa esercitazione viene creato un sito Web statico e distribuito in Azure usando [Archiviazione di Azure](/azure/storage). Un sito Web statico è composto da file HTML, CSS, JavaScript e altri file statici come immagini o tipi di carattere. Un sito statico è solitamente un'[applicazione a pagina singola](https://en.wikipedia.org/wiki/Single-page_application) scritta in Angular, React o Vue. Tuttavia, l'app viene progettata e i file vengono ospitati e gestiti direttamente dall'_archiviazione_ invece che tramite un server Web. L'hosting nell'archiviazione è più semplice e meno costoso rispetto alla gestione di un server Web.
 
 ## <a name="walkthrough-video"></a>Video della procedura dettagliata
 

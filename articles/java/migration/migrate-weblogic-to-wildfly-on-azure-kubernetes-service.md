@@ -1,17 +1,17 @@
 ---
 title: Eseguire la migrazione di applicazioni WebLogic a WildFly nel servizio Azure Kubernetes
 description: Questa guida descrive gli aspetti da considerare per la migrazione di un'applicazione WebLogic esistente da eseguire in WildFly in un contenitore del servizio Azure Kubernetes.
-author: mriem
+author: mnriem
 ms.author: manriem
 ms.topic: conceptual
 ms.date: 2/28/2020
 ms.custom: devx-track-java
-ms.openlocfilehash: aa496125a5a692f13e90441eb7be85f049481151
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: 8a55c9e7aaffba5a65f2d195763900aac3f3c336
+ms.sourcegitcommit: 850856d3fa2ddd8f96616ee6a1f092d8e0aedab3
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86379775"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90738432"
 ---
 # <a name="migrate-weblogic-applications-to-wildfly-on-azure-kubernetes-service"></a>Eseguire la migrazione di applicazioni WebLogic a WildFly nel servizio Azure Kubernetes
 

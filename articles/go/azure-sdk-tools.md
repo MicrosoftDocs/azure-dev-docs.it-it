@@ -3,12 +3,12 @@ title: Strumenti per gli sviluppatori che usano Azure SDK per Go
 description: Strumenti per l'uso di Azure SDK per Go e dei servizi di Azure
 ms.date: 09/05/2018
 ms.topic: conceptual
-ms.openlocfilehash: b08a578c3e5ceb7381cc1643b2967405b292376e
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: e52845218de7d874e045a11c004360b7a35baa03
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "80319438"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831307"
 ---
 # <a name="tools-for-developers-using-the-azure-sdk-for-go"></a>Strumenti per gli sviluppatori che usano Azure SDK per Go
 
@@ -16,7 +16,7 @@ Per scrivere in modo efficiente codice di Go e assicurarsi che funzioni corretta
 
 ## <a name="azure-cli"></a>Interfaccia della riga di comando di Azure
 
-L'interfaccia della riga di comando di Azure permette la creazione e la configurazione delle risorse di Azure nelle sottoscrizioni. L'interfaccia della riga di comando può semplificare le operazioni iniziali per la creazione rapida di risorse comuni e condivise di Azure, per consentire agli sviluppatori di concentrarsi sull'utilizzo più complesso dei servizi. L'interfaccia della riga di comando è multipiattaforma e include funzionalità per query e filtri, che consentono di inviare tramite pipe l'output direttamente agli strumenti preferiti della riga di comando. L'interfaccia della riga di comando è disponibile per l'installazione nel sistema locale, come immagine Docker, o tramite [Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview).
+L'interfaccia della riga di comando di Azure permette la creazione e la configurazione delle risorse di Azure nelle sottoscrizioni. L'interfaccia della riga di comando può semplificare le operazioni iniziali per la creazione rapida di risorse comuni e condivise di Azure, per consentire agli sviluppatori di concentrarsi sull'utilizzo più complesso dei servizi. L'interfaccia della riga di comando è multipiattaforma e include funzionalità per query e filtri, che consentono di inviare tramite pipe l'output direttamente agli strumenti preferiti della riga di comando. L'interfaccia della riga di comando è disponibile per l'installazione nel sistema locale, come immagine Docker, o tramite [Azure Cloud Shell](/azure/cloud-shell/overview).
 
 > [!div class="nextstepaction"]
 > [Installare l'interfaccia della riga di comando di Azure](/cli/azure/install-azure-cli)

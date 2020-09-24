@@ -6,12 +6,12 @@ ms.assetid: b55923b7-d60a-460d-b77c-af5fac67f1cc
 ms.topic: article
 ms.date: 11/13/2018
 ms.custom: seo-java-july2019, devx-track-java
-ms.openlocfilehash: 32f3b53ed58f9436aca82f08a3a4ce8600060632
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: 857487b644e585b87998f660b9ecc6358be01eba
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86379875"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831497"
 ---
 # <a name="azure-tools-for-java-developers"></a>Strumenti di Azure per gli sviluppatori Java
 
@@ -23,7 +23,7 @@ Per altre informazioni sulle versioni di JDK supportate e utilizzabili per lo sv
 
 ## <a name="eclipse-and-intellij-plugins"></a>Plug-in di Eclipse e IntelliJ
 
-Gestire le risorse di Azure e distribuire app dall'IDE con i toolkit di Azure per [Eclipse](/azure/developer/java/toolkit-for-eclipse) e [IntelliJ](/azure/developer/java/toolkit-for-intellij).
+Gestire le risorse di Azure e distribuire app dall'IDE con i toolkit di Azure per [Eclipse](../toolkit-for-eclipse/index.yml) e [IntelliJ](../toolkit-for-intellij/index.yml).
 
 ![Toolkit per IntelliJ con Azure Explorer](media/intelliJ-azure-explorer.png)
 

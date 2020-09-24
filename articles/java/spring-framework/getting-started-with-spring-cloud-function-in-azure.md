@@ -10,12 +10,12 @@ ms.service: azure-functions
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: 5cfdbb3542222a7ff9547b25836237d5d0991ddb
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: e126e56784b2f680cb69b9c3e0533831340a0f10
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86378475"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90830047"
 ---
 # <a name="getting-started-with-spring-cloud-function-in-azure"></a>Introduzione a Spring Cloud Function in Azure
 
@@ -27,7 +27,7 @@ Questo articolo illustra come usare [Spring Cloud Function](https://spring.io/pr
 
 Per sviluppare funzioni con Java, è necessario che siano installati gli elementi seguenti:
 
-- [Java Developer Kit](https://aka.ms/azure-jdks), versione 8
+- [Java Developer Kit](../fundamentals/java-jdk-long-term-support.md), versione 8
 - [Apache Maven](https://maven.apache.org), versione 3.0 o successive
 - [Interfaccia della riga di comando di Azure](/cli/azure)
 - [Azure Functions Core Tools](/azure/azure-functions/functions-run-local#v2) versione 2.7.1158 o successive
