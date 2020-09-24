@@ -3,14 +3,15 @@ title: Pulire le risorse dopo la distribuzione di un sito Web Node.js statico in
 description: Parte 6 dell'esercitazione, pulire le risorse.
 ms.topic: conceptual
 ms.date: 09/24/2019
-ms.openlocfilehash: cfc777d3e6ee4dbee51f5e580043f6950156101f
-ms.sourcegitcommit: 553da4e9aa988e5bb823364244ea81961cee5bc7
+ms.custom: devx-track-javascript
+ms.openlocfilehash: 0c24562ff5c4b689854c29ef33557e0bfa9bee8e
+ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85792691"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "90772579"
 ---
-# <a name="clean-up-resources"></a>Pulire le risorse
+# <a name="part-6-clean-up-resources"></a>Parte 6: Pulire le risorse
 
 [Passaggio precedente: Apportare modifiche e ripetere la distribuzione](tutorial-vscode-static-website-node-05.md)
 

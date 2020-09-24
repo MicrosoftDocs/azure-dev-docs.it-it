@@ -3,14 +3,15 @@ title: Pulire le risorse dopo la distribuzione nel Servizio app di Azure in Visu
 description: Parte 5 dell'esercitazione, pulire le risorse
 ms.topic: conceptual
 ms.date: 03/04/2020
-ms.openlocfilehash: 1c3b277270bf6f8f7cb5884b7bb56ce2c9b3368c
-ms.sourcegitcommit: 553da4e9aa988e5bb823364244ea81961cee5bc7
+ms.custom: devx-track-javascript
+ms.openlocfilehash: fc420d98121816157e75017ee453aa42929f68e6
+ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85793051"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "90772894"
 ---
-# <a name="clean-up-resources"></a>Pulire le risorse
+# <a name="part-5-clean-up-resources"></a>Parte 5: Pulire le risorse
 
 [Passaggio precedente: Eseguire lo streaming dei log](tutorial-vscode-azure-app-service-node-04.md)
 
