@@ -7,20 +7,32 @@ metadata:
   description: Introduzione allo sviluppo di app con Azure SDK per JavaScript nel browser o in Node.js tramite esercitazioni, strumenti e informazioni di riferimento sull'SDK.
   author: diberry
   ms.author: diberry
-  ms.date: 07/23/2020
+  ms.date: 09/21/2020
   ms.topic: landing-page
   ms.collection: collection
   ms.technology: azure
   ms.service: multiple
   ms.devlang: javascript
   ms.custom: 2020Aug21Redesign
-  ms.openlocfilehash: 372e8cbbfea398d06bbadca0d0d05a769cc1ec4a
-  ms.sourcegitcommit: 69933dcce571b2686897b295b7822e207d944617
+  ms.openlocfilehash: 85f5a27eb61c90ee3cdafd034daf072b571cea47
+  ms.sourcegitcommit: 53972873f4976a050b67c26eccab9bbe14293743
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 09/18/2020
-  ms.locfileid: "90772984"
+  ms.lasthandoff: 09/22/2020
+  ms.locfileid: "90990454"
 landingContent:
+- title: Non si è ancora provato Azure?
+  linkLists:
+  - linkListType: get-started
+    links:
+    - text: Nozioni fondamentali su Azure
+      url: /learn/paths/azure-fundamentals/
+    - text: Configurare l'ambiente di sviluppo
+      url: configure-local-development-environment.md
+    - text: Eseguire l'autenticazione con la libreria client
+      url: node-sdk-azure-authenticate.md
+    - text: Blog di Azure SDK
+      url: https://devblogs.microsoft.com/azure-sdk/
 - title: Hosting
   linkLists:
   - linkListType: tutorial
