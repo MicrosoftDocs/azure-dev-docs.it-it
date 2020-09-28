@@ -4,14 +4,14 @@ description: Informazioni su come usare l'autenticazione basata su entità servi
 ms.topic: article
 ms.date: 06/17/2017
 ms.custom: devx-track-javascript
-ms.openlocfilehash: 9343d1bfaa48e5b2307c5f442107b91613663e94
-ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
+ms.openlocfilehash: 156892d9fd8e8014e3dacaae2492126ac9bf5836
+ms.sourcegitcommit: b03cb337db8a35e6e62b063c347891e44a8a5a13
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88218887"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91110437"
 ---
-# <a name="create-an-azure-service-principal-with-nodejs"></a>Creare un'entità servizio di Azure con Node.js 
+# <a name="create-an-azure-service-principal-for-nodejs"></a>Creare un'entità servizio di Azure per Node.js
 
 Quando un'app deve accedere alle risorse, è possibile configurare un'identità per l'app ed eseguirne l'autenticazione con credenziali specifiche. Questa identità è nota come *entità servizio*. Essenzialmente, si creano le chiavi per l'account Azure Active Directory da fornire all'SDK per l'autenticazione invece di richiedere l'intervento dell'utente o il nome utente e la password.
 
@@ -29,7 +29,7 @@ Questo argomento illustra tre tecniche per creare un'entità servizio.
 
 ## <a name="create-a-service-principal-using-the-azure-portal"></a>Creare un'entità servizio usando il portale di Azure
 
-Seguire i passaggi illustrati nell'argomento [Usare il portale per creare un'applicazione Azure Active Directory e un'entità servizio che possano accedere alle risorse](https://azure.microsoft.com/documentation/articles/resource-group-create-service-principal-portal/) per generare l'entità servizio.
+Seguire i passaggi illustrati nell'argomento [Usare il portale per creare un'applicazione Azure Active Directory e un'entità servizio che possano accedere alle risorse](/azure/active-directory/develop/howto-create-service-principal-portal) per generare l'entità servizio.
 
 ## <a name="create-a-service-principal-using-the-azure-cli-20"></a>Creare un'entità servizio usando l'interfaccia della riga di comando di Azure 2.0
 
@@ -45,7 +45,8 @@ Per creare un'entità servizio usando l'[interfaccia della riga di comando di Az
     $ az login
     ```
 
-4. La chiamata a `az login` restituisce un URL e un codice. Passare all'URL specificato, immettere il codice e accedere con l'identità di Azure. Questa operazione potrebbe venire eseguita automaticamente se l'accesso è già stato eseguito. Sarà quindi possibile accedere all'account tramite l'interfaccia della riga di comando.
+4. La chiamata a `az login` restituisce un URL e un codice. Passare all'URL specificato, immettere il codice e accedere con l'identità di Azure. Questa operazione potrebbe venire eseguita automaticamente se l'accesso è già stato eseguito.
+Sarà quindi possibile accedere all'account tramite l'interfaccia della riga di comando.
 
 5. Ottenere l'ID della sottoscrizione e del tenant:
 
@@ -93,7 +94,7 @@ Per creare un'entità servizio usando l'[interfaccia della riga di comando di Az
 
     **Prendere nota dei valori di tenant, nome e password, che verranno usati nel passaggio 7.**
 
-7. Configurare le variabili di ambiente sostituendo i segnaposto &lt;subscriptionId>, &lt;tenant>, &lt;name> e &lt;password> con i valori ottenuti nei passaggi 4 e 5. 
+7. Configurare le variabili di ambiente sostituendo i segnaposto &lt;subscriptionId>, &lt;tenant>, &lt;name> e &lt;password> con i valori ottenuti nei passaggi 4 e 5.
 
     **Tramite Bash**
 
@@ -115,7 +116,7 @@ Per creare un'entità servizio usando l'[interfaccia della riga di comando di Az
 
 ## <a name="create-a-service-principal-using-the-azure-sdk-for-nodejs"></a>Creare un'entità servizio usando Azure SDK per Node.js
 
-Per creare un'entità servizio a livello di codice con JavaScript, usare lo [script ServicePrincipal](https://github.com/Azure/azure-sdk-for-node/tree/master/Documentation/ServicePrincipal).   
+Per creare un'entità servizio a livello di codice con JavaScript, usare lo [script ServicePrincipal](https://github.com/Azure/azure-sdk-for-node/tree/master/Documentation/ServicePrincipal).
 
 ## <a name="using-the-service-principal"></a>Uso dell'entità servizio
 
@@ -138,3 +139,7 @@ MsRest.loginWithServicePrincipalSecret(
   }
 );
 ```
+
+## <a name="next-steps"></a>Passaggi successivi
+
+* [Eseguire l'autenticazione con i moduli di Azure per Node.js](node-sdk-azure-authenticate.md)

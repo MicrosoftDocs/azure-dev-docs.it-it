@@ -1,16 +1,16 @@
 ---
-ms.openlocfilehash: cbcc292bf0b59adf35789bbd24ca37b0301a2ad7
-ms.sourcegitcommit: efab6be74671ea4300162e0b30aa8ac134d3b0a9
+ms.openlocfilehash: 1e6e3f46fc7dd2f4ddf708be65941deb9ca18096
+ms.sourcegitcommit: 69933dcce571b2686897b295b7822e207d944617
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84269160"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90772610"
 ---
 Dopo aver installato l'estensione di Azure, accedere al proprio account Azure passando all'area **Azure**, selezionare **Accedi ad Azure** e seguire le istruzioni visualizzate. Se sono installate più estensioni di Azure, selezionare quella relativa all'area in cui si lavora, ad esempio Servizio app, Funzioni e così via.
 
 ![Accedere ad Azure tramite VS Code](../media/deploy-azure/sign-in-to-azure-through-visual-studio-code.png)
 
-Dopo aver eseguito l'accesso, verificare che l'indirizzo di posta elettronica dell'account Azure (o connesso) sia visualizzato sulla barra di stato e che la sottoscrizione o le sottoscrizioni siano visualizzate nell'area **Azure**:
+Dopo l'accesso verificare che **Azure: Accesso effettuato"**sia visualizzato sulla barra di stato e che la sottoscrizione o le sottoscrizioni siano visualizzate nell'area**Azure**:
 
 ![Barra di stato di Visual Studio Code che mostra l'account Azure](../media/deploy-azure/azure-account-status-bar-in-visual-studio-code.png)
 

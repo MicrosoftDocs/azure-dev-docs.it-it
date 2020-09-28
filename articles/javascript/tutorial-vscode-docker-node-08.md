@@ -3,14 +3,15 @@ title: Pulire le risorse dopo la distribuzione di un app Node.js in contenitore 
 description: Parte 8 dell'esercitazione, pulire le risorse
 ms.topic: conceptual
 ms.date: 09/20/2019
-ms.openlocfilehash: dd71ec5affdd1696544ec166ad8517b376958cab
-ms.sourcegitcommit: 553da4e9aa988e5bb823364244ea81961cee5bc7
+ms.custom: devx-track-javascript
+ms.openlocfilehash: d05766092022772c96fa745f9a52aa4901b27f82
+ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85792900"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "90772704"
 ---
-# <a name="clean-up-resources"></a>Pulire le risorse
+# <a name="part-8-clean-up-resources"></a>Parte 8: Pulire le risorse
 
 [Passaggio precedente: Eseguire lo streaming dei log](tutorial-vscode-docker-node-07.md)
 

@@ -1,17 +1,17 @@
 ---
 title: Eseguire la migrazione di applicazioni Spring Boot da eseguire nel servizio Azure Kubernetes
 description: Questa guida descrive gli aspetti da considerare per la migrazione di un'applicazione Spring Boot esistente da eseguire in un contenitore del servizio Azure Kubernetes.
-author: mriem
+author: mnriem
 ms.author: manriem
 ms.topic: conceptual
 ms.date: 4/10/2020
 ms.custom: devx-track-java
-ms.openlocfilehash: 84e7bc49d8e52081465ce18b90c3ffe14d41f75c
-ms.sourcegitcommit: 95fdc444c424f4a7d7d53437837e9532a0b897e9
+ms.openlocfilehash: 4d3da50042074b724f614b718ceb0edc7fb83077
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88662992"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831707"
 ---
 # <a name="migrate-spring-boot-applications-to-azure-kubernetes-service"></a>Eseguire la migrazione di applicazioni Spring Boot al servizio Azure Kubernetes
 
@@ -125,9 +125,9 @@ Per creare un Dockerfile, è necessario soddisfare i prerequisiti seguenti:
 
 È quindi possibile eseguire i passaggi descritti nelle sezioni seguenti, ove applicabile. È possibile usare il [repository Avvio rapido di Spring Boot in contenitori](https://github.com/Azure/spring-boot-container-quickstart) come punto di partenza per il Dockerfile e l'applicazione Spring Boot.
 
-#### <a name="configure-keyvault-flexvolume"></a>Configurare KeyVault FlexVolume
+#### <a name="configure-azure-key-vault-provider-for-secrets-store-csi-driver"></a>Configurare il provider di Azure Key Vault per il driver CSI dell'archivio di segreti
 
-Creare un'istanza di Azure KeyVault e popolarla con i segreti necessari. Per altre informazioni, vedere [Avvio rapido: Impostare e recuperare un segreto da Azure Key Vault usando l'interfaccia della riga di comando di Azure](/azure/key-vault/quick-create-cli). Configurare quindi [KeyVault FlexVolume](https://github.com/Azure/kubernetes-keyvault-flexvol/blob/master/README.md) per rendere tali segreti accessibili ai pod.
+Creare un'istanza di Azure KeyVault e popolarla con i segreti necessari. Per altre informazioni, vedere [Avvio rapido: Impostare e recuperare un segreto da Azure Key Vault usando l'interfaccia della riga di comando di Azure](/azure/key-vault/quick-create-cli). Configurare quindi il [provider di Azure Key Vault per il driver CSI dell'archivio di segreti](https://github.com/Azure/secrets-store-csi-driver-provider-azure) per rendere i segreti accessibili ai pod.
 
 Sarà anche necessario aggiornare lo script di avvio usato per eseguire il bootstrap dell'applicazione Spring Boot. Questo script deve importare i certificati nell'archivio chiavi usato da Spring Boot prima di avviare l'applicazione.
 
@@ -187,11 +187,11 @@ docker push ${MY_ACR}.azurecr.io/${MY_APP_NAME}
 
 Per informazioni più dettagliate sulla creazione e l'archiviazione di immagini di contenitore in Azure, vedere il modulo Learn [Compilare e archiviare immagini del contenitore con Registro Azure Container](/learn/modules/build-and-store-container-images/).
 
-Se è stato usato il [repository GitHub Avvio rapido di Spring Boot in contenitori](https://github.com/Azure/spring-boot-container-quickstart), è anche possibile includere un archivio chiavi personalizzato che verrà aggiunto alla JVM all'avvio. L'archivio chiavi verrà aggiunto se si inserisce il file relativo in */opt/spring-boot/mycert.crt*. Per eseguire questa operazione, è possibile aggiungere il file direttamente al Dockerfile oppure usare KeyVault FlexVolume, come indicato in precedenza.
+Se è stato usato il [repository GitHub Avvio rapido di Spring Boot in contenitori](https://github.com/Azure/spring-boot-container-quickstart), è anche possibile includere un archivio chiavi personalizzato che verrà aggiunto alla JVM all'avvio. L'archivio chiavi verrà aggiunto se si inserisce il file relativo in */opt/spring-boot/mycert.crt*. Per eseguire questa operazione, è possibile aggiungere il file direttamente al Dockerfile oppure usare il provider di Azure Key Vault per il driver CSI dell'archivio di segreti, come indicato in precedenza.
 
 Se è stato usato il [repository GitHub Avvio rapido di Spring Boot in contenitori](https://github.com/Azure/spring-boot-container-quickstart), è anche possibile abilitare Application Insights impostando la variabile di ambiente `APPLICATIONINSIGHTS_CONNECTION_STRING` nel file di distribuzione Kubernetes (il valore della variabile di ambiente dovrebbe essere `InstrumentationKey=00000000-0000-0000-0000-000000000000`). Per altre informazioni, vedere [Monitoraggio di applicazioni codeless Java con Application Insights di Monitoraggio di Azure](/azure/azure-monitor/app/java-in-process-agent).
 
-Se non è necessario personalizzare l'immagine Docker, è possibile scegliere se esplorare l'uso del [plug-in Jib Maven](https://github.com/GoogleContainerTools/jib/tree/master/jib-maven-plugin) o eseguire la distribuzione nel servizio Azure Kubernetes. Per altre informazioni, vedere [Distribuire un'applicazione Spring Boot nel servizio Azure Kubernetes](/azure/developer/java/spring-framework/deploy-spring-boot-java-app-on-kubernetes).
+Se non è necessario personalizzare l'immagine Docker, è possibile scegliere se esplorare l'uso del [plug-in Jib Maven](https://github.com/GoogleContainerTools/jib/tree/master/jib-maven-plugin) o eseguire la distribuzione nel servizio Azure Kubernetes. Per altre informazioni, vedere [Distribuire un'applicazione Spring Boot nel servizio Azure Kubernetes](../spring-framework/deploy-spring-boot-java-app-on-kubernetes.md).
 
 [!INCLUDE [provision-a-public-ip-address](includes/provision-a-public-ip-address.md)]
 

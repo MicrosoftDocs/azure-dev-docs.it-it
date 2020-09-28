@@ -3,14 +3,15 @@ title: Distribuire app Node.js nel Servizio app di Azure da Visual Studio Code
 description: Parte 1 dell'esercitazione, introduzione e prerequisiti.
 ms.topic: conceptual
 ms.date: 03/04/2020
-ms.openlocfilehash: 7427292a3f0546c462ecd621fa3f66546beb2726
-ms.sourcegitcommit: 553da4e9aa988e5bb823364244ea81961cee5bc7
+ms.custom: devx-track-javascript
+ms.openlocfilehash: 427cce426429c9fb1ce924438ead9cfe44be350c
+ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85792450"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "91110312"
 ---
-# <a name="deploy-to-azure-app-service-using-visual-studio-code"></a>Eseguire la distribuzione nel Servizio app di Azure con Visual Studio Code
+# <a name="deploy-nodejs-to-azure-app-service-using-visual-studio-code"></a>Distribuire Node.js nel Servizio app di Azure con Visual Studio Code
 
 In questa esercitazione si distribuisce un'applicazione Node.js nel Servizio app di Azure, in Linux o in Windows, usando l'[estensione Servizio app](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azureappservice).
 

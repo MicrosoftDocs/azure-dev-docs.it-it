@@ -3,14 +3,14 @@ title: "Esercitazione: Distribuire un'app Django con PostgreSQL tramite il porta
 description: Effettuare il provisioning di un'app Web e di un database PostgreSQL in Azure e distribuire il codice dell'app da GitHub.
 ms.devlang: python
 ms.topic: tutorial
-ms.date: 07/23/2020
+ms.date: 09/23/2020
 ms.custom: devx-track-python
-ms.openlocfilehash: 19c0dda48b0fb7b5b0c3af75a1d94d3c9b9e4080
-ms.sourcegitcommit: 4824cea71195b188b4e8036746f58bf8b70dc224
+ms.openlocfilehash: 7f363c3e82873e82630cf477ea469627aa528a4e
+ms.sourcegitcommit: b03cb337db8a35e6e62b063c347891e44a8a5a13
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89753767"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91110531"
 ---
 # <a name="tutorial-deploy-a-django-web-app-with-postgresql-using-the-azure-portal"></a>Esercitazione: Distribuire un'app Web Django con PostgreSQL tramite il portale di Azure
 
@@ -47,13 +47,13 @@ In un browser passare a [https://github.com/Azure-Samples/djangoapp](https://git
 
 1. Aprire il [portale di Azure](https://portal.azure.com)
 
-1. Selezionare **Crea una risorsa**.
+1. Selezionare **Crea una risorsa**. Verrà aperta una pagina **Nuova**.
 
-1. Nella pagina **Nuovo** selezionare **App Web** nella colonna **Più comuni**. Se l'opzione **App Web** non viene visualizzata immediatamente, selezionare **Web** in **Azure Marketplace**, quindi selezionare **App Web** in **In primo piano**. 
+1. Cercare e selezionare **App Web**.
 
 1. Nella pagina **Crea app Web** immettere le informazioni seguenti:
 
-    | Campo | Valore |
+    | Campo | valore |
     | --- | --- |
     | Subscription | Selezionare la sottoscrizione da usare, se diversa da quella predefinita. |
     | Resource group | Selezionare **Crea nuovo** e immettere "DjangoPostgres-Tutorial-rg". |
@@ -74,15 +74,15 @@ In un browser passare a [https://github.com/Azure-Samples/djangoapp](https://git
 
 1. Aprire una nuova finestra del browser con il [portale di Azure](https://portal.azure.com). Si usa una nuova scheda per il provisioning del database perché è necessario trasferire alcune informazioni dalla pagina del database alla pagina dell'app Web ancora aperta dalla sezione precedente.
 
-1. Selezionare **Crea una risorsa**.
+1. Selezionare **Crea una risorsa**. Verrà aperta una pagina **Nuova**.
 
-1. Nella pagina **Nuovo** selezionare **Database** in **Azure Marketplace**, quindi selezionare **Database di Azure per PostgreSQL** in **In primo piano**.
+1. Cercare e selezionare **Database di Azure per PostgreSQL**.
 
 1. Nella pagina successiva selezionare **Crea** in **Server singolo**.
 
 1. Nella pagina **Server singolo** immettere le informazioni seguenti:
 
-    | Campo | Valore |
+    | Campo | valore |
     | --- | --- |
     | Subscription | Selezionare la sottoscrizione da usare, se diversa da quella predefinita. |
     | Resource group | Selezionare il gruppo "DjangoPostgres-Tutorial-rg" creato nella sezione precedente. |
@@ -90,7 +90,7 @@ In un browser passare a [https://github.com/Azure-Samples/djangoapp](https://git
     | Origine dati | **Nessuno** |
     | Location | Selezionare una località nelle vicinanze. |
     | Versione | Mantenere il valore predefinito, ovvero l'ultima versione. |
-    | Calcolo e archiviazione | Selezionare **Configura server**, quindi selezionare **Basic** e **Generazione 5**. Impostare **vCore** su 1 e **Archiviazione** su 5 GB, quindi selezionare **OK**. Queste scelte consentono di effettuare il provisioning del server meno costoso disponibile per PostgreSQL in Azure. |
+    | Calcolo e archiviazione | Selezionare **Configura server**, quindi selezionare **Basic** e **Generazione 5**. Impostare **vCore** su 1 e **Archiviazione** su 5 GB, quindi selezionare **OK**. Queste scelte consentono di effettuare il provisioning del server meno costoso disponibile per PostgreSQL in Azure. È anche possibile che nell'account Azure sia disponibile credito sufficiente per coprire il costo del server. |
     | Nome utente amministratore, Password, Conferma password | Immettere le credenziali per un account amministratore nel server di database. Prendere nota di queste credenziali, perché saranno necessarie più avanti nell'esercitazione. |
 
 1. Selezionare **Rivedi e crea** e quindi **Crea**. Il provisioning dell'app Web in Azure richiede alcuni minuti.
@@ -145,7 +145,7 @@ In questa sezione vengono create le impostazioni per l'app Web necessarie per la
 
     ![Configurazione delle impostazioni del portale per le app Web](media/tutorial-python-postgresql-app-portal/web-app-settings.png)
 
-1. Usare il pulsante **Nuova impostazione applicazione** per creare le impostazioni per ognuno dei valori seguenti:
+1. Usare il pulsante **Nuova impostazione applicazione** per creare le impostazioni per ognuno dei valori seguenti, previsti dall'esempio djangoapp:
 
     | Nome impostazione | valore |
     | --- | --- |
@@ -168,7 +168,7 @@ Una volta specificate le impostazioni del database e della connessione, è ora p
 
 1. Nella finestra o nella scheda del browser per l'app Web selezionare **Centro distribuzione** in **Distribuzione** sul lato sinistro.
 
-1. Nel passaggio **Controllo del codice sorgente** selezionare **GitHub**, quindi seguire le istruzioni per l'accesso oppure selezionare **Continua** per usare l'account di accesso di GitHub corrente.
+1. Nel passaggio **Controllo del codice sorgente** selezionare **GitHub** e quindi **Autorizza** (se necessario). Seguire quindi le istruzioni per l'accesso oppure selezionare **Continua** per usare l'account di accesso di GitHub corrente.
 
 1. Nel passaggio **Provider di compilazione** selezionare **Servizio di compilazione del servizio app**, quindi selezionare **Continua**.
 

@@ -2,14 +2,14 @@
 title: 'Passaggio 6: Aggiungere una seconda funzione Python a Funzioni di Azure con VS Code'
 description: "Passaggio 6 dell'esercitazione: espansione di un progetto di Funzioni di Azure mediante l'aggiunta di una seconda funzione."
 ms.topic: conceptual
-ms.date: 05/19/2020
+ms.date: 09/17/2020
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: 29d625d40868ab761037c1a4a049f7e95e63df26
-ms.sourcegitcommit: 9e282fc2ec967bee181c3034e7e70b28ae308905
+ms.openlocfilehash: f60bd70a8c67a3b33140b11731906e0f205e98f7
+ms.sourcegitcommit: 69933dcce571b2686897b295b7822e207d944617
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89473576"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90772874"
 ---
 # <a name="6-add-a-second-python-function-to-azure-functions"></a>6: Aggiungere una seconda funzione Python a Funzioni di Azure
 
@@ -118,5 +118,3 @@ Dopo la prima distribuzione, è possibile apportare modifiche al codice, ad esem
 
 > [!div class="nextstepaction"]
 > [È stata aggiunta una seconda funzione: procedere con il passaggio 7 >>>](tutorial-vs-code-serverless-python-07.md)
-
-o problemi Inviare un problema GitHub usando il feedback "Questa pagina" nella parte inferiore della pagina.
