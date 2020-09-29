@@ -13,6 +13,10 @@
       href: get-started-powershell.md
 - name: Guide pratiche
   items:
+    - name: Installazione e configurazione
+      items:
+        - name: Archiviare lo stato Terraform in Archiviazione di Azure
+          href: store-state-in-azure-storage.md
     - name: Servizio app
       items:
         - name: Terraform e slot di distribuzione per provider di Azure
@@ -37,7 +41,7 @@
       items:
         - name: Macchina virtuale con infrastruttura
           href: create-linux-virtual-machine-with-infrastructure.md
-        - name: Cluster di macchine virtuali con moduli Terraform
+        - name: Configurare un cluster di macchine virtuali
           href: create-vm-cluster-module.md
         - name: Cluster di macchine virtuali con Terraform e HCL
           href: create-vm-cluster-with-infrastructure.md
@@ -47,10 +51,6 @@
           href: create-vm-scaleset-network-disks-using-packer-hcl.md
 - name: Esercitazioni
   items:
-    - name: Installazione e configurazione
-      items:
-        - name: Archiviare lo stato Terraform in Archiviazione di Azure
-          href: store-state-in-azure-storage.md
     - name: Reti
       items:
         - name: Topologia hub-spoke

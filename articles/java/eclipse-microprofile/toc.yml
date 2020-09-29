@@ -6,10 +6,17 @@
     - name: Esercitazioni
       expanded: true
       items:
-        - name: Eseguire la distribuzione in Istanze di Azure Container
-          href: deploy-microprofile-to-container-instances.md
-        - name: Eseguire la distribuzione in app Web di Azure
-          href: deploy-microprofile-to-web-app-for-containers.md
+        - name: Eseguire la distribuzione nel Servizio app di Azure con Maven
+          expanded: false
+          items:
+            - name: Distribuire Quarkus
+              href: deploy-microprofile-quarkus-java-app-with-maven-plugin.md
+            - name: Distribuire Helidon
+              href: deploy-microprofile-helidon-java-app-with-maven-plugin.md
+            - name: Distribuire Payara Micro
+              href: deploy-microprofile-payara-micro-java-app-with-maven-plugin.md
+            - name: Distribuire KumuluzEE
+              href: deploy-microprofile-kumuluzee-java-app-with-maven-plugin.md
         - name: Origine di configurazione per Azure Key Vault
           href: configure-microprofile-with-keyvault.md
         - name: CI/CD per applicazioni MicroProfile con Azure Pipelines
