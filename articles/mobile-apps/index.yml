@@ -11,12 +11,12 @@ metadata:
   author: codemillmatt
   ms.author: masoucou
   ms.date: 07/27/2020
-  ms.openlocfilehash: f7f2f1d9d7b9764904fa995ce575fc7409d3a237
-  ms.sourcegitcommit: cf23d382eee2431a3958b1c87c897b270587bde0
+  ms.openlocfilehash: f7f7948f16d6d72f963f91cbf7121f02ddb528cc
+  ms.sourcegitcommit: e97cb81a245ce7dcabeac3260abc3db7c30edd79
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 07/29/2020
-  ms.locfileid: "87400669"
+  ms.lasthandoff: 09/29/2020
+  ms.locfileid: "91493087"
 landingContent:
 - title: Introduzione all'uso dei dispositivi mobili in Azure
   linkLists:
@@ -29,7 +29,7 @@ landingContent:
   - linkListType: learn
     links:
     - text: Creare app per dispositivi mobili con Xamarin.Forms
-      url: https://docs.microsoft.com/learn/paths/build-mobile-apps-with-xamarin-forms/
+      url: /learn/paths/build-mobile-apps-with-xamarin-forms/
   - linkListType: video
     links:
     - text: Creare un'intera app per dispositivi mobili con Azure
@@ -41,19 +41,19 @@ landingContent:
   - linkListType: overview
     links:
     - text: Creare un back-end di applicazioni per dispositivi mobili serverless con Funzioni di Azure e altri servizi
-      url: https://docs.microsoft.com/xamarin/xamarin-forms/data-cloud/azure-services/azure-functions
+      url: /xamarin/xamarin-forms/data-cloud/azure-services/azure-functions
     - text: Creare applicazioni in tempo reale con Servizio Azure SignalR
       url: real-time-communication.md
   - linkListType: quickstart
     links:
     - text: Introduzione a Funzioni di Azure e Xamarin
-      url: https://docs.microsoft.com/xamarin/xamarin-forms/data-cloud/azure-services/azure-functions
+      url: /xamarin/xamarin-forms/data-cloud/azure-services/azure-functions
     - text: Servizio Azure SignalR con Xamarin.Forms
-      url: https://docs.microsoft.com/xamarin/xamarin-forms/data-cloud/azure-services/azure-signalr
+      url: /xamarin/xamarin-forms/data-cloud/azure-services/azure-signalr
   - linkListType: learn
     links:
     - text: Utilizzare un servizio Web RESTful con Xamarin
-      url: https://docs.microsoft.com/learn/modules/consume-rest-services
+      url: /learn/modules/consume-rest-services
 - title: Salvare i dati
   linkLists:
   - linkListType: overview
@@ -67,11 +67,11 @@ landingContent:
   - linkListType: quickstart
     links:
     - text: Salvare i dati con Azure Cosmos DB
-      url: https://docs.microsoft.com/azure/cosmos-db/create-sql-api-xamarin-dotnet
+      url: /azure/cosmos-db/create-sql-api-xamarin-dotnet
     - text: Usare l'archiviazione BLOB
-      url: https://docs.microsoft.com/azure/storage/blobs/storage-quickstart-blobs-xamarin
+      url: /azure/storage/blobs/storage-quickstart-blobs-xamarin
     - text: Creare un'app Xamarin.Forms con .NET SDK e l'API di Azure Cosmos DB per MongoDB
-      url: https://docs.microsoft.com/azure/cosmos-db/create-mongodb-xamarin
+      url: /azure/cosmos-db/create-mongodb-xamarin
 - title: Inviare notifiche push
   linkLists:
   - linkListType: overview
@@ -81,29 +81,29 @@ landingContent:
   - linkListType: quickstart
     links:
     - text: Creare un hub di notifica di Azure nel portale di Azure
-      url: https://docs.microsoft.com/azure/notification-hubs/create-notification-hub-portal
+      url: /azure/notification-hubs/create-notification-hub-portal
   - linkListType: tutorial
     links:
     - text: Inviare notifiche push ad app Xamarin.Forms con ASP.NET Core e Hub di notifica di Azure
       url: notification-hubs-backend-service-xamarin-forms.md
     - text: Inviare notifiche push a dispositivi Android
-      url: https://docs.microsoft.com/azure/notification-hubs/notification-hubs-android-push-notification-google-fcm-get-started
+      url: /azure/notification-hubs/notification-hubs-android-push-notification-google-fcm-get-started
     - text: Eseguire il push di contenuti multimediali nei dispositivi
-      url: https://docs.microsoft.com/azure/notification-hubs/notification-hubs-aspnet-backend-ios-apple-push-notification-service-apns-rich
+      url: /azure/notification-hubs/notification-hubs-aspnet-backend-ios-apple-push-notification-service-apns-rich
 - title: Autenticare gli utenti
   linkLists:
   - linkListType: overview
     links:
     - text: Flussi di autenticazione supportati con Microsoft Authentication Library (MSAL)
-      url: https://docs.microsoft.com/azure/active-directory/develop/msal-authentication-flows
+      url: /azure/active-directory/develop/msal-authentication-flows
     - text: Aggiungere l'autenticazione e gestire le identità degli utenti nelle app per dispositivi mobili
       url: authentication.md
   - linkListType: tutorial
     links:
     - text: Concedere l'accesso agli utenti e chiamare Microsoft Graph da un'app Android
-      url: https://docs.microsoft.com/azure/active-directory/develop/tutorial-v2-android
+      url: /azure/active-directory/develop/tutorial-v2-android
     - text: Aggiungere un'applicazione client nativa nel tenant di Active Directory B2C
-      url: https://docs.microsoft.com/azure/active-directory-b2c/add-native-application
+      url: /azure/active-directory-b2c/add-native-application
   - linkListType: sample
     links:
     - text: Consentire agli utenti di accedere a un'app iOS Swift
@@ -117,15 +117,15 @@ landingContent:
     - text: Automatizzare il ciclo di vita delle app con compilazione e integrazione continue
       url: continuous-integration.md
     - text: Concetti chiave per nuovi utenti di Azure Pipelines
-      url: https://docs.microsoft.com/azure/devops/pipelines/get-started/key-pipelines-concepts?view=azure-devops
+      url: /azure/devops/pipelines/get-started/key-pipelines-concepts?view=azure-devops
   - linkListType: overview
     links:
     - text: Rilasciare una build con App Center
-      url: https://docs.microsoft.com/appcenter/distribution/uploading
+      url: /appcenter/distribution/uploading
   - linkListType: how-to-guide
     links:
     - text: CodePush in App Center
-      url: https://docs.microsoft.com/appcenter/distribution/codepush
+      url: /appcenter/distribution/codepush
 - title: Tenere traccia di analisi e arresti anomali
   linkLists:
   - linkListType: concept
@@ -137,15 +137,15 @@ landingContent:
   - linkListType: overview
     links:
     - text: Analytics in App Center
-      url: https://docs.microsoft.com/appcenter/analytics/overview
+      url: /appcenter/analytics/overview
   - linkListType: how-to-guide
     links:
     - text: Abilitazione della diagnostica in un'app
-      url: https://docs.microsoft.com/appcenter/diagnostics/enabling-diagnostics
+      url: /appcenter/diagnostics/enabling-diagnostics
   - linkListType: tutorial
     links:
     - text: Ricevere dati di analisi in tempo reale
-      url: https://docs.microsoft.com/appcenter/analytics/log-flow
+      url: /appcenter/analytics/log-flow
 - title: Sviluppare con gli SDK
   linkLists:
   - linkListType: download
