@@ -4,12 +4,12 @@ description: Informazioni su come creare una rete virtuale hub in Azure che fung
 ms.topic: tutorial
 ms.date: 10/26/2019
 ms.custom: devx-track-terraform
-ms.openlocfilehash: 0833497301865506592639838c7d6075813bcf6e
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: ee75fe6c7fe49463137f9e0a68e518290f78acce
+ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88241143"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91401511"
 ---
 # <a name="tutorial-create-a-hub-virtual-network-in-azure-by-using-terraform"></a>Esercitazione: Creare una rete virtuale hub in Azure con Terraform
 
@@ -22,8 +22,6 @@ Questo articolo illustra le attività seguenti:
 > * Usare Terraform per creare una macchina virtuale jumpbox hub.
 > * Usare Terraform per creare un gateway di rete virtuale privata hub.
 > * Usare Terraform per creare connessioni gateway hub e locali.
-
-[!INCLUDE [hashicorp-support.md](includes/hashicorp-support.md)]
 
 ## <a name="prerequisites"></a>Prerequisiti
 
@@ -227,6 +225,8 @@ Creare il file di configurazione di Terraform che dichiara la rete virtuale hub.
     ```
     
 3. Salvare il file e uscire dall'editor.
+
+[!INCLUDE [terraform-troubleshooting.md](includes/terraform-troubleshooting.md)]
 
 ## <a name="next-steps"></a>Passaggi successivi
 

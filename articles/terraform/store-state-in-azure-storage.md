@@ -4,12 +4,12 @@ description: Informazioni su come archiviare lo stato di Terraform in Archiviazi
 ms.topic: tutorial
 ms.date: 11/07/2019
 ms.custom: devx-track-terraform
-ms.openlocfilehash: d2fd110fec8d23bd8382669cbb572ce46b6fd1e6
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: a59ba1d24fc59f36e237f5be9a75981b9ae8f8ae
+ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88241183"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91401741"
 ---
 # <a name="tutorial-store-terraform-state-in-azure-storage"></a>Esercitazione: Archiviare lo stato Terraform in Archiviazione di Azure
 
@@ -20,8 +20,6 @@ Lo stato Terraform viene usato per risolvere le differenze tra le risorse distri
 - L'archiviazione dello stato in locale aumenta le probabilità di eliminazioni accidentali.
 
 Terraform supporta la persistenza dello stato nell'archiviazione remota. Uno di questi back-end supportati è Archiviazione di Azure. Questo documento illustra come configurare e usare Archiviazione di Azure a questo scopo.
-
-[!INCLUDE [hashicorp-support.md](includes/hashicorp-support.md)]
 
 ## <a name="prerequisites"></a>Prerequisiti
 
@@ -126,6 +124,8 @@ Il blocco può essere visto quando si esamina il BLOB tramite il portale di Azur
 I dati archiviati in un BLOB di Azure vengono crittografati prima di diventare persistenti. Se necessario, Terraform recupera lo stato dal back-end e lo archivia nella memoria locale. Con questo modello, lo stato non viene mai scritto nel disco locale.
 
 Per altre informazioni sulla crittografia di Archiviazione di Azure, vedere [Crittografia del servizio Archiviazione di Azure per dati inattivi](/azure/storage/common/storage-service-encryption).
+
+[!INCLUDE [terraform-troubleshooting.md](includes/terraform-troubleshooting.md)]
 
 ## <a name="next-steps"></a>Passaggi successivi
 

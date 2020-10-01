@@ -4,12 +4,12 @@ description: Informazioni su come implementare due reti virtuali spoke connesse 
 ms.topic: tutorial
 ms.date: 10/26/2019
 ms.custom: devx-track-terraform
-ms.openlocfilehash: 236665b205a602466244a2c5d5cfee5800c51317
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 265c410d8fc8bdb51803406cc8003e6e349014d9
+ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88241093"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91401481"
 ---
 # <a name="tutorial-create-a-spoke-network-in-azure-using-terraform"></a>Esercitazione: Creare una rete spoke in Azure con Terraform
 
@@ -21,8 +21,6 @@ Questa esercitazione illustra le attività seguenti:
 > * Usare HCL (HashiCorp Language) per implementare le reti virtuali spoke nella topologia hub-spoke
 > * Usare Terraform per creare macchine virtuali nelle reti spoke
 > * Usare Terraform per stabilire peering reti virtuali con le reti hub
-
-[!INCLUDE [hashicorp-support.md](includes/hashicorp-support.md)]
 
 ## <a name="prerequisites"></a>Prerequisiti
 
@@ -303,6 +301,8 @@ In questa sezione vengono creati due script di spoke. Ogni script definisce una 
      
 1. Salvare il file e uscire dall'editor.
   
+[!INCLUDE [terraform-troubleshooting.md](includes/terraform-troubleshooting.md)]
+
 ## <a name="next-steps"></a>Passaggi successivi
 
 > [!div class="nextstepaction"] 

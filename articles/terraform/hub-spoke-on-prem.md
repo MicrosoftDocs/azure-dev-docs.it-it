@@ -4,12 +4,12 @@ description: Informazioni su come implementare in Azure una rete virtuale locale
 ms.topic: tutorial
 ms.date: 10/26/2019
 ms.custom: devx-track-terraform
-ms.openlocfilehash: 63ad0ef21ee9a6474710bf7ac40282d442105567
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 4faf366a585c7652584e5b70cf10b150a91d1b0e
+ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88241103"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91401471"
 ---
 # <a name="tutorial-create-on-premises-virtual-network-in-azure-using-terraform"></a>Esercitazione: Creare una rete virtuale locale in Azure con Terraform
 
@@ -22,8 +22,6 @@ Vengono illustrate le attività seguenti:
 > * Usare Terraform per creare risorse per l'appliance di rete hub
 > * Usare Terraform per creare una macchina virtuale locale
 > * Usare Terraform per creare un gateway di rete virtuale privata locale
-
-[!INCLUDE [hashicorp-support.md](includes/hashicorp-support.md)]
 
 ## <a name="prerequisites"></a>Prerequisiti
 
@@ -221,6 +219,8 @@ Creare il file di configurazione Terraform che dichiara una rete virtuale locale
     ```
 
 1. Salvare il file e uscire dall'editor.
+
+[!INCLUDE [terraform-troubleshooting.md](includes/terraform-troubleshooting.md)]
 
 ## <a name="next-steps"></a>Passaggi successivi
 

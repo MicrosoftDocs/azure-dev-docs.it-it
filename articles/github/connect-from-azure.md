@@ -7,12 +7,12 @@ ms.topic: reference
 ms.service: azure
 ms.date: 08/31/2020
 ms.custom: github-actions-azure
-ms.openlocfilehash: d7c791aec426e139592e8a32e7779b2f02832d5f
-ms.sourcegitcommit: 5205d15c697bbfd4ecb3f45b5de093f709d11979
+ms.openlocfilehash: 4900097ea8d3635c2030f73eab1c63fb46323bc9
+ms.sourcegitcommit: e97cb81a245ce7dcabeac3260abc3db7c30edd79
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90026412"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91493122"
 ---
 # <a name="use-github-actions-to-connect-to-azure"></a>Usare GitHub Actions per connettersi ad Azure
 
@@ -30,7 +30,7 @@ Per usare l'[account di accesso di Azure](https://github.com/marketplace/actions
 
 In questo esempio verrà creato un segreto denominato `AZURE_CREDENTIALS` che è possibile usare per l'autenticazione con Azure.  
 
-1. Se non si dispone di un'applicazione esistente, registrare una [nuova applicazione di Active Directory](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal#register-an-application-with-azure-ad-and-create-a-service-principal&preserve-view=true) da usare con l'entità servizio.
+1. Se non si dispone di un'applicazione esistente, registrare una [nuova applicazione di Active Directory](/azure/active-directory/develop/howto-create-service-principal-portal#register-an-application-with-azure-ad-and-create-a-service-principal&preserve-view=true) da usare con l'entità servizio.
 
     ```azurecli-interactive
         appName="myApp"
@@ -41,7 +41,7 @@ In questo esempio verrà creato un segreto denominato `AZURE_CREDENTIALS` che è
         --identifier-uris http://localhost/$appName
     ```
 
-1. [Creare una nuova entità servizio](https://docs.microsoft.com/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest) nel portale di Azure per l'app. 
+1. [Creare una nuova entità servizio](/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest) nel portale di Azure per l'app. 
 
     ```azurecli-interactive
         az ad sp create-for-rbac --name "myApp" --role contributor \
@@ -67,11 +67,11 @@ In questo esempio verrà creato un segreto denominato `AZURE_CREDENTIALS` che è
 
 1. Selezionare **Segreti** e quindi **Nuovo segreto**.
 
-    :::image type="content" source="media/select-secrets.png" alt-text="Scegliere di aggiungere un segreto":::
+    :::image type="content" source="media/select-secrets.png" alt-text="Selezionare Impostazioni nel riquadro di spostamento":::
 
 1. Incollare l'oggetto JSON per l'entità servizio con il nome `AZURE_CREDENTIALS`. 
 
-    :::image type="content" source="media/azure-secret-add.png" alt-text="Aggiungere un segreto in GitHub":::
+    :::image type="content" source="media/azure-secret-add.png" alt-text="Selezionare Impostazioni nel riquadro di spostamento":::
 
 1. Salvare selezionando **Aggiungi segreto**.
 
@@ -158,19 +158,19 @@ Gli articoli seguenti forniscono informazioni dettagliate sulla connessione a Gi
 
 ### <a name="azure-active-directory"></a>Azure Active Directory 
 
-- [Accedere a GitHub Enterprise con Azure AD (Single Sign-On)](https://docs.microsoft.com/azure/active-directory/saas-apps/github-tutorial)   
+- [Accedere a GitHub Enterprise con Azure AD (Single Sign-On)](/azure/active-directory/saas-apps/github-tutorial)   
 
 ### <a name="power-bi"></a>Power BI
 
-- [Connettere Power BI a GitHub](https://docs.microsoft.com/power-bi/service-connect-to-github)   
+- [Connettere Power BI a GitHub](/power-bi/service-connect-to-github)   
 
 ### <a name="connectors"></a>Connettori
 
-- [Connettore GitHub per App per la logica di Azure, Power Automate e Power Apps](https://docs.microsoft.com/connectors/github/)   
+- [Connettore GitHub per App per la logica di Azure, Power Automate e Power Apps](/connectors/github/)   
 
 ### <a name="azure-databricks"></a>Azure Databricks
 
-- [Usare GitHub come controllo della versione per i notebook](https://docs.microsoft.com/azure/databricks/notebooks/github-version-control) 
+- [Usare GitHub come controllo della versione per i notebook](/azure/databricks/notebooks/github-version-control) 
 
 > [!div class="nextstepaction"]
 > [Distribuire app da GitHub ad Azure](deploy-to-azure.md)

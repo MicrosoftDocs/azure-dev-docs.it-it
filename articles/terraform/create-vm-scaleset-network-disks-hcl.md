@@ -4,12 +4,12 @@ description: Informazioni su come usare Terraform per configurare e controllare 
 ms.topic: how-to
 ms.date: 11/07/2019
 ms.custom: devx-track-terraform
-ms.openlocfilehash: e6f83d6f4f138b92576e44cadb65c3e4d018dc66
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: d261a5c9ca76dd66c5c79333186079b92ea54bae
+ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88241243"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91401631"
 ---
 # <a name="create-an-azure-virtual-machine-scale-set-using-terraform"></a>Creare un set di scalabilità di macchine virtuali di Azure tramite Terraform
 
@@ -26,8 +26,6 @@ In questo articolo vengono illustrate le operazioni seguenti:
 
 > [!NOTE]
 > La versione più recente dei file di configurazione di Terraform in uso in questo articolo si trova nel [repository Awesome Terraform su GitHub](https://github.com/Azure/awesome-terraform/tree/master/codelab-vmss).
-
-[!INCLUDE [hashicorp-support.md](includes/hashicorp-support.md)]
 
 ## <a name="prerequisites"></a>Prerequisiti
 
@@ -395,10 +393,6 @@ In Cloud Shell seguire questa procedura:
     terraform apply
     ```
 
-    L'output del comando dovrebbe essere simile a quello illustrato nello screenshot seguente:
-
-    ![Gruppo di risorse del set di scalabilità di macchine virtuali di Terraform](./media/create-vm-scaleset-network-disks-hcl/resource-group-contents.png)
-
 1. Aprire un browser e connettersi all'FQDN restituito dal comando.
 
     ![Risultati della connessione all'FQDN](./media/create-vm-scaleset-network-disks-hcl/browser-fqdn.png)
@@ -504,12 +498,9 @@ Un *jumpbox* SSH è un server singolo usato come tramite per poter accedere ad a
    terraform apply
    ```
 
-Al termine della distribuzione, il contenuto del gruppo di risorse è simile a quello illustrato nello screenshot seguente:
+**Note**:
 
-![Gruppo di risorse del set di scalabilità di macchine virtuali di Terraform](./media/create-vm-scaleset-network-disks-hcl/resource-group-contents-final.png)
-
-> [!NOTE]
-> La possibilità di accedere con una password è disabilitata nel jumpbox e nel set di scalabilità di macchine virtuali distribuito. Accedere con SSH per accedere alle macchine virtuali.
+- La possibilità di accedere con una password è disabilitata nel jumpbox e nel set di scalabilità di macchine virtuali distribuito. Accedere con SSH per accedere alle macchine virtuali.
 
 ## <a name="environment-cleanup"></a>Pulizia dell'ambiente
 
@@ -520,6 +511,8 @@ terraform destroy
 ```
 
 Il processo di eliminazione può richiedere alcuni minuti.
+
+[!INCLUDE [terraform-troubleshooting.md](includes/terraform-troubleshooting.md)]
 
 ## <a name="next-steps"></a>Passaggi successivi
 

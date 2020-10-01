@@ -5,12 +5,12 @@ keywords: ansible, azure, devops, panoramica, provisioning cloud, gestione della
 ms.topic: overview
 ms.date: 08/13/2020
 ms.custom: devx-track-ansible
-ms.openlocfilehash: 2bd996a93952df1f52c2a007d73f7f37e4e0f132
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 9eb90921a0d44e138c331eb716700feb85e8aa9d
+ms.sourcegitcommit: 717e32b68fc5f4c986f16b2790f4211967c0524b
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88239963"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91586102"
 ---
 # <a name="using-ansible-with-azure"></a>Uso di Ansible con Azure
 
@@ -24,9 +24,9 @@ I [playbook Ansible](https://docs.ansible.com/ansible/latest/playbooks.html) con
 
 ## <a name="ansible-modules"></a>Moduli Ansible
 
-Ansible include un gruppo di [moduli Ansible](https://docs.ansible.com/ansible/latest/modules_by_category.html) che vengono eseguiti direttamente su host remoti o tramite [playbook](https://docs.ansible.com/ansible/latest/playbooks.html). Gli utenti possono creare moduli personalizzati. I moduli vengono usati per controllare le risorse di sistema, ad esempio servizi, pacchetti o file, oppure per eseguire i comandi di sistema.
+Ansible include un gruppo di [moduli Ansible](https://docs.ansible.com/ansible/2.9/modules/modules_by_category.html) che vengono eseguiti direttamente su host remoti o tramite [playbook](https://docs.ansible.com/ansible/latest/playbooks.html). Gli utenti possono creare moduli personalizzati. I moduli vengono usati per controllare le risorse di sistema, ad esempio servizi, pacchetti o file, oppure per eseguire i comandi di sistema.
 
-Per interagire con i servizi di Azure, Ansible include una suite di [moduli cloud Ansible](https://docs.ansible.com/ansible/list_of_cloud_modules.html#azure). Questi moduli consentono di creare e orchestrare l'infrastruttura in Azure. 
+Per interagire con i servizi di Azure, Ansible include una suite di [moduli cloud Ansible](https://docs.ansible.com/ansible/2.9/modules/list_of_cloud_modules.html#azure). Questi moduli consentono di creare e orchestrare l'infrastruttura in Azure. 
 
 ## <a name="migrate-existing-workload-to-azure"></a>Eseguire la migrazione del carico di lavoro esistente in Azure
 

@@ -4,12 +4,12 @@ ms.author: miparker
 ms.date: 07/27/2020
 ms.service: mobile-services
 ms.topic: include
-ms.openlocfilehash: f83e5ae060ee6b13523af8dbb271906dff02e027
-ms.sourcegitcommit: cf23d382eee2431a3958b1c87c897b270587bde0
+ms.openlocfilehash: 07778fad0d390b297850a10b544f08d9e5ec3569
+ms.sourcegitcommit: e97cb81a245ce7dcabeac3260abc3db7c30edd79
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87401702"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91493152"
 ---
 ### <a name="register-your-ios-app-for-push-notifications"></a>Registrare l'app iOS per le notifiche push
 
@@ -51,7 +51,7 @@ Per garantire il funzionamento dell'hub di notifica con **Apple Push Notificatio
 
 1. [Creazione di un certificato p8 che può essere usato per l'autenticazione basata su token](#option-2-creating-a-p8-certificate-that-can-be-used-for-token-based-authentication) (*approccio consigliato più recente*)
 
-L'approccio più recente presenta diversi vantaggi, come documentato in [Autenticazione basata su token (HTTP/2) per APNS](https://docs.microsoft.com/azure/notification-hubs/notification-hubs-push-notification-http2-token-authentification). Oltre a richiedere un minor numero di passaggi, è una scelta obbligata per scenari specifici. Sono però state fornite le procedure per entrambi gli approcci, perché sono ugualmente applicabili ai fini di questa esercitazione.
+L'approccio più recente presenta diversi vantaggi, come documentato in [Autenticazione basata su token (HTTP/2) per APNS](/azure/notification-hubs/notification-hubs-push-notification-http2-token-authentification). Oltre a richiedere un minor numero di passaggi, è una scelta obbligata per scenari specifici. Sono però state fornite le procedure per entrambi gli approcci, perché sono ugualmente applicabili ai fini di questa esercitazione.
 
 ##### <a name="option-1-creating-a-p12-push-certificate-that-can-be-uploaded-directly-to-notification-hub"></a>OPZIONE 1: Creazione di un certificato push p12 che può essere caricato direttamente in Hub di notifica
 
@@ -168,7 +168,7 @@ Al termine di questa procedura, è necessario disporre delle informazioni seguen
 1. Nella finestra **Select certificates** (Seleziona certificati) selezionare il certificato di sviluppo usato per la firma del codice e quindi fare clic su **Continue** (Continua).
 
     > [!NOTE]
-    > Questo non è il certificato push creato nel [passaggio precedente](#creating-a-certificate-for-notification-hubs). Si tratta invece del certificato di sviluppo. Se non ne esiste uno, è necessario crearlo perché è un [prerequisito](#prerequisites) di questa esercitazione. È possibile creare certificati di sviluppo nel [portale Apple Developer](https://developer.apple.com), tramite [Xcode](https://developer.apple.com/library/archive/documentation/ToolsLanguages/Conceptual/YourFirstAppStoreSubmission/ProvisionYourDevicesforDevelopment/ProvisionYourDevicesforDevelopment.html) o in [Visual Studio](https://docs.microsoft.com/xamarin/ios/get-started/installation/device-provisioning/).
+    > Questo non è il certificato push creato nel [passaggio precedente](#creating-a-certificate-for-notification-hubs). Si tratta invece del certificato di sviluppo. Se non ne esiste uno, è necessario crearlo perché è un [prerequisito](#prerequisites) di questa esercitazione. È possibile creare certificati di sviluppo nel [portale Apple Developer](https://developer.apple.com), tramite [Xcode](https://developer.apple.com/library/archive/documentation/ToolsLanguages/Conceptual/YourFirstAppStoreSubmission/ProvisionYourDevicesforDevelopment/ProvisionYourDevicesforDevelopment.html) o in [Visual Studio](/xamarin/ios/get-started/installation/device-provisioning/).
 
 1. Tornare alla pagina **Certificates, Identifiers & Profiles** (Certificati, identificatori e profili), selezionare **Profiles** (Profili) dal menu a sinistra e infine selezionare **+** per creare un nuovo profilo. Verrà visualizzata la schermata **Register a New Provisioning Profile** (Registra un nuovo profilo di provisioning).
 

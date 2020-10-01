@@ -13,12 +13,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
 ms.custom: devx-track-java
-ms.openlocfilehash: b340802d861ad1dbe1b4f118734e527cdefeec21
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: af85a31f39f87c38e378fc1cf4254053447b9dbd
+ms.sourcegitcommit: 717e32b68fc5f4c986f16b2790f4211967c0524b
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831609"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91586174"
 ---
 # <a name="create-a-hello-world-web-app-for-azure-app-service-using-intellij"></a>Creare un'app Web Hello World per Servizio app di Azure con IntelliJ
 
@@ -61,7 +61,7 @@ La procedura seguente illustra il processo di accesso ad Azure nell'ambiente di 
 
 1. Nella finestra di dialogo **New Project** (Nuovo progetto) selezionare **Maven** e assicurarsi che l'opzione **Create from Archetype** (Crea da archetipo) sia selezionata. Nell'elenco selezionare **maven-archetype-webapp** e quindi fare clic su **Next** (Avanti).
 
-   :::image type="content" source="media/create-hello-world-web-app/maven-archetype-webapp.png" alt-text="Selezionare l'opzione maven-archetype-webapp."::: 
+   :::image type="content" source="media/create-hello-world-web-app/maven-archetype-webapp.png" alt-text="Accesso ad Azure in IntelliJ."::: 
 
 1. Espandere l'elenco a discesa **Artifact Coordinates** (Coordinate artefatto) per visualizzare tutti i campi di input, specificare le informazioni seguenti per la nuova app Web e fare clic su **Next** (Avanti):
 
@@ -80,7 +80,7 @@ La procedura seguente illustra il processo di accesso ad Azure nell'ambiente di 
     </body>
    </html>
    ```
-   :::image type="content" source="media/create-hello-world-web-app/open-index-page.png" alt-text="Aprire il file index.jsp.":::
+   :::image type="content" source="media/create-hello-world-web-app/open-index-page.png" alt-text="Accesso ad Azure in IntelliJ.":::
 
 ## <a name="deploying-web-app-to-azure"></a>Distribuzione dell'app Web in Azure
 
@@ -90,7 +90,7 @@ La procedura seguente illustra il processo di accesso ad Azure nell'ambiente di 
 
    a. Fare clic su **No available function, click to create a new one** (Nessuna funzione disponibile, fare clic per crearne una) per creare una nuova app Web. In caso contrario, scegliere **Create New WebApp** (Crea nuova app Web) dal menu a discesa WebApp (App Web) se nella sottoscrizione sono presenti app Web.
 
-      :::image type="content" source="media/create-hello-world-web-app/deploy-to-azure-webapps.png" alt-text="Finestra di dialogo Deploy to Azure.":::
+      :::image type="content" source="media/create-hello-world-web-app/deploy-to-azure-webapps.png" alt-text="Accesso ad Azure in IntelliJ.":::
 
    Nella finestra di dialogo popup **Create WebApp** (Crea app Web) specificare le informazioni seguenti e fare clic su **OK**: 
 
@@ -107,7 +107,7 @@ La procedura seguente illustra il processo di accesso ad Azure nell'ambiente di 
 
 1. È possibile passare all'app Web usando il collegamento contenuto nel messaggio di stato.
 
-   :::image type="content" source="media/create-hello-world-web-app/browse-web-app.png" alt-text="Esplorazione dell'app Web.":::
+   :::image type="content" source="media/create-hello-world-web-app/browse-web-app.png" alt-text="Accesso ad Azure in IntelliJ.":::
 
 ## <a name="managing-deploy-configurations"></a>Gestione delle configurazioni della distribuzione
 
@@ -116,7 +116,7 @@ La procedura seguente illustra il processo di accesso ad Azure nell'ambiente di 
 
 1. Prima di eseguire la distribuzione dell'app Web, è possibile modificare le impostazioni predefinite facendo clic sul menu a discesa per l'app Web e quindi selezionando **Edit Configurations** (Modifica configurazioni).
 
-   :::image type="content" source="media/create-hello-world-web-app/edit-configuration-menu.png" alt-text="Menu Edit Configurations (Modifica configurazioni).":::
+   :::image type="content" source="media/create-hello-world-web-app/edit-configuration-menu.png" alt-text="Accesso ad Azure in IntelliJ.":::
 
 1. Nella finestra di dialogo **Run/Debug Configurations** (Esecuzione/debug configurazioni) è possibile modificare qualsiasi impostazione predefinita. Fare clic su **OK** per salvare le impostazioni.
 
@@ -145,7 +145,6 @@ Per altre informazioni sulla creazione di App Web di Azure, vedere la [Panoramic
 [Panoramica delle app Web]: /azure/app-service/app-service-web-overview
 [Apache Tomcat]: http://tomcat.apache.org/
 [Jetty]: http://www.eclipse.org/jetty/
-[Legacy Version]: create-hello-world-web-app-legacy-version.md
 [intelliJ-sign-in-instructions]: sign-in-instructions.md
 
 <!-- IMG List -->

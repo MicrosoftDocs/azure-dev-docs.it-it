@@ -4,12 +4,12 @@ description: Informazioni su come creare un'intera architettura di riferimento d
 ms.topic: tutorial
 ms.date: 10/26/2019
 ms.custom: devx-track-terraform
-ms.openlocfilehash: 7fd6de18404f6c71184f17510699c6eb2a7be16b
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 5a9c4541d0dc04413e088587791488133fe61ff9
+ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88241123"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91401491"
 ---
 # <a name="tutorial-create-a-hub-and-spoke-hybrid-network-topology-in-azure-using-terraform"></a>Esercitazione: Creare una topologia di rete ibrida hub-spoke con Terraform in Azure
 
@@ -26,8 +26,6 @@ Questa esercitazione illustra le attività seguenti:
 > * Usare Terraform per creare i singoli carichi di lavoro come reti virtuali spoke in Azure
 > * Usare Terraform per stabilire gateway e connessioni tra la rete locale e la rete di Azure
 > * Usare Terraform per creare peering reti virtuali alle reti spoke
-
-[!INCLUDE [hashicorp-support.md](includes/hashicorp-support.md)]
 
 ## <a name="prerequisites"></a>Prerequisiti
 
@@ -157,6 +155,8 @@ Creare il file di configurazione Terraform per le variabili comuni usate nei div
     ```
 
 1. Salvare il file e uscire dall'editor.
+
+[!INCLUDE [terraform-troubleshooting.md](includes/terraform-troubleshooting.md)]
 
 ## <a name="next-steps"></a>Passaggi successivi
 

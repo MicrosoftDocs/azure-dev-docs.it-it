@@ -4,12 +4,12 @@ description: Informazioni sui test di integrazione e su come usare Azure DevOps 
 ms.topic: tutorial
 ms.date: 07/31/2020
 ms.custom: devx-track-terraform
-ms.openlocfilehash: d6c8f9c419070d734c3c848163c52e6255d5512a
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: 73f7c279948101af509ba5e3120b1af650f38ca1
+ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831997"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91401731"
 ---
 # <a name="tutorial-configure-integration-tests-for-terraform-projects-in-azure"></a>Esercitazione: Configurare i test di integrazione per i progetti Terraform in Azure
 
@@ -25,14 +25,12 @@ In questo articolo si apprenderà come eseguire le attività seguenti:
 > * Eseguire `terraform plan` per convalidare i file di configurazione di Terraform dal punto di vista dei servizi remoti.
 > * Usare una pipeline di Azure per automatizzare l'integrazione continua.
 
-[!INCLUDE [hashicorp-support.md](includes/hashicorp-support.md)]
-
 ## <a name="prerequisites"></a>Prerequisiti
 
 [!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
-- **Organizzazione e progetto di Azure DevOps**: se non è già disponibile, [creare un'organizzazione di Azure DevOps](/azure/devops/organizations/projects/create-project?tabs=preview-page&view=azure-devops).
+- **Organizzazione e progetto di Azure DevOps**: se non è già disponibile, [creare un'organizzazione di Azure DevOps](/azure/devops/organizations/projects/create-project).
 - **Estensione Terraform Build & Release Tasks**: [installare l'estensione Terraform build/release tasks](https://marketplace.visualstudio.com/items?itemName=charleszipp.azure-pipelines-tasks-terraform) nell'organizzazione di Azure DevOps.
-- **Concedere l'accesso ad Azure DevOps alla sottoscrizione di Azure**: creare una [connessione del servizio di Azure](/azure/devops/pipelines/library/connect-to-azure?view=azure-devops) denominata `terraform-basic-testing-azure-connection` per consentire ad Azure Pipelines di connettersi alle sottoscrizioni di Azure.
+- **Concedere l'accesso ad Azure DevOps alla sottoscrizione di Azure**: creare una [connessione del servizio di Azure](/azure/devops/pipelines/library/connect-to-azure) denominata `terraform-basic-testing-azure-connection` per consentire ad Azure Pipelines di connettersi alle sottoscrizioni di Azure.
 - **Installare Terraform**: in base all'ambiente specifico, [scaricare e installare Terraform](https://www.terraform.io/downloads.html).
 - **Creare una copia tramite fork degli esempi di test**: creare una copia tramite fork del [progetto di esempio di Terraform in GitHub](https://github.com/Azure/terraform) e clonarlo nel computer di sviluppo/test.
 
@@ -195,7 +193,7 @@ L'integrazione continua comporta l'esecuzione di test su un intero sistema quand
 
     ![Dov'è il codice?](media/best-practices-integration-testing/new-pipeline-where-github-yaml.png)
 
-1. A questo punto potrebbe essere necessario autorizzare Azure DevOps ad accedere l'organizzazione. Per altre informazioni su questo argomento, vedere l'articolo [Creare repository di GitHub](/azure/devops/pipelines/repos/github?view=azure-devops&tabs=yaml).
+1. A questo punto potrebbe essere necessario autorizzare Azure DevOps ad accedere l'organizzazione. Per altre informazioni su questo argomento, vedere l'articolo [Creare repository di GitHub](/azure/devops/pipelines/repos/github).
 
 1. Nell'elenco di repository selezionare il fork del repository creato nell'organizzazione di GitHub.
 
@@ -222,6 +220,8 @@ L'integrazione continua comporta l'esecuzione di test su un intero sistema quand
 Dopo avere completato il passaggio, accedere ai dettagli in Azure DevOps per assicurarsi che non si siano verificati problemi durante l'esecuzione.
 
 ![Pipeline verde di Azure DevOps](media/best-practices-integration-testing/azure-devops-green-pipeline.png)
+
+[!INCLUDE [terraform-troubleshooting.md](includes/terraform-troubleshooting.md)]
 
 ## <a name="next-steps"></a>Passaggi successivi
 

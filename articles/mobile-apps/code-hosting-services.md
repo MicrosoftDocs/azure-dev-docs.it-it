@@ -7,12 +7,12 @@ ms.service: mobile-services
 ms.topic: article
 ms.date: 06/08/2020
 ms.author: masoucou
-ms.openlocfilehash: 157a9e7a3f9f366035512d97a843d31dcfdc3bdb
-ms.sourcegitcommit: f02ff55cef47581303a217cf1d310879cd722237
+ms.openlocfilehash: 0ab44652d4a635d5ff04928b76883a76fe3a62fa
+ms.sourcegitcommit: e97cb81a245ce7dcabeac3260abc3db7c30edd79
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84632343"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91493112"
 ---
 # <a name="cloud-hosted-source-code-management-services"></a>Servizi di gestione del codice sorgente ospitato nel cloud
 
@@ -63,7 +63,7 @@ Usare i servizi seguenti per gestire e archiviare i dati delle applicazioni nel 
 
 ## <a name="azure-devops"></a>Azure DevOps
 
-[Azure DevOps](https://azure.microsoft.com/services/devops/) supporta [Azure Repos](https://azure.microsoft.com/services/devops/repos/) e il [controllo della versione di Team Foundation](https://docs.microsoft.com/azure/devops/repos/tfvc/index?view=azure-devops) come opzioni di controllo del codice sorgente. Include un numero illimitato di repository privati gratuiti, con revisioni collaborative del codice, gestione avanzata dei file, ricerca di codice e criteri di ramo per garantire codice di alta qualità. Azure Repos è ideale per piccoli progetti e grandi organizzazioni che necessitano del supporto nativo e dei criteri avanzati di Azure Active Directory.
+[Azure DevOps](https://azure.microsoft.com/services/devops/) supporta [Azure Repos](https://azure.microsoft.com/services/devops/repos/) e il [controllo della versione di Team Foundation](/azure/devops/repos/tfvc/index?view=azure-devops) come opzioni di controllo del codice sorgente. Include un numero illimitato di repository privati gratuiti, con revisioni collaborative del codice, gestione avanzata dei file, ricerca di codice e criteri di ramo per garantire codice di alta qualità. Azure Repos è ideale per piccoli progetti e grandi organizzazioni che necessitano del supporto nativo e dei criteri avanzati di Azure Active Directory.
 
 ### <a name="azure-devops-features"></a>Funzionalità di Azure DevOps
 

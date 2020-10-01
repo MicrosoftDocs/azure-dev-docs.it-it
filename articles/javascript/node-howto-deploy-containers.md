@@ -1,15 +1,15 @@
 ---
 title: Distribuire contenitori Node.js in Azure
 description: Usare contenitori Docker per distribuire app Web Node.js in Azure
-ms.topic: article
+ms.topic: how-to
 ms.date: 08/20/2019
-ms.custom: seo-javascript-september2019, devx-track-javascript
-ms.openlocfilehash: 11fd9e18ba8f673bb51a53706a83677334396b86
-ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
+ms.custom: seo-javascript-september2019, devx-track-js
+ms.openlocfilehash: e91bbce79baca6dae19fc9f284c7df2bae1fa753
+ms.sourcegitcommit: 4dd392ea864be52421d0239e59198bc44b0a5a16
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88218633"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91364934"
 ---
 # <a name="use-azure-to-deploy-scale-and-manage-nodejs-containers"></a>Usare Azure per distribuire, ridimensionare e gestire contenitori Node.js
 

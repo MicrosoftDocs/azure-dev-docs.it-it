@@ -4,12 +4,12 @@ description: Informazioni su come usare Terratest per testare i moduli Terraform
 ms.topic: tutorial
 ms.date: 10/26/2019
 ms.custom: devx-track-terraform
-ms.openlocfilehash: f174c6c3a4a91fe47ded8ade8826ce9c4c09af65
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: ec42182fd20ce073f727b8096d15e2a87a3c1207
+ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88241063"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91401701"
 ---
 # <a name="tutorial-test-terraform-modules-in-azure-using-terratest"></a>Esercitazione: Testare i moduli Terraform in Azure con Terratest
 
@@ -27,14 +27,12 @@ Sono state analizzate tutte le infrastrutture di test più diffuse ed è stato s
 - **Test case scritti in Go**: molti sviluppatori che usano Terraform sono sviluppatori di Go. Gli sviluppatori Go non devono apprendere un altro linguaggio di programmazione per usare Terratest.
 - **Infrastruttura estendibile**: è possibile estendere funzionalità aggiuntive oltre a Terratest, incluse funzionalità specifiche di Azure.
 
-[!INCLUDE [hashicorp-support.md](includes/hashicorp-support.md)]
-
 ## <a name="prerequisites"></a>Prerequisiti
 
 [!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
 - **Linguaggio di programmazione Go**: i test case Terraform sono scritti in [Go](https://golang.org/dl/).
 - **dep**: [dep](https://github.com/golang/dep#installation) è uno strumento di gestione dipendenze per Go.
-- **Interfaccia della riga di comando di Azure**: l'[interfaccia della riga di comando di Azure](/cli/azure/install-azure-cli?view=azure-cli-latest) è uno strumento da riga di comando che è possibile usare per gestire le risorse di Azure. Terraform supporta l'autenticazione in Azure tramite un'entità servizio oppure [con l'interfaccia della riga di comando di Azure](https://www.terraform.io/docs/providers/azurerm/authenticating_via_azure_cli.html).
+- **Interfaccia della riga di comando di Azure**: l'[interfaccia della riga di comando di Azure](/cli/azure/install-azure-cli) è uno strumento da riga di comando che è possibile usare per gestire le risorse di Azure. Terraform supporta l'autenticazione in Azure tramite un'entità servizio oppure [con l'interfaccia della riga di comando di Azure](https://www.terraform.io/docs/providers/azurerm/authenticating_via_azure_cli.html).
 - **mage**: viene usato il [file eseguibile mage](https://github.com/magefile/mage/releases) per illustrare come semplificare l'esecuzione dei test case Terratest. 
 
 ## <a name="create-a-static-webpage-module"></a>Creare un modulo di pagina Web statica
@@ -521,6 +519,8 @@ Con mage, è anche possibile condividere i passaggi usando il sistema di pacchet
 **Facoltativo: impostare variabili di ambiente di entità servizio per eseguire i test di accettazione**
  
 Invece di eseguire `az login` prima dei test, è possibile completare l'autenticazione di Azure impostando variabili di ambiente di entità servizio. Terraform pubblica un [elenco di nomi di variabile di ambiente](https://www.terraform.io/docs/providers/azurerm/index.html#testing). (di cui solo le prime quattro sono necessarie). Terraform pubblica anche istruzioni dettagliate che spiegano come [ottenere il valore di queste variabili di ambiente](https://www.terraform.io/docs/providers/azurerm/authenticating_via_service_principal.html).
+
+[!INCLUDE [terraform-troubleshooting.md](includes/terraform-troubleshooting.md)]
 
 ## <a name="next-steps"></a>Passaggi successivi
 

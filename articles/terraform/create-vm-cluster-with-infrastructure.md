@@ -5,12 +5,12 @@ keywords: azure devops terraform vm macchina virtuale cluster
 ms.topic: how-to
 ms.date: 03/09/2020
 ms.custom: devx-track-terraform
-ms.openlocfilehash: b0de2ed0c82f26902470835658ba7bb34f1acd7a
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 1e383cbe7c7cb8a19f59ba1768f9f598f0e6dc94
+ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88241204"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91401641"
 ---
 # <a name="create-an-azure-vm-cluster-with-terraform-and-hcl"></a>Creare un cluster di macchine virtuali di Azure con Terraform e HCL
 
@@ -26,8 +26,6 @@ Si apprenderà come eseguire le attività seguenti:
 > * Inizializzare Terraform.
 > * Creare un piano di esecuzione di Terraform.
 > * Applicare il piano di esecuzione di Terraform per creare le risorse di Azure.
-
-[!INCLUDE [hashicorp-support.md](includes/hashicorp-support.md)]
 
 ## <a name="prerequisites"></a>Prerequisiti
 
@@ -252,6 +250,8 @@ Se si vuole applicare il piano di esecuzione salvato in precedenza, eseguire il 
   ```
 
 ![Applicazione di un piano di esecuzione Terraform](media/create-vm-cluster-with-infrastructure/terraform-apply.png)
+
+[!INCLUDE [terraform-troubleshooting.md](includes/terraform-troubleshooting.md)]
 
 ## <a name="next-steps"></a>Passaggi successivi
 

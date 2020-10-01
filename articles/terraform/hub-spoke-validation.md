@@ -4,12 +4,12 @@ description: Informazioni su come convalidare la topologia di rete hub-spoke con
 ms.topic: tutorial
 ms.date: 10/26/2019
 ms.custom: devx-track-terraform
-ms.openlocfilehash: ec21091b45dfe11839e4bfe0f4fe2f37261f16cc
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 684bca6b62847718f34ce799d0c1371b25fdd532
+ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88241113"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91401501"
 ---
 # <a name="tutorial-validate-a-hub-and-spoke-network-in-azure-using-terraform"></a>Esercitazione: Convalidare una rete hub-spoke in Azure con Terraform
 
@@ -23,8 +23,6 @@ Questa esercitazione illustra le attività seguenti:
 > * Usare terraform apply per creare le risorse in Azure
 > * Verificare la connettività tra reti diverse
 > * Usare Terraform per eliminare definitivamente tutte le risorse
-
-[!INCLUDE [hashicorp-support.md](includes/hashicorp-support.md)]
 
 ## <a name="prerequisites"></a>Prerequisiti
 
@@ -144,6 +142,8 @@ Quando le risorse create in questa serie di esercitazioni non sono più necessar
     ```bash
     rm -r hub-spoke
     ```
+
+[!INCLUDE [terraform-troubleshooting.md](includes/terraform-troubleshooting.md)]
 
 ## <a name="next-steps"></a>Passaggi successivi
 

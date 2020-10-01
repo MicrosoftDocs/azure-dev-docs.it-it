@@ -4,12 +4,12 @@ description: Informazioni su come usare Terraform per distribuire un'istanza di 
 ms.topic: how-to
 ms.date: 04/26/2020
 ms.custom: devx-track-terraform
-ms.openlocfilehash: 376d0e3637489ddedde942812dcbf55d46da48db
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 75ee5e19d3cd42d10bd68e2550c391589c5c2d39
+ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88241163"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91401521"
 ---
 # <a name="deploy-an-azure-cosmos-db-to-azure-container-instances"></a>Distribuire un'istanza di Azure Cosmos DB in Istanze di Azure Container
 
@@ -19,8 +19,6 @@ In questo articolo verranno create risorse di Azure con Terraform. I passaggi de
 > * Istanza di Azure Cosmos DB
 > * Istanza di contenitore di Azure
 > * App che funziona in queste due risorse
-
-[!INCLUDE [hashicorp-support.md](includes/hashicorp-support.md)]
 
 ## <a name="prerequisites"></a>Prerequisiti
 
@@ -176,6 +174,8 @@ Eseguire il comando [terraform destroy](https://www.terraform.io/docs/commands/d
 ```bash
 terraform destroy -auto-approve
 ```
+
+[!INCLUDE [terraform-troubleshooting.md](includes/terraform-troubleshooting.md)]
 
 ## <a name="next-steps"></a>Passaggi successivi
 

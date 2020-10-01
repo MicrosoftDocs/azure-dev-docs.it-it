@@ -5,12 +5,12 @@ keywords: azure devops terraform gateway applicazione ingresso servizio azure ku
 ms.topic: how-to
 ms.date: 03/09/2020
 ms.custom: devx-track-terraform
-ms.openlocfilehash: 4d83e6720958ff76126c7e71e8cfbbcfb13c666a
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 10e52f4cc05bfa4127ee519ed265f0607d4745be
+ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88241263"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91401661"
 ---
 # <a name="create-an-application-gateway-ingress-controller-in-azure-kubernetes-service"></a>Creare un controller di ingresso del gateway applicazione nel servizio Azure Kubernetes
 
@@ -27,8 +27,6 @@ In questo articolo si apprenderà come eseguire le attività seguenti:
 > * Usare Terraform e il servizio Azure Kubernetes per creare un cluster Kubernetes.
 > * Usare lo strumento kubectl per verificare la disponibilità di un cluster Kubernetes.
 
-[!INCLUDE [hashicorp-support.md](includes/hashicorp-support.md)]
-
 ## <a name="prerequisites"></a>Prerequisiti
 
 [!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
@@ -37,7 +35,7 @@ In questo articolo si apprenderà come eseguire le attività seguenti:
 
 - **Gruppo di risorse di Azure**: se non è già disponibile, [creare un gruppo di risorse di Azure](/azure/azure-resource-manager/manage-resource-groups-portal#create-resource-groups) da usare per la demo. Prendere nota del nome e della posizione del gruppo di risorse perché questi valori vengono usati nella demo.
 
-- **Entità servizio di Azure**: seguire le indicazioni riportate nella sezione relativa a **Creare l'entità servizio** nell'articolo [Creare entità servizio di Azure con l'interfaccia della riga di comando di Azure](/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest). Prendere nota dei valori di `appId`, `displayName` e `password`.
+- **Entità servizio di Azure**: seguire le indicazioni riportate nella sezione relativa a **Creare l'entità servizio** nell'articolo [Creare entità servizio di Azure con l'interfaccia della riga di comando di Azure](/cli/azure/create-an-azure-service-principal-azure-cli). Prendere nota dei valori di `appId`, `displayName` e `password`.
 
 - **Ottenere l'ID oggetto dell'entità servizio**: Eseguire il comando seguente in Cloud Shell: `az ad sp list --display-name <displayName>`
 
@@ -774,6 +772,8 @@ Sostituire il segnaposto con il valore appropriato. Tutte le risorse nel gruppo 
 ```azurecli
 az group delete -n <resource-group>
 ```
+
+[!INCLUDE [terraform-troubleshooting.md](includes/terraform-troubleshooting.md)]
 
 ## <a name="next-steps"></a>Passaggi successivi
 

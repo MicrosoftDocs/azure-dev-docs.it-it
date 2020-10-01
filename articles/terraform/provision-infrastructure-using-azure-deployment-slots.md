@@ -3,22 +3,20 @@ title: Effettuare il provisioning dell'infrastruttura con slot di distribuzione 
 description: Informazioni su come usare Terraform con gli slot di distribuzione del provider di Azure.
 keywords: azure devops terraform slot di distribuzione
 ms.topic: how-to
-ms.date: 03/09/2020
+ms.date: 09/27/2020
 ms.custom: devx-track-terraform
-ms.openlocfilehash: bed68e64bb6948f4ab021035bd113ea9fb007950
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: ad98549bca6b98635d111ee333212bd8b9a9dbba
+ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88241213"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91401771"
 ---
 # <a name="provision-infrastructure-with-azure-deployment-slots-using-terraform"></a>Effettuare il provisioning dell'infrastruttura con slot di distribuzione di Azure tramite Terraform
 
 È possibile usare [slot di distribuzione di Azure](/azure/app-service/deploy-staging-slots) per alternare versioni diverse di un'app. Queste funzionalità consentono di ridurre al minimo l'impatto delle distribuzioni non funzionanti. 
 
 Questo articolo presenta un esempio di uso degli slot di distribuzione descrivendo in modo dettagliato la distribuzione di due app tramite GitHub e Azure. Un'app è ospitata in uno slot di produzione. La seconda app è ospitata in uno slot di staging. I nomi "produzione" e "staging" sono arbitrari. Possono fare riferimento a qualsiasi cosa appropriata per uno specifico scenario. Dopo aver configurato gli slot di distribuzione, usare Terraform per alternare i due slot in base alle esigenze.
-
-[!INCLUDE [hashicorp-support.md](includes/hashicorp-support.md)]
 
 ## <a name="prerequisites"></a>Prerequisiti
 
@@ -303,6 +301,8 @@ terraform apply
 ```
 
 Al termine dello scambio, verrà visualizzata la configurazione originale.
+
+[!INCLUDE [terraform-troubleshooting.md](includes/terraform-troubleshooting.md)]
 
 ## <a name="next-steps"></a>Passaggi successivi
 

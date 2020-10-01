@@ -4,12 +4,12 @@ description: Informazioni su come creare una rete virtuale hub in Azure che fung
 ms.topic: tutorial
 ms.date: 10/26/2019
 ms.custom: devx-track-terraform
-ms.openlocfilehash: 1bc9b2b899157985394165171adc76d988fe7e6a
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: b7276d3807f00e828c89ee00ffcde2e6e2f0b9a5
+ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88241133"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91401457"
 ---
 # <a name="tutorial-create-a-hub-virtual-network-appliance-in-azure-using-terraform"></a>Esercitazione: Creare un'appliance di rete virtuale hub con Terraform in Azure
 
@@ -24,8 +24,6 @@ Questo articolo illustra le attività seguenti:
 > * Usare Terraform per creare una macchina virtuale della rete hub che fungerà da appliance
 > * Usare Terraform per abilitare le route usando le estensioni CustomScript
 > * Usare Terraform per creare tabelle di route gateway hub-spoke
-
-[!INCLUDE [hashicorp-support.md](includes/hashicorp-support.md)]
 
 ## <a name="prerequisites"></a>Prerequisiti
 
@@ -270,6 +268,8 @@ Creare il file di configurazione Terraform che dichiara una rete virtuale locale
     ```
 
 1. Salvare il file e uscire dall'editor.
+
+[!INCLUDE [terraform-troubleshooting.md](includes/terraform-troubleshooting.md)]
 
 ## <a name="next-steps"></a>Passaggi successivi
 

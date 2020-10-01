@@ -5,12 +5,12 @@ keywords: azure devops terraform servizio azure kubernetes kubernetes
 ms.topic: how-to
 ms.date: 03/09/2020
 ms.custom: devx-track-terraform
-ms.openlocfilehash: 726f4544f4c417792d784dfaddf93a3d79eaec9e
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: ccf5855f414b233f97642f60a4f52c99848b34cd
+ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88241253"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91401651"
 ---
 # <a name="create-a-kubernetes-cluster-with-azure-kubernetes-service-using-terraform"></a>Creare un cluster Kubernetes con il servizio Azure Kubernetes usando Terraform
 
@@ -23,15 +23,13 @@ In questo articolo si apprenderà come eseguire le attività seguenti:
 > * Usare Terraform e servizio Azure Kubernetes per creare un cluster Kubernetes
 > * Usare lo strumento kubectl per verificare la disponibilità di un cluster Kubernetes
 
-[!INCLUDE [hashicorp-support.md](includes/hashicorp-support.md)]
-
 ## <a name="prerequisites"></a>Prerequisiti
 
 [!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
 
 - **Configurare Terraform**: Seguire le indicazioni nell'articolo su [Terraform e configurazione dell'accesso ad Azure](get-started-cloud-shell.md)
 
-- **Entità servizio di Azure**: seguire le indicazioni riportate nella sezione **Creare un'entità servizio** nell'articolo [Creare un'entità servizio di Azure con l'interfaccia della riga di comando di Azure](/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest). Prendere nota dei valori di `appId`, `displayName`, `password` e `tenant`.
+- **Entità servizio di Azure**: seguire le indicazioni riportate nella sezione **Creare un'entità servizio** nell'articolo [Creare un'entità servizio di Azure con l'interfaccia della riga di comando di Azure](/cli/azure/create-an-azure-service-principal-azure-cli). Prendere nota dei valori di `appId`, `displayName`, `password` e `tenant`.
 
 ## <a name="create-the-directory-structure"></a>Creare la struttura di directory
 
@@ -401,6 +399,8 @@ In caso di timeout della sessione di Cloud Shell, è possibile eseguire questi p
 ## <a name="monitor-health-and-logs"></a>Monitoraggio di stato e log
 
 Quando è stato creato il cluster del servizio Azure Kubernetes, è stato abilitato il monitoraggio per acquisire le metriche di integrità sia per i nodi del cluster che per i pod. Queste metriche di integrità sono disponibili nel portale di Azure. Per altre informazioni sul monitoraggio dell'integrità dei contenitori, vedere [Monitorare l'integrità del servizio Azure Kubernetes](/azure/azure-monitor/insights/container-insights-overview).
+
+[!INCLUDE [terraform-troubleshooting.md](includes/terraform-troubleshooting.md)]
 
 ## <a name="next-steps"></a>Passaggi successivi
 
