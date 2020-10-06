@@ -1,15 +1,15 @@
 ---
 title: Creare il Servizio app di Azure Deno da Visual Studio Code
-description: Parte 2 dell'esercitazione, creare l'app Deno ed eseguirla in locale
-ms.topic: conceptual
+description: Parte 2 dell'esercitazione su Deno, creare l'app Deno ed eseguirla in locale
+ms.topic: tutorial
 ms.date: 06/01/2020
-ms.custom: devx-track-javascript
-ms.openlocfilehash: 6440f75d11bd4eb68dfbcf4e1dcf6b2b27c0496f
-ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
+ms.custom: devx-track-js
+ms.openlocfilehash: da5ed76459bdd9f00379e9f9c96873589886f8ed
+ms.sourcegitcommit: 4dd392ea864be52421d0239e59198bc44b0a5a16
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "90772924"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91364464"
 ---
 # <a name="test-local-deno-apps"></a>Testare app Deno locali
 

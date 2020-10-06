@@ -1,16 +1,16 @@
 ---
 title: Avvio rapido - Configurare Terraform con Azure PowerShell
-description: Questo argomento di avvio rapido illustra come installare e configurare Terraform per la creazione di risorse di Azure.
+description: Questo argomento di avvio rapido illustra come installare e configurare Terraform usando Azure PowerShell.
 keywords: azure devops terraform installazione configurazione windows inizializzazione piano applicare esecuzione portale accesso controllo degli accessi in base al ruolo entità servizio script automatizzato powershell
 ms.topic: quickstart
-ms.date: 08/18/2020
+ms.date: 09/27/2020
 ms.custom: devx-track-terraform
-ms.openlocfilehash: 401a6c4cc8827e48858a936a10c9c7f62af15aab
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: 8f95d0bb09d7e9e7ea789b90a27178cdf5426d74
+ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90830057"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91401551"
 ---
 # <a name="quickstart-configure-terraform-using-azure-powershell"></a>Avvio rapido: Configurare Terraform con Azure PowerShell
  
@@ -27,11 +27,9 @@ In questo articolo vengono illustrate le operazioni seguenti:
 > * Creare un'entità servizio di Azure per finalità di autenticazione
 > * Accedere ad Azure con un'entità servizio 
 > * Configurare le variabili di ambiente in modo che Terraform esegua correttamente l'autenticazione nella sottoscrizione di Azure
-> * Scrivere uno script di Terraform per creare un gruppo di risorse di Azure
+> * Creare un file di configurazione di base di Terraform
 > * Creare e applicare un piano di esecuzione di Terraform
-> * Usare il flag `terraform plan -destroy` per ripristinare un piano di esecuzione
-
-[!INCLUDE [hashicorp-support.md](includes/hashicorp-support.md)]
+> * Invertire un piano di esecuzione
 
 ## <a name="prerequisites"></a>Prerequisiti
 
@@ -45,9 +43,9 @@ In questo articolo vengono illustrate le operazioni seguenti:
     $PSVersionTable.PSVersion
     ```
 
-1. [Installare PowerShell](/powershell/scripting/install/installing-powershell-core-on-windows?view=powershell-7). Questa demo è stata testata con PowerShell 7.0.2 in Windows 10.
+1. [Installare PowerShell](/powershell/scripting/install/installing-powershell-core-on-windows). Questa demo è stata testata con PowerShell 7.0.2 in Windows 10.
 
-1. Per eseguire l'[autenticazione di Terraform in Azure](https://www.terraform.io/docs/providers/azurerm/guides/azure_cli.html), è necessario [installare l'interfaccia della riga di comando di Azure](/cli/azure/install-azure-cli-windows?view=azure-cli-latest). Questa demo è stata testata con la versione 2.9.1 dell'interfaccia della riga di comando di Azure.
+1. Per eseguire l'[autenticazione di Terraform in Azure](https://www.terraform.io/docs/providers/azurerm/guides/azure_cli.html), è necessario [installare l'interfaccia della riga di comando di Azure](/cli/azure/install-azure-cli-windows). Questa demo è stata testata con la versione 2.9.1 dell'interfaccia della riga di comando di Azure.
 
 1. [Scaricare Terraform](https://www.terraform.io/downloads.html).
 
@@ -64,9 +62,15 @@ In questo articolo vengono illustrate le operazioni seguenti:
     **Note**:
     - Se viene trovato l'eseguibile di Terraform, viene elencata la sintassi insieme ai comandi disponibili.
 
-## <a name="create-an-azure-service-principal"></a>Creare un'entità servizio di Azure
+## <a name="authenticate-to-azure"></a>Eseguire l'autenticazione ad Azure
 
-Se si usano PowerShell e Terraform, è necessario accedere tramite un'entità servizio.
+Se si usano PowerShell e Terraform, è necessario accedere tramite un'entità servizio. Le due sezioni successive illustrano le attività seguenti:
+
+- [Creare un'entità servizio di Azure](#create-an-azure-service-principal)
+- [Accedere ad Azure tramite un'entità servizio](#log-in-to-azure-using-a-service-principal)
+
+
+### <a name="span-idcreate-an-azure-service-principalcreate-an-azure-service-principal"></a><span id="create-an-azure-service-principal"/>Creare un'entità servizio di Azure
 
 per accedere a una sottoscrizione di Azure usando un'entità servizio, occorre prima di tutto avere accesso a un'entità servizio. Se si ha già un'entità servizio, è possibile ignorare questa sezione.
 
@@ -105,7 +109,7 @@ Chiamando [New-AzADServicePrincipal](/powershell/module/Az.Resources/New-AzADSer
 - I valori di nome e password dell'entità servizio sono necessari per accedere alla sottoscrizione tramite l'entità servizio.
 - Se viene persa, questa password non può essere recuperata. Di conseguenza, è consigliabile archiviarla in un luogo sicuro. Se si dimentica la password, è necessario [reimpostare le credenziali dell'entità servizio](/powershell/azure/create-azure-service-principal-azureps#reset-credentials).
 
-## <a name="log-in-to-azure-using-a-service-principal"></a>Accedere ad Azure tramite un'entità servizio
+### <a name="span-idlog-in-to-azure-using-a-service-principallog-in-to-azure-using-a-service-principal"></a><span id="log-in-to-azure-using-a-service-principal"/>Accedere ad Azure tramite un'entità servizio
 
 Per accedere a una sottoscrizione di Azure tramite un'entità servizio, chiamare [Connect-AzAccount](/powershell/module/az.accounts/Connect-AzAccount) specificando un oggetto di tipo [PsCredential](/dotnet/api/system.management.automation.pscredential).
 
@@ -143,124 +147,15 @@ $env:ARM_SUBSCRIPTION_ID="<azure_subscription_id>"
 $env:ARM_TENANT_ID="<azure_subscription_tenant_id>"
 ```
 
-## <a name="create-a-terraform-configuration-file"></a>Creare un file di configurazione Terraform
+[!INCLUDE [terraform-create-base-config-file.md](includes/terraform-create-base-config-file.md)]
 
-In questa sezione verrà scritto il codice di un file di configurazione di Terraform che crea un gruppo di risorse di Azure.
+[!INCLUDE [terraform-create-and-apply-execution-plan.md](includes/terraform-create-and-apply-execution-plan.md)]
 
-1. Creare una directory in cui conservare i file di Terraform per questa demo.
+[!INCLUDE [terraform-reverse-execution-plan.md](includes/terraform-reverse-execution-plan.md)]
 
-    ```powershell
-    mkdir QuickstartTerraformTest
-    ```
-
-1. Passare alla directory demo.
-
-    ```powershell
-    cd QuickstartTerraformTest
-    ```
-
-1. Usando l'editor preferito, creare un file di configurazione di Terraform. Questo articolo usa [Visual Studio Code](https://code.visualstudio.com/Download).
-
-    ```powershell
-    code QuickstartTerraformTest.tf
-    ```
-
-1. Incollare il codice HCL seguente nel nuovo file. Per altre informazioni, vedere le note dopo il codice.
-
-    ```hcl
-    provider "azurerm" {
-      # The "feature" block is required for AzureRM provider 2.x.
-      # If you're using version 1.x, the "features" block isn't allowed.
-      version = "~>2.0"
-      features {}
-    }
-
-    resource "azurerm_resource_group" "rg" {
-      name     = "QuickstartTerraformTest-rg"
-      location = "eastus"
-    }
-    ```
-
-    **Note**:
-    - Il blocco del provider specifica che viene usato il [provider di Azure (azurerm)](https://www.terraform.io/docs/providers/azurerm/index.html).
-    - All'interno del blocco del provider `azurerm` vengono impostati gli attributi `version` e `features`. Come indicato nel commento, l'utilizzo di questi attributo dipende dalla versione. Per altre informazioni su come impostare questi attributi, vedere la [versione 2.0 del provider AzureRM](https://www.terraform.io/docs/providers/azurerm/guides/2.0-upgrade-guide.html).
-    - L'unica [dichiarazione di risorse](https://www.terraform.io/docs/configuration/resources.html) è relativa a un tipo di risorsa di [azurerm_resource_group](https://www.terraform.io/docs/providers/azurerm/r/resource_group.html). I due argomenti obbligatori per azure_resource_group sono name e location.
-
-## <a name="create-and-apply-a-terraform-execution-plan"></a>Creare e applicare un piano di esecuzione di Terraform
-
-In questa sezione viene creato un *piano di esecuzione*, che viene applicato all'infrastruttura cloud.
-
-1. Inizializzare la distribuzione di Terraform con [terraform init](https://www.terraform.io/docs/commands/init.html). Questo passaggio scarica i moduli di Azure necessari per creare un gruppo di risorse di Azure.
-
-    ```powershell
-    terraform init
-    ```
-
-1. Eseguire [terraform plan](https://www.terraform.io/docs/commands/plan.html) per creare un piano di esecuzione dal file di configurazione di Terraform.
-
-    ```powershell
-    terraform plan -out QuickstartTerraformTest.tfplan
-    ```
-
-    **Note:**
-    - Il comando `terraform plan` consente di creare un piano di esecuzione, ma non di eseguirlo. Determina invece le azioni necessarie per creare la configurazione specificata nei file di configurazione. Questo modello consente di verificare se il piano di esecuzione corrisponde alle aspettative prima di apportare modifiche alle risorse effettive.
-    - Il parametro `-out` facoltativo consente di specificare un file di output per il piano. L'uso del parametro `-out` garantisce che il piano esaminato sia esattamente quello che viene applicato.
-    - Per altre informazioni su come rendere persistenti i piani di esecuzione e la sicurezza, vedere la [sezione relativa agli avvisi di sicurezza](https://www.terraform.io/docs/commands/plan.html#security-warning).
-
-1. Eseguire [terraform apply](https://www.terraform.io/docs/commands/apply.html) per applicare il piano di esecuzione.
-
-    ```powershell
-    terraform apply QuickstartTerraformTest.tfplan
-    ```
-
-1. Una volta applicato il piano di esecuzione, è possibile verificare se il gruppo di risorse è stato creato correttamente usando [Get-AzResourceGroup](/powershell/module/az.resources/Get-AzResourceGroup).
-
-    ```powershell
-    Get-AzResourceGroup -Name QuickstartTerraformTest-rg
-    ```
-
-    **Note**:
-
-    - Se l'operazione è riuscita, il comando visualizza diverse proprietà del gruppo di risorse appena creato.
-
-## <a name="clean-up-resources"></a>Pulire le risorse
-
-Quando non sono più necessarie, eliminare le risorse create in questo articolo.
-
-1. Eseguire [terraform plan](https://www.terraform.io/docs/commands/plan.html) per creare un piano di esecuzione in modo da eliminare definitivamente le risorse indicate nel file di configurazione di Terraform.
-
-    ```powershell
-    terraform plan -destroy -out QuickstartTerraformTest.destroy.tfplan
-    ```
-
-    **Note:**
-    - Il comando `terraform plan` consente di creare un piano di esecuzione, ma non di eseguirlo. Determina invece le azioni necessarie per creare la configurazione specificata nei file di configurazione. Questo modello consente di verificare se il piano di esecuzione corrisponde alle aspettative prima di apportare modifiche alle risorse effettive.
-    - Il parametro `-destroy` genera un piano per eliminare definitivamente le risorse.
-    - Il parametro `-out` facoltativo consente di specificare un file di output per il piano. L'uso del parametro `-out` garantisce che il piano esaminato sia esattamente quello che viene applicato.
-    - Per altre informazioni su come rendere persistenti i piani di esecuzione e la sicurezza, vedere la [sezione relativa agli avvisi di sicurezza](https://www.terraform.io/docs/commands/plan.html#security-warning).
-
-1. Eseguire [terraform apply](https://www.terraform.io/docs/commands/apply.html) per applicare il piano di esecuzione.
-
-    ```powershell
-    terraform apply QuickstartTerraformTest.destroy.tfplan
-    ```
-
-1. Verificare se il gruppo di risorse è stato eliminato usando [Get-AzResourceGroup](/powershell/module/az.resources/Get-AzResourceGroup).
-
-    ```powershell
-    Get-AzResourceGroup -Name QuickstartTerraformTest-rg
-    ```
-
-    **Note**:
-    - Se l'operazione riesce, `Get-AzResourceGroup` visualizza un messaggio per indicare che il gruppo di risorse non esiste.
-
-1. Passare alla directory padre e rimuovere la directory demo. Il parametro `-r` rimuove il contenuto della directory prima di rimuovere la directory. Il contenuto della directory include il file di configurazione creato in precedenza e i file di stato di Terraform.
-
-    ```powershell
-    cd .. && rm -r QuickstartTerraformTest
-    ```
+[!INCLUDE [terraform-troubleshooting.md](includes/terraform-troubleshooting.md)]
 
 ## <a name="next-steps"></a>Passaggi successivi
 
 > [!div class="nextstepaction"]
-> [Creare una macchina virtuale di Azure con Terraform](create-linux-virtual-machine-with-infrastructure.md)
+> [Creare una macchina virtuale Linux usando Terraform](create-linux-virtual-machine-with-infrastructure.md)

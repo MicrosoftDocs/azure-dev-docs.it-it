@@ -1,15 +1,15 @@
 ---
 title: Distribuire un'app Node.js aggiunta a contenitore con VS Code e Azure
 description: Completare l'esercitazione end-to-end che illustra come creare un'app Node.js, inserirla in un contenitore e distribuire l'app in Azure
-ms.topic: article
+ms.topic: how-to
 ms.date: 06/25/2017
-ms.custom: seo-javascript-september2019, seo-javascript-october2019, devx-track-javascript
-ms.openlocfilehash: c036adcd759f26dfafda5126f475e251b503a831
-ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
+ms.custom: seo-javascript-september2019, seo-javascript-october2019, devx-track-js
+ms.openlocfilehash: 9d23e9dc578b89058c0fadeb98978de96712cab6
+ms.sourcegitcommit: 4dd392ea864be52421d0239e59198bc44b0a5a16
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88218923"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91364904"
 ---
 # <a name="develop-and-deploy-a-containerized-nodejs-app-with-visual-studio-code-and-azure"></a>Sviluppare e distribuire un'app Node.js in contenitore con Visual Studio Code e Azure
 
@@ -114,7 +114,7 @@ La stringa di connessione di MongoDB è hardcoded nella dichiarazione della prop
 
 Si noti che se si immette il codice manualmente (invece di copiarlo e incollarlo), quando si digita il punto dopo `process`, Visual Studio Code visualizza i membri disponibili dell'API globale process di Node.js.
 
-![Il completamento automatico visualizza automaticamente i membri di un'API](./media/node-howto-e2e/visual-studio-code-process-env.png)
+![Variabili di ambiente di VS Code con l'ambiente del processo](./media/node-howto-e2e/visual-studio-code-process-env.png)
 
 Il completamento automatico funziona perché Visual Studio Code usa TypeScript in background, anche per JavaScript, per fornire informazioni sui tipi che possono quindi essere usate per l'elenco di completamento durante la digitazione. Visual Studio Code può rilevare che si tratta di un progetto di Node.js e quindi scarica automaticamente il file delle definizioni di tipi TypeScript per [Node.js da NPM](https://www.npmjs.com/package/@types/node). Il file delle definizioni di tipi consente di ottenere il completamento automatico per altre variabili globali Node.js, ad esempio `Buffer` e `setTimeout`, oltre a tutti i moduli predefiniti, ad esempio `fs` e `http`.
 

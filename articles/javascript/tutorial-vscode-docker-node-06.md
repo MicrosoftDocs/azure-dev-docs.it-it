@@ -1,15 +1,15 @@
 ---
 title: Ridistribuire un contenitore nel servizio app di Azure dopo aver apportato modifiche in Visual Studio Code
-description: Passaggio 6 dell'esercitazione, la procedura semplice per ricompilare e ridistribuire un'immagine del contenitore.
-ms.topic: conceptual
+description: Passaggio 6 dell'esercitazione su Docker, la procedura semplice per ricompilare e ridistribuire un'immagine del contenitore.
+ms.topic: tutorial
 ms.date: 09/20/2019
-ms.custom: devx-track-javascript
-ms.openlocfilehash: 27bfc943ee64cbf6708fc2665ad9593b0fb28647
-ms.sourcegitcommit: 815cf2acff71e849735f7afce54723f03ffa5df3
+ms.custom: devx-track-js
+ms.openlocfilehash: 29f07936d69d971c9ea139b019ac4ee272871342
+ms.sourcegitcommit: 4dd392ea864be52421d0239e59198bc44b0a5a16
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88501406"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91365104"
 ---
 # <a name="make-changes-and-redeploy-a-container-using-visual-studio-code"></a>Apportare modifiche e ridistribuire un contenitore con Visual Studio Code
 

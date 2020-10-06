@@ -4,12 +4,12 @@ description: Informazioni su come usare Terraform per configurare un set di scal
 ms.topic: how-to
 ms.date: 11/07/2019
 ms.custom: devx-track-terraform
-ms.openlocfilehash: de8f22311edefcef1f25571731f17e5e5bc96348
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 7d81c80f1051b615dcfd089205f8c685ecaf1589
+ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88241193"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91401601"
 ---
 # <a name="create-an-azure-virtual-machine-scale-set-from-a-packer-custom-image-by-using-terraform"></a>Creare un set di scalabilità di macchine virtuali di Azure da un'immagine personalizzata Packer usando Terraform
 
@@ -24,8 +24,6 @@ In questo articolo vengono illustrate le operazioni seguenti:
 > * Creare un'immagine di macchina virtuale personalizzata usando Packer.
 > * Creare e distribuire un set di scalabilità di macchine virtuali usando l'immagine personalizzata.
 > * Creare e distribuire un jumpbox.
-
-[!INCLUDE [hashicorp-support.md](includes/hashicorp-support.md)]
 
 ## <a name="prerequisites"></a>Prerequisiti
 
@@ -329,12 +327,7 @@ Distribuire le risorse aggiuntive in Azure:
 terraform apply 
 ```
 
-Il contenuto del gruppo di risorse è simile all'immagine seguente:
-
-![Gruppo di risorse del set di scalabilità di macchine virtuali di Terraform](./media/create-vm-scaleset-network-disks-using-packer-hcl/tf-create-vmss-step6-apply.png)
-
-Aprire un browser e connettersi al nome di dominio completo restituito dal comando. 
-
+Aprire un browser e connettersi al nome di dominio completo restituito dal comando.
 
 ## <a name="add-a-jumpbox-to-the-existing-network"></a>Aggiungere un jumpbox alla rete esistente 
 
@@ -434,12 +427,9 @@ Distribuire il jumpbox.
 terraform apply 
 ```
 
-Una volta completata la distribuzione, il contenuto del gruppo di risorse sarà simile all'immagine seguente:
+**Note**:
 
-![Gruppo di risorse del set di scalabilità di macchine virtuali di Terraform](./media/create-vm-scaleset-network-disks-using-packer-hcl/tf-create-create-vmss-step8.png)
-
-> [!NOTE]
-> L'accesso con una password è disabilitato nel jumpbox e nel set di scalabilità di macchine virtuali distribuito. Accedere con SSH per accedere alle macchine virtuali.
+- L'accesso con una password è disabilitato nel jumpbox e nel set di scalabilità di macchine virtuali distribuito. Accedere con SSH per accedere alle macchine virtuali.
 
 ## <a name="clean-up-the-environment"></a>Pulire l'ambiente
 
@@ -450,6 +440,8 @@ terraform destroy
 ```
 
 Immettere *Sì* quando viene chiesto di confermare l'eliminazione delle risorse. Il processo di eliminazione può richiedere alcuni minuti.
+
+[!INCLUDE [terraform-troubleshooting.md](includes/terraform-troubleshooting.md)]
 
 ## <a name="next-steps"></a>Passaggi successivi
 

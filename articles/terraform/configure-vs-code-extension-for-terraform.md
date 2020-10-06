@@ -4,12 +4,12 @@ description: Questo articolo illustra come installare e usare l'estensione Azure
 ms.topic: how-to
 ms.date: 10/26/2019
 ms.custom: devx-track-terraform
-ms.openlocfilehash: dbb76f2bcdce12ebb55d9ae6002747701858751e
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: ac8c5c765237a065fbb2531f71de7f39644b70dc
+ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88241323"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91401761"
 ---
 # <a name="configure-the-azure-terraform-visual-studio-code-extension"></a>Configurare l'estensione Azure Terraform di Visual Studio Code
 
@@ -20,8 +20,6 @@ In questo articolo vengono illustrate le operazioni seguenti:
 > * Automatizzare il provisioning dei servizi di Azure con Terraform.
 > * Installare e usare l'estensione Terraform di Visual Studio Code per i servizi di Azure.
 > * Usare Visual Studio Code per scrivere, definire ed eseguire i piani Terraform.
-
-[!INCLUDE [hashicorp-support.md](includes/hashicorp-support.md)]
 
 ## <a name="prerequisites"></a>Prerequisiti
 
@@ -137,8 +135,6 @@ In questo esercizio si crea ed esegue un file di configurazione di Terraform di 
 1. Dalla barra dei menu selezionare **View > Command Palette... > Azure Terraform: Init** (Visualizza > Riquadro comandi > Azure Terraform: Init).
 
 1. Quando viene visualizzata la conferma, selezionare **OK**.
-
-    ![Finestra di dialogo di conferma per l'apertura di Cloud Shell](media/configure-vs-code-extension-for-terraform/tf-do-you-want-to-open-cloud-shell.png)
 
 1. La prima volta che si avvia Cloud Shell da una nuova cartella, viene richiesto di creare un'applicazione Web. Scegliere **Open**(Apri).
 
@@ -270,11 +266,9 @@ Prima di iniziare a usare i comandi di Terraform da Visual Studio Code, si scari
 
 1. Nell'elenco delle opzioni relative al tipo di test selezionare **lint**.
 
-    ![Selezionare il tipo di test](media/configure-vs-code-extension-for-terraform/tf-select-type-of-test-lint.png)
+    ![Selezionare "lint" come tipo di test](media/configure-vs-code-extension-for-terraform/tf-select-type-of-test-lint.png)
 
 1. Quando viene visualizzata la pagina di conferma, selezionare **OK** e seguire le istruzioni sullo schermo.
-
-    ![Finestra di dialogo di conferma per l'apertura di Cloud Shell](media/configure-vs-code-extension-for-terraform/tf-do-you-want-to-open-cloudshell-small.png)
 
 >[!NOTE]
 >Quando si esegue il test **lint** o **end to end**, Azure usa un servizio contenitore per effettuare il provisioning di un computer di test per l'esecuzione del test effettivo. Per questo motivo, la restituzione dei risultati del test potrebbe richiedere alcuni minuti.
@@ -289,11 +283,9 @@ Dopo qualche istante, nel riquadro Terminal (Terminale) viene visualizzato un el
 
 1. Nell'elenco delle opzioni relative al tipo di test selezionare **end to end**.
 
-    ![Selezionare il tipo di test](media/configure-vs-code-extension-for-terraform/tf-select-type-of-test-end-to-end.png)
+    ![Selezionare "end to end" come tipo di test](media/configure-vs-code-extension-for-terraform/tf-select-type-of-test-end-to-end.png)
 
 1. Quando viene visualizzata la pagina di conferma, selezionare **OK** e seguire le istruzioni sullo schermo.
-
-    ![Finestra di dialogo di conferma per l'apertura di Cloud Shell](media/configure-vs-code-extension-for-terraform/tf-do-you-want-to-open-cloudshell-small.png)
 
 >[!NOTE]
 >Quando si esegue il test **lint** o **end to end**, Azure usa un servizio contenitore per effettuare il provisioning di un computer di test per l'esecuzione del test effettivo. Per questo motivo, la restituzione dei risultati del test potrebbe richiedere alcuni minuti.
@@ -302,6 +294,9 @@ Dopo qualche istante, nel riquadro Terminal (Terminale) viene visualizzato un el
 
 ![Risultati del test](media/configure-vs-code-extension-for-terraform/tf-end-to-end-test-results.png)
 
+[!INCLUDE [terraform-troubleshooting.md](includes/terraform-troubleshooting.md)]
+
 ## <a name="next-steps"></a>Passaggi successivi
+
 > [!div class="nextstepaction"]
 > [Elenco di tutti i moduli di Terraform disponibili per Azure e altri provider supportati](https://registry.terraform.io/)

@@ -1,15 +1,15 @@
 ---
 title: Distribuire app Deno nel servizio app di Azure da Visual Studio Code
-description: Parte 3 dell'esercitazione, distribuire il sito Web
-ms.topic: conceptual
+description: Parte 3 dell'esercitazione su Deno, distribuire il sito Web
+ms.topic: tutorial
 ms.date: 06/01/2020
-ms.custom: devx-track-javascript
-ms.openlocfilehash: fe7106976f16cbd80de0d3e0692b76287dbecec9
-ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
+ms.custom: devx-track-js
+ms.openlocfilehash: ceb55fb184582a4cb355c25f42c798713335b45c
+ms.sourcegitcommit: 4dd392ea864be52421d0239e59198bc44b0a5a16
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "90772914"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91364855"
 ---
 # <a name="deploy-deno-apps-to-azure"></a>Distribuire le app Deno in Azure
 

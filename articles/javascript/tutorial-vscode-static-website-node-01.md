@@ -1,15 +1,15 @@
 ---
 title: Distribuire un sito Web Node.js statico in Azure da Visual Studio Code
-description: Parte 1 dell'esercitazione, introduzione e prerequisiti.
-ms.topic: conceptual
+description: Parte 1 dell'esercitazione sull'app Web statica, introduzione e prerequisiti.
+ms.topic: tutorial
 ms.date: 09/23/2019
-ms.custom: devx-track-javascript
-ms.openlocfilehash: d2c66383e654624cf7edce542461340cc248ba62
-ms.sourcegitcommit: 69933dcce571b2686897b295b7822e207d944617
+ms.custom: devx-track-js
+ms.openlocfilehash: bb3c0c552a25729e569abeba86d29d75570bb5e6
+ms.sourcegitcommit: 4dd392ea864be52421d0239e59198bc44b0a5a16
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/18/2020
-ms.locfileid: "90773090"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91365084"
 ---
 # <a name="deploy-a-static-website-to-azure-from-visual-studio-code"></a>Distribuire un sito Web statico in Azure da Visual Studio Code
 

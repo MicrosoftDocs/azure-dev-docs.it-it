@@ -1,15 +1,15 @@
 ---
 title: Pulire le risorse dopo la distribuzione di un app Node.js in contenitore da Visual Studio Code
-description: Parte 8 dell'esercitazione, pulire le risorse
-ms.topic: conceptual
+description: Parte 8 dell'esercitazione su Docker, pulire le risorse
+ms.topic: tutorial
 ms.date: 09/20/2019
-ms.custom: devx-track-javascript
-ms.openlocfilehash: d05766092022772c96fa745f9a52aa4901b27f82
-ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
+ms.custom: devx-track-js
+ms.openlocfilehash: 670579c82ff5b6d6b95fcd663ad2fa0e856805b9
+ms.sourcegitcommit: 4dd392ea864be52421d0239e59198bc44b0a5a16
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "90772704"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91365074"
 ---
 # <a name="part-8-clean-up-resources"></a>Parte 8: Pulire le risorse
 

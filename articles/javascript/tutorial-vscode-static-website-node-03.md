@@ -1,15 +1,15 @@
 ---
 title: Creare un account di Archiviazione di Azure per un sito Web Node.js statico da Visual Studio Code
-description: Parte 3 dell'esercitazione, creare un account di Archiviazione di Azure
-ms.topic: conceptual
+description: Parte 3 dell'esercitazione sull'app Web statica, creare un account di Archiviazione di Azure
+ms.topic: tutorial
 ms.date: 09/24/2019
-ms.custom: devx-track-javascript
-ms.openlocfilehash: f0aa6a8cbfc0a5d286d0b7c93a12cbd48b68d620
-ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
+ms.custom: devx-track-js
+ms.openlocfilehash: 03bfea7dac32280a7ac44840c3930b6c36d61f95
+ms.sourcegitcommit: 4dd392ea864be52421d0239e59198bc44b0a5a16
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88218350"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91365064"
 ---
 # <a name="create-an-azure-storage-account"></a>Creare un account di Archiviazione di Azure
 

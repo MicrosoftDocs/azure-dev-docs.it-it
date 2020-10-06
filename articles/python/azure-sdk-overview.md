@@ -4,12 +4,12 @@ description: Panoramica delle caratteristiche e delle funzionalità delle librer
 ms.date: 09/19/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 6dab8085cd9d18f34ea1dc307a414fa18cdbcb83
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: 81bda5dbe4c39341c2c799ecdbac10c2f0347bcc
+ms.sourcegitcommit: 4dd392ea864be52421d0239e59198bc44b0a5a16
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90829957"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91364434"
 ---
 # <a name="use-the-azure-libraries-sdk-for-python"></a>Usare le librerie di Azure (SDK) per Python
 
@@ -19,7 +19,7 @@ Le librerie di Azure open source per Python semplificano il provisioning, la ges
 
 - Le librerie di Azure stabiliscono la modalità di comunicazione con i servizi di Azure *dal* codice Python eseguito localmente o nel cloud. Tenere presente che è possibile eseguire codice Python nell'ambito di un determinato servizio solo se tale servizio supporta attualmente Python.
 
-- Le librerie supportano Python 2.7 e Python 3.5.3 o versioni successive e sono state testate anche con PyPy 5.4 e versioni successive.
+- Le librerie supportano Python 2.7 e Python 3.5.3 o versioni successive e vengono testate anche con PyPy 5.4 e versioni successive.
 
 - Azure SDK per Python è costituito da oltre 180 singole librerie Python correlate a servizi specifici di Azure. Non sono presenti altri strumenti nell'SDK.
 

@@ -1,15 +1,15 @@
 ---
 title: Creare l'applicazione di Funzioni di Azure da Visual Studio Code
-description: Parte 2 dell'esercitazione, creare l'app di Funzioni di Azure
-ms.topic: conceptual
+description: Parte 2 dell'esercitazione serverless, creare l'app di Funzioni di Azure
+ms.topic: tutorial
 ms.date: 09/23/2019
-ms.custom: devx-track-javascript
-ms.openlocfilehash: 7ea1b39086a6cd824084e9bbb3839ab41a24eaad
-ms.sourcegitcommit: 69933dcce571b2686897b295b7822e207d944617
+ms.custom: devx-track-js
+ms.openlocfilehash: 39481fc2b5472bd2f9e54946d3ab1dd6051f00d1
+ms.sourcegitcommit: 4dd392ea864be52421d0239e59198bc44b0a5a16
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/18/2020
-ms.locfileid: "90772624"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91365114"
 ---
 # <a name="create-the-local-functions-app"></a>Creare l'app per le funzioni locale
 
@@ -42,7 +42,7 @@ In questo passaggio viene creata un'applicazione locale di Funzioni di Azure con
 
 1. Per **Livello di autorizzazione**, selezionare **Anonimo**:
 
-    ![Immissione di un nome di funzione](media/functions-extension/create-function-anonymous-auth.png)
+    ![ Per "Livello di autorizzazione", selezionare "Anonimo"](media/functions-extension/create-function-anonymous-auth.png)
 
 1. Dopo alcuni secondi, VS Code completa la creazione del progetto. È disponibile una cartella denominata per la funzione, *HttpExample*, che contiene tre file:
 

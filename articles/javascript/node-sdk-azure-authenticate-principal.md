@@ -1,15 +1,15 @@
 ---
 title: Creare un'entità servizio di Azure con Node.js
 description: Informazioni su come usare l'autenticazione basata su entità servizio in Azure con Node.js e JavaScript
-ms.topic: article
+ms.topic: how-to
 ms.date: 06/17/2017
-ms.custom: devx-track-javascript
-ms.openlocfilehash: 156892d9fd8e8014e3dacaae2492126ac9bf5836
-ms.sourcegitcommit: b03cb337db8a35e6e62b063c347891e44a8a5a13
+ms.custom: devx-track-js
+ms.openlocfilehash: 40992b00ff9c0e04bf2b475fadf2d65dd3bd29d5
+ms.sourcegitcommit: 717e32b68fc5f4c986f16b2790f4211967c0524b
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/23/2020
-ms.locfileid: "91110437"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91586118"
 ---
 # <a name="create-an-azure-service-principal-for-nodejs"></a>Creare un'entità servizio di Azure per Node.js
 
@@ -23,7 +23,6 @@ Questo argomento illustra tre tecniche per creare un'entità servizio.
 
 - Portale di Azure
 - Interfaccia della riga di comando di Azure 2.0
-- Azure SDK per Node.js
 
 [!INCLUDE [chrome-note](includes/chrome-note.md)]
 
@@ -37,24 +36,11 @@ Per creare un'entità servizio usando l'[interfaccia della riga di comando di Az
 
 1. Scaricare l'[interfaccia della riga di comando di Azure 2.0](/cli/azure/install-az-cli2).
 
-2. Aprire una finestra del terminale.
+2. Aprire una finestra del terminale e digitare il comando `az login` per avviare il processo di accesso.
 
-3. Digitare il comando seguente per avviare il processo di accesso:
+3. La chiamata a `az login` restituisce un URL e un codice. Passare all'URL specificato, immettere il codice e accedere con l'identità di Azure. Questa operazione potrebbe venire eseguita automaticamente se l'accesso è già stato eseguito. Sarà quindi possibile accedere all'account tramite l'interfaccia della riga di comando.
 
-    ```shell
-    $ az login
-    ```
-
-4. La chiamata a `az login` restituisce un URL e un codice. Passare all'URL specificato, immettere il codice e accedere con l'identità di Azure. Questa operazione potrebbe venire eseguita automaticamente se l'accesso è già stato eseguito.
-Sarà quindi possibile accedere all'account tramite l'interfaccia della riga di comando.
-
-5. Ottenere l'ID della sottoscrizione e del tenant:
-
-    ```shell
-    $ az account list
-    ```
-
-    Il testo seguente è un esempio di output:
+4. Usando il comando `az account list`, ottenere l'ID della sottoscrizione e del tenant che saranno necessari per lavorare con i pacchetti di Azure. Il testo seguente è un esempio di output di questo comando:
 
     ```shell
     {
@@ -72,74 +58,9 @@ Sarà quindi possibile accedere all'account tramite l'interfaccia della riga di 
     }
     ```
 
-    **Prendere nota dell'ID sottoscrizione, che verrà usato nel passaggio 7.**
+5. Seguire la procedura illustrata nell'argomento [Creare un'entità servizio di Azure con l'interfaccia della riga di comando di Azure](/cli/azure/create-an-azure-service-principal-azure-cli) per generare l'entità servizio. L'oggetto JSON nell'output conterrà le informazioni necessarie per eseguire l'autenticazione con Azure.
 
-6. Creare un'entità servizio per ottenere un oggetto JSON contenente le altre informazioni necessarie per l'autenticazione con Azure.
-
-    ```shell
-    $ az ad sp create-for-rbac
-    ```
-
-    Il testo seguente è un esempio di output:
-
-    ```shell
-    {
-    "appId": "<appId>",
-    "displayName": "<displayName>",
-    "name": "<name>",
-    "password": "<password>",
-    "tenant": "<tenant>"
-    }
-    ```
-
-    **Prendere nota dei valori di tenant, nome e password, che verranno usati nel passaggio 7.**
-
-7. Configurare le variabili di ambiente sostituendo i segnaposto &lt;subscriptionId>, &lt;tenant>, &lt;name> e &lt;password> con i valori ottenuti nei passaggi 4 e 5.
-
-    **Tramite Bash**
-
-    ```shell
-    export azureSubId='<subscriptionId>'
-    export azureServicePrincipalTenantId='<tenant>'
-    export azureServicePrincipalClientId='<name>'
-    export azureServicePrincipalPassword='<password>'
-    ```
-
-    **Tramite PowerShell**
-
-    ```shell
-    $env:azureSubId='<subscriptionId>'
-    $env:azureServicePrincipalTenantId='<tenant>'
-    $env:azureServicePrincipalClientId='<name>'
-    $env:azureServicePrincipalPassword='<password>'
-    ```
-
-## <a name="create-a-service-principal-using-the-azure-sdk-for-nodejs"></a>Creare un'entità servizio usando Azure SDK per Node.js
-
-Per creare un'entità servizio a livello di codice con JavaScript, usare lo [script ServicePrincipal](https://github.com/Azure/azure-sdk-for-node/tree/master/Documentation/ServicePrincipal).
 
 ## <a name="using-the-service-principal"></a>Uso dell'entità servizio
 
-Dopo avere creato un'entità servizio, il frammento di codice JavaScript seguente illustra come usare le chiavi dell'entità servizio per l'autenticazione con Azure SDK per Node.js. Modificare i segnaposto seguenti: &lt;clientId or appId>, &lt;secret or password> e &lt;domain or tenant>.
-
-```javascript
-const Azure = require('azure');
-const MsRest = require('ms-rest-azure');
-
-MsRest.loginWithServicePrincipalSecret(
-  <clientId or appId>,
-  <secret or password>,
-  <domain or tenant>,
-  (err, credentials) => {
-    if (err) throw err
-
-    let storageClient = Azure.createARMStorageManagementClient(credentials, '<azure-subscription-id>');
-
-    // ..use the client instance to manage service resources.
-  }
-);
-```
-
-## <a name="next-steps"></a>Passaggi successivi
-
-* [Eseguire l'autenticazione con i moduli di Azure per Node.js](node-sdk-azure-authenticate.md)
+Dopo aver creato un'entità servizio, vedere l'argomento [Eseguire l'autenticazione con i moduli di gestione di Azure per JavaScript](./node-sdk-azure-authenticate.md) per informazioni su come creare un oggetto credenziali utilizzabile per autenticare il client con Azure Active Directory.

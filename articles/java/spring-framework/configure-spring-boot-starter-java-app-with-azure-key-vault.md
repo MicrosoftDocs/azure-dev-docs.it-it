@@ -9,12 +9,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: tutorial
 ms.workload: identity
 ms.custom: devx-track-java
-ms.openlocfilehash: d3504137c2c9a8ee2b1af960a17deb902be95d7a
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: e06d09d4f44366ba995ecaa401df901dc6270c6d
+ms.sourcegitcommit: f80537193d3e22eb24cce4a0a5464a996d1e63eb
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831987"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91409973"
 ---
 # <a name="tutorial-reading-a-secret-from-azure-key-vault-in-a-spring-boot-application"></a>Esercitazione: Lettura di un segreto da Azure Key Vault in un'applicazione Spring Boot
 
@@ -398,7 +398,7 @@ Seguire questa procedura per preparare il file POM per la distribuzione di `Keyv
     <plugin>
      <groupId>com.microsoft.azure</groupId>
      <artifactId>azure-webapp-maven-plugin</artifactId>
-     <version>1.9.1</version>
+     <version>1.11.0</version>
     </plugin>
    ```
 
@@ -412,7 +412,9 @@ Seguire questa procedura per preparare il file POM per la distribuzione di `Keyv
    mvn azure-webapp:config
    ```
 
-1. Per il sistema operativo assicurarsi che sia selezionato `linux`.
+1. Per `Subscription`, verificare di aver selezionato lo stesso ID sottoscrizione con l'insieme di credenziali delle chiavi creato.
+1. Per `Web App`, è possibile selezionare un'app Web esistente o selezionare `<create>` per crearne una nuova. Se si seleziona un'app Web esistente, si passerà direttamente all'ultimo passaggio **confirm**.
+1. Per `OS`, assicurarsi che sia selezionato `linux`.
 1. Per `javaVersion` assicurarsi che sia selezionata la versione Java scelta in Spring Initializr.  In precedenza è stato scelto `11`, quindi qui verrà scelto 11.
 1. Accettare le impostazioni predefinite per le domande rimanenti.
 1. Quando viene richiesto di confermare, rispondere Y per continuare o N per iniziare a rispondere di nuovo alle domande.  Al termine dell'esecuzione del plug-in, si è pronti per modificare il file POM.
@@ -437,9 +439,10 @@ Attenersi alla procedura seguente per apportare ulteriori modifiche necessarie a
      <plugin> 
        <groupId>com.microsoft.azure</groupId>  
        <artifactId>azure-webapp-maven-plugin</artifactId>  
-       <version>1.9.1</version>  
+       <version>1.11.0</version>  
        <configuration>
          <schemaVersion>V2</schemaVersion>
+         *<subscriptionId>********-****-****-****-************</subscriptionId>
          *<resourceGroup>contosorg</resourceGroup>
          *<appName>contosokeyvault</appName>
          <pricingTier>P1v2</pricingTier>

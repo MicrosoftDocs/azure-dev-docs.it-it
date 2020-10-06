@@ -4,12 +4,12 @@ ms.author: miparker
 ms.date: 07/27/2020
 ms.service: mobile-services
 ms.topic: include
-ms.openlocfilehash: 9d7db7db5a1b7323bd10e7e9cc87ca3b9a95826a
-ms.sourcegitcommit: cf23d382eee2431a3958b1c87c897b270587bde0
+ms.openlocfilehash: 06fc0e0986a41b2d37aa38d5557b0efbae08994e
+ms.sourcegitcommit: e97cb81a245ce7dcabeac3260abc3db7c30edd79
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87401678"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91493156"
 ---
 ### <a name="create-a-web-project"></a>Creare un progetto Web
 
@@ -36,9 +36,7 @@ ms.locfileid: "87401678"
 
 1. Eliminare **WeatherForecast.cs**.
 
-1. Premere **CTRL** + **clic** sul progetto **PushDemoApi**, quindi scegliere **Nuovo file** dal menu **Aggiungi**.
-
-1. Configurare i valori di configurazione locali usando lo [strumento Secret Manager](https://docs.microsoft.com/aspnet/core/security/app-secrets?view=aspnetcore-3.1&tabs=linux#secret-manager). La separazione dei segreti dalla soluzione assicura che non finiscano nel controllo del codice sorgente. Aprire il **Terminale** e quindi passare alla directory del file di progetto ed eseguire i comandi seguenti:
+1. Configurare i valori di configurazione locali usando lo [strumento Secret Manager](/aspnet/core/security/app-secrets?view=aspnetcore-3.1&tabs=linux#secret-manager). La separazione dei segreti dalla soluzione assicura che non finiscano nel controllo del codice sorgente. Aprire il **Terminale** e quindi passare alla directory del file di progetto ed eseguire i comandi seguenti:
 
     ```bash
     dotnet user-secrets init
@@ -59,7 +57,7 @@ ms.locfileid: "87401678"
 
 ### <a name="authenticate-clients-using-an-api-key-optional"></a>Autenticare i client usando una chiave API (facoltativo)
 
-Le chiavi API non sono sicure come i token, ma sono sufficienti ai fini di questa esercitazione. Una chiave API può essere configurata facilmente tramite il [middleware ASP.NET](https://docs.microsoft.com/aspnet/core/fundamentals/middleware/?view=aspnetcore-3.1).
+Le chiavi API non sono sicure come i token, ma sono sufficienti ai fini di questa esercitazione. Una chiave API può essere configurata facilmente tramite il [middleware ASP.NET](/aspnet/core/fundamentals/middleware/?view=aspnetcore-3.1).
 
 1. Aggiungere la **chiave API** ai valori di configurazione locali.
 
@@ -150,7 +148,7 @@ Le chiavi API non sono sicure come i token, ma sono sufficienti ai fini di quest
     ```
 
     > [!NOTE]
-    > Un [gestore di autenticazione](https://docs.microsoft.com/aspnet/core/security/authentication/?view=aspnetcore-3.1#authentication-handler) è un tipo che implementa il comportamento di uno schema, in questo caso uno schema di chiave API personalizzato.
+    > Un [gestore di autenticazione](/aspnet/core/security/authentication/?view=aspnetcore-3.1#authentication-handler) è un tipo che implementa il comportamento di uno schema, in questo caso uno schema di chiave API personalizzato.
 
 1. Aggiungere alla cartella **Authentication** un'altra **classe vuota** denominata *ApiKeyAuthenticationBuilderExtensions.cs*, quindi aggiungere l'implementazione seguente.
 
@@ -181,6 +179,8 @@ Le chiavi API non sono sicure come i token, ma sono sufficienti ai fini di quest
 1. In **Startup.cs** aggiornare il metodo **ConfigureServices** per configurare l'autenticazione della chiave API sotto la chiamata al metodo **services.AddControllers**.
 
     ```csharp
+    using PushDemoApi.Authentication;
+    
     public void ConfigureServices(IServiceCollection services)
     {
         services.AddControllers();
@@ -223,7 +223,7 @@ Le chiavi API non sono sicure come i token, ma sono sufficienti ai fini di quest
 
 ### <a name="add-dependencies-and-configure-services"></a>Aggiungere le dipendenze e configurare i servizi
 
-ASP.NET Core supporta lo schema progettuale di software per l'[inserimento di dipendenze](https://docs.microsoft.com/aspnet/core/fundamentals/dependency-injection?view=aspnetcore-3.1), una tecnica per ottenere l'[IoC (Inversion of Control)](https://docs.microsoft.com/dotnet/standard/modern-web-apps-azure-architecture/architectural-principles#dependency-inversion) tra le classi e le relative dipendenze.  
+ASP.NET Core supporta lo schema progettuale di software per l'[inserimento di dipendenze](/aspnet/core/fundamentals/dependency-injection?view=aspnetcore-3.1), una tecnica per ottenere l'[IoC (Inversion of Control)](/dotnet/standard/modern-web-apps-azure-architecture/architectural-principles#dependency-inversion) tra le classi e le relative dipendenze.  
 
 L'uso dell'hub di notifica e dell'[SDK di Hub di notifica per le operazioni back-end](https://www.nuget.org/packages/Microsoft.Azure.NotificationHubs/)è incapsulato in un servizio. Il servizio viene registrato e reso disponibile mediante un'astrazione idonea.
 
@@ -260,9 +260,9 @@ L'uso dell'hub di notifica e dell'[SDK di Hub di notifica per le operazioni back
     ```
 
     > [!NOTE]
-    > Questa classe contiene i payload di notifica in formato token per le notifiche generiche e automatiche richieste da questo scenario. I payload sono definiti al di fuori dell'[installazione](https://docs.microsoft.com/dotnet/api/microsoft.azure.notificationhubs.installation?view=azure-dotnet) per consentire la sperimentazione senza dover aggiornare le installazioni esistenti tramite il servizio. Questa modalità di gestione delle modifiche alle installazioni non rientra nell'ambito di questa esercitazione. Per gli scenari di produzione, prendere in considerazione i [modelli personalizzati](https://docs.microsoft.com/azure/notification-hubs/notification-hubs-templates-cross-platform-push-messages).
+    > Questa classe contiene i payload di notifica in formato token per le notifiche generiche e automatiche richieste da questo scenario. I payload sono definiti al di fuori dell'[installazione](/dotnet/api/microsoft.azure.notificationhubs.installation?view=azure-dotnet) per consentire la sperimentazione senza dover aggiornare le installazioni esistenti tramite il servizio. Questa modalità di gestione delle modifiche alle installazioni non rientra nell'ambito di questa esercitazione. Per gli scenari di produzione, prendere in considerazione i [modelli personalizzati](/azure/notification-hubs/notification-hubs-templates-cross-platform-push-messages).
 
-1. Selezionare **Generale** > **Classe vuota**, immettere *DeviceInstallation.cs* in **Nome**, quindi fare clic su **Nuovo** e aggiungere l'implementazione seguente.
+1. Aggiungere alla cartella **Models** un'altra **classe vuota** denominata *DeviceInstallation.cs*, quindi aggiungere l'implementazione seguente.
 
     ```csharp
     using System.Collections.Generic;
@@ -326,6 +326,7 @@ L'uso dell'hub di notifica e dell'[SDK di Hub di notifica per le operazioni back
 1. Aggiungere alla cartella **Services** un'**interfaccia vuota** denominata *INotificationService.cs*, quindi aggiungere l'implementazione seguente.
 
     ```csharp
+    using System.Threading;
     using System.Threading.Tasks;
     using PushDemoApi.Models;
 
@@ -510,7 +511,7 @@ L'uso dell'hub di notifica e dell'[SDK di Hub di notifica per le operazioni back
     ```
 
     > [!NOTE]
-    > L'espressione tag fornita a **SendTemplateNotificationAsync** è limitata a 20 tag. È limitata a 6 per la maggior parte degli operatori, ma in questo caso l'espressione contiene solo operatori OR (| |). Se la richiesta contiene più di 20 tag, è necessario suddividerla in più richieste. Per altre informazioni, vedere [Espressioni di routing e tag](https://msdn.microsoft.com/library/azure/Dn530749.aspx?f=255&MSPPError=-2147217396).
+    > L'espressione tag fornita a **SendTemplateNotificationAsync** è limitata a 20 tag. È limitata a 6 per la maggior parte degli operatori, ma in questo caso l'espressione contiene solo operatori OR (| |). Se la richiesta contiene più di 20 tag, è necessario suddividerla in più richieste. Per altre informazioni, vedere [Espressioni di routing e tag](/previous-versions/azure/azure-services/dn530749(v=azure.100)?f=255&MSPPError=-2147217396).
 
 1. In **Startup.cs** aggiornare il metodo **ConfigureServices** per aggiungere **NotificationHubsService** come implementazione singleton di **INotificationService**.
 
@@ -606,7 +607,7 @@ L'uso dell'hub di notifica e dell'[SDK di Hub di notifica per le operazioni back
     >
     > Se si riceve un avviso di **verifica dei certificati SSL**, è possibile disattivare l'impostazione di richiesta di verifica dei certificati SSL di **[Postman](https://www.postman.com/downloads)** in **Settings** (Impostazioni).
 
-1. Sostituire i metodi della classe basata su modello con il codice seguente.
+1. Sostituire i metodi della classe basata su modello in **NotificationsController.cs** con il codice seguente.
 
     ```csharp
     [HttpPut]
@@ -669,7 +670,7 @@ L'uso dell'hub di notifica e dell'[SDK di Hub di notifica per le operazioni back
 
 ### <a name="create-the-api-app"></a>Creare l'app per le API
 
-Si creerà ora un'[app per le API](https://azure.microsoft.com/services/app-service/api/) in [Servizio app di Azure](https://docs.microsoft.com/azure/app-service/) per l'hosting del servizio back-end.  
+Si creerà ora un'[app per le API](https://azure.microsoft.com/services/app-service/api/) in [Servizio app di Azure](/azure/app-service/) per l'hosting del servizio back-end.  
 
 1. Accedere al [portale di Azure](https://portal.azure.com).
 
@@ -744,7 +745,7 @@ Al termine della procedura guidata, l'app viene pubblicata in Azure e aperta. Pr
 
 1. Se si è scelto di completare la sezione [Autenticare i client usando una chiave API](#authenticate-clients-using-an-api-key-optional), assicurarsi di configurare le intestazioni della richiesta in modo da includere il valore di **apikey**.
 
-   | Chiave                            | valore                          |
+   | Chiave                            | Valore                          |
    | ------------------------------ | ------------------------------ |
    | apikey                         | <chiave_api>                 |
 

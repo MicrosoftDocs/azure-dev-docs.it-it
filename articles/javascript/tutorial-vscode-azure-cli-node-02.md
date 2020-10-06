@@ -1,15 +1,15 @@
 ---
 title: Creare un'app Node.js da distribuire in Azure tramite l'interfaccia della riga di comando di Azure
-description: Parte 2 dell'esercitazione, creare il codice dell'app.
-ms.topic: conceptual
+description: Parte 2 dell'esercitazione, creare il codice dell'app con l'interfaccia della riga di comando di Azure.
+ms.topic: tutorial
 ms.date: 09/24/2019
-ms.custom: devx-track-javascript
-ms.openlocfilehash: c4efa8f2c9e467e0bddeb43dd227eb9b9ecb6f99
-ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
+ms.custom: devx-track-js
+ms.openlocfilehash: 6d11f21dfda82a5881e177908c5f16c948df78cf
+ms.sourcegitcommit: 4dd392ea864be52421d0239e59198bc44b0a5a16
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88217916"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91365194"
 ---
 # <a name="create-the-app-code-using-express"></a>Creare il codice dell'app usando Express
 

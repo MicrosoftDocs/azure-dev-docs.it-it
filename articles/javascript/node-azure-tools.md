@@ -1,15 +1,15 @@
 ---
 title: Strumenti per sviluppatori JavaScript in Azure
 description: Installare i singoli strumenti per lo sviluppo con Node.js e JavaScript in Azure
-ms.topic: article
+ms.topic: reference
 ms.date: 11/07/2017
-ms.custom: seo-javascript-september2019, seo-javascript-october2019, devx-track-javascript
-ms.openlocfilehash: 3de364d2bf2cb44dee0b7d08ee79dfbffb161300
-ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
+ms.custom: seo-javascript-september2019, seo-javascript-october2019, devx-track-js
+ms.openlocfilehash: 5ccbe3373e0c90f1abdfc97b4de8c0173b7f60e2
+ms.sourcegitcommit: 4dd392ea864be52421d0239e59198bc44b0a5a16
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88218783"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91365039"
 ---
 # <a name="azure-tools-for-javascript-developers"></a>Strumenti di Azure per sviluppatori JavaScript
 Di seguito sono riportati gli strumenti consigliati per lo sviluppo di app JavaScript in Azure.
@@ -35,10 +35,10 @@ Per interagire con i servizi di Azure direttamente in Visual Studio Code, usare 
 
 | Strumento | Descrizione  |
 |:---------:|---------|
-| [Funzioni di Azure](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions) <br> [![Strumenti: Funzioni di Azure](media/node-azure-tools/icon-azure-functions.png)](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions) | Creare, gestire, visualizzare e distribuire funzioni ed eseguirne il debug|
-| [Servizio app di Azure](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azureappservice) <br> [![Strumenti: Servizio app](media/node-azure-tools/icon-azure-app-service.png)](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azureappservice) | Esplorare siti e il portale di Azure, creare nuovi siti ed eseguire la distribuzione in slot |
-| [Cosmos DB ](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-cosmosdb)  <br> [![Strumenti: Cosmos DB](media/node-azure-tools/icon-cosmos-db.png)](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-cosmosdb)| Creare, esplorare e aggiornare database multimodello distribuiti a livello globale in Azure |
-| [Docker](https://marketplace.visualstudio.com/items?itemName=formulahendry.docker-explorer)   <br> [![Strumenti: Cosmos DB](media/node-azure-tools/icon-docker.png)](https://marketplace.visualstudio.com/items?itemName=formulahendry.docker-explorer)| Gestire immagini e contenitori Docker, l'hub Docker e Registro Azure Container |
+| [Funzioni di Azure](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions "Collegamento all'estensione Funzioni di Azure") <br> [![Strumenti: Funzioni di Azure](media/node-azure-tools/icon-azure-functions.png)](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions) | Creare, gestire, visualizzare e distribuire funzioni ed eseguirne il debug|
+| [Servizio app di Azure](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azureappservice "Collegamento all'estensione Servizio app di Azure") <br> [![Strumenti: Servizio app](media/node-azure-tools/icon-azure-app-service.png)](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azureappservice) | Esplorare siti e il portale di Azure, creare nuovi siti ed eseguire la distribuzione in slot |
+| [Cosmos DB](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-cosmosdb "Collegamento all'estensione Cosmos DB" )  <br> [![Strumenti: Cosmos DB](media/node-azure-tools/icon-cosmos-db.png)](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-cosmosdb)| Creare, esplorare e aggiornare database multimodello distribuiti a livello globale in Azure |
+| [Docker](https://marketplace.visualstudio.com/items?itemName=formulahendry.docker-explorer)   <br> [![Docker](media/node-azure-tools/icon-docker.png)](https://marketplace.visualstudio.com/items?itemName=formulahendry.docker-explorer)| Gestire immagini e contenitori Docker, l'hub Docker e Registro Azure Container |
 
 > [!div class="nextstepaction"]
 > [Altre estensioni di Azure nel marketplace per Visual Studio Code](https://marketplace.visualstudio.com/search?term=azure&target=VSCode&category=All%20categories&sortBy=Relevance)

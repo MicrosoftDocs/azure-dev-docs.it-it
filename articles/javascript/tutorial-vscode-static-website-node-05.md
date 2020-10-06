@@ -1,16 +1,16 @@
 ---
 title: Distribuire modifiche in un sito Web Node.js statico da Visual Studio Code
-description: Parte 5 dell'esercitazione, apportare modifiche e ripetere la distribuzione
-ms.topic: conceptual
+description: Parte 5 dell'esercitazione sull'app Web statica, apportare modifiche e ripetere la distribuzione
+ms.topic: tutorial
 ms.date: 09/24/2019
 ms.author: buhollan
-ms.custom: devx-track-javascript
-ms.openlocfilehash: 918f96376a03d17792c7a462d37ea47330e60d39
-ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
+ms.custom: devx-track-js
+ms.openlocfilehash: 5d7a2af9dca7a775ee812b457012fa432c461d9a
+ms.sourcegitcommit: 4dd392ea864be52421d0239e59198bc44b0a5a16
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88218322"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91365284"
 ---
 # <a name="part-5-make-changes-and-redeploy"></a>Parte 5: Apportare modifiche e ripetere la distribuzione
 
@@ -32,7 +32,7 @@ In questo passaggio viene apportata una semplice modifica al codice sorgente del
 
 1. Al termine della distribuzione, aggiornare il sito nel browser per osservare le modifiche:
 
-    ![Modifiche nell'app dopo la ridistribuzione](media/static-website/updated-azure-app-angular.png)
+    ![Angolare - Al termine della distribuzione, aggiornare il sito nel browser per osservare le modifiche](media/static-website/updated-azure-app-angular.png)
 
 # <a name="react"></a>[React](#tab/react)
 
@@ -48,7 +48,7 @@ In questo passaggio viene apportata una semplice modifica al codice sorgente del
 
 1. Al termine della distribuzione, aggiornare il sito nel browser per osservare le modifiche:
 
-    ![Modifiche nell'app dopo la ridistribuzione](media/static-website/updated-azure-app-react.png)
+    ![React - Modifiche nell'app dopo la ridistribuzione](media/static-website/updated-azure-app-react.png)
 
 # <a name="vue"></a>[Vue](#tab/vue)
 
@@ -64,7 +64,7 @@ In questo passaggio viene apportata una semplice modifica al codice sorgente del
 
 1. Al termine della distribuzione, aggiornare il sito nel browser per osservare le modifiche:
 
-    ![Modifiche nell'app dopo la ridistribuzione](media/static-website/updated-azure-app-vue.png)
+    ![Vue - Modifiche nell'app dopo la ridistribuzione](media/static-website/updated-azure-app-vue.png)
 
 # <a name="svelte"></a>[Svelte](#tab/svelte)
 
@@ -95,7 +95,7 @@ In questo passaggio viene apportata una semplice modifica al codice sorgente del
 
 1. Al termine della distribuzione, aggiornare il sito nel browser per osservare le modifiche:
 
-    ![Modifiche nell'app dopo la ridistribuzione](media/static-website/updated-azure-app-svelte.png)
+    ![Svelte - Modifiche nell'app dopo la ridistribuzione](media/static-website/updated-azure-app-svelte.png)
 
 ---
 

@@ -5,12 +5,12 @@ author: edburns
 ms.author: edburns
 ms.topic: tutorial
 ms.date: 08/10/2020
-ms.openlocfilehash: 2ee3e7c03d0fd7f7048037fb27f2cfacfe39671d
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: 277f34fecfd976135077243252bc31aace11dd61
+ms.sourcegitcommit: 4dd392ea864be52421d0239e59198bc44b0a5a16
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831387"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91365014"
 ---
 # <a name="end-user-authorization-and-authentication-for-migrating-java-apps-on-weblogic-server-to-azure"></a>Autorizzazione e autenticazione degli utenti finali per la migrazione di app Java in WebLogic Server ad Azure
 
@@ -168,7 +168,7 @@ Quando si distribuiscono le applicazioni Azure incluse nell'elenco [Applicazioni
 |----------------|---------------|---------|
 | `aadsServerHost` | Host del server | Questo valore è il nome DNS pubblico salvato al completamento della procedura [Creare e configurare un dominio gestito di Azure Active Directory Domain Services](/azure/active-directory-domain-services/tutorial-create-instance). |
 | `aadsPublicIP` | Indirizzo IP esterno per LDAP sicuro | Questo valore corrisponde all'**indirizzo IP esterno di LDAP sicuro** salvato nella sezione [Configurare la zona DNS per l'accesso esterno](/azure/active-directory-domain-services/tutorial-configure-ldaps#configure-dns-zone-for-external-access).|
-| `wlsLDAPPrincipal` | Server principale   | Tornare in *LDP.exe*.  Eseguire i passaggi seguenti per ottenere un valore aggiuntivo per `wlsLDAPPrincipal`. <ol><li>Scegliere **Albero** dal menu **Visualizza**.</li><li>Nella finestra di dialogo **Visualizzazione albero** lasciare vuoto il campo **BaseDN** e selezionare **OK**.</li><li>Fare clic con il pulsante destro del mouse nel riquadro destro e scegliere **Cancella output**.</li><li>Espandere la visualizzazione albero a sinistra e selezionare la voce che inizia con "OU=AADDC Users".</li><li>Scegliere **Cerca** dal menu **Sfoglia**.</li><li>Nella finestra di dialogo visualizzata accettare le impostazioni predefinite e selezionare **Esegui**.</li><li>Quando nel riquadro destro viene visualizzato l'output, selezionare **Chiudi** accanto a **Esegui**.</li><li>Cercare nell'output la voce **Dn** corrispondente all'utente aggiunto al gruppo "Amministratori di AAD DC".  Inizierà con **Dn: CN=&lt;nome utente&gt;OU=AADDC Users"** .</li></ol> |
+| `wlsLDAPPrincipal` | Server principale   | Tornare in *LDP.exe*.  Eseguire i passaggi seguenti per ottenere un valore aggiuntivo per `wlsLDAPPrincipal`. <ol><li>Scegliere **Albero** dal menu **Visualizza**.</li><li>Nella finestra di dialogo **Visualizzazione albero** lasciare vuoto il campo **BaseDN** e selezionare **OK**.</li><li>Fare clic con il pulsante destro del mouse nel riquadro destro e scegliere **Cancella output**.</li><li>Espandere la visualizzazione albero a sinistra e selezionare la voce che inizia con "OU=AADDC Users".</li><li>Scegliere **Cerca** dal menu **Sfoglia**.</li><li>Nella finestra di dialogo visualizzata accettare le impostazioni predefinite e selezionare **Esegui**.</li><li>Quando nel riquadro destro viene visualizzato l'output, selezionare **Chiudi** accanto a **Esegui**.</li><li>Cercare nell'output la voce **Dn** corrispondente all'utente aggiunto al gruppo "Amministratori di AAD DC".  Inizierà con **Dn: CN=&lt;nome utente&gt;OU=AADDC Users**.</li></ol> |
 | `wlsLDAPGroupBaseDN` e `wlsLDAPUserBaseDN` | DN di base utente e DN di base gruppo | Ai fini di questa esercitazione, i valori per entrambe le proprietà sono uguali e corrispondono alla parte **wlsLDAPPrincipal** dopo la prima virgola.|
 | `wlsLDAPPrincipalPassword` | Password per l'entità | Questo valore è la password dell'utente aggiunto al gruppo **Amministratori di AAD DC**. |
 | `wlsLDAPProviderName` | Provider Name | Questo valore può essere lasciato vuoto.  Viene usato come nome del provider di autenticazione in WLS. |

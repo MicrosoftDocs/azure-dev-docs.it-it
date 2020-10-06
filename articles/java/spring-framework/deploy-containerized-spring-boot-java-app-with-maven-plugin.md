@@ -9,12 +9,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
 ms.custom: seo-java-july2019, seo-java-august2019, devx-track-java
-ms.openlocfilehash: 960b9c0d8606e14487dab6d505bc701968dc4b0a
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: 48a7369a1dce0fe89964ecaaac960a9bb09fb16c
+ms.sourcegitcommit: f80537193d3e22eb24cce4a0a5464a996d1e63eb
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831647"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91409983"
 ---
 # <a name="use-maven-for-azure-web-apps-to-deploy-a-containerized-spring-boot-app-to-azure"></a>Usare Maven per app Web di Azure per distribuire un'app Spring Boot in contenitore in Azure
 
@@ -169,13 +169,14 @@ Se si ha un account Docker, è possibile compilare l'immagine del contenitore Do
 
 1. Aprire il file `pom.xml` per l'applicazione Spring Boot in un editor di testo.
 
-1. Individuare l'elemento figlio `<imageName>` nell'elemento `<containerSettings>`.
+1. Individuare l'elemento figlio `<image>` nell'elemento `<runtime>`.
 
 1. Aggiornare il valore `${docker.image.prefix}` con il nome dell'account Docker:
    ```xml
-   <containerSettings>
-      <imageName>mydockeraccountname/${project.artifactId}</imageName>
-   </containerSettings>
+   <runtime>
+      ...
+      <image>mydockeraccountname/${project.artifactId}</image>
+   </runtime>
    ```
 
 1. Scegliere uno dei metodi di distribuzione seguenti.
@@ -199,17 +200,19 @@ Aprire il file `pom.xml` per l'applicazione Spring Boot in un editor di testo e 
    <plugin>
       <groupId>com.microsoft.azure</groupId>
       <artifactId>azure-webapp-maven-plugin</artifactId>
-      <version>0.1.3</version>
+      <version>1.11.0</version>
       <configuration>
-         <authentication>
+         <schemaVersion>V2</schemaVersion>
+         <auth>
             <serverId>azure-auth</serverId>
-         </authentication>
+         </auth>
          <resourceGroup>maven-plugin</resourceGroup>
          <appName>maven-linux-app-${maven.build.timestamp}</appName>
          <region>westus</region>
-         <containerSettings>
-            <imageName>${docker.image.prefix}/${project.artifactId}</imageName>
-         </containerSettings>
+         <runtime>
+            <os>docker</os>
+            <image>${docker.image.prefix}/${project.artifactId}</image>
+         </runtime>
          <appSettings>
             <property>
                <name>PORT</name>
@@ -224,8 +227,8 @@ Aprire il file `pom.xml` per l'applicazione Spring Boot in un editor di testo e 
 
 | Elemento | Descrizione |
 |---|---|
-| `<version>` | Specifica la versione del [Maven Plugin for Azure Web Apps (Plug-in Maven per App Web di Azure)]. È consigliabile controllare la versione riportata nel [repository centrale Maven](https://search.maven.org/#search%7Cga%7C1%7Ca%3A%22azure-webapp-maven-plugin%22) per assicurarsi di usare quella più recente. |
-| `<authentication>` | Specifica le informazioni di autenticazione per Azure, che in questo esempio includono un elemento `<serverId>` contenente `azure-auth`. Maven usa questo valore per cercare i valori dell'entità servizio di Azure nel file *settings.xml* di Maven, in base a quanto definito in una sezione precedente di questo articolo. |
+| `<version>` | Specifica la versione del [Maven Plugin for Azure Web Apps (Plug-in Maven per App Web di Azure)]. Usare `V2`. |
+| `<auth>` | Specifica le informazioni di autenticazione per Azure, che in questo esempio includono un elemento `<serverId>` contenente `azure-auth`. Maven usa questo valore per cercare i valori dell'entità servizio di Azure nel file *settings.xml* di Maven, in base a quanto definito in una sezione precedente di questo articolo. |
 | `<resourceGroup>` | Specifica il gruppo di risorse di destinazione, che in questo esempio è `maven-plugin`. Se non esiste già, questo gruppo di risorse verrà creato durante la distribuzione. |
 | `<appName>` | Specifica il nome di destinazione dell'app Web. In questo esempio, il nome di destinazione è `maven-linux-app-${maven.build.timestamp}` e il suffisso `${maven.build.timestamp}` viene accodato per evitare conflitti. Il timestamp è facoltativo. Come nome dell'app è possibile specificare qualsiasi stringa univoca. |
 | `<region>` | Specifica l'area di destinazione, che in questo esempio è `westus`. Un elenco completo è disponibile nella documentazione del [Maven Plugin for Azure Web Apps (Plug-in Maven per App Web di Azure)]. |
