@@ -4,12 +4,12 @@ description: Informazioni sulle diverse esigenze e problematiche dell'autenticaz
 ms.date: 08/24/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: c6719e3c86b590edff551d98e5a961fd08f857c3
-ms.sourcegitcommit: 324da872a9dfd4c55b34739824fc6a6598f2ae12
+ms.openlocfilehash: 2e3755f7049fd091c05cd2aca5ddf8276cebff95
+ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89379541"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91764433"
 ---
 # <a name="part-2-authentication-needs-in-the-scenario"></a>Parte 2: Esigenze di autenticazione nello scenario
 
@@ -33,7 +33,7 @@ Fortunatamente, l'autenticazione integrata con Azure Active Directory (AD) conse
 
 ## <a name="integrated-authentication-with-managed-identity"></a>Autenticazione integrata con identità gestita
 
-Molti servizi di Azure, come Archiviazione e Key Vault, sono integrati con Azure Active Directory (Azure AD), per cui l'autenticazione dell'applicazione con Azure AD eseguita tramite un'[identità gestita](/azure/active-directory/managed-identities-azure-resources/overview) viene automaticamente estesa ad altre risorse connesse. L'autorizzazione per l'identità viene gestita tramite [controllo degli accessi in base al ruolo](how-to-assign-role-permissions.md) e talvolta tramite altri criteri di accesso.
+Molti servizi di Azure, come Archiviazione e Key Vault, sono integrati con Azure Active Directory (Azure AD), per cui l'autenticazione dell'applicazione con Azure AD eseguita tramite un'[identità gestita](/azure/active-directory/managed-identities-azure-resources/overview) viene automaticamente estesa ad altre risorse connesse. L'autorizzazione per l'identità viene gestita tramite [controllo degli accessi in base al ruolo](/azure/role-based-access-control/role-assignments-steps) e talvolta tramite altri criteri di accesso.
 
 Questa integrazione implica che non è mai necessario gestire credenziali correlate ad Azure nel codice dell'app e che tali credenziali non vengono mai visualizzate nelle workstation di sviluppo o nel controllo del codice sorgente. Inoltre, tutte le operazioni di gestione delle chiavi per le API e i servizi di terze parti vengono eseguite interamente in fase di esecuzione, preservandone così la sicurezza.
 
@@ -51,7 +51,7 @@ Dopo aver eseguito questi passaggi per l'entità servizio locale, lo stesso codi
 
 Nella parte restante di questa esercitazione vengono illustrati tutti i dettagli del processo nel contesto dello scenario di esempio e del codice di esempio associato.
 
-Nello script di provisioning dell'esempio tutte le risorse vengono create in un gruppo di risorse denominato `auth-scenario-rg`. Questo gruppo viene creato usando il comando [`az group create`](/cli/azure/group?view=azure-cli-latest#az-group-create) dell'interfaccia della riga di comando di Azure.
+Nello script di provisioning dell'esempio tutte le risorse vengono create in un gruppo di risorse denominato `auth-scenario-rg`. Questo gruppo viene creato usando il comando [`az group create`](/cli/azure/group#az-group-create) dell'interfaccia della riga di comando di Azure.
 
 > [!div class="nextstepaction"]
 > [Parte 3: Implementazione dell'API di terze parti di esempio >>>](walkthrough-tutorial-authentication-03.md)

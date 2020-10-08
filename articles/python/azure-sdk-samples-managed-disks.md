@@ -4,18 +4,18 @@ description: Creare, ridimensionare e aggiornare un disco gestito.
 ms.topic: conceptual
 ms.date: 6/15/2017
 ms.custom: devx-track-python
-ms.openlocfilehash: 53f93098840c2635b388df2c2fd97fe6b3c8af48
-ms.sourcegitcommit: e97cb81a245ce7dcabeac3260abc3db7c30edd79
+ms.openlocfilehash: b81f9cb848e1b3505e50cd3fde35e1afff16d493
+ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91493062"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91764515"
 ---
 # <a name="managed-disks"></a>Managed Disks
 
 Azure Managed Disks semplifica la gestione dei dischi, offre una scalabilità avanzata e migliora la sicurezza su larga scala. Non sono più necessari account di archiviazione per i dischi. I clienti possono quindi ridimensionare senza doversi preoccupare delle limitazioni associate agli account di archiviazione. Questo post offre una rapida introduzione e informazioni di riferimento sull'utilizzo del servizio da Python.
 
-Dal punto di vista degli sviluppatori, l'esperienza di Managed Disks nell'interfaccia della riga di comando di Azure è analoga all'esperienza dell'interfaccia della riga di comando di altri strumenti multipiattaforma. È possibile usare [Azure Python](https://azure.microsoft.com/develop/python/) SDK e il [pacchetto azure-mgmt-compute 0.33.0](https://pypi.python.org/pypi/azure-mgmt-compute) per amministrare Managed Disks. È possibile creare un client di calcolo usando questa [esercitazione](/python/api/overview/azure/virtualmachines?view=azure-python).
+Dal punto di vista degli sviluppatori, l'esperienza di Managed Disks nell'interfaccia della riga di comando di Azure è analoga all'esperienza dell'interfaccia della riga di comando di altri strumenti multipiattaforma. È possibile usare [Azure Python](https://azure.microsoft.com/develop/python/) SDK e il [pacchetto azure-mgmt-compute 0.33.0](https://pypi.python.org/pypi/azure-mgmt-compute) per amministrare Managed Disks. È possibile creare un client di calcolo usando questa [esercitazione](/python/api/overview/azure/virtualmachines).
 
 ## <a name="standalone-managed-disks"></a>Dischi gestiti autonomi
 

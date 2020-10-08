@@ -4,12 +4,12 @@ description: Panoramica delle caratteristiche e delle funzionalità delle librer
 ms.date: 09/19/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 81bda5dbe4c39341c2c799ecdbac10c2f0347bcc
-ms.sourcegitcommit: 4dd392ea864be52421d0239e59198bc44b0a5a16
+ms.openlocfilehash: 3c1cd0deb0c1df31ef3b191a9526bc99ad01fbc1
+ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91364434"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91764688"
 ---
 # <a name="use-the-azure-libraries-sdk-for-python"></a>Usare le librerie di Azure (SDK) per Python
 
@@ -31,7 +31,7 @@ Le librerie di Azure open source per Python semplificano il provisioning, la ges
   - [Effettuare il provisioning e la gestione di risorse di Azure con le librerie di gestione](#provision-and-manage-azure-resources-with-management-libraries)
   - [Connettersi e usare le risorse di Azure con le librerie client](#connect-to-and-use-azure-resources-with-client-libraries)
 
-- La documentazione relativa alle librerie è disponibile nelle [informazioni di riferimento di Azure per Python](/python/api/overview/azure/?view=azure-python), organizzate in base a servizio di Azure, oppure nel [browser delle API Python](/python/api/?view=azure-python), organizzato in base al nome del pacchetto. Al momento, è spesso necessario fare clic su diversi livelli per ottenere le classi e i metodi a cui si è interessati. Ci scusiamo in anticipo per questa esperienza poco soddisfacente. Stiamo lavorando per migliorarla.
+- La documentazione relativa alle librerie è disponibile nelle [informazioni di riferimento di Azure per Python](/python/api/overview/azure/), organizzate in base a servizio di Azure, oppure nel [browser delle API Python](/python/api/), organizzato in base al nome del pacchetto. Al momento, è spesso necessario fare clic su diversi livelli per ottenere le classi e i metodi a cui si è interessati. Ci scusiamo in anticipo per questa esperienza poco soddisfacente. Stiamo lavorando per migliorarla.
 
 - Per provare le librerie, è consigliabile prima di tutto [configurare l'ambiente di sviluppo locale](configure-local-development-environment.md). È quindi possibile provare uno dei seguenti esempi autonomi (in qualsiasi ordine): [Esempio: Effettuare il provisioning di un gruppo di risorse](azure-sdk-example-resource-group.md), [Esempio: Effettuare il provisioning e usare Archiviazione di Azure](azure-sdk-example-storage.md), [Esempio: Effettuare il provisioning di un app Web e distribuire il codice](azure-sdk-example-web-app.md), [Esempio: Effettuare il provisioning e usare un database MySQL](azure-sdk-example-database.md) e [Esempio: Effettuare il provisioning di una macchina virtuale](azure-sdk-example-virtual-machines.md).
 
@@ -65,13 +65,13 @@ Le librerie di *gestione* (o "piano di gestione") dell'SDK, i cui nomi iniziano 
 
 Con le librerie di gestione è possibile scrivere script di configurazione e distribuzione per eseguire le stesse attività eseguibili tramite il [portale di Azure](https://portal.azure.com) o l'[interfaccia della riga di comando di Azure](/cli/azure/install-azure-cli). Come indicato in precedenza, l'interfaccia della riga di comando di Azure è scritta in Python e usa le librerie di gestione per implementare i vari comandi.
 
-Per informazioni dettagliate sull'uso di ogni libreria di gestione, vedere il file *README.md* o *README.rst* disponibile nella cartella di progetto della libreria nel [repository GitHub dell'SDK](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk). È anche possibile trovare frammenti di codice aggiuntivi nella [documentazione di riferimento](/python/api?view=azure-python) e negli [esempi di Azure](/samples/browse/?languages=python&products=azure).
+Per informazioni dettagliate sull'uso di ogni libreria di gestione, vedere il file *README.md* o *README.rst* disponibile nella cartella di progetto della libreria nel [repository GitHub dell'SDK](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk). È anche possibile trovare frammenti di codice aggiuntivi nella [documentazione di riferimento](/python/api) e negli [esempi di Azure](/samples/browse/?languages=python&products=azure).
 
 ## <a name="connect-to-and-use-azure-resources-with-client-libraries"></a>Connettersi e usare le risorse di Azure con le librerie client
 
 Le librerie *client* (o "piano dati") dell'SDK consentono di scrivere il codice applicativo Python per interagire con servizi di cui è già stato effettuato il provisioning. Le librerie client sono disponibili solo per i servizi che supportano un'API client.
 
-Per informazioni dettagliate sull'uso di ogni libreria client, vedere il file *README.md* o *README.rst* disponibile nella cartella di progetto della libreria nel [repository GitHub dell'SDK](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk). È anche possibile trovare frammenti di codice aggiuntivi nella [documentazione di riferimento](/python/api?view=azure-python) e negli [esempi di Azure](/samples/browse/?languages=python&products=azure).
+Per informazioni dettagliate sull'uso di ogni libreria client, vedere il file *README.md* o *README.rst* disponibile nella cartella di progetto della libreria nel [repository GitHub dell'SDK](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk). È anche possibile trovare frammenti di codice aggiuntivi nella [documentazione di riferimento](/python/api) e negli [esempi di Azure](/samples/browse/?languages=python&products=azure).
 
 ## <a name="get-help-and-connect-with-the-sdk-team"></a>Ottenere assistenza e contattare il team dell'SDK
 

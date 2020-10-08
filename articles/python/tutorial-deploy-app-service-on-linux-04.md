@@ -4,12 +4,12 @@ description: Passaggio 4 dell'esercitazione, che indica al servizio app come avv
 ms.topic: conceptual
 ms.date: 05/19/2020
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: 45c24711131f03c2475d3ecb2a5538cadd6e7c56
-ms.sourcegitcommit: 815cf2acff71e849735f7afce54723f03ffa5df3
+ms.openlocfilehash: 6aa1f03b562eeea01e6e71441e8a12339eeaad26
+ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88501426"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91764804"
 ---
 # <a name="4-configure-a-custom-startup-file-for-python-apps-on-azure-app-service"></a>4: Configurare un file di avvio personalizzato per le app Python nel Servizio app di Azure
 
@@ -48,7 +48,7 @@ Se è necessario un file di avvio personalizzato, attenersi alla procedura segue
 
 1. Il Servizio app viene riavviato quando si salvano le modifiche. Dal momento che il codice dell'app non è stato ancora distribuito, però, se si visita il sito a questo punto viene visualizzato un messaggio di errore di applicazione. Questo messaggio indica che il server Gunicorn è stato avviato ma non è riuscito a trovare l'app e quindi non risponde alle richieste HTTP. Il codice dell'app verrà distribuito nel passaggio successivo.
 
-Per specificare un comando di avvio, è anche possibile usare il comando [`az webapp create` ](/cli/azure/webapp?view=azure-cli-latest#az-webapp-create) dell'interfaccia della riga di comando di Azure specificando l'argomento `--startup-file`.
+Per specificare un comando di avvio, è anche possibile usare il comando [`az webapp create` ](/cli/azure/webapp#az-webapp-create) dell'interfaccia della riga di comando di Azure specificando l'argomento `--startup-file`.
 
 ## <a name="django-startup-commands"></a>Comandi di avvio di Django
 

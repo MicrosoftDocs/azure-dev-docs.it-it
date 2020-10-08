@@ -4,12 +4,12 @@ description: Come configurare un ambiente di sviluppo Python locale per l'uso co
 ms.date: 05/29/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: d95584758900eae2c50df5e731fd84f8bca00897
-ms.sourcegitcommit: 800c5e05ad3c0b899295d381964dd3d47436ff90
+ms.openlocfilehash: 14955bc63ab44884254e2304b0e5ceb97e7bcb0d
+ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88614502"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91764811"
 ---
 # <a name="configure-your-local-python-dev-environment-for-azure"></a>Configurare l'ambiente di sviluppo Python locale per Azure
 
@@ -122,7 +122,7 @@ Ogni sviluppatore dell'organizzazione dovrà eseguire questi passaggi singolarme
 
     Sostituire i valori mostrati in questi comandi con quelli dell'entità servizio specifica.
 
-    Per recuperare l'ID sottoscrizione, eseguire il comando [`az account show`](/cli/azure/account?view=azure-cli-latest#az-account-show) e cercare la proprietà `id` nell'output.
+    Per recuperare l'ID sottoscrizione, eseguire il comando [`az account show`](/cli/azure/account#az-account-show) e cercare la proprietà `id` nell'output.
 
     Per comodità, creare un file di script della riga di comando, ad esempio *setenv.sh* in macOS/Linux o *setenv.cmd* in Windows, che contenga questi stessi comandi. È quindi possibile eseguire lo script per impostare le variabili ogni volta che si apre un terminale o un prompt dei comandi per i test locali. Anche in questo caso, non aggiungere il file di script al controllo del codice sorgente in modo che rimanga solo nell'account utente.
 
@@ -138,7 +138,7 @@ Ogni sviluppatore dell'organizzazione dovrà eseguire questi passaggi singolarme
 
 Il `az ad create-for-rbac` comando crea un'entità servizio per l'autenticazione in base al ruolo (Controllo degli accessi in base al ruolo).
 
-- `ad` indica Azure Active Directory, `sp` significa "entità servizio" e `create-for-rbac` significa "crea per il controllo degli accessi in base al ruolo", il tipo principale di autorizzazione di Azure. Vedere le informazioni di riferimento del comando [az ad sp create-for-rbac](/cli/azure/ad/sp?view=azure-cli-latest#az-ad-sp-create-for-rbac).
+- `ad` indica Azure Active Directory, `sp` significa "entità servizio" e `create-for-rbac` significa "crea per il controllo degli accessi in base al ruolo", il tipo principale di autorizzazione di Azure. Vedere le informazioni di riferimento del comando [az ad sp create-for-rbac](/cli/azure/ad/sp#az-ad-sp-create-for-rbac).
 
 - L'argomento `--name` deve essere univoco all'interno dell'organizzazione e in genere corrisponde al nome dello sviluppatore che usa l'entità servizio. Se si omette questo argomento, l'interfaccia della riga di comando di Azure usa un nome generico in formato `azure-cli-<timestamp>`. Se si preferisce, è possibile rinominare l'entità servizio nel portale di Azure.
 
@@ -238,7 +238,7 @@ git init
 
 Da qui è possibile usare comandi come `git add` e `git commit` per eseguire il commit delle modifiche. Eseguendo regolarmente il commit delle modifiche, viene creata una cronologia di commit con cui è possibile ripristinare uno stato precedente.
 
-Per eseguire un backup online del progetto, è anche consigliabile caricare il repository in [GitHub](https://github.com) o in [Azure DevOps](/azure/devops/user-guide/code-with-git?view=azure-devops). Se è già stato inizializzato un repository locale, usare `git remote add` per collegarlo a GitHub o ad Azure DevOps.
+Per eseguire un backup online del progetto, è anche consigliabile caricare il repository in [GitHub](https://github.com) o in [Azure DevOps](/azure/devops/user-guide/code-with-git?view=azure-devops&preserve-view=true). Se è già stato inizializzato un repository locale, usare `git remote add` per collegarlo a GitHub o ad Azure DevOps.
 
 La documentazione per Git è disponibile all'indirizzo [git-scm.com/docs](https://git-scm.com/docs) e ovunque su Internet.
 

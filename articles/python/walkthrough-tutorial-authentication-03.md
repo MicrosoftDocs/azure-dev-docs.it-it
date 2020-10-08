@@ -4,12 +4,12 @@ description: Esame dell'implementazione dell'API di terze parti di esempio con F
 ms.date: 08/24/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 84078a455843cb28f80a633bb5344bc5ab645ac7
-ms.sourcegitcommit: 324da872a9dfd4c55b34739824fc6a6598f2ae12
+ms.openlocfilehash: 7c0098988265fef5b6b0f5e4a654f54c9bed4594
+ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89379532"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91764504"
 ---
 # <a name="part-3-example-third-party-api-implementation"></a>Parte 3: Implementazione dell'API di terze parti di esempio
 
@@ -42,9 +42,9 @@ Nel repository di esempio, questo codice si trova in *third_party_api/RandomNumb
 
 Per distribuire il codice, lo script di provisioning dell'esempio esegue le operazioni seguenti:
 
-1. Creare un account di archiviazione di supporto per Funzioni di Azure con il comando dell'interfaccia della riga di comando di Azure [`az storage account create`](/cli/azure/storage/account?view=azure-cli-latest#az-storage-account-create).
+1. Creare un account di archiviazione di supporto per Funzioni di Azure con il comando dell'interfaccia della riga di comando di Azure [`az storage account create`](/cli/azure/storage/account#az-storage-account-create).
 
-1. Creare un'"app" Funzioni di Azure con il comando dell'interfaccia della riga di comando di Azure [`az function app create`](/cli/azure/functionapp?view=azure-cli-latest#az-functionapp-create).
+1. Creare un'"app" Funzioni di Azure con il comando dell'interfaccia della riga di comando di Azure [`az function app create`](/cli/azure/functionapp#az-functionapp-create).
 
 1. Dopo aver atteso 60 secondi per il completamento del provisioning dell'host, distribuire il codice usando il comando di [Azure Functions Core Tools](/azure/azure-functions/functions-run-local?tabs=linux%2Ccsharp%2Cbash) [`func azure functionapp publish`](/azure/azure-functions/functions-run-local?tabs=linux%2Ccsharp%2Cbash#project-file-deployment).
 

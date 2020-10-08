@@ -4,12 +4,12 @@ description: Panoramica dei modelli di utilizzo comuni delle librerie di Azure S
 ms.date: 09/21/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 63cd6c85e15fa0ffb44a4da01ffcc27d4ae08f17
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: ae51bee0aea2717c09242f8928a617bf8211f372
+ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831797"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91764777"
 ---
 # <a name="azure-libraries-for-python-usage-patterns"></a>Modelli di utilizzo delle librerie di Azure per Python
 
@@ -37,9 +37,9 @@ pip install azure-storage-blob
 
 ## <a name="asynchronous-operations"></a>Operazioni asincrone
 
-Molte operazioni richiamate tramite oggetti client e di gestione client (ad esempio [`WebSiteManagementClient.web_apps.create_or_update`](/python/api/azure-mgmt-web/azure.mgmt.web.v2019_08_01.operations.webappsoperations?view=azure-python#create-or-update-resource-group-name--name--site-envelope--custom-headers-none--raw-false--polling-true----operation-config-)) restituiscono un oggetto di tipo `AzureOperationPoller[<type>]`, dove `<type>` è specifico dell'operazione in questione.
+Molte operazioni richiamate tramite oggetti client e di gestione client (ad esempio [`WebSiteManagementClient.web_apps.create_or_update`](/python/api/azure-mgmt-web/azure.mgmt.web.v2019_08_01.operations.webappsoperations#create-or-update-resource-group-name--name--site-envelope--custom-headers-none--raw-false--polling-true----operation-config-)) restituiscono un oggetto di tipo `AzureOperationPoller[<type>]`, dove `<type>` è specifico dell'operazione in questione.
 
-Un tipo restituito [`AzureOperationPoller`](/python/api/msrestazure/msrestazure.azure_operation.azureoperationpoller?view=azure-python) indica che l'operazione è asincrona. Di conseguenza, è necessario chiamare il metodo `result` dello strumento per il polling per attendere che il risultato effettivo dell'operazione diventi disponibile.
+Un tipo restituito [`AzureOperationPoller`](/python/api/msrestazure/msrestazure.azure_operation.azureoperationpoller) indica che l'operazione è asincrona. Di conseguenza, è necessario chiamare il metodo `result` dello strumento per il polling per attendere che il risultato effettivo dell'operazione diventi disponibile.
 
 Il codice seguente, tratto da [Esempio: Effettuare il provisioning e la distribuzione di un'app Web](azure-sdk-example-web-app.md), illustra un esempio dell'utilizzo dello strumento per il polling per attendere un risultato:
 
@@ -58,7 +58,7 @@ poller = app_service_client.web_apps.create_or_update(RESOURCE_GROUP_NAME,
 web_app_result = poller.result()
 ```
 
-In questo caso, il valore restituito di `create_or_update` è di tipo `AzureOperationPoller[Site]`, che indica che il valore restituito di `poller.result()` è un oggetto [Site](/python/api/azure-mgmt-web/azure.mgmt.web.v2019_08_01.models.site?view=azure-python).
+In questo caso, il valore restituito di `create_or_update` è di tipo `AzureOperationPoller[Site]`, che indica che il valore restituito di `poller.result()` è un oggetto [Site](/python/api/azure-mgmt-web/azure.mgmt.web.v2019_08_01.models.site).
 
 ## <a name="exceptions"></a>Eccezioni
 
@@ -112,7 +112,7 @@ Le singole librerie non devono obbligatoriamente supportare questi argomenti, qu
 
 Molte operazioni all'interno di Azure SDK consentono di esprimere gli argomenti oggetto come oggetti discreti o come JSON inline.
 
-Si supponga, ad esempio, di avere un oggetto [`ResourceManagementClient`](/python/api/azure-mgmt-resource/azure.mgmt.resource.resources.v2019_10_01.resourcemanagementclient?view=azure-python) tramite il quale si crea un gruppo di risorse con il relativo metodo [`create_or_update`](/python/api/azure-mgmt-resource/azure.mgmt.resource.resources.v2019_10_01.operations.resourcegroupsoperations?view=azure-python#create-or-update-resource-group-name--parameters--custom-headers-none--raw-false----operation-config-). Il secondo argomento di questo metodo è di tipo [`ResourceGroup`](/python/api/azure-mgmt-resource/azure.mgmt.resource.resources.v2019_10_01.models.resourcegroup?view=azure-python).
+Si supponga, ad esempio, di avere un oggetto [`ResourceManagementClient`](/python/api/azure-mgmt-resource/azure.mgmt.resource.resources.v2019_10_01.resourcemanagementclient) tramite il quale si crea un gruppo di risorse con il relativo metodo [`create_or_update`](/python/api/azure-mgmt-resource/azure.mgmt.resource.resources.v2019_10_01.operations.resourcegroupsoperations#create-or-update-resource-group-name--parameters--custom-headers-none--raw-false----operation-config-). Il secondo argomento di questo metodo è di tipo [`ResourceGroup`](/python/api/azure-mgmt-resource/azure.mgmt.resource.resources.v2019_10_01.models.resourcegroup).
 
 Per chiamare `create_or_update`, è possibile creare direttamente un'istanza discreta di `ResourceGroup` con gli argomenti obbligatori (in questo caso `location`):
 
@@ -138,7 +138,7 @@ Quando si usa JSON, le librerie di Azure convertono automaticamente il file JSON
 
 Gli oggetti possono anche avere argomenti oggetto annidati, nel qual caso si può anche usare codice JSON annidato.
 
-Si supponga, ad esempio, di avere un'istanza dell'oggetto [`KeyVaultManagementClient`](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault.v2019_09_01.keyvaultmanagementclient?view=azure-python) e di chiamare il relativo metodo [`create_or_update`](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault.v2019_09_01.operations.vaultsoperations?view=azure-python#create-or-update-resource-group-name--vault-name--parameters--custom-headers-none--raw-false--polling-true----operation-config-). In questo caso, il terzo argomento è di tipo [`VaultCreateOrUpdateParameters`](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault.v2019_09_01.models.vaultcreateorupdateparameters?view=azure-python), che contiene un argomento di tipo [`VaultProperties`](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault.v2019_09_01.models.vaultproperties?view=azure-python). `VaultProperties`, a sua volta, contiene gli argomenti oggetto di tipo [`Sku`](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault.v2019_09_01.models.sku?view=azure-python) e [`list[AccessPolicyEntry]`](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault.v2019_09_01.models.accesspolicyentry?view=azure-python). `Sku` contiene un oggetto [`SkuName`](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault.v2019_09_01.models.skuname?view=azure-python) e ogni oggetto `AccessPolicyEntry` contiene un oggetto [`Permissions`](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault.v2019_09_01.models.permissions?view=azure-python).
+Si supponga, ad esempio, di avere un'istanza dell'oggetto [`KeyVaultManagementClient`](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault.v2019_09_01.keyvaultmanagementclient) e di chiamare il relativo metodo [`create_or_update`](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault.v2019_09_01.operations.vaultsoperations#create-or-update-resource-group-name--vault-name--parameters--custom-headers-none--raw-false--polling-true----operation-config-). In questo caso, il terzo argomento è di tipo [`VaultCreateOrUpdateParameters`](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault.v2019_09_01.models.vaultcreateorupdateparameters), che contiene un argomento di tipo [`VaultProperties`](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault.v2019_09_01.models.vaultproperties). `VaultProperties`, a sua volta, contiene gli argomenti oggetto di tipo [`Sku`](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault.v2019_09_01.models.sku) e [`list[AccessPolicyEntry]`](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault.v2019_09_01.models.accesspolicyentry). `Sku` contiene un oggetto [`SkuName`](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault.v2019_09_01.models.skuname) e ogni oggetto `AccessPolicyEntry` contiene un oggetto [`Permissions`](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault.v2019_09_01.models.permissions).
 
 Per chiamare `create_or_update` con gli oggetti incorporati, usare codice simile al seguente (presupponendo che `tenant_id` e `object_id` siano già definiti). È anche possibile creare gli oggetti necessari prima della chiamata di funzione.
 

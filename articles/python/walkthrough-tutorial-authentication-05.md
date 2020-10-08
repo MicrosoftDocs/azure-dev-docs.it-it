@@ -4,12 +4,12 @@ description: Informazioni sulle dipendenze dell'app principale (prevalentemente 
 ms.date: 08/24/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 2da18ac4b1d27e976d0713fba16dbfc0ba644168
-ms.sourcegitcommit: 324da872a9dfd4c55b34739824fc6a6598f2ae12
+ms.openlocfilehash: 9c6204afd17d86cd8677022a59641e5343c6a543
+ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89379514"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91764726"
 ---
 # <a name="part-5-main-app-dependencies-import-statements-and-environment-variables"></a>Parte 5: Dipendenze dell'app principale, istruzioni import e variabili di ambiente
 
@@ -19,7 +19,7 @@ Questa parte esamina le librerie di Python introdotte nell'app principale e le v
 
 ## <a name="dependencies-and-import-statements"></a>Dipendenze e istruzioni import
 
-Il codice dell'app richiede diverse librerie: Flask, la libreria di richieste HTTP standard, e le librerie di Azure per Active Directory ([azure.identity](/python/api/overview/azure/identity-readme?view=azure-python)), Key Vault ([azure.keyvault.secrets](/python/api/overview/azure/keyvault-secrets-readme?view=azure-python)) e archiviazione code ([azure.storage.queue](/python/api/overview/azure/storage-queue-readme?view=azure-python)). Queste librerie sono incluse nel file *requirements.txt* dell'app:
+Il codice dell'app richiede diverse librerie: Flask, la libreria di richieste HTTP standard, e le librerie di Azure per Active Directory ([azure.identity](/python/api/overview/azure/identity-readme)), Key Vault ([azure.keyvault.secrets](/python/api/overview/azure/keyvault-secrets-readme)) e archiviazione code ([azure.storage.queue](/python/api/overview/azure/storage-queue-readme)). Queste librerie sono incluse nel file *requirements.txt* dell'app:
 
 ```txt
 flask
@@ -57,7 +57,7 @@ Per l'esecuzione in locale, queste variabili vengono create all'interno della sh
 
 Per la distribuzione nel servizio app di Azure, tuttavia, non si ha accesso al server stesso. In questo caso, creare *impostazioni dell'applicazione* con gli stessi nomi, che vengono quindi riconosciute dall'app come variabili di ambiente. 
 
-Gli script di provisioning creano queste impostazioni usando il comando [`az webapp config appsettings set`](/cli/azure/webapp/config/appsettings?view=azure-cli-latest#az-webapp-config-appsettings-set) dell'interfaccia della riga di comando di Azure. Tutte e quattro le variabili vengono impostate con un unico comando.
+Gli script di provisioning creano queste impostazioni usando il comando [`az webapp config appsettings set`](/cli/azure/webapp/config/appsettings#az-webapp-config-appsettings-set) dell'interfaccia della riga di comando di Azure. Tutte e quattro le variabili vengono impostate con un unico comando.
 
 Per creare le impostazioni tramite il portale di Azure, vedere [Configurare un'app del servizio app nel portale di Azure](/azure/app-service/configure-common).
 

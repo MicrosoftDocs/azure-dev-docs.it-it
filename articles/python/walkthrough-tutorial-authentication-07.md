@@ -4,12 +4,12 @@ description: Un esame del codice per l'endpoint API dell'app principale, che usa
 ms.date: 08/24/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: e026eca0216147c6614582e0cd070cee81daf99c
-ms.sourcegitcommit: 324da872a9dfd4c55b34739824fc6a6598f2ae12
+ms.openlocfilehash: b6a54f51c53889ba95f86ba194232262f31c2d99
+ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89379522"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91764697"
 ---
 # <a name="part-7-main-application-api-endpoint"></a>Parte 7: Endpoint API dell'applicazione principale
 
@@ -52,7 +52,7 @@ Supponendo che la chiamata API abbia esito positivo e restituisca un valore nume
 
 La variabile `code` qui contiene la risposta JSON completa per l'API dell'app, che include il valore del codice e un timestamp. Una risposta di esempio potrebbe esser: `{"code":"ojE-161-pTv","timestamp":"2020-04-15 16:54:48.816549"}`.
 
-Prima di restituire tale risposta, tuttavia, viene scritto un messaggio nella coda di archiviazione usando il metodo [`send_message`](/python/api/azure-storage-queue/azure.storage.queue.queueclient?view=azure-python#send-message-content----kwargs-) del client di accodamento:
+Prima di restituire tale risposta, tuttavia, viene scritto un messaggio nella coda di archiviazione usando il metodo [`send_message`](/python/api/azure-storage-queue/azure.storage.queue.queueclient#send-message-content----kwargs-) del client di accodamento:
 
 ```python
     queue_client.send_message(code)
@@ -62,7 +62,7 @@ Prima di restituire tale risposta, tuttavia, viene scritto un messaggio nella co
 
 ## <a name="processing-queue-messages"></a>Elaborazione dei messaggi della coda
 
-I messaggi archiviati nella coda possono essere visualizzati e gestiti tramite il [portale di Azure](/azure/storage/queues/storage-quickstart-queues-portal#view-message-properties) o con il comando dell'interfaccia della riga di comando di Azure [`az storage message get`](/cli/azure/storage/message?view=azure-cli-latest#az-storage-message-get). Il repository di esempio include uno script (*test.cmd* e *test.sh*) per richiedere un codice all'endpoint dell'app e quindi controllare la coda di messaggi. È anche disponibile uno script per cancellare la coda usando il comando [`az storage message clear`](/cli/azure/storage/message?view=azure-cli-latest#az-storage-message-clear).
+I messaggi archiviati nella coda possono essere visualizzati e gestiti tramite il [portale di Azure](/azure/storage/queues/storage-quickstart-queues-portal#view-message-properties) o con il comando dell'interfaccia della riga di comando di Azure [`az storage message get`](/cli/azure/storage/message#az-storage-message-get). Il repository di esempio include uno script (*test.cmd* e *test.sh*) per richiedere un codice all'endpoint dell'app e quindi controllare la coda di messaggi. È anche disponibile uno script per cancellare la coda usando il comando [`az storage message clear`](/cli/azure/storage/message#az-storage-message-clear).
 
 In genere, un'app come quella di questo esempio può avere un altro processo che estrae in modo asincrono i messaggi dalla coda per un'ulteriore elaborazione. Come indicato in precedenza, la risposta generata da questo endpoint API potrebbe essere usata altrove nell'app con l'autenticazione utente a due fattori. In tal caso, l'app deve invalidare il codice dopo un determinato periodo di tempo, ad esempio 10 minuti. Un modo semplice per eseguire questa attività consiste nel mantenere una tabella di codici di autenticazione a due fattori validi, che vengono usati dalla procedura di accesso dell'utente. L'app avrà quindi un semplice processo di controllo della coda con la logica seguente (in pseudo-codice):
 
@@ -76,7 +76,7 @@ else:
     call queue_client.send_message(code, visibility_timeout=600)
 </pre>
 
-Questo pseudo-codice usa il parametro facoltativo `visibility_timeout` del metodo [`send_message`](/python/api/azure-storage-queue/azure.storage.queue.queueclient?view=azure-python#send-message-content----kwargs-) che specifica il numero di secondi prima che il messaggio diventi visibile nella coda. Poiché il timeout predefinito è zero, i messaggi inizialmente scritti dall'endpoint API diventano immediatamente visibili al processo di controllo della coda. Di conseguenza, il processo li archivia immediatamente nella tabella codici valida. Accodando di nuovo lo stesso messaggio con il timeout, il processo sa che riceverà nuovamente il codice 10 minuti dopo, a quel punto lo rimuoverà dalla tabella.
+Questo pseudo-codice usa il parametro facoltativo `visibility_timeout` del metodo [`send_message`](/python/api/azure-storage-queue/azure.storage.queue.queueclient#send-message-content----kwargs-) che specifica il numero di secondi prima che il messaggio diventi visibile nella coda. Poiché il timeout predefinito è zero, i messaggi inizialmente scritti dall'endpoint API diventano immediatamente visibili al processo di controllo della coda. Di conseguenza, il processo li archivia immediatamente nella tabella codici valida. Accodando di nuovo lo stesso messaggio con il timeout, il processo sa che riceverà nuovamente il codice 10 minuti dopo, a quel punto lo rimuoverà dalla tabella.
 
 ## <a name="implementing-the-main-app-api-endpoint-in-azure-functions"></a>Implementazione dell'endpoint API dell'app principale in Funzioni di Azure
 
@@ -90,7 +90,7 @@ Una parte dell'implementazione che diventa più semplice è l'autenticazione con
 
 Con questo esempio si è appreso come le app eseguono l'autenticazione con altri servizi di Azure e come le app possono usare Azure Key Vault per archiviare eventuali altri segreti necessari per le API di terze parti.
 
-Lo stesso modello illustrato qui con Azure Key Vault e Archiviazione di Azure si applica a tutti gli altri servizi di Azure. Il passaggio cruciale consiste nell'impostare le autorizzazioni per i ruoli corrette per l'app all'interno della pagina del servizio nel portale di Azure o tramite l'interfaccia della riga di comando di Azure. Vedere [Come assegnare le autorizzazioni per i ruoli](how-to-assign-role-permissions.md). Assicurarsi di controllare la documentazione del servizio per sapere se è necessario configurare altri criteri di accesso.
+Lo stesso modello illustrato qui con Azure Key Vault e Archiviazione di Azure si applica a tutti gli altri servizi di Azure. Il passaggio cruciale consiste nell'impostare le autorizzazioni per i ruoli corrette per l'app all'interno della pagina del servizio nel portale di Azure o tramite l'interfaccia della riga di comando di Azure. Vedere [Come assegnare le autorizzazioni per i ruoli](/azure/role-based-access-control/role-assignments-steps). Assicurarsi di controllare la documentazione del servizio per sapere se è necessario configurare altri criteri di accesso.
 
 Tenere sempre presente che è necessario assegnare gli stessi ruoli e criteri di accesso a qualsiasi entità servizio usata per lo sviluppo locale.
 

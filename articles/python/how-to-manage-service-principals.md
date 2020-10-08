@@ -4,12 +4,12 @@ description: Come gestire le entità servizio create per lo sviluppo locale usan
 ms.date: 08/18/2020
 ms.topic: conceptual
 ms.custom: devx-track-python, devx-track-azurecli
-ms.openlocfilehash: b6d3ffbb7e78b7c4f2405e5363446c1906913aa9
-ms.sourcegitcommit: 800c5e05ad3c0b899295d381964dd3d47436ff90
+ms.openlocfilehash: 9d090a4615621c60485b64fac22929472c0cd175
+ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88614516"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91764787"
 ---
 # <a name="how-to-manage-service-principals"></a>Come gestire le entità servizio
 
@@ -37,8 +37,8 @@ Nel tempo è in genere necessario eliminare, rinominare o gestire in altro modo 
 
 Usando l'interfaccia della riga di comando di Azure, è possibile eseguire molte delle stesse operazioni sulle entità servizio che è possibile eseguire nel portale di Azure:
 
-- Creare, visualizzare, aggiornare ed eliminare entità servizio: comando [az ad sp](/cli/azure/ad/sp?view=azure-cli-latest). Vedere anche [Creare un'entità servizio di Azure con l'interfaccia della riga di comando di Azure](/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest).
-- Gestire le assegnazioni di ruolo: comando [az role assignment](/cli/azure/role/assignment?view=azure-cli-latest).
+- Creare, visualizzare, aggiornare ed eliminare entità servizio: comando [az ad sp](/cli/azure/ad/sp). Vedere anche [Creare un'entità servizio di Azure con l'interfaccia della riga di comando di Azure](/cli/azure/create-an-azure-service-principal-azure-cli).
+- Gestire le assegnazioni di ruolo: comando [az role assignment](/cli/azure/role/assignment).
 
 Vedere anche la pagina relativa alla
 
