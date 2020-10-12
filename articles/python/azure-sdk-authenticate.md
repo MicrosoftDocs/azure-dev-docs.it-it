@@ -1,15 +1,15 @@
 ---
 title: Come autenticare le applicazioni Python con i servizi di Azure
 description: Come acquisire gli oggetti credenziali necessari per autenticare un'app Python con i servizi di Azure usando le librerie di Azure
-ms.date: 09/18/2020
+ms.date: 10/05/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: e842e7530cc475e8431fbadfb3767ea56102c33e
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: 1fe206394d05e07b19254520131447770cbbd5b0
+ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831907"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91764674"
 ---
 # <a name="how-to-authenticate-and-authorize-python-apps-on-azure"></a>Come autenticare e autorizzare le app Python in Azure
 
@@ -53,7 +53,7 @@ Ogni sviluppatore deve avere la propria entità servizio che è protetta all'int
 
 ## <a name="assign-roles-and-permissions-to-an-identity"></a>Assegnare ruoli e autorizzazioni a un'identità
 
-Quando si conoscono le identità dell'app sia in Azure sia quando viene eseguita in locale, si usa il controllo degli accessi in base al ruolo per concedere le autorizzazioni tramite il portale di Azure o l'interfaccia della riga di comando di Azure. Per i dettagli completi, vedere [Come assegnare le autorizzazioni per i ruoli a un'identità dell'app o a un'entità servizio](how-to-assign-role-permissions.md)
+Quando si conoscono le identità dell'app sia in Azure sia quando viene eseguita in locale, si usa il controllo degli accessi in base al ruolo per concedere le autorizzazioni tramite il portale di Azure o l'interfaccia della riga di comando di Azure. Per i dettagli completi, vedere [Come assegnare le autorizzazioni per i ruoli a un'identità dell'app o a un'entità servizio](/azure/role-based-access-control/role-assignments-steps).
 
 ## <a name="when-does-authentication-and-authorization-occur"></a>Quando si verificano l'autenticazione e l'autorizzazione?
 
@@ -108,7 +108,7 @@ secret_client = SecretClient(vault_url=vault_url, credential=credential)
 retrieved_secret = secret_client.get_secret("secret-name-01")
 ```
 
-Anche in questo caso non viene eseguita alcuna autenticazione o autorizzazione finché il codice non invia una richiesta specifica all'API REST di Azure tramite un oggetto client. L'istruzione per creare `DefaultAzureCredential` (vedere la sezione successiva) crea solo un oggetto lato client in memoria, ma non esegue altri controlli. 
+Anche in questo caso non viene eseguita alcuna autenticazione o autorizzazione finché il codice non invia una richiesta specifica all'API REST di Azure tramite un oggetto client. L'istruzione per creare `DefaultAzureCredential` (vedere la sezione successiva) crea solo un oggetto lato client in memoria, ma non esegue altri controlli.
 
 La creazione dell'oggetto [`SecretClient`](/python/api/azure-keyvault-secrets/azure.keyvault.secrets.secretclient) dell'SDK non prevede nemmeno comunicazioni con la risorsa in questione. L'oggetto `SecretClient` è semplicemente un wrapper per l'API REST di Azure sottostante ed esiste solo nella memoria di runtime dell'app. 
 
@@ -126,7 +126,7 @@ from azure.keyvault.secrets import SecretClient
 # Acquire the resource URL
 vault_url = os.environ["KEY_VAULT_URL"]
 
-# Aquire a credential object
+# Acquire a credential object
 credential = DefaultAzureCredential()
 
 # Acquire a client object
@@ -142,38 +142,30 @@ Quando il codice viene distribuito ed eseguito in Azure, `DefaultAzureCredential
 
 Quando si esegue il codice in locale, `DefaultAzureCredential` usa automaticamente l'entità servizio descritta dalle variabili di ambiente denominate `AZURE_TENANT_ID`, `AZURE_CLIENT_ID` e `AZURE_CLIENT_SECRET`. L'oggetto client include quindi questi valori (in modo sicuro) nell'intestazione della richiesta HTTP quando chiama l'endpoint API. Non è necessaria alcuna modifica al codice durante l'esecuzione in locale o nel cloud. Per informazioni dettagliate sulla creazione dell'entità servizio e sulla configurazione delle variabili di ambiente, vedere [Configurare l'ambiente di sviluppo Python locale per Azure - Configurare l'autenticazione](configure-local-development-environment.md#configure-authentication).
 
-In entrambi i casi, all'identità interessata è necessario assegnare le autorizzazioni per la risorsa appropriata. Il processo generale è descritto nella sezione [Come assegnare le autorizzazioni per i ruoli](how-to-assign-role-permissions.md). Le specifiche sono disponibili nella documentazione relativa ai singoli servizi. Per informazioni dettagliate sulle autorizzazioni di Key Vault, ad esempio quelle necessarie per il codice precedente, vedere [Fornire un'autenticazione di Key Vault con un criterio di controllo di accesso](/azure/key-vault/general/group-permissions-for-apps).
-
-<a name="cli-auth-note"></a>
-> [!IMPORTANT]
-> In futuro, `DefaultAzureCredential` userà l'identità che ha eseguito l'accesso all'interfaccia della riga di comando di Azure tramite `az login`, se le variabili di ambiente dell'entità servizio non sono disponibili. Se si è il proprietario o l'amministratore della sottoscrizione, il risultato pratico di questa funzionalità è che il codice ha accesso intrinseco alla maggior parte delle risorse nella sottoscrizione senza la necessità di assegnare autorizzazioni specifiche. Questo comportamento è utile per la sperimentazione. Tuttavia, è consigliabile usare specifiche entità servizio e assegnare specifiche autorizzazioni quando si inizia a scrivere codice di produzione, perché si saprà come assegnare autorizzazioni esatte a identità diverse e sarà possibile convalidare accuratamente tali autorizzazioni negli ambienti di test prima della distribuzione in produzione.
+In entrambi i casi, all'identità interessata è necessario assegnare le autorizzazioni per la risorsa appropriata. Il processo generale è descritto nella sezione [Come assegnare le autorizzazioni per i ruoli](/azure/role-based-access-control/role-assignments-steps). Le specifiche sono disponibili nella documentazione relativa ai singoli servizi. Per informazioni dettagliate sulle autorizzazioni di Key Vault, ad esempio quelle necessarie per il codice precedente, vedere [Fornire un'autenticazione di Key Vault con un criterio di controllo di accesso](/azure/key-vault/general/group-permissions-for-apps).
 
 ### <a name="using-defaultazurecredential-with-sdk-management-libraries"></a>Uso di DefaultAzureCredential con le librerie di gestione dell'SDK
 
+`DefaultAzureCredential` è compatibile con le versioni delle librerie di gestione di Azure SDK (quelle nel cui nome è presente il termine "mgmt") che sono incluse nell'elenco [Librerie che usano azure.core](azure-sdk-library-package-index.md#libraries-using-azurecore). Le pagine pypi per le librerie aggiornate includono inoltre una riga simile a "Il sistema di credenziali è stato completamente rinnovato" per indicare la modifica.
+
+Ad esempio, è possibile usare `DefaultAzureCredential` con la versione 15.0.0 o successiva di azure-mgmt-resource:
+
 ```python
-# WARNING: this code fails with azure-mgmt-resource versions < 15
-
 from azure.identity import DefaultAzureCredential
-
-# azure.mgmt.resource is an Azure SDK management library
 from azure.mgmt.resource import SubscriptionClient
 
-# Attempt to retrieve the subscription ID
 credential = DefaultAzureCredential()
 subscription_client = SubscriptionClient(credential)
 
-# If using azure-mgmt-resource < version 15 the following line produces
-# a "no attribute 'signed_session'" error:
-subscription = next(subscription_client.subscriptions.list())
-
-print(subscription.subscription_id)
+sub_list = subscription_client.subscriptions.list()
+print(list(sub_list))
 ```
 
-`DefaultAzureCredential` è compatibile solo con le librerie client di Azure SDK ("piano dati") e con le versioni aggiornate delle librerie di gestione di Azure SDK incluse nell'elenco [Librerie che usano azure.core](azure-sdk-library-package-index.md#libraries-using-azurecore).
+### <a name="defaultazurecredential-object-has-no-attribute-signed-session"></a>"All'oggetto 'DefaultAzureCredential' non è associato alcun attributo 'signed-session'"
 
-Se si esegue il codice precedente con la versione 15.0.0 o successiva di Azure-Mgmt-Resource, la chiamata a `subscription_client.subscriptions.list()` riesce. Se si usa una versione precedente della libreria, la chiamata non riesce e viene restituito un messaggio di errore vago, simile a "All'oggetto 'DefaultAzureCredential' non è associato alcun attributo 'signed_session'". Questo errore si verifica perché le versioni precedenti delle librerie di gestione dell'SDK presuppongono che l'oggetto credenziali contenga una proprietà `signed_session`, che risulta mancante in `DefaultAzureCredential`.
+Se si prova a usare `DefaultAzureCredential` con una libreria che non è stata aggiornata per l'uso di azure.core, le chiamate non riescono e viene restituito un messaggio di errore vago, simile a "All'oggetto 'DefaultAzureCredential' non è associato alcun attributo 'signed_session'". Si verificherà, ad esempio, un errore di questo tipo se si usa il codice nella sezione precedente con una libreria azure-mgmt-resource di una versione inferiore alla 15.
 
-Per ovviare all'errore, usare le versioni più recenti delle librerie di gestione incluse nell'elenco [Librerie che usano azure.core](azure-sdk-library-package-index.md#libraries-using-azurecore). Quando sono elencate due librerie, usare quella con il numero di versione maggiore. Le pagine pypi per le librerie aggiornate includono inoltre una riga simile a "Il sistema di credenziali è stato completamente rinnovato" per indicare la modifica.
+Questo errore si verifica perché le versioni non azure.core delle librerie di gestione dell'SDK presuppongono che l'oggetto credenziali contenga una proprietà `signed_session`, che risulta mancante in `DefaultAzureCredential`.
 
 Se la libreria di gestione che si vuole usare non è ancora stata aggiornata, è possibile usare i metodi alternativi seguenti:
 
@@ -201,7 +193,7 @@ Anche se `DefaultAzureCredential` è il metodo di autenticazione consigliato per
 
 - La maggior parte dei metodi funziona con entità servizio esplicite e non sfrutta i vantaggi dell'identità gestita per il codice distribuito nel cloud. Se usati con il codice di produzione, quindi, è necessario gestire e mantenere entità servizio distinte per le applicazioni cloud.
 
-- Alcuni metodi, come l'autenticazione basata su interfaccia della riga di comando, funzionano solo con script locali e non possono essere usati con il codice di produzione.
+- Alcuni metodi, come l'autenticazione basata su interfaccia della riga di comando, funzionano solo con script locali e non possono essere usati con il codice di produzione. L'autenticazione basata sull'interfaccia della riga di comando è utile per la fase di sviluppo perché usa le autorizzazioni dell'account di accesso di Azure e non richiede assegnazioni di ruolo esplicite.
 
 Le entità servizio per le applicazioni distribuite nel cloud vengono gestite nelle istanze di Active Directory delle sottoscrizioni. Per altre informazioni, vedere [Come gestire le entità servizio](how-to-manage-service-principals.md).
 
@@ -391,6 +383,31 @@ RESOURCE = AZURE_CHINA_CLOUD.endpoints.active_directory_resource_id
 
 ### <a name="cli-based-authentication-development-purposes-only"></a>Autenticazione basata sull'interfaccia della riga di comando (solo a scopo di sviluppo)
 
+Con questo metodo si crea un oggetto client usando le credenziali dell'utente che ha eseguito l'accesso con il comando `az login` dell'interfaccia della riga di comando di Azure. L'autenticazione basata sull'interfaccia della riga di comando può essere usata solo per lo sviluppo perché non può essere usata in ambienti di produzione.
+
+Le librerie di Azure usano l'ID sottoscrizione predefinito. In alternativa, prima di eseguire il codice è possibile impostare la sottoscrizione usando [`az account`](/cli/azure/manage-azure-subscriptions-azure-cli).
+
+Quando si usa l'autenticazione basata sull'interfaccia della riga di comando, l'applicazione risulta autorizzata per tutte le operazioni consentite dalle credenziali di accesso dell'interfaccia della riga di comando. Di conseguenza, se si è il proprietario o l'amministratore della sottoscrizione, il codice ha accesso intrinseco alla maggior parte delle risorse nella sottoscrizione senza la necessità di assegnare autorizzazioni specifiche. Questo comportamento è utile per la sperimentazione. Tuttavia, è consigliabile usare specifiche entità servizio e assegnare specifiche autorizzazioni quando si inizia a scrivere codice di produzione, perché si saprà come assegnare autorizzazioni esatte a identità diverse e sarà possibile convalidare accuratamente tali autorizzazioni negli ambienti di test prima della distribuzione in produzione.
+
+#### <a name="cli-based-authentication-with-azurecore-libraries"></a>Autenticazione basata sull'interfaccia della riga di comando con le librerie di azure.core
+
+Quando si usano [librerie di Azure aggiornate per azure.core](/azure/developer/python/azure-sdk-library-package-index#libraries-using-azurecore), usare l'oggetto [`AzureCliCredential`](/python/api/azure-identity/azure.identity.azureclicredential) della libreria azure-identity (versione 1.4.0 e successive). Ad esempio, il codice seguente può essere usato con la versione 15.0.0 e successive di azure-mgmt-resource:
+
+```python
+from azure.identity import AzureCliCredential
+from azure.mgmt.resource import SubscriptionClient
+
+credential = AzureCliCredential()
+subscription_client = SubscriptionClient(credential)
+
+subscription = next(subscription_client.subscriptions.list())
+print(subscription.subscription_id)
+```
+
+#### <a name="cli-based-authentication-with-older-non-azurecore-libraries"></a>Autenticazione basata sull'interfaccia della riga di comando con librerie meno recenti (non azure.core)
+
+Quando si usano librerie di Azure non aggiornate per azure.core, è possibile usare il metodo [`get_client_from_cli_profile`](/python/api/azure-common/azure.common.client_factory#get-client-from-cli-profile-client-class----kwargs-) della libreria azure-cli-core. Ad esempio, il codice seguente può essere usato con versioni di azure-mgmt-resource inferiori alla 15.0.0:
+
 ```python
 from azure.common.client_factory import get_client_from_cli_profile
 from azure.mgmt.resource import SubscriptionClient
@@ -401,11 +418,7 @@ subscription = next(subscription_client.subscriptions.list())
 print(subscription.subscription_id)
 ```
 
-Con questo metodo si crea un oggetto client usando le credenziali dell'utente che ha eseguito l'accesso con il comando `az login` dell'interfaccia della riga di comando di Azure. L'applicazione verrà autorizzata per tutte le operazioni dell'utente.
-
-L'SDK usa l'ID sottoscrizione predefinito oppure è possibile impostare la sottoscrizione prima di eseguire il codice usando [`az account`](/cli/azure/manage-azure-subscriptions-azure-cli). Se è necessario fare riferimento a sottoscrizioni diverse nello stesso script, usare i metodi ['get_client_from_auth_file'](#authenticate-with-a-json-file) o [`get_client_from_json_dict`](#authenticate-with-a-json-dictionary) descritti in precedenza in questo articolo.
-
-La funzione `get_client_from_cli_profile` deve essere usata solo per le fasi iniziali di sperimentazione e sviluppo, perché un utente che ha eseguito l'accesso ha in genere privilegi di proprietario o amministratore e può accedere alla maggior parte delle risorse senza autorizzazioni aggiuntive. Per altre informazioni, vedere la nota precedente sull'[uso delle credenziali dell'interfaccia della riga di comando con `DefaultAzureCredential`](#cli-auth-note).
+Se è necessario fare riferimento a sottoscrizioni diverse nello stesso script, usare i metodi ['get_client_from_auth_file'](#authenticate-with-a-json-file) o [`get_client_from_json_dict`](#authenticate-with-a-json-dictionary) descritti in precedenza in questo articolo.
 
 ### <a name="deprecated-authenticate-with-userpasscredentials"></a>Deprecato: Eseguire l'autenticazione con UserPassCredentials
 
@@ -414,7 +427,7 @@ Quando [Azure Active Directory Authentication Library (ADAL) per Python](https:/
 ## <a name="see-also"></a>Vedere anche
 
 - [Configurare l'ambiente di sviluppo Python locale per Azure](configure-local-development-environment.md)
-- [Come assegnare le autorizzazioni per i ruoli](how-to-assign-role-permissions.md)
+- [Come assegnare le autorizzazioni per i ruoli](/azure/role-based-access-control/role-assignments-steps)
 - [Esempio: Effettuare il provisioning di un gruppo di risorse](azure-sdk-example-resource-group.md)
 - [Esempio: Effettuare il provisioning e usare Archiviazione di Azure](azure-sdk-example-storage.md)
 - [Esempio: Effettuare il provisioning di un'app Web e distribuire il codice](azure-sdk-example-web-app.md)

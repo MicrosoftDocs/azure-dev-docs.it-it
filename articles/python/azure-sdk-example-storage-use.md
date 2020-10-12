@@ -4,18 +4,18 @@ description: Usare le librerie di Azure SDK per Python per accedere a un conteni
 ms.date: 08/05/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 161e27f1323053b45c687e60ade90e863ce71c64
-ms.sourcegitcommit: b03cb337db8a35e6e62b063c347891e44a8a5a13
+ms.openlocfilehash: ee9469b4b400879ee5a0b66d16572bc22686ba54
+ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/23/2020
-ms.locfileid: "91110493"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91764446"
 ---
 # <a name="example-access-azure-storage-using-the-azure-libraries-for-python"></a>Esempio: Accedere ad Archiviazione di Azure con le librerie di Azure per Python
 
 Questo esempio illustra come usare le librerie client di Azure nel codice applicativo di Python per caricare un file nel contenitore di archiviazione BLOB. L'esempio presuppone che sia stato effettuato il provisioning delle risorse, come illustrato in [Esempio: Effettuare il provisioning di Archiviazione di Azure](azure-sdk-example-storage.md).
 
-Tutti i comandi di questo articolo funzionano allo stesso modo nella shell Bash Linux/Mac OS e nella shell dei comandi di Windows, se non diversamente specificato.
+Se non diversamente specificato, tutti i comandi di questo articolo funzionano allo stesso modo nella shell Bash Linux/macOS e nella shell dei comandi di Windows.
 
 ## <a name="1-set-up-your-local-development-environment"></a>1: Configurare un ambiente di sviluppo locale
 
@@ -115,8 +115,8 @@ Per questi motivi, per il codice di produzione è consigliabile usare il metodo 
     ```
 
     Collegamenti di riferimento:
-      - [DefaultAzureCredential (azure.identity)](/python/api/azure-identity/azure.identity.defaultazurecredential?view=azure-python)
-      - [BlobClient (azure.storage.blob)](/python/api/azure-storage-blob/azure.storage.blob.blobclient?view=azure-python)
+      - [DefaultAzureCredential (azure.identity)](/python/api/azure-identity/azure.identity.defaultazurecredential)
+      - [BlobClient (azure.storage.blob)](/python/api/azure-storage-blob/azure.storage.blob.blobclient)
 
 1. Tentativo di eseguire il codice (che non riesce intenzionalmente):
 
@@ -126,7 +126,7 @@ Per questi motivi, per il codice di produzione è consigliabile usare il metodo 
 
     Poiché l'entità servizio locale in uso non ha l'autorizzazione per accedere al contenitore BLOB, viene visualizzato un messaggio di errore analogo al seguente: "L'operazione richiesta non è consentita con questa autorizzazione".
 
-1. Concedere le autorizzazioni per il contenitore all'entità servizio usando il comando [az role assignment create](/cli/azure/role/assignment?view=azure-cli-latest#az-role-assignment-create) dell'interfaccia della riga di comando di Azure (è molto lungo):
+1. Concedere le autorizzazioni per il contenitore all'entità servizio usando il comando [az role assignment create](/cli/azure/role/assignment#az-role-assignment-create) dell'interfaccia della riga di comando di Azure (è molto lungo):
 
     # <a name="cmd"></a>[cmd](#tab/cmd)
 
@@ -154,7 +154,7 @@ Per questi motivi, per il codice di produzione è consigliabile usare il metodo 
 
 1. Dopo aver atteso uno o due minuti la propagazione delle autorizzazioni, eseguire di nuovo il codice per verificarne il funzionamento. Se l'errore delle autorizzazioni persiste, attendere un po' più a lungo, quindi riprovare a eseguire il codice.
 
-Per altre informazioni su ambiti e assegnazioni di ruolo, vedere [Come assegnare le autorizzazioni per i ruoli](how-to-assign-role-permissions.md).
+Per altre informazioni sulle assegnazioni di ruolo, vedere [Come assegnare le autorizzazioni per i ruoli con l'interfaccia della riga di comando di Azure](/azure/role-based-access-control/role-assignments-cli).
 
 ### <a name="4b-use-blob-storage-with-a-connection-string"></a>4b: Usare archiviazione BLOB con una stringa di connessione
 
@@ -202,7 +202,7 @@ az group delete -n PythonAzureExample-Storage-rg  --no-wait
 
 Se non è necessario mantenere le risorse di cui è stato effettuato il provisioning in questo esempio, eseguire questo comando per evitare addebiti ricorrenti nella sottoscrizione.
 
-Per eliminare un gruppo di risorse dal codice, è anche possibile usare il metodo [`ResourceManagementClient.resource_groups.delete`](/python/api/azure-mgmt-resource/azure.mgmt.resource.resources.v2019_10_01.operations.resourcegroupsoperations?view=azure-python#delete-resource-group-name--custom-headers-none--raw-false--polling-true----operation-config-).
+[!INCLUDE [resource_group_begin_delete](includes/resource-group-begin-delete.md)]
 
 ## <a name="see-also"></a>Vedere anche
 

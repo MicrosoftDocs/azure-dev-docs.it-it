@@ -1,21 +1,22 @@
 ---
 title: Informazioni di riferimento sulle API delle librerie di Azure SDK - Python
+description: Puntatori alla documentazione di riferimento dell'API Python
 ms.date: 05/26/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: aa5462ae28153a631562c6703880a872b51dd048
-ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
+ms.openlocfilehash: f1a30c02059179f21694d716bcb5e063ae20956d
+ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87982863"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91764818"
 ---
 # <a name="azure-libraries-for-python-api-reference"></a>Informazioni di riferimento sulle librerie di Azure per le API Python
 
 Informazioni di riferimento complete per tutti i servizi:
 
 > [!div class="nextstepaction"]
-> [Browser delle API Python >>>](/python/api/?view=azure-python)
+> [Browser delle API Python >>>](/python/api/)
 
 È in corso un programma pilota per la divisione delle sezioni di informazioni di riferimento in base al servizio, a partire dall'archiviazione (BLOB, file, code). [Inviare feedback][1] su questa esperienza.
 

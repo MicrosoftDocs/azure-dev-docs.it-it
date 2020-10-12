@@ -4,12 +4,12 @@ description: Panoramica dell'implementazione dell'app principale, incluso tutto 
 ms.date: 08/24/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 0b7ffa1fb855d4b676813f49c545071209f6ce79
-ms.sourcegitcommit: 324da872a9dfd4c55b34739824fc6a6598f2ae12
+ms.openlocfilehash: e2a43f7e204ba3f077beea7cc878076111f71313
+ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89379521"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91764740"
 ---
 # <a name="part-4-example-main-application-implementation"></a>Parte 4: Esempio di implementazione dell'applicazione principale
 
@@ -23,13 +23,13 @@ L'app principale fornisce anche una semplice home page che visualizza un collega
 
 Lo script di provisioning dell'esempio esegue le operazioni seguenti:
 
-1. Creare l'host di Servizio app e distribuire il codice con il comando dell'interfaccia della riga di comando di Azure [`az webapp up`](/cli/azure/webapp?view=azure-cli-latest#az-webapp-up).
+1. Creare l'host di Servizio app e distribuire il codice con il comando dell'interfaccia della riga di comando di Azure [`az webapp up`](/cli/azure/webapp#az-webapp-up).
 
-1. Effettuare il provisioning di un account di Archiviazione di Azure per l'app principale (usando [`az storage account create`](/cli/azure/storage/account?view=azure-cli-latest#az-storage-account-create)).
+1. Effettuare il provisioning di un account di Archiviazione di Azure per l'app principale (usando [`az storage account create`](/cli/azure/storage/account#az-storage-account-create)).
 
-1. Creare una coda nell'account di archiviazione denominata "code-requests" (usando [`az storage queue create`](/cli/azure/storage/queue?view=azure-cli-latest#az-storage-queue-create)).
+1. Creare una coda nell'account di archiviazione denominata "code-requests" (usando [`az storage queue create`](/cli/azure/storage/queue#az-storage-queue-create)).
 
-1. Per assicurarsi che l'app possa scrivere nella coda, usare [`az role assignment create`](/cli/azure/role/assignment?view=azure-cli-latest#az-role-assignment-create) per assegnare il ruolo "Collaboratore ai dati della coda di archiviazione" all'app. Per altre informazioni sui ruoli, vedere [Come assegnare le autorizzazioni per i ruoli](how-to-assign-role-permissions.md).
+1. Per assicurarsi che l'app possa scrivere nella coda, usare [`az role assignment create`](/cli/azure/role/assignment#az-role-assignment-create) per assegnare il ruolo "Collaboratore ai dati della coda di archiviazione" all'app. Per altre informazioni sui ruoli, vedere [Come assegnare le autorizzazioni per i ruoli con l'interfaccia della riga di comando di Azure](/azure/role-based-access-control/role-assignments-cli).
 
 Il codice dell'app principale è riportato di seguito. Le spiegazioni di dettagli importanti sono fornite nelle parti successive di questa serie.
 

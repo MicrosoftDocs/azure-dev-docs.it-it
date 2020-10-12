@@ -4,12 +4,12 @@ description: Parte 3 dell'esercitazione su Node.js, distribuire il sito Web
 ms.topic: tutorial
 ms.date: 03/04/2020
 ms.custom: devx-track-js
-ms.openlocfilehash: 4907a8466828ccaaef0891394ac4f33694264ccf
-ms.sourcegitcommit: 4dd392ea864be52421d0239e59198bc44b0a5a16
+ms.openlocfilehash: 4c96aedf678fb4e28875ceb211c6d2c505afea6f
+ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91365254"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91764563"
 ---
 # <a name="deploy-the-app-to-azure"></a>Distribuire l'app in Azure
 
@@ -23,7 +23,7 @@ In questo passaggio l'app Node.js viene distribuita in Azure usando Git deploy t
     code .
     ```
 
-1. In VS Code selezionare l'icona del controllo del codice sorgente per aprire l'area di esplorazione **Controllo del codice sorgente** e quindi selezionare **+** per inizializzare un repository Git locale:
+1. In VS Code selezionare l'icona del controllo del codice sorgente per aprire l'area di esplorazione **Controllo del codice sorgente** e quindi selezionare **Inizializza repository** per inizializzare un repository Git locale:
 
     ![Inizializzare repository git](media/deploy-azure/git-init.png)
 

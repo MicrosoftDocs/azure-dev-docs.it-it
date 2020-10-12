@@ -1,15 +1,15 @@
 ---
 title: Sviluppo cloud con Azure - Che cos'è Azure?
 description: Panoramica dello sviluppo di applicazioni cloud in Microsoft Azure, a partire dalla correlazione tra data center, servizi e risorse.
-ms.date: 05/12/2020
+ms.date: 10/06/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: e776ce3aa84921dcfcb1be1e8613ae7332fe61a8
-ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
+ms.openlocfilehash: f2bf8c0c8b35881c31fcf88c0faf38669cb261b3
+ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87983175"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91764533"
 ---
 # <a name="cloud-development-on-azure"></a>Sviluppo cloud in Azure
 
@@ -25,9 +25,11 @@ Nel caso di Azure l'hardware del computer non è costituito da un singolo comput
 
 Le risorse rappresentano gli elementi costitutivi di un'applicazione cloud. Il processo di sviluppo cloud inizia quindi con la creazione dell'ambiente appropriato in cui è possibile distribuire le diverse parti dell'applicazione. In poche parole, non è possibile distribuire codice o dati in Azure finché non si esegue l'allocazione e la configurazione, ovvero il *provisioning*, di una risorsa di destinazione appropriata, ad esempio una macchina virtuale, un database, un account di archiviazione, un registro contenitori, un agente di orchestrazione dei contenitori, un host Web, una rete virtuale, i motori di analisi e intelligenza artificiale e così via.
 
-Il processo di creazione dell'ambiente per l'applicazione implica quindi l'identificazione dei servizi e dei tipi di risorse pertinenti coinvolti e di conseguenza il provisioning di tali risorse, ovvero quando si inizia ad affittarle da Azure. È possibile scegliere tra centinaia di tipi di risorse diversi, dalle risorse di base per l'"infrastruttura", come le macchine virtuali, in cui si mantiene il controllo completo e la responsabilità del software distribuito, fino a servizi della "piattaforma" di livello superiore che forniscono un ambiente più gestito in cui è necessario preoccuparsi solo dei dati e del codice delle applicazioni.
+Il processo di creazione dell'ambiente per l'applicazione implica quindi l'identificazione dei servizi e dei tipi di risorse pertinenti coinvolti e di conseguenza il provisioning di tali risorse, ovvero quando si inizia ad affittarle da Azure. Per processo di provisioning si intende essenzialmente la modalità di costruzione del sistema di elaborazione in cui si distribuisce l'applicazione.
 
-Trovare i servizi appropriati per l'applicazione e bilanciare i costi relativi può risultare complesso, ma fa anche parte del divertimento creativo dello sviluppo cloud. Per altre informazioni su come scegliere i servizi più adatti, è possibile vedere altri articoli di questo centro per sviluppatori. Nel frattempo vediamo come usare tutti questi servizi e queste risorse.
+È possibile scegliere tra centinaia di tipi di risorse diversi, dalle risorse di base per l'"infrastruttura", come le macchine virtuali, in cui si mantiene il controllo completo e la responsabilità del software distribuito, fino a servizi della "piattaforma" di livello superiore che forniscono un ambiente più gestito in cui è necessario preoccuparsi solo dei dati e del codice delle applicazioni.
+
+Trovare i servizi appropriati per l'applicazione e bilanciare i costi relativi può risultare complesso, ma fa anche parte del divertimento creativo dello sviluppo cloud. Per informazioni sulle numerose opzioni disponibili, vedere la [guida per gli sviluppatori di Azure](/azure/guides/developer/azure-developer-guide). In questa sede verrà illustrato come usare tutti questi servizi e queste risorse.
 
 > [!NOTE]
 > Probabilmente si conoscono già i termini "IaaS" (infrastruttura distribuita come servizio), "PaaS" (piattaforma distribuita come servizio) e così via. L'espressione "come servizio" indica proprio che in genere queste soluzioni non prevedono in genere l'accesso fisico ai data center. Si usano invece strumenti come il portale di Azure, l'interfaccia della riga di comando di Azure o l'API REST di Azure per effettuare il provisioning di risorse di tipo "infrastruttura", "piattaforma" e così via. In quanto "servizio", Azure è sempre in attesa di ricevere le richieste degli utenti.

@@ -1,15 +1,15 @@
 ---
 title: Configurare l'ambiente JavaScript locale per lo sviluppo di Azure
 description: Informazioni su come configurare un ambiente di sviluppo JavaScript locale per l'uso con Azure, tra cui un editor, le librerie di Azure SDK, strumenti facoltativi e le credenziali necessarie per l'autenticazione delle librerie.
-ms.date: 09/22/2020
+ms.date: 09/30/2020
 ms.topic: conceptual
-ms.custom: devx-track-js
-ms.openlocfilehash: 6d9f86b026a7104e79228d78d5ac27649049a8a4
-ms.sourcegitcommit: 4af22924a0eaf01e6902631c0714045c02557de4
+ms.custom: devx-track-js, azure-sdk-ai-text-analytics-5.0.0
+ms.openlocfilehash: baf9634395d4e0ad7225abb9bebddfa1aa14fe6d
+ms.sourcegitcommit: 8fcb6c2d17be63064090f801f46c9c754821f979
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91208682"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91805942"
 ---
 # <a name="configure-your-local-javascript-dev-environment-for-azure"></a>Configurare l'ambiente di sviluppo JavaScript locale per Azure
 
@@ -21,8 +21,11 @@ Questo articolo include le istruzioni di configurazione per creare e convalidare
 
 Le risorse di Azure vengono create all'interno di una sottoscrizione, che rappresenta l'unità di fatturazione per l'uso di Azure. Anche se è possibile creare risorse gratuite (ogni sottoscrizione offre una risorsa gratuita per la maggior parte dei servizi), è consigliabile creare risorse del livello a pagamento quando si prevede di distribuire la risorsa in un ambiente di produzione.
 
-* Se si ha già una sottoscrizione, non è necessario crearne una nuova. Usare il [portale di Azure](https://portal.azure.com) per accedere alla sottoscrizione esistente.
-* [Avviare la sottoscrizione di una versione di valutazione gratuita](https://azure.microsoft.com/free/cognitive-services)
+|Tipo|Descrizione|
+|--|--|
+|[Sottoscrizione di valutazione](https://azure.microsoft.com/free/cognitive-services)|Creare una sottoscrizione di valutazione _gratuita_.|
+|[Sottoscrizione esistente](https://portal.azure.com)|Se si ha già una sottoscrizione, accedervi nel portale di Azure, dall'interfaccia della riga di comando di Azure o in JavaScript.|
+|[Tra più sottoscrizioni](/azure/governance/management-groups/create-management-group-javascript)|Se è necessario gestire più sottoscrizioni, questo articolo descrive come creare un gruppo di gestione con JavaScript.|
 
 ## <a name="one-time-installation"></a>Installazione una tantum
 
@@ -48,44 +51,39 @@ Le installazioni comuni seguenti in workstation locali sono facoltative e consen
 
 ## <a name="one-time-configuration-of-service-principal"></a>Configurazione una tantum dell'entità servizio
 
-Ogni servizio di Azure prevede un meccanismo di autenticazione, che può includere chiavi ed endpoint, stringhe di connessione o altri meccanismi. Per la conformità alle procedure consigliate, usare un'entità servizio per creare risorse ed eseguire l'autenticazione a tali risorse. Un'entità servizio consente di definire in modo concreto l'ambito dell'accesso in base all'esigenza di sviluppo immediata.
+Ogni servizio di Azure prevede un meccanismo di autenticazione, che può includere chiavi ed endpoint, stringhe di connessione o altri meccanismi. Per la conformità alle procedure consigliate, usare un'[entità servizio](node-sdk-azure-authenticate-principal.md) per creare risorse ed eseguire l'autenticazione a tali risorse. Un'entità servizio consente di definire in modo concreto l'ambito dell'accesso in base all'esigenza di sviluppo immediata.
 
-Dal punto di vista teorico, i passaggi per creare e usare un'entità servizio includono:
+Procedura per la **creazione dell'entità servizio**: 
 
-* Accesso ad Azure con l'account utente singolo, ad esempio joe@microsoft.com.
-* Creazione di un'entità servizio denominata con ambito specifico. Dal momento che per la maggior parte degli avvii rapidi è richiesta la creazione di una risorsa di Azure, l'entità servizio deve poter creare risorse.
-* Disconnessione da Azure con l'account utente.
-* Autenticazione ad Azure a livello di codice con l'entità servizio.
-* L'entità servizio crea una risorsa di Azure e usa il servizio associato al servizio.
+1. Accedere ad Azure con l'account utente singolo.
+1. Creare un'entità servizio _denominata_ con ambito specifico. Dal momento che per la maggior parte degli avvii rapidi è richiesta la creazione di una risorsa di Azure, l'entità servizio deve poter creare risorse.
+1. Disconnettersi da Azure con l'account utente singolo.
 
-### <a name="create-service-principal"></a>Creare un'entità servizio
+Procedura per **usare l'entità servizio**:
 
-Informazioni su come [creare un'entità servizio](node-sdk-azure-authenticate-principal.md). Ricordarsi di salvare la risposta ottenuta nel passaggio di creazione. Per usare l'entità servizio, saranno necessari anche i valori di `appId`, `tenant` e `password`.
+1. Eseguire l'autenticazione ad Azure a livello di codice con l'entità servizio usando un certificato, variabili di ambiente o un file `.json`. 
+1. Creare risorse di Azure con l'entità servizio e usare il servizio.
+
+Informazioni su come [creare un'entità servizio](node-sdk-azure-authenticate-principal.md). Ricordarsi di salvare la risposta ottenuta nel passaggio di creazione. Per usare l'entità servizio, saranno necessari anche i valori di `appId`, `tenant` e `password` della risposta.
+
+[Creare le risorse di Azure con l'entità servizio](/cli/azure/create-an-azure-service-principal-azure-cli#create-a-resource-using-service-principal).
 
 ## <a name="steps-for-each-new-development-project-setup"></a>Procedura per ogni nuova installazione del progetto di sviluppo
 
-Dal momento che le librerie di Azure SDK vengono fornite singolarmente per ogni servizio, non esiste un singolo pacchetto scaricabile per accedere a tutte le risorse di Azure. Ogni libreria viene installata in base al servizio di Azure che si vuole usare.
+Le [librerie di Azure SDK](azure-sdk-library-package-index.md) vengono fornite singolarmente per ogni servizio. Ogni libreria viene installata in base al servizio di Azure che è necessario usare.
 
 Ogni nuovo progetto che usa Azure deve:
-- Creare le risorse di Azure o trovare le informazioni di autenticazione per le risorse di Azure esistenti
-- Installare le librerie di Azure SDK da npm o Yarn. Informazioni sulle [versioni delle librerie](#library-versions).
-- Gestire in modo sicuro le informazioni di autenticazione all'interno del progetto. Un metodo comune consiste nell'usare **[Dotenv](https://www.npmjs.com/package/dotenv)** per leggere le variabili di ambiente da un file `.env`. Assicurarsi di aggiungere il file `.env` al file `.gitignore` in modo che il file `.env` non venga archiviato nel controllo del codice sorgente.
+- Creare le risorse di Azure e salvare la configurazione o le chiavi associate in un [percorso sicuro]().
+- Installare le librerie di Azure SDK da npm o Yarn. 
+- Usare l'entità servizio per eseguire l'autenticazione per gli SDK di Azure e quindi usare le informazioni di configurazione per accedere a servizi specifici.
 
-### <a name="library-versions"></a>Versioni delle librerie
+## <a name="securing-configuration-information"></a>Protezione delle informazioni di configurazione
 
-Le [librerie di Azure](azure-sdk-library-package-index.md) usano in genere l'ambito `@azure`.
+Sono disponibili diverse opzioni per archiviare le informazioni di configurazione:
+- [Dotenv](https://www.npmjs.com/package/dotenv) è un noto pacchetto npm usato per leggere le variabili di ambiente da un file `.env`. Assicurarsi di aggiungere il file `.env` al file `.gitignore` in modo che il file `.env` non venga archiviato nel controllo del codice sorgente.
+- Azure [Key Vault](https://docs.microsoft.com/azure/key-vault/) consente di creare e gestire chiavi per accedere e crittografare risorse, app e soluzioni cloud.
 
-Le librerie più recenti usano l'ambito `@azure`. I pacchetti meno recenti di Microsoft iniziano in genere con `azure-`. Molti pacchetti non prodotti da Microsoft sono contraddistinti da questo prefisso. Verificare che il proprietario del pacchetto sia Microsoft o Azure.
-
-## <a name="create-azure-resource-with-service-principal"></a>Creare la risorsa di Azure con l'entità servizio
-
-Usare l'interfaccia della riga di comando di Azure per [creare una risorsa di Azure usando l'entità servizio](https://docs.microsoft.com/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest#create-a-resource-using-service-principal).
-
-## <a name="use-service-principal-in-javascript"></a>Usare l'entità servizio in JavaScript
-
-[Usare l'entità servizio](node-sdk-azure-authenticate-principal.md#using-the-service-principal) quando per l'autenticazione si usa una libreria client di Azure invece dell'account utente personale.
-
-## <a name="create-environment-variables-for-the-azure-libraries"></a>Creare variabili di ambiente per le librerie di Azure
+### <a name="create-environment-variables-for-the-azure-libraries"></a>Creare variabili di ambiente per le librerie di Azure
 
 Per usare le impostazioni di Azure richieste dalle librerie di Azure SDK per accedere al cloud di Azure, impostare i valori più comuni per le variabili di ambiente. I comandi seguenti consentono di impostare le variabili di ambiente nella workstation locale. Un altro meccanismo comune consiste nell'usare il pacchetto npm `DOTENV` per creare un file `.env` per queste impostazioni. Se si prevede di usare un file `.env`, assicurarsi di non archiviare il file nel controllo del codice sorgente. Per assicurarsi che tali impostazioni vengano archiviate nel controllo del codice sorgente, il modo più semplice consiste nell'aggiungere il file `.env` al file `.ignore` di git.
 
@@ -113,7 +111,7 @@ set AZURE_CLIENT_SECRET=abcdef00-4444-5555-6666-1234567890ab
 
 Sostituire i valori mostrati in questi comandi con quelli dell'entità servizio specifica.
 
-## <a name="install-npm-packages"></a>Installare i pacchetti npm
+## <a name="install-npm-packages"></a>Installa nuovi pacchetti npm
 
 Per ogni progetto è consigliabile creare una cartella separata e un file `package.json` specifico seguendo questa procedura:
 

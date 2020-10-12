@@ -1,15 +1,15 @@
 ---
 title: Effettuare il provisioning di un database MySQL di Azure usando le librerie di Azure SDK
 description: Usare le librerie di gestione incluse nelle librerie di Azure SDK per Python per effettuare il provisioning di un database MySQL di Azure, PostgreSQL o MariaDB.
-ms.date: 06/02/2020
+ms.date: 10/05/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 17848311fa713fbe480609d2d49481b5f343eff4
-ms.sourcegitcommit: b03cb337db8a35e6e62b063c347891e44a8a5a13
+ms.openlocfilehash: b1f04dbf2fa12aeab58a05191319a27072db6d28
+ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/23/2020
-ms.locfileid: "91110541"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91764679"
 ---
 # <a name="example-use-the-azure-libraries-to-provision-a-database"></a>Esempio: Usare le librerie di Azure per effettuare il provisioning di un database
 
@@ -17,7 +17,7 @@ Questo esempio illustra come usare le librerie di gestione di Azure SDK in uno s
 
 È possibile usare codice simile per effettuare il provisioning di un database PostgreSQL o MariaDB.
 
-Tutti i comandi di questo articolo funzionano allo stesso modo nella shell Bash Linux/Mac OS e nella shell dei comandi di Windows, se non diversamente specificato.
+Se non diversamente specificato, tutti i comandi di questo articolo funzionano allo stesso modo nella shell Bash Linux/macOS e nella shell dei comandi di Windows.
 
 ## <a name="1-set-up-your-local-development-environment"></a>1: Configurare un ambiente di sviluppo locale
 
@@ -30,12 +30,14 @@ Assicurarsi di creare un'entità servizio per lo sviluppo locale e di creare e a
 Creare un file denominato *requirements.txt* con il contenuto seguente:
 
 ```text
-azure-mgmt-resource
+azure-mgmt-resource==10.2.0
 azure-mgmt-rdbms
 azure-cli-core
 mysql
 mysql-connector
 ```
+
+Il requisito relativo alla versione specifica per azure-mgmt-resource assicura che verrà usata una versione compatibile con la versione corrente di azure-mgmt-web. Queste versioni non sono basate su azure.core e quindi usano metodi meno recenti per l'autenticazione.
 
 In un terminale o da un prompt dei comandi con l'ambiente virtuale attivato, installare i requisiti:
 
@@ -150,15 +152,15 @@ Per usare tale codice in uno script di produzione, è preferibile usare invece `
 
 ### <a name="reference-links-for-classes-used-in-the-code"></a>Collegamenti di riferimento per le classi usate nel codice
 
-- [ResourceManagementClient (azure.mgmt.resource)](/python/api/azure-mgmt-resource/azure.mgmt.resource.resourcemanagementclient?view=azure-python)
-- [MySQLManagementClient (azure.mgmt.rdbms.mysql)](/python/api/azure-mgmt-rdbms/azure.mgmt.rdbms.mysql.mysqlmanagementclient?view=azure-python)
-- [ServerForCreate (azure.mgmt.rdbms.mysql.models)](/python/api/azure-mgmt-rdbms/azure.mgmt.rdbms.mysql.models.serverforcreate?view=azure-python)
-- [ServerPropertiesForDefaultCreate (azure.mgmt.rdbms.mysql.models)](/python/api/azure-mgmt-rdbms/azure.mgmt.rdbms.mysql.models.serverpropertiesfordefaultcreate?view=azure-python)
-- [ServerVersion (azure.mgmt.rdbms.mysql.models)](/python/api/azure-mgmt-rdbms/azure.mgmt.rdbms.mysql.models.serverversion?view=azure-python)
+- [ResourceManagementClient (azure.mgmt.resource)](/python/api/azure-mgmt-resource/azure.mgmt.resource.resourcemanagementclient)
+- [MySQLManagementClient (azure.mgmt.rdbms.mysql)](/python/api/azure-mgmt-rdbms/azure.mgmt.rdbms.mysql.mysqlmanagementclient)
+- [ServerForCreate (azure.mgmt.rdbms.mysql.models)](/python/api/azure-mgmt-rdbms/azure.mgmt.rdbms.mysql.models.serverforcreate)
+- [ServerPropertiesForDefaultCreate (azure.mgmt.rdbms.mysql.models)](/python/api/azure-mgmt-rdbms/azure.mgmt.rdbms.mysql.models.serverpropertiesfordefaultcreate)
+- [ServerVersion (azure.mgmt.rdbms.mysql.models)](/python/api/azure-mgmt-rdbms/azure.mgmt.rdbms.mysql.models.serverversion)
 
 Vedere anche:
-    - [PostgreSQLManagementClient (azure.mgmt.rdbms.postgresql)](/python/api/azure-mgmt-rdbms/azure.mgmt.rdbms.postgresql.postgresqlmanagementclient?view=azure-python)
-    - [MariaDBManagementClient (azure.mgmt.rdbms.mariadb)](/python/api/azure-mgmt-rdbms/azure.mgmt.rdbms.mariadb.mariadbmanagementclient?view=azure-python)
+    - [PostgreSQLManagementClient (azure.mgmt.rdbms.postgresql)](/python/api/azure-mgmt-rdbms/azure.mgmt.rdbms.postgresql.postgresqlmanagementclient)
+    - [MariaDBManagementClient (azure.mgmt.rdbms.mariadb)](/python/api/azure-mgmt-rdbms/azure.mgmt.rdbms.mariadb.mariadbmanagementclient)
 
 ## <a name="4-run-the-script"></a>4: Eseguire lo script
 
@@ -229,11 +231,11 @@ az group delete -n PythonAzureExample-DB-rg  --no-wait
 
 Se non è necessario mantenere le risorse di cui è stato effettuato il provisioning in questo esempio, eseguire questo comando per evitare addebiti ricorrenti nella sottoscrizione.
 
-Per eliminare un gruppo di risorse dal codice, è anche possibile usare il metodo [`ResourceManagementClient.resource_groups.delete`](/python/api/azure-mgmt-resource/azure.mgmt.resource.resources.v2019_10_01.operations.resourcegroupsoperations?view=azure-python#delete-resource-group-name--custom-headers-none--raw-false--polling-true----operation-config-).
+[!INCLUDE [resource_group_begin_delete](includes/resource-group-begin-delete.md)]
 
 ### <a name="for-reference-equivalent-azure-cli-commands"></a>Per riferimento: comandi equivalenti dell'interfaccia della riga di comando di Azure
 
-I seguenti comandi dell'interfaccia della riga di comando di Azure completano gli stessi passaggi di provisioning dello script Python. Per un database PostgreSQL, usare i comandi [`az postgres`](/cli/azure/postgres?view=azure-cli-latest); per MariaDB, usare i comandi [`az mariadb`](/cli/azure/mariadb?view=azure-cli-latest).
+I seguenti comandi dell'interfaccia della riga di comando di Azure completano gli stessi passaggi di provisioning dello script Python. Per un database PostgreSQL, usare i comandi [`az postgres`](/cli/azure/postgres); per MariaDB, usare i comandi [`az mariadb`](/cli/azure/mariadb).
 
 # <a name="cmd"></a>[cmd](#tab/cmd)
 

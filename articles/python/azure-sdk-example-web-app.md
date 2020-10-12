@@ -1,21 +1,21 @@
 ---
 title: Effettuare il provisioning e la distribuzione di un'app Web con le librerie di Azure SDK
 description: Usare le librerie di gestione di Azure SDK per Python per effettuare il provisioning di un'app Web e quindi distribuirne il codice da un repository GitHub.
-ms.date: 05/29/2020
+ms.date: 10/05/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 03a2f8b8f8830916243db0778d16650da1892b04
-ms.sourcegitcommit: b03cb337db8a35e6e62b063c347891e44a8a5a13
+ms.openlocfilehash: 7aa51af92480b0148600786bcb329902aecb44bd
+ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/23/2020
-ms.locfileid: "91110465"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91764765"
 ---
 # <a name="example-use-the-azure-libraries-to-provision-and-deploy-a-web-app"></a>Esempio: Usare le librerie di Azure per il provisioning e la distribuzione di un'app Web
 
 Questo esempio illustra come usare le librerie di gestione di Azure SDK in uno script Python per effettuare il provisioning di un'app Web nel servizio app Azure e distribuirne il codice da un repository GitHub. I [comandi equivalenti dell'interfaccia della riga di comando di Azure](#for-reference-equivalent-azure-cli-commands) vengono descritti più avanti in questo articolo.
 
-Tutti i comandi di questo articolo funzionano allo stesso modo nella shell Bash Linux/Mac OS e nella shell dei comandi di Windows, se non diversamente specificato.
+Se non diversamente specificato, tutti i comandi di questo articolo funzionano allo stesso modo nella shell Bash Linux/macOS e nella shell dei comandi di Windows.
 
 ## <a name="1-set-up-your-local-development-environment"></a>1: Configurare un ambiente di sviluppo locale
 
@@ -28,10 +28,12 @@ Assicurarsi di creare un'entità servizio per lo sviluppo locale e di creare e a
 Creare un file denominato *requirements.txt* con il contenuto seguente:
 
 ```text
-azure-mgmt-resource
+azure-mgmt-resource==10.2.0
 azure-mgmt-web
 azure-cli-core
 ```
+
+Il requisito relativo alla versione specifica per azure-mgmt-resource assicura che verrà usata una versione compatibile con la versione corrente di azure-mgmt-web. Queste versioni non sono basate su azure.core e quindi usano metodi meno recenti per l'autenticazione.
 
 In un terminale o da un prompt dei comandi con l'ambiente virtuale attivato, installare i requisiti:
 
@@ -144,7 +146,7 @@ print(f"Provisioned web app {web_app_result.name} at {web_app_result.default_hos
 #
 # You can call this method again to change the repo.
 
-REPO_URL = 'https://github.com/<your_fork>/python-docs-hello-world'
+REPO_URL = os.environ[REPO_URL]
 
 poller = app_service_client.web_apps.create_or_update_source_control(RESOURCE_GROUP_NAME,
     WEB_APP_NAME,
@@ -166,8 +168,8 @@ Per usare tale codice in uno script di produzione, è preferibile usare invece `
 
 ### <a name="reference-links-for-classes-used-in-the-code"></a>Collegamenti di riferimento per le classi usate nel codice
 
-- [ResourceManagementClient (azure.mgmt.resource)](/python/api/azure-mgmt-resource/azure.mgmt.resource.resourcemanagementclient?view=azure-python)
-- [WebSiteManagementClient (azure.mgmt.web import)](/python/api/azure-mgmt-web/azure.mgmt.web.websitemanagementclient?view=azure-python)
+- [ResourceManagementClient (azure.mgmt.resource)](/python/api/azure-mgmt-resource/azure.mgmt.resource.resourcemanagementclient)
+- [WebSiteManagementClient (azure.mgmt.web import)](/python/api/azure-mgmt-web/azure.mgmt.web.websitemanagementclient)
 
 ## <a name="5-run-the-script"></a>5: Eseguire lo script
 
@@ -197,7 +199,7 @@ az group delete -n PythonAzureExample-WebApp-rg --no-wait
 
 Se non è necessario mantenere le risorse di cui è stato effettuato il provisioning in questo esempio, eseguire questo comando per evitare addebiti ricorrenti nella sottoscrizione.
 
-Per eliminare un gruppo di risorse dal codice, è anche possibile usare il metodo [`ResourceManagementClient.resource_groups.delete`](/python/api/azure-mgmt-resource/azure.mgmt.resource.resources.v2019_10_01.operations.resourcegroupsoperations?view=azure-python#delete-resource-group-name--custom-headers-none--raw-false--polling-true----operation-config-).
+Per eliminare un gruppo di risorse dal codice, è anche possibile usare il metodo [`ResourceManagementClient.resource_groups.delete`](/python/api/azure-mgmt-resource/azure.mgmt.resource.resources.v2019_10_01.operations.resourcegroupsoperations#delete-resource-group-name--custom-headers-none--raw-false--polling-true----operation-config-).
 
 ### <a name="for-reference-equivalent-azure-cli-commands"></a>Per riferimento: comandi equivalenti dell'interfaccia della riga di comando di Azure
 
@@ -217,7 +219,7 @@ rem You can use --deployment-source-url with the first create command. It's show
 rem to match the sequence of the Python code.
 
 az webapp create -n PythonAzureExample-WebApp-12345 --plan PythonAzureExample-WebApp-plan ^
-    --deployment-source-url https://github.com/<your_fork>/python-docs-hello-world
+    --deployment-source-url %REPO_URL% --runtime "python|3.8"
 
 rem Replace <your_fork> with the specific URL of your forked repository.
 ```

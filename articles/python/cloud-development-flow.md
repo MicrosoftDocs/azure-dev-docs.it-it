@@ -1,15 +1,15 @@
 ---
 title: Flusso di sviluppo di Azure
 description: Panoramica del ciclo di sviluppo per il cloud in Azure, che include provisioning, scrittura di codice, test, distribuzione e gestione.
-ms.date: 06/04/2020
+ms.date: 10/06/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 1f3ba98815f572dc6efe6ea0c4195142e204478e
-ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
+ms.openlocfilehash: 149bf0c56de95d2f1230e2bc527c64da780bd5ad
+ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87983233"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91764775"
 ---
 # <a name="the-azure-development-flow-provision-code-test-deploy-and-manage"></a>Flusso di sviluppo di Azure: effettuare il provisioning, scrivere codice, testare, distribuire e gestire
 
@@ -31,17 +31,19 @@ Come descritto nell'[articolo precedente di questa serie](cloud-development-prov
 
 Il provisioning inizia con la creazione di un gruppo di risorse in un'area di Azure appropriata. È possibile creare un gruppo di risorse tramite il portale di Azure o l'interfaccia della riga di comando di Azure oppure con uno script personalizzato che usa le librerie di Azure (o API REST).
 
-All'interno di tale gruppo di risorse, è quindi possibile effettuare il provisioning e la configurazione delle singole risorse necessarie, sempre usando il portale, l'interfaccia della riga di comando o le librerie di Azure. La configurazione include l'impostazione di criteri di accesso che controllano quali identità (entità servizio e/o ID applicazione) sono in grado di accedere a tali risorse.
+All'interno di tale gruppo di risorse, è quindi possibile effettuare il provisioning e la configurazione delle singole risorse necessarie, sempre usando il portale, l'interfaccia della riga di comando o le librerie di Azure. Anche in questo caso, vedere la [guida per sviluppatori di Azure](/azure/guides/developer/azure-developer-guide) per una panoramica dei tipi di risorsa disponibili.
 
-Per la maggior parte degli scenari relativi alle applicazioni, è probabile che si creino script di provisioning con l'interfaccia della riga di comando di Azure e/o con codice Python usando le librerie di Azure. Tali script descrivono la totalità delle esigenze dell'applicazione in termini di risorse. Uno script consente di ricreare facilmente lo stesso set di risorse all'interno di ambienti di sviluppo, test, staging e produzione diversi, anziché eseguire manualmente numerosi passaggi ripetuti nel portale di Azure. Gli script facilitano inoltre il provisioning di un ambiente in un'area diversa o l'uso di gruppi di risorse diversi. È anche possibile gestire questi script nei repository del controllo del codice sorgente, in modo da avere il controllo completo e la cronologia delle modifiche.
+La configurazione include l'impostazione di criteri di accesso che controllano quali identità (entità servizio e/o ID applicazione) sono in grado di accedere a tali risorse. I criteri di accesso vengono generalmente gestiti tramite il [controllo degli accessi in base al ruolo](/azure/role-based-access-control/overview). Alcuni servizi includono anche controlli di accesso più specifici. Gli sviluppatori di cloud che usano Azure devono acquisire familiarità con il controllo degli accessi in base al ruolo perché si tratta di una funzionalità usata in pratica con tutte le risorse con problemi di sicurezza.
+
+Per la maggior parte degli scenari relativi alle applicazioni, si creano in genere script di provisioning con l'interfaccia della riga di comando di Azure e/o con codice Python usando le librerie di Azure. Tali script descrivono la totalità delle esigenze dell'applicazione in termini di risorse, definendo essenzialmente il computer cloud personalizzato in cui si intende distribuire l'applicazione. Uno script consente di ricreare facilmente lo stesso set di risorse all'interno di ambienti di sviluppo, test, staging e produzione diversi, anziché eseguire manualmente numerosi passaggi ripetuti nel portale di Azure. Gli script facilitano inoltre il provisioning di un ambiente in un'area diversa o l'uso di gruppi di risorse diversi. Se si gestiscono questi script anche nei repository del controllo del codice sorgente, si potrà avere controllo completo e accedere alla cronologia delle modifiche.
 
 ## <a name="step-2-write-your-app-code-to-use-resources"></a>Passaggio 2: Scrivere il codice dell'app per usare le risorse
 
-Una volta effettuato il provisioning delle risorse necessarie per l'applicazione, scrivere il codice per usare queste risorse, ad eccezione di quelle in cui si distribuisce il codice stesso.
+Dopo aver effettuato il provisioning delle risorse necessarie per l'applicazione, scrivere il codice dell'applicazione per gestire tutti gli aspetti della fase di esecuzione di tali risorse.
 
-Nel passaggio di provisioning, ad esempio, è possibile che sia stato creato un account di archiviazione di Azure con un contenitore BLOB al suo interno e che siano stati impostati i criteri di accesso per l'applicazione in tale contenitore. Dal codice è ora possibile eseguire l'autenticazione con l'account di archiviazione e quindi creare, aggiornare o eliminare BLOB all'interno del contenitore. Questo processo è illustrato in [Esempio - Usare Archiviazione di Azure](azure-sdk-example-storage.md). Analogamente, è possibile che sia stato effettuato il provisioning di un database con uno schema e le autorizzazioni appropriate, per cui il codice dell'applicazione può connettersi al database ed eseguire le consuete operazioni di creazione, lettura, aggiornamento ed eliminazione.
+Nel passaggio di provisioning, ad esempio, è possibile che sia stato creato un account di archiviazione di Azure con un contenitore BLOB al suo interno e che siano stati impostati i criteri di accesso per l'applicazione in tale contenitore. Questo processo di provisioning viene illustrato in [Esempio - Effettuare il provisioning di Archiviazione di Azure](azure-sdk-example-storage.md). Dal codice è possibile eseguire l'autenticazione con l'account di archiviazione e quindi creare, aggiornare o eliminare BLOB all'interno del contenitore. Questo processo della fase di esecuzione è illustrato in [Esempio - Usare Archiviazione di Azure](azure-sdk-example-storage.md). Analogamente, è possibile che sia stato effettuato il provisioning di un database con uno schema e le autorizzazioni appropriate (come illustrato in [Esempio - Effettuare il provisioning di un database](azure-sdk-example-database.md)), per cui il codice dell'applicazione può connettersi al database ed eseguire le consuete query di creazione, lettura, aggiornamento ed eliminazione.
 
-Il codice dell'app usa in genere le variabili di ambiente per identificare i nomi e gli URL delle risorse da usare. Le variabili di ambiente consentono di passare facilmente tra gli ambienti cloud (sviluppo, test, staging e produzione) senza apportare modifiche al codice.
+Il codice dell'app usa in genere le variabili di ambiente per identificare i nomi e gli URL delle risorse da usare. Le variabili di ambiente consentono di passare facilmente tra gli ambienti cloud (sviluppo, test, staging e produzione) senza apportare modifiche al codice. I vari servizi di Azure che ospitano il codice dell'applicazione consentono di definire le variabili necessarie. Ad esempio, in Servizio app di Azure (per ospitare le app Web) e Funzioni di Azure (host serverless di Azure) le *impostazioni dell'applicazione* vengono definite tramite il portale di Azure o l'interfaccia della riga di comando di Azure, che quindi vengono visualizzate nel codice come variabili di ambiente.
 
 Gli sviluppatori Python scrivono in genere il codice dell'applicazione in Python usando le librerie di Azure per Python. Detto questo, qualsiasi parte indipendente di un'applicazione cloud può essere scritta in qualsiasi linguaggio supportato. Se si lavora in un team con varie competenze a livello di linguaggio, ad esempio, è possibile che alcune parti dell'applicazione vengano scritte in Python, altre in JavaScript, altre in Java e altre ancora in C#.
 

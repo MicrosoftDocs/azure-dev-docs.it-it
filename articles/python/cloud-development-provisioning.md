@@ -1,21 +1,21 @@
 ---
 title: Provisioning, accesso e gestione delle risorse in Azure
 description: Panoramica dei metodi usati per usare le risorse di Azure, tra cui il portale di Azure, l'interfaccia della riga di comando di Azure e le librerie di Azure (SDK).
-ms.date: 05/27/2020
+ms.date: 10/06/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 457970eb359be9f10c6269e1ea98efec76612009
-ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
+ms.openlocfilehash: 0dd8de6c1d42ecbb77f34f48034cc9e4c43cd9e3
+ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87983213"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91764725"
 ---
 # <a name="provisioning-accessing-and-managing-resources-on-azure"></a>Provisioning, accesso e gestione delle risorse in Azure
 
 [Articolo precedente: Panoramica](cloud-development-overview.md)
 
-Come descritto nell'articolo precedente di questa serie, una parte essenziale dello sviluppo di un'applicazione cloud consiste nell'effettuare il provisioning delle risorse necessarie in Azure, in cui sarà quindi possibile distribuire il codice e i dati.
+Come descritto nell'articolo precedente di questa serie, una parte essenziale dello sviluppo di un'applicazione cloud consiste nell'effettuare il provisioning delle risorse necessarie in Azure, in cui sarà quindi possibile distribuire il codice e i dati. La creazione di un'applicazione cloud inizia con la creazione di quello che è essenzialmente il computer cloud di destinazione in cui distribuire l'applicazione. Per esaminare i tipi di risorse disponibili, vedere la [guida per sviluppatori di Azure](/azure/guides/developer/azure-developer-guide).
 
 In che modo viene effettuato il provisioning? Come si chiede ad Azure di allocare le risorse per l'applicazione e come si configurano le risorse e si accede ad esse? In breve, come si comunica ad Azure di predisporre tutte queste risorse?
 
@@ -38,11 +38,11 @@ Il [portale di Azure](https://portal.azure.com) è l'interfaccia utente basata s
 
 **Vantaggi**: l'interfaccia utente permette di esplorare facilmente i servizi e tutte le relative opzioni di configurazione. L'impostazione dei valori di configurazione è sicura perché le informazioni non vengono archiviate nella workstation locale.
 
-**Svantaggi**: l'uso del portale è un processo manuale e non può essere automatizzato. Per ricordare le operazioni eseguite per modificare una configurazione, ad esempio, è necessario prendere nota dei passaggi in un documento separato.
+**Svantaggi**: l'uso del portale è un processo manuale e non può essere automatizzato facilmente. Per ricordare le operazioni eseguite per modificare una configurazione, ad esempio, è in genere necessario prendere nota dei passaggi in un documento separato.
 
 ## <a name="azure-cli"></a>Interfaccia della riga di comando di Azure
 
-L'[interfaccia della riga di comando di Azure](/cli/azure/?view=azure-cli-latest) è l'interfaccia della riga di comando [open source](https://github.com/Azure/azure-cli) di Azure. Dopo aver eseguito l'accesso all'interfaccia della riga di comando (con il comando `az login`), è possibile eseguire le stesse attività eseguibili tramite il portale.
+L'[interfaccia della riga di comando di Azure](/cli/azure/) è l'interfaccia della riga di comando [open source](https://github.com/Azure/azure-cli) di Azure. Dopo aver eseguito l'accesso all'interfaccia della riga di comando (con il comando `az login`), è possibile eseguire le stesse attività eseguibili tramite il portale.
   
 **Vantaggi**: consente una facile automazione tramite script ed elaborazione dell'output. Offre comandi di livello superiore per effettuare il provisioning di più risorse contemporaneamente per attività comuni, ad esempio per la distribuzione di un'app Web. Gli script possono essere gestiti nel controllo del codice sorgente.
 
@@ -50,15 +50,17 @@ L'[interfaccia della riga di comando di Azure](/cli/azure/?view=azure-cli-latest
 
 In sostituzione dell'interfaccia della riga di comando di Azure, è anche possibile usare [Azure PowerShell](/powershell/), anche se gli sviluppatori di Python siano più a proprio agio con i comandi tipo Linux dell'interfaccia della riga di comando di Azure.
 
-In sostituzione dell'interfaccia della riga di comando locale o di PowerShell, è possibile usare Azure Cloud Shell direttamente tramite [https://shell.azure.com/](https://shell.azure.com/). È una soluzione pratica in quanto questo servizio viene autenticato automaticamente con Azure all'apertura e offre le stesse funzionalità del portale di Azure. Tuttavia, dal momento che Cloud Shell non è un ambiente locale, è più adatto per operazioni singolari per le quali si userebbe il portale piuttosto che l'automazione tramite script.
+In sostituzione dell'interfaccia della riga di comando locale o di PowerShell, è possibile usare Azure Cloud Shell direttamente tramite [https://shell.azure.com/](https://shell.azure.com/). È una soluzione pratica in quanto questo servizio viene autenticato automaticamente con Azure all'apertura e offre le stesse funzionalità del portale di Azure. Cloud Shell è preconfigurato con numerosi strumenti che risultano scomodi da installare in locale, in particolare se è necessario eseguire solo uno o due comandi.
+
+Dal momento che Cloud Shell non è un ambiente locale, è più adatto per singole operazioni per le quali si userebbe il portale invece dell'automazione tramite script. È tuttavia possibile clonare i repository di origine, ad esempio quelli GitHub, in Cloud Shell e di conseguenza sviluppare script di automazione in locale, archiviarli in un repository, clonare il repository in Cloud Shell e quindi eseguirli da tale posizione.
 
 ## <a name="azure-rest-api-and-azure-libraries"></a>API REST di Azure e librerie di Azure
 
-L'[API REST di Azure](/rest/api/?view=Azure) è l'interfaccia a livello di codice di Azure, fornita tramite REST sicuro su HTTP perché i data center di Azure sono tutti intrinsecamente connessi a Internet. A ogni risorsa viene assegnato un URL univoco che supporta un'API specifica della risorsa, soggetta a rigorosi protocolli di autenticazione e criteri di accesso. Il funzionamento del portale di Azure e dell'interfaccia della riga di comando di Azure si basa, in realtà, proprio sull'API REST.
+L'[API REST di Azure](/rest/api/?view=Azure&preserve-view=true) è l'interfaccia a livello di codice di Azure, fornita tramite REST sicuro su HTTP perché i data center di Azure sono tutti intrinsecamente connessi a Internet. A ogni risorsa viene assegnato un URL univoco che supporta un'API specifica della risorsa, soggetta a rigorosi protocolli di autenticazione e criteri di accesso. Il funzionamento del portale di Azure e dell'interfaccia della riga di comando di Azure si basa, in realtà, proprio sull'API REST.
 
-Per gli sviluppatori, le librerie di Azure includono librerie specifiche del linguaggio che convertono le funzionalità dell'API REST in paradigmi di programmazione molto più pratici, come classi e oggetti. Per Python, si installano sempre singole librerie con `pip install` invece di installare l'intero SDK. Per altri linguaggi, vedere i [download di Azure SDK](https://azure.microsoft.com/downloads/).
+Per gli sviluppatori, le librerie di Azure (note anche come SDK di Azure) includono librerie specifiche del linguaggio che convertono le funzionalità dell'API REST in paradigmi di programmazione molto più pratici, come classi e oggetti. Per Python, si installano sempre singole librerie con `pip install` invece di installare l'intero SDK. Per altri linguaggi, vedere i [download di Azure SDK](https://azure.microsoft.com/downloads/).
 
-**Vantaggi**: controllo accurato su tutte le operazioni, incluso un mezzo molto più diretto per usare l'output di un'operazione come input di un'altra. Per gli sviluppatori Python, consente di lavorare all'interno di paradigmi di linguaggio noti invece di usare l'interfaccia della riga di comando. Può essere usato anche dal codice dell'applicazione per automatizzare scenari di gestione.
+**Vantaggi**: controllo accurato su tutte le operazioni, incluso un mezzo molto più diretto per usare l'output di un'operazione come input di un'altra rispetto all'interfaccia della riga di comando di Azure. Per gli sviluppatori Python, consente di lavorare all'interno di paradigmi di linguaggio noti invece di usare l'interfaccia della riga di comando. Può essere usato anche dal codice dell'applicazione per automatizzare scenari di gestione dettagliati.
   
 **Svantaggi**: le operazioni che possono essere eseguite con un comando dell'interfaccia della riga di comando richiedono in genere più righe di codice, tutte soggette a bug. Non offre operazioni di livello superiore come l'interfaccia della riga di comando di Azure.
 
