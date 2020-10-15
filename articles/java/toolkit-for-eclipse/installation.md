@@ -8,12 +8,12 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: 27793d827b60a5977968529377b20c7033170ffe
-ms.sourcegitcommit: a139e25190960ba89c9e31f861f0996a6067cd6c
+ms.openlocfilehash: be90cbf867cfbbb475e1a80655d2ef925069b90a
+ms.sourcegitcommit: f460914ac5843eb7392869a08e3a80af68ab227b
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90534664"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "92010206"
 ---
 # <a name="installing-the-azure-toolkit-for-eclipse"></a>Installare il Toolkit di Azure per Eclipse.
 
@@ -48,8 +48,7 @@ La procedura guidata di Eclipse Marketplace disponibile nell'IDE di Eclipse cons
    |---|---| 
    | **Plug-in di Application Insights per Java** | Consente di usare servizi di analisi e di registrazione dei dati di telemetria di Azure per le applicazioni e le istanze del server. | 
    | **Plug-in Azure Common** | Offre le funzionalità comuni necessarie per gli altri componenti del toolkit. | 
-   | **Azure Container Tools for Eclipse** | Consente di compilare e distribuire un file WAR come contenitore Docker in un computer Docker. | 
-   | **Azure Containers for Eclipse** | Consente di distribuire un file WAR o un elemento JAR come contenitore Docker in una macchina virtuale di Azure. | 
+   | **Azure Container Tools for Eclipse** | Consente di compilare e distribuire un file WAR come contenitore Docker in un computer Docker. |
    | **Azure Explorer per Eclipse** | Offre un'interfaccia di tipo Esplora risorse per la gestione delle risorse di Azure. | 
    | **Plug-in Azure HDInsight per Java** | Abilita lo sviluppo di applicazioni Apache Spark in Scala. |
    | **Microsoft JDBC Driver 6.1 per SQL Server** | Fornisce l'API JDBC per SQL Server e il database SQL di Microsoft Azure per Java Platform Enterprise Edition 8. | 
@@ -69,7 +68,7 @@ La procedura guidata di Eclipse Marketplace disponibile nell'IDE di Eclipse cons
 
 1. Fare clic sul menu **Help** (?) e quindi scegliere **Install New Software** (Installa nuovo software).
 
-   :::image type="content" source="media/installation/eclipse-install-software-button.png" alt-text="Opzione Install new software, menu Help."::: 
+   :::image type="content" source="media/installation/eclipse-install-software-button.png" alt-text="Finestra del Marketplace, menu della Guida."::: 
 
 1. Nella finestra di dialogo **Available Software** (Software disponibile) digitare `http://dl.microsoft.com/eclipse/` nella casella di testo **Work with** (Compatibile con).
 
@@ -83,8 +82,7 @@ La procedura guidata di Eclipse Marketplace disponibile nell'IDE di Eclipse cons
    |---|---| 
    | **Plug-in di Application Insights per Java** | Consente di usare servizi di analisi e di registrazione dei dati di telemetria di Azure per le applicazioni e le istanze del server. | 
    | **Plug-in Azure Common** | Offre le funzionalità comuni necessarie per gli altri componenti del toolkit. | 
-   | **Azure Container Tools for Eclipse** | Consente di compilare e distribuire un file WAR come contenitore Docker in un computer Docker. | 
-   | **Azure Containers for Eclipse** | Consente di distribuire un file WAR o un elemento JAR come contenitore Docker in una macchina virtuale di Azure. | 
+   | **Azure Container Tools for Eclipse** | Consente di compilare e distribuire un file WAR come contenitore Docker in un computer Docker. |
    | **Azure Explorer per Eclipse** | Offre un'interfaccia di tipo Esplora risorse per la gestione delle risorse di Azure. | 
    | **Plug-in Azure HDInsight per Java** | Abilita lo sviluppo di applicazioni Apache Spark in Scala. |
    | **Microsoft JDBC Driver 6.1 per SQL Server** | Fornisce l'API JDBC per SQL Server e il database SQL di Microsoft Azure per Java Platform Enterprise Edition 8. | 

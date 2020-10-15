@@ -4,12 +4,12 @@ description: Passaggio 5 dell'esercitazione, distribuzione del codice di funzion
 ms.topic: conceptual
 ms.date: 09/17/2020
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: 8acf168ecc858410677b8f55b7b84ed14416c005
-ms.sourcegitcommit: 69933dcce571b2686897b295b7822e207d944617
+ms.openlocfilehash: e0a1e47d6e01a17043f002b819231b629b7bfa32
+ms.sourcegitcommit: 723441eda0eb4ff893123201a9e029b7becf5ecc
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/18/2020
-ms.locfileid: "90772864"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91846762"
 ---
 # <a name="5-deploy-azure-functions-in-python"></a>5: Distribuire Funzioni di Azure in Python
 
@@ -76,4 +76,3 @@ Per applicare le modifiche apportate tramite il portale o tramite **Azure Explor
 
 > [!div class="nextstepaction"]
 > [Le funzioni sono state distribuite: procedere con il passaggio 6 >>>](tutorial-vs-code-serverless-python-06.md)
-

@@ -4,12 +4,12 @@ description: Passaggio 2 dell'esercitazione, configurare l'applicazione
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: 36e2c57f556718a0c2d83de90995ce52602a34ad
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: 464807b8a4e637db7a0911d23770246dfc7fb0ae
+ms.sourcegitcommit: 723441eda0eb4ff893123201a9e029b7becf5ecc
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90832027"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91846692"
 ---
 # <a name="2-prepare-your-app-for-deployment-to-azure-app-service"></a>2: Preparare l'app per la distribuzione nel Servizio app di Azure
 
@@ -62,15 +62,15 @@ Questa sezione descrive l'app Flask minima usata in questa procedura dettagliata
 
     ```bash
     sudo apt-get install python3-venv    # If needed
-    python3 -m venv env
-    source env/bin/activate
+    python3 -m venv .venv
+    source .venv/bin/activate
     ```
 
     # <a name="windows"></a>[Windows](#tab/windows)
 
     ```cmd
-    python -m venv env
-    env\scripts\activate
+    py -3 -m venv .venv
+    .venv\scripts\activate
     ```
 
     ---

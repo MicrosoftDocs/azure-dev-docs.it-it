@@ -4,12 +4,12 @@ description: Come configurare un ambiente di sviluppo Python locale per l'uso co
 ms.date: 05/29/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 14955bc63ab44884254e2304b0e5ceb97e7bcb0d
-ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
+ms.openlocfilehash: e3ddedf44c339aaf4f30933d99d5b27052f1aea3
+ms.sourcegitcommit: 723441eda0eb4ff893123201a9e029b7becf5ecc
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91764811"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91846752"
 ---
 # <a name="configure-your-local-python-dev-environment-for-azure"></a>Configurare l'ambiente di sviluppo Python locale per Azure
 
@@ -193,13 +193,15 @@ Per ogni progetto, è consigliabile creare e attivare sempre un *ambiente virtua
     # <a name="cmd"></a>[cmd](#tab/cmd)
 
     ```bash
-    python -m venv .venv
+    # py -3 uses the global python interpreter. You can also use python -m venv .venv.
+    py -3 -m venv .venv
     ```
 
     # <a name="bash"></a>[Bash](#tab/bash)
 
     ```bash
-    python -m venv .venv
+    # On Windows, use py -3 -m venv .venv
+    python3 -m venv .venv
     ```
 
     ---

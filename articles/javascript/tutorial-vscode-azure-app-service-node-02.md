@@ -4,12 +4,12 @@ description: Parte 2 dell'esercitazione su Node.js, creare l'app Node.js ed eseg
 ms.topic: tutorial
 ms.date: 03/04/2020
 ms.custom: devx-track-js
-ms.openlocfilehash: 7d627d97987ed41f90972362ab38d436a6157d33
-ms.sourcegitcommit: 4dd392ea864be52421d0239e59198bc44b0a5a16
+ms.openlocfilehash: aceeb9016e098cc707f176e3d767cf7bf72a35a2
+ms.sourcegitcommit: 723441eda0eb4ff893123201a9e029b7becf5ecc
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91365244"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91846702"
 ---
 # <a name="create-and-run-a-local-nodejs-app"></a>Creare ed eseguire un'app Node.js in locale
 
@@ -22,7 +22,7 @@ In questo passaggio viene creata una semplice app Node.js con il generatore di a
 1. Eseguire il comando seguente per creare una nuova app Express denominata *expressApp1* usando il generatore Express. I parametri `--view pug --git` indicano al generatore di usare il motore di modelli [pug](https://pugjs.org/api/getting-started.html), noto in precedenza come Jade, e creare un file con estensione *gitignore*.
 
     ```bash
-    npx express-generator expressApp1 --view pug -–git
+    npx express-generator expressApp1 -–git --view pug 
     ```
 
 1. Passare alla cartella dell'app:

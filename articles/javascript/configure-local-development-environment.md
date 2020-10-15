@@ -4,12 +4,12 @@ description: Informazioni su come configurare un ambiente di sviluppo JavaScript
 ms.date: 09/30/2020
 ms.topic: conceptual
 ms.custom: devx-track-js, azure-sdk-ai-text-analytics-5.0.0
-ms.openlocfilehash: baf9634395d4e0ad7225abb9bebddfa1aa14fe6d
-ms.sourcegitcommit: 8fcb6c2d17be63064090f801f46c9c754821f979
+ms.openlocfilehash: d7f179898c974b1eaf00916bde6ce9df107e0083
+ms.sourcegitcommit: 723441eda0eb4ff893123201a9e029b7becf5ecc
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "91805942"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91846712"
 ---
 # <a name="configure-your-local-javascript-dev-environment-for-azure"></a>Configurare l'ambiente di sviluppo JavaScript locale per Azure
 
@@ -36,7 +36,7 @@ Per sviluppare usando una risorsa di Azure con JavaScript nella workstation loca
 |[Node.js](https://www.npmjs.com/)|Installare l'ambiente di runtime LTS (Long-Term Support) più recente per lo sviluppo in workstation locali. |
 | npm (installato con le versioni moderne di Node.js) o [Yarn](https://yarnpkg.com/)|Gestione pacchetti per installare le librerie di Azure SDK.|
 |[Visual Studio Code](https://code.visualstudio.com/)| Visual Studio Code offre un'ottima esperienza di integrazione e scrittura di codice per JavaScript, ma non è obbligatorio. È infatti possibile usare qualsiasi editor di codice. Se per questo documento si usa un editor diverso, verificare l'integrazione con Azure o usare l'interfaccia della riga di comando di Azure.|
-|[Interfaccia della riga di comando di Azure](https://docs.microsoft.com/cli/azure/get-started-with-azure-cli?view=azure-cli-latest)|È possibile usare l'interfaccia della riga di comando di Azure per ricreare e gestire le risorse di Azure da una riga di comando, un terminale o una shell bash.|
+|[Interfaccia della riga di comando di Azure](/cli/azure/get-started-with-azure-cli?view=azure-cli-latest)|È possibile usare l'interfaccia della riga di comando di Azure per ricreare e gestire le risorse di Azure da una riga di comando, un terminale o una shell bash.|
 
 > [!CAUTION]
 > Se si prevede di usare una risorsa di Azure come ambiente di runtime per il codice, ad esempio un'app Web di Azure o un'istanza di contenitore di Azure, è opportuno verificare che l'ambiente di sviluppo Node.js locale corrisponda al runtime della risorsa di Azure che si intende usare.
