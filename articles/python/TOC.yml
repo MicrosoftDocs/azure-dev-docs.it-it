@@ -136,6 +136,8 @@
       items:
         - name: Effettuare il provisioning di un gruppo di risorse
           href: azure-sdk-example-resource-group.md
+        - name: Elencare gruppi e risorse
+          href: azure-sdk-example-list-resource-groups.md
         - name: Effettuare il provisioning dell'archiviazione di Azure
           href: azure-sdk-example-storage.md
         - name: Usare l'archiviazione di Azure
