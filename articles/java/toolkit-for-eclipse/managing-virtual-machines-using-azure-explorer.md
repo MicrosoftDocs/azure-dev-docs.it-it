@@ -7,12 +7,12 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: e457d4fe152f9fa5fa64bafaa4f49311e8ff4475
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: 82dce0ada2824a00e75e9bb00d8943458e09e44f
+ms.sourcegitcommit: f460914ac5843eb7392869a08e3a80af68ab227b
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831887"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "92010172"
 ---
 # <a name="manage-virtual-machines-by-using-the-azure-explorer-for-eclipse"></a>Gestire macchine virtuali con Azure Explorer per Eclipse
 
@@ -103,7 +103,7 @@ Per eliminare una macchina virtuale con Azure Explorer in Eclipse, eseguire ques
 
 1. Nella visualizzazione **Azure Explorer** fare clic con il pulsante destro del mouse sulla macchina virtuale e quindi selezionare **Elimina**.
 
-1. Nella finestra di conferma fare clic su **Sì**.
+1. Nella finestra di conferma fare clic su **OK**.
 
    ![Finestra di conferma dell'eliminazione della macchina virtuale](media/managing-virtual-machines-using-azure-explorer/DE02.png)
 

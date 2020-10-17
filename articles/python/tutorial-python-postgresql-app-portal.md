@@ -3,14 +3,14 @@ title: "Esercitazione: Distribuire un'app Django con PostgreSQL tramite il porta
 description: Effettuare il provisioning di un'app Web e di un database PostgreSQL in Azure e distribuire il codice dell'app da GitHub.
 ms.devlang: python
 ms.topic: tutorial
-ms.date: 09/23/2020
+ms.date: 10/09/2020
 ms.custom: devx-track-python
-ms.openlocfilehash: 7f363c3e82873e82630cf477ea469627aa528a4e
-ms.sourcegitcommit: b03cb337db8a35e6e62b063c347891e44a8a5a13
+ms.openlocfilehash: 77cb35d31f80b52d1e79c2650c79635dc039e72d
+ms.sourcegitcommit: d5dabc6dde727ed167a9dc8a4eaaf21025b3efa8
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/23/2020
-ms.locfileid: "91110531"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91947536"
 ---
 # <a name="tutorial-deploy-a-django-web-app-with-postgresql-using-the-azure-portal"></a>Esercitazione: Distribuire un'app Web Django con PostgreSQL tramite il portale di Azure
 
@@ -57,7 +57,7 @@ In un browser passare a [https://github.com/Azure-Samples/djangoapp](https://git
     | --- | --- |
     | Subscription | Selezionare la sottoscrizione da usare, se diversa da quella predefinita. |
     | Resource group | Selezionare **Crea nuovo** e immettere "DjangoPostgres-Tutorial-rg". |
-    | Nome app | Un nome per l'app Web univoco in tutto Azure. L'URL dell'app è `https://\<app-name>.azurewebsites.net`. I caratteri consentiti sono `A`-`Z`, `0`-`9` e `-`. Un criterio valido consiste nell'usare una combinazione del nome della società e di un identificatore dell'app. |
+    | Nome app | Un nome per l'app Web univoco in tutto Azure. L'URL dell'app è `https://<app-name>.azurewebsites.net`. I caratteri consentiti sono `A`-`Z`, `0`-`9` e `-`. Un criterio valido consiste nell'usare una combinazione del nome della società e di un identificatore dell'app. |
     | Pubblica | Selezionare **Codice**. |
     | Stack di runtime | Selezionare **Python 3.8** nell'elenco a discesa. |
     | Region | Selezionare una località nelle vicinanze. |
@@ -86,7 +86,7 @@ In un browser passare a [https://github.com/Azure-Samples/djangoapp](https://git
     | --- | --- |
     | Subscription | Selezionare la sottoscrizione da usare, se diversa da quella predefinita. |
     | Resource group | Selezionare il gruppo "DjangoPostgres-Tutorial-rg" creato nella sezione precedente. |
-    | Nome server | Un nome per il server di database univoco in tutto Azure. L'URL dell'app è `https://\<server-name>.postgres.database.azure.com`. I caratteri consentiti sono `A`-`Z`, `0`-`9` e `-`. Un criterio valido consiste nell'usare una combinazione del nome della società e di un identificatore del server. |
+    | Nome server | Nome per il server di database univoco in tutto Azure. L'URL del server di database diventa `https://<server-name>.postgres.database.azure.com`. I caratteri consentiti sono `A`-`Z`, `0`-`9` e `-`. Un criterio valido consiste nell'usare una combinazione del nome della società e di un identificatore del server. |
     | Origine dati | **Nessuno** |
     | Location | Selezionare una località nelle vicinanze. |
     | Versione | Mantenere il valore predefinito, ovvero l'ultima versione. |
@@ -119,7 +119,7 @@ In questa sezione ci si connette al server di database in Azure Cloud Shell e si
     psql --host=<server-name>.postgres.database.azure.com --port=5432 --username=<user-name>@<server-name> --dbname=postgres
     ```
 
-    Sostituire `<server-name>` e `<user-name>` con i nomi usati nella sezione precedente durante la configurazione del server. Si noti che il valore del nome utente completo è `<user-name>@<server-name>`.
+    Sostituire `<server-name>` e `<user-name>` con i nomi usati nella sezione precedente durante la configurazione del server. Si noti che il valore del nome utente completo richiesto da Postgres è `<user-name>@<server-name>`.
 
     È possibile copiare il comando precedente e incollarlo in Cloud Shell facendo clic con il pulsante destro del mouse e quindi scegliendo **Incolla**.
 
@@ -150,9 +150,9 @@ In questa sezione vengono create le impostazioni per l'app Web necessarie per la
     | Nome impostazione | valore |
     | --- | --- |
     | DJANGO_ENV | `production` (Questo valore indica all'app di usare una configurazione di produzione, come descritto in precedenza nella [panoramica dell'esempio](#fork-the-sample-repository).) |
-    | DBHOST | L'URL del server di database della sezione precedente, nel formato `<server-name>.postgres.database.azure.com`. È possibile copiare l'intero URL dalla pagina di panoramica del server di database. |
+    | DBHOST | Nome del server di database dalla sezione precedente, ovvero la parte `<server-name>` dell'URL del server che precede `.postgres.database.azure.com`. Il codice in *azuresite/production.py* crea automaticamente l'URL completo. |
     | DBNAME | `pollsdb` |
-    | DBUSER | Il nome utente completo dell'amministratore, usato nella sezione precedente. Il nome utente completo è di nuovo `<user-name>@<server-name>`. |
+    | DBUSER | Nome utente dell'amministratore usato durante il provisioning del database. Il codice di esempio aggiunge automaticamente la parte `@<server-name>`. Vedere *azuresite/production.py*. |
     | DBPASS | La password di amministratore creata in precedenza. |
 
 1. Selezionare **Salva** quindi **Continuare** per applicare le impostazioni.

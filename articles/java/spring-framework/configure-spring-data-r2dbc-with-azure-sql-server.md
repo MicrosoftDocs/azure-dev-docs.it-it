@@ -2,18 +2,18 @@
 title: Usare Spring Data R2DBC con il database SQL di Azure
 description: Informazioni su come usare Spring Data R2DBC con un database SQL di Azure.
 documentationcenter: java
-ms.date: 04/28/2020
+ms.date: 10/10/2020
 ms.service: sql-database
 ms.tgt_pltfrm: multiple
 ms.author: judubois
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: 16945c094d9e6ecb8b837f7fa7c00482fe8a735a
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: 557480c4edf2d53cb04b3aa75ce829be3fe13760
+ms.sourcegitcommit: f460914ac5843eb7392869a08e3a80af68ab227b
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831807"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "92010000"
 ---
 # <a name="use-spring-data-r2dbc-with-azure-sql-database"></a>Usare Spring Data R2DBC con il database SQL di Azure
 
@@ -36,8 +36,11 @@ In questo articolo si scriverà il codice per un'applicazione di esempio. Per pr
 Per generare l'applicazione, immettere il comando seguente sulla riga di comando:
 
 ```bash
-curl https://start.spring.io/starter.tgz -d dependencies=webflux,data-r2dbc -d baseDir=azure-database-workshop -d bootVersion=2.3.1.RELEASE -d javaVersion=8 | tar -xzvf -
+curl https://start.spring.io/starter.tgz -d dependencies=webflux,data-r2dbc -d baseDir=azure-database-workshop -d bootVersion=2.3.4.RELEASE -d javaVersion=8 | tar -xzvf -
 ```
+
+> [!NOTE]
+> Spring Initializr usa Java 11 come versione predefinita. Per usare le utilità di avvio di Spring Boot descritte in questo argomento, è necessario selezionare invece Java 8.
 
 ### <a name="add-the-reactive-azure-sql-database-driver-implementation"></a>Aggiungere l'implementazione del driver del database SQL di Azure reattivo
 

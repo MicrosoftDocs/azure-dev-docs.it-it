@@ -9,12 +9,12 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: df71e27850a467e03ab58edf6beaf085b195803b
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: 2b6e4e6e40d5fe7904e43b36edacd14494e92b0f
+ms.sourcegitcommit: f460914ac5843eb7392869a08e3a80af68ab227b
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831977"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "92010100"
 ---
 # <a name="deploy-java-app-to-azure-web-apps-for-containers-using-azure-toolkit-for-intellij"></a>Distribuire un'app Java in app Web di Azure per contenitori tramite Azure Toolkit for IntelliJ
 
@@ -50,7 +50,7 @@ La procedura seguente illustra il processo di accesso ad Azure nell'ambiente di 
 
 1. Selezionare l'account Azure e completare le procedure di autenticazione necessarie per eseguire l'accesso.
 
-1. Dopo l'accesso, chiudere il browser e tornare all'IDE di IntelliJ. Nella finestra di dialogo **Select Subscriptions** (Seleziona sottoscrizioni) selezionare le sottoscrizioni da usare e quindi fare clic su **OK**.
+1. Dopo l'accesso, chiudere il browser e tornare all'IDE di IntelliJ. Nella finestra di dialogo **Select Subscriptions** (Seleziona sottoscrizioni) selezionare le sottoscrizioni da usare e quindi fare clic su **Select** (Seleziona).
 
 ## <a name="creating-a-new-web-app-project"></a>Creazione di un nuovo progetto di app Web
 
@@ -58,7 +58,7 @@ La procedura seguente illustra il processo di accesso ad Azure nell'ambiente di 
 
 1. Nella finestra di dialogo **New Project** (Nuovo progetto) selezionare **Maven** e assicurarsi che l'opzione **Create from Archetype** (Crea da archetipo) sia selezionata. Nell'elenco selezionare **maven-archetype-webapp** e quindi fare clic su **Next** (Avanti).
 
-   :::image type="content" source="media/create-hello-world-web-app/maven-archetype-webapp.png" alt-text="Selezionare l'opzione maven-archetype-webapp."::: 
+   :::image type="content" source="media/create-hello-world-web-app/maven-archetype-webapp.png" alt-text="Accesso ad Azure in IntelliJ."::: 
 
 1. Espandere l'elenco a discesa **Artifact Coordinates** (Coordinate artefatto) per visualizzare tutti i campi di input, specificare le informazioni seguenti per la nuova app Web e fare clic su **Next** (Avanti):
 
@@ -68,7 +68,7 @@ La procedura seguente illustra il processo di accesso ad Azure nell'ambiente di 
 
 1. Personalizzare eventuali impostazioni di Maven o accettare quelle predefinite e quindi fare clic su **Finish** (Fine).
 
-1. Passare al progetto nella scheda **Project** (Progetto) a sinistra e aprire il file **src/main/webapp/WEB-INF/index.jsp**. Sostituire il codice con quello seguente e **salvare le modifiche**:
+1. Passare al progetto nella scheda **Project** (Progetto) a sinistra e aprire il file **src/main/webapp/index.jsp**. Sostituire il codice con quello seguente e **salvare le modifiche**:
 
    ```html
    <html>
@@ -77,7 +77,7 @@ La procedura seguente illustra il processo di accesso ad Azure nell'ambiente di 
     </body>
    </html>
    ```
-   :::image type="content" source="media/create-hello-world-web-app/open-index-page.png" alt-text="Aprire il file index.jsp.":::
+   :::image type="content" source="media/create-hello-world-web-app/open-index-page.png" alt-text="Accesso ad Azure in IntelliJ.":::
 
 ## <a name="create-an-azure-container-registry-to-use-as-a-private-docker-registry"></a>Creare un'istanza di Registro Azure Container da usare come registro Docker privato
 
@@ -112,13 +112,13 @@ La procedura seguente illustra come usare il portale di Azure per creare un'ista
 
 ## <a name="deploy-your-web-app-in-a-docker-container"></a>Distribuire l'app Web in un contenitore Docker
 
-La procedura seguente consente di configurare il supporto Docker per l'app Web e di distribuire l'app Web.
+La procedura seguente consente di configurare il supporto Docker per l'app Web e di distribuire l'app Web in un contenitore Docker.
 
 1. Passare al progetto nella scheda **Project** (Progetto) a sinistra e fare clic con il pulsante destro del mouse sul progetto. Espandere **Azure** e fare clic su **Add Docker Support** (Aggiungi supporto Docker).
 
    Verrà automaticamente creato un file Docker con una configurazione predefinita.
 
-   :::image type="content" source="media/hello-world-web-app-linux/docker-support-file.png" alt-text="File di supporto Docker.":::
+   :::image type="content" source="media/hello-world-web-app-linux/docker-support-file.png" alt-text="Accesso ad Azure in IntelliJ.":::
 
 1. Dopo aver aggiunto il supporto per Docker, fare clic con il pulsante destro del mouse in Project Explorer (Esplora progetti), espandere **Azure** e quindi fare clic su **Run on Web App for Containers** (Esegui in app Web per contenitori).
 
@@ -148,7 +148,7 @@ La procedura seguente consente di configurare il supporto Docker per l'app Web e
 
 1. Dopo aver pubblicato l'app Web, le impostazioni verranno salvate come predefinite e sarà possibile eseguire l'applicazione su Azure facendo clic sulla freccia verde sulla barra degli strumenti. È possibile modificare queste impostazioni facendo clic sul menu a discesa per l'app Web e quindi scegliendo **Edit Configurations** (Modifica configurazioni).
 
-    :::image type="content" source="media/create-hello-world-web-app/edit-configuration-menu.png" alt-text="Menu Edit Configurations (Modifica configurazioni).":::
+    :::image type="content" source="media/create-hello-world-web-app/edit-configuration-menu.png" alt-text="Accesso ad Azure in IntelliJ.":::
 
 1. Quando viene visualizzata la finestra di dialogo **Run/Debug Configurations** (Esecuzione/debug configurazioni), è possibile modificare qualsiasi impostazione predefinita e quindi fare clic su **OK**.
 

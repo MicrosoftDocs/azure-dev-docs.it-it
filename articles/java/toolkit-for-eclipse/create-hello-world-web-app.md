@@ -13,12 +13,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
 ms.custom: devx-track-java
-ms.openlocfilehash: 57cb6f2b731ee6d9522787d70efbaf35e029c632
-ms.sourcegitcommit: 717e32b68fc5f4c986f16b2790f4211967c0524b
+ms.openlocfilehash: a318d5aa7f411add20ee201d48d3640983efefee
+ms.sourcegitcommit: f460914ac5843eb7392869a08e3a80af68ab227b
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91586149"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "92010253"
 ---
 # <a name="create-a-hello-world-web-app-for-azure-app-service-using-eclipse"></a>Creare un'app Web Hello World per Servizio app di Azure con Eclipse
 
@@ -53,7 +53,7 @@ La procedura seguente illustra il processo di accesso ad Azure nell'ambiente di 
 
 1. Selezionare l'account Azure e completare le procedure di autenticazione necessarie per eseguire l'accesso.
 
-1. Dopo l'accesso, chiudere il browser e tornare all'IDE di Eclipse. Nella finestra di dialogo **Select Subscriptions** (Seleziona sottoscrizioni) selezionare le sottoscrizioni da usare e quindi fare clic su **OK**.
+1. Dopo l'accesso, chiudere il browser e tornare all'IDE di Eclipse. Nella finestra di dialogo **Select Subscriptions** (Seleziona sottoscrizioni) selezionare le sottoscrizioni da usare e quindi fare clic su **Select** (Seleziona).
 
 ### <a name="install-required-software-optional"></a>Installare il software necessario *(facoltativo)*
 

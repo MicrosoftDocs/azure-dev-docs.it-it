@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 23a16188b7f24265ca4045f684c9e08304788ea1
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: e85231fcd71a2fbc1f43bf1fee74f8ce3ac9e314
+ms.sourcegitcommit: f460914ac5843eb7392869a08e3a80af68ab227b
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831608"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "92010244"
 ---
 ## <a name="prerequisites"></a>Prerequisites
 

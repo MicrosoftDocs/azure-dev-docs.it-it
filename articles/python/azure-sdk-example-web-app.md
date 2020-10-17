@@ -4,12 +4,12 @@ description: Usare le librerie di gestione di Azure SDK per Python per effettuar
 ms.date: 10/05/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 7aa51af92480b0148600786bcb329902aecb44bd
-ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
+ms.openlocfilehash: 3312b55927e7a72d4ee1e0fee3658c1b2f5a513d
+ms.sourcegitcommit: f460914ac5843eb7392869a08e3a80af68ab227b
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91764765"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "92010311"
 ---
 # <a name="example-use-the-azure-libraries-to-provision-and-deploy-a-web-app"></a>Esempio: Usare le librerie di Azure per il provisioning e la distribuzione di un'app Web
 
@@ -168,6 +168,7 @@ Per usare tale codice in uno script di produzione, è preferibile usare invece `
 
 ### <a name="reference-links-for-classes-used-in-the-code"></a>Collegamenti di riferimento per le classi usate nel codice
 
+- [AzureCliCredential (azure.identity)](/python/api/azure-identity/azure.identity.azureclicredential)
 - [ResourceManagementClient (azure.mgmt.resource)](/python/api/azure-mgmt-resource/azure.mgmt.resource.resourcemanagementclient)
 - [WebSiteManagementClient (azure.mgmt.web import)](/python/api/azure-mgmt-web/azure.mgmt.web.websitemanagementclient)
 
@@ -248,6 +249,7 @@ az webapp create -n PythonAzureExample-WebApp-12345 --plan PythonAzureExample-We
 ## <a name="see-also"></a>Vedere anche
 
 - [Esempio: Effettuare il provisioning di un gruppo di risorse](azure-sdk-example-resource-group.md)
+- [Esempio: Elencare i gruppi di risorse in una sottoscrizione](azure-sdk-example-list-resource-groups.md)
 - [Esempio: Effettuare il provisioning di Archiviazione di Azure](azure-sdk-example-storage.md)
 - [Esempio: Usare Archiviazione di Azure](azure-sdk-example-storage-use.md)
 - [Esempio: Effettuare il provisioning e usare un database MySQL](azure-sdk-example-database.md)

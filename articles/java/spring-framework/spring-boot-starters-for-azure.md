@@ -2,23 +2,29 @@
 title: Utilità di avvio Spring Boot per Azure
 description: Questo articolo descrive le diverse utilità di avvio di Spring Boot disponibili per Azure.
 documentationcenter: java
-ms.date: 12/19/2018
+ms.date: 09/29/2020
 ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: 0d4615b3d6b05ee54538befdf6a7a7d220e77917
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: 5b342b722167aa901b76f8117f3fefc9412220ae
+ms.sourcegitcommit: 660b21aee3cf83ee561c447803b64335b2c95ccc
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831007"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91882206"
 ---
 # <a name="spring-boot-starters-for-azure"></a>Utilità di avvio Spring Boot per Azure
 
 Questo articolo descrive le diverse utilità di avvio Spring Boot per [Spring Initializr] che offrono agli sviluppatori Java l'integrazione di funzionalità per l'uso di Microsoft Azure.
 
-![Utilità di avvio Spring Boot per Azure][spring-boot-starters]
+>[!div class="mx-imgBorder"]
+![Configurare le utilità di avvio di Azure Spring Boot con Initializr][configure-azure-spring-boot-starters-with-initializr]
+
+> [!NOTE]
+>
+> Spring Initializr usa Java 11 come versione predefinita. Per usare le utilità di avvio di Spring Boot descritte in questo argomento, è necessario selezionare invece Java 8.
+> 
 
 Sono attualmente disponibili le utilità di avvio Spring Boot seguenti per Azure:
 
@@ -30,13 +36,18 @@ Sono attualmente disponibili le utilità di avvio Spring Boot seguenti per Azure
 
    Fornisce il supporto di integrazione per Spring Security con Azure Active Directory per l'autenticazione.
 
-* **[Azure Key Vault](#azure-key-vault)**
+* **[Insieme di credenziali chiave di Azure](#azure-key-vault)**
 
    Fornisce il supporto dell'annotazione di valori Spring per l'integrazione con i segreti di Azure Key Vault.
 
 * **[Archiviazione di Azure](#azure-storage)**
 
    Fornisce il supporto di Spring Boot per i servizi di archiviazione di Azure.
+   
+   > [!NOTE]
+   >
+   > La nuova versione dell'utilità di avvio di Spring Boot per Archiviazione di Azure non supporta attualmente l'aggiunta di una dipendenza di archiviazione di Azure da Spring Initializr. È tuttavia possibile aggiungere la dipendenza modificando il file *pom.xml* dopo la generazione del progetto.
+   > 
 
 <a name="azure-support"></a>
 ## <a name="azure-support"></a>Supporto di Azure
@@ -54,18 +65,33 @@ Quando si aggiunge questa utilità di avvio a un progetto Spring Boot, vengono a
    ```xml
    <properties>
       <!-- Other properties will be listed here -->
-      <azure.version>0.2.0</azure.version>
+      <java.version>1.8</java.version>
+      <azure.version>2.3.5</azure.version>
    </properties>
    ```
 
 * La dipendenza `spring-boot-starter` predefinita viene sostituita con la dipendenza seguente:
 
-   ```xml
-   <dependency>
-      <groupId>com.microsoft.azure</groupId>
-      <artifactId>azure-spring-boot</artifactId>
-   </dependency>
-   ```
+    ```xml
+    <dependencies>
+        <dependency>
+            <groupId>com.microsoft.azure</groupId>
+            <artifactId>azure-spring-boot-starter</artifactId>
+        </dependency>
+    
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.junit.vintage</groupId>
+                    <artifactId>junit-vintage-engine</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+    </dependencies>
+    ```
 
 * Viene aggiunta la sezione seguente al file:
 
@@ -99,18 +125,33 @@ Quando si aggiunge questa utilità di avvio a un progetto Spring Boot, vengono a
    ```xml
    <properties>
       <!-- Other properties will be listed here -->
-      <azure.version>0.2.0</azure.version>
+      <java.version>1.8</java.version>
+      <azure.version>2.3.5</azure.version>
    </properties>
    ```
 
 * La dipendenza `spring-boot-starter` predefinita viene sostituita con la dipendenza seguente:
 
-   ```xml
-   <dependency>
-      <groupId>com.microsoft.azure</groupId>
-      <artifactId>azure-active-directory-spring-boot-starter</artifactId>
-   </dependency>
-   ```
+    ```xml
+    <dependencies>
+        <dependency>
+            <groupId>com.microsoft.azure</groupId>
+            <artifactId>azure-active-directory-spring-boot-starter</artifactId>
+        </dependency>
+    
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.junit.vintage</groupId>
+                    <artifactId>junit-vintage-engine</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+    </dependencies>
+    ```
 
 * Viene aggiunta la sezione seguente al file:
 
@@ -144,18 +185,33 @@ Quando si aggiunge questa utilità di avvio a un progetto Spring Boot, vengono a
    ```xml
    <properties>
       <!-- Other properties will be listed here -->
-      <azure.version>0.2.0</azure.version>
+      <java.version>1.8</java.version>
+      <azure.version>2.3.5</azure.version>
    </properties>
    ```
 
 * La dipendenza `spring-boot-starter` predefinita viene sostituita con la dipendenza seguente:
 
-   ```xml
-   <dependency>
-      <groupId>com.microsoft.azure</groupId>
-      <artifactId>azure-keyvault-secrets-spring-boot-starter</artifactId>
-   </dependency>
-   ```
+    ```xml
+    <dependencies>
+        <dependency>
+            <groupId>com.microsoft.azure</groupId>
+            <artifactId>azure-keyvault-secrets-spring-boot-starter</artifactId>
+        </dependency>
+    
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.junit.vintage</groupId>
+                    <artifactId>junit-vintage-engine</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+    </dependencies>
+    ```
 
 * Viene aggiunta la sezione seguente al file:
 
@@ -181,7 +237,7 @@ Questa utilità di avvio Spring Boot fornisce il supporto di integrazione di Spr
 Per esempi dell'uso delle funzionalità di Archiviazione di Azure fornite con questa utilità di avvio, vedere:
 
 * [Come usare l'utilità di avvio Spring Boot per Archiviazione di Azure](configure-spring-boot-starter-java-app-with-azure-storage.md)
-* <https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/spring/azure-spring-boot-samples/azure-spring-boot-sample-storage-blob>
+* <https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/spring/azure-spring-boot-samples/azure-spring-cloud-sample-storage-resource>
 
 Quando si aggiunge questa utilità di avvio a un progetto Spring Boot, vengono apportate le modifiche seguenti al file *pom.xml*:
 
@@ -190,18 +246,32 @@ Quando si aggiunge questa utilità di avvio a un progetto Spring Boot, vengono a
    ```xml
    <properties>
       <!-- Other properties will be listed here -->
-      <azure.version>0.2.0</azure.version>
+      <java.version>1.8</java.version>
+      <azure.version>2.3.5</azure.version>
    </properties>
    ```
 
 * La dipendenza `spring-boot-starter` predefinita viene sostituita con la dipendenza seguente:
 
-   ```xml
-   <dependency>
-      <groupId>com.microsoft.azure</groupId>
-      <artifactId>azure-storage-spring-boot-starter</artifactId>
-   </dependency>
-   ```
+    ```xml
+    <dependencies>
+        <dependency>
+            <groupId>com.microsoft.azure</groupId>
+            <artifactId>spring-starter-azure-storage</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.junit.vintage</groupId>
+                    <artifactId>junit-vintage-engine</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+    </dependencies>
+    ```
 
 * Viene aggiunta la sezione seguente al file:
 
@@ -245,4 +315,4 @@ Per iniziare a usare proprie applicazioni Spring Boot, vedere **Spring Initializ
 
 <!-- IMG List -->
 
-[spring-boot-starters]: media/spring-boot-starters-for-azure/spring-boot-starters-cropped.png
+[configure-azure-spring-boot-starters-with-initializr]: media/spring-boot-starters-for-azure/configure-azure-spring-boot-starters-with-initializr.png

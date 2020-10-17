@@ -3,14 +3,14 @@ title: Avvio rapido - Configurare Ansible con l'interfaccia della riga di comand
 description: Questo articolo di avvio rapido descrive come installare e configurare Ansible per gestire le risorse di Azure in Ubuntu, CentOS e SLES
 keywords: ansible, azure, devops, bash, cloudshell, playbook, interfaccia della riga di comando di azure
 ms.topic: quickstart
-ms.date: 08/13/2020
+ms.date: 09/30/2020
 ms.custom: devx-track-ansible,devx-track-cli
-ms.openlocfilehash: bdda836789e9230cffdc14a6ee4bd87ddb2ce5ef
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: aba725cee4b61aeae98ed8d0eb89b3090241ff49
+ms.sourcegitcommit: 0b1c751c5a4a837977fec1c777bca5ad15cf2fc7
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831173"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91621627"
 ---
 # <a name="quickstart-configure-ansible-using-azure-cli"></a>Avvio rapido: Configurare Ansible con l'interfaccia della riga di comando di Azure
 
@@ -66,7 +66,7 @@ La procedura seguente illustra in dettaglio la creazione di una coppia di chiavi
     az group create --name QuickstartAnsible-rg --location eastus
     ```
 
-1. Creare una macchina virtuale con [az vm create](/cli/azure/vm#az-vm-create).
+1. Creare una macchina virtuale con [az vm create](/cli/azure/vm#az-vm-create). Sostituire il segnaposto con il nome completo del nome file della chiave **pubblica** SSH.
 
     ```azurecli
     az vm create \
@@ -108,7 +108,7 @@ az vm extension set \
 
 ## <a name="connect-to-your-virtual-machine-via-ssh"></a>Connettersi alla macchina virtuale tramite SSH
 
-Usando il comando SSH connettersi alla macchina virtuale.
+Usando il comando SSH connettersi alla macchina virtuale. Sostituire i segnaposto con i valori appropriati restituiti.
 
 ```azurecli
 ssh -i <ssh_private_key_filename> azureuser@<vm_ip_address>
@@ -126,15 +126,15 @@ Se si usa Ansible Tower o Jenkins, dichiarare i valori dell'entità servizio com
 Configurare le credenziali di Ansible con una delle tecniche seguenti:
 
 - [Creare un file di credenziali di Ansible](#file-credentials)
-- [Usare variabili di ambiente di Ansible](#env-credentials)
+- [Definire le variabili di ambiente di Ansible](#env-credentials)
 
-### <a name="span-idfile-credentials-create-ansible-credentials-file"></a><span id="file-credentials"/> Creare un file di credenziali di Ansible
+#### <a name="span-idfile-credentials-create-ansible-credentials-file"></a><span id="file-credentials"/> Creare un file di credenziali di Ansible
 
 In questa sezione viene creato un file di credenziali locale per fornire credenziali ad Ansible.
 
 Per altre informazioni su come definire le credenziali di Ansible, vedere [Providing Credentials to Azure Modules](https://docs.ansible.com/ansible/guide_azure.html#providing-credentials-to-azure-modules) (Fornire le credenziali ai moduli di Azure).
 
-1. Per un ambiente di sviluppo, creare un file denominato `credentials` nella macchina virtuale host:
+1. Dopo avere completato correttamente la connessione alla macchina virtuale host, creare e aprire un file denominato `credentials`:
 
     ```bash
     mkdir ~/.azure
@@ -153,20 +153,16 @@ Per altre informazioni su come definire le credenziali di Ansible, vedere [Provi
 
 1. Salvare e chiudere il file.
 
-### <a name="span-idenv-credentialsuse-ansible-environment-variables"></a><span id="env-credentials"/>Usare variabili di ambiente di Ansible
+#### <a name="span-idenv-credentialsdefine-ansible-environment-variables"></a><span id="env-credentials"/>Definire le variabili di ambiente di Ansible
 
-In questa sezione vengono esportati i valori dell'entità servizio per configurare le credenziali di Ansible.
+Nella macchina virtuale host esportare i valori dell'entità servizio per configurare le credenziali di Ansible.
 
-1. Aprire una finestra del terminale.
-
-1. Esportare i valori dell'entità servizio:
-
-    ```bash
-    export AZURE_SUBSCRIPTION_ID=<your-subscription_id>
-    export AZURE_CLIENT_ID=<security-principal-appid>
-    export AZURE_SECRET=<security-principal-password>
-    export AZURE_TENANT=<security-principal-tenant>
-    ```
+```bash
+export AZURE_SUBSCRIPTION_ID=<your-subscription_id>
+export AZURE_CLIENT_ID=<security-principal-appid>
+export AZURE_SECRET=<security-principal-password>
+export AZURE_TENANT=<security-principal-tenant>
+```
 
 ## <a name="test-ansible-installation"></a>Testare l'installazione di Ansible
 

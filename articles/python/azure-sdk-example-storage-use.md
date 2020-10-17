@@ -4,12 +4,12 @@ description: Usare le librerie di Azure SDK per Python per accedere a un conteni
 ms.date: 08/05/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: ee9469b4b400879ee5a0b66d16572bc22686ba54
-ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
+ms.openlocfilehash: 13ca0d10ac24780e5f7f053f85616781553253f5
+ms.sourcegitcommit: f460914ac5843eb7392869a08e3a80af68ab227b
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91764446"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "92010281"
 ---
 # <a name="example-access-azure-storage-using-the-azure-libraries-for-python"></a>Esempio: Accedere ad Archiviazione di Azure con le librerie di Azure per Python
 
@@ -207,6 +207,7 @@ Se non è necessario mantenere le risorse di cui è stato effettuato il provisio
 ## <a name="see-also"></a>Vedere anche
 
 - [Esempio: Effettuare il provisioning di un gruppo di risorse](azure-sdk-example-resource-group.md)
+- [Esempio: Elencare i gruppi di risorse in una sottoscrizione](azure-sdk-example-list-resource-groups.md)
 - [Esempio: Effettuare il provisioning di un'app Web e distribuire il codice](azure-sdk-example-web-app.md)
 - [Esempio: Effettuare il provisioning di Archiviazione di Azure](azure-sdk-example-storage.md)
 - [Esempio: Effettuare il provisioning ed eseguire query su un database](azure-sdk-example-database.md)

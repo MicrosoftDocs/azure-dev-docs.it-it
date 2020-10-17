@@ -13,12 +13,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
 ms.custom: devx-track-java
-ms.openlocfilehash: af85a31f39f87c38e378fc1cf4254053447b9dbd
-ms.sourcegitcommit: 717e32b68fc5f4c986f16b2790f4211967c0524b
+ms.openlocfilehash: 6506aae7aacf26d08bcb6c47ef947dfb8f6cef46
+ms.sourcegitcommit: d5dabc6dde727ed167a9dc8a4eaaf21025b3efa8
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91586174"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91947516"
 ---
 # <a name="create-a-hello-world-web-app-for-azure-app-service-using-intellij"></a>Creare un'app Web Hello World per Servizio app di Azure con IntelliJ
 
@@ -53,7 +53,7 @@ La procedura seguente illustra il processo di accesso ad Azure nell'ambiente di 
 
 1. Selezionare l'account Azure e completare le procedure di autenticazione necessarie per eseguire l'accesso.
 
-1. Dopo l'accesso, chiudere il browser e tornare all'IDE di IntelliJ. Nella finestra di dialogo **Select Subscriptions** (Seleziona sottoscrizioni) selezionare le sottoscrizioni da usare e quindi fare clic su **OK**.
+1. Dopo l'accesso, chiudere il browser e tornare all'IDE di IntelliJ. Nella finestra di dialogo **Select Subscriptions** (Seleziona sottoscrizioni) selezionare le sottoscrizioni da usare e quindi fare clic su **Select** (Seleziona).
 
 ## <a name="creating-a-new-web-app-project"></a>Creazione di un nuovo progetto di app Web
 
@@ -71,7 +71,7 @@ La procedura seguente illustra il processo di accesso ad Azure nell'ambiente di 
 
 1. Personalizzare eventuali impostazioni di Maven o accettare quelle predefinite e quindi fare clic su **Finish** (Fine).
 
-1. Passare al progetto nella scheda **Project** (Progetto) a sinistra e aprire il file **src/main/webapp/WEB-INF/index.jsp**. Sostituire il codice con quello seguente e **salvare le modifiche**:
+1. Passare al progetto nella scheda **Project** (Progetto) a sinistra e aprire il file **src/main/webapp/index.jsp**. Sostituire il codice con quello seguente e **salvare le modifiche**:
 
    ```html
    <html>

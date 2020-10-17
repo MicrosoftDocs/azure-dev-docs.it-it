@@ -2,18 +2,18 @@
 title: Usare Spring Data R2DBC con Database di Azure per PostgreSQL
 description: Informazioni su come usare Spring Data R2DBC con un'istanza di Database di Azure per PostgreSQL.
 documentationcenter: java
-ms.date: 03/18/2020
+ms.date: 10/10/2020
 ms.service: postgresql
 ms.tgt_pltfrm: multiple
 ms.author: judubois
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: cdda538a986dde8b2a436980298e98a914ef1bb0
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: b22b008c54536a2cf708b3574d77d95dba995027
+ms.sourcegitcommit: f460914ac5843eb7392869a08e3a80af68ab227b
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831347"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "92010077"
 ---
 # <a name="use-spring-data-r2dbc-with-azure-database-for-postgresql"></a>Usare Spring Data R2DBC con Database di Azure per PostgreSQL
 
@@ -36,8 +36,11 @@ In questo articolo si scriverà il codice per un'applicazione di esempio. Per pr
 Per generare l'applicazione, immettere il comando seguente sulla riga di comando:
 
 ```bash
-curl https://start.spring.io/starter.tgz -d dependencies=webflux,data-r2dbc -d baseDir=azure-database-workshop -d bootVersion=2.3.1.RELEASE -d javaVersion=8 | tar -xzvf -
+curl https://start.spring.io/starter.tgz -d dependencies=webflux,data-r2dbc -d baseDir=azure-database-workshop -d bootVersion=2.3.4.RELEASE -d javaVersion=8 | tar -xzvf -
 ```
+
+> [!NOTE]
+> Spring Initializr usa Java 11 come versione predefinita. Per usare le utilità di avvio di Spring Boot descritte in questo argomento, è necessario selezionare invece Java 8.
 
 ### <a name="add-the-reactive-postgresql-driver-implementation"></a>Aggiungere l'implementazione del driver PostgreSQL reattivo
 

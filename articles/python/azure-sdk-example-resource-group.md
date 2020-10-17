@@ -4,12 +4,12 @@ description: Usare la libreria di gestione delle risorse di Azure SDK per Python
 ms.date: 10/05/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 8a3eb230e40954d25a890db53d33382c07899b7d
-ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
+ms.openlocfilehash: 24450fb8b7db3f9df3d08086c90cdf26265b474a
+ms.sourcegitcommit: f460914ac5843eb7392869a08e3a80af68ab227b
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91764629"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "92010290"
 ---
 # <a name="example-use-the-azure-libraries-to-provision-a-resource-group"></a>Esempio: Usare le librerie di Azure per effettuare il provisioning di un gruppo di risorse
 
@@ -21,7 +21,7 @@ Se non diversamente specificato, tutti i comandi di questo articolo funzionano a
 
 Se non è già stato fatto, seguire tutte le istruzioni riportate in [Configurare l'ambiente di sviluppo Python locale per Azure](configure-local-development-environment.md).
 
-Assicurarsi di creare un'entità servizio per lo sviluppo locale e di creare e attivare un ambiente virtuale per questo progetto.
+Assicurarsi di creare e attivare un ambiente virtuale per questo progetto.
 
 ## <a name="2-install-the-azure-library-packages"></a>2: Installare i pacchetti di librerie di Azure
 
@@ -90,6 +90,7 @@ print(f"Provisioned resource group {rg_result.name} in the {rg_result.location} 
 
 ### <a name="reference-links-for-classes-used-in-the-code"></a>Collegamenti di riferimento per le classi usate nel codice
 
+- [AzureCliCredential (azure.identity)](/python/api/azure-identity/azure.identity.azureclicredential)
 - [ResourceManagementClient (azure.mgmt.resource)](/python/api/azure-mgmt-resource/azure.mgmt.resource.resourcemanagementclient)
 
 ## <a name="4-run-the-script"></a>4: Eseguire lo script
@@ -130,6 +131,7 @@ az group create -n PythonAzureExample-rg -l centralus
 
 ## <a name="see-also"></a>Vedere anche
 
+- [Esempio: Elencare i gruppi di risorse in una sottoscrizione](azure-sdk-example-list-resource-groups.md)
 - [Esempio: Effettuare il provisioning di Archiviazione di Azure](azure-sdk-example-storage.md)
 - [Esempio: Usare Archiviazione di Azure](azure-sdk-example-storage-use.md)
 - [Esempio: Effettuare il provisioning di un'app Web e distribuire il codice](azure-sdk-example-web-app.md)

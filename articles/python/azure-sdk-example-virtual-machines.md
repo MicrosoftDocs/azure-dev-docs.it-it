@@ -4,12 +4,12 @@ description: Come effettuare il provisioning di una macchina virtuale di Azure u
 ms.date: 10/05/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 134b3bc14fa8fafe2ee3953ab6a7c713853d9398
-ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
+ms.openlocfilehash: e01121047d42200e956345df611f82706b1e081e
+ms.sourcegitcommit: f460914ac5843eb7392869a08e3a80af68ab227b
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91764472"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "92010226"
 ---
 # <a name="example-use-the-azure-libraries-to-provision-a-virtual-machine"></a>Esempio: Usare le librerie di Azure per effettuare il provisioning di una macchina virtuale
 
@@ -211,6 +211,7 @@ print(f"Provisioned virtual machine {vm_result.name}")
 
 ### <a name="reference-links-for-classes-used-in-the-code"></a>Collegamenti di riferimento per le classi usate nel codice
 
+- [AzureCliCredential (azure.identity)](/python/api/azure-identity/azure.identity.azureclicredential)
 - [ResourceManagementClient (azure.mgmt.resource)](/python/api/azure-mgmt-resource/azure.mgmt.resource.resourcemanagementclient)
 - [NetworkManagementClient (azure.mgmt.network)](/python/api/azure-mgmt-network/azure.mgmt.network.networkmanagementclient)
 - [ComputeManagementClient (azure.mgmt.compute)](/python/api/azure-mgmt-compute/azure.mgmt.compute.computemanagementclient)
@@ -309,6 +310,7 @@ Eseguire questo comando se non è necessario mantenere le risorse create in ques
 ## <a name="see-also"></a>Vedere anche
 
 - [Esempio: Effettuare il provisioning di un gruppo di risorse](azure-sdk-example-resource-group.md)
+- [Esempio: Elencare i gruppi di risorse in una sottoscrizione](azure-sdk-example-list-resource-groups.md)
 - [Esempio: Effettuare il provisioning di Archiviazione di Azure](azure-sdk-example-storage.md)
 - [Esempio: Usare Archiviazione di Azure](azure-sdk-example-storage-use.md)
 - [Esempio: Effettuare il provisioning di un'app Web e distribuire il codice](azure-sdk-example-web-app.md)

@@ -3,18 +3,18 @@ title: Distribuire un'app Web Spring Boot in Linux nel Servizio app di Azure
 description: Questa esercitazione illustra in modo dettagliato la procedura per la distribuzione di un'applicazione Spring Boot come app Web Linux in Microsoft Azure.
 services: azure app service
 documentationcenter: java
-ms.date: 12/31/2019
+ms.date: 10/06/2020
 ms.service: app-service
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
 ms.custom: mvc, devx-track-java
-ms.openlocfilehash: 97f6ef6e1d53b8923a8d29aa7747442ee6ac7efc
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: ec24ba4ab6b10bd615af06c2cdbd37397d0b2a83
+ms.sourcegitcommit: 723441eda0eb4ff893123201a9e029b7becf5ecc
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90830067"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91846452"
 ---
 # <a name="deploy-a-spring-boot-application-to-linux-on-azure-app-service"></a>Distribuire un'applicazione Spring Boot in Linux nel Servizio app di Azure
 
@@ -174,7 +174,7 @@ La procedura seguente illustra come usare il portale di Azure per creare un'ista
 
    * Fare clic su **Avanti: Docker**.
 
-   ![Configurare le impostazioni dell'app Web][LX02]
+   ![Fare clic sul pulsante Avanti: Docker per continuare.][LX02]
 
       Nella pagina **App Web** selezionare **Docker** e immettere le informazioni seguenti:
 
@@ -190,7 +190,7 @@ La procedura seguente illustra come usare il portale di Azure per creare un'ista
 
    Dopo aver immesso tutte le informazioni riportate sopra, fare clic su **Rivedi e crea**.
 
-   ![Configurare le impostazioni dell'app Web][LX02-A]
+   ![Per completare la procedura, selezionare Rivedi e crea.][LX02-A]
 
    * Fare clic su **Rivedi e crea**.
 
@@ -248,7 +248,6 @@ Per altre informazioni su Spring e Azure, passare al centro di documentazione di
 
 Per altre informazioni sull'uso delle applicazioni Spring Boot in Azure, vedere gli articoli seguenti:
 
-* [Distribuire un'applicazione Spring Boot nel servizio app di Azure](deploy-spring-boot-java-app-from-container-registry-using-maven-plugin.md)
 * [Distribuire un'applicazione Spring Boot in un cluster Kubernetes nel servizio Azure Container](deploy-spring-boot-java-app-on-kubernetes.md)
 
 Per altre informazioni sull'uso di Azure con Java, vedere [Azure per sviluppatori Java] e la documentazione relativa all'[uso di Azure DevOps e Java].

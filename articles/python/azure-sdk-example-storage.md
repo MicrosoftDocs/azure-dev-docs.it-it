@@ -4,12 +4,12 @@ description: Usare le librerie di Azure SDK per Python per effettuare il provisi
 ms.date: 10/05/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 82d7f83a426e56e4e235d1d4bfcfb8c73042e053
-ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
+ms.openlocfilehash: afc56afac9940a3fc6ffda11bfa68a0570cba0b9
+ms.sourcegitcommit: f460914ac5843eb7392869a08e3a80af68ab227b
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91764552"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "92010264"
 ---
 # <a name="example-provision-azure-storage-using-the-azure-libraries-for-python"></a>Esempio: Effettuare il provisioning di Archiviazione di Azure con le librerie di Azure per Python
 
@@ -143,6 +143,7 @@ print(f"Provisioned blob container {container.name}")
 
 ### <a name="reference-links-for-classes-used-in-the-code"></a>Collegamenti di riferimento per le classi usate nel codice
 
+- [AzureCliCredential (azure.identity)](/python/api/azure-identity/azure.identity.azureclicredential)
 - [ResourceManagementClient (azure.mgmt.resource)](/python/api/azure-mgmt-resource/azure.mgmt.resource.resourcemanagementclient)
 - [StorageManagementClient (azure.mgmt.storage)](/python/api/azure-mgmt-storage/azure.mgmt.storage.storagemanagementclient)
 
@@ -238,6 +239,7 @@ az group delete -n PythonAzureExample-Storage-rg  --no-wait
 
 - [Esempio: Usare Archiviazione di Azure](azure-sdk-example-storage-use.md)
 - [Esempio: Effettuare il provisioning di un gruppo di risorse](azure-sdk-example-resource-group.md)
+- [Esempio: Elencare i gruppi di risorse in una sottoscrizione](azure-sdk-example-list-resource-groups.md)
 - [Esempio: Effettuare il provisioning di un'app Web e distribuire il codice](azure-sdk-example-web-app.md)
 - [Esempio: Effettuare il provisioning ed eseguire query su un database](azure-sdk-example-database.md)
 - [Esempio: Effettuare il provisioning di una macchina virtuale](azure-sdk-example-virtual-machines.md)

@@ -3,16 +3,16 @@ title: Come usare Spring e Cosmos DB con Servizio app in Linux
 description: Questo articolo illustra la procedura per compilare, configurare, distribuire e ridimensionare le app Web Java in Servizio app in Linux, oltre che per risolvere i problemi.
 documentationcenter: java
 ms.reviewer: joshuapa
-ms.date: 4/24/2019
+ms.date: 10/06/2020
 ms.service: cosmos-db
 ms.topic: article
 ms.custom: devx-track-java, devx-track-azurecli
-ms.openlocfilehash: f1e47353fdf2e09ceaa1b8ac339f4fc23368574d
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: d3343940cd35767aa6887244d8ae9d7cca221646
+ms.sourcegitcommit: 723441eda0eb4ff893123201a9e029b7becf5ecc
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90830227"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91846522"
 ---
 # <a name="how-to-use-spring-and-cosmos-db-with-app-service-on-linux"></a>Come usare Spring e Cosmos DB con Servizio app in Linux
 
@@ -312,7 +312,7 @@ Usare la procedura seguente per ridimensionare l'applicazione.
 
 Per altre informazioni sull'uso delle applicazioni Spring Boot in Azure, vedere gli articoli seguenti:
 
-* [Distribuire un'applicazione Spring Boot nel servizio app di Azure](deploy-spring-boot-java-app-from-container-registry-using-maven-plugin.md)
+* [Distribuire un'applicazione Spring Boot in Linux nel Servizio app di Azure](deploy-spring-boot-java-app-on-linux.md)
 
 * [Eseguire un'applicazione Spring Boot in un cluster Kubernetes nel servizio Azure Container](deploy-spring-boot-java-app-on-kubernetes.md)
 

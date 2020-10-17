@@ -2,51 +2,32 @@
 title: Eseguire l'autenticazione con i moduli di gestione di Azure per Node.js
 description: Eseguire l'autenticazione con un'entità servizio nei moduli di gestione di Azure per Node.js
 ms.topic: how-to
-ms.date: 06/17/2017
+ms.date: 09/29/2020
 ms.custom: devx-track-js
-ms.openlocfilehash: 150b00c4dbb21d0514d1d7c7d34813272bbf06e1
-ms.sourcegitcommit: 717e32b68fc5f4c986f16b2790f4211967c0524b
+ms.openlocfilehash: 2d7b4047226b28ab71597e523243adf7fc0d4c0d
+ms.sourcegitcommit: 0b1c751c5a4a837977fec1c777bca5ad15cf2fc7
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91586119"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91621667"
 ---
 # <a name="authenticate-with-the-azure-management-modules-for-javascript"></a>Eseguire l'autenticazione con i moduli di gestione di Azure per JavaScript
 
-Sono disponibili due set di pacchetti di gestione per i servizi di Azure che semplificano la gestione delle risorse.
-- Azure SDK per Node.js
-- Azure SDK per JavaScript
+Tutte le [librerie del client SDK](azure-sdk-library-package-index.md) richiedono l'autenticazione tramite un oggetto `credentials` durante la creazione di un'istanza. Esistono più modi per autenticare e creare le credenziali necessarie.
 
-Azure SDK per Node.js è il set di pacchetti di gestione meno recente per i servizi di Azure 
-- utilizzabili solo in Node.js e non nei browser
-- sono scritti in JavaScript con file di dichiarazione di tipo scritti manualmente
-- non in fase di sviluppo attivo e deprecati a favore dei pacchetti di Azure SDK per JavaScript
-- hanno nomi di pacchetto che iniziano con `azure-arm-`
-- richiedono il pacchetto [ms-rest-azure](https://www.npmjs.com/package/ms-rest-azure) per creare credenziali che possono quindi essere passate alle classi client nei pacchetti per eseguire l'autenticazione usando Azure Active Directory.
-- si trovano nel repository https://github.com/Azure/azure-sdk-for-node
+I metodi comuni per creare le credenziali necessarie sono i seguenti:
 
-Azure SDK per JavaScript è il set di pacchetti di gestione più recente per i servizi di Azure
-- utilizzabili sia in Node.js che nei browser
-- scritto in TypeScript, può essere usato nei progetti sia JavaScript che TypeScript
-- in fase di sviluppo attivo e ricevono gli aggiornamenti non appena i servizi di Azure aggiornano le API di gestione delle risorse
-- hanno nomi di pacchetto che iniziano con `@azure/arm-`
-- richiedono il pacchetto [@azure/ms-rest-nodeauth](https://www.npmjs.com/package/@azure/ms-rest-nodeauth) per creare credenziali che possono quindi essere passate alle classi client nei pacchetti per eseguire l'autenticazione usando Azure Active Directory. Se l'applicazione viene eseguita nel browser, usare invece [@azure/ms-rest-browserauth](https://www.npmjs.com/package/@azure/ms-rest-browserauth).
-- si trovano nel repository https://github.com/Azure/azure-sdk-for-js
+- L'autenticazione basata su **entità servizio** è il _metodo consigliato_. Informazioni su come [creare un'entità servizio di Azure](node-sdk-azure-authenticate-principal.md). 
+- L'**accesso interattivo** è il modo più semplice per eseguire l'autenticazione, ma richiede l'accesso con un account utente e un browser.
+- Autenticazione **di base** con il nome utente e la password. Questo è il metodo meno sicuro. 
 
-I due set di pacchetti possono essere facilmente distinti esaminando i nomi dei pacchetti.
+## <a name="samples"></a>Esempi
 
-Tutte le API di un servizio richiedono l'autenticazione tramite un oggetto `credentials` quando ne viene creata un'istanza. Esistono diversi modi per autenticare e creare le credenziali necessarie per i pacchetti sia in Azure SDK per Node.js che in Azure SDK per JavaScript.
-
-Alcuni dei metodi comuni sono:
-
-- Autenticazione di base che usa nome utente e password
-- Accesso interattivo, che è il modo più semplice per eseguire l'autenticazione, ma richiede l'accesso con un account utente.
-- Autenticazione tramite entità servizio. L'argomento [Creare un'entità servizio di Azure con Node.js](./node-sdk-azure-authenticate-principal.md) illustra diverse tecniche per creare un'entità servizio. 
-
-Il file Leggimi di ognuno dei pacchetti qui sotto illustra in dettaglio i diversi modi per ottenere un oggetto credenziale.
-- [@azure/ms-rest-nodeauth](https://www.npmjs.com/package/@azure/ms-rest-nodeauth) quando si usa un pacchetto di gestione in Azure SDK per JavaScript in Node.js
-- [@azure/ms-rest-browserauth](https://www.npmjs.com/package/@azure/ms-rest-browserauth) quando si usa un pacchetto di gestione in Azure SDK per JavaScript in un browser
-- [ms-rest-azure](https://www.npmjs.com/package/ms-rest-azure) quando si usa un pacchetto di gestione in Azure SDK meno recente per Node.js
+|Pacchetto di autenticazione|Script di autenticazione di esempio|
+|--|--|
+|[@azure/ms-rest-nodeauth](https://www.npmjs.com/package/@azure/ms-rest-nodeauth) <br>(scelta consigliata)|[Entità servizio con certificato](https://github.com/Azure/ms-rest-nodeauth/blob/master/samples/authFileWithSpCert.ts)<br>[Entità servizio dal file](https://github.com/Azure/ms-rest-nodeauth/blob/master/samples/authFileWithSpSecret.ts)<br>[Interattivo](https://github.com/Azure/ms-rest-nodeauth/blob/master/samples/interactivePersonalAccount.ts)<br>[Base](https://github.com/Azure/ms-rest-nodeauth/blob/master/samples/usernamePassword.ts)|
+|[@azure/ms-rest-browserauth](https://www.npmjs.com/package/@azure/ms-rest-browserauth)<br>(scelta consigliata)|[Autenticazione con popup (create-react-app)](https://github.com/Azure/ms-rest-browserauth/tree/master/samples/authentication-with-popup)<br>[React senza popup](https://github.com/Azure/ms-rest-browserauth/tree/master/samples/react-app)<br>[HTML con pulsante di accesso](https://github.com/Azure/ms-rest-browserauth/tree/master/samples/vanilla)|
+|[ms-rest-azure](https://www.npmjs.com/package/ms-rest-azure)|[Entità servizio](https://github.com/Azure/azure-sdk-for-node/blob/master/Documentation/Authentication.md#service-principal-authentication)<br>[Interattivo](https://github.com/Azure/azure-sdk-for-node/blob/master/Documentation/Authentication.md#interactive-login)<br>[Base](https://github.com/Azure/azure-sdk-for-node/blob/master/Documentation/Authentication.md#basic-authentication)|
 
 [!INCLUDE [chrome-note](includes/chrome-note.md)]
 

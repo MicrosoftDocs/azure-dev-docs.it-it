@@ -4,29 +4,29 @@ description: Questo articolo illustra come usare Spring Cloud Stream Binder per 
 author: seanli1988
 manager: kyliel
 ms.author: seal
-ms.date: 08/21/2019
+ms.date: 10/10/2020
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: 1ecedc4f3b3fb3eb92b66403f00aa14660323ce2
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: 0df477d203031fecac389660b93e93f00d8e262a
+ms.sourcegitcommit: f460914ac5843eb7392869a08e3a80af68ab227b
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86379045"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "92010008"
 ---
 # <a name="how-to-use-spring-cloud-azure-stream-binder-for-azure-service-bus"></a>Come usare Spring Cloud Stream Binder per il bus di servizio di Azure
 
 [!INCLUDE [spring-boot-20-note.md](includes/spring-boot-20-note.md)]
 
-Azure fornisce una piattaforma di messaggistica asincrona denominata [bus di servizio di Azure](/azure/service-bus-messaging/service-bus-messaging-overview) ("bus di servizio") basata sullo standard [Advanced Message Queueing Protocol 1.0](http://www.amqp.org/) ("AMQP 1.0"). Il bus di servizio può essere usato nella gamma di piattaforme di Azure supportate.
-
 Questo articolo illustra come usare Spring Cloud Stream Binder per inviare e ricevere messaggi da `queues` e `topics` del bus di servizio.
+
+Azure fornisce una piattaforma di messaggistica asincrona denominata [bus di servizio di Azure](/azure/service-bus-messaging/service-bus-messaging-overview) ("bus di servizio") basata sullo standard [Advanced Message Queueing Protocol 1.0](http://www.amqp.org/) ("AMQP 1.0"). Il bus di servizio può essere usato nella gamma di piattaforme di Azure supportate.
 
 ## <a name="prerequisites"></a>Prerequisites
 
 Per questo articolo sono necessari i prerequisiti seguenti:
 
-1. Se non si ha una sottoscrizione di Azure, è possibile attivare i [vantaggi per i sottoscrittori di MSDN](https://azure.microsoft.com/pricing/member-offers/credit-for-visual-studio-subscribers/) oppure iscriversi per ottenere un [account gratuito](https://azure.microsoft.com/free/).
+1. Sottoscrizione di Azure. Se non si ha una sottoscrizione di Azure, è possibile attivare i [vantaggi per i sottoscrittori di MSDN](https://azure.microsoft.com/pricing/member-offers/credit-for-visual-studio-subscribers/) oppure iscriversi per ottenere un [account gratuito](https://azure.microsoft.com/free/).
 
 1. Una versione supportata di Java Development Kit (JDK), versione 8 o successive. Per altre informazioni sulle versioni di JDK utilizzabili per lo sviluppo in Azure, vedere <https://aka.ms/azure-jdks>.
 
@@ -40,7 +40,10 @@ Per questo articolo sono necessari i prerequisiti seguenti:
 
 1. Se non è presente una coda o un argomento configurato del bus di servizio, usare il portale di Azure per [creare una coda del bus di servizio](/azure/service-bus-messaging/service-bus-quickstart-portal) o per [creare un argomento del bus di servizio](/azure/service-bus-messaging/service-bus-quickstart-topics-subscriptions-portal). Verificare che lo spazio dei nomi soddisfi i requisiti specificati nel passaggio precedente. Prendere nota inoltre della stringa di connessione nello spazio dei nomi. Sarà necessaria per l'app di test di questa esercitazione.
 
-1. Se non si dispone di un'applicazione Spring Boot, [creare un progetto **Maven** con Spring Initializr](https://start.spring.io/). Ricordarsi di selezionare **Maven Project** (Progetto Maven) e in **Dependencies** (Dipendenze) aggiungere la dipendenza **Web**.
+1. Se non è disponibile un'applicazione Spring Boot, creare un progetto **Maven** con [Spring Initializr](https://start.spring.io/). Ricordarsi di selezionare **Maven Project** (Progetto Maven) e in **Dependencies** (Dipendenze) aggiungere la dipendenza **Web** e selezionare la versione Java **8**.
+
+    > [!NOTE]
+    > Spring Initializr usa Java 11 come versione predefinita. Per usare le utilità di avvio di Spring Boot descritte in questo argomento, è necessario selezionare invece Java 8.
 
 ## <a name="use-the-spring-cloud-stream-binder-starter"></a>Usare l'utilità di avvio Spring Cloud Stream Binder
 
@@ -56,7 +59,7 @@ Per questo articolo sono necessari i prerequisiti seguenti:
 
 1. Aggiungere il blocco di codice seguente sotto l'elemento **&lt;dependencies>** , a seconda che si stia usando una coda o un argomento del bus di servizio:
 
-    **coda del bus di servizio**
+    **Coda del bus di servizio**
 
     ```xml
     <dependency>
@@ -99,7 +102,7 @@ Per questo articolo sono necessari i prerequisiti seguenti:
 
 1. Aggiungere il codice appropriato alla fine del file *application.properties* a seconda che si stia usando una coda o un argomento del bus di servizio. Usare la [tabella relativa alle descrizioni dei campi](#fd) per sostituire i valori di esempio con le proprietà appropriate per il bus di servizio.
 
-    **coda del bus di servizio**
+    **Coda del bus di servizio**
 
     ```yaml
     spring.cloud.azure.servicebus.connection-string=<ServiceBusNamespaceConnectionString>
@@ -265,7 +268,7 @@ In questa sezione è possibile creare le classi Java necessarie per inviare mess
     Message 'hello' successfully checkpointed
     ```
 
-## <a name="clean-up-resources"></a>Pulire le risorse
+## <a name="clean-up-resources"></a>Pulizia delle risorse
 
 Quando le risorse create in questo articolo non sono più necessarie, usare il [portale di Azure](https://portal.azure.com/) per eliminarle in modo da evitare addebiti imprevisti.
 
