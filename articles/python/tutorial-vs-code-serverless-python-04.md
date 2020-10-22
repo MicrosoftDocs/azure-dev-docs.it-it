@@ -4,12 +4,12 @@ description: "Passaggio 4 dell'esercitazione: esecuzione del debugger di VS Code
 ms.topic: conceptual
 ms.date: 09/17/2020
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: 4a5cb6bb8eedca93ce1e7675d3e7e1959ca066f6
-ms.sourcegitcommit: 69933dcce571b2686897b295b7822e207d944617
+ms.openlocfilehash: 622453ab5de1eeeee547cf95687e2585813b7b31
+ms.sourcegitcommit: 050c898df76a1af5feffe99e392a073b8ac9c19c
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/18/2020
-ms.locfileid: "90773029"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92137080"
 ---
 # <a name="4-debug-the-azure-functions-python-code-locally"></a>4: Eseguire il debug in locale del codice Python in Funzioni di Azure
 
@@ -79,3 +79,4 @@ ms.locfileid: "90773029"
 > [!div class="nextstepaction"]
 > [Il debugger è stato eseguito in locale: procedere con il passaggio 5 >>>](tutorial-vs-code-serverless-python-05.md)
 
+[Problemi? Segnalarli](https://aka.ms/python-functions-qs-ms-survey).

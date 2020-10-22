@@ -4,12 +4,12 @@ description: "Passaggio 1 dell'esercitazione: configurare l'ambiente locale per 
 ms.topic: conceptual
 ms.date: 05/19/2020
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: 8d7b3d29b1bd8860d87505fd6f3b09a20702f904
-ms.sourcegitcommit: 69933dcce571b2686897b295b7822e207d944617
+ms.openlocfilehash: 69f66c51a6e55eff91a7de780ebd0bd6f5500f68
+ms.sourcegitcommit: 050c898df76a1af5feffe99e392a073b8ac9c19c
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/18/2020
-ms.locfileid: "90772751"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92137220"
 ---
 # <a name="tutorial-create-and-deploy-serverless-azure-functions-in-python-with-visual-studio-code"></a>Esercitazione: Creare e distribuire Funzioni di Azure serverless in Python con Visual Studio Code
 
@@ -80,3 +80,5 @@ Il comando `func` funziona tramite il file *func.cmd* che viene installato nella
 
 > [!div class="nextstepaction"]
 > [L'accesso ad Azure è stato eseguito: procedere con il passaggio 2 >>>](tutorial-vs-code-serverless-python-02.md)
+
+[Problemi? Segnalarli](https://aka.ms/python-functions-qs-ms-survey).

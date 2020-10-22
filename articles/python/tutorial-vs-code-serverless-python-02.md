@@ -4,12 +4,12 @@ description: "Passaggio 2 dell'esercitazione: informazioni sull'uso dell'estensi
 ms.topic: conceptual
 ms.date: 09/17/2020
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: 24e158023ba748e6137471ae4833a970a185853b
-ms.sourcegitcommit: 723441eda0eb4ff893123201a9e029b7becf5ecc
+ms.openlocfilehash: c21207e9269326ba2189da3c2b5bbbcba1b23c02
+ms.sourcegitcommit: 050c898df76a1af5feffe99e392a073b8ac9c19c
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/08/2020
-ms.locfileid: "91846732"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92137140"
 ---
 # <a name="2-create-a-python-function-for-azure-functions"></a>2: Creare una funzione Python per Funzioni di Azure
 
@@ -47,3 +47,5 @@ Questo articolo illustra come creare una funzione Python per Funzioni di Azure c
 
 > [!div class="nextstepaction"]
 > [La funzione è stata creata: procedere con il passaggio 3 >>>](tutorial-vs-code-serverless-python-03.md)
+
+[Problemi? Segnalarli](https://aka.ms/python-functions-qs-ms-survey).
