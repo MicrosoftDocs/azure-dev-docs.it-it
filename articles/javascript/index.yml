@@ -14,12 +14,12 @@ metadata:
   ms.service: multiple
   ms.devlang: javascript
   ms.custom: 2020Aug21Redesign, devx-track-js
-  ms.openlocfilehash: 7b97323d2fd2e37f215f9c122f6c01ce290208a0
-  ms.sourcegitcommit: 0b1c751c5a4a837977fec1c777bca5ad15cf2fc7
+  ms.openlocfilehash: 8fa0ba6c5191c407c3501dd5b4df09a041bb4160
+  ms.sourcegitcommit: c3a1c9051b89870f6bfdb3176463564963b97ba4
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 10/01/2020
-  ms.locfileid: "91621647"
+  ms.lasthandoff: 10/22/2020
+  ms.locfileid: "92435021"
 landingContent:
 - title: Non si è ancora provato Azure?
   linkLists:
@@ -28,9 +28,9 @@ landingContent:
     - text: Nozioni fondamentali su Azure
       url: /learn/paths/azure-fundamentals/
     - text: Configurare l'ambiente di sviluppo
-      url: configure-local-development-environment.md
+      url: core/configure-local-development-environment.md
     - text: Eseguire l'autenticazione con la libreria client
-      url: node-sdk-azure-authenticate.md
+      url: core/node-sdk-azure-authenticate.md
     - text: Blog di Azure SDK
       url: https://devblogs.microsoft.com/azure-sdk/
 - title: Hosting
@@ -48,7 +48,7 @@ landingContent:
   - linkListType: how-to-guide
     links:
     - text: Stack completo (API serverless e front-end)
-      url: node-howto-create-static-site-jamstack.md
+      url: how-to/create-static-site.md
 - title: Funzioni senza server
   linkLists:
   - linkListType: tutorial
@@ -58,7 +58,7 @@ landingContent:
   - linkListType: how-to-guide
     links:
     - text: Scrivere codice serverless
-      url: node-howto-write-serverless-code.md
+      url: how-to/develop-serverless-apps.md
 - title: Data
   linkLists:
   - linkListType: quickstart
