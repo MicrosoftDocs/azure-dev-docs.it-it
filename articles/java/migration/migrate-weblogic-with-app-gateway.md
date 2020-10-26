@@ -4,17 +4,19 @@ description: Questa esercitazione illustra in modo dettagliato la distribuzione 
 author: edburns
 ms.author: edburns
 ms.topic: tutorial
-ms.date: 08/05/2020
-ms.openlocfilehash: 166e6f90218eb519242da0d89ae6146a2d589863
-ms.sourcegitcommit: b923aee828cd4b309ef92fe1f8d8b3092b2ffc5a
+ms.date: 10/15/2020
+ms.openlocfilehash: 7a4f130e82338dea7c4fd344cfbedb2ed7f88c67
+ms.sourcegitcommit: 050c898df76a1af5feffe99e392a073b8ac9c19c
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88057550"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92137090"
 ---
 # <a name="tutorial-migrate-a-weblogic-server-cluster-to-azure-with-azure-application-gateway-as-a-load-balancer"></a>Esercitazione: Eseguire la migrazione di un cluster di WebLogic Server ad Azure con Gateway applicazione di Azure come servizio di bilanciamento del carico
 
 Questa esercitazione illustra in modo dettagliato il processo di distribuzione di WebLogic Server (WLS) con Gateway applicazione di Azure.  Descrive i passaggi specifici necessari per la creazione di un insieme di credenziali delle chiavi, l'archiviazione di un certificato SSL nell'insieme di credenziali delle chiavi e l'uso di tale certificato per la terminazione SSL.  Anche se per tutti questi elementi è disponibile documentazione specifica, questa esercitazione mostra in particolare il modo in cui è possibile combinare questi elementi per creare una soluzione semplice ma potente per il bilanciamento del carico per WLS in Azure.
+
+<!-- Diagram source at https://github.com/wls-eng/arm-oraclelinux-wls/blob/master/src/main/resources/weblogic-app-gateway-key-vault.vsdx -->
 
 :::image type="content" border="false" source="media/migrate-weblogic-with-app-gateway/weblogic-app-gateway-key-vault.png" alt-text="Diagramma che mostra la relazione tra WLS, Gateway applicazione di Azure e Key Vault.":::
 
@@ -144,7 +146,7 @@ Questa sezione illustrerà come usare l'insieme di credenziali delle chiavi, il 
 
 Per creare il cluster WLS e un'istanza di Gateway applicazione, seguire questa procedura:
 
-1. Iniziare a eseguire la procedura per il provisioning di un cluster WebLogic Server come illustrato nella [documentazione di Oracle](https://aka.ms/arm-oraclelinux-wls-cluster-oracle-docs), ma tornare a questa pagina quando si raggiunge il pannello **Gateway applicazione di Azure**, mostrato qui.
+1. Effettuare il provisioning di un cluster di server WebLogic, come indicato nella [documentazione di Oracle](https://aka.ms/arm-oraclelinux-wls-cluster-oracle-docs) usando l'[offerta di cluster di server WebLogic nel portale di Azure](https://portal.azure.com/#create/oracle.20191007-arm-oraclelinux-wls-cluster20191007-arm-oraclelinux-wls-cluster), ma tornare in questa pagina quando si raggiunge il pannello **Gateway applicazione di Azure**, mostrato qui.
 
    :::image type="content" source="media/migrate-weblogic-with-app-gateway/weblogic-app-gateway-blade.png" alt-text="Diagramma che mostra la relazione tra WLS, Gateway applicazione di Azure e Key Vault.":::
 

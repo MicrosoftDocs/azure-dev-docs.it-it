@@ -6,12 +6,12 @@ ms.service: mobile-services
 ms.topic: tutorial
 ms.date: 07/27/2020
 ms.author: miparker
-ms.openlocfilehash: f173f8431cc7bed0ae56bf14cfc6efcf37dcf230
-ms.sourcegitcommit: e97cb81a245ce7dcabeac3260abc3db7c30edd79
+ms.openlocfilehash: 308e727f57ed086899d4fb5906235cb5a17bda16
+ms.sourcegitcommit: ced8331ba36b28e6e2eacd23a64b39ddc7ffe6ab
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91493269"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92337184"
 ---
 # <a name="tutorial-send-push-notifications-to-xamarinforms-apps-using-azure-notification-hubs-via-a-backend-service"></a>Esercitazione: Inviare notifiche push alle app Xamarin.Forms con Hub di notifica di Azure tramite un servizio back-end  
 
@@ -42,8 +42,9 @@ Durante l'esercitazione vengono eseguiti i passaggi seguenti:
 
 Per seguire l'esercitazione occorre:
 
-* Una [sottoscrizione di Azure](https://portal.azure.com) in cui sia possibile creare e gestire risorse.
-* Un Mac con [Visual Studio per Mac](https://visualstudio.microsoft.com/vs/mac/) installato (o un PC che esegue [Visual Studio 2019](https://visualstudio.microsoft.com/vs) con il carico di lavoro **Sviluppo di applicazioni per dispositivi mobili con .NET**).
+* Una [sottoscrizione di Azure](https://azure.microsoft.com/free/dotnet) in cui sia possibile creare e gestire risorse.
+* Un Mac con [Visual Studio per Mac](https://visualstudio.microsoft.com/vs/mac/) installato o un PC che esegue [Visual Studio 2019](https://visualstudio.microsoft.com/vs).
+* Gli utenti di [Visual Studio 2019](https://visualstudio.microsoft.com/vs) devono anche avere i carichi di lavoro **Sviluppo di applicazioni per dispositivi mobili con .NET** e **Sviluppo ASP.NET e Web** installati.
 * La possibilità di eseguire l'app in **Android** (dispositivo fisico o emulatore) o **iOS** (solo dispositivo fisico).
 
 Per Android, è necessario avere:
@@ -62,12 +63,13 @@ Per iOS, è necessario avere:
 Non occorre avere un'esperienza precedente per seguire i passaggi di questo esempio. È tuttavia utile avere familiarità con gli aspetti seguenti.
 
 * [Portale Apple Developer](https://developer.apple.com)
-* [ASP.NET Core](/aspnet/core/introduction-to-aspnet-core?view=aspnetcore-3.1)
+* [ASP.NET Core](/aspnet/core/introduction-to-aspnet-core?view=aspnetcore-3.1) e [API Web](https://dotnet.microsoft.com/apps/aspnet/apis)
 * [Google Firebase Console](https://console.firebase.google.com/u/0/)
 * [Microsoft Azure](https://portal.azure.com) e [Inviare notifiche push alle app iOS con Hub di notifica di Azure](/azure/notification-hubs/ios-sdk-get-started).
 * [Xamarin](https://dotnet.microsoft.com/apps/xamarin) e [Xamarin.Forms](https://dotnet.microsoft.com/apps/xamarin/xamarin-forms).
 
-I passaggi descritti sono relativi a [Visual Studio per Mac](https://visualstudio.microsoft.com/vs/mac/), ma è possibile seguire l'esercitazione anche usando [Visual Studio 2019](https://visualstudio.microsoft.com/vs).
+> [!IMPORTANT]
+> I passaggi indicati sono specifici per [Visual Studio per Mac](https://visualstudio.microsoft.com/vs/mac/). È possibile seguirli usando [Visual Studio 2019](https://visualstudio.microsoft.com/vs) ma potrebbero esserci alcune differenze da risolvere, ad esempio le descrizioni dell'interfaccia utente e dei flussi di lavoro, i nomi dei modelli, la configurazione dell'ambiente e così via.
 
 ## <a name="set-up-push-notification-services-and-azure-notification-hub"></a>Configurare i servizi di notifica push e Hub di notifica di Azure
 
