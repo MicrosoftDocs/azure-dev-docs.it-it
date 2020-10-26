@@ -1,16 +1,18 @@
 - name: Azure per sviluppatori JavaScript e Node.js
   href: index.yml
   items:
+    - name: Novità della documentazione
+      href: whats-new-docs.md
     - name: Introduzione ad Azure con JavaScript
       items:
         - name: Configurare l'ambiente di sviluppo
-          href: configure-local-development-environment.md
+          href: core/configure-local-development-environment.md
         - name: Configurare un'entità servizio
-          href: node-sdk-azure-authenticate-principal.md
+          href: core/node-sdk-azure-authenticate-principal.md
         - name: Eseguire l'autenticazione ad Azure
-          href: node-sdk-azure-authenticate.md
+          href: core/node-sdk-azure-authenticate.md
     - name: Avvi rapidi
-      expanded: true
+      expanded: false
       items:
         - name: Hosting di app
           items:
@@ -30,8 +32,6 @@
               href: /azure/aks/kubernetes-walkthrough?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
             - name: Macchine virtuali di Linux
               href: /azure/virtual-machines/linux/quick-create-cli?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
-            - name: Express.js con MongoDB
-              href: tutorial-visualstudiocode-app-service-mongodb/tutorial-azure-web-app-mongodb-feedback.yml
         - name: DevOps
           items:
             - name: Azure Repos
@@ -52,8 +52,6 @@
               href: 'https://code.visualstudio.com/docs/azure/remote-debugging'
             - name: Debug delle app Node.js locali in VS Code
               href: 'https://code.visualstudio.com/docs/nodejs/nodejs-debugging'
-        - name: Strumenti ed estensioni
-          href: node-azure-tools.md
         - name: Archiviare dati
           items:
             - name: Archiviazione BLOB
@@ -98,12 +96,12 @@
               href: /azure/cognitive-services/Computer-vision/Quickstarts/node-analyze?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
             - name: Riconoscimento vocale
               href: /azure/cognitive-services/speech-service/get-started?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
-        - name: Registrazione e metriche
-          items:
-            - name: Registrazione con Azure SDK
-              href: node-sdk-logging.md
     - name: Esercitazioni
       items:
+        - name: Caricare immagini in BLOB di archiviazione
+          href: tutorial/browser-file-upload.yml?preview=tutorialFeedback
+        - name: Express.js con MongoDB
+          href: tutorial/web-app-mongodb.yml?preview=tutorialFeedback
         - name: Distribuire Funzioni di Azure con VS Code
           items:
             - name: Introduzione e prerequisiti
@@ -128,10 +126,6 @@
               href: tutorial-vscode-azure-app-service-node-04.md
             - name: Pulire le risorse
               href: tutorial-vscode-azure-app-service-node-05.md
-        - name: Caricare immagini in BLOB di archiviazione
-          href: tutorial-visualstudiocode-browser-file-upload-feedback.yml?preview=tutorialFeedback
-        - name: Express.js con MongoDB
-          href: tutorial-visualstudiocode-app-service-mongodb/tutorial-azure-web-app-mongodb-feedback.yml?tabs=bash&preview=tutorialFeedback
         - name: Distribuire Deno nel servizio app con VS Code
           items:
             - name: Introduzione e prerequisiti
@@ -192,26 +186,28 @@
               href: tutorial-vscode-static-website-node-06.md
     - name: Learn
       href: learn-azure-javascript.md
+    - name: Strumenti di Azure
+      href: node-azure-tools.md
     - name: Guide alle procedure
       items:
         - name: Sviluppo end-to-end in Node.js con VS Code
-          href: node-howto-e2e.md
+          href: how-to/develop-nodejs-on-azure.md
         - name: Distribuire un'app Web
-          href: node-howto-deploy-web-app.md
+          href: how-to/deploy-web-app.md
         - name: Distribuire contenitori
-          href: node-howto-deploy-containers.md
+          href: how-to/deploy-containers.md
         - name: Distribuire tramite recapito continuo
           href: /azure/devops/pipelines/languages/javascript?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
         - name: Integrare con database
-          href: node-howto-integrate-databases.md
+          href: how-to/integrate-database.md
         - name: Scrivere codice serverless
-          href: node-howto-write-serverless-code.md
+          href: how-to/develop-serverless-apps.md
         - name: Creare un sito statico (JAMstack)
-          href: node-howto-create-static-site-jamstack.md
-        - name: Automatizzare il monitoraggio
-          href: /azure/azure-monitor/learn/nodejs-quick-start?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
+          href: how-to/create-static-site.md
         - name: Creare un'API REST
           href: /azure/app-service/app-service-web-tutorial-rest-api?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
+        - name: Registrazione e metriche
+          href: how-to/node-sdk-logging.md
     - name: Esempi
       items:
         - name: App Web e serverless
