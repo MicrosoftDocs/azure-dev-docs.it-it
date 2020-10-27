@@ -3,17 +3,17 @@ title: Come creare un'applicazione Spring Cloud Stream Binder con Hub eventi di 
 description: Informazioni su come configurare un'applicazione Spring Cloud Stream Binder basata su Java creata con Spring Boot Initializr con Hub eventi di Azure.
 services: event-hubs
 documentationcenter: java
-ms.date: 09/11/2020
+ms.date: 10/13/2020
 ms.service: event-hubs
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: f19f3a8d3e101b6cd8d6e9173e2dd99eae590ef9
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: 609c848fee2243b132166781e9b2c6cd8f107787
+ms.sourcegitcommit: ced8331ba36b28e6e2eacd23a64b39ddc7ffe6ab
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831277"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92337159"
 ---
 # <a name="how-to-create-a-spring-cloud-stream-binder-application-with-azure-event-hubs"></a>Come creare un'applicazione Spring Cloud Stream Binder con Hub eventi di Azure
 
@@ -21,16 +21,12 @@ Questo articolo illustra come configurare un'applicazione Spring Cloud Stream Bi
 
 ## <a name="prerequisites"></a>Prerequisites
 
-I prerequisiti seguenti sono necessari per seguire le procedure disponibili in questo articolo:
-
 * Sottoscrizione di Azure; se non si ha una sottoscrizione di Azure, è possibile attivare i [vantaggi per i sottoscrittori di MSDN] oppure iscriversi per ottenere un [account Azure gratuito].
 * Java Development Kit (JDK) supportato. Per altre informazioni sulle versioni di JDK utilizzabili per lo sviluppo in Azure, vedere <https://aka.ms/azure-jdks>.
 * [Apache Maven](http://maven.apache.org/), versione 3.0 o versione successiva.
 
 > [!IMPORTANT]
->
-> Per completare i passaggi descritti in questo articolo è necessario Spring Boot versione 2.0 o successiva.
->
+> Per completare i passaggi contenuti in questo articolo, è necessario Spring Boot versione 2.2 o successiva.
 
 ## <a name="create-an-azure-event-hub-using-the-azure-portal"></a>Creare un hub eventi di Azure con il portale di Azure
 
@@ -40,9 +36,9 @@ La procedura seguente crea un hub eventi di Azure.
 
 1. Passare al portale di Azure all'indirizzo <https://portal.azure.com/> ed eseguire l'accesso.
 
-1. Selezionare **+ Crea una risorsa** e quindi cercare *Hub eventi*.
+1. Selezionare **+ Crea una risorsa** e quindi cercare *Hub eventi* .
 
-1. Selezionare **Crea**.
+1. Selezionare **Crea** .
 
    >[!div class="mx-imgBorder"]
    >![Creare uno spazio dei nomi dell'hub eventi di Azure][IMG01]
@@ -51,7 +47,7 @@ La procedura seguente crea un hub eventi di Azure.
 
    * Scegliere la **sottoscrizione** da usare per lo spazio dei nomi.
    * Specificare se creare un nuovo **gruppo di risorse** per lo spazio dei nomi o sceglierne uno esistente.
-   * Immettere un **nome di spazio dei nomi** univoco, che diventerà parte dell'URI dello spazio dei nomi dell'hub eventi. Se, ad esempio, si immette *wingtiptoys-space* in **Nome dello spazio dei nomi**, l'URI sarà `wingtiptoys-space.servicebus.windows.net`.
+   * Immettere un **nome di spazio dei nomi** univoco, che diventerà parte dell'URI dello spazio dei nomi dell'hub eventi. Se, ad esempio, si immette *wingtiptoys-space* in **Nome dello spazio dei nomi** , l'URI sarà `wingtiptoys-space.servicebus.windows.net`.
    * Specificare la **località** per lo spazio dei nomi dell'hub eventi.
    * Piano tariffario.
    * È anche possibile specificare le **unità elaborate** per lo spazio dei nomi.
@@ -59,11 +55,11 @@ La procedura seguente crea un hub eventi di Azure.
    >[!div class="mx-imgBorder"]
    >![Specificare le opzioni per lo spazio dei nomi dell'hub eventi di Azure][IMG02]
 
-1. Dopo aver specificato le opzioni elencate in precedenza, selezionare **Rivedi e crea**, esaminare le specifiche e selezionare **Crea** per creare lo spazio dei nomi.
+1. Dopo aver specificato le opzioni elencate in precedenza, selezionare **Rivedi e crea** , esaminare le specifiche e selezionare **Crea** per creare lo spazio dei nomi.
 
 ## <a name="create-an-azure-event-hub-in-your-namespace"></a>Creare un hub eventi di Azure nello spazio dei nomi
 
-Dopo la distribuzione dello spazio dei nomi, selezionare **Vai alla risorsa** per aprire la pagina **Spazio dei nomi di Hub eventi**, in cui è possibile creare un hub eventi.
+Dopo la distribuzione dello spazio dei nomi, selezionare **Vai alla risorsa** per aprire la pagina **Spazio dei nomi di Hub eventi** , in cui è possibile creare un hub eventi.
 
 1. Passare allo spazio dei nomi creato nella sezione precedente.
 
@@ -71,7 +67,7 @@ Dopo la distribuzione dello spazio dei nomi, selezionare **Vai alla risorsa** pe
 
 1. Assegnare un nome all'hub eventi.
 
-1. Selezionare **Crea**.
+1. Selezionare **Crea** .
 
    >[!div class="mx-imgBorder"]
    >![Creare un hub eventi][IMG05]
@@ -82,21 +78,21 @@ La procedura seguente crea un account di archiviazione per i checkpoint dell'hub
 
 1. Passare al portale di Azure all'indirizzo <https://portal.azure.com/>.
 
-1. Selezionare **+ Crea una risorsa**, **Archiviazione** e quindi **Account di archiviazione**.
+1. Selezionare **+ Crea una risorsa** , **Archiviazione** e quindi **Account di archiviazione** .
 
 1. Nella pagina **Crea account di archiviazione** immettere le informazioni seguenti:
 
    * Scegliere la **sottoscrizione** da usare per l'account di archiviazione.
    * Specificare se creare un nuovo **gruppo di risorse** per l'account di archiviazione o sceglierne uno esistente.
-   * Immettere un nome univoco per l'account di archiviazione in **Nome**.
+   * Immettere un nome univoco per l'account di archiviazione in **Nome** .
    * Specificare la **località** per l'account di archiviazione.
-   
+
    >[!div class="mx-imgBorder"]
    >![Specificare le opzioni per l'account di archiviazione di Azure][IMG08]
 
 1. Dopo aver specificato le opzioni elencate sopra, selezionare **Rivedi e crea** per creare l'account di archiviazione.
 
-1. Esaminare le specifiche e selezionare **Crea**.  La distribuzione richiede diversi minuti.
+1. Esaminare le specifiche e selezionare **Crea** .  La distribuzione richiede diversi minuti.
 
 ## <a name="create-a-simple-spring-boot-application-with-the-spring-initializr"></a>Creare un'applicazione Spring Boot semplice con Spring Initializr
 
@@ -106,20 +102,19 @@ La procedura seguente crea un'applicazione Spring Boot.
 
 1. Specificare le opzioni seguenti:
 
-   * Generare un progetto **Maven** con **Java**.
+   * Generare un progetto **Maven** con **Java** .
    * Specificare **Spring Boot** versione 2.2 o successiva.
    * Specificare i nomi di **Group** (Gruppo) e **Artifact** (Artefatto) per l'applicazione.
-   * Aggiungere la dipendenza *Web*.
+   * Selezionare **8** per la versione di Java.
+   * Aggiungere la dipendenza *Web* .
 
    >[!div class="mx-imgBorder"]
    >![Opzioni di base di Spring Initializr][SI01]
 
    > [!NOTE]
-   >
-   > Spring Initializr usa i nomi in **Group** (Gruppo) e **Artifact** (Artefatto) per creare il nome del pacchetto, ad esempio *com.contoso.eventhubs.sample*.
-   >
+   > Spring Initializr usa i nomi in **Group** (Gruppo) e **Artifact** (Artefatto) per creare il nome del pacchetto, ad esempio *com.contoso.eventhubs.sample* .
 
-1. Dopo aver specificato le opzioni elencate in precedenza, selezionare **GENERATE CTRL +** (GENERA CTRL +).
+1. Dopo aver specificato le opzioni elencate sopra, selezionare **GENERA** .
 
 1. Quando richiesto, scaricare il progetto in un percorso nel computer locale.
 
@@ -145,7 +140,23 @@ La procedura seguente crea un'applicazione Spring Boot.
    </dependency>
    ```
 
-1. Salvare e chiudere il file *pom.xml*.
+1. Se si usa JDK versione 9 o successiva, aggiungere le dipendenze seguenti:
+
+   ```xml
+   <dependency>
+       <groupId>javax.xml.bind</groupId>
+       <artifactId>jaxb-api</artifactId>
+       <version>2.3.1</version>
+   </dependency>
+   <dependency>
+       <groupId>org.glassfish.jaxb</groupId>
+       <artifactId>jaxb-runtime</artifactId>
+       <version>2.3.1</version>
+       <scope>runtime</scope>
+   </dependency>
+   ```
+
+1. Salvare e chiudere il file *pom.xml* .
 
 ## <a name="create-an-azure-credential-file"></a>Creare un file di credenziali di Azure
 
@@ -258,7 +269,7 @@ La procedura seguente crea un'applicazione Spring Boot.
    |       `spring.cloud.stream.bindings.input.group `        | Specifica un gruppo di consumer dell'hub eventi di Azure, che è possibile impostare su "$Default" per usare il gruppo di consumer di base creato al momento della creazione dell'hub eventi di Azure. |
    |    `spring.cloud.stream.bindings.output.destination`     |                               Specifica l'hub eventi di Azure destinazione di output, che per questa esercitazione è uguale alla destinazione di input.                               |
 
-3. Salvare e chiudere il file *application.properties*.
+3. Salvare e chiudere il file *application.properties* .
 
 ## <a name="add-sample-code-to-implement-basic-event-hub-functionality"></a>Aggiungere codice di esempio per implementare le funzionalità di base dell'hub eventi
 
@@ -323,7 +334,7 @@ In questa sezione si creano le classi Java necessarie per inviare eventi all'hub
         }
     }
     ```
-1. Salvare e chiudere il file *EventhubSource.java*.
+1. Salvare e chiudere il file *EventhubSource.java* .
 
 ### <a name="create-a-new-class-for-the-sink-connector"></a>Creare una nuova classe per il connettore sink
 
@@ -359,13 +370,13 @@ In questa sezione si creano le classi Java necessarie per inviare eventi all'hub
    }
    ```
 
-1. Salvare e chiudere il file *EventhubSink.java*.
+1. Salvare e chiudere il file *EventhubSink.java* .
 
 ## <a name="build-and-test-your-application"></a>Compilare e testare l'applicazione
 
 Usare le procedure seguenti per compilare ed eseguire l'applicazione.
 
-1. Aprire un prompt dei comandi e cambiare la directory passando alla cartella in cui si trova il file *pom.xml*, ad esempio:
+1. Aprire un prompt dei comandi e cambiare la directory passando alla cartella in cui si trova il file *pom.xml* , ad esempio:
 
    ```bash
     cd C:\SpringBoot\eventhubs-sample
@@ -432,5 +443,4 @@ Per altre informazioni sull'uso di Azure con Java, vedere [Azure per sviluppator
 [IMG02]: media/configure-spring-cloud-stream-binder-java-app-azure-event-hub/create-event-hub-02.png
 [IMG05]: media/configure-spring-cloud-stream-binder-java-app-azure-event-hub/create-event-hub-05.png
 [IMG08]: media/configure-spring-cloud-stream-binder-java-app-azure-event-hub/create-event-hub-08.png
-
 [SI01]: media/configure-spring-cloud-stream-binder-java-app-azure-event-hub/create-project-01.png

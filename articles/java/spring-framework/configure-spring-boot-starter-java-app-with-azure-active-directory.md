@@ -9,12 +9,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: identity
 ms.custom: devx-track-java
-ms.openlocfilehash: 762e40aa656ddff76f3bc8e1b38b8845e8f20cdd
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: 0e247a912429f8f798c174af3e79bb074e3da2ed
+ms.sourcegitcommit: ced8331ba36b28e6e2eacd23a64b39ddc7ffe6ab
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90830097"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92337169"
 ---
 # <a name="tutorial-secure-a-java-web-app-using-the-spring-boot-starter-for-azure-active-directory"></a>Esercitazione: Proteggere un'app Web Java con l'utilità di avvio Spring Boot per Azure Active Directory
 
@@ -42,9 +42,9 @@ I prerequisiti seguenti sono necessari per completare le procedure disponibili i
 
 1. Passare a <https://start.spring.io/>.
 
-1. Specificare che si vuole generare un progetto **Maven** con **Java**, quindi immettere i nomi in **Group** (Gruppo) e **Artifact** (Artefatto) per l'applicazione.
-1. Aggiungere **Dipendenze** per **Spring Web**, **Azure Active Directory** e **Spring Security**.
-1. Nella parte inferiore della pagina fare clic sul collegamento **Genera**.
+1. Specificare che si vuole generare un progetto **Maven** con **Java** , quindi immettere i nomi in **Group** (Gruppo) e **Artifact** (Artefatto) per l'applicazione.
+1. Aggiungere **Dipendenze** per **Spring Web** , **Azure Active Directory** e **Spring Security** .
+1. Nella parte inferiore della pagina fare clic sul collegamento **Genera** .
    
    >[!div class="mx-imgBorder"]
    >![Specificare i nomi del gruppo e dell'artefatto, selezionare dipendenze][create-spring-app-01]
@@ -57,17 +57,17 @@ I prerequisiti seguenti sono necessari per completare le procedure disponibili i
 
 1. Accedere a <https://portal.azure.com>.
 
-1. Fare clic su **+Crea una risorsa**, quindi su **Identità** e infine su **Azure Active Directory**.
+1. Fare clic su **+Crea una risorsa** , quindi su **Identità** e infine su **Azure Active Directory** .
    
    >[!div class="mx-imgBorder"]
    >![Creare la nuova istanza di Azure Active Directory][create-directory-01]
 
-1. Immettere il **Nome organizzazione** e il **Nome di dominio iniziale**. Copiare l'URL completo della directory. L'URL verrà usato per aggiungere account utente più avanti in questa esercitazione,
+1. Immettere il **Nome organizzazione** e il **Nome di dominio iniziale** . Copiare l'URL completo della directory. L'URL verrà usato per aggiungere account utente più avanti in questa esercitazione,
  ad esempio: `azuresampledirectory.onmicrosoft.com`. 
 
     Copiare l'URL completo della directory. L'URL verrà usato per aggiungere account utente più avanti in questa esercitazione, Ad esempio: azuresampledirectory.onmicrosoft.com.
 
-    Al termine, fare clic su **Crea**. La creazione della nuova risorsa richiederà alcuni minuti.
+    Al termine, fare clic su **Crea** . La creazione della nuova risorsa richiederà alcuni minuti.
    
    >[!div class="mx-imgBorder"]
    >![Specificare i nomi di Azure Active Directory][create-directory-02]
@@ -77,34 +77,34 @@ I prerequisiti seguenti sono necessari per completare le procedure disponibili i
    >[!div class="mx-imgBorder"]
    >![Selezionare il nome dell'account Azure][create-directory-03]
 
-1. Copiare l'**ID tenant** perché questo valore verrà usato per configurare il file *application.properties* più avanti in questa esercitazione.
+1. Copiare l' **ID tenant** perché questo valore verrà usato per configurare il file *application.properties* più avanti in questa esercitazione.
    
    >[!div class="mx-imgBorder"]
    >![Copiare l'ID tenant][create-directory-04]
 
 ### <a name="add-an-application-registration-for-your-spring-boot-app"></a>Aggiungere una registrazione per l'app Spring Boot
 
-1. Scegliere **Registrazioni per l'app** dal menu del portale e fare clic su **Registra un'applicazione**.
+1. Scegliere **Registrazioni per l'app** dal menu del portale e fare clic su **Registra un'applicazione** .
    
    >[!div class="mx-imgBorder"]
    >![Aggiungere una nuova registrazione per l'app][create-app-registration-01]
 
-1. Selezionare l'applicazione e quindi fare clic su **Registra**.
+1. Selezionare l'applicazione e quindi fare clic su **Registra** .
    
    >[!div class="mx-imgBorder"]
    >![Creare una nuova registrazione di app][create-app-registration-02]
 
-1. Quando viene visualizzata la pagina per la registrazione dell'app, copiare i valori di **ID applicazione** e **ID tenant**, perché verranno usati per configurare il file *application.properties* più avanti in questa esercitazione.
+1. Quando viene visualizzata la pagina per la registrazione dell'app, copiare i valori di **ID applicazione** e **ID tenant** , perché verranno usati per configurare il file *application.properties* più avanti in questa esercitazione.
    
    >[!div class="mx-imgBorder"]
    >![Copiare le chiavi della registrazione per l'app][create-app-registration-03]
 
-1. Fare clic su **Certificati e segreti** nel riquadro di spostamento sinistro.  Quindi fare clic su **Nuovo segreto client**.
+1. Fare clic su **Certificati e segreti** nel riquadro di spostamento sinistro.  Quindi fare clic su **Nuovo segreto client** .
    
    >[!div class="mx-imgBorder"]
    >![Creare le chiavi della registrazione per l'app][create-app-registration-03-5]
 
-1. Aggiungere una **Descrizione** e selezionare durata nell'elenco **Scade**.  Scegliere **Aggiungi**. Il valore della chiave verrà compilato automaticamente.
+1. Aggiungere una **Descrizione** e selezionare durata nell'elenco **Scade** .  Scegliere **Aggiungi** . Il valore della chiave verrà compilato automaticamente.
    
    >[!div class="mx-imgBorder"]
    >![Specificare i parametri della chiave di registrazione per l'app][create-app-registration-04]
@@ -116,27 +116,27 @@ I prerequisiti seguenti sono necessari per completare le procedure disponibili i
 
 1. Fare clic su **Autorizzazioni API** nel riquadro di spostamento sinistro. 
 
-1. Fare clic su **Microsoft Graph**, quindi selezionare **Accede alla directory come utente registrato** e **Accedi e leggi il profilo di un altro utente**. Fare clic su **Concedi autorizzazioni** e quindi su **Sì** quando richiesto.
+1. Fare clic su **Microsoft Graph** , quindi selezionare **Accede alla directory come utente registrato** e **Accedi e leggi il profilo di un altro utente** . Fare clic su **Concedi autorizzazioni** e quindi su **Sì** quando richiesto.
    
    >[!div class="mx-imgBorder"]
    >![Aggiungere le autorizzazioni di accesso][create-app-registration-08]
    
-1. Fare clic su **Concedi consenso amministratore per l'esempio di Azure** e fare clic su **Sì**.
+1. Fare clic su **Concedi consenso amministratore per l'esempio di Azure** e fare clic su **Sì** .
    
    >[!div class="mx-imgBorder"]
    >![Concedere le autorizzazioni di accesso][create-app-registration-05]
 
-1. Nella pagina principale della registrazione dell'app fare clic su **Autenticazione** e quindi su **Aggiungi una piattaforma**.  Fare quindi clic su **Applicazioni Web**.
+1. Nella pagina principale della registrazione dell'app fare clic su **Autenticazione** e quindi su **Aggiungi una piattaforma** .  Fare quindi clic su **Applicazioni Web** .
    
    >[!div class="mx-imgBorder"]
    >![Modificare gli URL di risposta][create-app-registration-09]
 
-1. Immettere 'http://localhost:8080/login/oauth2/code/azure 'come nuovo **URI di reindirizzamento** e quindi fare clic su **Configura**.
+1. Immettere 'http://localhost:8080/login/oauth2/code/azure 'come nuovo **URI di reindirizzamento** e quindi fare clic su **Configura** .
    
    >[!div class="mx-imgBorder"]
    >![Aggiungere un nuovo URL di risposta][create-app-registration-10]
 
-1. Nella pagina principale per la registrazione dell'app fare clic su **Manifesto**, quindi impostare il valore dei parametri `oauth2AllowIdTokenImplicitFlow` e `oauth2AllowImplicitFlow` su `true` e fare clic su **Salva**.
+1. Nella pagina principale per la registrazione dell'app fare clic su **Manifesto** , quindi impostare il valore dei parametri `oauth2AllowIdTokenImplicitFlow` e `oauth2AllowImplicitFlow` su `true` e fare clic su **Salva** .
    
    >[!div class="mx-imgBorder"]
    >![Configurare il manifesto dell'app][create-app-registration-11]
@@ -146,12 +146,12 @@ I prerequisiti seguenti sono necessari per completare le procedure disponibili i
 
 ### <a name="add-a-user-account-to-your-directory-and-add-that-account-to-a-group"></a>Aggiungere un account utente alla directory e quindi aggiungere tale account al gruppo
 
-1. Nella pagina **Panoramica** di Active Directory fare clic su **Utenti** e quindi su **Nuovo utente**.
+1. Nella pagina **Panoramica** di Active Directory fare clic su **Utenti** e quindi su **Nuovo utente** .
    
    >[!div class="mx-imgBorder"]
    >![Aggiungere un nuovo account utente][create-user-01]
 
-1. Quando viene visualizzato il pannello **Utente**, immettere i valori per **Nome utente** e **Nome**.  Fare quindi clic su **Crea**.
+1. Quando viene visualizzato il pannello **Utente** , immettere i valori per **Nome utente** e **Nome** .  Fare quindi clic su **Crea** .
    
    >[!div class="mx-imgBorder"]
    >![Immettere le informazioni sull'account utente][create-user-02]
@@ -161,14 +161,14 @@ I prerequisiti seguenti sono necessari per completare le procedure disponibili i
    >
    > `test-user@azuresampledirectory.onmicrosoft.com`
 
-1. Nella pagina **Panoramica** di Active Directory fare clic su **Gruppi**, quindi su **Nuovo gruppo** per creare un gruppo da usare per l'autorizzazione nell'applicazione.
+1. Nella pagina **Panoramica** di Active Directory fare clic su **Gruppi** , quindi su **Nuovo gruppo** per creare un gruppo da usare per l'autorizzazione nell'applicazione.
 
-1. Quindi fare clic su **Nessun membro selezionato**. Ai fini di questa esercitazione verrà creato un gruppo denominato *users*.  Cercare l'utente creato nel passaggio precedente.  Fare clic su **Seleziona** per aggiungere l'utente al gruppo.  Quindi fare clic su **Crea** per creare il nuovo gruppo.
+1. Quindi fare clic su **Nessun membro selezionato** . Ai fini di questa esercitazione, verrà creato un gruppo denominato *Users* .  Cercare l'utente creato nel passaggio precedente.  Fare clic su **Seleziona** per aggiungere l'utente al gruppo.  Quindi fare clic su **Crea** per creare il nuovo gruppo.
    
    >[!div class="mx-imgBorder"]
    >![Selezionare l'utente per il gruppo][create-user-03]
 
-1. Tornare nel pannello **Utenti**, selezionare l'utente di test, fare clic su **Reimposta password**, quindi copiare la password, che verrà usata per l'accesso all'applicazione più avanti in questa esercitazione.
+1. Tornare nel pannello **Utenti** , selezionare l'utente di test, fare clic su **Reimposta password** , quindi copiare la password, che verrà usata per l'accesso all'applicazione più avanti in questa esercitazione.
    
    >[!div class="mx-imgBorder"]
    >![Mostrare la password][create-user-04]
@@ -192,7 +192,7 @@ I prerequisiti seguenti sono necessari per completare le procedure disponibili i
    </dependency>
    ```
 
-1. Salvare e chiudere il file *pom.xml*.
+1. Salvare e chiudere il file *pom.xml* .
 
 1. Passare alla cartella *src/main/resources* nel progetto e aprire il file *application.properties* in un editor di testo.
 
@@ -222,11 +222,11 @@ I prerequisiti seguenti sono necessari per completare le procedure disponibili i
    | `azure.activedirectory.user-group.allowed-groups` | Contiene un elenco di gruppi di Active Directory da usare per l'autorizzazione. |
 
    > [!NOTE]
-   > Per un elenco completo dei valori disponibili nel file *application.properties*, vedere l'[esempio Spring Boot per Azure Active Directory][AAD Spring Boot Sample] in GitHub.
+   > Per un elenco completo dei valori disponibili nel file *application.properties* , vedere l' [esempio Spring Boot per Azure Active Directory][AAD Spring Boot Sample] in GitHub.
 
-1. Salvare e chiudere il file *application.properties*.
+1. Salvare e chiudere il file *application.properties* .
 
-1. Creare una cartella denominata *controller* nella cartella di origine Java per l'applicazione, ad esempio *src/main/java/com/wingtiptoys/security/controller*.
+1. Creare una cartella denominata *controller* nella cartella di origine Java per l'applicazione, ad esempio *src/main/java/com/wingtiptoys/security/controller* .
 
 1. Creare un nuovo file Java denominato *HelloController.java* nella cartella *controller* e aprirlo in un editor di testo.
 
@@ -255,7 +255,7 @@ I prerequisiti seguenti sono necessari per completare le procedure disponibili i
    ```
 
    > [!NOTE]
-   > Il nome di gruppo specificato nel metodo `@PreAuthorize("hasRole('')")` deve contenere uno dei gruppi specificati nel campo `azure.activedirectory.user-group.allowed-groups` del file *application.properties*.
+   > Il nome di gruppo specificato nel metodo `@PreAuthorize("hasRole('')")` deve contenere uno dei gruppi specificati nel campo `azure.activedirectory.user-group.allowed-groups` del file *application.properties* .
    >
    > È anche possibile specificare impostazioni di autorizzazione diverse per mapping di richieste diversi, ad esempio:
    >
@@ -280,7 +280,7 @@ I prerequisiti seguenti sono necessari per completare le procedure disponibili i
    > }
    > ```
 
-1. Creare una cartella denominata *security* nella cartella di origine Java per l'applicazione, ad esempio *src/main/java/com/wingtiptoys/security/security*.
+1. Creare una cartella denominata *security* nella cartella di origine Java per l'applicazione, ad esempio *src/main/java/com/wingtiptoys/security/security* .
 
 1. Creare un nuovo file Java denominato *WebSecurityConfig.java* nella cartella *security* e aprirlo in un editor di testo.
 

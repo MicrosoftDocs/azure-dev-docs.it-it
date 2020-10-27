@@ -5,18 +5,18 @@ services: cosmos-db
 documentationcenter: java
 author: KarlErickson
 ms.author: karler
-ms.date: 10/06/2020
+ms.date: 10/13/2020
 ms.service: cosmos-db
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: data-services
 ms.custom: devx-track-java
-ms.openlocfilehash: bc7754cf3f35bf8d6bc0d0a427dc1c532ff6e834
-ms.sourcegitcommit: 723441eda0eb4ff893123201a9e029b7becf5ecc
+ms.openlocfilehash: fdc0892298c18e3be5db1b97b1ad5fe77ac6a537
+ms.sourcegitcommit: 76f1a47c58810486856e0d128bd154cf7d355e65
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/08/2020
-ms.locfileid: "91846532"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92200624"
 ---
 # <a name="how-to-use-the-spring-boot-starter-with-the-azure-cosmos-db-sql-api"></a>Come usare Spring Boot Starter con l'API SQL di Azure Cosmos DB
 
@@ -26,16 +26,14 @@ Questo articolo descrive la creazione di un database di Azure Cosmos DB con il p
 
 ## <a name="prerequisites"></a>Prerequisiti
 
-I prerequisiti seguenti sono necessari per seguire le procedure disponibili in questo articolo:
-
 * Sottoscrizione di Azure; se non si ha una sottoscrizione di Azure, è possibile attivare i [vantaggi per i sottoscrittori di MSDN] oppure iscriversi per ottenere un [account Azure gratuito].
 * Java Development Kit (JDK) supportato. Per altre informazioni sulle versioni di JDK utilizzabili per lo sviluppo in Azure, vedere <https://aka.ms/azure-jdks>.
 
 ## <a name="create-an-azure-cosmos-db-by-using-the-azure-portal"></a>Creare un Azure Cosmos DB usando il portale di Azure
 
-1. Passare al portale di Azure all'indirizzo <https://portal.azure.com/> e fare clic su **Crea una risorsa**.
+1. Passare al portale di Azure all'indirizzo <https://portal.azure.com/> e fare clic su **Crea una risorsa** .
 
-1. Fare clic su **Database** e quindi su **Azure Cosmos DB**.
+1. Fare clic su **Database** e quindi su **Azure Cosmos DB** .
 
     ![Selezione di Azure Cosmos DB nel portale di Azure.][AZ02]
 
@@ -43,15 +41,15 @@ I prerequisiti seguenti sono necessari per seguire le procedure disponibili in q
 
     * Selezionare la **sottoscrizione** da usare per il database.
     * Specificare se creare un nuovo **gruppo di risorse** per il database o sceglierne uno esistente.
-    * Immettere un **nome account** univoco, che verrà usato come URI per il database, ad esempio *wingtiptoysdata*.
+    * Immettere un **nome account** univoco, che verrà usato come URI per il database, ad esempio *wingtiptoysdata* .
     * Scegliere **Core (SQL)** come API.
     * Specificare il **percorso** per il database.
 
-    Dopo aver specificato queste opzioni, fare clic su **Rivedi e crea**, verificare le specifiche, quindi fare clic su **Crea**.
+    Dopo aver specificato queste opzioni, fare clic su **Rivedi e crea** , verificare le specifiche, quindi fare clic su **Crea** .
 
     ![Selezionare Rivedi e crea per continuare.][AZ03]
 
-1. Al termine della creazione, il database viene elencato nel **Dashboard** di Azure e nelle pagine **Tutte le risorse** e **Azure Cosmos DB**. È possibile fare clic sul database in una di queste posizioni per aprire la pagina delle proprietà per la cache.
+1. Al termine della creazione, il database viene elencato nel **Dashboard** di Azure e nelle pagine **Tutte le risorse** e **Azure Cosmos DB** . È possibile fare clic sul database in una di queste posizioni per aprire la pagina delle proprietà per la cache.
 
 1. Quando viene visualizzata la pagina delle proprietà per il database, fare clic su **Chiavi** e copiare le chiavi di accesso e l'URI per il database. Questi valori verranno usati nell'applicazione Spring Boot.
 
@@ -63,12 +61,21 @@ Usare la procedura seguente per creare un nuovo progetto di applicazione Spring 
 
 1. Passare a <https://start.spring.io/>.
 
-1. Specificare che si vuole generare un progetto **Maven** con **Java**, specificare la versione di **Spring Boot**, immettere i nomi di **Gruppo** (Gruppo) e **Artifact** (Artefatto) per l'applicazione, aggiungere **Azure Support** (Supporto di Azure) nelle dipendenze e quindi fare clic sul pulsante **Generate Project** (Genera progetto).
+1. Specificare le opzioni seguenti:
 
-    ![Opzioni di base di Spring Initializr][SI01]
+   * Generare un progetto **Maven** con **Java** .
+   * Specificare la versione di **Spring Boot** in uso.
+   * Specificare i nomi di **Group** (Gruppo) e **Artifact** (Artefatto) per l'applicazione.
+   * Selezionare **8** per la versione di Java.
+   * Aggiungere **Supporto di Azure** nelle dipendenze.
 
-    > [!NOTE]
-    > Spring Initializr usa i nomi in **Group** (Gruppo) e **Artifact** (Artefatto) per creare il nome del pacchetto, ad esempio *com.example.wingtiptoysdata*.
+   >[!div class="mx-imgBorder"]
+   >![Opzioni di base di Spring Initializr][SI01]
+
+   > [!NOTE]
+   > Spring Initializr usa i nomi in **Group** (Gruppo) e **Artifact** (Artefatto) per creare il nome del pacchetto, ad esempio *com.example.wingtiptoysdata* .
+
+1. Dopo aver specificato le opzioni elencate sopra, selezionare **GENERA** .
 
 1. Quando richiesto, scaricare il progetto in un percorso nel computer locale ed estrarre i file.
 
@@ -103,7 +110,7 @@ La semplice applicazione Spring Boot è ora pronta per la modifica.
     </properties>
     ```
 
-1. Salvare e chiudere il file *pom.xml*.
+1. Salvare e chiudere il file *pom.xml* .
 
 ## <a name="configure-your-spring-boot-application-to-use-your-azure-cosmos-db"></a>Configurare l'applicazione Spring Boot per l'uso di Azure Cosmos DB
 
@@ -128,7 +135,7 @@ La semplice applicazione Spring Boot è ora pronta per la modifica.
     azure.cosmosdb.database=wingtiptoysdata
     ```
 
-1. Salvare e chiudere il file *application.properties*.
+1. Salvare e chiudere il file *application.properties* .
 
 ## <a name="add-sample-code-to-implement-basic-database-functionality"></a>Aggiungere il codice di esempio per implementare le funzionalità di base del database
 
@@ -207,7 +214,7 @@ In questa sezione si creano due classi Java per l'archiviazione dei dati utente,
     }
     ```
 
-1. Salvare e chiudere il file *User.java*.
+1. Salvare e chiudere il file *User.java* .
 
 ### <a name="define-a-data-repository-interface"></a>Definire un'interfaccia del repository di dati
 
@@ -230,7 +237,7 @@ In questa sezione si creano due classi Java per l'archiviazione dei dati utente,
 
     L'interfaccia `ReactiveCosmosRepository` sostituisce l'interfaccia `DocumentDbRepository` della versione precedente di Starter. La nuova interfaccia include API sincrone e reattive per operazioni di base di salvataggio, eliminazione e ricerca.
 
-1. Salvare e chiudere il file *UserRepository.java*.
+1. Salvare e chiudere il file *UserRepository.java* .
 
 ### <a name="modify-the-main-application-class"></a>Modificare la classe dell'applicazione main
 
@@ -325,7 +332,7 @@ In questa sezione si creano due classi Java per l'archiviazione dei dati utente,
 
 ## <a name="build-and-test-your-app"></a>Compilare e testare l'app
 
-1. Aprire un prompt dei comandi e passare alla cartella in cui si trova il file *pom.xml*, ad esempio:
+1. Aprire un prompt dei comandi e passare alla cartella in cui si trova il file *pom.xml* , ad esempio:
 
     `cd C:\SpringBoot\wingtiptoysdata`
 

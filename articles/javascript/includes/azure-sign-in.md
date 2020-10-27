@@ -1,17 +1,21 @@
 ---
 ms.custom: devx-track-js
-ms.openlocfilehash: 659f538569d2e2155c0eccd3c08684ee835e7449
-ms.sourcegitcommit: 4af22924a0eaf01e6902631c0714045c02557de4
+ms.topic: include
+ms.date: 010/16/2020
+ms.openlocfilehash: fb1c04fe82b67076ca38ef353daf7260544a5881
+ms.sourcegitcommit: 8a2a7df568c69fff2080ffab248409040efda1ac
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91208779"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92179316"
 ---
-Dopo aver installato l'estensione di Azure in VS Code, accedere al proprio account Azure passando all'area **Azure**. Selezionare **Accedi ad Azure** e seguire le istruzioni visualizzate. Se sono installate più estensioni di Azure, selezionare quella relativa all'area in cui si lavora, ad esempio Servizio app, Funzioni e così via.
+Se si usano già estensioni dei servizi di Azure, si è già connessi ed è possibile ignorare questo passaggio. Se non si usano estensioni dei servizi di Azure, continuare in questa sezione per accedere ad Azure.
+
+Dopo aver installato l'estensione di un servizio di Azure in Visual Studio Code, è necessario accedere all'account Azure passando alla finestra di esplorazione di **Azure** , selezionando **Accedi ad Azure** e quindi seguendo le istruzioni. Se sono installate più estensioni di Azure, selezionare quella relativa all'area in cui si lavora, ad esempio Servizio app, Funzioni e così via.
 
 ![Accedere ad Azure tramite VS Code](../media/deploy-azure/azure-sign-in.png)
 
-Dopo aver eseguito l'accesso, verificare che l'indirizzo di posta elettronica dell'account Azure (o connesso) sia visualizzato sulla barra di stato e che la sottoscrizione o le sottoscrizioni siano visualizzate nell'area **Azure**:
+Dopo aver eseguito l'accesso, verificare che l'indirizzo di posta elettronica dell'account Azure (o connesso) sia visualizzato sulla barra di stato e che la sottoscrizione o le sottoscrizioni siano visualizzate nell'area **Azure** :
 
 ![Barra di stato di VS Code che mostra l'account Azure](../media/deploy-azure/azure-account-status-bar.png)
 
