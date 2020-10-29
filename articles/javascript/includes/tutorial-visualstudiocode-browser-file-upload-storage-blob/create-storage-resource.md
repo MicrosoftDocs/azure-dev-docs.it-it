@@ -4,12 +4,12 @@ description: file di inclusione create-storage-resource.md
 ms.date: 10/13/2020
 ms.topic: include
 ms.custom: devx-track-javascript
-ms.openlocfilehash: a4eb48afd578de7ddc3426a3907b8b4192387cbb
-ms.sourcegitcommit: ced8331ba36b28e6e2eacd23a64b39ddc7ffe6ab
+ms.openlocfilehash: 6862d9cf56ee86f7137495b021144b518459d979
+ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92344171"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92755833"
 ---
 In questa sezione dell'esercitazione viene creata la risorsa di Archiviazione di Azure con un'estensione di Visual Studio, che quindi viene configurata nel portale di Azure. 
 
@@ -123,9 +123,9 @@ Il token di firma di accesso condiviso e il nome dell'account di archiviazione v
 ## <a name="want-to-know-more"></a>Per saperne di più 
 
 Altri modi per configurare l'account di archiviazione includono:
-* Token di firma di accesso condiviso con [PowerShell](/azure/powershell/module/azure.storage/new-azurestorageblobsastoken)
+* Token di firma di accesso condiviso con [PowerShell](/powershell/module/azure.storage/new-azurestorageblobsastoken)
 * Token di firma di accesso condiviso con il portale
-* CORS con [PowerShell](/azure/powershell/module/azure.storage/set-azurestoragecorsrule)
+* CORS con [PowerShell](/powershell/module/azure.storage/set-azurestoragecorsrule)
 * CORS con il portale
 
-Altre informazioni sulle [firme di accesso condiviso](/azure/storage/common/storage-sas-overview.md).
+Altre informazioni sulle [firme di accesso condiviso](/azure/storage/common/storage-sas-overview).

@@ -3,13 +3,13 @@ title: Effettuare il provisioning di una macchina virtuale con le librerie di Az
 description: Come effettuare il provisioning di una macchina virtuale di Azure usando Python e le librerie di gestione di Azure SDK.
 ms.date: 10/05/2020
 ms.topic: conceptual
-ms.custom: devx-track-python
-ms.openlocfilehash: e01121047d42200e956345df611f82706b1e081e
-ms.sourcegitcommit: f460914ac5843eb7392869a08e3a80af68ab227b
+ms.custom: devx-track-python, devx-track-azurecli
+ms.openlocfilehash: 7074b23a3a0c5f47624e821e02fe5093ad98149b
+ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "92010226"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92689241"
 ---
 # <a name="example-use-the-azure-libraries-to-provision-a-virtual-machine"></a>Esempio: Usare le librerie di Azure per effettuare il provisioning di una macchina virtuale
 
@@ -37,7 +37,7 @@ Assicurarsi di creare un'entità servizio per lo sviluppo locale e di creare e a
     azure-identity
     ```
 
-1. In un terminale o da un prompt dei comandi con l'ambiente virtuale attivato installare le librerie di gestione elencate nel file *requirements.txt*:
+1. In un terminale o da un prompt dei comandi con l'ambiente virtuale attivato installare le librerie di gestione elencate nel file *requirements.txt* :
 
     ```cmd
     pip install -r requirements.txt

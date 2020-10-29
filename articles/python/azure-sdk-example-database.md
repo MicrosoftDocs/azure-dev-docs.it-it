@@ -3,13 +3,13 @@ title: Effettuare il provisioning di un database MySQL di Azure usando le librer
 description: Usare le librerie di gestione incluse nelle librerie di Azure SDK per Python per effettuare il provisioning di un database MySQL di Azure, PostgreSQL o MariaDB.
 ms.date: 10/05/2020
 ms.topic: conceptual
-ms.custom: devx-track-python
-ms.openlocfilehash: bf205e133f093be654c88e5245eb0a4524f71502
-ms.sourcegitcommit: f460914ac5843eb7392869a08e3a80af68ab227b
+ms.custom: devx-track-python, devx-track-azurecli
+ms.openlocfilehash: 873b854ac2702ac62484a8ed37a5367084eb4b00
+ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "92010297"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92689017"
 ---
 # <a name="example-use-the-azure-libraries-to-provision-a-database"></a>Esempio: Usare le librerie di Azure per effettuare il provisioning di un database
 
@@ -46,7 +46,7 @@ pip install -r requirements.txt
 ```
 
 > [!NOTE]
-> In Windows il tentativo di installare la libreria mysql in una libreria Python a 32 bit genera un errore relativo al file *mysql.h*. In questo caso, installare una versione a 64 bit di Python e riprovare.
+> In Windows il tentativo di installare la libreria mysql in una libreria Python a 32 bit genera un errore relativo al file *mysql.h* . In questo caso, installare una versione a 64 bit di Python e riprovare.
 
 ## <a name="3-write-code-to-provision-the-database"></a>3: Scrivere codice per effettuare il provisioning del database
 

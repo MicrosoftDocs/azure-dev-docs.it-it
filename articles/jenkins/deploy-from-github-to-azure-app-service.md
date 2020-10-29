@@ -4,13 +4,13 @@ description: Informazioni su come configurare Jenkins per l'integrazione continu
 keywords: jenkins, azure, devops, servizio app
 ms.topic: tutorial
 ms.date: 08/10/2020
-ms.custom: devx-track-jenkins
-ms.openlocfilehash: ef404f1d2e3d1ed042a99eccd2469fdd112e931b
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.custom: devx-track-jenkins, devx-track-azurecli
+ms.openlocfilehash: 30b916cadc2c15f1226ab06f6925a87f6be4b3a7
+ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90832017"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92688679"
 ---
 # <a name="tutorial-deploy-from-github-to-azure-app-service-using-jenkins"></a>Esercitazione: Eseguire la distribuzione da GitHub nel servizio app di Azure con Jenkins
 
@@ -71,7 +71,7 @@ Per completare questa esercitazione, è necessario quanto segue:
 
 1. [Accedere al repository GitHub per l'app di esempio Spring Boot](https://github.com/spring-guides/gs-spring-boot). 
 
-1. Nell'angolo superiore destro in GitHub selezionare **Fork**.
+1. Nell'angolo superiore destro in GitHub selezionare **Fork** .
 
    ![Creare una copia tramite fork del repository di esempio in GitHub](media/deploy-from-github-to-azure-app-service/fork-github-repo.png)
 
@@ -125,10 +125,10 @@ Per creare l'entità servizio, eseguire il comando [az ad sp create-for-rbac](/c
 az ad sp create-for-rbac
 ```
 
-**Note**:
+**Note** :
 
 - Al termine, `az ad sp create-for-rbac` visualizza diversi valori. I valori `name`, `password` e `tenant` vengono usati nel passaggio successivo.
-- Per impostazione predefinita, un'entità servizio viene creata con il ruolo **Collaboratore**, che include autorizzazioni complete per la lettura e la scrittura in un account Azure. Per altre informazioni sul controllo degli accessi in base al ruolo e i ruoli, vedere [Controllo degli accessi in base al ruolo: ruoli predefiniti](/azure/active-directory/role-based-access-built-in-roles).
+- Per impostazione predefinita, un'entità servizio viene creata con il ruolo **Collaboratore** , che include autorizzazioni complete per la lettura e la scrittura in un account Azure. Per altre informazioni sul controllo degli accessi in base al ruolo e i ruoli, vedere [Controllo degli accessi in base al ruolo: ruoli predefiniti](/azure/active-directory/role-based-access-built-in-roles).
 - Se viene persa, questa password non può essere recuperata. Di conseguenza, è consigliabile archiviarla in un luogo sicuro. Se si dimentica la password, è necessario [reimpostare le credenziali dell'entità servizio](/cli/azure/create-an-azure-service-principal-azure-cli#reset-credentials).
 
 
@@ -148,13 +148,13 @@ az ad sp create-for-rbac
 
    | Proprietà | Valore | Descrizione | 
    |----------|-------|-------------| 
-   | **ID sottoscrizione** | <*ID-SottoscrizioneAzure*> | Valore GUID per la sottoscrizione di Azure <p>**Suggerimento**: se non si conosce l'ID sottoscrizione di Azure, eseguire questo comando dell'interfaccia della riga di comando di Azure dalla riga di comando o in Cloud Shell e quindi usare il valore GUID `id`: <p>`az account list` | 
+   | **ID sottoscrizione** | <*ID-SottoscrizioneAzure*> | Valore GUID per la sottoscrizione di Azure <p>**Suggerimento** : se non si conosce l'ID sottoscrizione di Azure, eseguire questo comando dell'interfaccia della riga di comando di Azure dalla riga di comando o in Cloud Shell e quindi usare il valore GUID `id`: <p>`az account list` | 
    | **ID client** | <*ID-EntitàServizioAzure*> | Valore GUID `appId` generato in precedenza per l'entità servizio di Azure | 
    | **Segreto client** | <*PasswordSicura*> | Valore `password` o "segreto" specificato per l'entità servizio di Azure | 
    | **ID tenant** | <*ID-TenantAzureActiveDirectory*> | Valore GUID `tenant` per il tenant di Azure Active Directory | 
    | **ID** | <*NomeEntitàServizioAzure*> | Valore `displayName` per l'entità servizio di Azure | 
 
-1. Per verificare il corretto funzionamento dell'entità servizio, selezionare **Verify Service Principal** (Verifica entità servizio). Al termine, fare clic su **OK**.
+1. Per verificare il corretto funzionamento dell'entità servizio, selezionare **Verify Service Principal** (Verifica entità servizio). Al termine, fare clic su **OK** .
 
 Creare quindi la pipeline Jenkins che compila e distribuisce l'app.
 
@@ -166,7 +166,7 @@ In Jenkins creare il processo di pipeline per la compilazione e la distribuzione
 
    ![Creare una pipeline Jenkins](media/deploy-from-github-to-azure-app-service/jenkins-select-new-item.png)
 
-1. Specificare un nome per il processo di pipeline, ad esempio, "My-Java-Web-App" e selezionare **Pipeline**. Nella parte inferiore selezionare **OK**.  
+1. Specificare un nome per il processo di pipeline, ad esempio, "My-Java-Web-App" e selezionare **Pipeline** . Nella parte inferiore selezionare **OK** .  
 
    ![Assegnare un nome al processo della pipeline Jenkins](media/deploy-from-github-to-azure-app-service/jenkins-select-pipeline.png)
 
@@ -184,7 +184,7 @@ In Jenkins creare il processo di pipeline per la compilazione e la distribuzione
 
       ![Preparare un ambiente per l'esecuzione e impostare le variabili di ambiente](media/deploy-from-github-to-azure-app-service/prepare-environment-for-jenkins-run.png)
 
-1. Al termine, selezionare **Salva**.
+1. Al termine, selezionare **Salva** .
 
 Creare quindi gli script di compilazione e distribuzione per Jenkins.
 
@@ -257,7 +257,7 @@ Specificare ora lo script di compilazione e distribuzione che Jenkins deve usare
 
    ![Impostare la pipeline Jenkins in modo che punti allo script](media/deploy-from-github-to-azure-app-service/set-up-jenkins-github.png)
 
-1. Al termine, selezionare **Salva**.
+1. Al termine, selezionare **Salva** .
 
 Compilare e distribuire quindi l'app in Servizio app di Azure. 
 

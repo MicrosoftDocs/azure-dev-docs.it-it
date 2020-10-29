@@ -6,13 +6,13 @@ documentationcenter: java
 ms.date: 12/19/2018
 ms.service: event-hubs
 ms.topic: article
-ms.custom: devx-track-java
-ms.openlocfilehash: 523d7b7eb0465bc9b1e367b7b450591319f5995a
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.custom: devx-track-java, devx-track-azurecli
+ms.openlocfilehash: 452119b467d3b92e7b8deec3b0e22d2d1d18ee9e
+ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831267"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92689202"
 ---
 # <a name="how-to-use-the-spring-boot-starter-for-apache-kafka-with-azure-event-hubs"></a>Come usare Spring Boot Starter per Apache Kafka con Hub eventi di Azure
 
@@ -37,15 +37,15 @@ I prerequisiti seguenti sono necessari per seguire le procedure disponibili in q
 
 1. Passare al portale di Azure all'indirizzo <https://portal.azure.com/> ed eseguire l'accesso.
 
-1. Fare clic su **+ Crea una risorsa**, quindi su **Internet delle cose** e infine cercare *Hub eventi**.
+1. Fare clic su **+ Crea una risorsa** , quindi su **Internet delle cose** e infine cercare *Hub eventi**.
 
-1. Fare clic su **Crea**.
+1. Fare clic su **Crea** .
 
    ![Creare uno spazio dei nomi dell'hub eventi di Azure][IMG01]
 
 1. Nella pagina **Crea spazio dei nomi** immettere le informazioni seguenti:
 
-   * Immettere un **nome** univoco, che diventerà parte dell'URI dello spazio dei nomi dell'hub eventi. Se si immette **wingtiptoys** in **Nome**, ad esempio, l'URI sarà *wingtiptoys.servicebus.windows.net*.
+   * Immettere un **nome** univoco, che diventerà parte dell'URI dello spazio dei nomi dell'hub eventi. Se si immette **wingtiptoys** in **Nome** , ad esempio, l'URI sarà *wingtiptoys.servicebus.windows.net* .
    * Piano tariffario.
    * Specificare **Abilita Kafka** per lo spazio dei nomi.
    * Scegliere la **sottoscrizione** da usare per lo spazio dei nomi.
@@ -67,7 +67,7 @@ Dopo la distribuzione dello spazio dei nomi, è possibile creare un hub eventi a
 
 1. Assegnare un nome all'hub eventi.
 
-1. Fare clic su **Crea**.
+1. Fare clic su **Crea** .
 
    ![Creare un hub eventi][IMG05]
 
@@ -77,16 +77,16 @@ Dopo la distribuzione dello spazio dei nomi, è possibile creare un hub eventi a
 
 1. Specificare le opzioni seguenti:
 
-   * Generare un progetto **Maven** con **Java**.
+   * Generare un progetto **Maven** con **Java** .
    * Specificare **Spring Boot** versione 2.0 o successiva.
    * Specificare i nomi di **Group** (Gruppo) e **Artifact** (Artefatto) per l'applicazione.
-   * Aggiungere la dipendenza **Web**.
+   * Aggiungere la dipendenza **Web** .
 
       ![Opzioni di base di Spring Initializr][SI01]
 
    > [!NOTE]
    >
-   > Spring Initializr usa i nomi in **Group** (Gruppo) e **Artifact** (Artefatto) per creare il nome del pacchetto, ad esempio *com.wingtiptoys.kafka*.
+   > Spring Initializr usa i nomi in **Group** (Gruppo) e **Artifact** (Artefatto) per creare il nome del pacchetto, ad esempio *com.wingtiptoys.kafka* .
    >
 
 1. Dopo aver specificato le opzioni elencate sopra, fare clic su **Generate Project** (Genera progetto).
@@ -122,7 +122,7 @@ Dopo la distribuzione dello spazio dei nomi, è possibile creare un hub eventi a
 
    ![Modificare il file pom.xml][SI03]
 
-1. Salvare e chiudere il file *pom.xml*.
+1. Salvare e chiudere il file *pom.xml* .
 
 ## <a name="create-an-azure-credential-file"></a>Creare un file di credenziali di Azure
 
@@ -234,7 +234,7 @@ Dopo la distribuzione dello spazio dei nomi, è possibile creare un hub eventi a
    | `spring.cloud.stream.bindings.output.destination` |                               Specifica l'hub eventi di Azure destinazione di output, che per questa esercitazione è uguale alla destinazione di input.                               |
 
 
-3. Salvare e chiudere il file *application.properties*.
+3. Salvare e chiudere il file *application.properties* .
 
 ## <a name="add-sample-code-to-implement-basic-event-hub-functionality"></a>Aggiungere codice di esempio per implementare le funzionalità di base dell'hub eventi
 
@@ -299,7 +299,7 @@ In questa sezione si creano le classi Java necessarie per inviare eventi all'hub
    }
    ```
 
-1. Salvare e chiudere il file *KafkaSource.java*.
+1. Salvare e chiudere il file *KafkaSource.java* .
 
 ### <a name="create-a-new-class-for-the-sink-connector"></a>Creare una nuova classe per il connettore sink
 
@@ -325,11 +325,11 @@ In questa sezione si creano le classi Java necessarie per inviare eventi all'hub
    }
    ```
 
-1. Salvare e chiudere il file *KafkaSink.java*.
+1. Salvare e chiudere il file *KafkaSink.java* .
 
 ## <a name="build-and-test-your-application"></a>Compilare e testare l'applicazione
 
-1. Aprire un prompt dei comandi e cambiare la directory passando alla cartella in cui si trova il file *pom.xml*, ad esempio:
+1. Aprire un prompt dei comandi e cambiare la directory passando alla cartella in cui si trova il file *pom.xml* , ad esempio:
 
    `cd C:\SpringBoot\kafka`
 
@@ -344,7 +344,7 @@ In questa sezione si creano le classi Java necessarie per inviare eventi all'hub
    mvn spring-boot:run
    ```
 
-1. Quando l'applicazione è in esecuzione, è possibile testarla usando *curl*, ad esempio:
+1. Quando l'applicazione è in esecuzione, è possibile testarla usando *curl* , ad esempio:
 
    ```shell
    curl -X POST -H "Content-Type: text/plain" -d "hello" http://localhost:8080/messages

@@ -4,12 +4,12 @@ description: include file tutorial-azure-web-app-mongodb-03.md
 ms.date: 10/13/2020
 ms.topic: include
 ms.custom: devx-track-javascript
-ms.openlocfilehash: adea87271b1332f77ab254530410787d1a9baa3c
-ms.sourcegitcommit: 8a2a7df568c69fff2080ffab248409040efda1ac
+ms.openlocfilehash: 9d6fb0beaa19503541196c72ecbdae52a642648b
+ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92183864"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92755987"
 ---
 In questa sezione dell'esercitazione viene distribuita l'applicazione di esempio in Azure. È quindi possibile visualizzare l'app in esecuzione in remoto nel browser. 
 
@@ -55,6 +55,6 @@ Usare l'estensione per Visual Studio Code per creare una risorsa del servizio ap
 Il servizio Web iniziale è configurato per l'esecuzione sulla porta 8080 ed è disponibile pubblicamente. Questi tipi di impostazioni del sito Web sono configurabili.
 * [Impostazioni app](/azure/app-service/configure-common)
 * [autenticazione](/azure/app-service/configure-authentication-provider-microsoft)
-* [Limitare l'accesso in base alla rete](/azure/azure/app-service/app-service-ip-restrictions)
+* [Limitare l'accesso in base alla rete](/azure/app-service/app-service-ip-restrictions)
 
 Quando si usa questa estensione del servizio app per distribuire il sito Web nel cloud di Azure, può essere necessario saper [configurare la distribuzione](https://github.com/microsoft/vscode-azureappservice/wiki/Configuring-Zip-Deployment#additional-zip-deploy-configuration-settings)

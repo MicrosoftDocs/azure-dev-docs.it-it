@@ -3,13 +3,13 @@ title: Distribuire app Deno nel servizio app di Azure dall'interfaccia della rig
 description: Parte 1 dell'esercitazione su Deno, introduzione e prerequisiti.
 ms.topic: tutorial
 ms.date: 06/01/2020
-ms.custom: devx-track-js
-ms.openlocfilehash: e4c521edd2f23576842d90979813f96a1812f0ec
-ms.sourcegitcommit: 4dd392ea864be52421d0239e59198bc44b0a5a16
+ms.custom: devx-track-js, devx-track-azurecli
+ms.openlocfilehash: d9adff6e04699a26b14fb2fb1cdbe9dafe923eca
+ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91364944"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92689155"
 ---
 # <a name="deploy-deno-to-azure-app-service-using-visual-studio-code"></a>Distribuire Deno nel Servizio app di Azure con Visual Studio Code
 

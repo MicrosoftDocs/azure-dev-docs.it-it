@@ -3,13 +3,13 @@ title: Usare Archiviazione di Azure con Azure SDK per Python
 description: Usare le librerie di Azure SDK per Python per accedere a un contenitore BLOB di cui è già stato effettuato il provisioning in un account di archiviazione di Azure e quindi caricarvi un file.
 ms.date: 08/05/2020
 ms.topic: conceptual
-ms.custom: devx-track-python
-ms.openlocfilehash: 13ca0d10ac24780e5f7f053f85616781553253f5
-ms.sourcegitcommit: f460914ac5843eb7392869a08e3a80af68ab227b
+ms.custom: devx-track-python, devx-track-azurecli
+ms.openlocfilehash: f1ada9de2cdf52fac1b4219f1f9b8253d58ca881
+ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "92010281"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92689234"
 ---
 # <a name="example-access-azure-storage-using-the-azure-libraries-for-python"></a>Esempio: Accedere ad Archiviazione di Azure con le librerie di Azure per Python
 
@@ -49,7 +49,7 @@ Questo esempio presuppone che siano già state impostate le variabili di ambient
 
 ## <a name="3-create-a-file-to-upload"></a>3: Creare un file da caricare
 
-Creare un file di origine denominato *sample-source.txt*, come previsto dal codice, con un contenuto simile al seguente:
+Creare un file di origine denominato *sample-source.txt* , come previsto dal codice, con un contenuto simile al seguente:
 
 ```text
 Hello there, Azure Storage. I'm a friendly file ready to be stored in a blob.
@@ -63,7 +63,7 @@ Il [primo metodo (sezione 4a di seguito)](#4a-use-blob-storage-with-authenticati
 
 Il [secondo metodo (sezione 4b di seguito)](#4b-use-blob-storage-with-a-connection-string) usa una stringa di connessione per accedere direttamente all'account di archiviazione. Anche se questo metodo sembra più semplice, presenta due svantaggi significativi:
 
-- Una stringa di connessione autentica intrinsecamente l'agente di connessione con l'*account* di archiviazione invece che con le singole risorse al suo interno. Di conseguenza, una stringa di connessione fornisce autorizzazioni più ampie di quelle che potrebbero essere necessarie.
+- Una stringa di connessione autentica intrinsecamente l'agente di connessione con l' *account* di archiviazione invece che con le singole risorse al suo interno. Di conseguenza, una stringa di connessione fornisce autorizzazioni più ampie di quelle che potrebbero essere necessarie.
 
 - Una stringa di connessione contiene una chiave di accesso in testo normale e pertanto presenta potenziali vulnerabilità se è costruita in modo errato o non è adeguatamente protetta. Se tale stringa di connessione viene esposta, può essere usata per accedere a un'ampia gamma di risorse all'interno dell'account di archiviazione.
 
@@ -190,7 +190,7 @@ Anche in questo caso, sebbene il metodo sia semplice, una stringa di connessione
 
 ## <a name="5-verify-blob-creation"></a>5. Verificare la creazione di BLOB
 
-Dopo aver eseguito il codice di uno dei due metodi, nel [portale di Azure](https://portal.azure.com) passare al contenitore BLOB e verificare che esista un nuovo BLOB denominato *sample-blob.txt* con lo stesso contenuto del file *sample-source.txt*:
+Dopo aver eseguito il codice di uno dei due metodi, nel [portale di Azure](https://portal.azure.com) passare al contenitore BLOB e verificare che esista un nuovo BLOB denominato *sample-blob.txt* con lo stesso contenuto del file *sample-source.txt* :
 
 ![Pagina del portale di Azure relativa al contenitore BLOB che mostra il file caricato](media/azure-sdk-example-storage/portal-blob-container-file.png)
 

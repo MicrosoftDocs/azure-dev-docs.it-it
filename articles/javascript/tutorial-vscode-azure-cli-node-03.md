@@ -3,13 +3,13 @@ title: Creare il Servizio app di Azure dall'interfaccia della riga di comando di
 description: Parte 3 dell'esercitazione, creare il servizio app con l'interfaccia della riga di comando di Azure
 ms.topic: tutorial
 ms.date: 09/24/2019
-ms.custom: devx-track-js
-ms.openlocfilehash: 3279c215b1822b3e989eeacb66a725c91e023a34
-ms.sourcegitcommit: 4dd392ea864be52421d0239e59198bc44b0a5a16
+ms.custom: devx-track-js, devx-track-azurecli
+ms.openlocfilehash: c22896484e07c8657582265e70dda41b12efb155
+ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91364794"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92688650"
 ---
 # <a name="create-the-app-service"></a>Creare il servizio app
 

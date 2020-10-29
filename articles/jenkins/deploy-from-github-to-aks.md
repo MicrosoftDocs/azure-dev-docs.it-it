@@ -4,13 +4,13 @@ description: Informazioni su come configurare Jenkins per l'integrazione continu
 keywords: jenkins, azure, devops, aks, servizio azure kubernetes, github
 ms.topic: article
 ms.date: 01/09/2019
-ms.custom: devx-track-jenkins
-ms.openlocfilehash: c73e5c567f237c6f859b52230742ae74b87326f5
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.custom: devx-track-jenkins, devx-track-azurecli
+ms.openlocfilehash: 5d72a9bd05683f50375204db9cc95b012db6dfa3
+ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88241003"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92688641"
 ---
 # <a name="tutorial-deploy-from-github-to-azure-kubernetes-service-using-jenkins"></a>Esercitazione: Eseguire la distribuzione da GitHub nel servizio Azure Kubernetes con Jenkins
 
@@ -35,7 +35,7 @@ Per completare questa esercitazione, è necessario quanto segue:
 
 - Un [registro del servizio Registro Azure Container](/azure/container-registry/container-registry-get-started-azure-cli), il nome del server di accesso al servizio Registro Azure Container e il cluster del servizio Azure Kubernetes configurati per [eseguire l'autenticazione con il registro del servizio Registro Azure Container](/azure/aks/cluster-container-registry-integration).
 
-- Interfaccia della riga di comando di Azure versione 2.0.46 o successiva installata e configurata. Eseguire  `az --version` per trovare la versione. Se è necessario eseguire l'installazione o l'aggiornamento, vedere  [Installare l'interfaccia della riga di comando di Azure](/cli/azure/install-azure-cli).
+- Interfaccia della riga di comando di Azure versione 2.0.46 o successiva installata e configurata. Eseguire `az --version` per trovare la versione. Se è necessario eseguire l'installazione o l'aggiornamento, vedere [Installare l'interfaccia della riga di comando di Azure](/cli/azure/install-azure-cli).
 
 - [Docker installato](https://docs.docker.com/install/) nel sistema di distribuzione in uso
 
@@ -81,7 +81,7 @@ redis                        latest     a1b99da73d05        7 days ago          
 tiangolo/uwsgi-nginx-flask   flask      788ca94b2313        9 months ago        694MB
 ```
 
-Prima di eseguire il push dell'immagine del contenitore *azure-vote-front* in Registro Azure Container, ottenere il server di accesso del servizio Registro Azure Container con il comando [az acr list](/cli/azure/acr#az-acr-list). L'esempio seguente ottiene l'indirizzo del server di accesso di Registro Azure Container in un gruppo di risorse denominato *myResourceGroup*:
+Prima di eseguire il push dell'immagine del contenitore *azure-vote-front* in Registro Azure Container, ottenere il server di accesso del servizio Registro Azure Container con il comando [az acr list](/cli/azure/acr#az-acr-list). L'esempio seguente ottiene l'indirizzo del server di accesso di Registro Azure Container in un gruppo di risorse denominato *myResourceGroup* :
 
 ```azurecli
 az acr list --resource-group myResourceGroup --query "[].{acrLoginServer:loginServer}" --output table
@@ -115,7 +115,7 @@ Successivamente, usare il comando [kubectl apply](https://kubernetes.io/docs/ref
 kubectl apply -f azure-vote-all-in-one-redis.yaml
 ```
 
-Viene creato un servizio di bilanciamento del carico di Kubernetes per esporre l'applicazione a Internet. Il processo potrebbe richiedere alcuni minuti. Per monitorare l'avanzamento della distribuzione del servizio di bilanciamento del carico, usare il comando [kubectl get service](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#get) con l'argomento `--watch`. Dopo il passaggio di *EXTERNAL-IP* da *pending* a un *indirizzo IP*, usare `Control + C` per arrestare il processo kubectl watch.
+Viene creato un servizio di bilanciamento del carico di Kubernetes per esporre l'applicazione a Internet. Il processo potrebbe richiedere alcuni minuti. Per monitorare l'avanzamento della distribuzione del servizio di bilanciamento del carico, usare il comando [kubectl get service](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#get) con l'argomento `--watch`. Dopo il passaggio di *EXTERNAL-IP* da *pending* a un *indirizzo IP* , usare `Control + C` per arrestare il processo kubectl watch.
 
 ```console
 $ kubectl get service azure-vote-front --watch
@@ -154,7 +154,7 @@ Enter the following to Unlock Jenkins:
 Aprire un browser Web all'URL visualizzato e immettere la chiave di sblocco. Seguire le istruzioni visualizzate per completare la configurazione di Jenkins:
 
 - Scegliere **Install suggested plugins** (Installa plug-in consigliati)
-- Creare il primo utente amministratore. Immettere un nome utente, ad esempio *azureuser*, quindi specificare una password sicura. Digitare infine un nome completo e un indirizzo di posta elettronica.
+- Creare il primo utente amministratore. Immettere un nome utente, ad esempio *azureuser* , quindi specificare una password sicura. Digitare infine un nome completo e un indirizzo di posta elettronica.
 - Selezionare **Save and Finish** (Salva e completa).
 - Quando Jenkins è pronto, selezionare **Start using Jenkins** (Inizia a usare Jenkins).
     - Se il Web browser visualizza una pagina vuota quando si inizia a usare Jenkins, riavviare il servizio Jenkins. Per riavviare il servizio, eseguire SSH nell'indirizzo IP pubblico dell'istanza di Jenkins e digitare `sudo service jenkins restart`. Dopo il riavvio del servizio, aggiornare il Web browser.
@@ -238,7 +238,7 @@ Nella home page del portale di Jenkins selezionare **New item** (Nuovo elemento)
 
      ![Associazioni di Jenkins](media/deploy-from-github-to-aks/bindings.png)
 
-1. Aggiungere un'**istruzione di compilazione** di tipo **Execute shell** (Esegui shell) e usare il testo seguente. Questo script compila una nuova immagine del contenitore e la inserisce nel Registro Azure Container.
+1. Aggiungere un' **istruzione di compilazione** di tipo **Execute shell** (Esegui shell) e usare il testo seguente. Questo script compila una nuova immagine del contenitore e la inserisce nel Registro Azure Container.
 
     ```bash
     # Build new image and push to ACR.
@@ -278,8 +278,8 @@ Dopo aver completato la compilazione manuale, integrare GitHub nella compilazion
 
 1. Passare al repository GitHub con fork in un Web browser.
 1. Selezionare **Impostazioni** e quindi **Webhook** sul lato sinistro.
-1. Scegli **Aggiungi webhook**. Come valore per *Payload URL* (URL di payload) immettere `http://<publicIp:8080>/github-webhook/` dove `<publicIp>` è l'indirizzo IP del server di Jenkins. Assicurarsi di includere la barra finale (/). Lasciare le altre impostazioni predefinite per il tipo di contenuto e attivare gli eventi *push*.
-1. Selezionare **Aggiungi webhook**.
+1. Scegli **Aggiungi webhook** . Come valore per *Payload URL* (URL di payload) immettere `http://<publicIp:8080>/github-webhook/` dove `<publicIp>` è l'indirizzo IP del server di Jenkins. Assicurarsi di includere la barra finale (/). Lasciare le altre impostazioni predefinite per il tipo di contenuto e attivare gli eventi *push* .
+1. Selezionare **Aggiungi webhook** .
 
     ![Creare un webhook GitHub per Jenkins](media/deploy-from-github-to-aks/webhook.png)
 
@@ -293,7 +293,7 @@ Dopo aver completato la compilazione manuale, integrare GitHub nella compilazion
 1. Viene eseguito il push di tale immagine in Registro Azure Container.
 1. L'applicazione viene distribuita negli aggiornamenti del servizio Azure Kubernetes con l'immagine del contenitore più recente di Registro Azure Container.
 
-Nel computer di sviluppo aprire l'applicazione clonata con un editor di codice. Nella directory */azure-vote/azure-vote* aprire il file denominato **config_file.cfg**. Aggiornare i valori di voto in questo file su un valore rilevante, come illustrato nell'esempio seguente:
+Nel computer di sviluppo aprire l'applicazione clonata con un editor di codice. Nella directory */azure-vote/azure-vote* aprire il file denominato **config_file.cfg** . Aggiornare i valori di voto in questo file su un valore rilevante, come illustrato nell'esempio seguente:
 
 ```
 # UI Configurations

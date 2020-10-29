@@ -6,13 +6,13 @@ ms.author: ushan
 ms.topic: reference
 ms.service: azure
 ms.date: 08/31/2020
-ms.custom: github-actions-azure
-ms.openlocfilehash: 4900097ea8d3635c2030f73eab1c63fb46323bc9
-ms.sourcegitcommit: e97cb81a245ce7dcabeac3260abc3db7c30edd79
+ms.custom: github-actions-azure, devx-track-azurecli
+ms.openlocfilehash: 926bd35fe7c0fb7d7a043955e0fd340950a658db
+ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91493122"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92689209"
 ---
 # <a name="use-github-actions-to-connect-to-azure"></a>Usare GitHub Actions per connettersi ad Azure
 
@@ -61,11 +61,11 @@ In questo esempio verrà creato un segreto denominato `AZURE_CREDENTIALS` che è
     }
     ```
 
-1. Aprire il repository GitHub e passare a **Impostazioni**.
+1. Aprire il repository GitHub e passare a **Impostazioni** .
 
     :::image type="content" source="media/github-repo-settings.png" alt-text="Selezionare Impostazioni nel riquadro di spostamento":::
 
-1. Selezionare **Segreti** e quindi **Nuovo segreto**.
+1. Selezionare **Segreti** e quindi **Nuovo segreto** .
 
     :::image type="content" source="media/select-secrets.png" alt-text="Selezionare Impostazioni nel riquadro di spostamento":::
 
@@ -73,7 +73,7 @@ In questo esempio verrà creato un segreto denominato `AZURE_CREDENTIALS` che è
 
     :::image type="content" source="media/azure-secret-add.png" alt-text="Selezionare Impostazioni nel riquadro di spostamento":::
 
-1. Salvare selezionando **Aggiungi segreto**.
+1. Salvare selezionando **Aggiungi segreto** .
 
 ## <a name="use-the-azure-login-action"></a>Usare l'azione di accesso di Azure
 

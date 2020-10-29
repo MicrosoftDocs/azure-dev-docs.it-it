@@ -3,13 +3,13 @@ title: Distribuire il codice dell'app nel Servizio app di Azure tramite l'interf
 description: Parte 4 dell'esercitazione, distribuire il sito Web con l'interfaccia della riga di comando di Azure
 ms.topic: tutorial
 ms.date: 09/24/2019
-ms.custom: devx-track-js
-ms.openlocfilehash: 8e6075b8a1e526f916ab43c9a1f52ef1b66e8614
-ms.sourcegitcommit: 4dd392ea864be52421d0239e59198bc44b0a5a16
+ms.custom: devx-track-js, devx-track-azurecli
+ms.openlocfilehash: 6006c25b9f2cb77ed472d8e4cb7d0eb96e85da48
+ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91364784"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92689122"
 ---
 # <a name="deploy-the-app-to-app-service"></a>Distribuire l'app nel Servizio app
 
@@ -45,7 +45,7 @@ In questo passaggio il codice dell'app Node.js viene distribuito nel Servizio ap
     }
     </pre>
 
-1. Eseguire il comando seguente per impostare un nuovo host remoto in Git denominato `azure`, usando l'URL del passaggio precedente ma *omettendo il nome utente*. Usando l'esempio del passaggio precedente, il comando sarà come segue:
+1. Eseguire il comando seguente per impostare un nuovo host remoto in Git denominato `azure`, usando l'URL del passaggio precedente ma *omettendo il nome utente* . Usando l'esempio del passaggio precedente, il comando sarà come segue:
 
     ```bash
     git remote add azure https://msdocs-node-cli.scm.azurewebsites.net/msdocs-node-cli.git

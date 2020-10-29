@@ -4,13 +4,13 @@ description: Informazioni su come creare una macchina virtuale Jenkins in Azure 
 keywords: jenkins, azure, devops, pipeline, cicd, docker
 ms.topic: tutorial
 ms.date: 03/27/2017
-ms.custom: devx-track-jenkins
-ms.openlocfilehash: 8a29533b8589d91d095a3d591e6346f87dde4e52
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.custom: devx-track-jenkins, devx-track-azurecli
+ms.openlocfilehash: eb4c12fe249b485941221d382ab0090f7aa88227
+ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831217"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92689053"
 ---
 # <a name="tutorial-create-a-jenkins-pipeline-using-github-and-docker"></a>Esercitazione: Creare una pipeline Jenkins con GitHub e Docker
 
@@ -58,13 +58,13 @@ runcmd:
   - service jenkins restart
 ```
 
-Per poter creare una macchina virtuale è prima necessario creare un gruppo di risorse con il comando [az group create](/cli/azure/group). L'esempio seguente crea un gruppo di risorse denominato *myResourceGroupJenkins* nella posizione *eastus*:
+Per poter creare una macchina virtuale è prima necessario creare un gruppo di risorse con il comando [az group create](/cli/azure/group). L'esempio seguente crea un gruppo di risorse denominato *myResourceGroupJenkins* nella posizione *eastus* :
 
 ```azurecli-interactive 
 az group create --name myResourceGroupJenkins --location eastus
 ```
 
-Creare quindi una macchina virtuale con il comando [az vm create](/cli/azure/vm). Usare il parametro `--custom-data` per specificare il file di configurazione di cloud-init. Se il file è stato salvato all'esterno della directory di lavoro corrente, specificare il percorso completo di *cloud-init-jenkins.txt*.
+Creare quindi una macchina virtuale con il comando [az vm create](/cli/azure/vm). Usare il parametro `--custom-data` per specificare il file di configurazione di cloud-init. Se il file è stato salvato all'esterno della directory di lavoro corrente, specificare il percorso completo di *cloud-init-jenkins.txt* .
 
 ```azurecli-interactive 
 az vm create --resource-group myResourceGroupJenkins \
@@ -125,7 +125,7 @@ Aprire un Web browser e passare a `http://<publicIps>:8080`. Completare la confi
 
 - Scegliere **Select plugins to install** (Selezionare il plug-in da installare)
 - Cercare *GitHub* nella casella di testo nella parte superiore. Selezionare la casella relativa a *GitHub* e quindi selezionare **Install** (Installa).
-- Creare il primo utente amministratore. Immettere un nome utente, ad esempio **admin**, quindi fornire una password sicura. Digitare infine un nome completo e un indirizzo di posta elettronica.
+- Creare il primo utente amministratore. Immettere un nome utente, ad esempio **admin** , quindi fornire una password sicura. Digitare infine un nome completo e un indirizzo di posta elettronica.
 - Selezionare **Save and Finish** (Salva e completa).
 - Quando Jenkins è pronto, selezionare **Start using Jenkins** (Inizia a usare Jenkins).
   - Se il Web browser visualizza una pagina vuota quando si inizia a usare Jenkins, riavviare il servizio Jenkins. Dalla sessione SSH digitare `sudo service jenkins restart` e quindi aggiornare il Web browser.
@@ -140,7 +140,7 @@ Creare un webhook all'interno del fork creato:
 - Selezionare **Impostazioni** e quindi **Webhook** sul lato sinistro.
 - Scegliere **Add webhook** (Aggiungi webhook) e quindi immettere *Jenkins* nella casella del filtro.
 - In **Payload URL** (URL payload) immettere `http://<publicIps>:8080/github-webhook/`. Assicurarsi di includere la barra finale (/).
-- Per **Content type** (Tipo di contenuto) selezionare *application/x-www-form-urlencoded*.
+- Per **Content type** (Tipo di contenuto) selezionare *application/x-www-form-urlencoded* .
 - Per **Which events would you like to trigger this webhook?** (Eventi che attiveranno il webhook) selezionare *Just the push event* (Solo evento push).
 - Selezionare **Active** (Attivo).
 - Fare clic su **Add webhook** (Aggiungi webhook).
@@ -153,7 +153,7 @@ Per fare in modo che Jenkins risponda a un evento in GitHub, ad esempio l'esecuz
 
 Nel sito Web di Jenkins selezionare **Create new jobs** (Crea nuovi processi) dalla home page:
 
-- Immettere *HelloWorld* come nome del processo. Scegliere **Freestyle project** (Progetto Freestyle) e quindi selezionare **OK**.
+- Immettere *HelloWorld* come nome del processo. Scegliere **Freestyle project** (Progetto Freestyle) e quindi selezionare **OK** .
 - Nella sezione **General** (Generale) selezionare un progetto **GitHub** e immettere l'URL della copia del repository creata tramite fork, ad esempio `https://github.com/cynthn/nodejs-docs-hello-world`
 - Nella sezione **Source code management** (Gestione del codice sorgente) selezionare **Git** e immettere l'URL *.git* del repository con fork, ad esempio `https://github.com/cynthn/nodejs-docs-hello-world.git`
 - Nella sezione **Build Triggers** (Trigger di compilazione) selezionare **GitHub hook trigger for GITScm polling** (Trigger di hook GitHub per polling GITScm).
@@ -164,7 +164,7 @@ Nel sito Web di Jenkins selezionare **Create new jobs** (Crea nuovi processi) da
 ## <a name="test-github-integration"></a>Testare l'integrazione di GitHub
 Per testare l'integrazione di GitHub con Jenkins, eseguire il commit di una modifica nel fork. 
 
-Nell'interfaccia utente Web di GitHub selezionare il repository con fork e quindi fare clic sul file **index.js**. Selezionare l'icona a forma di matita per modificare il file in modo che la riga 6 corrisponda a:
+Nell'interfaccia utente Web di GitHub selezionare il repository con fork e quindi fare clic sul file **index.js** . Selezionare l'icona a forma di matita per modificare il file in modo che la riga 6 corrisponda a:
 
 ```javascript
 response.end("Hello World!");
@@ -178,7 +178,7 @@ In Jenkins viene avviata una nuova compilazione nella sezione **Build history** 
 ## <a name="define-docker-build-image"></a>Definire l'immagine di compilazione di Docker
 Per visualizzare l'app Node.js in esecuzione sulla base dei commit GitHub, è necessario creare un'immagine Docker per l'esecuzione dell'app. L'immagine viene creata da un file Dockerfile che definisce come configurare il contenitore che esegue l'app. 
 
-Dalla connessione SSH alla macchina virtuale, passare alla directory dell'area di lavoro di Jenkins denominata sulla base del processo creato in un passaggio precedente. In questo esempio è stata denominata *HelloWorld*.
+Dalla connessione SSH alla macchina virtuale, passare alla directory dell'area di lavoro di Jenkins denominata sulla base del processo creato in un passaggio precedente. In questo esempio è stata denominata *HelloWorld* .
 
 ```bash
 cd /var/lib/jenkins/workspace/HelloWorld

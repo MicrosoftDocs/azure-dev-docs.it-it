@@ -8,13 +8,13 @@ ms.service: key-vault
 ms.tgt_pltfrm: multiple
 ms.topic: tutorial
 ms.workload: identity
-ms.custom: devx-track-java
-ms.openlocfilehash: e06d09d4f44366ba995ecaa401df901dc6270c6d
-ms.sourcegitcommit: f80537193d3e22eb24cce4a0a5464a996d1e63eb
+ms.custom: devx-track-java, devx-track-azurecli
+ms.openlocfilehash: c6a81f5fb08985626909fe499584e67351a70ad0
+ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/28/2020
-ms.locfileid: "91409973"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92688848"
 ---
 # <a name="tutorial-reading-a-secret-from-azure-key-vault-in-a-spring-boot-application"></a>Esercitazione: Lettura di un segreto da Azure Key Vault in un'applicazione Spring Boot
 
@@ -238,11 +238,11 @@ Questa sezione illustra come usare Spring Initializr e `RestController` per crea
 1. Selezionare le opzioni come illustrato nell'immagine riportata dopo questo elenco.
    1. **Project** (Progetto): `Maven Project`
    1. **Language** (Linguaggio): `Java`
-   1. **Spring Boot**: `2.3.3`
+   1. **Spring Boot** : `2.3.3`
    1. **Group** (Gruppo): `com.contoso`  (È possibile inserire qui qualsiasi nome di pacchetto Java valido).
    1. **Artifact** (Artefatto): *keyvault* (È possibile inserire qui qualsiasi nome di classe Java valido).
    1. **Packaging** (Creazione pacchetti): `Jar`
-   1. **Java**: `11` (È possibile scegliere 8, ma questa esercitazione è stata convalidata con 11).
+   1. **Java** : `11` (È possibile scegliere 8, ma questa esercitazione è stata convalidata con 11).
 1. Selezionare **Add Dependencies...** (Aggiungi dipendenze).
 1. Nel campo di testo digitare `Spring Web` e premere CTRL+INVIO.
 1. Nel campo di testo digitare `Azure Key Vault` e premere INVIO.  Verrà visualizzata una schermata simile a quella riportata di seguito.
@@ -252,7 +252,7 @@ Questa sezione illustra come usare Spring Initializr e `RestController` per crea
 
 Attenersi alla procedura seguente per esaminare l'applicazione ed eseguirla localmente.
 
-1. Decomprimere il file *keyvault.zip*.  Il layout del file sarà simile a quello riportato di seguito.  In questa esercitazione verranno ignorati la directory *test* e il relativo contenuto.
+1. Decomprimere il file *keyvault.zip* .  Il layout del file sarà simile a quello riportato di seguito.  In questa esercitazione verranno ignorati la directory *test* e il relativo contenuto.
 
    ```bash
    ├── HELP.md
@@ -261,15 +261,15 @@ Attenersi alla procedura seguente per esaminare l'applicazione ed eseguirla loca
    ├── pom.xml
    └── src
        ├── main
-       │   ├── java
-       │   │   └── com
-       │   │       └── contoso
-       │   │           └── keyvault
-       │   │               └── KeyvaultApplication.java
-       │   └── resources
-       │       ├── application.properties
-       │       ├── static
-       │       └── templates
+       │   ├── java
+       │   │   └── com
+       │   │       └── contoso
+       │   │           └── keyvault
+       │   │               └── KeyvaultApplication.java
+       │   └── resources
+       │       ├── application.properties
+       │       ├── static
+       │       └── templates
    ```
 
 1. Aprire il file *KeyvaultApplication.java* in un editor di testo.  Modificare il file per renderlo simile a quello riportato di seguito.
@@ -306,7 +306,7 @@ Attenersi alla procedura seguente per esaminare l'applicazione ed eseguirla loca
    }
    ```
 
-1. Nella directory di livello principale *keyvault*, dove si trova il file *pom.xml*, immettere `mvn spring-boot:run`.  
+1. Nella directory di livello principale *keyvault* , dove si trova il file *pom.xml* , immettere `mvn spring-boot:run`.  
 1. Il messaggio **Inizializzazione completata** nell'output del comando significa che il server è pronto.  In una finestra della shell separata immettere questo comando.
 
    ```bash
@@ -323,7 +323,7 @@ Nella sezione successiva verrà illustrato come aggiungere l'integrazione di Key
 
 I passaggi seguenti illustrano le modifiche necessarie per l'applicazione Spring Boot `KeyvaultApplication`.
 
-Proprio come Key Vault consente di esternalizzare i segreti dal codice dell'applicazione, la configurazione di Spring consente di esternalizzare la configurazione dal codice.  Il modo più semplice per configurare Spring è il file *application.properties*.  In un progetto Maven questo file si trova in *src/main/resources/application.properties*.  Spring Initializer include un file di lunghezza zero in questa posizione.
+Proprio come Key Vault consente di esternalizzare i segreti dal codice dell'applicazione, la configurazione di Spring consente di esternalizzare la configurazione dal codice.  Il modo più semplice per configurare Spring è il file *application.properties* .  In un progetto Maven questo file si trova in *src/main/resources/application.properties* .  Spring Initializer include un file di lunghezza zero in questa posizione.
 
 Per aggiungere la configurazione necessaria a questo file, seguire questa procedura.
 
@@ -369,7 +369,7 @@ Apportare una semplice modifica al file *KeyvaultApplication.java* (o qualunque 
 
    L'integrazione di Key Vault fornisce un oggetto `PropertySource` di Spring popolato con i valori di Key Vault.  Altri dettagli sull'implementazione sono disponibili nella [documentazione di riferimento](https://aka.ms/azure-spring-boot-starter-keyvault-secrets).
 
-1. Nella directory di livello principale *keyvault*, dove si trova il file *pom.xml*, immettere `mvn clean package spring-boot:run`.  
+1. Nella directory di livello principale *keyvault* , dove si trova il file *pom.xml* , immettere `mvn clean package spring-boot:run`.  
 1. Il messaggio **Inizializzazione completata** nell'output del comando significa che il server è pronto.  In una finestra della shell separata immettere questo comando.
 
    ```bash
@@ -391,21 +391,21 @@ Eseguire la procedura descritta in questa sezione per distribuire `KeyvaultAppli
 
 Seguire questa procedura per preparare il file POM per la distribuzione di `KeyvaultApplication` nel Servizio app di Azure.
 
-1. Nella directory di livello principale *keyvault* aprire il file *pom.xml*.
+1. Nella directory di livello principale *keyvault* aprire il file *pom.xml* .
 1. Nella sezione `<build><plugins>` aggiungere `azure-webapp-maven-plugin` inserendo questo codice XML.
 
    ```xml
     <plugin>
      <groupId>com.microsoft.azure</groupId>
      <artifactId>azure-webapp-maven-plugin</artifactId>
-     <version>1.11.0</version>
+     <version>1.12.0</version>
     </plugin>
    ```
 
    > [!NOTE]
    > Non preoccuparsi della formattazione.  `azure-webapp-maven-plugin` riformatterà l'intero file POM durante questo processo.
 
-1. Salvare e chiudere il file *pom.xml*.
+1. Salvare e chiudere il file *pom.xml* .
 1. Alla riga di comando richiamare l'obiettivo `config` del plug-in appena aggiunto.  Il plug-in Maven farà alcune domande e modificherà il file *pom.xml* in base alle risposte.  Il file POM verrà modificato ulteriormente.
 
    ```bash
@@ -413,7 +413,7 @@ Seguire questa procedura per preparare il file POM per la distribuzione di `Keyv
    ```
 
 1. Per `Subscription`, verificare di aver selezionato lo stesso ID sottoscrizione con l'insieme di credenziali delle chiavi creato.
-1. Per `Web App`, è possibile selezionare un'app Web esistente o selezionare `<create>` per crearne una nuova. Se si seleziona un'app Web esistente, si passerà direttamente all'ultimo passaggio **confirm**.
+1. Per `Web App`, è possibile selezionare un'app Web esistente o selezionare `<create>` per crearne una nuova. Se si seleziona un'app Web esistente, si passerà direttamente all'ultimo passaggio **confirm** .
 1. Per `OS`, assicurarsi che sia selezionato `linux`.
 1. Per `javaVersion` assicurarsi che sia selezionata la versione Java scelta in Spring Initializr.  In precedenza è stato scelto `11`, quindi qui verrà scelto 11.
 1. Accettare le impostazioni predefinite per le domande rimanenti.
@@ -421,7 +421,7 @@ Seguire questa procedura per preparare il file POM per la distribuzione di `Keyv
 
 Attenersi alla procedura seguente per apportare ulteriori modifiche necessarie al file POM.
 
-1. Nella directory di livello principale *keyvault* aprire il file *pom.xml*.
+1. Nella directory di livello principale *keyvault* aprire il file *pom.xml* .
 1. Trovare la voce `azure-webapp-maven-plugin` nella sezione `<plugins>.
 1. Modificare il valore di `<resourceGroup>`, `<appName>` e `<region>`.  
    1. Impostare il valore di `<resourceGroup>` in modo che corrisponda a quello specificato durante la creazione di Key Vault.
@@ -439,7 +439,7 @@ Attenersi alla procedura seguente per apportare ulteriori modifiche necessarie a
      <plugin> 
        <groupId>com.microsoft.azure</groupId>  
        <artifactId>azure-webapp-maven-plugin</artifactId>  
-       <version>1.11.0</version>  
+       <version>1.12.0</version>  
        <configuration>
          <schemaVersion>V2</schemaVersion>
          *<subscriptionId>********-****-****-****-************</subscriptionId>
@@ -449,8 +449,8 @@ Attenersi alla procedura seguente per apportare ulteriori modifiche necessarie a
          *<region>eastus</region>
          <runtime>
            <os>linux</os>
-           <javaVersion>java11</javaVersion>
-           <webContainer>java11</webContainer>
+           <javaVersion>java 11</javaVersion>
+           <webContainer>Java SE</webContainer>
          </runtime>
          *<!-- Begin of App Settings  -->
          *<appSettings>
@@ -608,7 +608,7 @@ I passaggi seguenti illustrano come creare una risorsa di Azure Spring Cloud e d
    | runtime-version | Versione del runtime Java.  **Il valore deve corrispondere al valore scelto in Spring Initializr in precedenza.** |
    | service | Nome del servizio esistente. |
 
-   Per comprendere la differenza tra *servizio* e *app*, vedere [Informazioni su app e distribuzione in Azure Spring Cloud](/azure/spring-cloud/spring-cloud-concept-understand-app-and-deployment).
+   Per comprendere la differenza tra *servizio* e *app* , vedere [Informazioni su app e distribuzione in Azure Spring Cloud](/azure/spring-cloud/spring-cloud-concept-understand-app-and-deployment).
 
 1. Ottenere l'identità gestita per la risorsa di Azure.  Usarla per configurare l'istanza di Key Vault esistente per consentire l'accesso da questa app.
 
@@ -638,7 +638,7 @@ I passaggi seguenti illustrano come creare una risorsa di Azure Spring Cloud e d
 
 ## <a name="summary"></a>Riepilogo
 
-È stata creata una nuova applicazione Web Java con **Spring Initializr**.  È stata creata un'istanza di Azure Key Vault per l'archiviazione di informazioni sensibili e quindi si è configurata l'applicazione per recuperare le informazioni dall'istanza di Key Vault.  Dopo aver eseguito il test in locale, l'app è stata distribuita nel Servizio app di Azure e in Azure Spring Cloud.
+È stata creata una nuova applicazione Web Java con **Spring Initializr** .  È stata creata un'istanza di Azure Key Vault per l'archiviazione di informazioni sensibili e quindi si è configurata l'applicazione per recuperare le informazioni dall'istanza di Key Vault.  Dopo aver eseguito il test in locale, l'app è stata distribuita nel Servizio app di Azure e in Azure Spring Cloud.
 
 ## <a name="next-steps"></a>Passaggi successivi
 

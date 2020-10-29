@@ -8,13 +8,13 @@ ms.date: 10/06/2020
 ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
-ms.custom: mvc, devx-track-java
-ms.openlocfilehash: cecd6b593d1805b7394a9fe73317e6faa8b689a5
-ms.sourcegitcommit: 723441eda0eb4ff893123201a9e029b7becf5ecc
+ms.custom: mvc, devx-track-java, devx-track-azurecli
+ms.openlocfilehash: d902219a7dd5f59abc54343ff3aca60f4b7f46e4
+ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/08/2020
-ms.locfileid: "91846482"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92689195"
 ---
 # <a name="deploy-spring-boot-application-to-the-azure-kubernetes-service"></a>Distribuire un'applicazione Spring Boot nel servizio Azure Kubernetes
 
@@ -163,11 +163,11 @@ La procedura seguente illustra come creare un'applicazione Web di Spring Boot e 
    ```
 
 > [!NOTE]
-> Per motivi di sicurezza dell'interfaccia della riga di comando di Azure e Registro Azure Container, la credenziale creata da `az acr login` è valida per un'ora. Se viene visualizzato l'errore *401 Non autorizzato*, è possibile eseguire di nuovo il comando `az acr login -n <your registry name>` per ripetere l'autenticazione.
+> Per motivi di sicurezza dell'interfaccia della riga di comando di Azure e Registro Azure Container, la credenziale creata da `az acr login` è valida per un'ora. Se viene visualizzato l'errore *401 Non autorizzato* , è possibile eseguire di nuovo il comando `az acr login -n <your registry name>` per ripetere l'autenticazione.
 
 ## <a name="create-a-kubernetes-cluster-on-aks-using-the-azure-cli"></a>Creare un cluster Kubernetes nel servizio Azure Container usando l'interfaccia della riga di comando di Azure
 
-1. Creare un cluster Kubernetes nel servizio Azure Kubernetes. Il comando seguente crea un cluster *kubernetes* nel gruppo di risorse *wingtiptoys-kubernetes*, con *wingtiptoys-akscluster* come nome del cluster, con `wingtiptoysregistry` come Registro Azure Container collegato e con *wingtiptoys-kubernetes* come prefisso DNS:
+1. Creare un cluster Kubernetes nel servizio Azure Kubernetes. Il comando seguente crea un cluster *kubernetes* nel gruppo di risorse *wingtiptoys-kubernetes* , con *wingtiptoys-akscluster* come nome del cluster, con `wingtiptoysregistry` come Registro Azure Container collegato e con *wingtiptoys-kubernetes* come prefisso DNS:
 
    ```azurecli
    az aks create --resource-group=wingtiptoys-kubernetes --name=wingtiptoys-akscluster \
@@ -244,7 +244,7 @@ Questa esercitazione consente di distribuire l'app usando `kubectl` e quindi di 
    ```
 
 > [!IMPORTANT]
-> Se il cluster del servizio Azure Container utilizza RBAC, è necessario creare un *ClusterRoleBinding* prima di poter accedere correttamente al dashboard. Per impostazione predefinita, il dashboard Kubernetes viene distribuito con accesso in lettura minimo e visualizza errori di accesso di Controllo degli accessi in base al ruolo. Il dashboard Kubernetes attualmente non supporta credenziali specificate dall'utente per determinare il livello di accesso, ma usa i ruoli concessi all'account del servizio. Un amministratore del cluster può scegliere di concedere accesso aggiuntivo all'account del servizio *kubernetes-dashboard*. Questo tuttavia può costituire un vettore per l'escalation dei privilegi. È anche possibile integrare l'autenticazione di Azure Active Directory per fornire un livello di accesso più granulare.
+> Se il cluster del servizio Azure Container utilizza RBAC, è necessario creare un *ClusterRoleBinding* prima di poter accedere correttamente al dashboard. Per impostazione predefinita, il dashboard Kubernetes viene distribuito con accesso in lettura minimo e visualizza errori di accesso di Controllo degli accessi in base al ruolo. Il dashboard Kubernetes attualmente non supporta credenziali specificate dall'utente per determinare il livello di accesso, ma usa i ruoli concessi all'account del servizio. Un amministratore del cluster può scegliere di concedere accesso aggiuntivo all'account del servizio *kubernetes-dashboard* . Questo tuttavia può costituire un vettore per l'escalation dei privilegi. È anche possibile integrare l'autenticazione di Azure Active Directory per fornire un livello di accesso più granulare.
 >
 > Per creare un binding, usare il comando [kubectl create clusterrolebinding]. L'esempio seguente illustra come creare un binding di esempio, tuttavia questo esempio non applica componenti di autenticazione aggiuntivi e potrebbe comportare un uso non sicuro. Il dashboard di Kubernetes è aperto a tutti gli utenti con accesso all'URL. Non esporre pubblicamente il dashboard di Kubernetes.
 >
@@ -254,7 +254,7 @@ Questa esercitazione consente di distribuire l'app usando `kubectl` e quindi di 
 >
 > Per altre informazioni sull'uso dei diversi metodi di autenticazione, vedere [dashboard-authentication] nel wiki del dashboard di Kubernetes.
 
-1. All'apertura del sito Web di configurazione di Kubernetes nel browser, selezionare il collegamento per **distribuire un'app inclusa in contenitori**:
+1. All'apertura del sito Web di configurazione di Kubernetes nel browser, selezionare il collegamento per **distribuire un'app inclusa in contenitori** :
 
    ![Sito Web di configurazione di Kubernetes che mostra il messaggio in cui informa che non ci sono elementi da visualizzare][KB01]
 
@@ -262,9 +262,9 @@ Questa esercitazione consente di distribuire l'app usando `kubectl` e quindi di 
 
    a. Selezionare **CREATE AN APP** (CREA APP).
 
-   b. Immettere il nome dell'applicazione Spring Boot per **App name** (Nome app), ad esempio *gs-spring-boot-docker*.
+   b. Immettere il nome dell'applicazione Spring Boot per **App name** (Nome app), ad esempio *gs-spring-boot-docker* .
 
-   c. Immettere il server di accesso e l'immagine del contenitore dai passaggi precedenti in **Container image** (Immagine del contenitore), ad esempio *wingtiptoysregistry.azurecr.io/gs-spring-boot-docker:latest*.
+   c. Immettere il server di accesso e l'immagine del contenitore dai passaggi precedenti in **Container image** (Immagine del contenitore), ad esempio *wingtiptoysregistry.azurecr.io/gs-spring-boot-docker:latest* .
 
    d. Scegliere **External** (Esterno) per **Service** (Servizio).
 

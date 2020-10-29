@@ -4,13 +4,13 @@ description: Informazioni su come usare Ansible per configurare la sicurezza del
 keywords: ansible, azure, devops, key vault, sicurezza, credenziali, segreti, chiavi, certificati, moduli ansible per azure, gruppo di risorse, azure_rm_resourcegroup,
 ms.topic: tutorial
 ms.date: 04/20/2020
-ms.custom: devx-track-ansible
-ms.openlocfilehash: 4891b277f8c1f9fcd7fe4c1d54ed13b39f19d2e4
-ms.sourcegitcommit: bfaeacc2fb68f861a9403585d744e51a8f99829c
+ms.custom: devx-track-ansible, devx-track-azurecli
+ms.openlocfilehash: 472a155b172de06cff4df99db7a4861f1cb60f52
+ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "90682021"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92688942"
 ---
 # <a name="tutorial-use-azure-key-vault-with-a-linux-virtual-machine-in-ansible"></a>Esercitazione: Usare Azure Key Vault con una macchina virtuale Linux in Ansible
 
@@ -40,15 +40,15 @@ Questa esercitazione illustra come usare la raccolta Ansible per i moduli di Azu
 
 Usare l'interfaccia della riga di comando di Azure per ottenere le informazioni sulla sottoscrizione di Azure necessarie quando si usano i moduli Ansible per Azure. 
 
-1. Ottenere l'ID sottoscrizione di Azure e l'ID tenant della sottoscrizione di Azure usando il comando `az account show`. Per il segnaposto `<Subscription>` specificare il nome o l'ID della sottoscrizione di Azure. Il comando visualizzerà molti valori delle chiavi associati alla sottoscrizione di Azure predefinita. Se si hanno più sottoscrizioni, potrebbe essere necessario impostare la sottoscrizione corrente tramite il comando [az account set](/cli/azure/account#az-account-set). Nell'output del comando prendere nota dei valori di **ID** e **tenantID**.
+1. Ottenere l'ID sottoscrizione di Azure e l'ID tenant della sottoscrizione di Azure usando il comando `az account show`. Per il segnaposto `<Subscription>` specificare il nome o l'ID della sottoscrizione di Azure. Il comando visualizzerà molti valori delle chiavi associati alla sottoscrizione di Azure predefinita. Se si hanno più sottoscrizioni, potrebbe essere necessario impostare la sottoscrizione corrente tramite il comando [az account set](/cli/azure/account#az-account-set). Nell'output del comando prendere nota dei valori di **ID** e **tenantID** .
 
     ```azurecli
     az account show --subscription "<Subscription>" --query tenantId
     ```
 
-1. Se non si ha un'entità servizio di Azure per la sottoscrizione di Azure, [crearne una con l'interfaccia della riga di comando di Azure](/cli/azure/create-an-azure-service-principal-azure-cli). Nell'output del comando prendere nota del valore di **appId**.
+1. Se non si ha un'entità servizio di Azure per la sottoscrizione di Azure, [crearne una con l'interfaccia della riga di comando di Azure](/cli/azure/create-an-azure-service-principal-azure-cli). Nell'output del comando prendere nota del valore di **appId** .
 
-1. Ottenere l'ID oggetto dell'entità servizio ID usando il comando `az ad sp show`. Per il segnaposto `<ApplicationID>` specificare il valore di appId dell'entità servizio. Il parametro `--query` indica il valore da stampare in *stdout*. In questo caso, si tratta dell'ID oggetto entità servizio.
+1. Ottenere l'ID oggetto dell'entità servizio ID usando il comando `az ad sp show`. Per il segnaposto `<ApplicationID>` specificare il valore di appId dell'entità servizio. Il parametro `--query` indica il valore da stampare in *stdout* . In questo caso, si tratta dell'ID oggetto entità servizio.
 
     ```azurecli
     az ad sp show --id <ApplicationID> --query objectId
@@ -163,31 +163,31 @@ Se si vogliono visualizzare i segreti dell'insieme di credenziali delle chiavi o
 
 1. Accedere al [portale di Azure](https://portal.azure.com).
 
-1. Nella casella di ricerca principale della pagina immettere `key vaults`, quindi in **Servizi**selezionare **Insiemi di credenziali delle chiavi**.
+1. Nella casella di ricerca principale della pagina immettere `key vaults`, quindi in **Servizi** selezionare **Insiemi di credenziali delle chiavi** .
 
 1. Selezionare l'insieme di credenziali delle chiavi creato nella sezione precedente. Il nome è stato stampato in stdout dal playbook.
 
-1. Selezionare **Criteri di accesso**.
+1. Selezionare **Criteri di accesso** .
 
 1. Viene visualizzato un singolo criterio di accesso con l'ID di Azure Active Directory che rappresenta l'entità servizio specificata.
 
-1. Selezionare **Aggiungi criterio di accesso**.
+1. Selezionare **Aggiungi criterio di accesso** .
 
-1. Fare clic su **Selezionare un'entità**.
+1. Fare clic su **Selezionare un'entità** .
 
 1. Nella casella di ricerca della scheda **Entità** immettere il proprio indirizzo di posta elettronica.
 
 1. Nell'elenco filtrato selezionare l'entità appropriata.
 
-1. Le informazioni per l'utente selezionato vengono copiate nell'elenco **Membri selezionati**. Scegliere **Seleziona**.
+1. Le informazioni per l'utente selezionato vengono copiate nell'elenco **Membri selezionati** . Scegliere **Seleziona** .
 
-1. Selezionare le opzioni appropriate per **Autorizzazioni chiave**, **Autorizzazioni segrete** e **Autorizzazioni del certificato**. Per questa demo, è sufficiente selezionare **Autorizzazioni segrete**, quindi selezionare **Ottieni**, **Elenca** e **Imposta**.
+1. Selezionare le opzioni appropriate per **Autorizzazioni chiave** , **Autorizzazioni segrete** e **Autorizzazioni del certificato** . Per questa demo, è sufficiente selezionare **Autorizzazioni segrete** , quindi selezionare **Ottieni** , **Elenca** e **Imposta** .
 
-1. Selezionare **Aggiungi**.
+1. Selezionare **Aggiungi** .
 
 1. Nella pagina **Criteri di accesso** viene ora visualizzato il nuovo criterio di accesso per l'utente selezionato.
 
-1. Selezionare **Salva**.
+1. Selezionare **Salva** .
 
 1. Selezionare **Notifiche** nell'angolo in alto a destra del portale. Attendere che il criterio di accesso venga aggiornato prima di continuare con il passaggio successivo.
 
@@ -218,7 +218,7 @@ Il frammento di playbook Ansible seguente illustra come creare un segreto dell'i
 
 - Per creare il segreto dell'insieme di credenziali delle chiavi viene usato il [modulo azure_rm_keyvaultsecret](https://docs.ansible.com/ansible/latest/modules/azure_rm_keyvaultsecret_module.html).
 - Per semplicità, la demo include `secret_name` e `secret_value`. Tuttavia, i playbook sono file di infrastruttura distribuita come codice (IaC) come qualsiasi codice sorgente per il progetto. Di conseguenza, i valori come questi non devono essere archiviati in file di testo non crittografato se usati in ambienti di produzione.
-- Dopo aver eseguito questo codice, la scheda **Segreti** per l'insieme di credenziali delle chiavi include il segreto appena aggiunto denominato `testsecret`. Per visualizzarlo, selezionare il segreto, selezionare la versione corrente e selezionare **Mostra il valore segreto**.
+- Dopo aver eseguito questo codice, la scheda **Segreti** per l'insieme di credenziali delle chiavi include il segreto appena aggiunto denominato `testsecret`. Per visualizzarlo, selezionare il segreto, selezionare la versione corrente e selezionare **Mostra il valore segreto** .
 
 ## <a name="get-a-key-vault-secret"></a>Ottenere un segreto dell'insieme di credenziali delle chiavi
 
@@ -241,7 +241,7 @@ tasks:
 
 **Note:**
 
-- Per ottenere il segreto dell'insieme di credenziali delle chiavi viene usato il **modulo azure_rm_keyvaultsecret_info**. Questo modulo è disponibile solo se si usa la raccolta Ansible per i moduli di Azure. 
+- Per ottenere il segreto dell'insieme di credenziali delle chiavi viene usato il **modulo azure_rm_keyvaultsecret_info** . Questo modulo è disponibile solo se si usa la raccolta Ansible per i moduli di Azure. 
 - Se si riceve un errore durante l'esecuzione di questo frammento, assicurarsi di aver seguito tutte le istruzioni indicate nella sezione [Prerequisiti](#prerequisites).
 - Per semplicità, la demo include `secret_name` e `secret_value`. Tuttavia, i playbook sono file di infrastruttura distribuita come codice (IaC) come qualsiasi codice sorgente per il progetto. Di conseguenza, i valori come questi non devono essere archiviati in file di testo non crittografato se usati in ambienti di produzione.
 

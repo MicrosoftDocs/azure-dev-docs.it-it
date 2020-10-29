@@ -4,17 +4,17 @@ description: Informazioni su come usare Ansible per gestire gli inventari dinami
 keywords: ansible, azure, devops, bash, cloud shell, inventario dinamico
 ms.topic: tutorial
 ms.date: 10/23/2019
-ms.custom: devx-track-ansible
-ms.openlocfilehash: d4532a0727a70dc1a92c6df21b5ff9f0d92ab850
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.custom: devx-track-ansible, devx-track-azurecli
+ms.openlocfilehash: 42ac7ef120a2bb364197509d8c36bb7e1a300242
+ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831197"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92688621"
 ---
 # <a name="tutorial-configure-dynamic-inventories-of-your-azure-resources-using-ansible"></a>Esercitazione: Configurare gli inventari dinamici delle risorse di Azure tramite Ansible
 
-Ansible può essere usato per eseguire il pull delle informazioni degli inventari da diverse origini (incluse origini cloud, ad esempio Azure) in un *inventario dinamico*. 
+Ansible può essere usato per eseguire il pull delle informazioni degli inventari da diverse origini (incluse origini cloud, ad esempio Azure) in un *inventario dinamico* . 
 
 [!INCLUDE [ansible-tutorial-goals.md](includes/ansible-tutorial-goals.md)]
 
@@ -48,9 +48,9 @@ Ansible può essere usato per eseguire il pull delle informazioni degli inventar
 
 1. Creare due macchine virtuali Linux in Azure con una delle tecniche seguenti:
 
-    - **Playbook di Ansible**: l'articolo [Creare una macchina virtuale di base in Azure con Ansible](./vm-configure.md) illustra come creare una macchina virtuale da un playbook di Ansible. Se si usa un playbook per definire una o entrambe le macchine virtuali, verificare che venga usata la connessione SSH invece di una password.
+    - **Playbook di Ansible** : l'articolo [Creare una macchina virtuale di base in Azure con Ansible](./vm-configure.md) illustra come creare una macchina virtuale da un playbook di Ansible. Se si usa un playbook per definire una o entrambe le macchine virtuali, verificare che venga usata la connessione SSH invece di una password.
 
-    - **Interfaccia della riga di comando di Azure**: eseguire ognuno dei comandi seguenti in Cloud Shell per creare le due macchine virtuali:
+    - **Interfaccia della riga di comando di Azure** : eseguire ognuno dei comandi seguenti in Cloud Shell per creare le due macchine virtuali:
 
         ```azurecli-interactive
         az vm create --resource-group ansible-inventory-test-rg \

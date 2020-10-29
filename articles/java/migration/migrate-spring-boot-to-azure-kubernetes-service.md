@@ -5,13 +5,13 @@ author: mnriem
 ms.author: manriem
 ms.topic: conceptual
 ms.date: 4/10/2020
-ms.custom: devx-track-java
-ms.openlocfilehash: 4d3da50042074b724f614b718ceb0edc7fb83077
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.custom: devx-track-java, devx-track-azurecli
+ms.openlocfilehash: 77ad38a4fb1290e392ee933a04aaf802a910e577
+ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831707"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92689040"
 ---
 # <a name="migrate-spring-boot-applications-to-azure-kubernetes-service"></a>Eseguire la migrazione di applicazioni Spring Boot al servizio Azure Kubernetes
 
@@ -65,7 +65,7 @@ Determinare se l'applicazione ha dipendenze esplicite da Zipkin. Cercare le dipe
 
 ### <a name="inventory-external-resources"></a>Inventario delle risorse esterne
 
-Identificare le risorse esterne, ad esempio le origini dati, i broker dei messaggi JMS e gli URL di altri servizi. Nelle applicazioni Spring Boot la configurazione per tali risorse si trova di solito nella cartella *src/main/directory*, in un file generalmente denominato *application.properties* o *application.yml*. Verificare inoltre le variabili di ambiente della distribuzione di produzione per rilevare eventuali impostazioni di configurazione pertinenti.
+Identificare le risorse esterne, ad esempio le origini dati, i broker dei messaggi JMS e gli URL di altri servizi. Nelle applicazioni Spring Boot la configurazione per tali risorse si trova di solito nella cartella *src/main/directory* , in un file generalmente denominato *application.properties* o *application.yml* . Verificare inoltre le variabili di ambiente della distribuzione di produzione per rilevare eventuali impostazioni di configurazione pertinenti.
 
 [!INCLUDE [inventory-databases-spring-boot](includes/inventory-databases-spring-boot.md)]
 
@@ -187,7 +187,7 @@ docker push ${MY_ACR}.azurecr.io/${MY_APP_NAME}
 
 Per informazioni più dettagliate sulla creazione e l'archiviazione di immagini di contenitore in Azure, vedere il modulo Learn [Compilare e archiviare immagini del contenitore con Registro Azure Container](/learn/modules/build-and-store-container-images/).
 
-Se è stato usato il [repository GitHub Avvio rapido di Spring Boot in contenitori](https://github.com/Azure/spring-boot-container-quickstart), è anche possibile includere un archivio chiavi personalizzato che verrà aggiunto alla JVM all'avvio. L'archivio chiavi verrà aggiunto se si inserisce il file relativo in */opt/spring-boot/mycert.crt*. Per eseguire questa operazione, è possibile aggiungere il file direttamente al Dockerfile oppure usare il provider di Azure Key Vault per il driver CSI dell'archivio di segreti, come indicato in precedenza.
+Se è stato usato il [repository GitHub Avvio rapido di Spring Boot in contenitori](https://github.com/Azure/spring-boot-container-quickstart), è anche possibile includere un archivio chiavi personalizzato che verrà aggiunto alla JVM all'avvio. L'archivio chiavi verrà aggiunto se si inserisce il file relativo in */opt/spring-boot/mycert.crt* . Per eseguire questa operazione, è possibile aggiungere il file direttamente al Dockerfile oppure usare il provider di Azure Key Vault per il driver CSI dell'archivio di segreti, come indicato in precedenza.
 
 Se è stato usato il [repository GitHub Avvio rapido di Spring Boot in contenitori](https://github.com/Azure/spring-boot-container-quickstart), è anche possibile abilitare Application Insights impostando la variabile di ambiente `APPLICATIONINSIGHTS_CONNECTION_STRING` nel file di distribuzione Kubernetes (il valore della variabile di ambiente dovrebbe essere `InstrumentationKey=00000000-0000-0000-0000-000000000000`). Per altre informazioni, vedere [Monitoraggio di applicazioni codeless Java con Application Insights di Monitoraggio di Azure](/azure/azure-monitor/app/java-in-process-agent).
 
