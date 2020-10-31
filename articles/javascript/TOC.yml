@@ -11,91 +11,6 @@
           href: core/node-sdk-azure-authenticate-principal.md
         - name: Eseguire l'autenticazione ad Azure
           href: core/node-sdk-azure-authenticate.md
-    - name: Avvi rapidi
-      expanded: false
-      items:
-        - name: Hosting di app
-          items:
-            - name: App Web statiche di Azure
-              href: /azure/static-web-apps/getting-started
-            - name: Siti statici dall'archiviazione
-              href: tutorial-vscode-static-website-node-01.md
-            - name: App Web e API Node.js
-              href: tutorial-vscode-azure-app-service-node-01.md
-            - name: API Deno
-              href: tutorial-visual-studio-code-azure-app-service-deno-01.md
-            - name: Senza server
-              href: tutorial-vscode-serverless-node-01.md
-            - name: Docker
-              href: tutorial-vscode-docker-node-01.md
-            - name: Kubernetes
-              href: /azure/aks/kubernetes-walkthrough?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
-            - name: Macchine virtuali di Linux
-              href: /azure/virtual-machines/linux/quick-create-cli?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
-        - name: DevOps
-          items:
-            - name: Azure Repos
-              href: /azure/devops/repos/get-started/index?view=azure-devops&toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
-            - name: CI/CD con Azure Pipelines
-              href: /azure/devops/pipelines/languages/javascript?view=azure-devops&toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
-            - name: CI/CD con Azure DevOps Projects
-              href: /azure/devops-project/azure-devops-project-nodejs?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
-            - name: Application Insights con Monitoraggio di Azure
-              href: /azure/azure-monitor/learn/nodejs-quick-start?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
-            - name: Log Analytics con Monitoraggio di Azure
-              href: /azure/azure-monitor/learn/quick-collect-linux-computer?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
-            - name: Azioni di GitHub
-              href: 'https://azure.microsoft.com/resources/videos/azure-friday-deploy-to-azure-using-github-actions'
-        - name: Debug e diagnostica
-          items:
-            - name: Debug remoto per Servizio app di Azure
-              href: 'https://code.visualstudio.com/docs/azure/remote-debugging'
-            - name: Debug delle app Node.js locali in VS Code
-              href: 'https://code.visualstudio.com/docs/nodejs/nodejs-debugging'
-        - name: Archiviare dati
-          items:
-            - name: Archiviazione BLOB
-              href: /azure/storage/blobs/storage-quickstart-blobs-nodejs?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
-            - name: Database SQL
-              href: /azure/sql-database/sql-database-connect-query-nodejs?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
-            - name: Cosmos DB
-              href: /azure/cosmos-db/create-mongodb-nodejs?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
-            - name: Cache Redis
-              href: /azure/azure-cache-for-redis/cache-nodejs-get-started?toc=/azure/developer/javascript/toc.json&bc=/
-            - name: PostgreSQL
-              href: /azure/postgresql/connect-nodejs?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
-            - name: MySQL
-              href: /azure/mysql/connect-nodejs?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
-        - name: Sicurezza e autenticazione
-          items:
-            - name: Azure Active Directory
-              href: /azure/active-directory/develop/quickstart-v1-nodejs-webapi?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
-            - name: Azure AD B2C
-              href: /azure/active-directory-b2c/active-directory-b2c-tutorials-spa?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
-            - name: Key Vault
-              href: /azure/key-vault/quick-create-cli?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
-        - name: Messaggistica e integrazione
-          items:
-            - name: Griglia di eventi
-              href: /azure/event-grid/custom-event-quickstart?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
-            - name: Bus di servizio
-              href: /azure/service-bus-messaging/service-bus-nodejs-how-to-use-queues?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
-            - name: Archiviazione code
-              href: /azure/storage/queues/storage-nodejs-how-to-use-queues?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
-        - name: IoT
-          items:
-            - name: Hub IoT
-              href: /azure/iot-hub/quickstart-control-device-node?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
-            - name: Streaming di Big Data
-              href: /azure/iot-hub/quickstart-send-telemetry-node?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
-        - name: Servizi cognitivi
-          items:
-            - name: Text Analytics
-              href: /azure/cognitive-services/text-analytics/quickstarts/nodejs?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
-            - name: Visione artificiale
-              href: /azure/cognitive-services/Computer-vision/Quickstarts/node-analyze?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
-            - name: Riconoscimento vocale
-              href: /azure/cognitive-services/speech-service/get-started?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
     - name: Esercitazioni
       items:
         - name: Caricare immagini in BLOB di archiviazione
@@ -196,16 +111,12 @@
           href: how-to/deploy-web-app.md
         - name: Distribuire contenitori
           href: how-to/deploy-containers.md
-        - name: Distribuire tramite recapito continuo
-          href: /azure/devops/pipelines/languages/javascript?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
         - name: Integrare con database
           href: how-to/integrate-database.md
         - name: Scrivere codice serverless
           href: how-to/develop-serverless-apps.md
         - name: Creare un sito statico (JAMstack)
           href: how-to/create-static-site.md
-        - name: Creare un'API REST
-          href: /azure/app-service/app-service-web-tutorial-rest-api?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
         - name: Registrazione e metriche
           href: how-to/node-sdk-logging.md
     - name: Esempi
