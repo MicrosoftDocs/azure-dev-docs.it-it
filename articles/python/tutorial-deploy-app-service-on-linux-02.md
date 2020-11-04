@@ -4,12 +4,12 @@ description: Passaggio 2 dell'esercitazione, configurare l'applicazione
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: 464807b8a4e637db7a0911d23770246dfc7fb0ae
-ms.sourcegitcommit: 723441eda0eb4ff893123201a9e029b7becf5ecc
+ms.openlocfilehash: 4aaaa1833a42c40786fc6923b10876561adac859
+ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/08/2020
-ms.locfileid: "91846692"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92688891"
 ---
 # <a name="2-prepare-your-app-for-deployment-to-azure-app-service"></a>2: Preparare l'app per la distribuzione nel Servizio app di Azure
 
@@ -23,7 +23,7 @@ Se non si ha già un'app, usare una delle opzioni seguenti. Assicurarsi che l'ap
 
 ## <a name="option-1-vs-code-flask-tutorial-sample"></a>Opzione 1: Esempio di esercitazione su Flask in VS Code
 
-Scaricare o clonare [https://github.com/Microsoft/python-sample-vscode-flask-tutorial](https://github.com/Microsoft/python-sample-vscode-flask-tutorial), ovvero il risultato dell'[esercitazione su Flask](https://code.visualstudio.com/docs/python/tutorial-flask).
+Scaricare o clonare [https://github.com/Microsoft/python-sample-vscode-flask-tutorial](https://github.com/Microsoft/python-sample-vscode-flask-tutorial), ovvero il risultato dell'[esercitazione su Flask](https://code.visualstudio.com/docs/python/tutorial-flask). Si noti che il codice dell'app si trova specificamente nella cartella *hello_app*. Per istruzioni sull'esecuzione dell'app in locale, vedere il file *readme.md* dell'esempio.
 
 ## <a name="option-2-vs-code-django-tutorial-sample"></a>Opzione 2: Esempio di esercitazione su Django in VS Code
 

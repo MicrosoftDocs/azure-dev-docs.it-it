@@ -5,12 +5,12 @@ ms.devlang: python
 ms.topic: tutorial
 ms.date: 10/09/2020
 ms.custom: devx-track-python
-ms.openlocfilehash: 77cb35d31f80b52d1e79c2650c79635dc039e72d
-ms.sourcegitcommit: d5dabc6dde727ed167a9dc8a4eaaf21025b3efa8
+ms.openlocfilehash: 333cda811133e9ce4e83730b038a7d84b40b7fa1
+ms.sourcegitcommit: ca7b58f60dd02709977b35175b43be582b868b03
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91947536"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92629935"
 ---
 # <a name="tutorial-deploy-a-django-web-app-with-postgresql-using-the-azure-portal"></a>Esercitazione: Distribuire un'app Web Django con PostgreSQL tramite il portale di Azure
 
@@ -62,7 +62,7 @@ In un browser passare a [https://github.com/Azure-Samples/djangoapp](https://git
     | Stack di runtime | Selezionare **Python 3.8** nell'elenco a discesa. |
     | Region | Selezionare una località nelle vicinanze. |
     | Piano Linux | Il portale popola questo campo con un nome di piano del servizio app in base al gruppo di risorse. Se si vuole cambiare il nome, selezionare **Crea nuovo**. |
-    | SKU e dimensioni | Per ottenere prestazioni ottimali, usare il piano predefinito, anche se implica addebiti nella sottoscrizione. Per evitare addebiti, selezionare **Modifica dimensioni**, quindi **Sviluppo/test**, **B1** (gratuito per 30 giorni) e infine **Applica**. È possibile aggiornare il piano in seguito per migliorare le prestazioni. |
+    | SKU e dimensioni | Per ottenere prestazioni ottimali, usare il piano predefinito, anche se implica addebiti nella sottoscrizione. Per evitare addebiti, selezionare **Modifica dimensioni** , quindi **Sviluppo/test** , **B1** (gratuito per 30 giorni) e infine **Applica**. È possibile aggiornare il piano in seguito per migliorare le prestazioni. |
 
 1. Selezionare **Rivedi e crea** e quindi **Crea**. Il provisioning dell'app Web in Azure richiede alcuni minuti.
 
@@ -90,8 +90,8 @@ In un browser passare a [https://github.com/Azure-Samples/djangoapp](https://git
     | Origine dati | **Nessuno** |
     | Location | Selezionare una località nelle vicinanze. |
     | Versione | Mantenere il valore predefinito, ovvero l'ultima versione. |
-    | Calcolo e archiviazione | Selezionare **Configura server**, quindi selezionare **Basic** e **Generazione 5**. Impostare **vCore** su 1 e **Archiviazione** su 5 GB, quindi selezionare **OK**. Queste scelte consentono di effettuare il provisioning del server meno costoso disponibile per PostgreSQL in Azure. È anche possibile che nell'account Azure sia disponibile credito sufficiente per coprire il costo del server. |
-    | Nome utente amministratore, Password, Conferma password | Immettere le credenziali per un account amministratore nel server di database. Prendere nota di queste credenziali, perché saranno necessarie più avanti nell'esercitazione. |
+    | Calcolo e archiviazione | Selezionare **Configura server** , quindi selezionare **Basic** e **Generazione 5**. Impostare **vCore** su 1 e **Archiviazione** su 5 GB, quindi selezionare **OK**. Queste scelte consentono di effettuare il provisioning del server meno costoso disponibile per PostgreSQL in Azure. È anche possibile che nell'account Azure sia disponibile credito sufficiente per coprire il costo del server. |
+    | Nome utente amministratore, Password, Conferma password | Immettere le credenziali per un account amministratore nel server di database. Prendere nota di queste credenziali, perché saranno necessarie più avanti nell'esercitazione. Nota: non usare il carattere `$` nel nome utente o nella password. Successivamente, si creano variabili di ambiente con questi valori, in cui il carattere `$` ha un significato speciale all'interno del contenitore Linux usato per eseguire le app Python. |
 
 1. Selezionare **Rivedi e crea** e quindi **Crea**. Il provisioning dell'app Web in Azure richiede alcuni minuti.
 
@@ -107,7 +107,7 @@ In questa sezione ci si connette al server di database in Azure Cloud Shell e si
 
     ![Pagina Sicurezza connessione portale per le regole del firewall](media/tutorial-python-postgresql-app-portal/server-firewall-rules.png)
 
-1. Selezionare il pulsante **Aggiungi 0.0.0.0 - 255.255.255.255**, quindi selezionare **Continua** nel messaggio popup visualizzato e poi **Salva** nella parte superiore della pagina. Queste azioni aggiungono una regola che consente di connettersi al server di database da Cloud Shell e da SSH (come si farà in una sezione successiva per eseguire le migrazioni dei modelli di dati Django).
+1. Selezionare il pulsante **Aggiungi 0.0.0.0 - 255.255.255.255** , quindi selezionare **Continua** nel messaggio popup visualizzato e poi **Salva** nella parte superiore della pagina. Queste azioni aggiungono una regola che consente di connettersi al server di database da Cloud Shell e da SSH (come si farà in una sezione successiva per eseguire le migrazioni dei modelli di dati Django).
 
 1. Aprire Azure Cloud Shell dal portale di Azure selezionando l'icona corrispondente nella parte superiore della finestra:
 
@@ -155,6 +155,8 @@ In questa sezione vengono create le impostazioni per l'app Web necessarie per la
     | DBUSER | Nome utente dell'amministratore usato durante il provisioning del database. Il codice di esempio aggiunge automaticamente la parte `@<server-name>`. Vedere *azuresite/production.py*. |
     | DBPASS | La password di amministratore creata in precedenza. |
 
+    Come indicato in precedenza, non usare il carattere `$` nel nome utente o nella password, perché è preceduto da un carattere di escape nelle variabili di ambiente nel contenitore Linux che ospita le app Python.
+
 1. Selezionare **Salva** quindi **Continuare** per applicare le impostazioni.
 
     > [!IMPORTANT]
@@ -170,7 +172,7 @@ Una volta specificate le impostazioni del database e della connessione, è ora p
 
 1. Nel passaggio **Controllo del codice sorgente** selezionare **GitHub** e quindi **Autorizza** (se necessario). Seguire quindi le istruzioni per l'accesso oppure selezionare **Continua** per usare l'account di accesso di GitHub corrente.
 
-1. Nel passaggio **Provider di compilazione** selezionare **Servizio di compilazione del servizio app**, quindi selezionare **Continua**.
+1. Nel passaggio **Provider di compilazione** selezionare **Servizio di compilazione del servizio app** , quindi selezionare **Continua**.
 
 1. Nel passaggio **Configura** selezionare i valori seguenti:
 
@@ -230,7 +232,7 @@ Con il codice distribuito e il database implementato, l'app è quasi pronta per 
 
 A questo punto è possibile eseguire un rapido test dell'app per verificare che funzioni con il database PostgreSQL.
 
-1. Nella finestra o nella scheda del browser per l'app Web tornare alla pagina **Panoramica**, quindi selezionare l'**URL** per l'app Web nel formato `http://<app-name>.azurewebsites.net`.
+1. Nella finestra o nella scheda del browser per l'app Web tornare alla pagina **Panoramica** , quindi selezionare l' **URL** per l'app Web nel formato `http://<app-name>.azurewebsites.net`.
 
 1. L'app dovrebbe visualizzare un messaggio che indica che non sono disponibili sondaggi perché nel database non sono ancora presenti sondaggi specifici.
 

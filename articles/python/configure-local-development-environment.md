@@ -3,13 +3,13 @@ title: Configurare l'ambiente Python locale per lo sviluppo di Azure
 description: Come configurare un ambiente di sviluppo Python locale per l'uso con Azure, tra cui Visual Studio Code, le librerie di Azure SDK e le credenziali necessarie per l'autenticazione delle librerie.
 ms.date: 05/29/2020
 ms.topic: conceptual
-ms.custom: devx-track-python
-ms.openlocfilehash: e3ddedf44c339aaf4f30933d99d5b27052f1aea3
-ms.sourcegitcommit: 723441eda0eb4ff893123201a9e029b7becf5ecc
+ms.custom: devx-track-python, devx-track-azurecli
+ms.openlocfilehash: 8f18d579259e1510c0aac0f7d66bb219cb327d1b
+ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/08/2020
-ms.locfileid: "91846752"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92688588"
 ---
 # <a name="configure-your-local-python-dev-environment-for-azure"></a>Configurare l'ambiente di sviluppo Python locale per Azure
 
@@ -23,7 +23,7 @@ Questo articolo include le istruzioni di installazione da seguire una sola volta
 
 Una volta configurata la workstation, sarà necessario aggiungere solo una configurazione minima per completare varie guide di avvio rapido ed esercitazioni altrove in questo centro per sviluppatori e nella documentazione di Azure.
 
-Questa configurazione per lo sviluppo locale è una questione diversa rispetto alle [risorse di provisioning](cloud-development-flow.md) che costituiscono l'*ambiente cloud* dell'applicazione in Azure. Nel processo di sviluppo viene eseguito codice nell'ambiente di sviluppo locale in grado di accedere a tali risorse nel cloud, ma il codice non è ancora distribuito in un [servizio di hosting appropriato](quickstarts-app-hosting.md) nel cloud. Il passaggio di distribuzione avviene in seguito, come descritto nell'articolo sul [flusso di sviluppo di Azure](cloud-development-flow.md).
+Questa configurazione per lo sviluppo locale è una questione diversa rispetto alle [risorse di provisioning](cloud-development-flow.md) che costituiscono l' *ambiente cloud* dell'applicazione in Azure. Nel processo di sviluppo viene eseguito codice nell'ambiente di sviluppo locale in grado di accedere a tali risorse nel cloud, ma il codice non è ancora distribuito in un [servizio di hosting appropriato](quickstarts-app-hosting.md) nel cloud. Il passaggio di distribuzione avviene in seguito, come descritto nell'articolo sul [flusso di sviluppo di Azure](cloud-development-flow.md).
 
 ## <a name="install-components"></a>Installazione dei componenti
 
@@ -94,7 +94,7 @@ Ogni sviluppatore dell'organizzazione dovrà eseguire questi passaggi singolarme
     az ad sp create-for-rbac --name localtest-sp-rbac --skip-assignment --sdk-auth > local-sp.json
     ```
 
-    Questo comando salva l'output in *local-sp.json*. Per altri dettagli sul comando e sui relativi argomenti, vedere [Funzioni del comando create-for-rbac](#what-the-create-for-rbac-command-does).
+    Questo comando salva il proprio input in *local-sp.json*. Per altri dettagli sul comando e sui relativi argomenti, vedere [Funzioni del comando create-for-rbac](#what-the-create-for-rbac-command-does).
 
     Se si fa parte di un'organizzazione, è possibile che non si abbia l'autorizzazione nella sottoscrizione per eseguire questo comando. In tal caso, chiedere ai proprietari della sottoscrizione di creare l'entità servizio.
 
@@ -226,7 +226,7 @@ Per ogni progetto, è consigliabile creare e attivare sempre un *ambiente virtua
 
 Un ambiente virtuale è una cartella all'interno di un progetto che isola una copia di un interprete Python specifico. Una volta attivato l'ambiente (cosa che Visual Studio Code fa automaticamente), l'esecuzione di `pip install` installa una libreria solo al suo interno. Quindi il codice Python verrà eseguito nel contesto esatto dell'ambiente con le versioni specifiche di ogni libreria. Eseguendo `pip freeze`, si ottiene l'elenco esatto di tali librerie. In molti esempi di questa documentazione si crea un file *requirements.txt* per le librerie necessarie, quindi si usa `pip install -r requirements.txt`. Un file dei requisiti è in genere necessario quando si distribuisce il codice in Azure.
 
-Se non si usa un ambiente virtuale, Python viene eseguito nell'*ambiente globale*. Pur essendo rapido e pratico da usare, l'ambiente globale tende a riempirsi a dismisura nel corso del tempo con tutte le librerie installate per qualsiasi progetto o esperimento. Inoltre, se si aggiorna una raccolta per un progetto, si potrebbero danneggiare altri progetti che dipendono da versioni diverse della libreria. E poiché l'ambiente è condiviso da un numero qualsiasi di progetti, non è possibile usare `pip freeze` per recuperare un elenco di dipendenze di un progetto specifico.
+Se non si usa un ambiente virtuale, Python viene eseguito nell' *ambiente globale*. Pur essendo rapido e pratico da usare, l'ambiente globale tende a riempirsi a dismisura nel corso del tempo con tutte le librerie installate per qualsiasi progetto o esperimento. Inoltre, se si aggiorna una raccolta per un progetto, si potrebbero danneggiare altri progetti che dipendono da versioni diverse della libreria. E poiché l'ambiente è condiviso da un numero qualsiasi di progetti, non è possibile usare `pip freeze` per recuperare un elenco di dipendenze di un progetto specifico.
 
 Nell'ambiente globale è consigliabile installare i pacchetti di strumenti da usare in più progetti. Ad esempio, è possibile eseguire `pip install gunicorn` nell'ambiente globale per rendere disponibile il server Web gunicorn ovunque.
 
