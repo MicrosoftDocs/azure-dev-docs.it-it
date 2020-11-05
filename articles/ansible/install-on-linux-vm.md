@@ -4,13 +4,13 @@ description: Questo articolo di avvio rapido descrive come installare e configur
 keywords: ansible, azure, devops, bash, cloudshell, playbook, interfaccia della riga di comando di azure
 ms.topic: quickstart
 ms.date: 09/30/2020
-ms.custom: devx-track-ansible,devx-track-cli, devx-track-azurecli
-ms.openlocfilehash: 7103c40c0b95ae07c60fcccff03ea60e9667a331
-ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
+ms.custom: devx-track-ansible, devx-track-azurecli
+ms.openlocfilehash: b01cf6925f19ae6dc561358546f9ee3b945cad4f
+ms.sourcegitcommit: 5c7f5fef798413b1a304cc9ee31c8518b73f27eb
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92688955"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93066250"
 ---
 # <a name="quickstart-configure-ansible-using-azure-cli"></a>Avvio rapido: Configurare Ansible con l'interfaccia della riga di comando di Azure
 
@@ -45,7 +45,7 @@ La procedura seguente illustra in dettaglio la creazione di una coppia di chiavi
 
 1. Accedere al [portale di Azure](https://portal.azure.com).
 
-1. Aprire [Azure Cloud Shell](/azure/cloud-shell/overview) e, se non è già stato fatto, passare a **Bash** .
+1. Aprire [Azure Cloud Shell](/azure/cloud-shell/overview) e, se non è già stato fatto, passare a **Bash**.
 
 1. Creare una chiave SSH usando [ssh-keygen](https://www.ssh.com/ssh/keygen/).
 

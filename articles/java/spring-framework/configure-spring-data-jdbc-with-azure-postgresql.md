@@ -2,18 +2,18 @@
 title: Usare Spring Data JDBC con Database di Azure per PostgreSQL
 description: Informazioni su come usare Spring Data JDBC con un database di Database di Azure per PostgreSQL.
 documentationcenter: java
-ms.date: 05/18/2020
+ms.date: 10/13/2020
 ms.service: postgresql
 ms.tgt_pltfrm: multiple
 ms.author: judubois
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: c700d78fa8cb7568e207fd020714cda25abb2bc5
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: a7d0c007b2f4c21dc6387e28d5753e67d504cd3a
+ms.sourcegitcommit: 5c7f5fef798413b1a304cc9ee31c8518b73f27eb
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831817"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93066190"
 ---
 # <a name="use-spring-data-jdbc-with-azure-database-for-postgresql"></a>Usare Spring Data JDBC con Database di Azure per PostgreSQL
 
@@ -34,9 +34,11 @@ In questo articolo si scriverà il codice per un'applicazione di esempio. Per pr
 Per generare l'applicazione, immettere il comando seguente sulla riga di comando:
 
 ```bash
-curl https://start.spring.io/starter.tgz -d dependencies=web,data-jdbc,postgresql -d baseDir=azure-database-workshop -d bootVersion=2.3.1.RELEASE -d javaVersion=8 | tar -xzvf -
+curl https://start.spring.io/starter.tgz -d dependencies=web,data-jdbc,postgresql -d baseDir=azure-database-workshop -d bootVersion=2.3.4.RELEASE -d javaVersion=8 | tar -xzvf -
 ```
-
+ > [!NOTE]
+ > Spring Initializr usa Java 11 come versione predefinita. Per usare le utilità di avvio di Spring Boot descritte in questo argomento, è necessario selezionare invece Java 8.
+ 
 ### <a name="configure-spring-boot-to-use-azure-database-for-postgresql"></a>Configurare Spring Boot per l'uso di Database di Azure per PostgreSQL
 
 Aprire il file *src/main/resources/application.properties* e aggiungere il testo seguente:

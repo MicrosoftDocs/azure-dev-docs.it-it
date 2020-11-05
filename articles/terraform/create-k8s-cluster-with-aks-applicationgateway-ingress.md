@@ -3,14 +3,14 @@ title: Creare un controller di ingresso del gateway applicazione nel servizio Az
 description: Informazioni su come creare un cluster Kubernetes con il servizio Azure Kubernetes con Gateway applicazione come controller in ingresso.
 keywords: azure devops terraform gateway applicazione ingresso servizio azure kubernetes kubernetes
 ms.topic: how-to
-ms.date: 03/09/2020
+ms.date: 10/30/2020
 ms.custom: devx-track-terraform
-ms.openlocfilehash: 10e52f4cc05bfa4127ee519ed265f0607d4745be
-ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
+ms.openlocfilehash: fe4f7b06388a7a26f61067e4a67e6b310e2a1958
+ms.sourcegitcommit: e1175aa94709b14b283645986a34a385999fb3f7
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/28/2020
-ms.locfileid: "91401661"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93192553"
 ---
 # <a name="create-an-application-gateway-ingress-controller-in-azure-kubernetes-service"></a>Creare un controller di ingresso del gateway applicazione nel servizio Azure Kubernetes
 
@@ -31,13 +31,13 @@ In questo articolo si apprenderà come eseguire le attività seguenti:
 
 [!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
 
-- **Configurare Terraform**: Seguire le indicazioni nell'articolo su [Terraform e configurazione dell'accesso ad Azure](get-started-cloud-shell.md)
+- **Configurare Terraform** : Seguire le indicazioni nell'articolo su [Terraform e configurazione dell'accesso ad Azure](get-started-cloud-shell.md)
 
-- **Gruppo di risorse di Azure**: se non è già disponibile, [creare un gruppo di risorse di Azure](/azure/azure-resource-manager/manage-resource-groups-portal#create-resource-groups) da usare per la demo. Prendere nota del nome e della posizione del gruppo di risorse perché questi valori vengono usati nella demo.
+- **Gruppo di risorse di Azure** : se non è già disponibile, [creare un gruppo di risorse di Azure](/azure/azure-resource-manager/manage-resource-groups-portal#create-resource-groups) da usare per la demo. Prendere nota del nome e della posizione del gruppo di risorse perché questi valori vengono usati nella demo.
 
-- **Entità servizio di Azure**: seguire le indicazioni riportate nella sezione relativa a **Creare l'entità servizio** nell'articolo [Creare entità servizio di Azure con l'interfaccia della riga di comando di Azure](/cli/azure/create-an-azure-service-principal-azure-cli). Prendere nota dei valori di `appId`, `displayName` e `password`.
+- **Entità servizio di Azure** : seguire le indicazioni riportate nella sezione relativa a **Creare l'entità servizio** nell'articolo [Creare entità servizio di Azure con l'interfaccia della riga di comando di Azure](/cli/azure/create-an-azure-service-principal-azure-cli). Prendere nota dei valori di `appId`, `displayName` e `password`.
 
-- **Ottenere l'ID oggetto dell'entità servizio**: Eseguire il comando seguente in Cloud Shell: `az ad sp list --display-name <displayName>`
+- **Ottenere l'ID oggetto dell'entità servizio** : Eseguire il comando seguente in Cloud Shell: `az ad sp list --display-name <displayName>`
 
 ## <a name="create-the-directory-structure"></a>Creare la struttura di directory
 
@@ -90,7 +90,7 @@ Creare il file di configurazione Terraform che dichiara il provider di Azure.
     }
     ```
 
-1. Salvare il file ( **&lt;CTRL+S**) e uscire dall'editor ( **&lt;CTRL+Q**).
+1. Salvare il file ( **&lt;CTRL+S** ) e uscire dall'editor ( **&lt;CTRL+Q** ).
 
 ## <a name="define-input-variables"></a>Definire le variabili di input
 
@@ -131,42 +131,42 @@ Creare il file di configurazione di Terraform in cui sono elencate tutte le vari
     }
 
     variable "virtual_network_address_prefix" {
-      description = "Containers DNS server IP address."
+      description = "VNET address prefix"
       default     = "15.0.0.0/8"
     }
 
     variable "aks_subnet_name" {
-      description = "AKS Subnet Name."
+      description = "Subnet Name."
       default     = "kubesubnet"
     }
 
     variable "aks_subnet_address_prefix" {
-      description = "Containers DNS server IP address."
+      description = "Subnet address prefix."
       default     = "15.0.0.0/16"
     }
 
     variable "app_gateway_subnet_address_prefix" {
-      description = "Containers DNS server IP address."
+      description = "Subnet server IP address."
       default     = "15.1.0.0/16"
     }
 
     variable "app_gateway_name" {
-      description = "Name of the Application Gateway."
+      description = "Name of the Application Gateway"
       default = "ApplicationGateway1"
     }
 
     variable "app_gateway_sku" {
-      description = "Name of the Application Gateway SKU."
+      description = "Name of the Application Gateway SKU"
       default = "Standard_v2"
     }
 
     variable "app_gateway_tier" {
-      description = "Tier of the Application Gateway SKU."
+      description = "Tier of the Application Gateway tier"
       default = "Standard_v2"
     }
 
     variable "aks_name" {
-      description = "Name of the AKS cluster."
+      description = "AKS cluster name"
       default     = "aks-cluster1"
     }
     variable "aks_dns_prefix" {
@@ -185,27 +185,27 @@ Creare il file di configurazione di Terraform in cui sono elencate tutte le vari
     }
 
     variable "aks_agent_vm_size" {
-      description = "The size of the Virtual Machine."
+      description = "VM size"
       default     = "Standard_D3_v2"
     }
 
     variable "kubernetes_version" {
-      description = "The version of Kubernetes."
+      description = "Kubernetes version"
       default     = "1.11.5"
     }
 
     variable "aks_service_cidr" {
-      description = "A CIDR notation IP range from which to assign service cluster IPs."
+      description = "CIDR notation IP range from which to assign service cluster IPs"
       default     = "10.0.0.0/16"
     }
 
     variable "aks_dns_service_ip" {
-      description = "Containers DNS server IP address."
+      description = "DNS server IP address"
       default     = "10.0.0.10"
     }
 
     variable "aks_docker_bridge_cidr" {
-      description = "A CIDR notation IP for Docker bridge."
+      description = "CIDR notation IP for Docker bridge."
       default     = "172.17.0.1/16"
     }
 
@@ -233,10 +233,11 @@ Creare il file di configurazione di Terraform in cui sono elencate tutte le vari
     }
     ```
 
-1. Salvare il file ( **&lt;CTRL+S**) e uscire dall'editor ( **&lt;CTRL+Q**).
+1. Salvare il file ( **&lt;CTRL+S** ) e uscire dall'editor ( **&lt;CTRL+Q** ).
 
-## <a name="define-the-resources"></a>Definire le risorse 
-Creare il file di configurazione Terraform che crea tutte le risorse. 
+## <a name="define-the-resources"></a>Definire le risorse
+
+Creare il file di configurazione Terraform che crea tutte le risorse.
 
 1. In Cloud Shell creare un file denominato `resources.tf`.
 
@@ -473,7 +474,7 @@ Creare il file di configurazione Terraform che crea tutte le risorse.
 
     ```
 
-1. Salvare il file ( **&lt;CTRL+S**) e uscire dall'editor ( **&lt;CTRL+Q**).
+1. Salvare il file ( **&lt;CTRL+S** ) e uscire dall'editor ( **&lt;CTRL+Q** ).
 
 Il codice presentato in questa sezione imposta il nome del cluster, la posizione (location) e il nome del gruppo di risorse (resource_group_name). Viene impostato il valore `dns_prefix`, che fa parte del nome di dominio completo (FQDN) usato per accedere al cluster.
 
@@ -531,13 +532,13 @@ Gli [output di Terraform](https://www.terraform.io/docs/configuration/outputs.ht
     }
     ```
 
-1. Salvare il file ( **&lt;CTRL+S**) e uscire dall'editor ( **&lt;CTRL+Q**).
+1. Salvare il file ( **&lt;CTRL+S** ) e uscire dall'editor ( **&lt;CTRL+Q** ).
 
 ## <a name="configure-azure-storage-to-store-terraform-state"></a>Configurare l'archiviazione di Azure per archiviare lo stato di Terraform
 
 Terraform tiene traccia dello stato localmente tramite il file `terraform.tfstate`. Questo modello funziona bene in un ambiente con una sola persona. In un ambiente più realistico con più persone, è necessario tenere traccia dello stato nel server usando l'[archiviazione di Azure](/azure/storage/). In questa sezione si apprenderà come recuperare le informazioni necessarie sull'account di archiviazione e creare un contenitore di archiviazione. Le informazioni sullo stato di Terraform vengono quindi archiviate in quel contenitore.
 
-1. Nel portale di Azure, in **servizi di Azure**, selezionare **Account di archiviazione**. Se l'opzione **Account di archiviazione** non è visibile nella pagina principale, selezionare **Altri servizi** e quindi individuarla e selezionarla.
+1. Nel portale di Azure, in **servizi di Azure** , selezionare **Account di archiviazione**. Se l'opzione **Account di archiviazione** non è visibile nella pagina principale, selezionare **Altri servizi** e quindi individuarla e selezionarla.
 
 1. Nella pagina **Account di archiviazione** selezionare il nome dell'account di archiviazione in cui Terraform dovrà archiviare lo stato. È ad esempio possibile usare l'account di archiviazione creato quando è stato aperto Cloud Shell per la prima volta.  Il nome dell'account di archiviazione creato da Cloud Shell inizia generalmente con `cs`, seguito da una stringa casuale di numeri e lettere. 
 
@@ -591,7 +592,7 @@ Questa sezione illustra come usare il comando `terraform init` per creare le ris
         
     ```
 
-1. Salvare il file ( **&lt;CTRL+S**) e uscire dall'editor ( **&lt;CTRL+Q**).
+1. Salvare il file ( **&lt;CTRL+S** ) e uscire dall'editor ( **&lt;CTRL+Q** ).
 
 1. Eseguire il comando `terraform plan` per creare il piano Terraform che definisce gli elementi dell'infrastruttura. 
 
@@ -670,13 +671,13 @@ L'[identità dei pod di Azure AD](https://github.com/Azure/aad-pod-identity) agg
   - Componente [Controller identità gestita](https://github.com/Azure/aad-pod-identity#managed-identity-controllermic)
   - Componente [Identità gestita del nodo](https://github.com/Azure/aad-pod-identity#node-managed-identitynmi)
 
-Se il controllo degli accessi in base al ruolo è **abilitato**, eseguire il comando seguente per installare l'identità dei pod di Azure AD nel cluster:
+Se il controllo degli accessi in base al ruolo è **abilitato** , eseguire il comando seguente per installare l'identità dei pod di Azure AD nel cluster:
 
 ```bash
 kubectl create -f https://raw.githubusercontent.com/Azure/aad-pod-identity/master/deploy/infra/deployment-rbac.yaml
 ```
 
-Se il controllo degli accessi in base al ruolo è **disabilitato**, eseguire il comando seguente per installare l'identità dei pod di Azure AD nel cluster:
+Se il controllo degli accessi in base al ruolo è **disabilitato** , eseguire il comando seguente per installare l'identità dei pod di Azure AD nel cluster:
 
 ```bash
 kubectl create -f https://raw.githubusercontent.com/Azure/aad-pod-identity/master/deploy/infra/deployment.yaml
@@ -686,7 +687,7 @@ kubectl create -f https://raw.githubusercontent.com/Azure/aad-pod-identity/maste
 
 Il codice descritto in questa sezione usa [Helm](/azure/aks/kubernetes-helm), l'utilità di gestione pacchetti di Kubernetes, per installare il pacchetto `application-gateway-kubernetes-ingress`:
 
-1. Se il controllo degli accessi in base al ruolo è **abilitato**, eseguire il set di comandi seguente per installare e configurare Helm:
+1. Se il controllo degli accessi in base al ruolo è **abilitato** , eseguire il set di comandi seguente per installare e configurare Helm:
 
     ```bash
     kubectl create serviceaccount --namespace kube-system tiller-sa
@@ -694,7 +695,7 @@ Il codice descritto in questa sezione usa [Helm](/azure/aks/kubernetes-helm), l'
     helm init --tiller-namespace kube-system --service-account tiller-sa
     ```
 
-1. Se il controllo degli accessi in base al ruolo è **disabilitato**, eseguire il comando seguente per installare e configurare Helm:
+1. Se il controllo degli accessi in base al ruolo è **disabilitato** , eseguire il comando seguente per installare e configurare Helm:
 
     ```bash
     helm init

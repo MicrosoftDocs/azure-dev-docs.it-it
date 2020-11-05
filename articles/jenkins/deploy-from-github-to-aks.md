@@ -3,14 +3,14 @@ title: 'Esercitazione: Eseguire la distribuzione da GitHub nel servizio Azure Ku
 description: Informazioni su come configurare Jenkins per l'integrazione continua (CI) da GitHub e la distribuzione continua (CD) nel servizio Azure Kubernetes
 keywords: jenkins, azure, devops, aks, servizio azure kubernetes, github
 ms.topic: article
-ms.date: 01/09/2019
+ms.date: 10/29/2019
 ms.custom: devx-track-jenkins, devx-track-azurecli
-ms.openlocfilehash: 5d72a9bd05683f50375204db9cc95b012db6dfa3
-ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
+ms.openlocfilehash: 51b0531946d4fde0e9141744e62bab35a3e1a734
+ms.sourcegitcommit: e1175aa94709b14b283645986a34a385999fb3f7
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92688641"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93192503"
 ---
 # <a name="tutorial-deploy-from-github-to-azure-kubernetes-service-using-jenkins"></a>Esercitazione: Eseguire la distribuzione da GitHub nel servizio Azure Kubernetes con Jenkins
 
@@ -106,7 +106,7 @@ Per distribuire l'applicazione di esempio nel cluster servizio Azure Kubernetes,
 ```yaml
 containers:
 - name: azure-vote-front
-  image: microsoft/azure-vote-front:v1
+  image: azuredocs/azure-vote-front
 ```
 
 Successivamente, usare il comando [kubectl apply](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#apply) per distribuire l'applicazione nel cluster del servizio Azure Kubernetes:
@@ -278,8 +278,8 @@ Dopo aver completato la compilazione manuale, integrare GitHub nella compilazion
 
 1. Passare al repository GitHub con fork in un Web browser.
 1. Selezionare **Impostazioni** e quindi **Webhook** sul lato sinistro.
-1. Scegli **Aggiungi webhook** . Come valore per *Payload URL* (URL di payload) immettere `http://<publicIp:8080>/github-webhook/` dove `<publicIp>` è l'indirizzo IP del server di Jenkins. Assicurarsi di includere la barra finale (/). Lasciare le altre impostazioni predefinite per il tipo di contenuto e attivare gli eventi *push* .
-1. Selezionare **Aggiungi webhook** .
+1. Scegli **Aggiungi webhook**. Come valore per *Payload URL* (URL di payload) immettere `http://<publicIp:8080>/github-webhook/` dove `<publicIp>` è l'indirizzo IP del server di Jenkins. Assicurarsi di includere la barra finale (/). Lasciare le altre impostazioni predefinite per il tipo di contenuto e attivare gli eventi *push*.
+1. Selezionare **Aggiungi webhook**.
 
     ![Creare un webhook GitHub per Jenkins](media/deploy-from-github-to-aks/webhook.png)
 
@@ -293,7 +293,7 @@ Dopo aver completato la compilazione manuale, integrare GitHub nella compilazion
 1. Viene eseguito il push di tale immagine in Registro Azure Container.
 1. L'applicazione viene distribuita negli aggiornamenti del servizio Azure Kubernetes con l'immagine del contenitore più recente di Registro Azure Container.
 
-Nel computer di sviluppo aprire l'applicazione clonata con un editor di codice. Nella directory */azure-vote/azure-vote* aprire il file denominato **config_file.cfg** . Aggiornare i valori di voto in questo file su un valore rilevante, come illustrato nell'esempio seguente:
+Nel computer di sviluppo aprire l'applicazione clonata con un editor di codice. Nella directory */azure-vote/azure-vote* aprire il file denominato **config_file.cfg**. Aggiornare i valori di voto in questo file su un valore rilevante, come illustrato nell'esempio seguente:
 
 ```
 # UI Configurations

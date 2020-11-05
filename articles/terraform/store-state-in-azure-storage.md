@@ -4,12 +4,12 @@ description: Informazioni su come archiviare lo stato di Terraform in Archiviazi
 ms.topic: tutorial
 ms.date: 11/07/2019
 ms.custom: devx-track-terraform
-ms.openlocfilehash: a59ba1d24fc59f36e237f5be9a75981b9ae8f8ae
-ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
+ms.openlocfilehash: d3d2ab0ff605883926260928d3e7174a5c526781
+ms.sourcegitcommit: 5541f993c01ce356e1b0eaa8f95aea9051c3c21e
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/28/2020
-ms.locfileid: "91401741"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93278416"
 ---
 # <a name="tutorial-store-terraform-state-in-azure-storage"></a>Esercitazione: Archiviare lo stato Terraform in Archiviazione di Azure
 
@@ -43,7 +43,7 @@ az group create --name $RESOURCE_GROUP_NAME --location eastus
 az storage account create --resource-group $RESOURCE_GROUP_NAME --name $STORAGE_ACCOUNT_NAME --sku Standard_LRS --encryption-services blob
 
 # Get storage account key
-ACCOUNT_KEY=$(az storage account keys list --resource-group $RESOURCE_GROUP_NAME --account-name $STORAGE_ACCOUNT_NAME --query [0].value -o tsv)
+ACCOUNT_KEY=$(az storage account keys list --resource-group $RESOURCE_GROUP_NAME --account-name $STORAGE_ACCOUNT_NAME --query '[0].value' -o tsv)
 
 # Create blob container
 az storage container create --name $CONTAINER_NAME --account-name $STORAGE_ACCOUNT_NAME --account-key $ACCOUNT_KEY
@@ -59,10 +59,10 @@ Annotare il nome dell'account di archiviazione, il nome del contenitore e la chi
 
 Il back-end dello stato di Terraform viene configurato quando si esegue il comando `terraform init`. Per configurare il back-end dello stato, sono necessari i dati seguenti:
 
-- **storage_account_name**: il nome dell'account di archiviazione di Azure.
-- **container_name**: il nome del contenitore BLOB.
-- **chiave**: il nome del file di archivio dello stato da creare.
-- **access_key**: la chiave di accesso all'archiviazione.
+- **storage_account_name** : il nome dell'account di archiviazione di Azure.
+- **container_name** : il nome del contenitore BLOB.
+- **chiave** : il nome del file di archivio dello stato da creare.
+- **access_key** : la chiave di accesso all'archiviazione.
 
 Ognuno di questi valori può essere specificato nel file di configurazione di Terraform o nella riga di comando. È consigliabile usare una variabile di ambiente per il valore `access_key`. L'uso di una variabile di ambiente impedisce che la chiave venga scritta su disco.
 
