@@ -41,16 +41,8 @@
               href: tutorial-vscode-azure-app-service-node-04.md
             - name: Pulire le risorse
               href: tutorial-vscode-azure-app-service-node-05.md
-        - name: Distribuire Deno nel servizio app con VS Code
-          items:
-            - name: Introduzione e prerequisiti
-              href: tutorial-visual-studio-code-azure-app-service-deno-01.md
-            - name: Creare l'app
-              href: tutorial-visual-studio-code-azure-app-service-deno-02.md
-            - name: Distribuire l'app in Azure
-              href: tutorial-visual-studio-code-azure-app-service-deno-03.md
-            - name: Pulire le risorse
-              href: tutorial-visual-studio-code-azure-app-service-deno-04.md
+        - name: Distribuire Deno nel servizio app
+          href: tutorial/deno-visual-studio-code-azure-app-service.yml?&preview=tutorialFeedback
         - name: Distribuire contenitori con VS Code
           items:
             - name: Introduzione e prerequisiti
