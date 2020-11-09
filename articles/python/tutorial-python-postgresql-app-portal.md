@@ -3,14 +3,14 @@ title: "Esercitazione: Distribuire un'app Django con PostgreSQL tramite il porta
 description: Effettuare il provisioning di un'app Web e di un database PostgreSQL in Azure e distribuire il codice dell'app da GitHub.
 ms.devlang: python
 ms.topic: tutorial
-ms.date: 10/09/2020
+ms.date: 11/02/2020
 ms.custom: devx-track-python
-ms.openlocfilehash: 333cda811133e9ce4e83730b038a7d84b40b7fa1
-ms.sourcegitcommit: ca7b58f60dd02709977b35175b43be582b868b03
+ms.openlocfilehash: 503a899150edc3f8dc22d7e0361a4888590ab61c
+ms.sourcegitcommit: 10d4133c8abb3e7473dcdf6418ebadd3e08275f7
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92629935"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93284528"
 ---
 # <a name="tutorial-deploy-a-django-web-app-with-postgresql-using-the-azure-portal"></a>Esercitazione: Distribuire un'app Web Django con PostgreSQL tramite il portale di Azure
 
@@ -38,8 +38,7 @@ In un browser passare a [https://github.com/Azure-Samples/djangoapp](https://git
 **(Facoltativo) Informazioni sull'esempio:** l'esempio djangoapp contiene l'app di sondaggi Django basata sui dati che si ottiene seguendo l'esercitazione [Scrivere la prima app Django](https://docs.djangoproject.com/en/2.1/intro/tutorial01/) nella documentazione di Django. L'esempio viene anche modificato usando l'[elenco di controllo della distribuzione Django](https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/) per l'esecuzione in un ambiente di produzione come servizio app di Azure. Queste modifiche sono destinate a qualsiasi ambiente di produzione e non sono specifiche di Azure.
 
 - Le impostazioni di produzione si trovano nel file *azuresite/production.py*. I dettagli di sviluppo si trovano in *azuresite/settings.py*.
-
-- L'app usa le impostazioni di produzione quando la variabile di ambiente `DJANGO_ENV` è impostata su "production". Questa variabile di ambiente viene creata più avanti nell'esercitazione insieme ad altre usate per la configurazione del database PostgreSQL.
+- L'app usa le impostazioni di produzione quando la variabile di ambiente `WEBSITE_HOSTNAME` è impostata. Il Servizio app di Azure imposta automaticamente questa variabile sull'URL dell'app Web, come `msdocs-django.azurewebsites.net`.
 
 [Problemi? Segnalarli](https://aka.ms/DjangoPortalTutorialHelp).
 
@@ -149,7 +148,6 @@ In questa sezione vengono create le impostazioni per l'app Web necessarie per la
 
     | Nome impostazione | valore |
     | --- | --- |
-    | DJANGO_ENV | `production` (Questo valore indica all'app di usare una configurazione di produzione, come descritto in precedenza nella [panoramica dell'esempio](#fork-the-sample-repository).) |
     | DBHOST | Nome del server di database dalla sezione precedente, ovvero la parte `<server-name>` dell'URL del server che precede `.postgres.database.azure.com`. Il codice in *azuresite/production.py* crea automaticamente l'URL completo. |
     | DBNAME | `pollsdb` |
     | DBUSER | Nome utente dell'amministratore usato durante il provisioning del database. Il codice di esempio aggiunge automaticamente la parte `@<server-name>`. Vedere *azuresite/production.py*. |

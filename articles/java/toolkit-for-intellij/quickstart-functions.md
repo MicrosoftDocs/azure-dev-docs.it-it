@@ -1,15 +1,15 @@
 ---
-title: Creare la prima funzione in Azure con IntelliJ IDEA
+title: Creare la prima funzione serverless con Funzioni di Azure usando IntelliJ IDEA
 description: Creare e pubblicare in Azure una semplice funzione attivata tramite HTTP usando Azure Toolkit for IntelliJ.
 ms.topic: quickstart
 ms.date: 03/26/2020
 ms.custom: devx-track-java
-ms.openlocfilehash: b27655657d763e295a1817acf200a67c090ff67d
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: d796d6974d9591ae9df79d37c48f47d7e1cb5a72
+ms.sourcegitcommit: 5541f993c01ce356e1b0eaa8f95aea9051c3c21e
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831407"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93278466"
 ---
 # <a name="quickstart-create-an-azure-functions-project-using-intellij-idea"></a>Avvio rapido: Creare un progetto di Funzioni di Azure con IntelliJ IDEA
 
@@ -35,7 +35,7 @@ Prima di iniziare, verificare che siano soddisfatti i requisiti seguenti:
 
    ![Comando di accesso ad Azure in IntelliJ][I01]
 
-3. Nella finestra **Azure Sign In** (Accesso ad Azure) selezionare **Device Login** (Accesso dispositivo) e quindi fare clic su **Sign in** (Accedi) ([altre opzioni di accesso](sign-in-instructions.md)).
+3. Nella finestra **Azure Sign In** (Accesso ad Azure) selezionare **Device Login** (Accesso dispositivo) e quindi fare clic su **Sign in** (Accedi) ( [altre opzioni di accesso](sign-in-instructions.md)).
 
    ![Finestra di accesso ad Azure con l'accesso dispositivo selezionato][I02]
 
@@ -85,7 +85,7 @@ In questa sezione si userà Azure Toolkit for IntelliJ per creare un progetto lo
 
     ![Pulsante debug per le funzioni in locale](media/quickstart-functions/local-debug-functions-button.png)
 
-1. Fare clic su riga *20* del file `src/main/java/org/example/functions/HttpTriggerFunction.java` per aggiungere un punto di interruzione, accedere nuovamente all'endpoint `http://localhost:7071/api/HttpTrigger-Java?name=Azure`. Si noterà che il punto di interruzione viene raggiunto. È possibile provare altre funzionalità di debug, ad esempio *step*, *watch*, *evaluation*. Arrestare la sessione di debug facendo clic sul pulsante stop.
+1. Fare clic su riga *20* del file `src/main/java/org/example/functions/HttpTriggerFunction.java` per aggiungere un punto di interruzione, accedere nuovamente all'endpoint `http://localhost:7071/api/HttpTrigger-Java?name=Azure`. Si noterà che il punto di interruzione viene raggiunto. È possibile provare altre funzionalità di debug, ad esempio *step* , *watch* , *evaluation*. Arrestare la sessione di debug facendo clic sul pulsante stop.
 
     ![Interruzione delle funzioni con il debug in locale](media/quickstart-functions/local-debug-functions-break.png)
 

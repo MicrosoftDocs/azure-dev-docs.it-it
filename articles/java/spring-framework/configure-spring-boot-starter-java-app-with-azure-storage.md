@@ -3,17 +3,17 @@ title: Come usare l'utilità di avvio Spring Boot per Archiviazione di Azure
 description: Informazioni su come configurare un'app Spring Boot Initializer con l'utilità di avvio Archiviazione di Azure.
 services: storage
 documentationcenter: java
-ms.date: 12/19/2018
+ms.date: 10/14/2020
 ms.service: storage
 ms.topic: article
 ms.workload: storage
 ms.custom: devx-track-java, devx-track-azurecli
-ms.openlocfilehash: 3ea7c5ef098cbf9a6bed2b541db00b09451a12d6
-ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
+ms.openlocfilehash: a459f9eba2661cefddf5c90ae4764fade415ac4d
+ms.sourcegitcommit: e1175aa94709b14b283645986a34a385999fb3f7
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92688708"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93192433"
 ---
 # <a name="how-to-use-the-spring-boot-starter-for-azure-storage"></a>Come usare l'utilità di avvio Spring Boot per Archiviazione di Azure
 
@@ -26,7 +26,7 @@ I prerequisiti seguenti sono necessari per seguire le procedure disponibili in q
 * Sottoscrizione di Azure; se non si ha una sottoscrizione di Azure, è possibile attivare i [vantaggi per i sottoscrittori di MSDN](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/) oppure iscriversi per ottenere un [account Azure gratuito](https://azure.microsoft.com/pricing/free-trial/).
 * [Interfaccia della riga di comando di Azure](/cli/azure/index).
 * Java Development Kit (JDK) supportato. Per altre informazioni sulle versioni di JDK utilizzabili per lo sviluppo in Azure, vedere <https://aka.ms/azure-jdks>.
-* [Maven](http://maven.apache.org/) di Apache, versione 3.0 o versione successiva.
+* [Apache Maven](http://maven.apache.org/), versione 3.0 o versione successiva.
 
 > [!IMPORTANT]
 >
@@ -35,25 +35,25 @@ I prerequisiti seguenti sono necessari per seguire le procedure disponibili in q
 
 ## <a name="create-an-azure-storage-account-and-blob-container-for-your-application"></a>Creare un account di archiviazione e un contenitore BLOB di Azure per l'applicazione
 
-La procedura seguente crea un account di archiviazione e un contenitore di Azure.
+La procedura seguente crea un account di archiviazione e un contenitore di Azure nel portale.
 
 1. Passare al portale di Azure all'indirizzo <https://portal.azure.com/> ed eseguire l'accesso.
 
-1. Fare clic su **+Crea una risorsa** , quindi su **Archiviazione** e infine su **Account di archiviazione** .
+1. Selezionare **Crea una risorsa** , quindi **Attività iniziali** e quindi **Account di archiviazione**.
 
    ![Creare un account di archiviazione di Azure][IMG01]
 
 1. Nella pagina **Crea account di archiviazione** immettere le informazioni seguenti:
 
-   * Selezionare **Sottoscrizione** .
+   * Selezionare **Sottoscrizione**.
    * Selezionare un **gruppo di risorse** oppure crearne uno nuovo.
-   * Immettere un nome univoco per **Nome dell'account di archiviazione** , che diventerà parte dell'URI dell'account di archiviazione. Se si immette **wingtiptoysstorage** in **Nome** , ad esempio, l'URI sarà *wingtiptoysstorage.core.windows.net* .
+   * Immettere un nome univoco per **Nome dell'account di archiviazione** , che diventerà parte dell'URI dell'account di archiviazione. Se si immette **wingtiptoysstorage** in **Nome** , ad esempio, l'URI sarà *wingtiptoysstorage.core.windows.net*.
    * Specificare la **località** per l'account di archiviazione.
-1. Dopo aver specificato le opzioni elencate sopra, fare clic su **Rivedi e crea** . 
-1. Verificare le specifiche, quindi fare clic su **Crea** per creare l'account di archiviazione.
-1. Una volta completata la distribuzione, fare clic su **Vai alla risorsa** .
-1. Fare clic su **Containers** .
-1. Fare clic su **+ Contenitore** .
+1. Dopo aver specificato le opzioni elencate sopra, selezionare **Rivedi e crea**. 
+1. Verificare le specifiche, quindi selezionare **Crea** per creare l'account di archiviazione.
+1. Una volta completata la distribuzione, selezionare **Vai alla risorsa**.
+1. Selezionare **Contenitori**.
+1. Selezionare **Contenitore**.
    * Assegnare un nome al contenitore.
    * Selezionare *BLOB* nell'elenco a discesa.
 
@@ -61,6 +61,40 @@ La procedura seguente crea un account di archiviazione e un contenitore di Azure
 
 1. Al termine della creazione, il contenitore BLOB sarà incluso nell'elenco nel portale di Azure.
 
+È anche possibile usare l'interfaccia della riga di comando di Azure per creare un account e un contenitore di Archiviazione di Azure seguendo questa procedura. È necessario ricordare di sostituire i valori segnaposto tra parentesi acute con i valori personalizzati.
+
+1. Aprire un prompt dei comandi.
+1. Accedere all'account Azure:
+
+   ```azurecli
+   az login
+   ```
+   
+1. Se non è disponibile, creare un gruppo di risorse usando il comando seguente:
+   
+   ```azurecli
+   az group create \
+      --name <resource-group> \
+      --location <location>
+   ```
+   
+1. Creare un account di archiviazione usando il comando seguente:
+  
+   ```azurecli
+    az storage account create \
+      --name <storage-account> \
+      --resource-group <resource-group> \
+      --location <location> 
+   ```
+
+1. Per creare un contenitore, usare il comando seguente:
+   
+   ```azurecli
+    az storage container create \
+      --account-name <storage-account-name> \
+      --name <container-name> \
+      --auth-mode login
+   ```
 ## <a name="create-a-simple-spring-boot-application-with-the-spring-initializr"></a>Creare un'applicazione Spring Boot semplice con Spring Initializr
 
 La procedura seguente crea l'applicazione Spring Boot.
@@ -69,20 +103,19 @@ La procedura seguente crea l'applicazione Spring Boot.
 
 1. Specificare le opzioni seguenti:
 
-   * Generare un progetto **Maven** .
-   * Specificare **Java** .
-   * Specificare **Spring Boot** versione 2.0 o successiva.
+   * Generare un progetto **Maven**.
+   * Specificare **Java 8**.
+   * Specificare **Spring Boot** versione 2.3 o successiva.
    * Specificare i nomi di **Group** (Gruppo) e **Artifact** (Artefatto) per l'applicazione.
-   * Aggiungere la dipendenza **Web** .
+   * Aggiungere la dipendenza **Spring Web**.
 
       ![Opzioni di base di Spring Initializr][SI01]
 
    > [!NOTE]
-   >
-   > Spring Initializr usa i nomi in **Group** (Gruppo) e **Artifact** (Artefatto) per creare il nome del pacchetto, ad esempio *com.wingtiptoys.storage* .
-   >
+   > 1. Spring Initializr usa i nomi in **Group** (Gruppo) e **Artifact** (Artefatto) per creare il nome del pacchetto, ad esempio *com.wingtiptoys.storage*.
+   > 2. Spring Initializr usa Java 11 come versione predefinita. Per usare le utilità di avvio di Spring Boot descritte in questo argomento, è necessario selezionare invece Java 8.
 
-1. Dopo aver specificato le opzioni elencate sopra, fare clic su **Genera** .
+1. Dopo aver specificato le opzioni elencate sopra, selezionare **GENERA**.
 
 1. Quando richiesto, scaricare il progetto in un percorso nel computer locale.
 
@@ -106,7 +139,7 @@ La procedura seguente configura l'applicazione Spring Boot per l'uso dell'archiv
    <dependency>
       <groupId>com.microsoft.azure</groupId>
       <artifactId>spring-starter-azure-storage</artifactId>
-      <version>1.2.7</version>
+      <version>1.2.8</version>
    </dependency>
    ```
 
@@ -126,7 +159,7 @@ La procedura seguente configura l'applicazione Spring Boot per l'uso dell'archiv
    </dependency>
    ```
 
-1. Salvare e chiudere il file *pom.xml* .
+1. Salvare e chiudere il file *pom.xml*.
 
 ## <a name="create-an-azure-credential-file"></a>Creare un file di credenziali di Azure
 
@@ -136,13 +169,13 @@ La procedura seguente crea il file delle credenziali di Azure.
 
 1. Passare alla directory *resources* dell'app Spring Boot, ad esempio:
 
-   ```shell
+   ```cmd
    cd C:\SpringBoot\storage\src\main\resources
    ```
 
    -oppure-
 
-   ```shell
+   ```bash
    cd /users/example/home/storage/src/main/resources
    ```
 
@@ -236,7 +269,7 @@ La procedura seguente configura l'applicazione Spring Boot per l'uso dell'accoun
    |   `spring.cloud.azure.storage.account`    |            Specifica l'account di archiviazione di Azure creato in precedenza in questa esercitazione.             |
    |                   `blob`                  |           Specifica i nomi del contenitore e del BLOB in cui archiviare i dati.         |
     
-3. Salvare e chiudere il file *application.properties* .
+3. Salvare e chiudere il file *application.properties*.
 
 ## <a name="add-sample-code-to-implement-basic-azure-storage-functionality"></a>Aggiungere codice di esempio per implementare le funzionalità di archiviazione di Azure di base
 
@@ -323,11 +356,15 @@ In questa sezione si creano le classi Java necessarie per archiviare un BLOB nel
 
 1. Aprire un prompt dei comandi e cambiare la directory passando alla cartella in cui si trova il file *pom.xml* , ad esempio:
 
-   `cd C:\SpringBoot\storage`
+   ```cmd
+   cd C:\SpringBoot\storage
+   ```
 
    -oppure-
-
-   `cd /users/example/home/storage`
+   
+   ```bash
+   cd /users/example/home/storage
+   ```
 
 1. Compilare l'applicazione Spring Boot con Maven ed eseguirla, ad esempio:
 
@@ -358,6 +395,11 @@ In questa sezione si creano le classi Java necessarie per archiviare un BLOB nel
 
 In questa esercitazione si è creata una nuova applicazione Java con **[Spring Initializr]** , si è aggiunta l'utilità di avvio per Archiviazione di Azure all'applicazione e quindi si è configurata l'applicazione per il caricamento di un BLOB nell'account di archiviazione di Azure.
 
+
+## <a name="clean-up-resources"></a>Pulizia delle risorse
+
+Quando le risorse create in questo articolo non sono più necessarie, usare il [portale di Azure](https://portal.azure.com/) per eliminarle in modo da evitare addebiti imprevisti.
+
 ## <a name="next-steps"></a>Passaggi successivi
 
 Per altre informazioni su Spring e Azure, passare al centro di documentazione di Spring in Azure.
@@ -379,9 +421,5 @@ Per informazioni dettagliate sulle altre API di archiviazione di Azure che è po
 
 [IMG01]: media/configure-spring-boot-starter-java-app-with-azure-storage/create-storage-account-01.png
 [IMG02]: media/configure-spring-boot-starter-java-app-with-azure-storage/create-storage-account-02.png
-[IMG03]: media/configure-spring-boot-starter-java-app-with-azure-storage/create-storage-account-03.png
-[IMG04]: media/configure-spring-boot-starter-java-app-with-azure-storage/create-storage-account-04.png
-[IMG05]: media/configure-spring-boot-starter-java-app-with-azure-storage/create-storage-account-05.png
 
 [SI01]: media/configure-spring-boot-starter-java-app-with-azure-storage/create-project-01.png
-[SI02]: media/configure-spring-boot-starter-java-app-with-azure-storage/create-project-02.png

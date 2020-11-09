@@ -7,12 +7,12 @@ ms.author: seal
 ms.date: 08/21/2019
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: efccf07733cb4ae509753f5e384453a46e2bf678
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: 1d849ed17a2201be1595b6bc80e613691ac778c8
+ms.sourcegitcommit: e1175aa94709b14b283645986a34a385999fb3f7
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86379215"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93192453"
 ---
 # <a name="how-to-use-the-spring-boot-starter-for-azure-service-bus-jms"></a>Come usare l'utilità di avvio Spring Boot per il JMS del bus di servizio di Azure
 
@@ -86,7 +86,7 @@ In questa sezione viene illustrato come configurare l'app per l'uso di una coda 
 
 1. Aprire il file *application.properties* in un editor di testo.
 
-1. Aggiungere il codice seguente alla fine del file *application.properties*. Sostituire i valori di esempio con i valori appropriati per il bus di servizio:
+1. Aggiungere il codice seguente alla fine del file *application.properties*. Sostituire i valori segnaposto con i valori appropriati per il bus di servizio senza racchiuderli tra virgolette.
 
     ```yml
     spring.jms.servicebus.connection-string=<ServiceBusNamespaceConnectionString>
@@ -114,11 +114,11 @@ In questa sezione viene illustrato come configurare l'app per l'uso di una coda 
 
 1. Aprire il file *application.properties* in un editor di testo.
 
-1. Aggiungere il codice seguente alla fine del file *application.properties*. Sostituire i valori di esempio con i valori appropriati per il bus di servizio:
+1. Aggiungere il codice seguente alla fine del file *application.properties*. Sostituire i valori segnaposto con i valori appropriati per il bus di servizio senza racchiuderli tra virgolette.
 
     ```yml
     spring.jms.servicebus.connection-string=<ServiceBusNamespaceConnectionString>
-    spring.jms.servicebus.topic-client-id=<ServiceBusTopicClientId>
+    spring.jms.servicebus.topic-client-id=<ServiceBusSubscriptionID>
     spring.jms.servicebus.idle-timeout=<IdleTimeout>
     ```
 
@@ -127,7 +127,7 @@ In questa sezione viene illustrato come configurare l'app per l'uso di una coda 
     | Campo                                     | Descrizione                                                                                       |
     |-------------------------------------------|---------------------------------------------------------------------------------------------------|
     | `spring.jms.servicebus.connection-string` | Specificare la stringa di connessione ottenuta nello spazio dei nomi del bus di servizio dal portale di Azure.   |
-    | `spring.jms.servicebus.topic-client-id`   | Specificare l'ID client JMS se si usa un argomento del bus di servizio di Azure con una sottoscrizione durevole. |
+    | `spring.jms.servicebus.topic-client-id`   | Specificare l'ID client JMS, cioè l'ID sottoscrizione del bus di servizio nel portale di Azure.                | 
     | `spring.jms.servicebus.idle-timeout`      | Specificare il timeout di inattività in millisecondi. Il valore consigliato per questa esercitazione è 1800000.     |
 
 1. Salvare e chiudere il file *application.properties*.
@@ -318,7 +318,7 @@ In questa sezione vengono create le classi Java necessarie per l'invio di messag
 
 ## <a name="build-and-test-your-application"></a>Compilare e testare l'applicazione
 
-1. Aprire il prompt dei comandi e cambiare directory passando alla posizione in cui si trova il file *pom.xml*, ad esempio:
+1. Aprire il prompt dei comandi e cambiare directory passando alla posizione in cui si trova il file *pom.xml* , ad esempio:
 
     `cd C:\SpringBoot\servicebus`
 
@@ -332,7 +332,7 @@ In questa sezione vengono create le classi Java necessarie per l'invio di messag
     mvn clean spring-boot:run
     ```
 
-1. Quando l'applicazione è in esecuzione, è possibile testarla usando *curl*:
+1. Quando l'applicazione è in esecuzione, è possibile testarla usando *curl* :
 
     ```shell
     curl -X POST localhost:8080/messages?message=hello

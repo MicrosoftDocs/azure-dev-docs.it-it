@@ -3,18 +3,18 @@ title: Distribuire un'app Web Spring Boot in Linux nel Servizio app di Azure
 description: Questa esercitazione illustra in modo dettagliato la procedura per la distribuzione di un'applicazione Spring Boot come app Web Linux in Microsoft Azure.
 services: azure app service
 documentationcenter: java
-ms.date: 10/06/2020
+ms.date: 10/14/2020
 ms.service: app-service
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
 ms.custom: mvc, devx-track-java
-ms.openlocfilehash: ec24ba4ab6b10bd615af06c2cdbd37397d0b2a83
-ms.sourcegitcommit: 723441eda0eb4ff893123201a9e029b7becf5ecc
+ms.openlocfilehash: c0baf7ee7b1b672d7eb17bc3a689cc7d58401834
+ms.sourcegitcommit: e1175aa94709b14b283645986a34a385999fb3f7
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/08/2020
-ms.locfileid: "91846452"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93192493"
 ---
 # <a name="deploy-a-spring-boot-application-to-linux-on-azure-app-service"></a>Distribuire un'applicazione Spring Boot in Linux nel Servizio app di Azure
 
@@ -27,7 +27,7 @@ Per completare la procedura di questa esercitazione, sono necessari i prerequisi
 * Sottoscrizione di Azure; se non si ha una sottoscrizione di Azure, è possibile attivare i [vantaggi per i sottoscrittori di MSDN] oppure iscriversi per ottenere un [account Azure gratuito].
 * [Interfaccia della riga di comando di Azure].
 * Java Development Kit (JDK) supportato. Per altre informazioni sulle versioni di JDK utilizzabili per lo sviluppo in Azure, vedere <https://aka.ms/azure-jdks>.
-* Lo strumento di compilazione [Maven] di Apache (versione 3).
+* Strumento di compilazione [Maven di Apache] (versione 3).
 * Un client [Git].
 * Un client [Docker].
 
@@ -93,17 +93,17 @@ La procedura seguente illustra come usare il portale di Azure per creare un'ista
 
    Dopo aver effettuato l'accesso all'account nel portale di Azure, è possibile seguire la procedura illustrata nell'articolo [Creare un registro per contenitori Docker privati con il portale di Azure], parafrasata per semplicità nei passaggi seguenti.
 
-1. Fare clic sull'icona di menu **+ Nuovo**, su **Contenitori** e quindi su **Registro Azure Container**.
+1. Fare clic sull'icona di menu **Nuovo** , selezionare **Contenitori** e quindi **Registro Azure Container**.
 
    ![Creare una nuova istanza di Registro Azure Container][AR01]
 
-1. Quando viene visualizzata la pagina **Crea registro contenitori**, immettere **Nome del registro**, **Sottoscrizione**, **Gruppo di risorse** e **Percorso**. Fare quindi clic su **Crea**.
+1. Quando viene visualizzata la pagina **Crea registro contenitori** , immettere **Nome del registro** , **Sottoscrizione** , **Gruppo di risorse** e **Percorso**. Selezionare quindi **Crea**.
 
    ![Configurare le impostazioni di Registro Azure Container][AR03]
 
 ## <a name="configure-maven-to-build-image-to-your-azure-container-registry"></a>Configurare Maven per la creazione di immagini in Registro Azure Container
 
-1. Passare alla directory del progetto completato per l'applicazione Spring Boot (ad esempio "*C:\SpringBoot\gs-spring-boot-docker\complete*" o " */users/robert/SpringBoot/gs-spring-boot-docker/complete*") e aprire il file *pom.xml* con un editor di testo.
+1. Passare alla directory del progetto completato per l'applicazione Spring Boot (ad esempio " *C:\SpringBoot\gs-spring-boot-docker\complete* " o " */users/robert/SpringBoot/gs-spring-boot-docker/complete* ") e aprire il file *pom.xml* con un editor di testo.
 
 1. Aggiornare la raccolta `<properties>` nel file *pom.xml* con l'ultima versione di [jib-maven-plugin](https://github.com/GoogleContainerTools/jib/tree/master/jib-maven-plugin), oltre che con il valore del server di accesso e le impostazioni di accesso per Registro Azure Container della sezione precedente di questa esercitazione. Ad esempio:
 
@@ -152,17 +152,17 @@ La procedura seguente illustra come usare il portale di Azure per creare un'ista
 
 1. Aprire il [Azure portal] ed effettuare l'accesso.
 
-2. Fare clic sull'icona di menu **+ Crea una risorsa**, quindi su **Calcolo** e infine su **App Web per contenitori**.
+2. Fare clic sull'icona di menu **Crea una risorsa** , quindi selezionare **Calcolo** e infine **App Web per contenitori**.
    
    ![Creare una nuova app Web nel portale di Azure][LX01]
 
-3. Quando viene visualizzata la pagina **App Web in Linux**, immettere le informazioni seguenti:
+3. Quando viene visualizzata la pagina **App Web in Linux** , immettere le informazioni seguenti:
 
    * Scegliere una **Sottoscrizione** dall'elenco a discesa.
 
    * Selezionare un **Gruppo di risorse** esistente o specificare un nome per creare uno nuovo.
 
-   * Immettere un nome univoco per **Nome app**, ad esempio "*wingtiptoyslinux*"
+   * Immettere un nome univoco per **Nome app** , ad esempio " *wingtiptoyslinux* "
 
    * Specificare `Docker Container` per **Pubblica**.
 
@@ -170,7 +170,7 @@ La procedura seguente illustra come usare il portale di Azure per creare un'ista
 
    * Selezionare **Area**.
 
-   * Accettare il **Piano Linux** e scegliere un **Piano di servizio app** esistente oppure fare clic su **Create new** per creare un nuovo piano di servizio app.
+   * Accettare il **Piano Linux** e scegliere un **Piano di servizio app** esistente oppure selezionare **Crea nuovo** per creare un nuovo piano di servizio app.
 
    * Fare clic su **Avanti: Docker**.
 
@@ -180,23 +180,23 @@ La procedura seguente illustra come usare il portale di Azure per creare un'ista
 
    * Selezionare **Contenitore singolo**.
 
-   * **Registro di sistema**: Scegliere il contenitore, ad esempio: "*wingtiptoysregistry*"
+   * **Registro di sistema** : Scegliere il contenitore, ad esempio: " *wingtiptoysregistry* "
 
-   * **Immagine**: Selezionare l'immagine creata in precedenza, ad esempio: "*gs-spring-boot-docker*"
+   * **Immagine** : Selezionare l'immagine creata in precedenza, ad esempio: " *gs-spring-boot-docker* "
 
-   * **Tag**: scegliere il tag per l'immagine, ad esempio "*latest*"
+   * **Tag** : scegliere il tag per l'immagine, ad esempio " *latest* "
 
-   * **Comando di avvio**: lasciare vuoto questo campo perché l'immagine include già un comando di avvio
+   * **Comando di avvio** : lasciare vuoto questo campo perché l'immagine include già un comando di avvio
 
-   Dopo aver immesso tutte le informazioni riportate sopra, fare clic su **Rivedi e crea**.
+   Dopo aver immesso tutte le informazioni riportate sopra, selezionare **Rivedi e crea**.
 
    ![Per completare la procedura, selezionare Rivedi e crea.][LX02-A]
 
    * Fare clic su **Rivedi e crea**.
 
-Esaminare le informazioni e fare clic su **Crea**.
+Esaminare le informazioni e selezionare **Crea**.
 
-Una volta completata la distribuzione, fare clic su **Vai alla risorsa**.  La pagina di distribuzione mostra l'URL per l'accesso all'applicazione.
+Una volta completata la distribuzione, selezionare **Vai alla risorsa**.  La pagina di distribuzione mostra l'URL per l'accesso all'applicazione.
 
    ![Ottenere l'URL della distribuzione][LX02-B]
 
@@ -206,13 +206,13 @@ Una volta completata la distribuzione, fare clic su **Vai alla risorsa**.  La pa
 >
 > 1. Aprire il [Azure portal] ed effettuare l'accesso.
 >
-> 2. Fare clic sull'icona per **App Web** e selezionare l'app dalla pagina **Servizi app**.
+> 2. Selezionare l'icona per **App Web** e selezionare l'app dalla pagina **Servizi app**.
 >
-> 3. Fare clic su **Configurazione** nel riquadro di spostamento a sinistra.
+> 3. Selezionare **Configurazione** nel riquadro di spostamento a sinistra.
 >
 > 4. Nella sezione **Impostazioni applicazione** aggiungere una nuova impostazione denominata **WEBSITES_PORT** e immettere il numero di porta personalizzato come valore.
 >
-> 5. Fare clic su **OK**. Fare quindi clic su **Salva**.
+> 5. Selezionare **OK**. Selezionare quindi **Salva**.
 >
 > ![Salvataggio di un numero di porta personalizzato nel portale di Azure][LX03]
 
@@ -236,6 +236,10 @@ The embedded Tomcat server in the sample Spring Boot application is configured t
 
 1. Save and close the *application.yml* file.
 -->
+
+## <a name="clean-up-resources"></a>Pulizia delle risorse
+
+Quando le risorse create in questo articolo non sono più necessarie, usare il [portale di Azure](https://portal.azure.com/) per eliminarle in modo da evitare addebiti imprevisti.
 
 ## <a name="next-steps"></a>Passaggi successivi
 

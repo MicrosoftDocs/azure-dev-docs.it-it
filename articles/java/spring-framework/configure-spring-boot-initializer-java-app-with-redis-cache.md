@@ -3,17 +3,17 @@ title: Creare un'app Spring Boot Initializer - Cache di Azure per Redis
 description: Configurare un'applicazione Spring Boot creata con Spring Initializr per l'uso di Redis sul cloud con la cache Redis di Azure.
 services: redis-cache
 documentationcenter: java
-ms.date: 10/06/2020
+ms.date: 10/13/2020
 ms.service: cache
 ms.tgt_pltfrm: cache-redis
 ms.topic: conceptual
 ms.custom: devx-track-java
-ms.openlocfilehash: cd8dd2a841a1ccf43f18374f34963c23f1369658
-ms.sourcegitcommit: 723441eda0eb4ff893123201a9e029b7becf5ecc
+ms.openlocfilehash: 7d8ee875339adb741fbddeba6d4328eb22cd3e46
+ms.sourcegitcommit: 5c7f5fef798413b1a304cc9ee31c8518b73f27eb
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/08/2020
-ms.locfileid: "91846602"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93066275"
 ---
 # <a name="configure-a-spring-boot-initializer-app-to-use-redis-in-the-cloud-with-azure-redis-cache"></a>Configurare un'app Spring Boot Initializer per l'uso di Redis sul cloud con la cache Redis di Azure
 
@@ -31,9 +31,9 @@ I prerequisiti seguenti sono necessari per completare le procedure disponibili i
 
 1. Passare a <https://start.spring.io/>.
 
-1. Specificare che si vuole generare un progetto **Maven** con **Java**, quindi immettere i nomi in **Group** (Gruppo) e **Artifact** (Artefatto) per l'applicazione.
+1. Specificare che si vuole generare un progetto **Maven** con **Java** , selezionare la versione **8** e immettere i nomi in **Group** (Gruppo) e **Artifact** (Artefatto) per l'applicazione.
 
-1. Aggiungere le dipendenze per la sezione **Spring Web** e selezionare la casella **Web**, quindi scorrere verso il basso fino alla sezione **NoSQL** e selezionare la casella **Spring Data Reactive Redis**. 
+1. Aggiungere le dipendenze per la sezione **Spring Web** e selezionare la casella **Web** , quindi scorrere verso il basso fino alla sezione **NoSQL** e selezionare la casella **Spring Data Reactive Redis**. 
 1. Scorrere fino in fondo alla pagina e fare clic sul pulsante **Generate Project** (Genera progetto).
 
    ![Opzioni di base di Spring Initializr][SI01]
@@ -62,7 +62,7 @@ I prerequisiti seguenti sono necessari per completare le procedure disponibili i
 1. Nella pagina **Nuova cache Redis** specificare le informazioni seguenti:
 
    * Immettere **Nome DNS** per la cache.
-   * Specificare **Sottoscrizione**, **Gruppo di risorse**, **Posizione** e **Piano tariffario**.
+   * Specificare **Sottoscrizione** , **Gruppo di risorse** , **Posizione** e **Piano tariffario**.
    * Per questa esercitazione, scegliere **Sblocca la porta 6379**.
 
    > [!NOTE]

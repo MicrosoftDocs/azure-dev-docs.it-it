@@ -2,16 +2,16 @@
 title: Strumenti per sviluppatori JavaScript in Azure
 description: Installare i singoli strumenti per lo sviluppo con Node.js e JavaScript in Azure
 ms.topic: reference
-ms.date: 11/07/2017
-ms.custom: seo-javascript-september2019, seo-javascript-october2019, devx-track-js, devx-track-azurecli
-ms.openlocfilehash: fbfc22eb0c9455900b6fe511b52f443289815931
-ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
+ms.date: 10/30/2020
+ms.custom: seo-javascript-september2019, seo-javascript-october2019, devx-track-js
+ms.openlocfilehash: 80b42337f6acccda4a6d85b64908107cb4230195
+ms.sourcegitcommit: 5c7f5fef798413b1a304cc9ee31c8518b73f27eb
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92689162"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93066260"
 ---
-# <a name="azure-tools-for-javascript-developers"></a>Strumenti di Azure per sviluppatori JavaScript
+# <a name="tools-for-javascript-developers"></a>Strumenti per sviluppatori JavaScript
 Di seguito sono riportati gli strumenti consigliati per lo sviluppo di app JavaScript in Azure.
 
 ## <a name="azure-cli"></a>Interfaccia della riga di comando di Azure
@@ -22,6 +22,19 @@ L'interfaccia della riga di comando di Azure è ottimizzata per la gestione dell
 > [!div class="nextstepaction"]
 > [Installare l'interfaccia della riga di comando di Azure 2.0](/cli/azure/install-az-cli2)
 
+> [!div class="nextstepaction"]
+> [Usare l'interfaccia della riga di comando di Azure 2.0](/cli/azure/run-azure-cli-docker)
+
+## <a name="typescript"></a>TypeScript
+
+[TypeScript](https://www.typescriptlang.org/) ha una relazione insolita con JavaScript. TypeScript offre tutte le funzionalità di JavaScript, oltre a un livello superiore: il sistema di tipi di TypeScript.
+
+Questo significa che anche il codice JavaScript funzionante esistente è un codice TypeScript. Il vantaggio principale di TypeScript è che può evidenziare un comportamento imprevisto nel codice, riducendo la possibilità di bug.
+
+> [!div class="nextstepaction"]
+> [Installare TypeScript](https://www.typescriptlang.org/download)
+
+
 ## <a name="visual-studio-code"></a>Visual Studio Code
 Modificare ed eseguire il debug delle app JavaScript in qualsiasi sistema operativo.
 
@@ -30,7 +43,7 @@ Modificare ed eseguire il debug delle app JavaScript in qualsiasi sistema operat
 > [!div class="nextstepaction"]
 > [Download di Visual Studio Code](https://code.visualstudio.com)
 
-### <a name="azure-extensions"></a>Estensioni di Azure
+## <a name="visual-studio-code-extensions"></a>Estensioni di Visual Studio Code
 Per interagire con i servizi di Azure direttamente in Visual Studio Code, usare le estensioni gratuite seguenti.
 
 | Strumento | Descrizione  |

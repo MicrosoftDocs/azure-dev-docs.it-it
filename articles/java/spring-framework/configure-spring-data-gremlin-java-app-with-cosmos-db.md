@@ -3,26 +3,24 @@ title: Come usare Spring Data Gremlin Starter con l'API SQL di Azure Cosmos DB
 description: Informazioni su come configurare un'applicazione creata con Spring Boot Initializr con l'API SQL di Azure Cosmos DB.
 services: cosmos-db
 documentationcenter: java
-ms.date: 08/03/2020
+ms.date: 10/14/2020
 ms.service: cosmos-db
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: data-services
 ms.custom: devx-track-java
-ms.openlocfilehash: b1fe15704e325316febc405289df27be1cfea37c
-ms.sourcegitcommit: 723441eda0eb4ff893123201a9e029b7becf5ecc
+ms.openlocfilehash: b00a3a3f0f5e6f4f391cd70d2e7d2a2904c089eb
+ms.sourcegitcommit: e1175aa94709b14b283645986a34a385999fb3f7
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/08/2020
-ms.locfileid: "91846582"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93192468"
 ---
 # <a name="how-to-use-the-spring-data-gremlin-starter-with-the-azure-cosmos-db-sql-api"></a>Come usare Spring Data Gremlin Starter con l'API SQL di Azure Cosmos DB
 
-## <a name="overview"></a>Panoramica
+Questo articolo illustra come sfruttare il portale di Azure per creare una risorsa Azure Cosmos DB da usare con l'API Gremlin. Illustra quindi come usare [Spring Initializr] per creare un'applicazione Java personalizzata e quindi aggiungere la funzionalità Spring Data Gremlin Starter per accedere ai dati con Gremlin.
 
 Spring Data Gremlin Starter fornisce il supporto Spring Data per il linguaggio di query Gremlin di Apache, che gli sviluppatori possono usare con qualsiasi archivio dati compatibile con Gremlin.
-
-Questo articolo descrive la creazione di un database di Azure Cosmos DB con il portale di Azure per l'uso con l'API Gremlin, l'uso di **[Spring Initializr]** per creare un'applicazione Java personalizzata e quindi aggiungere la funzionalità di Spring Data Gremlin Starter all'applicazione personalizzata per l'archiviazione e il recupero di dati da Azure Cosmos DB con Gremlin.
 
 ## <a name="prerequisites"></a>Prerequisites
 
@@ -96,15 +94,14 @@ I prerequisiti seguenti sono necessari per seguire le procedure disponibili in q
 
 1. Passare a <https://start.spring.io/>.
 
-1. Specificare che si vuole generare un progetto **Maven** con **Java**, immettere i nomi per l'applicazione in **Group** (Gruppo) e **Artifact** (Elemento), specificare la versione 2.3.1 come versione di **Spring Boot** e quindi selezionare **GENERATE** (Genera).
-
-> [!NOTE]
->
-> Spring Initializr usa i nomi in **Group** (Gruppo) e **Artifact** (Artefatto) per creare il nome del pacchetto, ad esempio `com.example.wintiptoysdata`.
-
+1. Specificare che si vuole generare un progetto **Maven** con **Java** , immettere i nomi per l'applicazione in **Group** (Gruppo) e **Artifact** (Elemento), specificare la versione 2.3.4 come versione di **Spring Boot** e quindi selezionare **GENERATE** (Genera).
 
    >[!div class="mx-imgBorder"]
    >![spring-initializr][spring-initializr-01]
+   
+   > [!NOTE]
+   > 1. Spring Initializr usa i nomi in **Group** (Gruppo) e **Artifact** (Artefatto) per creare il nome del pacchetto, ad esempio `com.example.wintiptoysdata`.
+   > 2. Spring Initializr usa Java 11 come versione predefinita. Per usare le utilità di avvio di Spring Boot descritte in questo argomento, è necessario selezionare invece Java 8.
 
 1. Quando richiesto, scaricare il progetto in un percorso nel computer locale.
 
@@ -143,9 +140,9 @@ Verranno replicate le configurazioni dell'[esempio Azure Spring Data Gremlin](ht
 
    | Campo              | Descrizione                                                                                                                                                                                                             |
    |--------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-   | `endpoint`         | Specifica l'URI Gremlin per il database, derivante dall'**ID** univoco specificato quando è stata creata l'istanza di Azure Cosmos DB in un passaggio precedente di questa guida di avvio rapido.                                                 |
+   | `endpoint`         | Specifica l'URI Gremlin per il database, derivante dall' **ID** univoco specificato quando è stata creata l'istanza di Azure Cosmos DB in un passaggio precedente di questa guida di avvio rapido.                                                 |
    | `port`             | Specifica la porta TCP/IP, che deve essere **443** per HTTPS.                                                                                                                                                           |
-   | `username`         | Specifica l'**ID database** e l'**ID grafo** univoci usati quando è stato aggiunto il grafo in un passaggio precedente di questa guida di avvio rapido. Il valore deve essere immesso con la sintassi "/dbs/ **{Database ID}** /colls/ **{Graph ID}** ". |
+   | `username`         | Specifica l' **ID database** e l' **ID grafo** univoci usati quando è stato aggiunto il grafo in un passaggio precedente di questa guida di avvio rapido. Il valore deve essere immesso con la sintassi "/dbs/ **{Database ID}** /colls/ **{Graph ID}** ". |
    | `password`         | Specifica la **chiave di accesso** primaria o secondaria copiata in un passaggio precedente di questa guida di avvio rapido.                                                                                                                      |
    | `sslEnabled`       | Specifica se abilitare o meno SSL.                                                                                                                                                                                           |
    | `telemetryAllowed` | Specificare **true** se si vuole abilitare la telemetria, altrimenti **false**.
@@ -165,6 +162,10 @@ Verranno replicate le configurazioni dell'[esempio Azure Spring Data Gremlin](ht
    >[!div class="mx-imgBorder"]
    >![execute-result][execute-result-01]
 
+
+## <a name="clean-up-resources"></a>Pulizia delle risorse
+
+Quando le risorse create in questo articolo non sono più necessarie, usare il [portale di Azure](https://portal.azure.com/) per eliminarle in modo da evitare addebiti imprevisti.
 
 ## <a name="next-steps"></a>Passaggi successivi
 

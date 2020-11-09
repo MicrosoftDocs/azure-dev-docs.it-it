@@ -1,34 +1,65 @@
 ---
-title: Distribuire app Web Node.js in Azure
-description: Introduzione a Servizio app di Azure e ad altre opzioni di hosting per app Web, incluse le app Web progressive
+title: Distribuire le applicazioni JavaScript in Azure
+description: Le opzioni di hosting e gli scenari di distribuzione includono diversi servizi e strumenti per Azure. Pubblicare l'app e gestirla su Azure.
 ms.topic: how-to
-ms.date: 08/20/2019
-ms.custom: seo-javascript-september2019, seo-javascript-october2019, devx-track-js
-ms.openlocfilehash: ee2d9a58baa306309df28f1a4bf6515481fccf3e
-ms.sourcegitcommit: c3a1c9051b89870f6bfdb3176463564963b97ba4
+ms.date: 10/28/2020
+ms.custom: seo-javascript-september2019, seo-javascript-october2019, devx-track-js, contperfq2
+ms.openlocfilehash: 93c9fa67e7fd928640478650d23207d48dd07531
+ms.sourcegitcommit: e1175aa94709b14b283645986a34a385999fb3f7
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92437202"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93192513"
 ---
-# <a name="deploy-nodejs-web-apps-to-azure-app-service"></a>Distribuire app Web Node.js nel Servizio app di Azure
+# <a name="deploy-and-host-your-nodejs-apps-on-azure"></a>Distribuire e ospitare le app Node.js in Azure
 
-In Azure sono disponibili diverse opzioni per la distribuzione e l'hosting di app Web:
+Le opzioni di hosting e gli scenari di distribuzione includono diversi servizi e strumenti per Azure. Azure offre molte opzioni per l'hosting e molti strumenti che consentono di spostare l'app da un repository locale o cloud in Azure. 
 
-- L'opzione di hosting migliore per le app Web è Servizio app di Azure, un'offerta di piattaforma distribuita come servizio (PaaS). Per iniziare, provare una delle risorse seguenti:
+## <a name="choose-a-hosting-provider-from-azure"></a>Scegliere un provider di hosting da Azure
 
-  - [Creare un'app Web Node.js in Azure](/azure/app-service/app-service-web-get-started-nodejs)
-  - [Provare Servizio app di Azure - Creare un'app Express da un modello](https://code.visualstudio.com/tryappservice/?utm_source=msftdocs&utm_medium=microsoft&utm_campaign=tryappservice)
-  - [Ospitare un'app Web con Servizio app di Azure - Modulo Learn](/learn/modules/host-a-web-app-with-azure-app-service/index)
-  - [Creare un'app Node.js e MongoDB in Azure](/azure/app-service/app-service-web-tutorial-nodejs-mongodb-app)
-  - [Esempi di servizio app](/samples/browse/?languages=javascript%2Cnodejs&products=azure-app-service)
+Se si ospita il client, il server o l'app per le attività in background in Azure è possibile scegliere in un'ampia gamma di soluzioni. Usare la tabella seguente per effettuare una selezione. La soluzione consigliata per la maggior parte dei casi d'uso è [Servizio app di Azure](/azure/app-service/overview.md). 
 
-- È possibile creare contenitori personalizzati e distribuirli in Azure usando Registro Azure Container e il servizio Azure Kubernetes. Per informazioni dettagliate, vedere [Come distribuire contenitori Node.js in Azure](deploy-containers.md).
+| Servizio | Suggerito per |
+|--|--|
+|[Servizio app](/azure/app-service/overview.md) - **consigliato**|Ospitare l'app dal codice o da un contenitore. Ciò consente di gestire il server Web senza la necessità di gestire l'ambiente sottostante.|
+|[App Web statiche](/azure/static-web-apps/)|Ospitare l'app client statica, ad esempio Angular, Vue, React. Facoltativamente, aggiungere endpoint di funzioni serverless per ospitare un'app di stack completo. Questo semplice servizio rimuove gran parte del server Web, consentendo di concentrarsi sulle funzionalità più importanti per un'applicazione client. |
+|[Funzioni](/azure/azure-functions/)|Ospitare gli endpoint applicazione serverless.|
+|[Archiviazione](/azure/storage/blobs/storage-blob-static-website-how-to.md?tabs=azure-portal)|Archiviazione di Azure può anche ospitare un'app Web statica. Questa operazione è utile se è necessaria una stretta integrazione tra l'archiviazione affidabile e l'applicazione client.|
+|[Istanze di Container](/azure/container-instances/)|Configurare rapidamente un singolo contenitore.|
+|[Servizio Kubernetes](/azure/aks/)|Orchestrazioni di più contenitori.|
+|[Macchine virtuali](/azure/virtual-machines) (VM)|Controllo completo di una VM Windows o Linux. [Trovare una distribuzione Linux approvata](/azure/virtual-machines/linux/endorsed-distros?toc=/azure/virtual-machines/linux/toc.json) o [informazioni su come trovare](/azure/virtual-machines/linux/cli-ps-findimage.md) immagini di macchine virtuali in Azure Marketplace.|
+|[Rete per la distribuzione di contenuti ](/azure/cdn/) (Rete CDN)|È possibile memorizzare nella cache gli oggetti statici caricati dall'archivio BLOB di Azure, da un'applicazione Web o da qualsiasi server Web accessibile pubblicamente, tramite il server POP (Point of Presence) più vicino. La rete CDN di Azure consente anche di accelerare il contenuto dinamico, non memorizzabile nella cache, sfruttando varie ottimizzazioni del routing e della rete.|
 
-- Se si vuole usare principalmente codice serverless, vedere [Come scrivere codice Node.js serverless in Azure](develop-serverless-apps.md).
+Per una panoramica completa delle diverse opzioni di hosting, vedere [Albero delle decisioni per i servizi di calcolo di Azure](/azure/architecture/guide/technology-choices/compute-decision-tree) e il modulo [Servizi cloud di base - Opzioni di calcolo di Azure](/learn/modules/intro-to-azure-compute.md) in Microsoft Learn.
 
-- Per informazioni dettagliate sulla creazione di un sito JAMstack (statico), vedere [Come creare app Web JAMstack (sito statico) con Azure](create-static-site.md).
+## <a name="choose-your-deployment-process-for-azure"></a>Scegliere il processo di distribuzione per Azure
 
-- Se si vuole controllare l'infrastruttura, è possibile usare semplicemente una macchina virtuale. Per iniziare, seguire il percorso [Distribuire un sito Web con macchine virtuali di Azure](/learn/paths/deploy-a-website-with-azure-virtual-machines/) in Microsoft Learn.
+Dopo aver selezionato un servizio per ospitare l'applicazione, selezionare un processo di distribuzione e uno strumento. La distribuzione delle app client e server nei servizi di Azure significa spostare un file o un set di file in Azure per gestirli tramite un endpoint HTTP. 
 
-Per una panoramica completa delle diverse opzioni di hosting, vedere [Albero delle decisioni per i servizi di calcolo di Azure](/azure/architecture/guide/technology-choices/compute-decision-tree) e il modulo [Servizi cloud di base - Opzioni di calcolo di Azure](/learn/modules/intro-to-azure-compute/) in Microsoft Learn.
+La tabella seguente elenca i metodi comuni per il trasferimento dei file nel cloud di Azure.
+
+| Metodo | Dettagli |
+|--|--|
+|[GitHub Actions](/azure/app-service/deploy-github-actions.md?tabs=applevel)|Usarlo per le distribuzioni continue automatizzate o attivate.|
+|[Estensioni per Visual Studio Code](https://marketplace.visualstudio.com/search?term=azure&target=VSCode&category=All%20categories&sortBy=Relevance)|Usarlo per le distribuzioni manuali, di test o rare. Richiede che l'estensione per il servizio sia installata localmente.|
+|[Interfaccia della riga di comando di Azure](../tutorial-vscode-azure-cli-node-04.md)|Usarlo per le distribuzioni manuali o rare. Richiede che l'estensione per il servizio sia installata localmente.|
+
+Potrebbero esistere altri metodi di distribuzione, in base al servizio specifico. Il servizio app di Azure, ad esempio, supporta un'ampia gamma di metodi di distribuzione:
+* [Da file ZIP](/azure/app-service/deploy-zip.md)
+* [Con FTP](/azure/app-service/deploy-ftp.md)
+* [Dropbox o OneDrive](/app-service/deploy-content-sync.md)
+* [GIT locale](/azure/app-service/deploy-local-git.md)
+
+## <a name="verify-your-deployment-with-your-http-endpoint"></a>Verificare la distribuzione con l'endpoint HTTP
+
+Per verificare la distribuzione, accedere all'endpoint HTTP. L'endpoint HTTP è visibile in tutti i servizi nella pagina **Panoramica**. 
+
+### <a name="view-http-endpoint-in-azure-portal"></a>Visualizzare l'endpoint HTTP nel portale di Azure
+
+Visualizzare l'endpoint HTTP dalla pagina Panoramica del servizio nel portale di Azure. 
+
+:::image type="content" source="../media/howto-deploy/azure-portal-hosting-url.png" alt-text="Visualizzare l'endpoint HTTP dalla pagina Panoramica del servizio nel portale di Azure.":::
+
+## <a name="next-steps"></a>Passaggi successivi
+
+* [Distribuire con i contenitori](deploy-containers.md)

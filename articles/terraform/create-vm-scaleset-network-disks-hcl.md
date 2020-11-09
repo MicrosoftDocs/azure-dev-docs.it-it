@@ -4,12 +4,12 @@ description: Informazioni su come usare Terraform per configurare e controllare 
 ms.topic: how-to
 ms.date: 11/07/2019
 ms.custom: devx-track-terraform
-ms.openlocfilehash: d261a5c9ca76dd66c5c79333186079b92ea54bae
-ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
+ms.openlocfilehash: d157a9aa6b59281dc34f172fb58eedd87f06ffae
+ms.sourcegitcommit: 5541f993c01ce356e1b0eaa8f95aea9051c3c21e
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/28/2020
-ms.locfileid: "91401631"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93278446"
 ---
 # <a name="create-an-azure-virtual-machine-scale-set-using-terraform"></a>Creare un set di scalabilità di macchine virtuali di Azure tramite Terraform
 
@@ -31,9 +31,9 @@ In questo articolo vengono illustrate le operazioni seguenti:
 
 [!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
 
-- **Installare Terraform**: Seguire le indicazioni nell'articolo su [Terraform e configurazione dell'accesso ad Azure](get-started-cloud-shell.md)
+- **Installare Terraform** : Seguire le indicazioni nell'articolo su [Terraform e configurazione dell'accesso ad Azure](get-started-cloud-shell.md)
 
-- **Creare una coppia di chiavi SSH**: Per altre informazioni, vedere [Come creare e usare una coppia di chiavi SSH pubblica e privata per le macchine virtuali Linux in Azure](/azure/virtual-machines/linux/mac-create-ssh-keys).
+- **Creare una coppia di chiavi SSH** : Per altre informazioni, vedere [Come creare e usare una coppia di chiavi SSH pubblica e privata per le macchine virtuali Linux in Azure](/azure/virtual-machines/linux/mac-create-ssh-keys).
 
 ## <a name="create-the-directory-structure"></a>Creare la struttura di directory
 
@@ -94,7 +94,7 @@ In Azure Cloud Shell seguire questa procedura:
    }
    ```
 
-1. Salvare il file ( **&lt;CTRL+S**) e uscire dall'editor ( **&lt;CTRL+Q**).
+1. Salvare il file ( **&lt;CTRL+S** ) e uscire dall'editor ( **&lt;CTRL+Q** ).
 
 ## <a name="create-the-output-definitions-file"></a>Creare il file di definizioni di output
 In questa sezione viene illustrato come creare il file che descrive l'output dopo la distribuzione.
@@ -116,7 +116,7 @@ In Azure Cloud Shell seguire questa procedura:
     }
    ```
 
-1. Salvare il file ( **&lt;CTRL+S**) e uscire dall'editor ( **&lt;CTRL+Q**).
+1. Salvare il file ( **&lt;CTRL+S** ) e uscire dall'editor ( **&lt;CTRL+Q** ).
 
 ## <a name="define-the-network-infrastructure-in-a-template"></a>Definire l'infrastruttura di rete in un modello
 In questa sezione viene illustrato come creare l'infrastruttura di rete seguente in un nuovo gruppo di risorse di Azure:
@@ -174,7 +174,7 @@ In Azure Cloud Shell seguire questa procedura:
    }
    ```
 
-1. Salvare il file ( **&lt;CTRL+S**) e uscire dall'editor ( **&lt;CTRL+Q**).
+1. Salvare il file ( **&lt;CTRL+S** ) e uscire dall'editor ( **&lt;CTRL+Q** ).
 
 ## <a name="provision-the-network-infrastructure"></a>Effettuare il provisioning dell'infrastruttura di rete
 Usando Azure Cloud Shell dalla directory in cui sono stati creati i file di configurazione (con estensione tf), seguire questa procedura:
@@ -323,11 +323,7 @@ In Cloud Shell seguire questa procedura:
    }
    ```
 
-1. Salvare il file e chiudere l'editor vi immettendo il comando seguente:
-
-    ```bash
-    :wq
-    ```
+1. Salvare il file ( **&lt;CTRL+S** ) e uscire dall'editor ( **&lt;CTRL+Q** ).
 
 1. Creare un file denominato `web.conf` da usare come configurazione cloud-init per le macchine virtuali che fanno parte del set di scalabilità.
 
@@ -343,11 +339,7 @@ In Cloud Shell seguire questa procedura:
     - nginx
    ```
 
-1. Salvare il file e chiudere l'editor vi immettendo il comando seguente:
-
-     ```bash
-     :wq
-     ```
+1. Salvare il file ( **&lt;CTRL+S** ) e uscire dall'editor ( **&lt;CTRL+Q** ).
 
 1. Aprire il file di configurazione `variables.tf`.
 
@@ -355,7 +347,7 @@ In Cloud Shell seguire questa procedura:
     code variables.tf
     ```
 
-1. Andare alla fine del file e attivare la modalità Append con il tasto A.
+1. Passare alla fine del file.
 
 1. Personalizzare la distribuzione incollando il codice seguente alla fine del file:
 
@@ -375,7 +367,7 @@ In Cloud Shell seguire questa procedura:
     }
     ```
 
-1. Salvare il file ( **&lt;CTRL+S**) e uscire dall'editor ( **&lt;CTRL+Q**).
+1. Salvare il file ( **&lt;CTRL+S** ) e uscire dall'editor ( **&lt;CTRL+Q** ).
 
 1. Creare un piano Terraform per visualizzare la distribuzione del set di scalabilità di macchine virtuali. È necessario specificare una password e la posizione per le risorse.
 
@@ -410,7 +402,7 @@ Un *jumpbox* SSH è un server singolo usato come tramite per poter accedere ad a
    code vmss.tf
    ```
 
-1. Andare alla fine del file e attivare la modalità Append con il tasto A.
+1. Passare alla fine del file.
 
 1. Incollare il codice seguente alla fine del file:
 
@@ -473,6 +465,7 @@ Un *jumpbox* SSH è un server singolo usato come tramite per poter accedere ad a
     tags = var.tags
    }
    ```
+1. Salvare il file ( **&lt;CTRL+S** ) e uscire dall'editor ( **&lt;CTRL+Q** ).
 
 1. Aprire il file di configurazione `output.tf`.
 
@@ -480,7 +473,7 @@ Un *jumpbox* SSH è un server singolo usato come tramite per poter accedere ad a
    code output.tf
    ```
 
-1. Andare alla fine del file e attivare la modalità Append con il tasto A.
+1. Passare alla fine del file.
 
 1. Incollare il codice seguente alla fine del file per visualizzare il nome host del jumpbox al termine della distribuzione:
 
@@ -490,7 +483,7 @@ Un *jumpbox* SSH è un server singolo usato come tramite per poter accedere ad a
    }
    ```
 
-1. Salvare il file ( **&lt;CTRL+S**) e uscire dall'editor ( **&lt;CTRL+Q**).
+1. Salvare il file ( **&lt;CTRL+S** ) e uscire dall'editor ( **&lt;CTRL+Q** ).
 
 1. Distribuire il jumpbox.
 
@@ -498,7 +491,7 @@ Un *jumpbox* SSH è un server singolo usato come tramite per poter accedere ad a
    terraform apply
    ```
 
-**Note**:
+**Note** :
 
 - La possibilità di accedere con una password è disabilitata nel jumpbox e nel set di scalabilità di macchine virtuali distribuito. Accedere con SSH per accedere alle macchine virtuali.
 

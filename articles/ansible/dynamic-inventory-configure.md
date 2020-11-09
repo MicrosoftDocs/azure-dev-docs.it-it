@@ -3,18 +3,18 @@ title: Esercitazione - Configurare inventari dinamici delle risorse di Azure con
 description: Informazioni su come usare Ansible per gestire gli inventari dinamici di Azure
 keywords: ansible, azure, devops, bash, cloud shell, inventario dinamico
 ms.topic: tutorial
-ms.date: 10/23/2019
+ms.date: 10/30/2020
 ms.custom: devx-track-ansible, devx-track-azurecli
-ms.openlocfilehash: 42ac7ef120a2bb364197509d8c36bb7e1a300242
-ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
+ms.openlocfilehash: dd9a6f2b76c6d653eba9542d3b5dfdda4cb75ba5
+ms.sourcegitcommit: e1175aa94709b14b283645986a34a385999fb3f7
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92688621"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93192353"
 ---
 # <a name="tutorial-configure-dynamic-inventories-of-your-azure-resources-using-ansible"></a>Esercitazione: Configurare gli inventari dinamici delle risorse di Azure tramite Ansible
 
-Ansible può essere usato per eseguire il pull delle informazioni degli inventari da diverse origini (incluse origini cloud, ad esempio Azure) in un *inventario dinamico* . 
+Ansible può essere usato per eseguire il pull delle informazioni degli inventari da diverse origini (incluse origini cloud, ad esempio Azure) in un *inventario dinamico*. 
 
 [!INCLUDE [ansible-tutorial-goals.md](includes/ansible-tutorial-goals.md)]
 
@@ -42,7 +42,7 @@ Ansible può essere usato per eseguire il pull delle informazioni degli inventar
     > [!IMPORTANT]
     > Il nome del gruppo di risorse di Azure creato in questo passaggio deve essere interamente in lettere minuscole. In caso contrario, la generazione dell'inventario dinamico avrà esito negativo.
 
-    ```azurecli-interactive
+    ```azurecli
     az group create --resource-group ansible-inventory-test-rg --location eastus
     ```
 
@@ -52,13 +52,13 @@ Ansible può essere usato per eseguire il pull delle informazioni degli inventar
 
     - **Interfaccia della riga di comando di Azure** : eseguire ognuno dei comandi seguenti in Cloud Shell per creare le due macchine virtuali:
 
-        ```azurecli-interactive
+        ```azurecli
         az vm create --resource-group ansible-inventory-test-rg \
                      --name ansible-inventory-test-vm1 \
                      --image UbuntuLTS --generate-ssh-keys
         ```
 
-        ```azurecli-interactive
+        ```azurecli
         az vm create --resource-group ansible-inventory-test-rg \
                      --name ansible-inventory-test-vm2 \
                      --image UbuntuLTS --generate-ssh-keys
@@ -71,14 +71,14 @@ Ansible può essere usato per eseguire il pull delle informazioni degli inventar
 ### <a name="using-ansible-version--28"></a>Uso di Ansible versione < 2.8
 Immettere il comando [az resource tag](/cli/azure/resource#az-resource-tag) seguente per contrassegnare la macchina virtuale `ansible-inventory-test-vm1` con la chiave `nginx`:
 
-```azurecli-interactive
+```azurecli
 az resource tag --tags nginx --id /subscriptions/<YourAzureSubscriptionID>/resourceGroups/ansible-inventory-test-rg/providers/Microsoft.Compute/virtualMachines/ansible-inventory-test-vm1
 ```
 
 ### <a name="using-ansible-version--28"></a>Uso di Ansible versione >= 2.8
 Immettere il comando [az resource tag](/cli/azure/resource#az-resource-tag) seguente per contrassegnare la macchina virtuale `ansible-inventory-test-vm1` con la chiave `Ansible=nginx`:
 
-```azurecli-interactive
+```azurecli
 az resource tag --tags Ansible=nginx --id /subscriptions/<YourAzureSubscriptionID>/resourceGroups/ansible-inventory-test-rg/providers/Microsoft.Compute/virtualMachines/ansible-inventory-test-vm1
 ```
 
@@ -92,36 +92,23 @@ Ansible fornisce uno script Python denominato [azure_rm. py](https://github.com/
 
 1. Usare il comando `wget` GNU per recuperare lo script `azure_rm.py`:
 
-    ```python
-    wget https://raw.githubusercontent.com/ansible-collections/community.general/main/scripts/inventory/azure_rm.py
+    ```bash
+    wget https://raw.githubusercontent.com/ansible-collections/azure/dev/plugins/inventory/azure_rm.py
     ```
 
 1. Usare il comando `chmod` per modificare le autorizzazioni di accesso per lo script `azure_rm.py`. Il comando seguente usa il parametro `+x` per consentire l'esecuzione del file specificato (`azure_rm.py`):
 
-    ```python
+    ```bash
     chmod +x azure_rm.py
     ```
 
-1. Usare il [comando ansible](https://docs.ansible.com/ansible/2.4/ansible.html) per connettersi al gruppo di risorse: 
+1. Usare il [comando ansible](https://docs.ansible.com/ansible/2.4/ansible.html) per connettersi al gruppo di risorse:
 
-    ```python
-    ansible -i azure_rm.py ansible-inventory-test-rg -m ping 
+    ```bash
+    ansible -i azure_rm.py ansible-inventory-test-rg -m ping
     ```
 
-1. Dopo avere stabilito la connessione, viene visualizzato un output simile al seguente:
-
-    ```output
-    ansible-inventory-test-vm1 | SUCCESS => {
-        "changed": false,
-        "failed": false,
-        "ping": "pong"
-    }
-    ansible-inventory-test-vm2 | SUCCESS => {
-        "changed": false,
-        "failed": false,
-        "ping": "pong"
-    }
-    ```
+1. Una volta connessi, vengono visualizzati i risultati della creazione delle macchine virtuali.
 
 ### <a name="ansible-version--28"></a>Ansible versione > = 2.8
 
@@ -146,7 +133,7 @@ A partire da Ansible 2.8, Ansible include un [plug-in per inventari dinamici di 
     ansible all -m ping -i ./myazure_rm.yml
     ```
 
-1. Quando si esegue il comando precedente, si potrebbe ricevere l'errore seguente:
+1. Quando si esegue il comando precedente, si potrebbe ricevere un errore. Potrebbe trattarsi di un errore di connessione all'host a causa di un 
 
     ```output
     Failed to connect to the host via ssh: Host key verification failed.
@@ -278,7 +265,7 @@ Questa sezione illustra una tecnica per testare l'installazione di Nginx nella m
 
 1. Usare il comando [az vm list-ip-addresses](/cli/azure/vm#az-vm-list-ip-addresses) per recuperare l'indirizzo IP della macchina virtuale `ansible-inventory-test-vm1`. Il valore restituito (l'indirizzo IP della macchina virtuale) viene quindi usato come parametro per il comando SSH per la connessione alla macchina virtuale.
 
-    ```azurecli-interactive
+    ```azurecli
     ssh `az vm list-ip-addresses \
     -n ansible-inventory-test-vm1 \
     --query [0].virtualMachine.network.publicIpAddresses[0].ipAddress -o tsv`
