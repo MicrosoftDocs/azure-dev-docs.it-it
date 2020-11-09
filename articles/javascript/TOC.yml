@@ -17,18 +17,18 @@
           href: tutorial/browser-file-upload.yml?preview=tutorialFeedback
         - name: Express.js con MongoDB
           href: tutorial/web-app-mongodb.yml?preview=tutorialFeedback
-        - name: Distribuire Funzioni di Azure con VS Code
+        - name: Creare e distribuire funzioni serverless
           items:
-            - name: Introduzione e prerequisiti
-              href: tutorial-vscode-serverless-node-01.md
-            - name: Creare l'app per le funzioni
-              href: tutorial-vscode-serverless-node-02.md
-            - name: Testare la funzione in locale
-              href: tutorial-vscode-serverless-node-03.md
-            - name: Distribuire l'app per le funzioni
-              href: tutorial-vscode-serverless-node-04.md
-            - name: Pulire le risorse
-              href: tutorial-vscode-serverless-node-05.md
+            - name: 1. Introduzione e prerequisiti
+              href: tutorial/tutorial-vscode-serverless-node-install.md
+            - name: 2. Creare l'app per le funzioni
+              href: tutorial/tutorial-vscode-serverless-node-create-local.md
+            - name: 3. Testare la funzione in locale
+              href: tutorial/tutorial-vscode-serverless-node-test-local.md
+            - name: 4. Distribuire l'app per le funzioni
+              href: tutorial/tutorial-vscode-serverless-node-deploy-hosting.md
+            - name: 5. Pulire le risorse
+              href: tutorial/tutorial-vscode-serverless-node-remove-resource.md
         - name: Distribuire Node.js nel servizio app con VS Code
           items:
             - name: Introduzione e prerequisiti
