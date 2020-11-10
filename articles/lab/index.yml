@@ -1,0 +1,32 @@
+### YamlMime:Landing
+title: Developer Experience Labs
+summary: >
+  Argomenti di avvio rapido, guide pratiche, esempi di codice e altro ancora per esplorare le potenzialità di Azure.
+metadata:
+  title: Developer Experience Labs
+  description: '...'
+  author: diberry
+  ms.author: diberry
+  ms.date: 09/21/2020
+  ms.topic: landing-page
+  ms.collection: collection
+  ms.technology: azure
+  ms.service: multiple
+  robots: noindex
+  ms.openlocfilehash: 30decb3bc113d9bd56ebdba4e91a262d43e13086
+  ms.sourcegitcommit: 5f64710b2b0822e789c7f15acba5a3a257c033f9
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 11/05/2020
+  ms.locfileid: "93405348"
+landingContent:
+- title: Lab - esercitazione
+  linkLists:
+  - linkListType: get-started
+    links:
+    - text: Python Flask - pagina singola
+      url: quickstart-python-flask.md
+    - text: Python Flask - più pagine
+      url: quickstart-python-flask-multipage.yml?preview=tutorialFeedback
+    - text: Python Flask - pagina singola ridotta a icona
+      url: quickstart-python-flask-minimized.md

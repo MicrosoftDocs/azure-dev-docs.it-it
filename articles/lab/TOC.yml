@@ -1,0 +1,11 @@
+- name: Developer Experience Labs
+  href: index.yml
+  items:
+    - name: Lab in formato esercitazione
+      items:
+        - name: Python Flask - pagina singola
+          href: quickstart-python-flask.md
+        - name: Python Flask - più pagine
+          href: quickstart-python-flask-multipage.yml?preview=tutorialFeedback
+        - name: Python Flask - pagina singola ridotta a icona
+          href: quickstart-python-flask-minimized.md
