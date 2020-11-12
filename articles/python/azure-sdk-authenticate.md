@@ -4,20 +4,20 @@ description: Come acquisire gli oggetti credenziali necessari per autenticare un
 ms.date: 10/05/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 1fe206394d05e07b19254520131447770cbbd5b0
-ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
+ms.openlocfilehash: 8122db43c979bcf55d5aa3d1f4f5fa9aa0c200dd
+ms.sourcegitcommit: cbcde17e91e7262a596d813243fd713ce5e97d06
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91764674"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93405901"
 ---
 # <a name="how-to-authenticate-and-authorize-python-apps-on-azure"></a>Come autenticare e autorizzare le app Python in Azure
 
 Quasi tutte le applicazione cloud distribuite in Azure devono accedere ad altre risorse di Azure, ad esempio le risorse di archiviazione, i database, i segreti archiviati e così via. Per accedere a tali risorse, l'applicazione deve essere autenticata e autorizzata:
 
-- L'**autenticazione** verifica l'identità dell'app con Azure Active Directory.
+- L' **autenticazione** verifica l'identità dell'app con Azure Active Directory.
 
-- L'**autorizzazione** determina quali operazioni possono essere eseguite dall'app autenticata su una determinata risorsa. Le operazioni autorizzate sono definite dai **ruoli** assegnati all'identità dell'app per tale risorsa. In alcuni casi, ad esempio per Azure Key Vault, l'autorizzazione è determinata anche da **criteri di accesso** aggiuntivi assegnati all'identità dell'app.
+- L' **autorizzazione** determina quali operazioni possono essere eseguite dall'app autenticata su una determinata risorsa. Le operazioni autorizzate sono definite dai **ruoli** assegnati all'identità dell'app per tale risorsa. In alcuni casi, ad esempio per Azure Key Vault, l'autorizzazione è determinata anche da **criteri di accesso** aggiuntivi assegnati all'identità dell'app.
 
 Questo articolo illustra i dettagli di autenticazione e autorizzazione:
 
@@ -28,13 +28,13 @@ Questo articolo illustra i dettagli di autenticazione e autorizzazione:
 
 ## <a name="how-to-assign-an-app-identity"></a>Come assegnare un'identità all'app
 
-In Azure un'identità dell'app è definita da un'**entità servizio**. Un'entità servizio è un tipo specifico di "entità di sicurezza" usato per identificare un'app o un servizio, ovvero una porzione di codice, anziché un utente o un gruppo di utenti.
+In Azure un'identità dell'app è definita da un' **entità servizio**. Un'entità servizio è un tipo specifico di "entità di sicurezza" usato per identificare un'app o un servizio, ovvero una porzione di codice, anziché un utente o un gruppo di utenti.
 
 L'entità servizio interessata dipende dalla posizione in cui è viene eseguita l'app, come descritto nelle sezioni seguenti.
 
 ### <a name="identity-when-running-the-app-on-azure"></a>Identità quando l'app viene eseguita in Azure
 
-Quando è in esecuzione nel cloud, ad esempio nell'ambiente di produzione, un'app in genere usa un'**identità gestita assegnata dal sistema**. Con un'[identità gestita](/azure/active-directory/managed-identities-azure-resources/overview), quando si assegnano ruoli e autorizzazioni per le risorse viene usato il nome dell'app. Azure gestisce automaticamente l'entità servizio sottostante ed esegue automaticamente l'autenticazione dell'app con le altre risorse di Azure. Di conseguenza, non è necessario gestire direttamente l'entità servizio. Inoltre, dal momento che il codice dell'app non deve mai gestire i token di accesso, i segreti o le stringhe di connessione per le risorse di Azure, il rischio che tali informazioni possano essere divulgate o compromesse in altro modo risulta ridotto.
+Quando è in esecuzione nel cloud, ad esempio nell'ambiente di produzione, un'app in genere usa un' **identità gestita assegnata dal sistema**. Con un'[identità gestita](/azure/active-directory/managed-identities-azure-resources/overview), quando si assegnano ruoli e autorizzazioni per le risorse viene usato il nome dell'app. Azure gestisce automaticamente l'entità servizio sottostante ed esegue automaticamente l'autenticazione dell'app con le altre risorse di Azure. Di conseguenza, non è necessario gestire direttamente l'entità servizio. Inoltre, dal momento che il codice dell'app non deve mai gestire i token di accesso, i segreti o le stringhe di connessione per le risorse di Azure, il rischio che tali informazioni possano essere divulgate o compromesse in altro modo risulta ridotto.
 
 La configurazione dell'identità gestita dipende dal servizio usato per ospitare l'app. Per i collegamenti alle istruzioni relative a ogni servizio, vedere l'articolo [Servizi che supportano identità gestite](/azure/active-directory/managed-identities-azure-resources/services-support-managed-identities). Per le app Web distribuite nel Servizio app di Azure, ad esempio, l'identità gestita viene abilitata tramite l'opzione **Identità** > **Assegnata dal sistema** nel portale di Azure oppure usando il comando `az webapp identity assign` nell'interfaccia della riga di comando di Azure.
 
@@ -391,7 +391,7 @@ Quando si usa l'autenticazione basata sull'interfaccia della riga di comando, l'
 
 #### <a name="cli-based-authentication-with-azurecore-libraries"></a>Autenticazione basata sull'interfaccia della riga di comando con le librerie di azure.core
 
-Quando si usano [librerie di Azure aggiornate per azure.core](/azure/developer/python/azure-sdk-library-package-index#libraries-using-azurecore), usare l'oggetto [`AzureCliCredential`](/python/api/azure-identity/azure.identity.azureclicredential) della libreria azure-identity (versione 1.4.0 e successive). Ad esempio, il codice seguente può essere usato con la versione 15.0.0 e successive di azure-mgmt-resource:
+Quando si usano [librerie di Azure aggiornate per azure.core](./azure-sdk-library-package-index.md#libraries-using-azurecore), usare l'oggetto [`AzureCliCredential`](/python/api/azure-identity/azure.identity.azureclicredential) della libreria azure-identity (versione 1.4.0 e successive). Ad esempio, il codice seguente può essere usato con la versione 15.0.0 e successive di azure-mgmt-resource:
 
 ```python
 from azure.identity import AzureCliCredential

@@ -3,12 +3,12 @@ title: 'Novità della documentazione di JavaScript: '
 description: Novità della documentazione di JavaScript per ottobre 2020
 ms.topic: conceptual
 ms.date: 10/28/2020
-ms.openlocfilehash: ba92f04d60fb49181ee5741225073270ec45c0f5
-ms.sourcegitcommit: 3c904d8d89d0cb4f13209cde3425c5307b83237c
+ms.openlocfilehash: 1b95a18d3ea8cb5947dfd5525326d69460c3a00b
+ms.sourcegitcommit: cbcde17e91e7262a596d813243fd713ce5e97d06
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "93024085"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93405950"
 ---
 # <a name="javascript-docs-whats-new-for-october-2020"></a>Documentazione di JavaScript: novità di ottobre 2020
 
@@ -22,8 +22,8 @@ Novità della documentazione di JavaScript di ottobre 2020. Questo articolo elen
 
 |Nome|Note|
 |---------------------------------------|--|
-|[Esercitazione: Caricare un'immagine in Archiviazione BLOB](/azure/developer/javascript/tutorial/browser-file-upload?preview=tutorialFeedback)|In questa esercitazione si usa un' **app React** per caricare un file in un BLOB di **Archiviazione di Azure**. L'attività di programmazione viene eseguita automaticamente. Questa esercitazione è incentrata sull'uso corretto degli ambienti di Azure locali e remoti all'interno Visual Studio Code con le estensioni di Azure.|
-|[Esercitazione: Distribuire l'app MongoDB Node.js nel servizio app da Visual Studio Code](/azure/developer/javascript/tutorial/web-app-mongodb?preview=tutorialFeedback)|In questa esercitazione si usa un'app Node.js **Express** con un database **MongoDB** tramite l'API nativa MongoDB. Distribuire l'applicazione Node.js nel servizio app di Azure (in Linux), quindi verificare che l'app basata sul cloud funzioni. L'attività di programmazione viene eseguita automaticamente. Questa esercitazione è incentrata sull'uso corretto degli ambienti di Azure locali e remoti all'interno Visual Studio Code con le estensioni di Azure.|
+|[Esercitazione: Caricare un'immagine in Archiviazione BLOB](./tutorial/browser-file-upload.yml?preview=tutorialFeedback)|In questa esercitazione si usa un' **app React** per caricare un file in un BLOB di **Archiviazione di Azure**. L'attività di programmazione viene eseguita automaticamente. Questa esercitazione è incentrata sull'uso corretto degli ambienti di Azure locali e remoti all'interno Visual Studio Code con le estensioni di Azure.|
+|[Esercitazione: Distribuire l'app MongoDB Node.js nel servizio app da Visual Studio Code](./tutorial/web-app-mongodb.yml?preview=tutorialFeedback)|In questa esercitazione si usa un'app Node.js **Express** con un database **MongoDB** tramite l'API nativa MongoDB. Distribuire l'applicazione Node.js nel servizio app di Azure (in Linux), quindi verificare che l'app basata sul cloud funzioni. L'attività di programmazione viene eseguita automaticamente. Questa esercitazione è incentrata sull'uso corretto degli ambienti di Azure locali e remoti all'interno Visual Studio Code con le estensioni di Azure.|
 
 ### <a name="whats-updated"></a>Aggiornamenti
 
@@ -34,4 +34,4 @@ Novità della documentazione di JavaScript di ottobre 2020. Questo articolo elen
 
 ## <a name="next-steps"></a>Passaggi successivi
 
-* [Configurare l'ambiente di sviluppo](/azure/developer/javascript/core/configure-local-development-environment)
+* [Configurare l'ambiente di sviluppo](./core/configure-local-development-environment.md)

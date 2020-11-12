@@ -4,12 +4,12 @@ description: Parte 7 dell'esercitazione, pulire le risorse con l'interfaccia del
 ms.topic: tutorial
 ms.date: 09/24/2019
 ms.custom: devx-track-js, devx-track-azurecli
-ms.openlocfilehash: 037bc51c8f11faaf5b0c9bd0051a6c28197dd17b
-ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
+ms.openlocfilehash: 0c3404067f6324a37d7863568e715b806511a226
+ms.sourcegitcommit: cbcde17e91e7262a596d813243fd713ce5e97d06
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92688615"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93405990"
 ---
 # <a name="part-7-clean-up-resources"></a>Parte 7: Pulire le risorse
 
@@ -21,7 +21,7 @@ Il servizio app creato include un piano di servizio app sottostante che può com
 az group delete --name myResourceGroup
 ```
 
-È anche possibile visitare il [portale di Azure](https://portal.azure.com), selezionare **Gruppi di risorse** nel riquadro di spostamento sinistro, selezionare il gruppo di risorse creato nella procedura di questa esercitazione e quindi usare il comando **Elimina gruppo di risorse** .
+È anche possibile visitare il [portale di Azure](https://portal.azure.com), selezionare **Gruppi di risorse** nel riquadro di spostamento sinistro, selezionare il gruppo di risorse creato nella procedura di questa esercitazione e quindi usare il comando **Elimina gruppo di risorse**.
 
 > [!div class="nextstepaction"]
-> [L'esercitazione è stata completata](node-howto-deploy-web-app.md) [Si è verificato un problema](https://www.research.net/r/PWZWZ52?tutorial=node-deployment&step=clean-up-resources)
+> [L'esercitazione è stata completata](./how-to/deploy-web-app.md) [Si è verificato un problema](https://www.research.net/r/PWZWZ52?tutorial=node-deployment&step=clean-up-resources)

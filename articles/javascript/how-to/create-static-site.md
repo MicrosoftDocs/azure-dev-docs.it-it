@@ -4,12 +4,12 @@ description: Come usare Azure per creare un'app JAMstack (JavaScript, API e mark
 ms.topic: how-to
 ms.date: 08/20/2019
 ms.custom: seo-javascript-september2019, devx-track-js
-ms.openlocfilehash: b126cb60341733451be555fa7759773aac99f6ce
-ms.sourcegitcommit: c3a1c9051b89870f6bfdb3176463564963b97ba4
+ms.openlocfilehash: 421464b76a8276ef87b84596a6434e991a3c2b25
+ms.sourcegitcommit: 801682d3fc9651bf95d44e58574d5a4564be6feb
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92437288"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94333799"
 ---
 # <a name="build-jamstack-static-site-web-apps-on-azure-with-nodejs"></a>Creare app Web JAMstack (sito statico) in Azure con Node.js
 
@@ -34,7 +34,7 @@ Anche gli articoli seguenti forniscono altri dettagli:
   
 - **API serverless** :
 
-  - Iniziare da [Distribuire Funzioni di Azure da Visual Studio Code](../tutorial-vscode-serverless-node-01.md), che presenta Funzioni di Azure nel contesto di Visual Studio Code, semplificando molti dettagli.
+  - Iniziare da [Distribuire Funzioni di Azure da Visual Studio Code](../tutorial/tutorial-vscode-serverless-node-install.md), che presenta Funzioni di Azure nel contesto di Visual Studio Code, semplificando molti dettagli.
   - Al termine dell'articolo, si avrà un progetto di Funzioni di Azure (una cartella) che contiene una sottocartella denominata per la funzione, che corrisponde al relativo endpoint HTTP. Tale cartella della funzione contiene un file *index.js* con il codice.
   - È possibile modificare la funzione in base alle esigenze, nonché aggiungere altre funzioni al progetto e quindi distribuirle nuovamente in Azure dove sono disponibili pubblicamente.
   - Per altre risorse sullo sviluppo serverless, vedere [Come scrivere codice Node.js serverless in Azure](develop-serverless-apps.md).

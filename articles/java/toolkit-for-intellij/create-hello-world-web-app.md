@@ -13,12 +13,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
 ms.custom: devx-track-java
-ms.openlocfilehash: 6506aae7aacf26d08bcb6c47ef947dfb8f6cef46
-ms.sourcegitcommit: d5dabc6dde727ed167a9dc8a4eaaf21025b3efa8
+ms.openlocfilehash: 992ce6dfd32de9fc20016542b11f2792bf0a8e9b
+ms.sourcegitcommit: cbcde17e91e7262a596d813243fd713ce5e97d06
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91947516"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93405850"
 ---
 # <a name="create-a-hello-world-web-app-for-azure-app-service-using-intellij"></a>Creare un'app Web Hello World per Servizio app di Azure con IntelliJ
 
@@ -39,13 +39,13 @@ Questo articolo illustra i passaggi necessari per creare un'app Web Hello World 
 
 La procedura seguente illustra il processo di accesso ad Azure nell'ambiente di sviluppo IntelliJ.
 
-1. Se non è stato installato il plug-in, vedere [Installazione di Azure Toolkit for IntelliJ](installation.md).
+1. Se non è stato installato il plug-in, vedere [Installazione di Azure Toolkit for IntelliJ](./index.yml).
 
 1. Per accedere all'account Azure, passare alla barra laterale sinistra di **Azure Explorer** e quindi fare clic sull'icona **Azure Sign In** (Accesso ad Azure). In alternativa, è possibile passare a **Tools** (Strumenti), espandere **Azure** e fare clic su **Azure Sign in** (Accesso ad Azure).
 
    :::image type="content" source="media/sign-in-instructions/I01.png" alt-text="Accesso ad Azure in IntelliJ."::: 
 
-1. Nella finestra **Azure Sign In** (Accesso ad Azure) selezionare **Device Login** (Accesso dispositivo) e quindi fare clic su **Sign in** (Accedi) ([altre opzioni di accesso](sign-in-instructions.md)).
+1. Nella finestra **Azure Sign In** (Accesso ad Azure) selezionare **Device Login** (Accesso dispositivo) e quindi fare clic su **Sign in** (Accedi) ( [altre opzioni di accesso](sign-in-instructions.md)).
 
 1. Nella finestra di dialogo **Azure Device Login** (Accesso dispositivo Azure) fare clic su **Copy&Open** (Copia e apri).
 
@@ -57,21 +57,21 @@ La procedura seguente illustra il processo di accesso ad Azure nell'ambiente di 
 
 ## <a name="creating-a-new-web-app-project"></a>Creazione di un nuovo progetto di app Web
 
-1. Fare clic su **File**, espandere **New** (Nuovo) e quindi fare clic su **Project** (Progetto).
+1. Fare clic su **File** , espandere **New** (Nuovo) e quindi fare clic su **Project** (Progetto).
 
 1. Nella finestra di dialogo **New Project** (Nuovo progetto) selezionare **Maven** e assicurarsi che l'opzione **Create from Archetype** (Crea da archetipo) sia selezionata. Nell'elenco selezionare **maven-archetype-webapp** e quindi fare clic su **Next** (Avanti).
 
-   :::image type="content" source="media/create-hello-world-web-app/maven-archetype-webapp.png" alt-text="Accesso ad Azure in IntelliJ."::: 
+   :::image type="content" source="media/create-hello-world-web-app/maven-archetype-webapp.png" alt-text="Selezionare l'opzione maven-archetype-webapp."::: 
 
 1. Espandere l'elenco a discesa **Artifact Coordinates** (Coordinate artefatto) per visualizzare tutti i campi di input, specificare le informazioni seguenti per la nuova app Web e fare clic su **Next** (Avanti):
 
-   * **Name**: nome dell'app Web. Questo valore verrà inserito automaticamente nel campo **ArtifactId** dell'app Web.
+   * **Name** : nome dell'app Web. Questo valore verrà inserito automaticamente nel campo **ArtifactId** dell'app Web.
    * **GroupId** (ID gruppo): nome del gruppo di artefatti, in genere un dominio aziendale, ad esempio *com.microsoft.azure*.
-   * **Versione**: mantenere la versione predefinita, ovvero *1.0-SNAPSHOT*.
+   * **Versione** : mantenere la versione predefinita, ovvero *1.0-SNAPSHOT*.
 
 1. Personalizzare eventuali impostazioni di Maven o accettare quelle predefinite e quindi fare clic su **Finish** (Fine).
 
-1. Passare al progetto nella scheda **Project** (Progetto) a sinistra e aprire il file **src/main/webapp/index.jsp**. Sostituire il codice con quello seguente e **salvare le modifiche**:
+1. Passare al progetto nella scheda **Project** (Progetto) a sinistra e aprire il file **src/main/webapp/index.jsp**. Sostituire il codice con quello seguente e **salvare le modifiche** :
 
    ```html
    <html>
@@ -80,7 +80,7 @@ La procedura seguente illustra il processo di accesso ad Azure nell'ambiente di 
     </body>
    </html>
    ```
-   :::image type="content" source="media/create-hello-world-web-app/open-index-page.png" alt-text="Accesso ad Azure in IntelliJ.":::
+   :::image type="content" source="media/create-hello-world-web-app/open-index-page.png" alt-text="Aprire il file index.jsp.":::
 
 ## <a name="deploying-web-app-to-azure"></a>Distribuzione dell'app Web in Azure
 
@@ -90,15 +90,15 @@ La procedura seguente illustra il processo di accesso ad Azure nell'ambiente di 
 
    a. Fare clic su **No available function, click to create a new one** (Nessuna funzione disponibile, fare clic per crearne una) per creare una nuova app Web. In caso contrario, scegliere **Create New WebApp** (Crea nuova app Web) dal menu a discesa WebApp (App Web) se nella sottoscrizione sono presenti app Web.
 
-      :::image type="content" source="media/create-hello-world-web-app/deploy-to-azure-webapps.png" alt-text="Accesso ad Azure in IntelliJ.":::
+      :::image type="content" source="media/create-hello-world-web-app/deploy-to-azure-webapps.png" alt-text="Finestra di dialogo Deploy to Azure.":::
 
-   Nella finestra di dialogo popup **Create WebApp** (Crea app Web) specificare le informazioni seguenti e fare clic su **OK**: 
+   Nella finestra di dialogo popup **Create WebApp** (Crea app Web) specificare le informazioni seguenti e fare clic su **OK** : 
 
-      * **Name**: stringa del nome di dominio dell'app Web.
+      * **Name** : stringa del nome di dominio dell'app Web.
       * **Sottoscrizione** specifica la sottoscrizione di Azure da usare per la nuova app Web.
-      * **Platform**: selezionare *Linux*.
+      * **Platform** : selezionare *Linux*.
       * **Web Container** (Contenitore Web): selezionare *TOMCAT 9.0-jre8* o il valore appropriato.
-      * **Gruppo di risorse**: specifica il gruppo di risorse per l'app Web. È possibile selezionare un gruppo di risorse esistente associato all'account Azure o crearne uno nuovo.
+      * **Gruppo di risorse** : specifica il gruppo di risorse per l'app Web. È possibile selezionare un gruppo di risorse esistente associato all'account Azure o crearne uno nuovo.
       * **App Service Plan** (Piano di servizio app): specifica il piano di servizio app per l'app Web. È possibile selezionare un piano esistente associato all'account Azure o crearne uno nuovo.
 
    b. Per eseguire la distribuzione in un'app Web esistente, scegliere l'app Web dal menu WebApp e quindi fare clic su **Run** (Esegui).
@@ -107,7 +107,7 @@ La procedura seguente illustra il processo di accesso ad Azure nell'ambiente di 
 
 1. È possibile passare all'app Web usando il collegamento contenuto nel messaggio di stato.
 
-   :::image type="content" source="media/create-hello-world-web-app/browse-web-app.png" alt-text="Accesso ad Azure in IntelliJ.":::
+   :::image type="content" source="media/create-hello-world-web-app/browse-web-app.png" alt-text="Esplorazione dell'app Web.":::
 
 ## <a name="managing-deploy-configurations"></a>Gestione delle configurazioni della distribuzione
 
@@ -116,7 +116,7 @@ La procedura seguente illustra il processo di accesso ad Azure nell'ambiente di 
 
 1. Prima di eseguire la distribuzione dell'app Web, è possibile modificare le impostazioni predefinite facendo clic sul menu a discesa per l'app Web e quindi selezionando **Edit Configurations** (Modifica configurazioni).
 
-   :::image type="content" source="media/create-hello-world-web-app/edit-configuration-menu.png" alt-text="Accesso ad Azure in IntelliJ.":::
+   :::image type="content" source="media/create-hello-world-web-app/edit-configuration-menu.png" alt-text="Menu Edit Configurations (Modifica configurazioni).":::
 
 1. Nella finestra di dialogo **Run/Debug Configurations** (Esecuzione/debug configurazioni) è possibile modificare qualsiasi impostazione predefinita. Fare clic su **OK** per salvare le impostazioni.
 
