@@ -4,12 +4,12 @@ description: include file tutorial-azure-web-app-mongodb-01.md
 ms.date: 10/13/2020
 ms.topic: include
 ms.custom: devx-track-javascript
-ms.openlocfilehash: a8c9fcca1b7374ae5122cfabb3fcbfc6ba8cdd07
-ms.sourcegitcommit: 8a2a7df568c69fff2080ffab248409040efda1ac
+ms.openlocfilehash: 61bb61d147e01061dcf58701132feddd09c53b59
+ms.sourcegitcommit: 801682d3fc9651bf95d44e58574d5a4564be6feb
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92183846"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94340991"
 ---
 Per questa sezione dell'esercitazione, è necessario avere una sottoscrizione di Azure e il software indicato.
 
@@ -19,7 +19,7 @@ Per questa sezione dell'esercitazione, è necessario avere una sottoscrizione di
 
 ## <a name="install-software"></a>Installazione del software
 
-- [Node.js e npm](https://nodejs.org/en/download), lo strumento di gestione pacchetti Node.js, installato nel computer locale.
+- [Node.js 8.x e versioni successive e npm](https://nodejs.org/en/download), il sistema di gestione pacchetti di Node.js installato nel computer locale.
 - [Docker](https://docs.docker.com/get-docker/), usato per fornire un database MongoDB locale senza dover installare MongoDB. 
     - Se è necessario usare Docker per ottenere un database MongoDB locale, è anche necessario usare:
         -  I [contenitori di sviluppo](https://code.visualstudio.com/docs/remote/containers) di Visual Studio includono diversi contenitori comuni per lo sviluppo in JavaScript. 

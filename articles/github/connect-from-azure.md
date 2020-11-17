@@ -7,22 +7,20 @@ ms.topic: reference
 ms.service: azure
 ms.date: 08/31/2020
 ms.custom: github-actions-azure, devx-track-azurecli
-ms.openlocfilehash: 926bd35fe7c0fb7d7a043955e0fd340950a658db
-ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
+ms.openlocfilehash: d03f8631d985b97a46a711620c847475171f9438
+ms.sourcegitcommit: cbcde17e91e7262a596d813243fd713ce5e97d06
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92689209"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93405750"
 ---
 # <a name="use-github-actions-to-connect-to-azure"></a>Usare GitHub Actions per connettersi ad Azure
 
 Informazioni su come usare un [account di accesso di Azure](https://github.com/Azure/login) con [Azure PowerShell](https://github.com/Azure/PowerShell) o l'[interfaccia della riga di comando di Azure](https://github.com/Azure/CLI) per interagire con le risorse di Azure.
 
-Per usare Azure PowerShell o l'interfaccia della riga di comando di Azure, è prima di tutto necessario accedere con l'[account di accesso di Azure](https://github.com/marketplace/actions/azure-login). L'azione di accesso di Azure connette la sottoscrizione di Azure a GitHub usando un'entità servizio.
+Per usare Azure PowerShell o l'interfaccia della riga di comando di Azure in un flusso di lavoro di GitHub Actions, è necessario prima accedere con l'azione di [accesso di Azure](https://github.com/marketplace/actions/azure-login). L'azione di accesso di Azure consente di eseguire comandi in un flusso di lavoro nel contesto di un'[entità servizio di Azure AD](/azure/active-directory/develop/app-objects-and-service-principals#service-principal-object).
 
-Dopo aver configurato l'azione di accesso, è possibile usare l'interfaccia della riga di comando di Azure o Azure PowerShell.  
-L'interfaccia della riga di comando di Azure configura l'ambiente dello strumento di esecuzione dell'azione GitHub per l'interfaccia della riga di comando di Azure. Azure PowerShell configura l'ambiente dello strumento di esecuzione dell'azione GitHub con il modulo di Azure PowerShell.
-
+Dopo aver configurato l'azione di accesso, è possibile usare l'interfaccia della riga di comando di Azure o Azure PowerShell. Per impostazione predefinita, l'azione effettua l'accesso con l'interfaccia della riga di comando di Azure, configurando l'ambiente dello strumento di esecuzione di GitHub Actions per l'interfaccia della riga di comando di Azure. Con la proprietà enable-AzPSSession dell'azione di accesso di Azure, è possibile usare Azure PowerShell.  In questo modo l'ambiente dello strumento di esecuzione di GitHub Action viene configurato con il modulo di Azure PowerShell.
 
 ## <a name="create-a-service-principal-and-add-it-to-github-secret"></a>Creare un'entità servizio e aggiungerla al segreto GitHub
 
@@ -61,27 +59,27 @@ In questo esempio verrà creato un segreto denominato `AZURE_CREDENTIALS` che è
     }
     ```
 
-1. Aprire il repository GitHub e passare a **Impostazioni** .
+1. Aprire il repository GitHub e passare a **Impostazioni**.
 
     :::image type="content" source="media/github-repo-settings.png" alt-text="Selezionare Impostazioni nel riquadro di spostamento":::
 
-1. Selezionare **Segreti** e quindi **Nuovo segreto** .
+1. Selezionare **Segreti** e quindi **Nuovo segreto**.
 
-    :::image type="content" source="media/select-secrets.png" alt-text="Selezionare Impostazioni nel riquadro di spostamento":::
+    :::image type="content" source="media/select-secrets.png" alt-text="Scegliere di aggiungere un segreto":::
 
 1. Incollare l'oggetto JSON per l'entità servizio con il nome `AZURE_CREDENTIALS`. 
 
-    :::image type="content" source="media/azure-secret-add.png" alt-text="Selezionare Impostazioni nel riquadro di spostamento":::
+    :::image type="content" source="media/azure-secret-add.png" alt-text="Aggiungere un segreto in GitHub":::
 
-1. Salvare selezionando **Aggiungi segreto** .
+1. Salvare selezionando **Aggiungi segreto**.
 
 ## <a name="use-the-azure-login-action"></a>Usare l'azione di accesso di Azure
 
-Usare il segreto dell'entità servizio con l'[azione di accesso di Azure](https://github.com/Azure/login) per l'autenticazione con Azure.
+Usare il segreto dell'entità servizio con l'[azione di accesso di Azure](https://github.com/Azure/login) per eseguire l'autenticazione con Azure.
 
-In questo flusso di lavoro è possibile eseguire l'autenticazione con `secrets.AZURE_CREDENTIALS` e quindi eseguire un'azione dell'interfaccia della riga di comando di Azure.
+In questo flusso di lavoro l'autenticazione viene eseguita usando l'azione di accesso di Azure con i dettagli dell'entità servizio archiviati in `secrets.AZURE_CREDENTIALS`. Quindi, eseguire un'azione dell'interfaccia della riga di comando di Azure. Per altre informazioni su come fare riferimento ai segreti di GitHub in un file del flusso di lavoro, vedere [Uso di segreti crittografati in un flusso di lavoro](https://docs.github.com/en/free-pro-team@latest/actions/reference/encrypted-secrets#using-encrypted-secrets-in-a-workflow) nella documentazione di GitHub.
 
-Quando si ha un account di accesso di Azure funzionante, è possibile usare le azioni di Azure PowerShell o dell'interfaccia della riga di comando di Azure. È anche possibile usare altre azioni di Azure come [distribuzione app Web di Azure](https://github.com/Azure/webapps-deploy) e [funzioni di Azure](https://github.com/Azure/functions-action).
+Una volta configurato un passaggio di accesso di Azure funzionante, è possibile usare le azioni di [Azure PowerShell](https://github.com/Azure/PowerShell) o dell'[interfaccia della riga di comando di Azure](https://github.com/Azure/CLI). È anche possibile usare altre azioni di Azure, ad esempio la [distribuzione in app Web di Azure](https://github.com/Azure/webapps-deploy) e [Funzioni di Azure](https://github.com/Azure/functions-action).
 
 ```yaml
 on: [push]
@@ -100,7 +98,7 @@ jobs:
 
 ## <a name="use-the-azure-powershell-action"></a>Usare l'azione di Azure PowerShell
 
-In questo esempio si accede con l'[azione di accesso di Azure](https://github.com/Azure/login) e quindi si recupera un gruppo di risorse con l'[azione dell'interfaccia della riga di comando di Azure](https://github.com/azure/powershell).
+In questo esempio si accede con l'[azione di accesso di Azure](https://github.com/Azure/login) e quindi si recupera un gruppo di risorse con l'[azione di Azure PowerShell](https://github.com/azure/powershell).
 
 ```yaml
 on: [push]

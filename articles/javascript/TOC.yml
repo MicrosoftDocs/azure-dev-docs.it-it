@@ -17,6 +17,22 @@
           href: tutorial/browser-file-upload.yml?preview=tutorialFeedback
         - name: Express.js con MongoDB
           href: tutorial/web-app-mongodb.yml?preview=tutorialFeedback
+        - name: Distribuire un'app in una macchina virtuale Linux
+          items:
+            - name: 1. Introduzione e prerequisiti
+              href: tutorial/nodejs-virtual-machine-vm/introduction.md
+            - name: 2. Creare una risorsa di Application Insights
+              href: tutorial/nodejs-virtual-machine-vm/create-azure-monitoring-application-insights-web-resource.md
+            - name: 3. Creare macchina virtuale
+              href: tutorial/nodejs-virtual-machine-vm/create-linux-virtual-machine-azure-cli.md
+            - name: 4. Connettersi a una macchina virtuale Linux
+              href: tutorial/nodejs-virtual-machine-vm/connect-linux-virtual-machine-ssh.md
+            - name: 5. Aggiungere la registrazione cloud all'app
+              href: tutorial/nodejs-virtual-machine-vm/azure-monitor-application-insights-nodejs-expressjs-code.md
+            - name: 6. Visualizzare i log
+              href: tutorial/nodejs-virtual-machine-vm/azure-monitor-application-insights-logs.md
+            - name: 7. Pulire le risorse
+              href: tutorial/nodejs-virtual-machine-vm/clean-up-resources.md
         - name: Creare e distribuire funzioni serverless
           items:
             - name: 1. Introduzione e prerequisiti

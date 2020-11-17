@@ -4,12 +4,12 @@ description: Parte 1 dell'esercitazione, introduzione e prerequisiti dell'interf
 ms.topic: tutorial
 ms.date: 09/24/2019
 ms.custom: devx-track-js, devx-track-azurecli
-ms.openlocfilehash: a23a09cfdd36cd67b8fc09a1cb3bac266c2db813
-ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
+ms.openlocfilehash: 2ff59026c3f250f3ef83982f799633094a5cd9f7
+ms.sourcegitcommit: 12f80b1e0fe08db707c198271d0c399c3aba343a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92688675"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94515182"
 ---
 # <a name="deploy-to-azure-app-service-using-the-azure-cli"></a>Eseguire la distribuzione nel Servizio app di Azure tramite l'interfaccia della riga di comando di Azure
 
@@ -20,25 +20,15 @@ In questa esercitazione si distribuisce un'applicazione Node.js nel Servizio app
 - Una [sottoscrizione di Azure](#azure-subscription).
 - [Node.js e npm 6.x o versione successiva](https://nodejs.org/en/download), la gestione pacchetti Node.js.
 - [Git](https://git-scm.com/downloads), dopo il quale il comando `git --version` dovrebbe mostrare un numero di versione.
-- [Interfaccia della riga di comando di Azure](/cli/azure/install-azure-cli).
-
-In alternativa, è possibile usare l'[estensione Interfaccia della riga di comando di Azure per Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-vscode.azurecli), che prevede la colorazione della sintassi, IntelliSense (completamenti) e frammenti quando si scrivono script per l'interfaccia della riga di comando di Azure.
-
-Una seconda alternativa è [Azure Cloud Shell](/azure/cloud-shell/overview), che è possibile usare da Visual Studio Code usando l'[estensione Account Azure](https://marketplace.visualstudio.com/items?itemName=ms-vscode.azure-account).
+[!INCLUDE [Azure CLI](~/../azure-docs/includes/azure-cli-prepare-your-environment-no-header.md)]
 
 ### <a name="azure-subscription"></a>Sottoscrizione di Azure
 
 Se non si ha una sottoscrizione di Azure, [iscriversi](https://azure.microsoft.com/free/?utm_source=campaign&utm_campaign=vscode-tutorial-node-git&mktingSource=vscode-tutorial-node-git) subito per ottenere un account gratuito con 200 USD in crediti di Azure per provare qualsiasi combinazione di servizi.
 
-### <a name="sign-in-to-the-azure-cli"></a>Accedere all'interfaccia della riga di comando di Azure
+### <a name="sign-in-to-azure-with-azure-cli"></a>Accedere ad Azure con l'interfaccia della riga di comando di Azure
 
-Dopo aver installato l'interfaccia della riga di comando di Azure, eseguire il comando seguente da un terminale o al prompt dei comandi:
-
-```azurecli
-az login
-```
-
-Il comando apre una finestra del browser in cui viene chiesto di accedere ad Azure. Dopo aver eseguito l'accesso, la finestra del terminale mostra l'output JSON con i dettagli della sottoscrizione.
+[!INCLUDE [Sign in ](../azure-cli/includes/interactive-login.md)]
 
 ## <a name="check-npm-version"></a>Controllare la versione di npm
 

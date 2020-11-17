@@ -1,15 +1,15 @@
 ---
 title: Configurare l'ambiente JavaScript locale per lo sviluppo di Azure
 description: Informazioni su come configurare un ambiente di sviluppo JavaScript locale per l'uso con Azure, tra cui un editor, le librerie di Azure SDK, strumenti facoltativi e le credenziali necessarie per l'autenticazione delle librerie.
-ms.date: 09/30/2020
+ms.date: 11/05/2020
 ms.topic: conceptual
 ms.custom: devx-track-js, azure-sdk-javascript-ai-text-analytics-5.0.0
-ms.openlocfilehash: 2e61facd2065773dcbef7d0cdd20353671121422
-ms.sourcegitcommit: c3a1c9051b89870f6bfdb3176463564963b97ba4
+ms.openlocfilehash: 0da3357fc24f65a43303f6c23d5aa6b679f211d4
+ms.sourcegitcommit: 801682d3fc9651bf95d44e58574d5a4564be6feb
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92437309"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94333833"
 ---
 # <a name="configure-your-local-javascript-dev-environment-for-azure"></a>Configurare l'ambiente di sviluppo JavaScript locale per Azure
 
@@ -23,57 +23,42 @@ Le risorse di Azure vengono create all'interno di una sottoscrizione, che rappre
 
 |Tipo|Descrizione|
 |--|--|
-|[Sottoscrizione di valutazione](https://azure.microsoft.com/free/cognitive-services)|Creare una sottoscrizione di valutazione _gratuita_ .|
-|[Sottoscrizione esistente](https://portal.azure.com)|Se si ha già una sottoscrizione, accedervi nel portale di Azure, dall'interfaccia della riga di comando di Azure o in JavaScript.|
-|[Tra più sottoscrizioni](/azure/governance/management-groups/create-management-group-javascript)|Se è necessario gestire più sottoscrizioni, questo articolo descrive come creare un gruppo di gestione con JavaScript.|
+|Sottoscrizione di valutazione|Creare una [sottoscrizione di valutazione](https://azure.microsoft.com/free/) _gratuita_.|
+|Sottoscrizione esistente|Se si ha già una sottoscrizione, accedervi nel [portale di Azure](https://portal.azure.com), dall'[interfaccia della riga di comando di Azure]() o in JavaScript.|
+|Tra più sottoscrizioni|Se è necessario gestire più sottoscrizioni, [questo articolo](/azure/governance/management-groups/create-management-group-javascript) descrive come creare un gruppo di gestione con JavaScript.|
 
-## <a name="one-time-installation"></a>Installazione una tantum
+## <a name="one-time-software-installation"></a>Installazione di software una tantum
 
 Per sviluppare usando una risorsa di Azure con JavaScript nella workstation locale, è necessario installare una sola volta gli elementi seguenti:
 
 |Nome/Programma di installazione|Descrizione|
 |--|--|
-|[Node.js](https://www.npmjs.com/)|Installare l'ambiente di runtime LTS (Long-Term Support) più recente per lo sviluppo in workstation locali. |
-| npm (installato con le versioni moderne di Node.js) o [Yarn](https://yarnpkg.com/)|Gestione pacchetti per installare le librerie di Azure SDK.|
-|[Visual Studio Code](https://code.visualstudio.com/)| Visual Studio Code offre un'ottima esperienza di integrazione e scrittura di codice per JavaScript, ma non è obbligatorio. È infatti possibile usare qualsiasi editor di codice. Se per questo documento si usa un editor diverso, verificare l'integrazione con Azure o usare l'interfaccia della riga di comando di Azure.|
-|[Interfaccia della riga di comando di Azure](/cli/azure/get-started-with-azure-cli?view=azure-cli-latest)|È possibile usare l'interfaccia della riga di comando di Azure per ricreare e gestire le risorse di Azure da una riga di comando, un terminale o una shell bash.|
+[!INCLUDE [Node.js](../includes/environment-nodejs-table-row-2-columns.md)]
+|[Visual Studio Code](https://code.visualstudio.com/)| Visual Studio Code offre un'eccellente esperienza di integrazione e scrittura di codice JavaScript, ma non è obbligatorio. È infatti possibile usare qualsiasi editor di codice. Se per questo documento si usa un editor diverso, verificare l'integrazione con Azure o usare l'interfaccia della riga di comando di Azure.|
 
 > [!CAUTION]
 > Se si prevede di usare una risorsa di Azure come ambiente di runtime per il codice, ad esempio un'app Web di Azure o un'istanza di contenitore di Azure, è opportuno verificare che l'ambiente di sviluppo Node.js locale corrisponda al runtime della risorsa di Azure che si intende usare.
 
-### <a name="optional-local-installations"></a>Installazioni locali facoltative
+### <a name="recommended-local-installations"></a>Installazioni locali consigliate
 
-Le installazioni comuni seguenti in workstation locali sono facoltative e consentono di semplificare le attività di sviluppo locali.
+Le installazioni comuni seguenti in workstation locali sono consigliate per semplificare le attività di sviluppo locali.
 
 |Nome/Programma di installazione|Descrizione|
 |--|--|
+|[Interfaccia della riga di comando di Azure](/cli/azure/get-started-with-azure-cli?view=azure-cli-latest) o [estensioni di Visual Studio Code per Azure](https://marketplace.visualstudio.com/search?term=azure&target=VSCode&category=All%20categories&sortBy=Relevance) |Azure viene in genere usato tramite il [portale di Azure](https://ms.portal.azure.com/), l'interfaccia della riga di comando di Azure o specifiche estensioni di Visual Studio Code per Azure. Anche se non è necessario avere l'interfaccia della riga di comando di Azure, se non diversamente specificato in una guida di avvio rapido o in un'esercitazione, si tratta di un singolo strumento per l'uso di Azure, mentre Visual Studio Code fornisce la stessa funzionalità con una specifica estensione per ogni singolo servizio.|
 | [git](https://git-scm.com/downloads) | Strumenti da riga di comando per il controllo del codice sorgente. Se si preferisce, è possibile usare uno strumento diverso per il controllo del codice sorgente. |
+
 
 ## <a name="one-time-configuration-of-service-principal"></a>Configurazione una tantum dell'entità servizio
 
 Ogni servizio di Azure prevede un meccanismo di autenticazione, che può includere chiavi ed endpoint, stringhe di connessione o altri meccanismi. Per la conformità alle procedure consigliate, usare un'[entità servizio](node-sdk-azure-authenticate-principal.md) per creare risorse ed eseguire l'autenticazione a tali risorse. Un'entità servizio consente di definire in modo concreto l'ambito dell'accesso in base all'esigenza di sviluppo immediata.
 
-Procedura per la **creazione dell'entità servizio** : 
-
-1. Accedere ad Azure con l'account utente singolo.
-1. Creare un'entità servizio _denominata_ con ambito specifico. Dal momento che per la maggior parte degli avvii rapidi è richiesta la creazione di una risorsa di Azure, l'entità servizio deve poter creare risorse.
-1. Disconnettersi da Azure con l'account utente singolo.
-
-Procedura per **usare l'entità servizio** :
-
-1. Eseguire l'autenticazione ad Azure a livello di codice con l'entità servizio usando un certificato, variabili di ambiente o un file `.json`. 
-1. Creare risorse di Azure con l'entità servizio e usare il servizio.
-
-Informazioni su come [creare un'entità servizio](node-sdk-azure-authenticate-principal.md). Ricordarsi di salvare la risposta ottenuta nel passaggio di creazione. Per usare l'entità servizio, saranno necessari anche i valori di `appId`, `tenant` e `password` della risposta.
-
-[Creare le risorse di Azure con l'entità servizio](/cli/azure/create-an-azure-service-principal-azure-cli#create-a-resource-using-service-principal).
-
-## <a name="steps-for-each-new-development-project-setup"></a>Procedura per ogni nuova installazione del progetto di sviluppo
+## <a name="working-with-azure-and-the-azure-sdk-client-libraries"></a>Uso di Azure e delle librerie client di Azure SDK
 
 Le [librerie di Azure SDK](../azure-sdk-library-package-index.md) vengono fornite singolarmente per ogni servizio. Ogni libreria viene installata in base al servizio di Azure che è necessario usare.
 
 Ogni nuovo progetto che usa Azure deve:
-- Creare le risorse di Azure e salvare la configurazione o le chiavi associate in un [percorso sicuro]().
+- Creare le risorse di Azure e salvare la configurazione o le chiavi associate in un [percorso sicuro](#securing-configuration-information).
 - Installare le librerie di Azure SDK da npm o Yarn. 
 - Usare l'entità servizio per eseguire l'autenticazione per gli SDK di Azure e quindi usare le informazioni di configurazione per accedere a servizi specifici.
 
@@ -81,7 +66,7 @@ Ogni nuovo progetto che usa Azure deve:
 
 Sono disponibili diverse opzioni per archiviare le informazioni di configurazione:
 - [Dotenv](https://www.npmjs.com/package/dotenv) è un noto pacchetto npm usato per leggere le variabili di ambiente da un file `.env`. Assicurarsi di aggiungere il file `.env` al file `.gitignore` in modo che il file `.env` non venga archiviato nel controllo del codice sorgente.
-- Azure [Key Vault](https://docs.microsoft.com/azure/key-vault/) consente di creare e gestire chiavi per accedere e crittografare risorse, app e soluzioni cloud.
+- Azure [Key Vault](/azure/key-vault/) consente di creare e gestire chiavi per accedere e crittografare risorse, app e soluzioni cloud.
 
 ### <a name="create-environment-variables-for-the-azure-libraries"></a>Creare variabili di ambiente per le librerie di Azure
 
