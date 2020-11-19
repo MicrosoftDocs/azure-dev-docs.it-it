@@ -8,12 +8,12 @@ ms.service: event-hubs
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.custom: devx-track-java, devx-track-azurecli
-ms.openlocfilehash: 2cee5871b49574fd4e4643b206c1454404219b9b
-ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
+ms.openlocfilehash: 0cc3289243c1a146cf59ecb15c5150327f49c236
+ms.sourcegitcommit: 8e1d3a384ccb0e083589418d65a70b3a01afebff
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92688698"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94560304"
 ---
 # <a name="how-to-create-a-spring-cloud-stream-binder-application-with-azure-event-hubs"></a>Come creare un'applicazione Spring Cloud Stream Binder con Hub eventi di Azure
 
@@ -36,9 +36,9 @@ La procedura seguente crea un hub eventi di Azure.
 
 1. Passare al portale di Azure all'indirizzo <https://portal.azure.com/> ed eseguire l'accesso.
 
-1. Selezionare **+ Crea una risorsa** e quindi cercare *Hub eventi* .
+1. Selezionare **+ Crea una risorsa** e quindi cercare *Hub eventi*.
 
-1. Selezionare **Crea** .
+1. Selezionare **Crea**.
 
    >[!div class="mx-imgBorder"]
    >![Creare uno spazio dei nomi dell'hub eventi di Azure][IMG01]
@@ -47,7 +47,7 @@ La procedura seguente crea un hub eventi di Azure.
 
    * Scegliere la **sottoscrizione** da usare per lo spazio dei nomi.
    * Specificare se creare un nuovo **gruppo di risorse** per lo spazio dei nomi o sceglierne uno esistente.
-   * Immettere un **nome di spazio dei nomi** univoco, che diventerà parte dell'URI dello spazio dei nomi dell'hub eventi. Se, ad esempio, si immette *wingtiptoys-space* in **Nome dello spazio dei nomi** , l'URI sarà `wingtiptoys-space.servicebus.windows.net`.
+   * Immettere un **nome di spazio dei nomi** univoco, che diventerà parte dell'URI dello spazio dei nomi dell'hub eventi. Se, ad esempio, si immette *wingtiptoys-space* in **Nome dello spazio dei nomi**, l'URI sarà `wingtiptoys-space.servicebus.windows.net`.
    * Specificare la **località** per lo spazio dei nomi dell'hub eventi.
    * Piano tariffario.
    * È anche possibile specificare le **unità elaborate** per lo spazio dei nomi.
@@ -55,11 +55,11 @@ La procedura seguente crea un hub eventi di Azure.
    >[!div class="mx-imgBorder"]
    >![Specificare le opzioni per lo spazio dei nomi dell'hub eventi di Azure][IMG02]
 
-1. Dopo aver specificato le opzioni elencate in precedenza, selezionare **Rivedi e crea** , esaminare le specifiche e selezionare **Crea** per creare lo spazio dei nomi.
+1. Dopo aver specificato le opzioni elencate in precedenza, selezionare **Rivedi e crea**, esaminare le specifiche e selezionare **Crea** per creare lo spazio dei nomi.
 
 ## <a name="create-an-azure-event-hub-in-your-namespace"></a>Creare un hub eventi di Azure nello spazio dei nomi
 
-Dopo la distribuzione dello spazio dei nomi, selezionare **Vai alla risorsa** per aprire la pagina **Spazio dei nomi di Hub eventi** , in cui è possibile creare un hub eventi.
+Dopo la distribuzione dello spazio dei nomi, selezionare **Vai alla risorsa** per aprire la pagina **Spazio dei nomi di Hub eventi**, in cui è possibile creare un hub eventi.
 
 1. Passare allo spazio dei nomi creato nella sezione precedente.
 
@@ -67,7 +67,7 @@ Dopo la distribuzione dello spazio dei nomi, selezionare **Vai alla risorsa** pe
 
 1. Assegnare un nome all'hub eventi.
 
-1. Selezionare **Crea** .
+1. Selezionare **Crea**.
 
    >[!div class="mx-imgBorder"]
    >![Creare un hub eventi][IMG05]
@@ -78,13 +78,13 @@ La procedura seguente crea un account di archiviazione per i checkpoint dell'hub
 
 1. Passare al portale di Azure all'indirizzo <https://portal.azure.com/>.
 
-1. Selezionare **+ Crea una risorsa** , **Archiviazione** e quindi **Account di archiviazione** .
+1. Selezionare **+ Crea una risorsa**, **Archiviazione** e quindi **Account di archiviazione**.
 
 1. Nella pagina **Crea account di archiviazione** immettere le informazioni seguenti:
 
    * Scegliere la **sottoscrizione** da usare per l'account di archiviazione.
    * Specificare se creare un nuovo **gruppo di risorse** per l'account di archiviazione o sceglierne uno esistente.
-   * Immettere un nome univoco per l'account di archiviazione in **Nome** .
+   * Immettere un nome univoco per l'account di archiviazione in **Nome**.
    * Specificare la **località** per l'account di archiviazione.
 
    >[!div class="mx-imgBorder"]
@@ -92,7 +92,7 @@ La procedura seguente crea un account di archiviazione per i checkpoint dell'hub
 
 1. Dopo aver specificato le opzioni elencate sopra, selezionare **Rivedi e crea** per creare l'account di archiviazione.
 
-1. Esaminare le specifiche e selezionare **Crea** .  La distribuzione richiede diversi minuti.
+1. Esaminare le specifiche e selezionare **Crea**.  La distribuzione richiede diversi minuti.
 
 ## <a name="create-a-simple-spring-boot-application-with-the-spring-initializr"></a>Creare un'applicazione Spring Boot semplice con Spring Initializr
 
@@ -102,19 +102,19 @@ La procedura seguente crea un'applicazione Spring Boot.
 
 1. Specificare le opzioni seguenti:
 
-   * Generare un progetto **Maven** con **Java** .
+   * Generare un progetto **Maven** con **Java**.
    * Specificare **Spring Boot** versione 2.2 o successiva.
    * Specificare i nomi di **Group** (Gruppo) e **Artifact** (Artefatto) per l'applicazione.
    * Selezionare **8** per la versione di Java.
-   * Aggiungere la dipendenza *Web* .
+   * Aggiungere la dipendenza *Web*.
 
    >[!div class="mx-imgBorder"]
    >![Opzioni di base di Spring Initializr][SI01]
 
    > [!NOTE]
-   > Spring Initializr usa i nomi in **Group** (Gruppo) e **Artifact** (Artefatto) per creare il nome del pacchetto, ad esempio *com.contoso.eventhubs.sample* .
+   > Spring Initializr usa i nomi in **Group** (Gruppo) e **Artifact** (Artefatto) per creare il nome del pacchetto, ad esempio *com.contoso.eventhubs.sample*.
 
-1. Dopo aver specificato le opzioni elencate sopra, selezionare **GENERA** .
+1. Dopo aver specificato le opzioni elencate sopra, selezionare **GENERA**.
 
 1. Quando richiesto, scaricare il progetto in un percorso nel computer locale.
 
@@ -156,7 +156,7 @@ La procedura seguente crea un'applicazione Spring Boot.
    </dependency>
    ```
 
-1. Salvare e chiudere il file *pom.xml* .
+1. Salvare e chiudere il file *pom.xml*.
 
 ## <a name="create-an-azure-credential-file"></a>Creare un file di credenziali di Azure
 
@@ -164,7 +164,7 @@ La procedura seguente crea un'applicazione Spring Boot.
 
 1. Passare alla directory *resources* dell'app Spring Boot, ad esempio:
 
-   ```bash
+   ```cmd
    cd C:\SpringBoot\eventhubs-sample\src\main\resources
    ```
 
@@ -269,7 +269,7 @@ La procedura seguente crea un'applicazione Spring Boot.
    |       `spring.cloud.stream.bindings.input.group `        | Specifica un gruppo di consumer dell'hub eventi di Azure, che è possibile impostare su "$Default" per usare il gruppo di consumer di base creato al momento della creazione dell'hub eventi di Azure. |
    |    `spring.cloud.stream.bindings.output.destination`     |                               Specifica l'hub eventi di Azure destinazione di output, che per questa esercitazione è uguale alla destinazione di input.                               |
 
-3. Salvare e chiudere il file *application.properties* .
+3. Salvare e chiudere il file *application.properties*.
 
 ## <a name="add-sample-code-to-implement-basic-event-hub-functionality"></a>Aggiungere codice di esempio per implementare le funzionalità di base dell'hub eventi
 
@@ -334,7 +334,7 @@ In questa sezione si creano le classi Java necessarie per inviare eventi all'hub
         }
     }
     ```
-1. Salvare e chiudere il file *EventhubSource.java* .
+1. Salvare e chiudere il file *EventhubSource.java*.
 
 ### <a name="create-a-new-class-for-the-sink-connector"></a>Creare una nuova classe per il connettore sink
 
@@ -370,15 +370,15 @@ In questa sezione si creano le classi Java necessarie per inviare eventi all'hub
    }
    ```
 
-1. Salvare e chiudere il file *EventhubSink.java* .
+1. Salvare e chiudere il file *EventhubSink.java*.
 
 ## <a name="build-and-test-your-application"></a>Compilare e testare l'applicazione
 
 Usare le procedure seguenti per compilare ed eseguire l'applicazione.
 
-1. Aprire un prompt dei comandi e cambiare la directory passando alla cartella in cui si trova il file *pom.xml* , ad esempio:
+1. Aprire un prompt dei comandi e cambiare la directory passando alla cartella in cui si trova il file *pom.xml*, ad esempio:
 
-   ```bash
+   ```cmd
     cd C:\SpringBoot\eventhubs-sample
    ```
    -oppure-
@@ -401,7 +401,7 @@ Usare le procedure seguenti per compilare ed eseguire l'applicazione.
    ```
    Verrà visualizzato l'inserimento di "hello" nei log dell'applicazione. Ad esempio:
 
-   ```text
+   ```output
    2020-09-11 15:11:12.138  INFO 7616 --- [      elastic-4] c.contoso.eventhubs.sample.EventhubSink  : New message received: 'hello'
    2020-09-11 15:11:12.406  INFO 7616 --- [ctor-http-nio-1] c.contoso.eventhubs.sample.EventhubSink  : Message 'hello' successfully checkpointed
    ```

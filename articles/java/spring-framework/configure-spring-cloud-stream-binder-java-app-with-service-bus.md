@@ -7,12 +7,12 @@ ms.author: seal
 ms.date: 10/10/2020
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: 0df477d203031fecac389660b93e93f00d8e262a
-ms.sourcegitcommit: f460914ac5843eb7392869a08e3a80af68ab227b
+ms.openlocfilehash: e4958d65e06a77181a00a7dc4d221e02f4f6b188
+ms.sourcegitcommit: 6514a061ba5b8003ce29d67c81a9f0795c3e3e09
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "92010008"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94601253"
 ---
 # <a name="how-to-use-spring-cloud-azure-stream-binder-for-azure-service-bus"></a>Come usare Spring Cloud Stream Binder per il bus di servizio di Azure
 
@@ -63,32 +63,29 @@ Per questo articolo sono necessari i prerequisiti seguenti:
 
     ```xml
     <dependency>
-        <groupId>com.microsoft.azure</groupId>
-        <artifactId>spring-cloud-azure-servicebus-queue-stream-binder</artifactId>
-        <version>1.1.0.RC5</version>
+        <groupId>com.azure.spring</groupId>
+        <artifactId>azure-spring-cloud-stream-binder-servicebus-queue</artifactId>
+        <version>2.0.0-beta.1</version> <!-- {x-version-update;com.azure.spring:azure-spring-cloud-stream-binder-servicebus-queue;current} -->
     </dependency>
     ```
-
-    ![Modificare il file pom.xml per la coda del bus di servizio.](media/configure-spring-cloud-stream-binder-java-app-with-service-bus/add-stream-binder-starter-pom-file-dependency-for-service-bus-queue.png)
 
     **Argomento del bus di servizio**
 
     ```xml
     <dependency>
-        <groupId>com.microsoft.azure</groupId>
-        <artifactId>spring-cloud-azure-servicebus-topic-stream-binder</artifactId>
-        <version>1.1.0.RC5</version>
+        <groupId>com.azure.spring</groupId>
+        <artifactId>azure-spring-cloud-stream-binder-servicebus-topic</artifactId>
+        <version>2.0.0-beta.1</version> <!-- {x-version-update;com.azure.spring:azure-spring-cloud-stream-binder-servicebus-topic;current} -->
     </dependency>
     ```
 
-    ![Modificare il file pom.xml per l'argomento del bus di servizio.](media/configure-spring-cloud-stream-binder-java-app-with-service-bus/add-stream-binder-starter-pom-file-dependency-for-service-bus-topic.png)
 
 1. Salvare e chiudere il file *pom.xml*.
 
 ## <a name="configure-the-app-for-your-service-bus"></a>Configurare l'app per il bus di servizio
 
-È possibile configurare l'app in base alla stringa di connessione o a un file di credenziali. In questa esercitazione viene usata una stringa di connessione. Per altre informazioni sull'uso di file di credenziali, vedere l'[esempio di codice Spring Cloud Stream Binder per una coda del bus di servizio](https://github.com/microsoft/spring-cloud-azure/tree/release/1.1.0.RC4/spring-cloud-azure-samples/servicebus-queue-binder-sample#credential-file-based-usage
-) e l'[esempio di codice Spring Cloud Stream Binder per un argomento del bus di servizio](https://github.com/microsoft/spring-cloud-azure/tree/release/1.1.0.RC4/spring-cloud-azure-samples/servicebus-topic-binder-sample#credential-file-based-usage).
+È possibile configurare l'app in base alla stringa di connessione o a un file di credenziali. In questa esercitazione viene usata una stringa di connessione. Per altre informazioni sull'uso di file di credenziali, vedere l'[esempio di codice Spring Cloud Stream Binder per una coda del bus di servizio](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/spring/azure-spring-boot-samples/azure-spring-cloud-sample-servicebus-queue-binder
+) e l'[esempio di codice Spring Cloud Stream Binder per un argomento del bus di servizio](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/spring/azure-spring-cloud-stream-binder-servicebus-topic).
 
 1. Individuare il file *application.properties* nella directory *resources* dell'app, ad esempio:
 

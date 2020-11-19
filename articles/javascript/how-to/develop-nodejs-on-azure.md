@@ -3,13 +3,13 @@ title: Distribuire un'app Node.js aggiunta a contenitore con VS Code e Azure
 description: Completare l'esercitazione end-to-end che illustra come creare un'app Node.js, inserirla in un contenitore e distribuire l'app in Azure
 ms.topic: how-to
 ms.date: 06/25/2017
-ms.custom: seo-javascript-september2019, seo-javascript-october2019, devx-track-js
-ms.openlocfilehash: 658d25726b8cdedb8925ebaac5bdc4da66eafd0f
-ms.sourcegitcommit: c3a1c9051b89870f6bfdb3176463564963b97ba4
+ms.custom: seo-javascript-september2019, seo-javascript-october2019, devx-track-js, devx-track-azurecli
+ms.openlocfilehash: 7ecaa972bb00fa7c07461e3679996332e7f33451
+ms.sourcegitcommit: dc74b60217abce66fe6cc93923e869e63ac86a8f
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92437299"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94872892"
 ---
 # <a name="develop-and-deploy-a-containerized-nodejs-app-with-visual-studio-code-and-azure"></a>Sviluppare e distribuire un'app Node.js in contenitore con Visual Studio Code e Azure
 
@@ -38,11 +38,11 @@ Per iniziare, scaricare il progetto di esempio usando la procedura seguente:
 
 1. Premere **F1** per visualizzare il riquadro comandi.
 
-1. Al prompt del riquadro comandi immettere `gitcl`, selezionare il comando **Git: Clone** e premere **INVIO** .
+1. Al prompt del riquadro comandi immettere `gitcl`, selezionare il comando **Git: Clone** e premere **INVIO**.
 
     ![Comando gitcl nel prompt del riquadro comandi di Visual Studio Code](../media/node-howto-e2e/visual-studio-code-git-clone.png)
 
-1. Quando viene richiesto l' **URL del repository** , immettere `https://github.com/scotch-io/node-todo`, quindi premere **INVIO** .
+1. Quando viene richiesto l'**URL del repository**, immettere `https://github.com/scotch-io/node-todo`, quindi premere **INVIO**.
 
 1. Selezionare o creare la directory locale in cui si vuole clonare il progetto.
 
@@ -54,7 +54,7 @@ Trattandosi di un progetto Node.js, è prima di tutto necessario verificare che 
 
 1. Premere **CTRL**+ **`** per visualizzare il terminale integrato di Visual Studio Code. 
 
-1. Immettere `yarn` e premere **INVIO** .  
+1. Immettere `yarn` e premere **INVIO**.  
 
      ![Esecuzione del comando yarn in Visual Studio Code](../media/node-howto-e2e/visual-studio-code-install-yarn.png)
 
@@ -66,7 +66,7 @@ La procedura seguente illustra come verificare il file *yarn.lock* nel controllo
 
 1. In Visual Studio Code passare alla scheda integrata Git, ovvero la scheda con il logo Git.
 
-1. Nella casella **Messaggio** , immettere un messaggio di commit e premere **CTRL**+**INVIO** .
+1. Nella casella **Messaggio**, immettere un messaggio di commit e premere **CTRL**+**INVIO**.
 
     ![Aggiunta del file yarn.lock a Git](../media/node-howto-e2e/visual-studio-code-add-yarn-lock.png)
 
@@ -74,19 +74,19 @@ La procedura seguente illustra come verificare il file *yarn.lock* nel controllo
 
 Per orientarsi nella base di codici, si esamineranno alcuni esempi di funzionalità di esplorazione messe a disposizione da Visual Studio Code.
 
-1. Premere **CTRL**+**P** .
+1. Premere **CTRL**+**P**.
 
 1. Immettere `.js` per visualizzare tutti i file JSON/JavaScript presenti nel progetto e la directory padre di ogni file 
 
     ![Visualizzare tutti i file con estensione js* in Visual Studio Code](../media/node-howto-e2e/visual-studio-code-javascript-json-file-list.png)
 
-1. Selezionare *server.js* , ovvero lo script di avvio dell'app.
+1. Selezionare *server.js*, ovvero lo script di avvio dell'app.
 
 1. Posizionare il mouse sulla variabile **database** importata alla riga 6 per visualizzarne il tipo. La possibilità di analizzare rapidamente variabili, moduli e tipi in un file è utile durante lo sviluppo dei progetti. 
 
     ![Individuare il tipo in Visual Studio Code con la guida visualizzata al passaggio del mouse](../media/node-howto-e2e/visual-studio-code-hover-help.png)
 
-1. Facendo clic all'interno di una variabile, ad esempio **database** , è possibile vedere tutti i riferimenti a tale variabile presenti nello stesso file. Per visualizzare tutti i riferimenti a una variabile nel progetto, fare clic con il pulsante destro del mouse sulla variabile e dal menu di scelta rapida scegliere **Trova tutti i riferimenti** .
+1. Facendo clic all'interno di una variabile, ad esempio **database**, è possibile vedere tutti i riferimenti a tale variabile presenti nello stesso file. Per visualizzare tutti i riferimenti a una variabile nel progetto, fare clic con il pulsante destro del mouse sulla variabile e dal menu di scelta rapida scegliere **Trova tutti i riferimenti**.
 
     ![Trovare tutti i riferimenti con Visual Studio Code](../media/node-howto-e2e/visual-studio-code-find-all-references.png)
 
@@ -132,7 +132,7 @@ Come con il codice precedente, si noterà che il completamento automatico funzio
 
 ## <a name="running-the-app"></a>Esecuzione dell'app
 
-Dopo aver esaminato il codice, eseguire l'app. Per eseguire l'app da Visual Studio Code premere **F5** . Quando si esegue il codice tramite **F5** (modalità di debug), Visual Studio Code avvia l'app e visualizza la finestra **Console di debug** con il canale stdout per l'app.
+Dopo aver esaminato il codice, eseguire l'app. Per eseguire l'app da Visual Studio Code premere **F5**. Quando si esegue il codice tramite **F5** (modalità di debug), Visual Studio Code avvia l'app e visualizza la finestra **Console di debug** con il canale stdout per l'app.
 
 ![Monitoraggio di stdout di un'app tramite la console di debug](../media/node-howto-e2e/visual-studio-code-debug-console.png)
 
@@ -140,7 +140,7 @@ Inoltre, la finestra **Console di debug** è collegata alla nuova app in esecuzi
 
 ![Immissione del codice nella console di debug](../media/node-howto-e2e/visual-studio-code-debug-console-autocomplete.png)
 
-È stato possibile premere **F5** per eseguire l'app perché il file attualmente aperto è un file JavaScript ( *server.js* ). Di conseguenza, Visual Studio Code presuppone che il progetto sia un'app Node.js. Se si chiudono tutti i file JavaScript in Visual Studio Code e quindi si preme **F5** , Visual Studio Code chiederà di specificare l'ambiente:
+È stato possibile premere **F5** per eseguire l'app perché il file attualmente aperto è un file JavaScript (*server.js*). Di conseguenza, Visual Studio Code presuppone che il progetto sia un'app Node.js. Se si chiudono tutti i file JavaScript in Visual Studio Code e quindi si preme **F5**, Visual Studio Code chiederà di specificare l'ambiente:
 
 ![Indicazione dell'ambiente di runtime](../media/node-howto-e2e/visual-studio-code-select-environment.png)
 
@@ -150,7 +150,7 @@ Aprire un browser e passare a `http://localhost:8080` per vedere l'app in esecuz
 
 ## <a name="debugging"></a>Debug
 
-Oltre a poter eseguire l'app e interagire con essa tramite la console integrata, Visual Studio Code consente di impostare punti di interruzione direttamente all'interno del codice. Premere ad esempio **CTRL**+**P** per visualizzare la selezione file. Dopo aver visualizzato la selezione file, digitare `route` e selezionare il file *route.js* .
+Oltre a poter eseguire l'app e interagire con essa tramite la console integrata, Visual Studio Code consente di impostare punti di interruzione direttamente all'interno del codice. Premere ad esempio **CTRL**+**P** per visualizzare la selezione file. Dopo aver visualizzato la selezione file, digitare `route` e selezionare il file *route.js*.
 
 Impostare un punto di interruzione alla riga 28, che rappresenta la route Express che viene chiamata quando l'app prova ad aggiungere una voce Todo. Per impostare un punto di interruzione è sufficiente fare clic sull'area a sinistra del numero di riga nell'editor come illustrato nell'immagine seguente.
 
@@ -173,13 +173,13 @@ Passare alla scheda **Estensioni** e digitare `chrome` nella casella di ricerca:
 
 ![Estensione di debug di Chrome per Visual Studio Code](../media/node-howto-e2e/visual-studio-code-chrome-extension.png)
 
-Selezionare l'estensione denominata **Debugger for Chrome** e selezionare **Installa** . Dopo aver installato l'estensione di debug di Chrome, selezionare **Ricarica** per chiudere e riaprire Visual Studio Code e attivare così l'estensione.
+Selezionare l'estensione denominata **Debugger for Chrome** e selezionare **Installa**. Dopo aver installato l'estensione di debug di Chrome, selezionare **Ricarica** per chiudere e riaprire Visual Studio Code e attivare così l'estensione.
 
 ![Ricaricamento di Visual Studio Code dopo l'installazione dell'estensione di debug di Chrome](../media/node-howto-e2e/visual-studio-code-reload-extension.png)
 
 Anche se è stato possibile eseguire il codice Node.js ed effettuarne il debug senza una configurazione specifica di Visual Studio Code, per eseguire il debug di un'app Web front-end è necessario generare un file *launch.json* che indica a Visual Studio Code come eseguire l'app.
 
-Per generare il file *launch.json* , passare alla scheda **Debug** , fare clic sull'icona dell'ingranaggio (con un puntino rosso in cima) e selezionare l'ambiente **node.js** .
+Per generare il file *launch.json*, passare alla scheda **Debug**, fare clic sull'icona dell'ingranaggio (con un puntino rosso in cima) e selezionare l'ambiente **node.js**.
 
 ![Opzione di Visual Studio Code per configurare il file launch.json](../media/node-howto-e2e/visual-studio-code-debug-gear.png)
 
@@ -206,9 +206,9 @@ Dopo la creazione, il file *launch.json* sarà simile al seguente e indicherà a
 }
 ```
 
-Si noti che Visual Studio Code è riuscito a rilevare che lo script di avvio dell'app è *server.js* .
+Si noti che Visual Studio Code è riuscito a rilevare che lo script di avvio dell'app è *server.js*.
 
-Con il file *launch.json* aperto, selezionare **Aggiungi configurazione** in basso a destra e selezionare **Chrome: Launch with userDataDir** .
+Con il file *launch.json* aperto, selezionare **Aggiungi configurazione** in basso a destra e selezionare **Chrome: Launch with userDataDir**.
 
 ![Aggiunta di una configurazione di Chrome a Visual Studio Code](../media/node-howto-e2e/visual-studio-code-add-chrome-config.png)
 
@@ -229,7 +229,7 @@ L'aggiunta di una nuova configurazione di esecuzione per Chrome consente di eseg
 
 Per avviare/eseguire il debug del front-end e del back-end contemporaneamente, è necessario creare una configurazione di esecuzione *composta* che indichi a Visual Studio Code quale set di configurazioni eseguire in parallelo.
 
-Aggiungere il frammento seguente come proprietà di primo livello nel file *launch.json* , ovvero come elemento di pari livello della proprietà **configurations** esistente.
+Aggiungere il frammento seguente come proprietà di primo livello nel file *launch.json*, ovvero come elemento di pari livello della proprietà **configurations** esistente.
 
 ```json
 "compounds": [
@@ -240,13 +240,13 @@ Aggiungere il frammento seguente come proprietà di primo livello nel file *laun
 ]
 ```
 
-I valori di stringa specificati nella matrice **compounds.configurations** si riferiscono al **nome** delle singole voci nell'elenco **configurations** . Se questi nomi sono stati modificati, è necessario apportare le modifiche appropriate nella matrice. Ad esempio, passare alla scheda Debug e impostare la configurazione su **Full-Stack** (il nome della configurazione composta), quindi premere **F5** per eseguirla.
+I valori di stringa specificati nella matrice **compounds.configurations** si riferiscono al **nome** delle singole voci nell'elenco **configurations**. Se questi nomi sono stati modificati, è necessario apportare le modifiche appropriate nella matrice. Ad esempio, passare alla scheda Debug e impostare la configurazione su **Full-Stack** (il nome della configurazione composta), quindi premere **F5** per eseguirla.
 
 ![Esecuzione di una configurazione in Visual Studio Code](../media/node-howto-e2e/visual-studio-code-full-stack-configuration.png)
 
 Con l'esecuzione della configurazione vengono avviati l'app Node.js (come si può vedere nell'output della console di debug) e Chrome, che è configurato per passare all'app Node.js all'indirizzo `http://localhost:8080`.
 
-Premere **CTRL**+**P** , quindi immettere o selezionare *todos.js* , ovvero il controller Angular principale per il front-end dell'app.
+Premere **CTRL**+**P**, quindi immettere o selezionare *todos.js*, ovvero il controller Angular principale per il front-end dell'app.
 
 Impostare un punto di interruzione alla riga 11, ovvero nel punto di ingresso di una nuova voce Todo.
 
@@ -258,7 +258,7 @@ Come per il debug di Node.js, è possibile posizionare il mouse su espressioni, 
 
 Esistono due aspetti importanti da notare:
 
-1. Il riquadro **Stack di chiamate** visualizza due stack differenti, **Node** e **Chrome** , e indica quello attualmente sospeso.
+1. Il riquadro **Stack di chiamate** visualizza due stack differenti, **Node** e **Chrome**, e indica quello attualmente sospeso.
 
 1. È possibile passare tra il codice front-end e back-end: premere **F5** per raggiungere il punto di interruzione impostato precedentemente nella route Express.
 
@@ -270,7 +270,7 @@ Il concetto di debugger composto non è limitato a due processi di destinazione 
 
 Questa sezione è incentrata sull'esperienza offerta da Visual Studio Code per lo sviluppo con [Docker](https://www.docker.com/). Gli sviluppatori di Node.js usano Docker per fornire distribuzioni di app portabili per lo sviluppo, l'integrazione continua (CI) e gli ambienti di produzione. Dato che Docker presenta una curva di apprendimento ripida per alcuni, Visual Studio Code fornisce un'estensione per semplificare l'uso di Docker nelle app.
 
-Tornare alla scheda **Estensioni** , cercare `docker` e selezionare l'estensione **Docker** .
+Tornare alla scheda **Estensioni**, cercare `docker` e selezionare l'estensione **Docker**.
 
 Installare l'estensione Docker e quindi ricaricare Visual Studio Code.
 
@@ -288,7 +288,7 @@ Il comando Docker genera un *Dockerfile* completo e i file Docker-compose che po
 
 ![Dockerfile generato in Visual Studio Code](../media/node-howto-e2e/visual-studio-code-complete-dockerfile.png)
 
-L'estensione Docker fornisce anche il completamento automatico per il *Dockerfile* e per i file *docker-compose.yml* . Ad esempio, aprire il *Dockerfile* e sostituire la riga 2 di:
+L'estensione Docker fornisce anche il completamento automatico per il *Dockerfile* e per i file *docker-compose.yml*. Ad esempio, aprire il *Dockerfile* e sostituire la riga 2 di:
 
 ```docker
 FROM node:latest
@@ -308,13 +308,13 @@ Selezionare `mhart/alpine-node`, che offre tutti gli elementi di cui l'app neces
 
 È di norma consigliabile usare immagini di piccole dimensioni perché si vuole che la compilazione e la distribuzione delle app siano il più possibile rapide, rendendo così distribuzione e ridimensionamento più veloci.
 
-Ora che è stato generato il *Dockerfile* , è necessario creare l'immagine Docker effettiva. Anche in questo caso è possibile usare un comando installato dall'estensione Docker in Visual Studio Code. Premere **F1** , immettere `dockerb` nel riquadro comandi e selezionare il comando **Docker: Build Image** . Scegliere il *Dockerfile* appena generato e modificato. Specificare un tag che includa il nome utente DockerHub, ad esempio `lostintangent/node`. Premere **INVIO** per avviare la finestra del terminale integrato che visualizza l'output dell'immagine Docker in fase di creazione.
+Ora che è stato generato il *Dockerfile*, è necessario creare l'immagine Docker effettiva. Anche in questo caso è possibile usare un comando installato dall'estensione Docker in Visual Studio Code. Premere **F1**, immettere `dockerb` nel riquadro comandi e selezionare il comando **Docker: Build Image**. Scegliere il *Dockerfile* appena generato e modificato. Specificare un tag che includa il nome utente DockerHub, ad esempio `lostintangent/node`. Premere **INVIO** per avviare la finestra del terminale integrato che visualizza l'output dell'immagine Docker in fase di creazione.
 
 ![Output di creazione dell'immagine Docker](../media/node-howto-e2e/docker-build-image-output.png)
 
 Si noti che il comando ha automatizzato il processo di esecuzione di `docker build`. Si tratta di un altro esempio di strumento di incremento della produttività facoltativo. In alternativa è possibile usare direttamente l'interfaccia della riga di comando di Docker.
 
-Per rendere questa immagine facilmente acquisibile per le distribuzioni, a questo punto è necessario solo effettuare il push dell'immagine in DockerHub. Per eseguire il push dell'immagine, assicurarsi di avere già effettuato l'autenticazione con DockerHub eseguendo `docker login` dall'interfaccia della riga di comando e immettendo le credenziali dell'account. In Visual Studio Code è quindi possibile visualizzare il riquadro comandi, immettere `dockerpush` e selezionare il comando `Docker: Push`. Selezionare il tag di immagine appena creato, ad esempio `lostintangent/node`, e premere **INVIO** . Il comando automatizza la chiamata di `docker push` e visualizza l'output nel terminale integrato.
+Per rendere questa immagine facilmente acquisibile per le distribuzioni, a questo punto è necessario solo effettuare il push dell'immagine in DockerHub. Per eseguire il push dell'immagine, assicurarsi di avere già effettuato l'autenticazione con DockerHub eseguendo `docker login` dall'interfaccia della riga di comando e immettendo le credenziali dell'account. In Visual Studio Code è quindi possibile visualizzare il riquadro comandi, immettere `dockerpush` e selezionare il comando `Docker: Push`. Selezionare il tag di immagine appena creato, ad esempio `lostintangent/node`, e premere **INVIO**. Il comando automatizza la chiamata di `docker push` e visualizza l'output nel terminale integrato.
 
 ## <a name="deploying-the-app"></a>Distribuzione dell'app
 
@@ -417,7 +417,7 @@ az acr create -n $ACR_NAME -l westus --admin-enabled
 ```
 
 > [!NOTE]
-> Anche se l'esempio di questo argomento usa l' **account amministratore** per obiettivi di semplificazione, l'uso di questo account non è consigliabile per i registri di produzione.
+> Anche se l'esempio di questo argomento usa l'**account amministratore** per obiettivi di semplificazione, l'uso di questo account non è consigliabile per i registri di produzione.
 
 Il comando `az acr create` visualizza l'URL del server di accesso (tramite la colonna `LOGIN SERVER`) usato per accedere con l'interfaccia della riga di comando di Docker, ad esempio `ninademo.azurecr.io`. Il comando genera anche le credenziali di amministratore usate per l'autenticazione. Per recuperare tali credenziali, eseguire questo comando e annotare il nome utente e la password visualizzati:
 
@@ -480,7 +480,7 @@ Aprire un browser e passare al dominio personalizzato per verificare che ora si 
 
 ## <a name="scaling-up-and-out"></a>Aumentare le prestazioni e il numero di istanze
 
-A un certo punto, l'app Web può diventare talmente diffusa che le risorse allocate (CPU e RAM) non sono più sufficienti a gestire l'aumento del traffico e delle esigenze operative. Il piano del servizio app creato in precedenza ( **B1** ) prevede un core di CPU e 1,75 GB di RAM, che possono diventare rapidamente sovraccarichi. Il piano **B2** offre il doppio di RAM e CPU, quindi se si nota che l'app inizia a esaurire queste risorse è possibile aumentare le prestazioni della macchina virtuale sottostante eseguendo questo comando:
+A un certo punto, l'app Web può diventare talmente diffusa che le risorse allocate (CPU e RAM) non sono più sufficienti a gestire l'aumento del traffico e delle esigenze operative. Il piano del servizio app creato in precedenza (**B1**) prevede un core di CPU e 1,75 GB di RAM, che possono diventare rapidamente sovraccarichi. Il piano **B2** offre il doppio di RAM e CPU, quindi se si nota che l'app inizia a esaurire queste risorse è possibile aumentare le prestazioni della macchina virtuale sottostante eseguendo questo comando:
 
 ```shell
 az appservice plan update -n nina-demo-plan --sku B2
@@ -491,7 +491,7 @@ az appservice plan update -n nina-demo-plan --sku B2
 
 Dopo pochi istanti verrà eseguita la migrazione dell'app Web all'hardware richiesto e sarà possibile iniziare a sfruttare le risorse associate. Le prestazioni possono anche essere ridotte eseguendo lo stesso comando indicato in precedenza, specificando un'opzione `--sku` che offre meno risorse a un prezzo inferiore.
 
-Oltre ad aumentare le prestazioni per le macchine virtuali, finché l'app Web è senza stato, è anche possibile *aumentare il numero di istanze* aggiungendo più istanze di macchina virtuale sottostanti. Il piano del servizio app creato in precedenza include una sola macchina virtuale (un *ruolo di lavoro* ) e quindi tutto il traffico in ingresso è vincolato ai limiti delle risorse disponibili per quella sola istanza. Se si vuole aggiungere una seconda istanza di macchina virtuale, è possibile eseguire lo stesso comando eseguito in precedenza, ma invece di aumentare lo SKU si aumenta il numero di macchine virtuali di lavoro.
+Oltre ad aumentare le prestazioni per le macchine virtuali, finché l'app Web è senza stato, è anche possibile *aumentare il numero di istanze* aggiungendo più istanze di macchina virtuale sottostanti. Il piano del servizio app creato in precedenza include una sola macchina virtuale (un *ruolo di lavoro*) e quindi tutto il traffico in ingresso è vincolato ai limiti delle risorse disponibili per quella sola istanza. Se si vuole aggiungere una seconda istanza di macchina virtuale, è possibile eseguire lo stesso comando eseguito in precedenza, ma invece di aumentare lo SKU si aumenta il numero di macchine virtuali di lavoro.
 
 ```shell
 az appservice plan update -n nina-demo-plan --number-of-workers 2
