@@ -2,12 +2,19 @@
   href: index.yml
   items:
     - name: GitHub Actions per Azure
-      href: github-actions.md
-    - name: Distribuire app da GitHub ad Azure
-      href: deploy-to-azure.md
-    - name: Integrazioni degli strumenti per GitHub Actions
-      href: deploy-with-visual-studio.md
-    - name: Integrazione di Azure DevOps e GitHub
+      expanded: true
+      items:
+        - name: Introduzione a GitHub Actions per Azure
+          href: github-actions.md
+        - name: Eseguire l'autenticazione da Azure a GitHub
+          href: connect-from-azure.md
+        - name: Distribuire le app in Azure
+          href: deploy-to-azure.md
+        - name: Distribuire database in Azure
+          href: database-actions-deploy.md
+        - name: Gestire Criteri di Azure
+          href: manage-azure-policy.md
+    - name: Azure DevOps e GitHub
       href: integrate-azure-devops.md
-    - name: Connettersi da Azure a GitHub
-      href: connect-from-azure.md
+    - name: Visual Studio e Visual Studio Code
+      href: deploy-with-visual-studio.md

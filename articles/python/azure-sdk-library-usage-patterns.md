@@ -1,15 +1,15 @@
 ---
 title: Modelli di utilizzo delle librerie di Azure per Python
 description: Panoramica dei modelli di utilizzo comuni delle librerie di Azure SDK per Python
-ms.date: 09/21/2020
+ms.date: 11/12/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: ae51bee0aea2717c09242f8928a617bf8211f372
-ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
+ms.openlocfilehash: 6f1a2c07bbda4ebe409722d2381e046ee45f7902
+ms.sourcegitcommit: 6514a061ba5b8003ce29d67c81a9f0795c3e3e09
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91764777"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94601393"
 ---
 # <a name="azure-libraries-for-python-usage-patterns"></a>Modelli di utilizzo delle librerie di Azure per Python
 
@@ -37,9 +37,11 @@ pip install azure-storage-blob
 
 ## <a name="asynchronous-operations"></a>Operazioni asincrone
 
-Molte operazioni richiamate tramite oggetti client e di gestione client (ad esempio [`WebSiteManagementClient.web_apps.create_or_update`](/python/api/azure-mgmt-web/azure.mgmt.web.v2019_08_01.operations.webappsoperations#create-or-update-resource-group-name--name--site-envelope--custom-headers-none--raw-false--polling-true----operation-config-)) restituiscono un oggetto di tipo `AzureOperationPoller[<type>]`, dove `<type>` è specifico dell'operazione in questione.
+Molte operazioni richiamate tramite oggetti client e di gestione client (ad esempio [`ComputeManagementClient.virtual_machines.begin_create_or_update`](/python/api/azure-mgmt-compute/azure.mgmt.compute.v2020_06_01.operations.virtualmachinesoperations#begin-create-or-update-resource-group-name--vm-name--parameters----kwargs-) e [`WebSiteManagementClient.web_apps.create_or_update`](/python/api/azure-mgmt-web/azure.mgmt.web.v2019_08_01.operations.webappsoperations#create-or-update-resource-group-name--name--site-envelope--custom-headers-none--raw-false--polling-true----operation-config-)) restituiscono un oggetto di tipo `AzureOperationPoller[<type>]`, dove `<type>` è specifico dell'operazione in questione.
 
-Un tipo restituito [`AzureOperationPoller`](/python/api/msrestazure/msrestazure.azure_operation.azureoperationpoller) indica che l'operazione è asincrona. Di conseguenza, è necessario chiamare il metodo `result` dello strumento per il polling per attendere che il risultato effettivo dell'operazione diventi disponibile.
+Entrambi questi metodi sono asincroni. I nomi dei metodi sono diversi a causa delle differenze di versione. Le librerie precedenti che non sono basate su azure.core in genere usano un nome simile a `create_or_update`. Le librerie basate su azure.core aggiungono il prefisso `begin_` ai nomi dei metodi per precisare che sono asincroni. La migrazione del codice precedente a una libreria basata su azure.core più recente indica in genere l'aggiunta del prefisso `begin_` ai nomi dei metodi, perché la maggior parte delle firme del metodo rimane invariata.
+
+In entrambi i casi, un tipo restituito [`AzureOperationPoller`](/python/api/msrestazure/msrestazure.azure_operation.azureoperationpoller) indica decisamente che l'operazione è asincrona. Di conseguenza, è necessario chiamare il metodo `result` dello strumento per il polling per attendere la conclusione dell'operazione e l'ottenimento del risultato.
 
 Il codice seguente, tratto da [Esempio: Effettuare il provisioning e la distribuzione di un'app Web](azure-sdk-example-web-app.md), illustra un esempio dell'utilizzo dello strumento per il polling per attendere un risultato:
 

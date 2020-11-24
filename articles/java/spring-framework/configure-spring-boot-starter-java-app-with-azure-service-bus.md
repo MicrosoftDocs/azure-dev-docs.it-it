@@ -4,15 +4,15 @@ description: Questo articolo illustra come usare l'utilità di avvio Spring per 
 author: seanli1988
 manager: kyliel
 ms.author: seal
-ms.date: 08/21/2019
+ms.date: 10/13/2019
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: 1d849ed17a2201be1595b6bc80e613691ac778c8
-ms.sourcegitcommit: e1175aa94709b14b283645986a34a385999fb3f7
+ms.openlocfilehash: 4d035ae35c8e1e8a4db886f7b5743b143de1992c
+ms.sourcegitcommit: 8e1d3a384ccb0e083589418d65a70b3a01afebff
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93192453"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94560289"
 ---
 # <a name="how-to-use-the-spring-boot-starter-for-azure-service-bus-jms"></a>Come usare l'utilità di avvio Spring Boot per il JMS del bus di servizio di Azure
 
@@ -28,11 +28,11 @@ Questo articolo illustra come usare l'utilità di avvio Spring Boot per il JMS d
 
 Per questo articolo sono necessari i prerequisiti seguenti:
 
-1. Se non si ha una sottoscrizione di Azure, è possibile attivare i [vantaggi per i sottoscrittori di MSDN](https://azure.microsoft.com/pricing/member-offers/credit-for-visual-studio-subscribers/) oppure iscriversi per ottenere un [account gratuito](https://azure.microsoft.com/free/).
+1. Sottoscrizione di Azure. Se non si ha una sottoscrizione di Azure, è possibile attivare i [vantaggi per i sottoscrittori di MSDN](https://azure.microsoft.com/pricing/member-offers/credit-for-visual-studio-subscribers/) oppure iscriversi per ottenere un [account gratuito](https://azure.microsoft.com/free/).
 
 1. Una versione supportata di Java Development Kit (JDK), versione 8 o successive. Per altre informazioni sulle versioni di JDK utilizzabili per lo sviluppo in Azure, vedere <https://aka.ms/azure-jdks>.
 
-1. [Maven](http://maven.apache.org/) di Apache, versione 3.2 o successive.
+1. [Apache Maven](http://maven.apache.org/), versione 3.2 o successiva.
 
 1. Se è già presente una coda o un argomento configurato del bus di servizio, assicurarsi che lo spazio dei nomi del bus di servizio soddisfi i requisiti seguenti:
 
@@ -42,17 +42,20 @@ Per questo articolo sono necessari i prerequisiti seguenti:
 
 1. Se non è presente una coda o un argomento configurato del bus di servizio, usare il portale di Azure per [creare una coda del bus di servizio](/azure/service-bus-messaging/service-bus-quickstart-portal) o per [creare un argomento del bus di servizio](/azure/service-bus-messaging/service-bus-quickstart-topics-subscriptions-portal). Verificare che lo spazio dei nomi soddisfi i requisiti specificati nel passaggio precedente. Prendere nota inoltre della stringa di connessione nello spazio dei nomi. Sarà necessaria per l'app di test di questa esercitazione.
 
-1. Se non si dispone di un'applicazione Spring Boot, [creare un progetto **Maven** con Spring Initializr](https://start.spring.io/). Ricordarsi di selezionare **Maven Project** (Progetto Maven) e in **Dependencies** (Dipendenze) aggiungere la dipendenza **Web**.
+1. Se non è disponibile un'applicazione Spring Boot, creare un progetto **Maven** con [Spring Initializr](https://start.spring.io/). Ricordarsi di selezionare **Maven Project** (Progetto Maven) e in **Dependencies** (Dipendenze) aggiungere la dipendenza **Web**.
+
+   > [!NOTE]
+   > Spring Initializr usa Java 11 come versione predefinita. Per usare le utilità di avvio di Spring Boot descritte in questo argomento, è necessario selezionare invece Java 8.
 
 ## <a name="use-the-azure-service-bus-jms-starter"></a>Usare l'utilità di avvio per il JMS del bus di servizio di Azure
 
 1. Individuare il file *pom.xml* nella directory padre dell'app, ad esempio:
 
-    `C:\SpringBoot\servicebus\pom.xml`
+    *C:\SpringBoot\servicebus\pom.xml*
 
     -oppure-
 
-    `/users/example/home/servicebus/pom.xml`
+    */users/example/home/servicebus/pom.xml*
 
 1. Aprire il file *pom.xml* in un editor di testo.
 
@@ -62,7 +65,7 @@ Per questo articolo sono necessari i prerequisiti seguenti:
     <dependency>
         <groupId>com.microsoft.azure</groupId>
         <artifactId>azure-servicebus-jms-spring-boot-starter</artifactId>
-        <version>2.1.7</version>
+        <version>2.3.5</version>
     </dependency>
     ```
 
@@ -78,11 +81,11 @@ In questa sezione viene illustrato come configurare l'app per l'uso di una coda 
 
 1. Individuare *application.properties* nella directory *resources* dell'app, ad esempio:
 
-    `C:\SpringBoot\servicebus\application.properties`
+    *C:\SpringBoot\servicebus\application.properties*
 
     -oppure-
 
-    `/users/example/home/servicebus/application.properties`
+    */users/example/home/servicebus/application.properties*
 
 1. Aprire il file *application.properties* in un editor di testo.
 
@@ -106,11 +109,11 @@ In questa sezione viene illustrato come configurare l'app per l'uso di una coda 
 
 1. Individuare *application.properties* nella directory *resources* dell'app, ad esempio:
 
-    `C:\SpringBoot\servicebus\application.properties`
+    *C:\SpringBoot\servicebus\application.properties*
 
     -oppure-
 
-    `/users/example/home/servicebus/application.properties`
+    */users/example/home/servicebus/application.properties*
 
 1. Aprire il file *application.properties* in un editor di testo.
 
@@ -140,11 +143,11 @@ In questa sezione vengono create le classi Java necessarie per l'invio di messag
 
 1. Individuare il file Java dell'applicazione main nella directory del pacchetto dell'app, ad esempio:
 
-    `C:\SpringBoot\servicebus\src\main\java\com\wingtiptoys\servicebus\ServiceBusJmsStarterApplication.java`
+    *C:\SpringBoot\servicebus\src\main\java\com\wingtiptoys\servicebus\ServiceBusJmsStarterApplication.java*
 
     -oppure-
 
-    `/users/example/home/servicebus/src/main/java/com/wingtiptoys/servicebus/ServiceBusJmsStarterApplication.java`
+    */users/example/home/servicebus/src/main/java/com/wingtiptoys/servicebus/ServiceBusJmsStarterApplication.java*
 
 1. Aprire il file Java dell'applicazione principale in un editor di testo.
 
@@ -318,13 +321,17 @@ In questa sezione vengono create le classi Java necessarie per l'invio di messag
 
 ## <a name="build-and-test-your-application"></a>Compilare e testare l'applicazione
 
-1. Aprire il prompt dei comandi e cambiare directory passando alla posizione in cui si trova il file *pom.xml* , ad esempio:
+1. Aprire il prompt dei comandi e cambiare directory passando alla posizione in cui si trova il file *pom.xml*, ad esempio:
 
-    `cd C:\SpringBoot\servicebus`
+    ```cmd
+    cd C:\SpringBoot\servicebus 
+    ```
 
     -oppure-
 
-    `cd cd /users/example/home/servicebus`
+    ```bash
+    cd /users/example/home/servicebus 
+    ```
 
 1. Compilare l'applicazione Spring Boot con Maven ed eseguirla:
 
@@ -332,7 +339,7 @@ In questa sezione vengono create le classi Java necessarie per l'invio di messag
     mvn clean spring-boot:run
     ```
 
-1. Quando l'applicazione è in esecuzione, è possibile testarla usando *curl* :
+1. Quando l'applicazione è in esecuzione, è possibile testarla usando *curl*:
 
     ```shell
     curl -X POST localhost:8080/messages?message=hello

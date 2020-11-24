@@ -148,6 +148,8 @@
           href: azure-sdk-example-database.md
         - name: Effettuare il provisioning di una macchina virtuale
           href: azure-sdk-example-virtual-machines.md
+        - name: Usare Managed Disks di Azure con una VM
+          href: azure-sdk-samples-managed-disks.md
     - name: Configurare la registrazione
       href: azure-sdk-logging.md
     - name: Configurare i proxy

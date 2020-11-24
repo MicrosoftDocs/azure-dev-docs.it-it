@@ -1,23 +1,23 @@
 ---
 title: Come autenticare le applicazioni Python con i servizi di Azure
 description: Come acquisire gli oggetti credenziali necessari per autenticare un'app Python con i servizi di Azure usando le librerie di Azure
-ms.date: 10/05/2020
+ms.date: 11/12/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 8122db43c979bcf55d5aa3d1f4f5fa9aa0c200dd
-ms.sourcegitcommit: cbcde17e91e7262a596d813243fd713ce5e97d06
+ms.openlocfilehash: 7c609c7e218be1fd5e7c259a5aa7c5bec3e507d2
+ms.sourcegitcommit: 6514a061ba5b8003ce29d67c81a9f0795c3e3e09
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93405901"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94601363"
 ---
 # <a name="how-to-authenticate-and-authorize-python-apps-on-azure"></a>Come autenticare e autorizzare le app Python in Azure
 
 Quasi tutte le applicazione cloud distribuite in Azure devono accedere ad altre risorse di Azure, ad esempio le risorse di archiviazione, i database, i segreti archiviati e così via. Per accedere a tali risorse, l'applicazione deve essere autenticata e autorizzata:
 
-- L' **autenticazione** verifica l'identità dell'app con Azure Active Directory.
+- L'**autenticazione** verifica l'identità dell'app con Azure Active Directory.
 
-- L' **autorizzazione** determina quali operazioni possono essere eseguite dall'app autenticata su una determinata risorsa. Le operazioni autorizzate sono definite dai **ruoli** assegnati all'identità dell'app per tale risorsa. In alcuni casi, ad esempio per Azure Key Vault, l'autorizzazione è determinata anche da **criteri di accesso** aggiuntivi assegnati all'identità dell'app.
+- L'**autorizzazione** determina quali operazioni possono essere eseguite dall'app autenticata su una determinata risorsa. Le operazioni autorizzate sono definite dai **ruoli** assegnati all'identità dell'app per tale risorsa. In alcuni casi, ad esempio per Azure Key Vault, l'autorizzazione è determinata anche da **criteri di accesso** aggiuntivi assegnati all'identità dell'app.
 
 Questo articolo illustra i dettagli di autenticazione e autorizzazione:
 
@@ -28,13 +28,13 @@ Questo articolo illustra i dettagli di autenticazione e autorizzazione:
 
 ## <a name="how-to-assign-an-app-identity"></a>Come assegnare un'identità all'app
 
-In Azure un'identità dell'app è definita da un' **entità servizio**. Un'entità servizio è un tipo specifico di "entità di sicurezza" usato per identificare un'app o un servizio, ovvero una porzione di codice, anziché un utente o un gruppo di utenti.
+In Azure un'identità dell'app è definita da un'**entità servizio**. Un'entità servizio è un tipo specifico di "entità di sicurezza" usato per identificare un'app o un servizio, ovvero una porzione di codice, anziché un utente o un gruppo di utenti.
 
 L'entità servizio interessata dipende dalla posizione in cui è viene eseguita l'app, come descritto nelle sezioni seguenti.
 
 ### <a name="identity-when-running-the-app-on-azure"></a>Identità quando l'app viene eseguita in Azure
 
-Quando è in esecuzione nel cloud, ad esempio nell'ambiente di produzione, un'app in genere usa un' **identità gestita assegnata dal sistema**. Con un'[identità gestita](/azure/active-directory/managed-identities-azure-resources/overview), quando si assegnano ruoli e autorizzazioni per le risorse viene usato il nome dell'app. Azure gestisce automaticamente l'entità servizio sottostante ed esegue automaticamente l'autenticazione dell'app con le altre risorse di Azure. Di conseguenza, non è necessario gestire direttamente l'entità servizio. Inoltre, dal momento che il codice dell'app non deve mai gestire i token di accesso, i segreti o le stringhe di connessione per le risorse di Azure, il rischio che tali informazioni possano essere divulgate o compromesse in altro modo risulta ridotto.
+Quando è in esecuzione nel cloud, ad esempio nell'ambiente di produzione, un'app in genere usa un'**identità gestita assegnata dal sistema**. Con un'[identità gestita](/azure/active-directory/managed-identities-azure-resources/overview), quando si assegnano ruoli e autorizzazioni per le risorse viene usato il nome dell'app. Azure gestisce automaticamente l'entità servizio sottostante ed esegue automaticamente l'autenticazione dell'app con le altre risorse di Azure. Di conseguenza, non è necessario gestire direttamente l'entità servizio. Inoltre, dal momento che il codice dell'app non deve mai gestire i token di accesso, i segreti o le stringhe di connessione per le risorse di Azure, il rischio che tali informazioni possano essere divulgate o compromesse in altro modo risulta ridotto.
 
 La configurazione dell'identità gestita dipende dal servizio usato per ospitare l'app. Per i collegamenti alle istruzioni relative a ogni servizio, vedere l'articolo [Servizi che supportano identità gestite](/azure/active-directory/managed-identities-azure-resources/services-support-managed-identities). Per le app Web distribuite nel Servizio app di Azure, ad esempio, l'identità gestita viene abilitata tramite l'opzione **Identità** > **Assegnata dal sistema** nel portale di Azure oppure usando il comando `az webapp identity assign` nell'interfaccia della riga di comando di Azure.
 
@@ -146,7 +146,7 @@ In entrambi i casi, all'identità interessata è necessario assegnare le autoriz
 
 ### <a name="using-defaultazurecredential-with-sdk-management-libraries"></a>Uso di DefaultAzureCredential con le librerie di gestione dell'SDK
 
-`DefaultAzureCredential` è compatibile con le versioni delle librerie di gestione di Azure SDK (quelle nel cui nome è presente il termine "mgmt") che sono incluse nell'elenco [Librerie che usano azure.core](azure-sdk-library-package-index.md#libraries-using-azurecore). Le pagine pypi per le librerie aggiornate includono inoltre una riga simile a "Il sistema di credenziali è stato completamente rinnovato" per indicare la modifica.
+`DefaultAzureCredential` è compatibile con le versioni più recenti delle librerie di gestione di Azure SDK, cioè le librerie di "Gestione delle risorse" nel cui nome è presente il termine "mgmt", che sono incluse anche nell'elenco [Librerie che usano azure.core](azure-sdk-library-package-index.md#libraries-using-azurecore). La pagina pypi per una libreria aggiornata include di solito una riga simile a "Il sistema di credenziali è stato completamente rinnovato" per indicare la modifica.
 
 Ad esempio, è possibile usare `DefaultAzureCredential` con la versione 15.0.0 o successiva di azure-mgmt-resource:
 
@@ -160,6 +160,8 @@ subscription_client = SubscriptionClient(credential)
 sub_list = subscription_client.subscriptions.list()
 print(list(sub_list))
 ```
+
+Se la libreria non è stata aggiornata, al codice che usa `DefaultAzureCredential` verrà assegnata la dicitura "All'oggetto 'DefaultAzureCredential' non è associato alcun attributo 'signed-session'", come descritto nella sezione successiva.
 
 ### <a name="defaultazurecredential-object-has-no-attribute-signed-session"></a>"All'oggetto 'DefaultAzureCredential' non è associato alcun attributo 'signed-session'"
 
@@ -303,6 +305,37 @@ Invece di usare un file, come descritto nella sezione precedente, è possibile c
 
 ### <a name="authenticate-with-token-credentials"></a>Eseguire l'autenticazione con le credenziali del token
 
+È possibile eseguire l'autenticazione con le librerie di Azure usando la sottoscrizione esplicita, il tenant e gli identificatori client insieme a un segreto client.
+
+Quando si usano le librerie SDK più recenti basate su azure.core, usare l'oggetto [`ClientSecretCredential` della libreria azure-identity](#using-clientsecretcredential-azureidentity). Quando si usano le librerie SDK precedenti, usare [`ServicePrincipalCredentials` dalla libreria azure.common](#using-serviceprincipalcredentials-azurecommon).
+
+Per eseguire la migrazione del codice esistente che usa `ServicePrincipalCredentials` in una versione più recente della libreria, sostituire gli usi di questa classe con `ClientSecretCredential`, come illustrato nelle sezioni seguenti. Si notino le piccole modifiche nei nomi dei parametri tra i due costruttori: `tenant` diventa `tenant_id` e `secret` diventa `client_secret`.
+
+#### <a name="using-clientsecretcredential-azureidentity"></a>Uso di ClientSecretCredential (azure.identity)
+
+```python
+import os
+from azure.mgmt.resource import SubscriptionClient
+from azure.identity import ClientSecretCredential
+
+# Retrieve the IDs and secret to use with ClientSecretCredential
+subscription_id = os.environ["AZURE_SUBSCRIPTION_ID"]
+tenant_id = os.environ["AZURE_TENANT_ID"]
+client_id = os.environ["AZURE_CLIENT_ID"]
+client_secret = os.environ["AZURE_CLIENT_SECRET"]
+
+credential = ClientSecretCredential(tenant_id=tenant_id, client_id=client_id, client_secret=client_secret)
+
+subscription_client = SubscriptionClient(credential)
+
+subscription = next(subscription_client.subscriptions.list())
+print(subscription.subscription_id)
+```
+
+Con questo metodo, che anche in questo caso viene usato con le librerie più recenti basate su azure.core, si crea un oggetto [`ClientSecretCredential`](/python/api/azure-identity/azure.identity.clientsecretcredential) usando le credenziali ottenute da una risorsa di archiviazione sicura, come Azure Key Vault o le variabili di ambiente. Il codice precedente presuppone che siano state create le variabili di ambiente descritte in [Configurare l'ambiente di sviluppo locale](configure-local-development-environment.md#create-a-service-principal-and-environment-variables-for-development).
+
+#### <a name="using-serviceprincipalcredentials-azurecommon"></a>Uso di ServicePrincipalCredentials (azure.common)
+
 ```python
 import os
 from azure.mgmt.resource import SubscriptionClient
@@ -322,9 +355,11 @@ subscription = next(subscription_client.subscriptions.list())
 print(subscription.subscription_id)
 ```
 
-Con questo metodo si crea un oggetto [`ServicePrincipalCredentials`](/python/api/msrestazure/msrestazure.azure_active_directory.serviceprincipalcredentials) usando le credenziali ottenute da una risorsa di archiviazione sicura, come Azure Key Vault o le variabili di ambiente. Il codice precedente presuppone che siano state create le variabili di ambiente descritte in [Configurare l'ambiente di sviluppo locale](configure-local-development-environment.md#create-a-service-principal-and-environment-variables-for-development).
+Con questo metodo, che anche in questo caso viene usato con le librerie precedenti non basate su azure.core, si crea un oggetto [`ServicePrincipalCredentials`](/python/api/msrestazure/msrestazure.azure_active_directory.serviceprincipalcredentials) usando le credenziali ottenute da una risorsa di archiviazione sicura, come Azure Key Vault o le variabili di ambiente. Il codice precedente presuppone che siano state create le variabili di ambiente descritte in [Configurare l'ambiente di sviluppo locale](configure-local-development-environment.md#create-a-service-principal-and-environment-variables-for-development).
 
-Con questo metodo, è possibile usare un [cloud sovrano o nazionale di Azure](/azure/active-directory/develop/authentication-national-cloud) invece del cloud pubblico di Azure, specificando un argomento `base_url` per l'oggetto client:
+#### <a name="use-an-azure-sovereign-national-cloud"></a>Usare un cloud nazionale sovrano di Azure
+
+Con uno di questi metodi basati sulle credenziali del token è possibile usare un [cloud sovrano o nazionale di Azure](/azure/active-directory/develop/authentication-national-cloud) invece del cloud pubblico di Azure, specificando un argomento `base_url` per l'oggetto client:
 
 ```python
 from msrestazure.azure_cloud import AZURE_CHINA_CLOUD

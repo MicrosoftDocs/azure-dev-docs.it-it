@@ -2,17 +2,28 @@
 title: 'Novità della documentazione di JavaScript: '
 description: Novità della documentazione di JavaScript per ottobre 2020
 ms.topic: conceptual
-ms.date: 10/28/2020
-ms.openlocfilehash: 1b95a18d3ea8cb5947dfd5525326d69460c3a00b
-ms.sourcegitcommit: cbcde17e91e7262a596d813243fd713ce5e97d06
+ms.date: 11/13/2020
+ms.openlocfilehash: dba173f640205bbd43ce0f9e11387eba02c7a20e
+ms.sourcegitcommit: 6514a061ba5b8003ce29d67c81a9f0795c3e3e09
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93405950"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94601273"
 ---
 # <a name="javascript-docs-whats-new-for-october-2020"></a>Documentazione di JavaScript: novità di ottobre 2020
 
 Contenuti nuovi e aggiornati disponibili per sviluppatori JavaScript e TypeScript.
+
+
+## <a name="2020-november"></a>Novembre 2020
+
+Novità della documentazione di JavaScript di novembre 2020. Questo articolo elenca alcune delle principali modifiche apportate alla documentazione durante questo periodo.
+
+### <a name="whats-new"></a>Novità
+
+|Nome|Note|
+|---------------------------------------|--|
+|[Esercitazione: Distribuire un'app in una macchina virtuale Linux](./tutorial/nodejs-virtual-machine-vm/introduction.md)|In questa esercitazione verrà creata una macchina virtuale Linux per un'app Express.js. La macchina virtuale è configurata con un file di configurazione cloud-init e include NGINX e un repository GitHub per un'app Express.js. Quando la macchina virtuale è in esecuzione, è possibile connettersi alla macchina virtuale con SSH, modificare l'app Web in modo da includere la registrazione della traccia e visualizzare l'app server Express.js pubblica in un Web browser.|
 
 ## <a name="2020-october"></a>Ottobre 2020
 
@@ -22,7 +33,7 @@ Novità della documentazione di JavaScript di ottobre 2020. Questo articolo elen
 
 |Nome|Note|
 |---------------------------------------|--|
-|[Esercitazione: Caricare un'immagine in Archiviazione BLOB](./tutorial/browser-file-upload.yml?preview=tutorialFeedback)|In questa esercitazione si usa un' **app React** per caricare un file in un BLOB di **Archiviazione di Azure**. L'attività di programmazione viene eseguita automaticamente. Questa esercitazione è incentrata sull'uso corretto degli ambienti di Azure locali e remoti all'interno Visual Studio Code con le estensioni di Azure.|
+|[Esercitazione: Caricare un'immagine in Archiviazione BLOB](./tutorial/browser-file-upload.yml?preview=tutorialFeedback)|In questa esercitazione si usa un'**app React** per caricare un file in un BLOB di **Archiviazione di Azure**. L'attività di programmazione viene eseguita automaticamente. Questa esercitazione è incentrata sull'uso corretto degli ambienti di Azure locali e remoti all'interno Visual Studio Code con le estensioni di Azure.|
 |[Esercitazione: Distribuire l'app MongoDB Node.js nel servizio app da Visual Studio Code](./tutorial/web-app-mongodb.yml?preview=tutorialFeedback)|In questa esercitazione si usa un'app Node.js **Express** con un database **MongoDB** tramite l'API nativa MongoDB. Distribuire l'applicazione Node.js nel servizio app di Azure (in Linux), quindi verificare che l'app basata sul cloud funzioni. L'attività di programmazione viene eseguita automaticamente. Questa esercitazione è incentrata sull'uso corretto degli ambienti di Azure locali e remoti all'interno Visual Studio Code con le estensioni di Azure.|
 
 ### <a name="whats-updated"></a>Aggiornamenti

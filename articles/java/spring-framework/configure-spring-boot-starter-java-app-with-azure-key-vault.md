@@ -9,12 +9,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: tutorial
 ms.workload: identity
 ms.custom: devx-track-java, devx-track-azurecli
-ms.openlocfilehash: 9636ae27950f0ffabf6c9a433c802b3101447dab
-ms.sourcegitcommit: e1175aa94709b14b283645986a34a385999fb3f7
+ms.openlocfilehash: 10efa527f60d2dae15f84ca2c34862e5c899fa65
+ms.sourcegitcommit: 8e1d3a384ccb0e083589418d65a70b3a01afebff
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93192403"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94560274"
 ---
 # <a name="tutorial-reading-a-secret-from-azure-key-vault-in-a-spring-boot-application"></a>Esercitazione: Lettura di un segreto da Azure Key Vault in un'applicazione Spring Boot
 
@@ -238,11 +238,11 @@ Questa sezione illustra come usare Spring Initializr e `RestController` per crea
 1. Selezionare le opzioni come illustrato nell'immagine riportata dopo questo elenco.
    1. **Project** (Progetto): `Maven Project`
    1. **Language** (Linguaggio): `Java`
-   1. **Spring Boot** : `2.3.3`
+   1. **Spring Boot**: `2.3.3`
    1. **Group** (Gruppo): `com.contoso`  (È possibile inserire qui qualsiasi nome di pacchetto Java valido).
    1. **Artifact** (Artefatto): *keyvault* (È possibile inserire qui qualsiasi nome di classe Java valido).
    1. **Packaging** (Creazione pacchetti): `Jar`
-   1. **Java** : `11` (È possibile scegliere 8, ma questa esercitazione è stata convalidata con 11).
+   1. **Java**: `11` (È possibile scegliere 8, ma questa esercitazione è stata convalidata con 11).
 1. Selezionare **Add Dependencies...** (Aggiungi dipendenze).
 1. Nel campo di testo digitare `Spring Web` e premere CTRL+INVIO.
 1. Nel campo di testo digitare `Azure Key Vault` e premere INVIO.  Verrà visualizzata una schermata simile a quella riportata di seguito.
@@ -306,7 +306,7 @@ Attenersi alla procedura seguente per esaminare l'applicazione ed eseguirla loca
    }
    ```
 
-1. Nella directory di livello principale *keyvault* , dove si trova il file *pom.xml* , immettere `mvn spring-boot:run`.  
+1. Nella directory di livello principale *keyvault*, dove si trova il file *pom.xml*, immettere `mvn spring-boot:run`.  
 1. Il messaggio **Inizializzazione completata** nell'output del comando significa che il server è pronto.  In una finestra della shell separata immettere questo comando.
 
    ```bash
@@ -369,7 +369,7 @@ Apportare una semplice modifica al file *KeyvaultApplication.java* (o qualunque 
 
    L'integrazione di Key Vault fornisce un oggetto `PropertySource` di Spring popolato con i valori di Key Vault.  Altri dettagli sull'implementazione sono disponibili nella [documentazione di riferimento](https://aka.ms/azure-spring-boot-starter-keyvault-secrets).
 
-1. Nella directory di livello principale *keyvault* , dove si trova il file *pom.xml* , immettere `mvn clean package spring-boot:run`.  
+1. Nella directory di livello principale *keyvault*, dove si trova il file *pom.xml*, immettere `mvn clean package spring-boot:run`.  
 1. Il messaggio **Inizializzazione completata** nell'output del comando significa che il server è pronto.  In una finestra della shell separata immettere questo comando.
 
    ```bash
@@ -608,7 +608,7 @@ I passaggi seguenti illustrano come creare una risorsa di Azure Spring Cloud e d
    | runtime-version | Versione del runtime Java.  **Il valore deve corrispondere al valore scelto in Spring Initializr in precedenza.** |
    | service | Nome del servizio esistente. |
 
-   Per comprendere la differenza tra *servizio* e *app* , vedere [Informazioni su app e distribuzione in Azure Spring Cloud](/azure/spring-cloud/spring-cloud-concept-understand-app-and-deployment).
+   Per comprendere la differenza tra *servizio* e *app*, vedere [Informazioni su app e distribuzione in Azure Spring Cloud](/azure/spring-cloud/spring-cloud-concept-understand-app-and-deployment).
 
 1. Ottenere l'identità gestita per la risorsa di Azure.  Usarla per configurare l'istanza di Key Vault esistente per consentire l'accesso da questa app.
 
@@ -646,7 +646,7 @@ Quando le risorse create in questo articolo non sono più necessarie, usare il [
 
 ## <a name="next-steps"></a>Passaggi successivi
 
-Per altre informazioni su Spring e Azure, passare al centro di documentazione di Spring in Azure.
+Per altre informazioni su Spring e Azure, passare all'argomento successivo del centro di documentazione di Spring in Azure.
 
 > [!div class="nextstepaction"]
-> [Configurare un'app Spring Boot Initializer per l'uso di Application Insights](configure-spring-boot-java-applicationinsights.md)
+> [Come usare l'utilità di avvio Spring Boot per il JMS del bus di servizio di Azure](configure-spring-boot-starter-java-app-with-azure-service-bus.md)

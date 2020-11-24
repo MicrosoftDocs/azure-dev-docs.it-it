@@ -1,15 +1,15 @@
 ---
 title: file di inclusione create-storage-resource.md
 description: file di inclusione create-storage-resource.md
-ms.date: 10/13/2020
+ms.date: 11/13/2020
 ms.topic: include
-ms.custom: devx-track-javascript
-ms.openlocfilehash: 6862d9cf56ee86f7137495b021144b518459d979
-ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
+ms.custom: devx-track-javascript, devx-track-azurecli
+ms.openlocfilehash: 19a21dbf557c31f7eeae6afdb4722bfed35c86fe
+ms.sourcegitcommit: dc74b60217abce66fe6cc93923e869e63ac86a8f
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92755833"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94884714"
 ---
 In questa sezione dell'esercitazione viene creata la risorsa di Archiviazione di Azure con un'estensione di Visual Studio, che quindi viene configurata nel portale di Azure. 
 
@@ -33,7 +33,7 @@ Usare l'estensione di Visual Studio Code per creare una risorsa di archiviazione
 
 1. Al termine del processo di creazione dell'app, viene visualizzata una notifica con le informazioni sulla nuova risorsa. 
 
-    :::image type="content" source="../../media/tutorial-browser-file-upload/visualstudiocode-storage-extension-create-resource-complete.png" alt-text="Passare all'estensione Archiviazione di Azure. Fare clic con il pulsante destro del mouse sulla sottoscrizione e quindi scegliere 'Crea account di archiviazione'.":::
+    :::image type="content" source="../../media/tutorial-browser-file-upload/visualstudiocode-storage-extension-create-resource-complete.png" alt-text="Al termine del processo di creazione dell'app, viene visualizzata una notifica con le informazioni sulla nuova risorsa.":::
 
 ## <a name="set-storage-account-name-in-code-file"></a>Impostare il nome dell'account di archiviazione nel file di codice
 
@@ -47,8 +47,8 @@ const storageAccountName = process.env.storageresourcename || "";
 
 Generare il token di firma di accesso condiviso prima di configurare CORS. 
 
-1. Nell'estensione di Visual Studio Code per la risorsa di archiviazione, fare clic con il pulsante del mouse sulla risorsa e quindi scegliere **Apri nel portale** . Viene aperto il portale di Azure con la risorsa di archiviazione.
-1. Nella sezione **Impostazioni** selezionare **Firma di accesso condiviso** . 
+1. Nell'estensione di Visual Studio Code per la risorsa di archiviazione, fare clic con il pulsante del mouse sulla risorsa e quindi scegliere **Apri nel portale**. Viene aperto il portale di Azure con la risorsa di archiviazione.
+1. Nella sezione **Impostazioni** selezionare **Firma di accesso condiviso**. 
 1. Configurare il token di firma di accesso condiviso con le impostazioni seguenti. 
 
     | Proprietà|valore|
@@ -62,17 +62,17 @@ Generare il token di firma di accesso condiviso prima di configurare CORS.
     |Livello di routing preferito|Basic|
     |Chiave di firma|Key1 selezionata|
 
-    :::image type="content" source="../../media/tutorial-browser-file-upload/azure-portal-storage-blob-generate-sas-token.png" alt-text="Passare all'estensione Archiviazione di Azure. Fare clic con il pulsante destro del mouse sulla sottoscrizione e quindi scegliere 'Crea account di archiviazione'.":::
+    :::image type="content" source="../../media/tutorial-browser-file-upload/azure-portal-storage-blob-generate-sas-token.png" alt-text="Configurare il token di firma di accesso condiviso come illustrato nell'immagine. Le impostazioni vengono spiegate sotto l'immagine.":::
 
-1.  Selezionare **Genera firma di accesso condiviso e stringa di connessione** . Copiare immediatamente il token di firma di accesso condiviso. Non sarà possibile visualizzare questo token, quindi se non viene copiato sarà necessario crearne uno nuovo. 
+1.  Selezionare **Genera firma di accesso condiviso e stringa di connessione**. Copiare immediatamente il token di firma di accesso condiviso. Non sarà possibile visualizzare questo token, quindi se non viene copiato sarà necessario crearne uno nuovo. 
 
 ## <a name="set-sas-token-in-code-file"></a>Impostare il token di firma di accesso condiviso nel file di codice
 
 Il valore del token di firma di accesso condiviso è una stringa di query parziale e viene usato nell'URL quando vengono eseguite query sulla risorsa basata sul cloud.
 
 Il formato del token dipende dallo strumento usato per crearlo: 
-* **Portale di Azure** : se viene creato nel portale di Azure, il token di firma di accesso condiviso include `?` come primo carattere della stringa.
-* **Interfaccia della riga di comando di Azure** : se viene creato nell'interfaccia della riga di comando di Azure, il token di firma di accesso condiviso include `?` come primo carattere della stringa. 
+* **Portale di Azure**: se viene creato nel portale di Azure, il token di firma di accesso condiviso include `?` come primo carattere della stringa.
+* **Interfaccia della riga di comando di Azure**: se viene creato nell'interfaccia della riga di comando di Azure, il token di firma di accesso condiviso include `?` come primo carattere della stringa. 
 
 1. Rimuovere `?`, se è il primo carattere del token. Il file di codice fornisce il carattere `?`, quindi non è necessario nel token.
 
@@ -87,7 +87,7 @@ const sasToken = process.env.storagesastoken || "";
 
 Configurare CORS per la risorsa in modo che il codice React sul lato client possa accedere all'account di archiviazione. 
 
-1. Sempre nel portale di Azure, nella sezione **Impostazioni** selezionare **CORS** . 
+1. Sempre nel portale di Azure, nella sezione Impostazioni selezionare **CORS**. 
 1. Configurare CORS come mostrato nell'immagine. Le impostazioni vengono spiegate sotto l'immagine. 
 
     | Proprietà|Valore|
@@ -98,7 +98,7 @@ Configurare CORS per la risorsa in modo che il codice React sul lato client poss
     |Intestazioni esposte|`*`|
     |Validità massima|86400|
 
-    :::image type="content" source="../../media/tutorial-browser-file-upload/azure-portal-storage-blob-cors.png" alt-text="Passare all'estensione Archiviazione di Azure. Fare clic con il pulsante destro del mouse sulla sottoscrizione e quindi scegliere 'Crea account di archiviazione'.":::
+    :::image type="content" source="../../media/tutorial-browser-file-upload/azure-portal-storage-blob-cors.png" alt-text="Configurare CORS come mostrato nell'immagine. Le impostazioni vengono spiegate sotto l'immagine.":::
 
 1. Selezionare **Salva** sopra le impostazioni per salvarle nella risorsa. Il codice non richiede modifiche per l'uso di queste impostazioni CORS. 
 
@@ -114,11 +114,19 @@ Il token di firma di accesso condiviso e il nome dell'account di archiviazione v
 
 1. Quando il terminale visualizza l'URL, ad esempio `http://localhost:3000`, l'app è pronta. Aprire un browser e immettere l'URL. Verrà visualizzato il sito Web connesso ai BLOB di archiviazione di Azure con un pulsante di selezione file e un pulsante di caricamento file. 
 
-    :::image type="content" source="../../media/tutorial-browser-file-upload/browser-react-app-azure-storage-resource-configured-upload-button-displayed.png" alt-text="Passare all'estensione Archiviazione di Azure. Fare clic con il pulsante destro del mouse sulla sottoscrizione e quindi scegliere 'Crea account di archiviazione'.":::
+    :::image type="content" source="../../media/tutorial-browser-file-upload/browser-react-app-azure-storage-resource-configured-upload-button-displayed.png" alt-text="Verrà visualizzato il sito Web React connesso ai BLOB di archiviazione di Azure con un pulsante di selezione file e un pulsante di caricamento file.":::
 
-1. Selezionare un'immagine nella cartella `images` da caricare. `spring-flowers.jpg` è un oggetto visivo efficace per questo test. Quindi selezionare **Carica** . . 
+1. Selezionare un'immagine nella cartella `images` da caricare. `spring-flowers.jpg` è un oggetto visivo efficace per questo test. Quindi selezionare **Carica**. . 
 
-    Il codice client front-end React chiama `src/uploadToBlob.ts` per l'autenticazione in Azure, quindi creare un contenitore di archiviazione (se non esiste già) e caricarvi il BLOB. 
+    Il codice client front-end React chiama `src/uploadToBlob.ts` per l'autenticazione in Azure, quindi creare un contenitore di archiviazione (se non esiste già) e caricarvi il file. 
+
+## <a name="troubleshooting"></a>Risoluzione dei problemi
+
+Se è stato ricevuto un errore o il file non viene caricato nel contenitore, verificare quanto segue:
+
+* Ricreare il token di firma di accesso condiviso, assicurandosi che venga creato a livello di Risorsa di archiviazione e non a livello di contenitore. Copiare il nuovo token nel codice nella posizione corretta.
+* Verificare che la stringa di token copiata nel codice non contenga il `?` (punto interrogativo) all'inizio della stringa.
+* Verificare l'impostazione di CORS per la Risorsa di archiviazione.
 
 ## <a name="want-to-know-more"></a>Per saperne di più 
 
