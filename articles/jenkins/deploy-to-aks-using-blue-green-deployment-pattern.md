@@ -5,12 +5,12 @@ keywords: jenkins, azure, devops, kubernetes, k8s, servizio Azure Kubernetes, di
 ms.topic: tutorial
 ms.date: 10/23/2019
 ms.custom: devx-track-jenkins, devx-track-azurecli
-ms.openlocfilehash: 1ddf85a5ad1a9415d4143873f674b7104a4bd4d8
-ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
+ms.openlocfilehash: b4284fdfa82ada4098df4a37983e364bdcd70d90
+ms.sourcegitcommit: 4dac39849ba2e48034ecc91ef578d11aab796e58
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92688665"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94984010"
 ---
 # <a name="tutorial-deploy-to-azure-kubernetes-service-aks-using-the-bluegreen-deployment-pattern"></a>Esercitazione: Eseguire la distribuzione nel servizio Azure Kubernetes usando il modello di distribuzione blu/verde
 
@@ -29,7 +29,7 @@ In questa esercitazione è possibile scoprire come si eseguono le seguenti attiv
 
 ## <a name="prerequisites"></a>Prerequisiti
 - [Account GitHub](https://github.com): è necessario per clonare il repository di esempio.
-- [Interfaccia della riga di comando di Azure 2.0](/cli/azure/install-azure-cli?view=azure-cli-latest): viene usata per creare il cluster Kubernetes.
+- [Interfaccia della riga di comando di Azure 2.0](/cli/azure/install-azure-cli): viene usata per creare il cluster Kubernetes.
 - [Chocolatey](https://chocolatey.org): un sistema di gestione pacchetti usato per installare kubectl.
 - [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/): interfaccia della riga di comando usata per l'esecuzione di comandi per i cluster Kubernetes.
 - [jq](https://stedolan.github.io/jq/download/): processore JSON leggero da riga di comando.
@@ -50,11 +50,11 @@ Nel repository Microsoft in GitHub è possibile trovare un'app di esempio che il
 
     ![Screenshot con il nome e la nota dell’account GitHub](./media/deploy-to-aks-using-blue-green-deployment-pattern/github-sample-msft-forked.png)
 
-1. Selezionare **Clona o scarica** .
+1. Selezionare **Clona o scarica**.
 
     ![Screenshot dell’opzione di GitHub per clonare o scaricare un repository](./media/deploy-to-aks-using-blue-green-deployment-pattern/github-sample-clone.png)
 
-1. Nella finestra **Clone with HTTPS** (Clona con HTTPS) selezionare l'icona di **copia** .
+1. Nella finestra **Clone with HTTPS** (Clona con HTTPS) selezionare l'icona di **copia**.
 
     ![Screenshot dell'opzione GitHub per copiare l'URL di clonazione negli Appunti](./media/deploy-to-aks-using-blue-green-deployment-pattern/github-sample-copy.png)
 
@@ -81,7 +81,7 @@ In questa sezione si segue questa procedura:
 - Creare un’istanza del servizio di Registro Azure Container.
 
 ### <a name="use-the-azure-cli-20-to-create-a-managed-kubernetes-cluster"></a>Usare l'interfaccia della riga di comando di Azure 2.0 per creare un cluster Kubernetes gestito
-Per creare un cluster Kubernetes gestito con l'[interfaccia della riga di comando di Azure 2.0](/cli/azure/install-azure-cli?view=azure-cli-latest), assicurarsi di usare la versione dell'interfaccia della riga di comando di Azure 2.0.25 o successiva.
+Per creare un cluster Kubernetes gestito con l'[interfaccia della riga di comando di Azure 2.0](/cli/azure/install-azure-cli), assicurarsi di usare la versione dell'interfaccia della riga di comando di Azure 2.0.25 o successiva.
 
 1. Accedere all'account Azure. Dopo avere immesso il seguente comando, vengono fornite le istruzioni che illustrano come completare l'accesso. 
     
@@ -134,7 +134,7 @@ Per creare un cluster Kubernetes gestito con l'[interfaccia della riga di comand
     az aks get-credentials -g <your-resource-group-name> -n <your-kubernetes-cluster-name> --admin
     ```
 
-1. Passare alla directory **deploy/aks/setup** . 
+1. Passare alla directory **deploy/aks/setup**. 
 
 1. Eseguire i seguenti comandi **kubectl** per configurare i servizi per l'endpoint pubblico e i due endpoint di test.
 
@@ -215,11 +215,11 @@ In questa sezione verrà illustrato come preparare il server Jenkins per eseguir
     1. Selezionare **Manage Jenkins (Gestisci Jenkins) > Manage plugins (Gestisci plug-in) > Available (Disponibili)** .
     1. Cercare e installare il plug-in del servizio Azure Container.
 
-1. Aggiungere le credenziali per gestire le risorse in Azure. Installare il plug-in per le **credenziali di Azure** , se non è già disponibile.
+1. Aggiungere le credenziali per gestire le risorse in Azure. Installare il plug-in per le **credenziali di Azure**, se non è già disponibile.
 
-1. Aggiungere le credenziali dell'entità servizio di Azure come il tipo **Entità servizio di Microsoft Azure** .
+1. Aggiungere le credenziali dell'entità servizio di Azure come il tipo **Entità servizio di Microsoft Azure**.
 
-1. Aggiungere il nome utente e la password del registro Docker di Azure (ottenuti nella sezione "Creare un’istanza di Registro contenitori") come il tipo **Nome utente con password** .
+1. Aggiungere il nome utente e la password del registro Docker di Azure (ottenuti nella sezione "Creare un’istanza di Registro contenitori") come il tipo **Nome utente con password**.
 
 ## <a name="edit-the-jenkinsfile"></a>Modificare il file Jenkinsfile
 
@@ -246,7 +246,7 @@ In questa sezione verrà illustrato come preparare il server Jenkins per eseguir
     ```
 
 ## <a name="create-the-job"></a>Creare il processo
-1. Aggiungere un nuovo processo nel tipo **Pipeline** .
+1. Aggiungere un nuovo processo nel tipo **Pipeline**.
 
 1. Selezionare **Pipeline** > **Definition** > **Pipeline script from SCM** (Pipeline > Definizione > Script di pipeline da gestione controllo codice sorgente).
 

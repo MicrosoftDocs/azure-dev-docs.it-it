@@ -5,14 +5,16 @@ keywords: jenkins, azure, devops, macchina virtuale, agenti
 ms.topic: tutorial
 ms.date: 08/19/2020
 ms.custom: devx-track-jenkins
-ms.openlocfilehash: d081861eac98495d125a1a5eb5dd9700fb7783a8
-ms.sourcegitcommit: 800c5e05ad3c0b899295d381964dd3d47436ff90
+ms.openlocfilehash: 4918b548fb98f27fffaa8d836ec125cc325da79d
+ms.sourcegitcommit: 4dac39849ba2e48034ecc91ef578d11aab796e58
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88614540"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "96035469"
 ---
 # <a name="tutorial-scale-jenkins-deployments-with-azure-vm-agents"></a>Esercitazione: Scalabilità delle distribuzioni di Jenkins con agenti di macchine virtuali di Azure
+
+[!INCLUDE [jenkins-integration-with-azure.md](includes/jenkins-integration-with-azure.md)]
 
 In questa esercitazione viene illustrato come usare il [plug-in di Agente di macchine virtuali di Azure](https://plugins.jenkins.io/azure-vm-agents) di Jenkins per aggiungere capacità su richiesta con macchine virtuali Linux in esecuzione in Azure.
 
@@ -83,7 +85,7 @@ In questa esercitazione si apprenderà come:
             }
      ```
 
-    L'entità servizio completata dovrebbe usare il campo `id` per **ID sottoscrizione**, il valore `appId` per **ID client**, `password` per **Segreto client** e `tenant` per **ID tenant **. Selezionare **Aggiungi** per aggiungere l'entità servizio, quindi configurare il plug-in per usare le nuove credenziali create.
+    L'entità servizio completata dovrebbe usare il campo `id` per **ID sottoscrizione**, il valore `appId` per **ID client**, `password` per **Segreto client** e `tenant` per **ID tenant**. Selezionare **Aggiungi** per aggiungere l'entità servizio, quindi configurare il plug-in per usare le nuove credenziali create.
 
     ![Configurare un'entità servizio di Azure](./media/scale-deployments-using-vm-agents/new-service-principal.png)
 

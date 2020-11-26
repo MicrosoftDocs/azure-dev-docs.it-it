@@ -4,12 +4,12 @@ description: Informazioni sui test di integrazione e su come usare Azure DevOps 
 ms.topic: tutorial
 ms.date: 10/08/2020
 ms.custom: devx-track-terraform
-ms.openlocfilehash: bd05bfa2a07ee6cfa2f4a5dc4f4771559af9a2e7
-ms.sourcegitcommit: e1175aa94709b14b283645986a34a385999fb3f7
+ms.openlocfilehash: b9a533475bd291cc0d1fd9fffa418b0ce4498fb0
+ms.sourcegitcommit: 4dac39849ba2e48034ecc91ef578d11aab796e58
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93192563"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94983990"
 ---
 # <a name="tutorial-configure-integration-tests-for-terraform-projects-in-azure"></a>Esercitazione: Configurare i test di integrazione per i progetti Terraform in Azure
 
@@ -28,11 +28,11 @@ In questo articolo si apprenderà come eseguire le attività seguenti:
 ## <a name="prerequisites"></a>Prerequisiti
 
 [!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
-- **Organizzazione e progetto di Azure DevOps** : se non è già disponibile, [creare un'organizzazione di Azure DevOps](/azure/devops/organizations/projects/create-project).
-- **Estensione Terraform Build & Release Tasks** : [installare l'estensione Terraform build/release tasks](https://marketplace.visualstudio.com/items?itemName=charleszipp.azure-pipelines-tasks-terraform) nell'organizzazione di Azure DevOps.
-- **Concedere l'accesso ad Azure DevOps alla sottoscrizione di Azure** : creare una [connessione del servizio di Azure](/azure/devops/pipelines/library/connect-to-azure) denominata `terraform-basic-testing-azure-connection` per consentire ad Azure Pipelines di connettersi alle sottoscrizioni di Azure.
-- **Installare Terraform** : in base all'ambiente specifico, [scaricare e installare Terraform](https://www.terraform.io/downloads.html).
-- **Creare una copia tramite fork degli esempi di test** : creare una copia tramite fork del [progetto di esempio di Terraform in GitHub](https://github.com/Azure/terraform) e clonarlo nel computer di sviluppo/test.
+- **Organizzazione e progetto di Azure DevOps**: se non è già disponibile, [creare un'organizzazione di Azure DevOps](/azure/devops/organizations/projects/create-project).
+- **Estensione Terraform Build & Release Tasks**: [installare l'estensione Terraform build/release tasks](https://marketplace.visualstudio.com/items?itemName=charleszipp.azure-pipelines-tasks-terraform) nell'organizzazione di Azure DevOps.
+- **Concedere l'accesso ad Azure DevOps alla sottoscrizione di Azure**: creare una [connessione del servizio di Azure](/azure/devops/pipelines/library/connect-to-azure) denominata `terraform-basic-testing-azure-connection` per consentire ad Azure Pipelines di connettersi alle sottoscrizioni di Azure.
+- **Installare Terraform**: in base all'ambiente specifico, [scaricare e installare Terraform](https://www.terraform.io/downloads.html).
+- **Creare una copia tramite fork degli esempi di test**: creare una copia tramite fork del [progetto di esempio di Terraform in GitHub](https://github.com/Azure/terraform) e clonarlo nel computer di sviluppo/test.
 
 ## <a name="validate-a-local-terraform-configuration"></a>Convalidare una configurazione locale di Terraform
 
@@ -78,7 +78,7 @@ Come si può notare, Terraform ha rilevato un problema nella sintassi del codice
 
 Nella sezione precedente è stato illustrato come convalidare una configurazione di Terraform. Tale livello di test è specifico per la sintassi. Il test non ha preso in considerazione gli elementi che potrebbero essere già stati distribuiti in Azure.
 
-Terraform è un *linguaggio dichiarativo* , ovvero si dichiara quello che si vuole ottenere come risultato finale. Si supponga ad esempio che in un gruppo di risorse siano presenti 10 macchine virtuali. Viene quindi creato un file di Terraform che definisce tre macchine virtuali. L'applicazione di questo piano non incrementa il conteggio totale a 13. Terraform elimina invece sette macchine virtuali, in modo da ottenere un numero totale di tre. L'esecuzione di `terraform plan` consente di confermare i risultati potenziali dell'applicazione di un piano di esecuzione per evitare sorprese.
+Terraform è un *linguaggio dichiarativo*, ovvero si dichiara quello che si vuole ottenere come risultato finale. Si supponga ad esempio che in un gruppo di risorse siano presenti 10 macchine virtuali. Viene quindi creato un file di Terraform che definisce tre macchine virtuali. L'applicazione di questo piano non incrementa il conteggio totale a 13. Terraform elimina invece sette macchine virtuali, in modo da ottenere un numero totale di tre. L'esecuzione di `terraform plan` consente di confermare i risultati potenziali dell'applicazione di un piano di esecuzione per evitare sorprese.
 
 Per generare il piano di esecuzione di Terraform, eseguire [terraform plan](https://www.terraform.io/docs/commands/plan.html). Questo comando stabilisce la connessione alla sottoscrizione di Azure per controllare quale parte della configurazione è già stata distribuita. Terraform determina quindi le modifiche necessarie per soddisfare i requisiti indicati nel file di Terraform. In questa fase Terraform non distribuisce alcun elemento. Fornisce informazioni sugli effetti dell'applicazione del piano.
 
@@ -99,8 +99,8 @@ L'analisi statica del codice può essere eseguita direttamente nel codice di con
 Gli strumenti seguenti forniscono l'analisi statica per i file di Terraform:
 
 - [Checkov](https://github.com/bridgecrewio/checkov/)
-- [Terrascan](https://github.com/cesar-rodriguez/terrascan)
-- [tfsec](https://github.com/liamg/tfsec) 
+- [Terrascan](https://github.com/accurics/terrascan)
+- [tfsec](https://github.com/tfsec/tfsec)
 - [Deepsource](https://deepsource.io/blog/release-terraform-static-analysis/) 
 
 L'analisi statica viene spesso eseguita come parte di una pipeline di integrazione continua. Questi test non richiedono la creazione di un piano di esecuzione o la distribuzione. L'esecuzione di questi test risulta quindi più rapida rispetto ad altri test e vengono in genere eseguiti per primi nel processo di integrazione continua.
@@ -113,7 +113,7 @@ L'integrazione continua comporta l'esecuzione di test su un intero sistema quand
 
 1. Aprire il file `samples/integration-testing/src/azure-pipeline.yaml`.
 
-1. Scorrere verso il basso fino alla sezione **steps** , che include un set standard di passaggi usati per eseguire diverse routine di installazione e convalida.
+1. Scorrere verso il basso fino alla sezione **steps**, che include un set standard di passaggi usati per eseguire diverse routine di installazione e convalida.
 
 1. Esaminare la riga **Step 1: run the Checkov Static Code Analysis**. In questo passaggio il progetto `Checkov` indicato in precedenza esegue un'analisi statica del codice nella configurazione di esempio di Terraform. 
 
@@ -207,7 +207,7 @@ L'integrazione continua comporta l'esecuzione di test su un intero sistema quand
 
 1. Selezionare **Continua** per caricare la pipeline YAML di Azure da GitHub.
 
-1. Quando viene visualizzata la pagina **Esamina il codice YAML della pipeline** , selezionare **Esegui** per creare e attivare manualmente la pipeline per la prima volta.
+1. Quando viene visualizzata la pagina **Esamina il codice YAML della pipeline**, selezionare **Esegui** per creare e attivare manualmente la pipeline per la prima volta.
 
     ![Eseguire una pipeline di Azure](media/best-practices-integration-testing/run-pipeline.png)
 

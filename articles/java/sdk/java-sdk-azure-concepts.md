@@ -2,18 +2,19 @@
 title: Sviluppare con le librerie di gestione di Azure per Java
 description: Modelli e concetti per l'uso delle librerie di gestione Java per gestire le risorse cloud con Java in Azure.
 keywords: Azure, Java, SDK, API, Maven, Gradle, autenticazione, active directory, entità servizio
-author: rloutlaw
+author: bmitchell287
+ms.author: brendm
 ms.date: 04/16/2017
 ms.topic: article
 ms.service: multiple
 ms.assetid: f452468b-7aae-4944-abad-0b1aaf19170d
 ms.custom: seo-java-july2019, seo-java-september2019, devx-track-java
-ms.openlocfilehash: 8f9da09b7cc613c7a366662b311b9d24b779c95d
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: ae2c97e8febc60f8dd949ecf15facd06ae7c63ef
+ms.sourcegitcommit: 4dac39849ba2e48034ecc91ef578d11aab796e58
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86379535"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94983930"
 ---
 # <a name="patterns-and-best-practices-for-development-with-the-azure-libraries-for-java"></a>Modelli e procedure consigliate per lo sviluppo con le librerie di Azure per Java 
 

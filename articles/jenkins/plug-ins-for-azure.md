@@ -5,14 +5,16 @@ keywords: jenkins, plug-in, azure, devops
 ms.date: 04/25/2020
 ms.topic: article
 ms.custom: devx-track-jenkins
-ms.openlocfilehash: a8738ad8a66f85467527051f383975890fb5dcd2
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: d5f470c7355314b488d811f03f175379ad211c96
+ms.sourcegitcommit: 4dac39849ba2e48034ecc91ef578d11aab796e58
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88240613"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "96035449"
 ---
 # <a name="jenkins-plug-ins-for-azure"></a>Plug-in Jenkins per Azure
+
+[!INCLUDE [jenkins-integration-with-azure.md](includes/jenkins-integration-with-azure.md)]
 
 Molti servizi e funzionalità di Azure sono accessibili tramite plug-in Jenkins. Questi servizi supportano una vasta gamma di possibilità per l'integrazione continua e la distribuzione continua (CI/CD) per l'ambiente DevOps. Fare clic su uno dei plug-in Jenkins per altre informazioni.
 

@@ -7,12 +7,12 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: 5b342b722167aa901b76f8117f3fefc9412220ae
-ms.sourcegitcommit: 660b21aee3cf83ee561c447803b64335b2c95ccc
+ms.openlocfilehash: 3e73fda380f2743f6a3d4b2fb726ee62173b8563
+ms.sourcegitcommit: 418e446e6ada5d50df283401df4f6b6370a356b9
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91882206"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96035369"
 ---
 # <a name="spring-boot-starters-for-azure"></a>Utilità di avvio Spring Boot per Azure
 
@@ -116,7 +116,7 @@ Questa utilità di avvio Spring Boot fornisce il supporto per la configurazione 
 
 Per esempi dell'uso delle funzionalità di Azure Active Directory fornite con questa utilità di avvio, vedere:
 
-* <https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/spring/azure-spring-boot-samples/azure-spring-boot-sample-active-directory>
+* <https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/spring/azure-spring-boot-samples/>
 
 Quando si aggiunge questa utilità di avvio a un progetto Spring Boot, vengono apportate le modifiche seguenti al file *pom.xml*:
 
@@ -237,7 +237,7 @@ Questa utilità di avvio Spring Boot fornisce il supporto di integrazione di Spr
 Per esempi dell'uso delle funzionalità di Archiviazione di Azure fornite con questa utilità di avvio, vedere:
 
 * [Come usare l'utilità di avvio Spring Boot per Archiviazione di Azure](configure-spring-boot-starter-java-app-with-azure-storage.md)
-* <https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/spring/azure-spring-boot-samples/azure-spring-cloud-sample-storage-resource>
+* <https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/spring/azure-spring-boot-samples/azure-spring-cloud-sample-storage-queue-operation>
 
 Quando si aggiunge questa utilità di avvio a un progetto Spring Boot, vengono apportate le modifiche seguenti al file *pom.xml*:
 

@@ -5,14 +5,16 @@ keywords: jenkins, azure, devops, istanze di contenitore, agente di compilazione
 ms.topic: article
 ms.date: 08/31/2018
 ms.custom: devx-track-jenkins
-ms.openlocfilehash: 408ff0e5cc67e975c09fd108e9f5709c0a0cf510
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 20e8180ab0ac721366c2071fdfaa0882f913f945
+ms.sourcegitcommit: 4dac39849ba2e48034ecc91ef578d11aab796e58
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88240903"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "96035439"
 ---
 # <a name="tutorial-use-azure-container-instances-as-a-jenkins-build-agent"></a>Esercitazione: Usare Istanze di Azure Container come agente di compilazione Jenkins
+
+[!INCLUDE [jenkins-integration-with-azure.md](includes/jenkins-integration-with-azure.md)]
 
 Istanze di Azure Container offre un ambiente isolato on demand utilizzabile in modalità burst per eseguire carichi di lavoro in contenitori. Grazie a questi attributi, le istanze di contenitore di Azure sono un'ottima piattaforma per l'esecuzione di processi di compilazione di Jenkins su vasta scala. Questo articolo descrive in modo dettagliato come distribuire e usare un server Jenkins preconfigurato con istanze di contenitore di Azure come destinazione di compilazione.
 
