@@ -3,12 +3,12 @@ title: 'Novità della documentazione di JavaScript: '
 description: Novità della documentazione di JavaScript per ottobre 2020
 ms.topic: conceptual
 ms.date: 11/13/2020
-ms.openlocfilehash: dba173f640205bbd43ce0f9e11387eba02c7a20e
-ms.sourcegitcommit: 6514a061ba5b8003ce29d67c81a9f0795c3e3e09
+ms.openlocfilehash: db784cead94e66fd69232abd782039891ab7e63e
+ms.sourcegitcommit: 4dac39849ba2e48034ecc91ef578d11aab796e58
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94601273"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94983670"
 ---
 # <a name="javascript-docs-whats-new-for-october-2020"></a>Documentazione di JavaScript: novità di ottobre 2020
 
@@ -23,7 +23,14 @@ Novità della documentazione di JavaScript di novembre 2020. Questo articolo ele
 
 |Nome|Note|
 |---------------------------------------|--|
+|[Esercitazione: Compilare e distribuire un'app Web statica React in Azure](./tutorial/static-web-app/introduction.md)|In questa esercitazione, compilare e distribuire un'applicazione client React in un'app Web statica di Azure con un'azione GitHub.<br>L'app create-react-app consente di analizzare un'immagine con Visione artificiale di Servizi cognitivi. L'azione GitHub viene avviata quando viene eseguito un push a un ramo remoto specifico, creando il client React (create-react-app) e spostando i file risultanti nella risorsa dell'app Web statica di Azure.|
 |[Esercitazione: Distribuire un'app in una macchina virtuale Linux](./tutorial/nodejs-virtual-machine-vm/introduction.md)|In questa esercitazione verrà creata una macchina virtuale Linux per un'app Express.js. La macchina virtuale è configurata con un file di configurazione cloud-init e include NGINX e un repository GitHub per un'app Express.js. Quando la macchina virtuale è in esecuzione, è possibile connettersi alla macchina virtuale con SSH, modificare l'app Web in modo da includere la registrazione della traccia e visualizzare l'app server Express.js pubblica in un Web browser.|
+
+### <a name="whats-updated"></a>Aggiornamenti
+
+|Nome|Note|
+|---------------------------------------|--|
+|[Learn](learn-azure-javascript.md)|Nuovi moduli e certificazioni per JavaScript.|
 
 ## <a name="2020-october"></a>Ottobre 2020
 

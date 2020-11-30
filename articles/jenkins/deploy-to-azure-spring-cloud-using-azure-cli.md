@@ -3,14 +3,14 @@ title: Distribuire app in Azure Spring Cloud con Jenkins e l'interfaccia della r
 description: Informazioni su come usare l'interfaccia della riga di comando di Azure in una pipeline di integrazione e distribuzione continue per distribuire i microservizi nel servizio Azure Spring Cloud
 keywords: jenkins, azure, devops, azure spring cloud, interfaccia della riga di comando di azure
 ms.topic: tutorial
-ms.date: 09/01/2020
+ms.date: 11/10/2020
 ms.custom: devx-track-jenkins,devx-track-azurecli
-ms.openlocfilehash: 7b8eaf783e909e9291dc7b0e6781bf4e8cb0d4c3
-ms.sourcegitcommit: 717e32b68fc5f4c986f16b2790f4211967c0524b
+ms.openlocfilehash: e0b98f31ac7f7b079f655c4cb795fe7b38af4508
+ms.sourcegitcommit: 4dac39849ba2e48034ecc91ef578d11aab796e58
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91586136"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94983970"
 ---
 # <a name="tutorial-deploy-apps-to-azure-spring-cloud-using-jenkins-and-the-azure-cli"></a>Esercitazione: Distribuire app in Azure Spring Cloud con Jenkins e l'interfaccia della riga di comando di Azure
 
@@ -26,9 +26,7 @@ In questa esercitazione si completeranno le attività seguenti:
 ## <a name="prerequisites"></a>Prerequisiti
 
 [!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
-
 - **Jenkins**: [Installare Jenkins in una VM Linux](configure-on-linux-vm.md)
-
 - **Account GitHub**: Se non si ha un account GitHub, crearne [uno gratuito](https://github.com/) prima di iniziare.
 
 ## <a name="provision-a-service-instance-and-launch-a-java-spring-application"></a>Effettuare il provisioning di un'istanza del servizio e avviare un'applicazione Java Spring
@@ -36,10 +34,11 @@ In questa esercitazione si completeranno le attività seguenti:
 Per l'applicazione del servizio Microsoft di esempio si usa [Piggy Metrics](https://github.com/Azure-Samples/piggymetrics) e viene seguita la stessa procedura descritta in [Avvio rapido: Avviare un'applicazione Java Spring usando l'interfaccia della riga di comando di Azure](/azure/spring-cloud/spring-cloud-quickstart-launch-app-cli) per effettuare il provisioning dell'istanza del servizio e configurare le applicazioni. Se questa procedura è già stata completata, è possibile passare alla sezione successiva. In caso contrario, di seguito sono inclusi i comandi dell'interfaccia della riga di comando di Azure. Per altre informazioni generali, vedere [Avvio rapido: Avviare un'applicazione Java Spring usando l'interfaccia della riga di comando di Azure](/azure/spring-cloud/spring-cloud-quickstart-launch-app-cli).
 
 Il computer locale deve soddisfare lo stesso prerequisito del server di compilazione Jenkins. Verificare che siano installati i componenti seguenti per compilare e distribuire le applicazioni di microservizi:
-    * [Git](https://git-scm.com/)
-    * [JDK 8](/java/azure/jdk/?view=azure-java-stable)
-    * [Maven 3.0 o versione successiva](https://maven.apache.org/download.cgi)
-    * L'[interfaccia della riga di comando di Azure](/cli/azure/install-azure-cli?view=azure-cli-latest) versione 2.0.67 o superiore installata
+
+* [Git](https://git-scm.com/)
+* [JDK 8](/java/azure/jdk)
+* [Maven 3.0 o versione successiva](https://maven.apache.org/download.cgi)
+* L'[interfaccia della riga di comando di Azure](/cli/azure/install-azure-cli) versione 2.0.67 o superiore installata
 
 1. Installare l'estensione Azure Spring Cloud:
 
@@ -130,7 +129,7 @@ In questa sezione verrà preparato il server Jenkins per eseguire una compilazio
 
 ### <a name="add-your-azure-service-principal-credential-in-jenkins-credential-store"></a>Aggiungere le credenziali dell'entità servizio di Azure nell'archivio delle credenziali di Jenkins
 
-1. Per eseguire la distribuzione in Azure, è necessaria un'entità servizio di Azure. Per altre informazioni, vedere la sezione  [Creare l'entità servizio](deploy-from-github-to-azure-app-service.md#create-service-principal) dell'esercitazione Eseguire la distribuzione in Servizio app di Azure. L'output di `az ad sp create-for-rbac` è simile al seguente:
+1. Per eseguire la distribuzione in Azure, è necessaria un'entità servizio di Azure. Per altre informazioni, vedere la sezione [Creare l'entità servizio](deploy-from-github-to-azure-app-service.md#create-service-principal) dell'esercitazione Eseguire la distribuzione in Servizio app di Azure. L'output di `az ad sp create-for-rbac` è simile al seguente:
 
     ```
     {
@@ -234,7 +233,7 @@ La pipeline di esempio usa Maven per la compilazione e l'interfaccia della riga 
 
 1. Immettere l'URL di GitHub per il repository copiato tramite fork: **https://github.com/&lt ;ID GitHub&gt; /piggymetrics.git**
 
-1. Assicurarsi che l'opzione **Branch Specifier (black for 'any')** (Specifica ramo - vuoto per 'qualsiasi') sia impostata su * **/Azure**
+1. Assicurarsi che l'opzione **Branch Specifier (blank for 'any')** (Specifica ramo - vuoto per 'qualsiasi') sia impostata su **_/Azure_*
 
 1. Mantenere il **percorso dello script** impostato su **Jenkinsfile**
 

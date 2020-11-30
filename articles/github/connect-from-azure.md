@@ -5,22 +5,25 @@ author: N-Usha
 ms.author: ushan
 ms.topic: reference
 ms.service: azure
-ms.date: 08/31/2020
+ms.date: 11/17/2020
 ms.custom: github-actions-azure, devx-track-azurecli
-ms.openlocfilehash: d03f8631d985b97a46a711620c847475171f9438
-ms.sourcegitcommit: cbcde17e91e7262a596d813243fd713ce5e97d06
+ms.openlocfilehash: 5462d7ca3618869232296a9a6739ebe5adcefdb1
+ms.sourcegitcommit: 4dac39849ba2e48034ecc91ef578d11aab796e58
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93405750"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94983630"
 ---
 # <a name="use-github-actions-to-connect-to-azure"></a>Usare GitHub Actions per connettersi ad Azure
 
 Informazioni su come usare un [account di accesso di Azure](https://github.com/Azure/login) con [Azure PowerShell](https://github.com/Azure/PowerShell) o l'[interfaccia della riga di comando di Azure](https://github.com/Azure/CLI) per interagire con le risorse di Azure.
 
-Per usare Azure PowerShell o l'interfaccia della riga di comando di Azure in un flusso di lavoro di GitHub Actions, è necessario prima accedere con l'azione di [accesso di Azure](https://github.com/marketplace/actions/azure-login). L'azione di accesso di Azure consente di eseguire comandi in un flusso di lavoro nel contesto di un'[entità servizio di Azure AD](/azure/active-directory/develop/app-objects-and-service-principals#service-principal-object).
+Per usare Azure PowerShell o l'interfaccia della riga di comando di Azure in un flusso di lavoro di GitHub Actions, è necessario prima accedere con l'azione di [accesso di Azure](https://github.com/marketplace/actions/azure-login).
+L'azione di accesso di Azure consente di eseguire comandi in un flusso di lavoro nel contesto di un'[entità servizio di Azure AD](/azure/active-directory/develop/app-objects-and-service-principals#service-principal-object).
 
-Dopo aver configurato l'azione di accesso, è possibile usare l'interfaccia della riga di comando di Azure o Azure PowerShell. Per impostazione predefinita, l'azione effettua l'accesso con l'interfaccia della riga di comando di Azure, configurando l'ambiente dello strumento di esecuzione di GitHub Actions per l'interfaccia della riga di comando di Azure. Con la proprietà enable-AzPSSession dell'azione di accesso di Azure, è possibile usare Azure PowerShell.  In questo modo l'ambiente dello strumento di esecuzione di GitHub Action viene configurato con il modulo di Azure PowerShell.
+Dopo aver configurato l'azione di accesso, è possibile usare l'interfaccia della riga di comando di Azure o Azure PowerShell.
+
+Per impostazione predefinita, l'azione effettua l'accesso con l'interfaccia della riga di comando di Azure, configurando l'ambiente dello strumento di esecuzione di GitHub Actions per l'interfaccia della riga di comando di Azure. È possibile usare Azure PowerShell con la proprietà `enable-AzPSSession` dell'azione di accesso di Azure. In questo modo l'ambiente dello strumento di esecuzione di GitHub Action viene configurato con il modulo di Azure PowerShell.
 
 ## <a name="create-a-service-principal-and-add-it-to-github-secret"></a>Creare un'entità servizio e aggiungerla al segreto GitHub
 
@@ -39,7 +42,7 @@ In questo esempio verrà creato un segreto denominato `AZURE_CREDENTIALS` che è
         --identifier-uris http://localhost/$appName
     ```
 
-1. [Creare una nuova entità servizio](/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest) nel portale di Azure per l'app. 
+1. [Creare una nuova entità servizio](/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest&preserve-view=true) nel portale di Azure per l'app. 
 
     ```azurecli-interactive
         az ad sp create-for-rbac --name "myApp" --role contributor \

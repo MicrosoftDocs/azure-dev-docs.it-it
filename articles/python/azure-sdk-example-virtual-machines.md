@@ -4,12 +4,12 @@ description: Come effettuare il provisioning di una macchina virtuale di Azure u
 ms.date: 10/05/2020
 ms.topic: conceptual
 ms.custom: devx-track-python, devx-track-azurecli
-ms.openlocfilehash: 7074b23a3a0c5f47624e821e02fe5093ad98149b
-ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
+ms.openlocfilehash: d22f403195fd3cba143d9539220ec3376a7f2509
+ms.sourcegitcommit: b70a38d46616f5e519d5b9c1a1eaf3fe0ecb9605
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92689241"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94932435"
 ---
 # <a name="example-use-the-azure-libraries-to-provision-a-virtual-machine"></a>Esempio: Usare le librerie di Azure per effettuare il provisioning di una macchina virtuale
 
@@ -37,7 +37,7 @@ Assicurarsi di creare un'entità servizio per lo sviluppo locale e di creare e a
     azure-identity
     ```
 
-1. In un terminale o da un prompt dei comandi con l'ambiente virtuale attivato installare le librerie di gestione elencate nel file *requirements.txt* :
+1. In un terminale o da un prompt dei comandi con l'ambiente virtuale attivato installare le librerie di gestione elencate nel file *requirements.txt*:
 
     ```cmd
     pip install -r requirements.txt
@@ -315,6 +315,7 @@ Eseguire questo comando se non è necessario mantenere le risorse create in ques
 - [Esempio: Usare Archiviazione di Azure](azure-sdk-example-storage-use.md)
 - [Esempio: Effettuare il provisioning di un'app Web e distribuire il codice](azure-sdk-example-web-app.md)
 - [Esempio: Effettuare il provisioning ed eseguire query su un database](azure-sdk-example-database.md)
+- [Usare Azure Managed Disks con le macchine virtuali](azure-sdk-samples-managed-disks.md)
 
 Il contenitore di risorse seguente illustra esempi più completi che usano Python per creare una macchina virtuale:
 

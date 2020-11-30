@@ -4,12 +4,12 @@ description: Parte 2 dell'esercitazione su Docker, usare un registro contenitori
 ms.topic: tutorial
 ms.date: 09/20/2019
 ms.custom: devx-track-js
-ms.openlocfilehash: eb029d8e4dc2e6eddc68e0ee9112324b38e84ffe
-ms.sourcegitcommit: 4dd392ea864be52421d0239e59198bc44b0a5a16
+ms.openlocfilehash: 975ea12307a6b6488ba331e1075cea2ea4850dbb
+ms.sourcegitcommit: 6c112c184273d9df7b59de3caadc83c471532696
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91365134"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95783001"
 ---
 # <a name="use-a-container-registry"></a>Usare un registro contenitori
 
@@ -21,7 +21,7 @@ Questa esercitazione usa [Registro Azure Container](https://azure.microsoft.com/
 
 ## <a name="create-an-azure-container-registry"></a>Creare un Registro Azure Container
 
-1. In Visual Studio Code premere **F1** per aprire il riquadro comandi.
+1. In Visual Studio Code, selezionare **F1** o **CTRL+MAIUSC+P** per aprire il riquadro comandi.
 
 1. Immettere **registro** nella casella di ricerca. Nei risultati selezionare **Registro Azure Container: Create Registry** (Crea registro).
 
@@ -29,7 +29,7 @@ Questa esercitazione usa [Registro Azure Container](https://azure.microsoft.com/
 
 1. Immettere o selezionare i valori seguenti:
 
-    - In **Nome registro**immettere un nome univoco in Azure contenente da 5 a 50 caratteri alfanumerici.
+    - In **Nome registro** immettere un nome univoco in Azure contenente da 5 a 50 caratteri alfanumerici.
     - In **SKU** selezionare **Basic**.
     - In **Gruppo di risorse** immettere un valore univoco all'interno della sottoscrizione.
     - In **Località** selezionare un'area nelle vicinanze.

@@ -5,12 +5,12 @@ keywords: jenkins, azure, devops, macchina virtuale, cicd, azure devops services
 ms.topic: tutorial
 ms.date: 07/31/2018
 ms.custom: devx-track-jenkins
-ms.openlocfilehash: 3eedcc72a7c272f1cacf97b9071e750aab5a446e
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: e1c5c9b06cff7419ac98b08553d143c7449746b8
+ms.sourcegitcommit: 4dac39849ba2e48034ecc91ef578d11aab796e58
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831327"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94983650"
 ---
 # <a name="tutorial-deploy-to-linux-virtual-machine-using-jenkins-and-azure-devops-services"></a>Esercitazione: Eseguire la distribuzione in macchine virtuali Linux con Jenkins e Azure DevOps Services
 
@@ -18,7 +18,7 @@ L'integrazione continua (CI) e la distribuzione continua (CD) formano una pipeli
 
 In questa esercitazione si compila un'app Web Node.js usando Jenkins. Usare quindi Azure DevOps per la distribuzione
 
-in un [gruppo di distribuzione](/azure/devops/pipelines/release/deployment-groups/index?view=vsts) che contiene macchine virtuali Linux. Si apprenderà come:
+in un [gruppo di distribuzione](/azure/devops/pipelines/release/deployment-groups/index) che contiene macchine virtuali Linux. Si apprenderà come:
 
 > [!div class="checklist"]
 > * Ottenere l'app di esempio.
@@ -38,7 +38,7 @@ in un [gruppo di distribuzione](/azure/devops/pipelines/release/deployment-group
   È possibile ottenere un'[organizzazione di Azure DevOps Services gratuita](https://go.microsoft.com/fwlink/?LinkId=307137&clcid=0x409&wt.mc_id=o~msft~vscom~home-vsts-hero~27308&campaign=o~msft~vscom~home-vsts-hero~27308).
 
   > [!NOTE]
-  > Per altre informazioni, vedere [Connettersi ad Azure DevOps Services](/azure/devops/organizations/projects/connect-to-projects?view=vsts).
+  > Per altre informazioni, vedere [Connettersi ad Azure DevOps Services](/azure/devops/organizations/projects/connect-to-projects).
 
 *  È necessaria una macchina virtuale Linux per una destinazione di distribuzione.  Per altre informazioni, vedere [Creare e gestire VM Linux con l'interfaccia della riga di comando di Azure](/azure/virtual-machines/linux/tutorial-manage-vm).
 
@@ -90,7 +90,7 @@ Prima di tutto, è necessario configurare due plug-in Jenkins: **NodeJS** e **VS
  
 1.  Creare un token di accesso personale nell'organizzazione di Azure DevOps Services, se non è già disponibile. Jenkins richiede questa informazione per accedere all'organizzazione di Azure DevOps Services. Assicurarsi di archiviare le informazioni del token per i passaggi successivi di questa sezione.
   
-    Per informazioni su come generare un token, vedere [How do I create a personal access token for Azure DevOps Services?](/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate?view=vsts) (Come creare un token di accesso personale per Azure DevOps Services).
+    Per informazioni su come generare un token, vedere [How do I create a personal access token for Azure DevOps Services?](/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate) (Come creare un token di accesso personale per Azure DevOps Services).
 2. Nella scheda **Post-build Actions** (Azioni post-compilazione) selezionare **Add post-build action** (Aggiungi azione post-compilazione). Selezionare **Archive the artifacts** (Archivia gli elementi).
 3. Per **Files to archive** (File da archiviare) immettere `**/*` per includere tutti i file.
 4. Per creare un'altra azione, selezionare **Add post-build action** (Aggiungi azione post-compilazione).

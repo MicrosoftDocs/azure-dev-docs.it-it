@@ -5,30 +5,53 @@ author: N-Usha
 ms.author: ushan
 ms.topic: reference
 ms.service: azure
-ms.date: 05/05/2020
+ms.date: 11/19/2020
 ms.custom: github-actions-azure
-ms.openlocfilehash: db05f984c92a2c7ba99ec2df07fc3924d90107f2
-ms.sourcegitcommit: cbcde17e91e7262a596d813243fd713ce5e97d06
+ms.openlocfilehash: 078c2d22fe0075f8ff5714bc7a605f7eac99ba36
+ms.sourcegitcommit: 4dac39849ba2e48034ecc91ef578d11aab796e58
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93405700"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94983540"
 ---
-# <a name="deploy-apps-from-github-to-azure"></a>Distribuire app da GitHub ad Azure 
+# <a name="deploy-apps-from-github-to-azure"></a>Distribuire app da GitHub ad Azure
 
 Gli articoli seguenti forniscono supporto per la distribuzione di app da GitHub in Azure.  
 
-## <a name="azure-web-apps"></a>App Web di Azure
+## <a name="azure-app-service"></a>Servizio app di Azure
 
-- [Distribuire le app in modo continuo da GitHub in App Web di Azure](/azure/app-service/deploy-continuous-deployment)   
 - [Distribuire in App Web di Azure con GitHub Actions](/azure/app-service/deploy-github-actions)  
+- [Eseguire la distribuzione di un contenitore personalizzato nel servizio app usando GitHub Actions](/azure/app-service/deploy-container-github-action)
+- [Eseguire la distribuzione nel servizio app di Azure con Visual Studio Code](/azure/devops/pipelines/targets/deploy-to-azure-vscode)
 
 ## <a name="azure-functions"></a>Funzioni di Azure
 
 - [Distribuire un'app per le funzioni in modo continuo da GitHub](/azure/azure-functions/scripts/functions-cli-create-function-app-github-continuous)  
 - [Distribuire in Funzioni di Azure con GitHub Actions](/azure/azure-functions/functions-how-to-github-actions)   
 
+## <a name="azure-app-configuration"></a>Configurazione app di Azure
+
+- [Sincronizzare il repository GitHub con Configurazione app](/azure/azure-app-configuration/concept-github-action)
+
+## <a name="azure-storage"></a>Archiviazione di Azure
+
+- [Configurare un flusso di lavoro di GitHub Actions per distribuire il sito Web statico in Archiviazione di Azure](/azure/storage/blobs/storage-blobs-static-site-github-actions)
+
+## <a name="azure-container-instances"></a>Istanze di Azure Container
+- [Configurare un'azione GitHub per creare un'istanza di contenitore](/azure/container-instances/container-instances-github-action)
+
 ## <a name="azure-kubernetes-service"></a>Servizio Azure Kubernetes
 
 - [Usare GitHub Actions per la distribuzione in Kubernetes](/azure/aks/kubernetes-action)  
 - [Distribuire in Azure Dev Spaces con GitHub Actions](/azure/dev-spaces/how-to/github-actions)
+
+## <a name="azure-pipelines"></a>Azure Pipelines
+
+- [Attivare un'esecuzione della pipeline da GitHub Actions](/azure/devops/pipelines/ecosystems/github-actions)
+
+## <a name="azure-resource-manager-templates"></a>Modelli di Gestione risorse di Azure
+
+- [Distribuire modelli di Azure Resource Manager tramite GitHub Actions](/azure/azure-resource-manager/templates/deploy-github-actions)
+
+## <a name="azure-machine-learning"></a>Azure Machine Learning
+- [Usare GitHub Actions con Azure Machine Learning](/azure/machine-learning/how-to-github-actions-machine-learning)

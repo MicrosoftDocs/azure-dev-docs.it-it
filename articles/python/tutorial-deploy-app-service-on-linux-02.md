@@ -2,14 +2,14 @@
 title: "Passaggio 2: Preparare un'app per la distribuzione nel Servizio app Azure in Linux da Visual Studio Code"
 description: Passaggio 2 dell'esercitazione, configurare l'applicazione
 ms.topic: conceptual
-ms.date: 09/12/2019
+ms.date: 11/20/2020
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: 4aaaa1833a42c40786fc6923b10876561adac859
-ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
+ms.openlocfilehash: 252bfc02e3c70cc207b29ee0b8f8c58d9802f090
+ms.sourcegitcommit: 29930f1593563c5e968b86117945c3452bdefac1
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92688891"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95485660"
 ---
 # <a name="2-prepare-your-app-for-deployment-to-azure-app-service"></a>2: Preparare l'app per la distribuzione nel Servizio app di Azure
 
@@ -17,23 +17,32 @@ ms.locfileid: "92688891"
 
 In questo articolo viene preparata un'app da distribuire nel servizio app di Azure per questa esercitazione. È possibile usare un'app esistente oppure creare o scaricare un'app.
 
-Se si ha già un'app che si vuole usare, verificare di avere un file *requirements.txt* che descrive le dipendenze, inclusi i framework come Flask o Django. È possibile usare il framework che si preferisce.
+## <a name="if-you-already-have-an-app"></a>Se l'app è già esistente
 
-Se non si ha già un'app, usare una delle opzioni seguenti. Assicurarsi che l'app venga eseguita in locale.
+Se si vuole usare un'app esistente, verificare la presenza di un file *requirements.txt* nel progetto che elenchi le dipendenze, inclusi i framework come Flask o Django. È possibile usare il framework che si preferisce.
 
-## <a name="option-1-vs-code-flask-tutorial-sample"></a>Opzione 1: Esempio di esercitazione su Flask in VS Code
+> [!div class="nextstepaction"]
+> [L'app è pronta: procedere con il passaggio 3 >>>](tutorial-deploy-app-service-on-linux-03.md)
+
+## <a name="if-you-dont-already-have-an-app"></a>Se non si ha già un'app
+
+Se non si ha già un'app, usare *una* delle opzioni seguenti. Assicurarsi che l'app venga eseguita in locale.
+
+La parte restante di questa esercitazione usa il codice illustrato nell'[opzione 3](#option-3-create-a-minimal-flask-app).
+
+### <a name="option-1-use-the-vs-code-flask-tutorial-sample"></a>Opzione 1: Usare l'esempio di esercitazione su Flask in VS Code
 
 Scaricare o clonare [https://github.com/Microsoft/python-sample-vscode-flask-tutorial](https://github.com/Microsoft/python-sample-vscode-flask-tutorial), ovvero il risultato dell'[esercitazione su Flask](https://code.visualstudio.com/docs/python/tutorial-flask). Si noti che il codice dell'app si trova specificamente nella cartella *hello_app*. Per istruzioni sull'esecuzione dell'app in locale, vedere il file *readme.md* dell'esempio.
 
-## <a name="option-2-vs-code-django-tutorial-sample"></a>Opzione 2: Esempio di esercitazione su Django in VS Code
+### <a name="option-2-use-the-vs-code-django-tutorial-sample"></a>Opzione 2: Usare l'esempio di esercitazione su Django in VS Code
 
 Scaricare o clonare [https://github.com/Microsoft/python-sample-vscode-django-tutorial](https://github.com/Microsoft/python-sample-vscode-django-tutorial), ovvero il risultato dell'[esercitazione su Django](https://code.visualstudio.com/docs/python/tutorial-django).
 
-Se l'app Django usa un database SQLite locale come questo esempio, è necessario includere una copia pre-inizializzata e precompilata del file *db.sqlite3* nel repository. Il motivo è che, al momento, il servizio app per Linux non consente di eseguire il comando `migrate` di Django come parte della distribuzione, quindi è necessario distribuire un database creato in precedenza. Anche in questo caso, il database è effettivamente di sola lettura e le operazioni di scrittura generano errori.
+Idealmente, anche le app Django distribuite nel cloud usano un database basato sul cloud, ad esempio PostgreSQL per Azure. Per altre informazioni, vedere [Esercitazione: Distribuire un'app Web Django con PostgreSQL tramite il portale di Azure](tutorial-python-postgresql-app-portal.md).
 
-In ogni caso, l'opzione migliore prevede l'uso di un database separato distribuito e inizializzato in modo indipendente dal codice dell'app.
+Se l'app Django usa un database SQLite locale come questo esempio, ai fini di questa esercitazione è più semplice includere una copia pre-inizializzata e precompilata del file *db.sqlite3* nel repository. In caso contrario, è necessario configurare un comando post-compilazione per eseguire il comando `migrate` di Django nel contenitore in cui viene distribuita l'app. Per altre informazioni, vedere [Configurazione del servizio app - Personalizzare l'automazione della compilazione](/app-service/configure-language-python#customize-build-automation).
 
-## <a name="option-3-create-a-minimal-flask-app"></a>Opzione 3: Creare un'app Flask minima
+### <a name="option-3-create-a-minimal-flask-app"></a>Opzione 3: Creare un'app Flask minima
 
 Questa sezione descrive l'app Flask minima usata in questa procedura dettagliata.
 
@@ -51,12 +60,12 @@ Questa sezione descrive l'app Flask minima usata in questa procedura dettagliata
 1. Creare un file denominato *requirements.txt* con il contenuto seguente:
 
     ```text
-    Flask==1.1.2
+    Flask
     ```
 
 1. Aprire una finestra del terminale usando il comando di menu **Terminale** > **Nuovo terminale**.
 
-1. Nel terminale creare e attivare un ambiente virtuale denominato `env`:
+1. Nel terminale creare e attivare un ambiente virtuale denominato `.venv`. 
 
     # <a name="macoslinux"></a>[macOS/Linux](#tab/linux)
 
@@ -74,6 +83,8 @@ Questa sezione descrive l'app Flask minima usata in questa procedura dettagliata
     ```
 
     ---
+
+1. Quando VS Code richiede l'attivazione dell'ambiente appena creato, rispondere **Sì**.
 
 1. Installare le dipendenze dell'app:
 
@@ -109,7 +120,9 @@ Questa sezione descrive l'app Flask minima usata in questa procedura dettagliata
     flask run
     ```
 
-1. È quindi possibile aprire l'app in un browser usando l'URL `http://127.0.0.1:5000/`.
+1. Aprire l'app in un browser usando l'URL `http://127.0.0.1:5000/`. Verrà visualizzato il messaggio "Hello Flask, on Azure App Service for Linux".
+
+1. Arrestare il server Flask premendo **CTRL**+**C** nel terminale.
 
 > [!div class="nextstepaction"]
 > [L'app è pronta: procedere con il passaggio 3 >>>](tutorial-deploy-app-service-on-linux-03.md)

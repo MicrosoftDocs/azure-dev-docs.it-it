@@ -2,14 +2,14 @@
 title: "Passaggio 5: Distribuire un'app Web Python nel Servizio app di Azure in Linux con VS Code"
 description: Passaggio 5 dell'esercitazione, distribuzione del codice dell'app Web
 ms.topic: conceptual
-ms.date: 09/12/2019
+ms.date: 11/20/2020
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: e7c600314f1535589ca15daaa3bbbd9ffdc69b9d
-ms.sourcegitcommit: 815cf2acff71e849735f7afce54723f03ffa5df3
+ms.openlocfilehash: 7b3743d417ed3455c59f5b9887ee54728fb7318a
+ms.sourcegitcommit: 29930f1593563c5e968b86117945c3452bdefac1
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88501456"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95485708"
 ---
 # <a name="5-deploy-your-python-web-app-to-azure-app-service-on-linux"></a>5: Distribuire un'app Web Python nel Servizio app di Azure in Linux
 
@@ -27,6 +27,9 @@ Usare questa procedura per distribuire l'app Python in un servizio app di Azure.
 
     - Per "Select the folder to deploy" (Selezionare la cartella in cui distribuire) selezionare la cartella dell'app corrente.
     - Per "Select Web App" (Selezionare l'app Web) scegliere il servizio app creato nel passaggio precedente.
+    - Se viene richiesto di aggiornare la configurazione della build in modo da eseguire i comandi della build, rispondere **Sì**.
+    - Se viene richiesto di sovrascrivere la distribuzione esistente, rispondere **Deploy** (Distribuisci).
+    - Se viene richiesto di "distribuire sempre l'area di lavoro", rispondere **Sì**.
 
 1. Mentre è in corso il processo di distribuzione, è possibile visualizzarne lo stato di avanzamento nella finestra **Output** di VS Code.
 
@@ -38,11 +41,13 @@ Usare questa procedura per distribuire l'app Python in un servizio app di Azure.
 
     ![Esecuzione corretta dell'app nel servizio app](media/deploy-azure/web-app-running-successfully-on-app-service.png)
 
+1. Se l'app predefinita è ancora visibile, attendere un paio di minuti il riavvio del contenitore dopo la distribuzione e riprovare. Se si sta usando un comando di avvio personalizzato e ne è stata verificata la correttezza, continuare con il passaggio 6 per controllare i log.
+
 1. Per verificare che i file siano stati distribuiti, espandere il servizio app nell'area **Azure: Servizio app**, quindi espandere **File**:
 
     ![Verifica della distribuzione dei file tramite l'area Servizio app](media/deploy-azure/expand-files-node-to-check-deployment-of-web-app-files.png)
 
-    La cartella *antenv* è quella in cui il servizio app crea un ambiente virtuale con le dipendenze. Se si espande questo nodo, è possibile verificare che i pacchetti specificati in *requirements.txt* sono stati installati in *antenv/lib/python3.7/site-packages*.
+    I file *.deployment*, *antenv.tar.gz* e *oryx-manifest.toml* vengono usati dal sistema di compilazione del servizio app. La pagina predefinita dell'app è *hostingstart.html*.
 
 > [!div class="nextstepaction"]
 > [L'app è stata distribuita: procedere con il passaggio 6 >>>](tutorial-deploy-app-service-on-linux-06.md)

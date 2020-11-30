@@ -2,14 +2,14 @@
 title: 'Esercitazione: Distribuire app Python nel Servizio app di Azure in Linux da Visual Studio Code'
 description: "Passaggio 1 dell'esercitazione: configurare l'ambiente per il servizio app"
 ms.topic: conceptual
-ms.date: 09/12/2019
+ms.date: 11/20/2020
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: b35fc41707b31bec8e889d2b60becdad56f4e7d9
-ms.sourcegitcommit: 69933dcce571b2686897b295b7822e207d944617
+ms.openlocfilehash: 31695cb929188723cc608547849eb88a76b2d003
+ms.sourcegitcommit: 29930f1593563c5e968b86117945c3452bdefac1
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/18/2020
-ms.locfileid: "90773074"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "96035514"
 ---
 # <a name="tutorial-deploy-python-apps-to-azure-app-service-on-linux-from-visual-studio-code"></a>Esercitazione: Distribuire app Python nel Servizio app di Azure in Linux da Visual Studio Code
 
@@ -23,25 +23,22 @@ Per una dimostrazione, vedere il video che spiega come <a href="https://www.yout
 > Se si preferisce distribuire le app tramite l'interfaccia della riga di comando, vedere **[Avvio rapido: Creare un'app Python nel Servizio app di Azure in Linux](/azure/app-service/quickstart-python)** .
 
 > [!TIP]
-> [Servizio app di Azure in Linux](/azure/app-service/overview#app-service-on-linux) esegue il codice sorgente in un contenitore Docker predefinito. Il contenitore esegue le app con Python 3.7 usando il server Web [Gunicorn](https://gunicorn.org). Le caratteristiche di questo contenitore sono descritte in [Configurare app Python per il Servizio app di Azure in Linux](/azure/app-service/configure-language-python). La definizione del contenitore si trova in [github.com/Azure-App-Service/python](https://github.com/Azure-App-Service/python/tree/master/3.7).
+> [Servizio app di Azure in Linux](/azure/app-service/overview#app-service-on-linux) esegue il codice sorgente in un contenitore Docker predefinito. Il contenitore esegue le app con Python 3.6 usando il server Web [Gunicorn](https://gunicorn.org). Le caratteristiche di questo contenitore sono descritte in [Configurare app Python per il Servizio app di Azure in Linux](/azure/app-service/configure-language-python). Le definizioni del contenitore si trovano in [github.com/Azure-App-Service/python](https://github.com/Azure-App-Service/python/tree/master/).
 
 ## <a name="configure-your-environment"></a>Configurare l'ambiente
 
-- Una [sottoscrizione di Azure](#azure-subscription).
-- [Visual Studio Code con l'estensione Servizio app di Azure](#visual-studio-code-python-and-the-azure-app-service-extension).
-- Ambiente Python
+- Se non si ha un account Azure con una sottoscrizione attiva, è possibile [crearne uno gratuito](https://azure.microsoft.com/free/?utm_source=campaign&utm_campaign=vscode-tutorial-appservice-extension&mktingSource=vscode-tutorial-appservice-extension).
 
-### <a name="azure-subscription"></a>Sottoscrizione di Azure
+- Assicurarsi di avere un'[installazione locale di Python 3.7 o 3.8](https://python.org/downloads). Per verificare la versione, eseguire il comando seguente:
 
-Se non si ha una sottoscrizione di Azure, [iscriversi](https://azure.microsoft.com/free/?utm_source=campaign&utm_campaign=vscode-tutorial-appservice-extension&mktingSource=vscode-tutorial-appservice-extension) subito per ottenere un account gratuito con 200 USD in crediti di Azure per provare qualsiasi combinazione di servizi.
+    ```bash
+    python --version
+    ```
 
-### <a name="visual-studio-code-python-and-the-azure-app-service-extension"></a>Visual Studio Code, Python e l'estensione Servizio app di Azure
-
-Installare il software seguente:
-
-- [Visual Studio Code](https://code.visualstudio.com/).
-- Python e l'estensione [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python) come descritto nella sezione dei [prerequisiti dell'esercitazione su Python in VS Code](https://code.visualstudio.com/docs/python/python-tutorial).
-- Estensione [Servizio app di Azure](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azureappservice), che consente di interagire con il Servizio app di Azure dall'interno di VS Code. Per informazioni di carattere generale, vedere l'[esercitazione sull'estensione del Servizio app](https://code.visualstudio.com/tutorials/app-service-extension/getting-started) sull'estensione del servizio app e il [repository GitHub vscode-azureappservice](https://github.com/Microsoft/vscode-azureappservice).
+- Installare il software seguente:
+  - [Visual Studio Code](https://code.visualstudio.com/).
+  - Python e l'estensione [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python) come descritto nella sezione dei [prerequisiti dell'esercitazione su Python in VS Code](https://code.visualstudio.com/docs/python/python-tutorial).
+  - Estensione [Servizio app di Azure](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azureappservice), che consente di interagire con il Servizio app di Azure dall'interno di VS Code. Per informazioni di carattere generale, vedere l'[esercitazione sull'estensione del Servizio app](https://code.visualstudio.com/tutorials/app-service-extension/getting-started) sull'estensione del servizio app e il [repository GitHub vscode-azureappservice](https://github.com/Microsoft/vscode-azureappservice).
 
 ## <a name="sign-in-to-azure"></a>Accedere ad Azure
 

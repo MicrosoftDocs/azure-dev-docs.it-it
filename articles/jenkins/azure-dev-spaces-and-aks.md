@@ -5,18 +5,18 @@ keywords: jenkins, azure, devops, azure dev spaces, aks, servizio azure kubernet
 ms.topic: tutorial
 ms.date: 10/23/2019
 ms.custom: devx-track-jenkins, devx-track-azurecli
-ms.openlocfilehash: b5de1c470b5b47184b1c8fe33c31e6958e0a45e9
-ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
+ms.openlocfilehash: 3652d0bc1dc418c4037296fdacc3a56384b592c3
+ms.sourcegitcommit: 4dac39849ba2e48034ecc91ef578d11aab796e58
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92689107"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94983710"
 ---
 # <a name="tutorial-use-azure-dev-spaces-with-azure-kubernetes-service"></a>Esercitazione: Usare Azure Dev Spaces con il servizio Azure Kubernetes
 
 Azure Dev Spaces consente di testare e sviluppare in modo iterativo un'applicazione di microservizi in esecuzione nel servizio Azure Kubernetes senza la necessità di replicare o simulare dipendenze. Il plug-in Azure Dev Spaces per Jenkins consente di usare Dev Spaces nella pipeline di integrazione continua e distribuzione continua (CI/CD).
 
-In questa esercitazione viene usato anche il servizio Registro Azure Container. Questo servizio archivia le immagini e una delle relative attività crea artefatti Docker e Helm. Usando il Registro Azure Container e la relativa attività per la generazione di artefatti, è possibile evitare di installare software aggiuntivo, come Docker, nel server Jenkins. 
+In questa esercitazione viene usato anche il servizio Registro Azure Container. Questo servizio archivia le immagini e una delle relative attività crea artefatti Docker e Helm. Usando il Registro Azure Container e la relativa attività per la generazione di artefatti, è possibile evitare di installare software aggiuntivo, come Docker, nel server Jenkins.
 
 In questa esercitazione si completeranno le attività seguenti:
 
@@ -36,9 +36,9 @@ Questa esercitazione presuppone una conoscenza di livello intermedio dei princip
 
 * [Visual Studio Code](https://code.visualstudio.com/download) con l'estensione [Azure Dev Spaces](https://marketplace.visualstudio.com/items?itemName=azuredevspaces.azds) installata.
 
-* L'[interfaccia della riga di comando di Azure](/cli/azure/install-azure-cli?view=azure-cli-latest) versione 2.0.43 o superiore installata.
+* L'[interfaccia della riga di comando di Azure](/cli/azure/install-azure-cli) versione 2.0.43 o superiore installata.
 
-* Un server master Jenkins. Se non è già disponibile un server master Jenkins, distribuire [Jenkins](https://azuremarketplace.microsoft.com/marketplace/apps/bitnami.production-jenkins) in Azure seguendo la procedura descritta in questo argomento di [avvio rapido](/azure/jenkins/install-jenkins-solution-template). 
+* Un server Jenkins. Se non è già disponibile un server Jenkins, distribuire [Jenkins](https://azuremarketplace.microsoft.com/marketplace/apps/bitnami.production-jenkins) in Azure seguendo la procedura descritta in questo argomento di [avvio rapido](/azure/jenkins/install-jenkins-solution-template). 
 
 * Nel server Jenkins devono essere installati gli strumenti Helm e kubectl, che devono essere disponibili per l'account Jenkins, come descritto più avanti in questa esercitazione.
 
@@ -147,7 +147,7 @@ Per altre informazioni sull'uso di Azure Dev Spaces e sullo sviluppo multiserviz
     ```
     Aprire questo URL in una finestra del browser per visualizzare l'app Web. Durante l'esecuzione del contenitore, l'output `stdout` e `stderr` vengono trasmessi nella finestra del terminale.
 
-8. Quindi, configurare e distribuire *mywebapi* :
+8. Quindi, configurare e distribuire *mywebapi*:
 
     1. Passare alla directory `dev-spaces/samples/java/getting-started/mywebapi`
 
@@ -249,7 +249,7 @@ La pipeline di esempio usa Helm e kubectl per eseguire la distribuzione nell'ist
     }
     ```
 
-4. Aggiungere un tipo di credenziale *Username with password* (Nome utente e password) in Jenkins. Il **nome utente** è quello del passaggio precedente, in questo esempio `acr01`. La **password** corrisponde al valore della prima password, in questo esempio `vGBP=zzzzzzzzzzzzzzzzzzzzzzzzzzz`. L' **ID** di queste credenziali corrisponde al valore di ACR_CRED_ID.
+4. Aggiungere un tipo di credenziale *Username with password* (Nome utente e password) in Jenkins. Il **nome utente** è quello del passaggio precedente, in questo esempio `acr01`. La **password** corrisponde al valore della prima password, in questo esempio `vGBP=zzzzzzzzzzzzzzzzzzzzzzzzzzz`. L'**ID** di queste credenziali corrisponde al valore di ACR_CRED_ID.
 
 5. Configurare le credenziali del servizio Azure Kubernetes. Aggiungere un tipo di credenziale *Kubernetes configuration (kubeconfig)* (Configurazione di Kubernetes) in Jenkins. Usare l'opzione "Enter directly" (Immetti direttamente). Per ottenere le credenziali di accesso per il cluster del servizio Azure Kubernetes, eseguire il comando seguente:
 
@@ -257,7 +257,7 @@ La pipeline di esempio usa Helm e kubectl per eseguire la distribuzione nell'ist
     az aks get-credentials -g MyResourceGroup -n <yourAKSName> -f -
     ```
 
-   L' **ID** di queste credenziali corrisponde al valore di KUBE_CONFIG_ID nella sezione successiva.
+   L'**ID** di queste credenziali corrisponde al valore di KUBE_CONFIG_ID nella sezione successiva.
 
 ## <a name="create-a-pipeline"></a>Creare una pipeline
 
@@ -267,7 +267,7 @@ La configurazione della pipeline Jenkins e Jenkinsfile definiscono le fasi della
 
 ![Flusso della pipeline Jenkins](media/azure-dev-spaces-and-aks/jenkins-pipeline-flow.png)
 
-1. Scaricare una versione modificata del progetto *mywebapi* da [https://github.com/azure-devops/mywebapi](https://github.com/azure-devops/mywebapi). Questo progetto contiene diversi file necessari per creare una pipeline, inclusi il *Jenkinsfile* , i *Dockerfile* e il grafico Helm.
+1. Scaricare una versione modificata del progetto *mywebapi* da [https://github.com/azure-devops/mywebapi](https://github.com/azure-devops/mywebapi). Questo progetto contiene diversi file necessari per creare una pipeline, inclusi il *Jenkinsfile*, i *Dockerfile* e il grafico Helm.
 
 2. Accedere a Jenkins. Scegliere **Add Item** (Aggiungi elemento) dal menu a sinistra.
 
@@ -359,7 +359,7 @@ Per completare il passaggio 3 di questa sezione, è necessario impostare come co
 
 Quando si immette una richiesta pull, Jenkins crea un'istanza figlio di Dev Spaces basata su quella condivisa del team ed esegue il codice della richiesta pull in tale istanza figlio. L'URL dell'istanza figlio di Dev Spaces ha il formato `http://$env.azdsprefix.<test_endpoint>`. 
 
-**$env.azdsprefix** viene impostato durante l'esecuzione della pipeline dal plug-in Azure Dev Spaces tramite **devSpacesCreate** :
+**$env.azdsprefix** viene impostato durante l'esecuzione della pipeline dal plug-in Azure Dev Spaces tramite **devSpacesCreate**:
 
 ```Groovy
 stage('create dev space') {

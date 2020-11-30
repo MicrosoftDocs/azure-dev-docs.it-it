@@ -5,12 +5,12 @@ keywords: jenkins, azure, devops, cicd, linux, service fabric, cluster
 ms.topic: tutorial
 ms.date: 07/31/2018
 ms.custom: devx-track-jenkins
-ms.openlocfilehash: cc42d33b68b0c8e8417d5eb0245b33d12bb53b52
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: 012a827870d648b7a50e1685b5fab8b2730eb548
+ms.sourcegitcommit: 4dac39849ba2e48034ecc91ef578d11aab796e58
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831547"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94983980"
 ---
 # <a name="tutorial-deploy-to-a-service-fabric-cluster"></a>Esercitazione: Eseguire la distribuzione in un cluster di Service Fabric
 
@@ -224,7 +224,7 @@ I passaggi descritti in questa sezione mostrano come configurare un processo Jen
 
      Lo screenshot seguente mostra un esempio dei comandi usati per compilare l'esempio [Counter Service](https://github.com/Azure-Samples/service-fabric-dotnet-core-getting-started/tree/master/Services/CounterService) con un processo Jenkins denominato `CounterServiceApplication`.
 
-      ![Azione di compilazione di Jenkins per Service Fabric](./media/deploy-to-service-fabric-cluster/build-step-dotnet.png)
+      ![Esempio di comandi usati per compilare il servizio](./media/deploy-to-service-fabric-cluster/build-step-dotnet.png)
 
 1. Per configurare Jenkins per la distribuzione dell'app in un cluster di Service Fabric nelle azioni di post-compilazione, è necessario il percorso del certificato del cluster nel contenitore di Jenkins. Scegliere una delle seguenti opzioni a seconda che il contenitore di Jenkins sia in esecuzione all'interno o all'esterno del cluster e prendere nota del percorso del certificato del cluster:
 
