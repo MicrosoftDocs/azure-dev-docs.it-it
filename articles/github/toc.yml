@@ -12,6 +12,8 @@
           href: deploy-to-azure.md
         - name: Distribuire database in Azure
           href: database-actions-deploy.md
+        - name: Usare la sostituzione di variabili
+          href: github-variable-substitution.md
         - name: Gestire Criteri di Azure
           href: manage-azure-policy.md
     - name: Azure DevOps e GitHub

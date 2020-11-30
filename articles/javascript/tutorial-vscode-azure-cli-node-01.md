@@ -4,12 +4,12 @@ description: Parte 1 dell'esercitazione, introduzione e prerequisiti dell'interf
 ms.topic: tutorial
 ms.date: 09/24/2019
 ms.custom: devx-track-js, devx-track-azurecli
-ms.openlocfilehash: 2ff59026c3f250f3ef83982f799633094a5cd9f7
-ms.sourcegitcommit: 12f80b1e0fe08db707c198271d0c399c3aba343a
+ms.openlocfilehash: fab8d3af108fb5b81f8360ec84320da5e4ca5c15
+ms.sourcegitcommit: 291768a67862336267c67819e913c16710e3875e
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94515182"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95820667"
 ---
 # <a name="deploy-to-azure-app-service-using-the-azure-cli"></a>Eseguire la distribuzione nel Servizio app di Azure tramite l'interfaccia della riga di comando di Azure
 
@@ -20,7 +20,7 @@ In questa esercitazione si distribuisce un'applicazione Node.js nel Servizio app
 - Una [sottoscrizione di Azure](#azure-subscription).
 - [Node.js e npm 6.x o versione successiva](https://nodejs.org/en/download), la gestione pacchetti Node.js.
 - [Git](https://git-scm.com/downloads), dopo il quale il comando `git --version` dovrebbe mostrare un numero di versione.
-[!INCLUDE [Azure CLI](~/../azure-docs/includes/azure-cli-prepare-your-environment-no-header.md)]
+- [Installare l'interfaccia della riga di comando di Azure](/cli/azure/install-azure-cli) o usare [Azure Cloud Shell](https://shell.azure.com.)
 
 ### <a name="azure-subscription"></a>Sottoscrizione di Azure
 
