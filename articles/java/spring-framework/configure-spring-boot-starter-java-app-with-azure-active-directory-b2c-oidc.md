@@ -48,7 +48,7 @@ In questa esercitazione verranno illustrate le procedure per:
     * In **Progetto** selezionare **Progetto Maven**.
     * In **Linguaggio** selezionare **Java**.
     * In **Spring Boot** selezionare **2.3.4**.
-    * In **Gruppo** , **Artefatto** e **Nome** immettere lo stesso valore, usando una stringa descrittiva breve. L'interfaccia utente potrebbe compilare automaticamente alcuni campi durante la digitazione.
+    * In **Gruppo**, **Artefatto** e **Nome** immettere lo stesso valore, usando una stringa descrittiva breve. L'interfaccia utente potrebbe compilare automaticamente alcuni campi durante la digitazione.
     * Nel riquadro **Dipendenze** selezionare **Aggiungi dipendenze**. Usare l'interfaccia utente per aggiungere dipendenze da **Spring Web** e **Spring Security**.
 
    ![Immettere i valori per generare il progetto](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/fill-in-the-values-to-generate-the-project.png)
@@ -88,7 +88,7 @@ In questa esercitazione verranno illustrate le procedure per:
 
 1. Accedere a <https://portal.azure.com>.
 
-2. Selezionare **Crea una risorsa** , quindi **Identità** e infine **Visualizza tutto**. Cercare **Azure Active Directory B2C**.
+2. Selezionare **Crea una risorsa**, quindi **Identità** e infine **Visualizza tutto**. Cercare **Azure Active Directory B2C**.
 
     ![Creare la nuova istanza di Azure Active Directory B2C](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/az-1-n.png)
 
@@ -100,7 +100,7 @@ In questa esercitazione verranno illustrate le procedure per:
 
     ![Creare la nuova istanza di Azure Active Directory](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/az-2-n.png)
 
-5. Specificare i valori appropriati per **Nome organizzazione** e **Nome di dominio iniziale** , quindi selezionare **Crea**.
+5. Specificare i valori appropriati per **Nome organizzazione** e **Nome di dominio iniziale**, quindi selezionare **Crea**.
 
     ![Scegliere l'istanza di Azure Active Directory](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/az-3-n.png)
 
@@ -118,7 +118,7 @@ In questa esercitazione verranno illustrate le procedure per:
 
    ![configurare una nuova registrazione di app](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/b2c4-n.png)
 
-3. Tornare al riquadro **Gestisci** , selezionare **Applicazioni (legacy)** , quindi selezionare il nome dell'applicazione creata.
+3. Tornare al riquadro **Gestisci**, selezionare **Applicazioni (legacy)** , quindi selezionare il nome dell'applicazione creata.
 
    ![Aggiornare l'applicazione](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/b2c5-n.png)
 
@@ -130,7 +130,7 @@ In questa esercitazione verranno illustrate le procedure per:
     
    ![Aggiornare la chiave dell'app](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/b2c6-n.png)
 
-7. Nel riquadro **Generale** selezionare **Chiavi** , quindi **Genera chiave**.
+7. Nel riquadro **Generale** selezionare **Chiavi**, quindi **Genera chiave**.
 
 8. Impostare **Chiave dell'app** sul valore immesso prima per **Gruppo**.
 
@@ -138,7 +138,7 @@ In questa esercitazione verranno illustrate le procedure per:
 
     > [!NOTE]
     > Se si lascia la sezione **Chiavi** e si torna indietro, non sarà possibile visualizzare il valore della chiave. In tal caso, è necessario creare un'altra chiave e copiarla per un uso futuro.
-    > In alcuni casi, la chiave generata può contenere caratteri problematici per l'inclusione nel file *application.yml* , ad esempio una barra rovesciata o un apice inverso. In tal caso, eliminare la chiave e generarne un'altra.
+    > In alcuni casi, la chiave generata può contenere caratteri problematici per l'inclusione nel file *application.yml*, ad esempio una barra rovesciata o un apice inverso. In tal caso, eliminare la chiave e generarne un'altra.
 
     ![Creare il segreto](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/b2c3-n.png)
 
@@ -166,7 +166,7 @@ A questo punto, dopo aver creato l'istanza di Azure AD B2C e alcuni flussi utent
 
 2. Passare alla cartella padre del progetto e aprire il file di progetto Maven *pom.xml* in un editor di testo.
 
-3. Aggiungere le dipendenze per la sicurezza OAuth2 di Spring al file *pom.xml* :
+3. Aggiungere le dipendenze per la sicurezza OAuth2 di Spring al file *pom.xml*:
 
     ```xml
     <dependency>
@@ -236,7 +236,7 @@ A questo punto, dopo aver creato l'istanza di Azure AD B2C e alcuni flussi utent
     >         password-reset: # optional
     > ```
     >
-    > Il file *application.yml* è disponibile nell' [esempio di Spring Boot in Azure Active Directory B2C](https://github.com/Azure/azure-sdk-for-java/blob/master/sdk/spring/azure-spring-boot-samples/azure-spring-boot-sample-active-directory-b2c-oidc/src/main/resources/application.yml) in GitHub.
+    > Il file *application.yml* è disponibile nell'[esempio di Spring Boot in Azure Active Directory B2C](https://github.com/Azure/azure-sdk-for-java/blob/master/sdk/spring/azure-spring-boot-samples/azure-spring-boot-sample-active-directory-b2c-oidc/src/main/resources/application.yml) in GitHub.
 
 7. Salvare e chiudere il file *application.yml*.
 
@@ -328,7 +328,7 @@ A questo punto, dopo aver creato l'istanza di Azure AD B2C e alcuni flussi utent
     }
     ```
 
-14. Copiare i file *greeting.html* e *home.html* dall' [esempio di Spring Boot in Azure AD B2C](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/spring/azure-spring-boot-samples/azure-spring-boot-sample-active-directory-b2c-oidc/src/main/resources/templates) in *src/main/Resources/templates* e sostituire `${your-profile-edit-user-flow}` e `${your-password-reset-user-flow}` con i nomi dei flussi utente creati in precedenza.
+14. Copiare i file *greeting.html* e *home.html* dall'[esempio di Spring Boot in Azure AD B2C](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/spring/azure-spring-boot-samples/azure-spring-boot-sample-active-directory-b2c-oidc/src/main/resources/templates) in *src/main/Resources/templates* e sostituire `${your-profile-edit-user-flow}` e `${your-password-reset-user-flow}` con i nomi dei flussi utente creati in precedenza.
 
 ## <a name="build-and-test-your-app"></a>Compilare e testare l'app
 
