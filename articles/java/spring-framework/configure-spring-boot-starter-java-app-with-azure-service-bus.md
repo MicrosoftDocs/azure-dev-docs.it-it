@@ -7,12 +7,12 @@ ms.author: seal
 ms.date: 10/13/2019
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: 4d035ae35c8e1e8a4db886f7b5743b143de1992c
-ms.sourcegitcommit: 8e1d3a384ccb0e083589418d65a70b3a01afebff
+ms.openlocfilehash: c1b8baa716fbe24efbf635bc5f8a17833590137a
+ms.sourcegitcommit: 709fa38a137b30184a7397e0bfa348822f3ea0a7
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94560289"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96442136"
 ---
 # <a name="how-to-use-the-spring-boot-starter-for-azure-service-bus-jms"></a>Come usare l'utilità di avvio Spring Boot per il JMS del bus di servizio di Azure
 
@@ -44,8 +44,6 @@ Per questo articolo sono necessari i prerequisiti seguenti:
 
 1. Se non è disponibile un'applicazione Spring Boot, creare un progetto **Maven** con [Spring Initializr](https://start.spring.io/). Ricordarsi di selezionare **Maven Project** (Progetto Maven) e in **Dependencies** (Dipendenze) aggiungere la dipendenza **Web**.
 
-   > [!NOTE]
-   > Spring Initializr usa Java 11 come versione predefinita. Per usare le utilità di avvio di Spring Boot descritte in questo argomento, è necessario selezionare invece Java 8.
 
 ## <a name="use-the-azure-service-bus-jms-starter"></a>Usare l'utilità di avvio per il JMS del bus di servizio di Azure
 

@@ -7,12 +7,12 @@ ms.date: 10/13/2018
 ms.service: event-hubs
 ms.topic: article
 ms.custom: devx-track-java, devx-track-azurecli
-ms.openlocfilehash: 53a50a7a32ff9e555f821d69688cc566fb7a3c62
-ms.sourcegitcommit: 8e1d3a384ccb0e083589418d65a70b3a01afebff
+ms.openlocfilehash: 75ca8b04bd935e71b51c8d0c71eb189f89f2a512
+ms.sourcegitcommit: 709fa38a137b30184a7397e0bfa348822f3ea0a7
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94560422"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96442093"
 ---
 # <a name="how-to-use-the-spring-boot-starter-for-apache-kafka-with-azure-event-hubs"></a>Come usare Spring Boot Starter per Apache Kafka con Hub eventi di Azure
 
@@ -28,7 +28,6 @@ I prerequisiti seguenti sono necessari per seguire le procedure disponibili in q
 
 > [!NOTE]
 > * Per completare i passaggi descritti in questo articolo è necessario Spring Boot versione 2.0 o successiva.
-> * Spring Initializr usa Java 11 come versione predefinita. Per usare le utilità di avvio di Spring Boot descritte in questo argomento, è necessario selezionare invece Java 8.
 
 ## <a name="create-an-azure-event-hub-using-the-azure-portal"></a>Creare un hub eventi di Azure con il portale di Azure
 
@@ -86,7 +85,6 @@ Dopo la distribuzione dello spazio dei nomi, è possibile creare un hub eventi a
 
    > [!NOTE]
    > 1. Spring Initializr usa i nomi in **Group** (Gruppo) e **Artifact** (Artefatto) per creare il nome del pacchetto, ad esempio *com.wingtiptoys.kafka*.
-   > 2. Spring Initializr usa Java 11 come versione predefinita. Per usare le utilità di avvio di Spring Boot descritte in questo argomento, è necessario selezionare invece Java 8.
 
 1. Dopo aver specificato le opzioni elencate sopra, fare clic su **Generate Project** (Genera progetto).
 

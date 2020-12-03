@@ -8,12 +8,12 @@ ms.tgt_pltfrm: multiple
 ms.author: judubois
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: 5a69307743226be661b95692d2a2681cce5b5d79
-ms.sourcegitcommit: 76f1a47c58810486856e0d128bd154cf7d355e65
+ms.openlocfilehash: fe3cd9ba7da4458fbbf4b9f70cea22e33acec232
+ms.sourcegitcommit: 709fa38a137b30184a7397e0bfa348822f3ea0a7
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92200574"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96441916"
 ---
 # <a name="use-spring-data-jdbc-with-azure-database-for-mysql"></a>Usare Spring Data JDBC con Database di Azure per MySQL
 
@@ -36,8 +36,6 @@ Per generare l'applicazione, immettere quanto segue sulla riga di comando:
 ```bash
 curl https://start.spring.io/starter.tgz -d dependencies=web,data-jdbc,mysql -d baseDir=azure-database-workshop -d bootVersion=2.3.4.RELEASE -d javaVersion=8 | tar -xzvf -
 ```
-> [!NOTE]
-> Spring Initializr usa Java 11 come versione predefinita. Per usare le utilità di avvio di Spring Boot descritte in questo argomento, è necessario selezionare invece Java 8.
 
 ### <a name="configure-spring-boot-to-use-azure-database-for-mysql"></a>Configurare Spring Boot per l'uso di Database di Azure per MySQL
 

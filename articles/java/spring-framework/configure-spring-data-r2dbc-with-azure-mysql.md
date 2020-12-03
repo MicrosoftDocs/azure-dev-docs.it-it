@@ -8,12 +8,12 @@ ms.tgt_pltfrm: multiple
 ms.author: judubois
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: 4b76368f46c7172375b6e6dbf88d99b9cc3ad7a1
-ms.sourcegitcommit: f460914ac5843eb7392869a08e3a80af68ab227b
+ms.openlocfilehash: 7cdcae8f20101702e19757c270e81cafb712f8bf
+ms.sourcegitcommit: 709fa38a137b30184a7397e0bfa348822f3ea0a7
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "92010064"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96441957"
 ---
 # <a name="use-spring-data-r2dbc-with-azure-database-for-mysql"></a>Usare Spring Data R2DBC con Database di Azure per MySQL
 
@@ -39,8 +39,6 @@ Per generare l'applicazione, immettere quanto segue sulla riga di comando:
 curl https://start.spring.io/starter.tgz -d dependencies=webflux,data-r2dbc -d baseDir=azure-database-workshop -d bootVersion=2.3.4.RELEASE -d javaVersion=8 | tar -xzvf -
 ```
 
-> [!NOTE]
-> Spring Initializr usa Java 11 come versione predefinita. Per usare le utilità di avvio di Spring Boot descritte in questo argomento, è necessario selezionare invece Java 8.
 
 ### <a name="add-the-reactive-mysql-driver-implementation"></a>Aggiungere l'implementazione del driver MySQL reattivo
 

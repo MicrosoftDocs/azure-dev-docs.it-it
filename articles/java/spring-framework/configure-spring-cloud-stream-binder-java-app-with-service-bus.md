@@ -7,12 +7,12 @@ ms.author: seal
 ms.date: 10/10/2020
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: e4958d65e06a77181a00a7dc4d221e02f4f6b188
-ms.sourcegitcommit: 6514a061ba5b8003ce29d67c81a9f0795c3e3e09
+ms.openlocfilehash: 170d3727b661f18252edb39396739e2791101534
+ms.sourcegitcommit: 709fa38a137b30184a7397e0bfa348822f3ea0a7
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94601253"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96441802"
 ---
 # <a name="how-to-use-spring-cloud-azure-stream-binder-for-azure-service-bus"></a>Come usare Spring Cloud Stream Binder per il bus di servizio di Azure
 
@@ -42,8 +42,6 @@ Per questo articolo sono necessari i prerequisiti seguenti:
 
 1. Se non è disponibile un'applicazione Spring Boot, creare un progetto **Maven** con [Spring Initializr](https://start.spring.io/). Ricordarsi di selezionare **Maven Project** (Progetto Maven) e in **Dependencies** (Dipendenze) aggiungere la dipendenza **Web** e selezionare la versione Java **8**.
 
-    > [!NOTE]
-    > Spring Initializr usa Java 11 come versione predefinita. Per usare le utilità di avvio di Spring Boot descritte in questo argomento, è necessario selezionare invece Java 8.
 
 ## <a name="use-the-spring-cloud-stream-binder-starter"></a>Usare l'utilità di avvio Spring Cloud Stream Binder
 
@@ -59,7 +57,7 @@ Per questo articolo sono necessari i prerequisiti seguenti:
 
 1. Aggiungere il blocco di codice seguente sotto l'elemento **&lt;dependencies>** , a seconda che si stia usando una coda o un argomento del bus di servizio:
 
-    **Coda del bus di servizio**
+    **coda del bus di servizio**
 
     ```xml
     <dependency>

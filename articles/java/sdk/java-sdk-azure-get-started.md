@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: multiple
 ms.assetid: b1e10b79-f75e-4605-aecd-eed64873e2d3
 ms.custom: seo-java-august2019, devx-track-java, devx-track-azurecli
-ms.openlocfilehash: 5b569d07a7686b73bbed7983ea3343b8a36d7bfc
-ms.sourcegitcommit: 29930f1593563c5e968b86117945c3452bdefac1
+ms.openlocfilehash: c98e9194d7c9b391206104f249f1356351938d32
+ms.sourcegitcommit: 709fa38a137b30184a7397e0bfa348822f3ea0a7
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "96035424"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96442287"
 ---
 # <a name="get-started-with-cloud-development-using-java-on-azure"></a>Introduzione allo sviluppo per il cloud con Java in Azure
 
@@ -87,7 +87,7 @@ Questo passaggio crea un progetto Maven di base nella cartella `testAzureApp`. A
 <dependency>
     <groupId>com.azure.resourcemanager</groupId>
     <artifactId>azure-resourcemanager</artifactId>
-    <version>2.0.0</version>
+    <version>2.1.0</version>
 </dependency>
 <dependency>
     <groupId>com.azure</groupId>
@@ -98,12 +98,6 @@ Questo passaggio crea un progetto Maven di base nella cartella `testAzureApp`. A
     <groupId>com.microsoft.sqlserver</groupId>
     <artifactId>mssql-jdbc</artifactId>
     <version>6.2.1.jre8</version>
-</dependency>
-<!-- Only for SQL sample as it's still in preview -->
-<dependency>
-    <groupId>com.azure.resourcemanager</groupId>
-    <artifactId>azure-resourcemanager-sql</artifactId>
-    <version>2.0.0-beta.5</version>
 </dependency>
 ```
 
@@ -296,7 +290,7 @@ Questo codice crea un nuovo database SQL con una regola del firewall che consent
             // change to create the Azure profile with tenantId, subscriptionId, and Azure environment.
             AzureProfile profile = new AzureProfile(AzureEnvironment.AZURE);
 
-            SqlServerManager sqlServerManager = SqlServerManager.configure()
+            AzureResourceManager azureResourceManager = AzureResourceManager.configure()
                     .withLogLevel(HttpLogDetailLevel.BASIC)
                     .authenticate(credential, profile);
 
@@ -306,7 +300,7 @@ Questo codice crea un nuovo database SQL con una regola del firewall che consent
             final String dbPassword = "YOUR_PASSWORD_HERE";
             final String firewallRuleName = "YOUR_RULE_NAME_HERE";
 
-            SqlServer sampleSQLServer = sqlServerManager.sqlServers().define(sqlServerName)
+            SqlServer sampleSQLServer = azureResourceManager.sqlServers().define(sqlServerName)
                     .withRegion(Region.US_EAST)
                     .withNewResourceGroup("sampleSqlResourceGroup")
                     .withAdministratorLogin(adminUser)

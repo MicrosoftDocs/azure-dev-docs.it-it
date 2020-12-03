@@ -9,12 +9,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: data-services
 ms.custom: devx-track-java
-ms.openlocfilehash: b00a3a3f0f5e6f4f391cd70d2e7d2a2904c089eb
-ms.sourcegitcommit: e1175aa94709b14b283645986a34a385999fb3f7
+ms.openlocfilehash: 9a04f3eac457d22c728a11850d4a85aba88a71df
+ms.sourcegitcommit: 709fa38a137b30184a7397e0bfa348822f3ea0a7
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93192468"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96441997"
 ---
 # <a name="how-to-use-the-spring-data-gremlin-starter-with-the-azure-cosmos-db-sql-api"></a>Come usare Spring Data Gremlin Starter con l'API SQL di Azure Cosmos DB
 
@@ -94,14 +94,13 @@ I prerequisiti seguenti sono necessari per seguire le procedure disponibili in q
 
 1. Passare a <https://start.spring.io/>.
 
-1. Specificare che si vuole generare un progetto **Maven** con **Java** , immettere i nomi per l'applicazione in **Group** (Gruppo) e **Artifact** (Elemento), specificare la versione 2.3.4 come versione di **Spring Boot** e quindi selezionare **GENERATE** (Genera).
+1. Specificare che si vuole generare un progetto **Maven** con **Java**, immettere i nomi per l'applicazione in **Group** (Gruppo) e **Artifact** (Elemento), specificare la versione 2.3.4 come versione di **Spring Boot** e quindi selezionare **GENERATE** (Genera).
 
    >[!div class="mx-imgBorder"]
    >![spring-initializr][spring-initializr-01]
    
    > [!NOTE]
-   > 1. Spring Initializr usa i nomi in **Group** (Gruppo) e **Artifact** (Artefatto) per creare il nome del pacchetto, ad esempio `com.example.wintiptoysdata`.
-   > 2. Spring Initializr usa Java 11 come versione predefinita. Per usare le utilità di avvio di Spring Boot descritte in questo argomento, è necessario selezionare invece Java 8.
+   > Spring Initializr usa i nomi in **Group** (Gruppo) e **Artifact** (Artefatto) per creare il nome del pacchetto, ad esempio `com.example.wintiptoysdata`.
 
 1. Quando richiesto, scaricare il progetto in un percorso nel computer locale.
 
@@ -140,9 +139,9 @@ Verranno replicate le configurazioni dell'[esempio Azure Spring Data Gremlin](ht
 
    | Campo              | Descrizione                                                                                                                                                                                                             |
    |--------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-   | `endpoint`         | Specifica l'URI Gremlin per il database, derivante dall' **ID** univoco specificato quando è stata creata l'istanza di Azure Cosmos DB in un passaggio precedente di questa guida di avvio rapido.                                                 |
+   | `endpoint`         | Specifica l'URI Gremlin per il database, derivante dall'**ID** univoco specificato quando è stata creata l'istanza di Azure Cosmos DB in un passaggio precedente di questa guida di avvio rapido.                                                 |
    | `port`             | Specifica la porta TCP/IP, che deve essere **443** per HTTPS.                                                                                                                                                           |
-   | `username`         | Specifica l' **ID database** e l' **ID grafo** univoci usati quando è stato aggiunto il grafo in un passaggio precedente di questa guida di avvio rapido. Il valore deve essere immesso con la sintassi "/dbs/ **{Database ID}** /colls/ **{Graph ID}** ". |
+   | `username`         | Specifica l'**ID database** e l'**ID grafo** univoci usati quando è stato aggiunto il grafo in un passaggio precedente di questa guida di avvio rapido. Il valore deve essere immesso con la sintassi "/dbs/ **{Database ID}** /colls/ **{Graph ID}** ". |
    | `password`         | Specifica la **chiave di accesso** primaria o secondaria copiata in un passaggio precedente di questa guida di avvio rapido.                                                                                                                      |
    | `sslEnabled`       | Specifica se abilitare o meno SSL.                                                                                                                                                                                           |
    | `telemetryAllowed` | Specificare **true** se si vuole abilitare la telemetria, altrimenti **false**.

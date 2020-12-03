@@ -4,12 +4,12 @@ description: Informazioni su come usare Terraform per semplificare la distribuzi
 ms.topic: overview
 ms.date: 10/26/2019
 ms.custom: devx-track-terraform
-ms.openlocfilehash: 0b38c7c2d518087f7a49c0d7e4f462d7da7eaf76
-ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
+ms.openlocfilehash: 883242a09129bbc864185786ccf99888e7d3d842
+ms.sourcegitcommit: 709fa38a137b30184a7397e0bfa348822f3ea0a7
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/28/2020
-ms.locfileid: "91401751"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96442163"
 ---
 # <a name="terraform-with-azure"></a>Utilizzo di Terraform con Azure
 
@@ -17,7 +17,7 @@ ms.locfileid: "91401751"
 
 Questo articolo descrive i vantaggi dell'utilizzo di Terraform nella gestione dell'infrastruttura di Azure.
 
-## <a name="automate-infrastructure-management"></a>Automatizzare la gestione dell'infrastruttura.
+## <a name="automate-infrastructure-management"></a>Automatizzare la gestione dell'infrastruttura
 
 I file di configurazione basati su modello di Terraform consentono di definire, eseguire il provisioning e configurare le risorse di Azure in modo prevedibile e ripetibile. L'automazione dell'infrastruttura ha diversi vantaggi:
 
