@@ -8,45 +8,49 @@ metadata:
   ms.topic: landing-page
   author: N-Usha
   ms.author: ushan
-  ms.date: 05/05/2020
+  ms.date: 11/24/2020
   ms.custom: github-actions-azure
-  ms.openlocfilehash: f2dddbae2eac63fdab7e5956ebcda6003e3c2028
-  ms.sourcegitcommit: 2540e91f7b6aa077158e25a0b718737abff904d4
+  ms.openlocfilehash: 5dd30cbc8737ecd644f235d0494052cbf6f2b4e1
+  ms.sourcegitcommit: 709fa38a137b30184a7397e0bfa348822f3ea0a7
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 11/10/2020
-  ms.locfileid: "94432782"
+  ms.lasthandoff: 12/01/2020
+  ms.locfileid: "96442135"
 landingContent:
 - title: GitHub Actions per Azure
   linkLists:
   - linkListType: get-started
     links:
-    - text: Distribuire in Azure con GitHub Actions
+    - text: Che cos'è la funzionalità GitHub Actions per Azure?
       url: github-actions.md
 - title: Distribuisci in Azure
   linkLists:
-  - linkListType: how-to-guide
+  - linkListType: deploy
     links:
     - text: Distribuire app da GitHub ad Azure
       url: deploy-to-azure.md
+    - text: Distribuire database da GitHub ad Azure
+      url: database-actions-deploy.md
+- title: Strumenti per interagire con GitHub Actions
+  linkLists:
+  - linkListType: get-started
+    links:
+    - text: Eseguire l'autenticazione da Azure a GitHub
+      url: connect-from-azure.md
+    - text: Usare la sostituzione di variabili
+      url: github-variable-substitution.md
 - title: Visual Studio e Visual Studio Code
   linkLists:
   - linkListType: deploy
     links:
     - text: Usare Visual Studio o Visual Studio Code per distribuire app da GitHub
       url: deploy-with-visual-studio.md
-- title: Integrazione di Azure DevOps e GitHub
+- title: Integrazione di Azure Pipelines e GitHub
   linkLists:
   - linkListType: how-to-guide
     links:
     - text: Usare Azure DevOps e GitHub
       url: integrate-azure-devops.md
-- title: Connettersi da Azure a GitHub
-  linkLists:
-  - linkListType: get-started
-    links:
-    - text: Connettersi a GitHub da Azure e da altri servizi
-      url: connect-from-azure.md
 - title: Gestire Criteri di Azure con GitHub
   linkLists:
   - linkListType: get-started
