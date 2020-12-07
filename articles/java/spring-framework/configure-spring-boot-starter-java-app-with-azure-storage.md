@@ -8,16 +8,16 @@ ms.service: storage
 ms.topic: article
 ms.workload: storage
 ms.custom: devx-track-java, devx-track-azurecli
-ms.openlocfilehash: a459f9eba2661cefddf5c90ae4764fade415ac4d
-ms.sourcegitcommit: e1175aa94709b14b283645986a34a385999fb3f7
+ms.openlocfilehash: 7e6437859b7b5e67edd9386d0391535dd6537ff7
+ms.sourcegitcommit: 709fa38a137b30184a7397e0bfa348822f3ea0a7
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93192433"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96442117"
 ---
 # <a name="how-to-use-the-spring-boot-starter-for-azure-storage"></a>Come usare l'utilità di avvio Spring Boot per Archiviazione di Azure
 
-Questo articolo illustra la creazione di un'applicazione personalizzata con **Spring Initializr** , quindi l'aggiunta dell'utilità di avvio per Archiviazione di Azure e infine l'uso dell'applicazione per caricare un BLOB nell'account di archiviazione di Azure.
+Questo articolo illustra la creazione di un'applicazione personalizzata con **Spring Initializr**, quindi l'aggiunta dell'utilità di avvio per Archiviazione di Azure e infine l'uso dell'applicazione per caricare un BLOB nell'account di archiviazione di Azure.
 
 ## <a name="prerequisites"></a>Prerequisiti
 
@@ -39,7 +39,7 @@ La procedura seguente crea un account di archiviazione e un contenitore di Azure
 
 1. Passare al portale di Azure all'indirizzo <https://portal.azure.com/> ed eseguire l'accesso.
 
-1. Selezionare **Crea una risorsa** , quindi **Attività iniziali** e quindi **Account di archiviazione**.
+1. Selezionare **Crea una risorsa**, quindi **Attività iniziali** e quindi **Account di archiviazione**.
 
    ![Creare un account di archiviazione di Azure][IMG01]
 
@@ -47,7 +47,7 @@ La procedura seguente crea un account di archiviazione e un contenitore di Azure
 
    * Selezionare **Sottoscrizione**.
    * Selezionare un **gruppo di risorse** oppure crearne uno nuovo.
-   * Immettere un nome univoco per **Nome dell'account di archiviazione** , che diventerà parte dell'URI dell'account di archiviazione. Se si immette **wingtiptoysstorage** in **Nome** , ad esempio, l'URI sarà *wingtiptoysstorage.core.windows.net*.
+   * Immettere un nome univoco per **Nome dell'account di archiviazione**, che diventerà parte dell'URI dell'account di archiviazione. Se si immette **wingtiptoysstorage** in **Nome**, ad esempio, l'URI sarà *wingtiptoysstorage.core.windows.net*.
    * Specificare la **località** per l'account di archiviazione.
 1. Dopo aver specificato le opzioni elencate sopra, selezionare **Rivedi e crea**. 
 1. Verificare le specifiche, quindi selezionare **Crea** per creare l'account di archiviazione.
@@ -104,7 +104,7 @@ La procedura seguente crea l'applicazione Spring Boot.
 1. Specificare le opzioni seguenti:
 
    * Generare un progetto **Maven**.
-   * Specificare **Java 8**.
+   * Specificare **Java 11**.
    * Specificare **Spring Boot** versione 2.3 o successiva.
    * Specificare i nomi di **Group** (Gruppo) e **Artifact** (Artefatto) per l'applicazione.
    * Aggiungere la dipendenza **Spring Web**.
@@ -112,8 +112,7 @@ La procedura seguente crea l'applicazione Spring Boot.
       ![Opzioni di base di Spring Initializr][SI01]
 
    > [!NOTE]
-   > 1. Spring Initializr usa i nomi in **Group** (Gruppo) e **Artifact** (Artefatto) per creare il nome del pacchetto, ad esempio *com.wingtiptoys.storage*.
-   > 2. Spring Initializr usa Java 11 come versione predefinita. Per usare le utilità di avvio di Spring Boot descritte in questo argomento, è necessario selezionare invece Java 8.
+   > Spring Initializr usa i nomi in **Group** (Gruppo) e **Artifact** (Artefatto) per creare il nome del pacchetto, ad esempio *com.wingtiptoys.storage*.
 
 1. Dopo aver specificato le opzioni elencate sopra, selezionare **GENERA**.
 
@@ -354,7 +353,7 @@ In questa sezione si creano le classi Java necessarie per archiviare un BLOB nel
 
 1. Salvare e chiudere il file Java del controller BLOB.
 
-1. Aprire un prompt dei comandi e cambiare la directory passando alla cartella in cui si trova il file *pom.xml* , ad esempio:
+1. Aprire un prompt dei comandi e cambiare la directory passando alla cartella in cui si trova il file *pom.xml*, ad esempio:
 
    ```cmd
    cd C:\SpringBoot\storage
@@ -373,7 +372,7 @@ In questa sezione si creano le classi Java necessarie per archiviare un BLOB nel
    mvn spring-boot:run
    ```
 
-1. Quando l'applicazione è in esecuzione, è possibile testarla usando *curl* , ad esempio:
+1. Quando l'applicazione è in esecuzione, è possibile testarla usando *curl*, ad esempio:
 
    a. Inviare una richiesta POST per aggiornare il contenuto di un file:
 

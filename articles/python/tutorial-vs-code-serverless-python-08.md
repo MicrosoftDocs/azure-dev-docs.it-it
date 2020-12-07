@@ -1,21 +1,21 @@
 ---
-title: 'Passaggio 8: Pulire le risorse usate con il codice Python in Funzioni di Azure'
+title: 'Passaggio 8: Pulire le risorse usate con il codice Python serverless in Funzioni di Azure'
 description: Passaggio 8 dell'esercitazione, pulizia delle risorse di Azure per evitare di incorrere in addebiti ricorrenti.
 ms.topic: conceptual
-ms.date: 09/17/2020
+ms.date: 11/30/2020
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: ec97faa440dcfb79240b0805e44de7d3d3447bad
-ms.sourcegitcommit: 050c898df76a1af5feffe99e392a073b8ac9c19c
+ms.openlocfilehash: af1ce614671d3da67725ca358a018026c76ccb5c
+ms.sourcegitcommit: 709fa38a137b30184a7397e0bfa348822f3ea0a7
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92137210"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96441732"
 ---
 # <a name="8-clean-up-azure-resources-for-azure-functions"></a>8: Pulire le risorse di Azure per Funzioni di Azure
 
 [Passaggio precedente: Aggiungere un binding di archiviazione](tutorial-vs-code-serverless-python-07.md)
 
-Questo articolo illustra come rimuovere le risorse di Azure create in questa esercitazione. L'app per le funzioni di Azure creata con Visual Studio Code include risorse che possono comportare costi minimi. Per altre informazioni, vedere [Prezzi di Funzioni di Azure](https://azure.microsoft.com/pricing/details/functions/).
+L'app per le funzioni di Azure creata con Visual Studio Code durante questa esercitazione include risorse che possono comportare costi minimi. Per altre informazioni, vedere [Prezzi di Funzioni di Azure](https://azure.microsoft.com/pricing/details/functions/).
 
 Il modo migliore per pulire le risorse consiste nell'eliminare il gruppo che contiene tutte le singole risorse usate in questa esercitazione. Le risorse includono l'app per le funzioni, l'account di archiviazione e il piano di servizio app di supporto.
 

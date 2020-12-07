@@ -1,21 +1,21 @@
 ---
-title: 'Passaggio 5: Distribuire Funzioni di Azure in Python con VS Code'
-description: Passaggio 5 dell'esercitazione, distribuzione del codice di funzioni Python in Azure e informazioni sullo streaming di log e sulla sincronizzazione delle impostazioni tra un progetto locale e Azure.
+title: 'Passaggio 5: Distribuire Funzioni di Azure serverless in Python con VS Code'
+description: Passaggio 5 dell'esercitazione, distribuzione del codice di funzioni Python serverless in Azure e informazioni sullo streaming di log e sulla sincronizzazione delle impostazioni tra un progetto locale e Azure.
 ms.topic: conceptual
-ms.date: 09/17/2020
+ms.date: 11/30/2020
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: 7b708cceec048ffac5895d43affb0853c846cdf6
-ms.sourcegitcommit: 050c898df76a1af5feffe99e392a073b8ac9c19c
+ms.openlocfilehash: 294ecb106ab55c87e0191f5a0df807da89a8acee
+ms.sourcegitcommit: 709fa38a137b30184a7397e0bfa348822f3ea0a7
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92137200"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96442228"
 ---
 # <a name="5-deploy-azure-functions-in-python"></a>5: Distribuire Funzioni di Azure in Python
 
 [Passaggio precedente: Eseguire il debug in locale](tutorial-vs-code-serverless-python-04.md)
 
-In questo articolo si userà l'estensione Funzioni di Azure per creare un'app per le funzioni in Azure, oltre ad altre risorse di Azure necessarie. Un'app per le funzioni consente di raggruppare le funzioni come un'unità logica per semplificare la gestione, la distribuzione e la condivisione delle risorse.
+La distribuzione di una funzione in Azure implica la creazione di un'app per le funzioni in Azure oltre che di tutte le altre risorse di Azure necessarie. Un'app per le funzioni consente di raggruppare le funzioni come un'unità logica per semplificare la gestione, la distribuzione e la condivisione delle risorse.
 
 Un'app per le funzioni richiede un account di archiviazione di Azure per i dati e un [piano di hosting](/azure/azure-functions/functions-scale#hosting-plan-support). Tutte queste risorse sono organizzate all'interno di un singolo gruppo di risorse.
 
@@ -23,16 +23,16 @@ Un'app per le funzioni richiede un account di archiviazione di Azure per i dati 
 
     ![Distribuire la funzione Python in un app per le funzioni di Azure](media/tutorial-vs-code-serverless-python/deploy-a-python-fuction-to-azure-function-app.png)
 
-1. Quando richiesto, selezionare **Create New Function App in Azure** (Crea una nuova app per le funzioni in Azure) e specificare un nome univoco in Azure, in genere usando il nome personale o della società insieme ad altri identificatori univoci. È possibile usare lettere, numeri e trattini.
+1. Quando richiesto (**Selezionare un'app per le funzioni in Azure**), selezionare **Create New Function App in Azure** (Crea una nuova app per le funzioni in Azure) e specificare un nome univoco in Azure, in genere usando il nome personale o della società insieme ad altri identificatori univoci. È possibile usare lettere, numeri e trattini.
 
     Se in precedenza è stata creata un'app per le funzioni, il relativo nome viene visualizzato in questo elenco di opzioni.
 
-1. Quando richiesto, selezionare una versione di Python e una località di Azure.
+1. Alle due richieste successive selezionare una versione di Python e una località di Azure.
 
 1. L'estensione esegue le azioni seguenti, che è possibile osservare nei messaggi popup e nella finestra **Output** di Visual Studio Code. Il processo richiede alcuni minuti:
 
     - Creare un gruppo di risorse nella località selezionata usando il nome assegnato (rimuovendo i trattini).
-    - In questo gruppo di risorse creare l'account di archiviazione, il piano di hosting e l'app per le funzioni. Per impostazione predefinita, viene creato un [piano a consumo](/azure/azure-functions/functions-scale#consumption-plan). Per eseguire le funzioni in un piano dedicato, è necessario [abilitare la pubblicazione con le opzioni di creazione avanzate](/azure/azure-functions/functions-develop-vs-code).
+    - In questo gruppo di risorse creare l'account di archiviazione, il piano di hosting e l'app per le funzioni. Funzioni di Azure usa un [piano a consumo](/azure/azure-functions/functions-scale#consumption-plan) per impostazione predefinita. Per eseguire le funzioni in un piano dedicato, è necessario [abilitare la pubblicazione con le opzioni di creazione avanzate](/azure/azure-functions/functions-develop-vs-code).
     - Distribuire il codice nell'app per le funzioni.
 
     L'area **Azure: Funzioni** mostra anche lo stato di avanzamento:
@@ -48,23 +48,15 @@ Un'app per le funzioni richiede un account di archiviazione di Azure per i dati 
 1. Selezionare **View output** (Visualizza output) per passare alla finestra **Output**. L'output mostra anche l'endpoint pubblico in Azure (l'URL dell'endpoint specifico corrisponderà al nome specificato per l'app per le funzioni):
 
     <pre>
-    HTTP Trigger Urls:
-
-          HttpExample: https://vscode-azure-functions.azurewebsites.net/api/HttpExample
+    1:38:04 PM vscode-azure-functions: HTTP Trigger Urls:
+      HttpExample: https://vscode-azure-functions.azurewebsites.net/api/HttpExample
     </pre>
 
     Usare questo endpoint per eseguire gli stessi test effettuati localmente, usando i parametri URL e/o le richieste con dati JSON nel corpo della richiesta. I risultati dell'endpoint pubblico devono corrispondere a quelli dell'endpoint locale testato in precedenza nella [parte 4](tutorial-vs-code-serverless-python-04.md).
 
-## <a name="stream-logs"></a>Eseguire lo streaming dei log
+## <a name="examine-logs-live-metrics"></a>Esaminare i log (Metriche attive)
 
-Il supporto per lo streaming dei log è attualmente in fase di sviluppo, come descritto nel [problema 589](https://github.com/microsoft/vscode-azurefunctions/issues/589) per l'estensione Funzioni di Azure. Il pulsante **Stream logs** (Streaming dei log) nel popup del messaggio di distribuzione alla fine collegherà l'output dei log in Azure a Visual Studio Code. Sarà anche possibile avviare e interrompere lo streaming dei log nell'area **Funzioni di Azure** facendo clic con il pulsante destro del mouse sul progetto Funzioni e scegliendo **Start streaming logs** (Avvia lo streaming dei log) o **Stop streaming logs** (Interrompi lo streaming dei log).
-
-Attualmente, tuttavia, questi comandi non sono ancora operativi. Lo streaming dei log è invece disponibile in un browser eseguendo il comando seguente, sostituendo `<app_name>` con il nome dell'app per le funzioni in Azure:
-
-```
-# Replace <app_name> with the name of your Functions app on Azure
-func azure functionapp logstream <app_name> --browser
-```
+Il pulsante **Trasmetti log** nel popup con il messaggio sulla distribuzione apre un browser nella sezione **Metriche attive** del portale di Azure per la funzione. È anche possibile connettersi alle metriche nella finestra di esplorazione di **Funzioni di Azure**, facendo clic con il pulsante destro del mouse sul nome del progetto di funzioni e quindi scegliendo **Start streaming logs** (Avvia lo streaming dei log).
 
 ## <a name="sync-local-settings-to-azure"></a>Sincronizzare le impostazioni locali con Azure
 

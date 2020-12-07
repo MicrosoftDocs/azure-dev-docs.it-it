@@ -1,21 +1,21 @@
 ---
-title: 'Passaggio 6: Aggiungere una seconda funzione Python a Funzioni di Azure con VS Code'
-description: "Passaggio 6 dell'esercitazione: espansione di un progetto di Funzioni di Azure mediante l'aggiunta di una seconda funzione."
+title: 'Passaggio 6: Aggiungere una seconda funzione Python serverless a Funzioni di Azure con VS Code'
+description: Passaggio 6 dell'esercitazione, espansione di un progetto di Funzioni di Azure con l'aggiunta di una seconda funzione serverless.
 ms.topic: conceptual
-ms.date: 09/17/2020
+ms.date: 11/30/2020
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: bbf89352bbbb93a90ac6f41bea97ba0def9bf815
-ms.sourcegitcommit: 050c898df76a1af5feffe99e392a073b8ac9c19c
+ms.openlocfilehash: 18cc5b138a46e4194c82bd0339c1566e20107347
+ms.sourcegitcommit: 709fa38a137b30184a7397e0bfa348822f3ea0a7
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92137100"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96441708"
 ---
 # <a name="6-add-a-second-python-function-to-azure-functions"></a>6: Aggiungere una seconda funzione Python a Funzioni di Azure
 
 [Passaggio precedente: Distribuire in Azure](tutorial-vs-code-serverless-python-05.md)
 
-Dopo la prima distribuzione, è possibile apportare modifiche al codice, ad esempio aggiungendo altre funzioni Python, e ridistribuirle nella stessa app per le funzioni di Azure.
+Dopo la prima distribuzione, è possibile apportare modifiche al codice, ad esempio aggiungendo altre funzioni Python, e quindi ridistribuirle nella stessa app per le funzioni di Azure.
 
 1. Nell'area **Azure: Functions** (Azure: Funzioni) selezionare il comando **Create Function** (Crea funzione) oppure usare **Azure Functions: Create Function** (Funzioni di Azure: Crea funzione) nel riquadro comandi. Specificare i dettagli seguenti per la funzione:
 
@@ -23,9 +23,9 @@ Dopo la prima distribuzione, è possibile apportare modifiche al codice, ad esem
     - Nome: "DigitsOfPi"
     - Authorization level (Livello di autorizzazione): Anonima
 
-1. In Esplora risorse di Visual Studio Code è presente una sottocartella il cui nome corrisponde a quello della funzione e che ancora una colta contiene i file denominati *\_\_init\_\_.py*, *function.json* e *sample.dat*.
+    La sezione **Progetto locale** nella finestra di esplorazione di Funzioni di Azure ora visualizza una funzione *DigitsOfPi*. Nell'editor è possibile passare tra i file *\_\_init\_\_.py*, *function.json* e *sample.dat* della funzione.
 
-1. Sostituire il contenuto di *\_\_init\_\_.py* in modo che corrisponda al codice seguente, che genera una stringa contenente il valore di PI fino a un numero di cifre specificato nell'URL (questo codice usa solo un parametro URL).
+1. Sostituire il contenuto di *\_\_init\_\_.py* in modo che corrisponda al codice seguente, che genera una stringa contenente il valore di PI fino a un numero di cifre specificato nell'URL (questo codice usa solo un parametro URL):
 
     ```python
     import logging
@@ -102,7 +102,7 @@ Dopo la prima distribuzione, è possibile apportare modifiche al codice, ad esem
     }
     ```
 
-1. Avviare il debugger premendo F5 o selezionando il comando di menu **Debug** > **Avvia debug**. La finestra **Output** dovrebbe ora visualizzare entrambi gli endpoint del progetto:
+1. Avviare il debugger premendo F5 o selezionando il comando di menu **Esegui** > **Avvia debug**. La finestra **Output** dovrebbe ora visualizzare entrambi gli endpoint del progetto:
 
     <pre>
     Http Functions:
@@ -114,7 +114,7 @@ Dopo la prima distribuzione, è possibile apportare modifiche al codice, ad esem
 
 1. Ridistribuire il codice usando l'opzione **Deploy to Function App** (Distribuisci nell'app per le funzioni) nell'area **Azure: Functions** (Azure: Funzioni). Se richiesto, selezionare l'app per le funzioni creata in precedenza.
 
-1. Al termine della distribuzione, che richiede qualche minuto, nella finestra **Output** vengono visualizzati gli endpoint pubblici con cui è possibile ripetere i test.
+1. Dopo alcuni minuti la distribuzione viene completata e la finestra **Output** mostra gli endpoint pubblici con cui è possibile ripetere i test.
 
 > [!div class="nextstepaction"]
 > [È stata aggiunta una seconda funzione: procedere con il passaggio 7 >>>](tutorial-vs-code-serverless-python-07.md)

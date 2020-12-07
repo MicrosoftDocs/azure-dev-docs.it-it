@@ -1,39 +1,43 @@
 ---
 title: 'Esercitazione: Creare e distribuire Funzioni di Azure serverless in Python con VS Code'
-description: "Passaggio 1 dell'esercitazione: configurare l'ambiente locale per Funzioni di Azure"
+description: Passaggio 1 dell'esercitazione, configurare l'ambiente locale per Funzioni di Azure serverless
 ms.topic: conceptual
-ms.date: 05/19/2020
+ms.date: 11/30/2020
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: 69f66c51a6e55eff91a7de780ebd0bd6f5500f68
-ms.sourcegitcommit: 050c898df76a1af5feffe99e392a073b8ac9c19c
+ms.openlocfilehash: a7eea7fd73f13f9ca2f93cf3184c5ab7a1889614
+ms.sourcegitcommit: 709fa38a137b30184a7397e0bfa348822f3ea0a7
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92137220"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96442243"
 ---
 # <a name="tutorial-create-and-deploy-serverless-azure-functions-in-python-with-visual-studio-code"></a>Esercitazione: Creare e distribuire Funzioni di Azure serverless in Python con Visual Studio Code
 
-In questo articolo si usano Visual Studio Code e l'estensione Funzioni di Azure per creare un endpoint HTTP serverless con Python e anche per aggiungere una connessione (o "binding") all'archiviazione.
+In questo articolo si usano Visual Studio Code e l'estensione Funzioni di Azure per creare un endpoint HTTP serverless con Python e anche per aggiungere una connessione (o binding) all'archiviazione. L'estensione Funzioni di Azure per Visual Studio Code semplifica notevolmente il processo di utilizzo di Funzioni perché gestisce automaticamente numerosi problemi di configurazione.
 
-Funzioni di Azure consente di eseguire il codice in un ambiente serverless senza dover effettuare il provisioning di una macchina virtuale o pubblicare un'app Web. L'estensione Funzioni di Azure per Visual Studio Code semplifica notevolmente il processo di utilizzo di Funzioni perché gestisce automaticamente numerosi problemi di configurazione.
+Nell'ambiente serverless di Funzioni di Azure vengono presentati gli endpoint e gli URL pubblici dell'app senza richiedere di effettuare il provisioning di una macchina virtuale, pubblicare un'app Web o altrimenti gestire server e risorse. Azure gestisce tutte queste risorse in modo efficiente e automatico, riducendo significativamente il sovraccarico e i costi associati all'hosting dell'applicazione. Per altre informazioni, vedere [Panoramica di Funzioni di Azure](/azure/azure-functions/functions-overview).
 
 Se si riscontrano problemi con uno qualsiasi dei passaggi descritti in questa esercitazione, è possibile segnalarli. Usare il pulsante di feedback **Questa pagina** alla fine di ogni articolo.
 
-Per una dimostrazione, vedere il video che spiega come <a href="https://www.youtube.com/watch?v=9bMsdBYy-D0&feature=youtu.be&ocid=AID3006292" target="_blank">compilare funzioni di Azure con VS Code</a> (youtube.com) tratto dalla conferenza virtuale PyCon 2020. Può essere interessante anche la sessione più lunga, che illustra come <a href="https://www.youtube.com/watch?v=PV7iy6FPjAY&feature=youtu.be&t=13&ocid=AID3006292" target="_blank">elaborare facilmente i dati con Funzioni di Azure</a> (youtube.com). 
+Per una dimostrazione, vedere il video che spiega come <a href="https://www.youtube.com/watch?v=9bMsdBYy-D0&feature=youtu.be&ocid=AID3006292" target="_blank">compilare funzioni di Azure con VS Code</a> (youtube.com) tratto dalla conferenza virtuale PyCon 2020. Può essere interessante anche la sessione più lunga, che illustra come <a href="https://www.youtube.com/watch?v=PV7iy6FPjAY&feature=youtu.be&t=13&ocid=AID3006292" target="_blank">elaborare facilmente i dati con Funzioni di Azure</a> (youtube.com).
 
 ## <a name="configure-your-environment"></a>Configurare l'ambiente
 
-- Una [sottoscrizione di Azure](#azure-subscription).
-- [Azure Functions Core Tools](#azure-functions-core-tools).
-- [Visual Studio Code con l'estensione Funzioni di Azure](#visual-studio-code-python-and-the-azure-functions-extension).
+- Se non si ha un account Azure con una sottoscrizione attiva, è possibile [crearne uno gratuito](https://azure.microsoft.com/free/?utm_source=campaign&utm_campaign=vscode-tutorial-functions-extension&mktingSource=vscode-tutorial-functions-extension).
 
-### <a name="azure-subscription"></a>Sottoscrizione di Azure
+- Seguire le istruzioni fornite nelle sezioni successive:
 
-Se non si ha una sottoscrizione di Azure, [iscriversi](https://azure.microsoft.com/free/?utm_source=campaign&utm_campaign=vscode-tutorial-functions-extension&mktingSource=vscode-tutorial-functions-extension) subito per ottenere un account gratuito valido per 30 giorni con 200 USD in crediti di Azure per provare qualsiasi combinazione di servizi.
+  - [Installare Azure Functions Core Tools](#azure-functions-core-tools).
 
+  - [Installare Python e Visual Studio Code con l'estensione Funzioni di Azure](#visual-studio-code-python-and-the-azure-functions-extension).
+
+  - [Accedere ad Azure](#sign-in-to-azure)
+
+  - [Verificare l'ambiente](#verify-your-environment)
+ 
 ### <a name="azure-functions-core-tools"></a>Azure Functions Core Tools
 
-Installare Azure Functions Core Tools seguendo le istruzioni per il sistema operativo specifico in [Usare Azure Functions Core Tools](/azure/azure-functions/functions-run-local#v2). Ignorare i commenti nell'articolo sullo strumento di gestione pacchetti Chocolatey, perché non sono necessari per completare questa esercitazione.
+Seguire le istruzioni per il sistema operativo riportate in [Usare Azure Functions Core Tools](/azure/azure-functions/functions-run-local#v2). Ignorare i commenti nell'articolo sullo strumento di gestione pacchetti Chocolatey, perché non sono necessari per completare questa esercitazione.
 
 Durante l'installazione di Node.js, usare le opzioni predefinite e *non* selezionare l'opzione per l'installazione automatica degli strumenti necessari.  Assicurarsi anche di usare l'opzione `-g` con i comandi `npm install` per rendere disponibili Core Tools per i comandi successivi.
 

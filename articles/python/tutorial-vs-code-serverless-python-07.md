@@ -1,31 +1,31 @@
 ---
-title: 'Passaggio 7: Aggiungere un binding di archiviazione per Funzioni di Azure in Python con VS Code'
-description: Passaggio 7 dell'esercitazione, aggiunta di un binding in Python per scrivere messaggi nell'archiviazione di Azure.
+title: 'Passaggio 7: Aggiungere un binding di archiviazione per Funzioni di Azure serverless in Python con VS Code'
+description: Passaggio 7 dell'esercitazione, aggiunta di un binding nel codice Python serverless per scrivere messaggi nell'archiviazione di Azure.
 ms.topic: conceptual
-ms.date: 09/17/2020
+ms.date: 11/30/2020
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: c260d2b8708d770b62c9f94d651a1ba630660cab
-ms.sourcegitcommit: 050c898df76a1af5feffe99e392a073b8ac9c19c
+ms.openlocfilehash: aa0913f35915a4d4a97b1d0183976614509b704d
+ms.sourcegitcommit: 709fa38a137b30184a7397e0bfa348822f3ea0a7
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92137190"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96442169"
 ---
 # <a name="7-add-a-storage-binding-for-azure-functions-in-python"></a>7: Aggiungere un binding di archiviazione per Funzioni di Azure in Python
 
 [Passaggio precedente: Distribuire una seconda funzione](tutorial-vs-code-serverless-python-06.md)
 
-È possibile aggiungere un binding di archiviazione per Funzioni di Azure. Un _binding_ consente di collegare il codice della funzione alle risorse, ad esempio archiviazione di Azure, senza scrivere codice di accesso ai dati.
+Un _binding_ consente di collegare il codice della funzione alle risorse, ad esempio archiviazione di Azure, senza scrivere codice di accesso ai dati.
 
 Il binding viene definito nel file *function.json* e può rappresentare sia l'input che l'output. Una funzione può usare più binding di input e output, ma un solo trigger. Per altre informazioni, vedere [Concetti su trigger e binding di Funzioni di Azure](/azure/azure-functions/functions-triggers-bindings).
 
 In questa sezione viene aggiunto un binding di archiviazione alla funzione HttpExample creata in precedenza in questa esercitazione. La funzione usa questo binding per scrivere messaggi nell'archiviazione a ogni richiesta. L'archiviazione in questione usa lo stesso account di archiviazione predefinito usato dall'app per le funzioni. Se si prevede di usare l'archiviazione in modo intensivo, tuttavia, è consigliabile creare un account separato.
 
 1. Sincronizzare le impostazioni remote per il progetto Funzioni di Azure nel file *local.settings.json* aprendo il riquadro comandi e selezionando **Funzioni di Azure: Download Remote Settings** (Scarica impostazioni remote).
- 
+
     Aprire il file *local.settings.json* e verificare che contenga un valore per `AzureWebJobsStorage`. Questo valore è la stringa di connessione per l'account di archiviazione.
 
-1. Nella cartella `HttpExample` fare clic con il pulsante destro del mouse sul file *function.json* e scegliere **Aggiungi binding**:
+1. In **Progetto locale** della finestra di esplorazione di Funzioni di Azure fare clic con il pulsante destro del mouse sulla funzione `HttpExample` e scegliere **Aggiungi binding**:
 
     ![Comando Aggiungi binding in Esplora risorse di Visual Studio Code](media/tutorial-vs-code-serverless-python/add-binding-command-to-azure-functions-in-visual-studio-code.png)
 
@@ -33,8 +33,8 @@ In questa sezione viene aggiunto un binding di archiviazione alla funzione HttpE
 
     | Prompt | Valore da specificare |
     | --- | --- |
-    | Impostare la direzione di binding | fo |
-    | Selezionare il binding con direzione in uscita | Archiviazione code di Azure |
+    | Selezionare la direzione di binding | in uscita |
+    | Selezionare il binding con la direzione in uscita | Archiviazione code di Azure |
     | Il nome usato per identificare questo binding nel codice | msg |
     | La coda a cui verrà inviato il messaggio | outqueue |
     | Selezionare l'impostazione da *local.settings.json* (richiesta della connessione all'archiviazione) | AzureWebJobsStorage |
@@ -78,7 +78,7 @@ In questa sezione viene aggiunto un binding di archiviazione alla funzione HttpE
             # MODIFICATION: write the a message to the message queue, using msg.set
             msg.set(f"Request made for {name} at {datetime.datetime.now()}")
 
-            return func.HttpResponse(f"Hello {name}!")
+            return func.HttpResponse(f"Hello, {name}. This HTTP triggered function executed successfully.")
         else:
             return func.HttpResponse(
                  "Please pass a name on the query string or in the request body",
@@ -86,7 +86,7 @@ In questa sezione viene aggiunto un binding di archiviazione alla funzione HttpE
             )
     ```
 
-1. Per testare queste modifiche in locale, avviare di nuovo il debugger in Visual Studio Code premendo F5 o selezionando il comando di menu **Debug** > **Avvia debug**.
+1. Per testare queste modifiche in locale, avviare di nuovo il debugger in Visual Studio Code premendo F5 o selezionando il comando di menu **Esegui** > **Avvia debug**.
 
     Come prima, la finestra **Output** dovrebbe mostrare gli endpoint del progetto.
 
