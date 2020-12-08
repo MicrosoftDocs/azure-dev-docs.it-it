@@ -28,9 +28,11 @@
             - name: 6. Pulire le risorse
               href: tutorial/static-web-app/clean-up-resources.md
         - name: Caricare immagini in BLOB di archiviazione
-          href: tutorial/browser-file-upload.yml?preview=tutorialFeedback
+          href: tutorial/browser-file-upload-azure-storage-blob.md
+        - name: Aggiungere un pulsante per l'accesso
+          href: tutorial/single-page-application-azure-login-button-sdk-msal.md
         - name: Express.js con MongoDB
-          href: tutorial/web-app-mongodb.yml?preview=tutorialFeedback
+          href: tutorial/deploy-nodejs-mongodb-app-service-from-visual-studio-code.md
         - name: Distribuire un'app in una macchina virtuale Linux
           items:
             - name: 1. Introduzione e prerequisiti
@@ -72,7 +74,7 @@
             - name: Pulire le risorse
               href: tutorial-vscode-azure-app-service-node-05.md
         - name: Distribuire Deno nel servizio app
-          href: tutorial/deno-visual-studio-code-azure-app-service.yml?&preview=tutorialFeedback
+          href: tutorial/deploy-deno-app-azure-app-service-azure-cli.md
         - name: Distribuire contenitori con VS Code
           items:
             - name: Introduzione e prerequisiti
