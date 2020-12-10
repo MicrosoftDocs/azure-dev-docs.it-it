@@ -3,13 +3,13 @@ title: 'Passaggio 2: Creare una funzione Python serverless per Funzioni di Azure
 description: Passaggio 2 dell'esercitazione, aggiungere una funzione Python serverless usando l'estensione Funzioni di Azure per VS Code.
 ms.topic: conceptual
 ms.date: 11/30/2020
-ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: b9805a99ff12108787a85635c308d1c5145491a6
-ms.sourcegitcommit: 709fa38a137b30184a7397e0bfa348822f3ea0a7
+ms.custom: devx-track-python, seo-python-october2019, contperfq2
+ms.openlocfilehash: ac9bf8f90399a5ad2421689104fd5a6d9772c462
+ms.sourcegitcommit: 0cda024089784b92c1db3a4506c1dccd6bfe6339
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96441890"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96759308"
 ---
 # <a name="2-create-a-python-function-for-azure-functions"></a>2: Creare una funzione Python per Funzioni di Azure
 
