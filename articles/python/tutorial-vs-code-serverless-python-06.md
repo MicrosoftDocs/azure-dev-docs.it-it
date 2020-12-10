@@ -3,13 +3,13 @@ title: 'Passaggio 6: Aggiungere una seconda funzione Python serverless a Funzion
 description: Passaggio 6 dell'esercitazione, espansione di un progetto di Funzioni di Azure con l'aggiunta di una seconda funzione serverless.
 ms.topic: conceptual
 ms.date: 11/30/2020
-ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: 18cc5b138a46e4194c82bd0339c1566e20107347
-ms.sourcegitcommit: 709fa38a137b30184a7397e0bfa348822f3ea0a7
+ms.custom: devx-track-python, seo-python-october2019, contperfq2
+ms.openlocfilehash: ac1aafc1ccaafd893a66e8d4ac0a8ee247c12dc3
+ms.sourcegitcommit: 0cda024089784b92c1db3a4506c1dccd6bfe6339
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96441708"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96759408"
 ---
 # <a name="6-add-a-second-python-function-to-azure-functions"></a>6: Aggiungere una seconda funzione Python a Funzioni di Azure
 

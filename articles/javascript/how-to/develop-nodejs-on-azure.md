@@ -4,12 +4,12 @@ description: Completare l'esercitazione end-to-end che illustra come creare un'a
 ms.topic: how-to
 ms.date: 06/25/2017
 ms.custom: seo-javascript-september2019, seo-javascript-october2019, devx-track-js, devx-track-azurecli
-ms.openlocfilehash: 7ecaa972bb00fa7c07461e3679996332e7f33451
-ms.sourcegitcommit: dc74b60217abce66fe6cc93923e869e63ac86a8f
+ms.openlocfilehash: de07137ca6fd21aaf3d5dfe33bf6d599a745555d
+ms.sourcegitcommit: ae2fa266a36958c04625bb0ab212e6f2db98e026
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94872892"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96857819"
 ---
 # <a name="develop-and-deploy-a-containerized-nodejs-app-with-visual-studio-code-and-azure"></a>Sviluppare e distribuire un'app Node.js in contenitore con Visual Studio Code e Azure
 
@@ -77,8 +77,6 @@ Per orientarsi nella base di codici, si esamineranno alcuni esempi di funzionali
 1. Premere **CTRL**+**P**.
 
 1. Immettere `.js` per visualizzare tutti i file JSON/JavaScript presenti nel progetto e la directory padre di ogni file 
-
-    ![Visualizzare tutti i file con estensione js* in Visual Studio Code](../media/node-howto-e2e/visual-studio-code-javascript-json-file-list.png)
 
 1. Selezionare *server.js*, ovvero lo script di avvio dell'app.
 

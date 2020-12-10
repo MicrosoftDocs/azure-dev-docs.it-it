@@ -4,12 +4,12 @@ description: Passaggio 2 dell'esercitazione, configurare l'applicazione
 ms.topic: conceptual
 ms.date: 11/20/2020
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: 252bfc02e3c70cc207b29ee0b8f8c58d9802f090
-ms.sourcegitcommit: 29930f1593563c5e968b86117945c3452bdefac1
+ms.openlocfilehash: 7197f8afc28bd62e7247c3955c888199ee69c509
+ms.sourcegitcommit: 09b4a2dbe13601fdf16fcc4082a5075b46ad3459
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95485660"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96559195"
 ---
 # <a name="2-prepare-your-app-for-deployment-to-azure-app-service"></a>2: Preparare l'app per la distribuzione nel Servizio app di Azure
 
@@ -40,7 +40,7 @@ Scaricare o clonare [https://github.com/Microsoft/python-sample-vscode-django-tu
 
 Idealmente, anche le app Django distribuite nel cloud usano un database basato sul cloud, ad esempio PostgreSQL per Azure. Per altre informazioni, vedere [Esercitazione: Distribuire un'app Web Django con PostgreSQL tramite il portale di Azure](tutorial-python-postgresql-app-portal.md).
 
-Se l'app Django usa un database SQLite locale come questo esempio, ai fini di questa esercitazione è più semplice includere una copia pre-inizializzata e precompilata del file *db.sqlite3* nel repository. In caso contrario, è necessario configurare un comando post-compilazione per eseguire il comando `migrate` di Django nel contenitore in cui viene distribuita l'app. Per altre informazioni, vedere [Configurazione del servizio app - Personalizzare l'automazione della compilazione](/app-service/configure-language-python#customize-build-automation).
+Se l'app Django usa un database SQLite locale come questo esempio, ai fini di questa esercitazione è più semplice includere una copia pre-inizializzata e precompilata del file *db.sqlite3* nel repository. In caso contrario, è necessario configurare un comando post-compilazione per eseguire il comando `migrate` di Django nel contenitore in cui viene distribuita l'app. Per altre informazioni, vedere [Configurazione del servizio app - Personalizzare l'automazione della compilazione](/azure/app-service/configure-language-python#customize-build-automation).
 
 ### <a name="option-3-create-a-minimal-flask-app"></a>Opzione 3: Creare un'app Flask minima
 

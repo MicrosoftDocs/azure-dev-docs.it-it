@@ -3,13 +3,13 @@ title: 'Passaggio 7: Aggiungere un binding di archiviazione per Funzioni di Azur
 description: Passaggio 7 dell'esercitazione, aggiunta di un binding nel codice Python serverless per scrivere messaggi nell'archiviazione di Azure.
 ms.topic: conceptual
 ms.date: 11/30/2020
-ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: aa0913f35915a4d4a97b1d0183976614509b704d
-ms.sourcegitcommit: 709fa38a137b30184a7397e0bfa348822f3ea0a7
+ms.custom: devx-track-python, seo-python-october2019, contperfq2
+ms.openlocfilehash: 2c7bcc2ea5fde76961a84c5a2193d46b694720e1
+ms.sourcegitcommit: 0cda024089784b92c1db3a4506c1dccd6bfe6339
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96442169"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96759268"
 ---
 # <a name="7-add-a-storage-binding-for-azure-functions-in-python"></a>7: Aggiungere un binding di archiviazione per Funzioni di Azure in Python
 

@@ -3,13 +3,13 @@ title: 'Passaggio 5: Distribuire Funzioni di Azure serverless in Python con VS C
 description: Passaggio 5 dell'esercitazione, distribuzione del codice di funzioni Python serverless in Azure e informazioni sullo streaming di log e sulla sincronizzazione delle impostazioni tra un progetto locale e Azure.
 ms.topic: conceptual
 ms.date: 11/30/2020
-ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: 294ecb106ab55c87e0191f5a0df807da89a8acee
-ms.sourcegitcommit: 709fa38a137b30184a7397e0bfa348822f3ea0a7
+ms.custom: devx-track-python, seo-python-october2019, contperfq2
+ms.openlocfilehash: bcbc7116c1c0bc0cf323d56e46471856ebc5e9ea
+ms.sourcegitcommit: 0cda024089784b92c1db3a4506c1dccd6bfe6339
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96442228"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96759298"
 ---
 # <a name="5-deploy-azure-functions-in-python"></a>5: Distribuire Funzioni di Azure in Python
 

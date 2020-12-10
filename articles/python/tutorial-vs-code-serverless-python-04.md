@@ -3,13 +3,13 @@ title: 'Passaggio 4: Eseguire il debug in locale del codice Python serverless in
 description: Passaggio 4 dell'esercitazione, esecuzione del debugger di VS Code in locale per verificare il codice Python serverless.
 ms.topic: conceptual
 ms.date: 11/30/2020
-ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: ecd93f7b551525576123e57ed9efe55b335d4dd4
-ms.sourcegitcommit: 709fa38a137b30184a7397e0bfa348822f3ea0a7
+ms.custom: devx-track-python, seo-python-october2019, contperfq2
+ms.openlocfilehash: a96fb6e621f1c0b1c6e6f067e28b920a8c53fb44
+ms.sourcegitcommit: 0cda024089784b92c1db3a4506c1dccd6bfe6339
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96441738"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96759428"
 ---
 # <a name="4-debug-the-azure-functions-python-code-locally"></a>4: Eseguire il debug in locale del codice Python in Funzioni di Azure
 
