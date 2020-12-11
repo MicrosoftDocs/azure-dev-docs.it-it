@@ -14,12 +14,12 @@ metadata:
   ms.service: multiple
   ms.devlang: javascript
   ms.custom: 2020Aug21Redesign, devx-track-js
-  ms.openlocfilehash: e98e1fb3e6640eb25dd5f7b69da8342028024455
-  ms.sourcegitcommit: 0cda024089784b92c1db3a4506c1dccd6bfe6339
+  ms.openlocfilehash: 244a4fd10fc0c3968354ec565c2f95c117ee2d8a
+  ms.sourcegitcommit: ae2fa266a36958c04625bb0ab212e6f2db98e026
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 12/07/2020
-  ms.locfileid: "96759418"
+  ms.lasthandoff: 12/08/2020
+  ms.locfileid: "96857869"
 landingContent:
 - title: Non si è ancora provato Azure?
   linkLists:
@@ -33,34 +33,36 @@ landingContent:
       url: core/node-sdk-azure-authenticate.md
     - text: Blog di Azure SDK
       url: https://devblogs.microsoft.com/azure-sdk/
-- title: Hosting
+- title: Distribuire e ospitare
   linkLists:
   - linkListType: tutorial
     links:
-    - text: App front-end
+    - text: 'App Web statica: React con Servizi cognitivi'
       url: tutorial/static-web-app/introduction.md
-    - text: Node.js con il servizio app
+    - text: 'Servizio app: Caricare React in BLOB di archiviazione'
+      url: tutorial/browser-file-upload-azure-storage-blob.md
+    - text: 'Servizio app: Express.js'
       url: tutorial-vscode-azure-app-service-node-01.md
-    - text: Deno con il servizio app
-      url: tutorial/deploy-deno-app-azure-app-service-azure-cli.md
-    - text: Distribuire un'app in una macchina virtuale Linux
-      url: tutorial/nodejs-virtual-machine-vm/introduction.md
-    - text: Contenitori
+    - text: 'Servizio app: Express.js con MongoDB'
+      url: tutorial/deploy-nodejs-mongodb-app-service-from-visual-studio-code.md
+    - text: 'Servizio app: Contenitore Express.js'
       url: tutorial-vscode-docker-node-01.md
-  - linkListType: how-to-guide
-    links:
-    - text: Stack completo (API serverless e front-end)
-      url: how-to/create-static-site.md
-- title: Funzioni senza server
+    - text: 'Funzioni di Azure: Trigger serverless HTTP'
+      url: tutorial/tutorial-vscode-serverless-node-install.md
+    - text: 'Macchina virtuale di Azure: Contenitori NGINX/Express.js'
+      url: tutorial/nodejs-virtual-machine-vm/introduction.md
+- title: Esercitazioni sulla libreria client di Azure SDK
   linkLists:
   - linkListType: tutorial
     links:
-    - text: Sviluppare e distribuire
-      url: tutorial/tutorial-vscode-serverless-node-install.md
-  - linkListType: how-to-guide
-    links:
-    - text: Scrivere codice serverless
-      url: how-to/develop-serverless-apps.md
+    - text: "App Web statica: Analizzare un'immagine con Visione artificiale"
+      url: /tutorial/static-web-app/add-computer-vision-react-app.md#add-computer-vision-code-as-separate-module
+    - text: 'App Web statica: Caricare file in BLOB di archiviazione'
+      url: tutorial/browser-file-upload-azure-storage-blob.md#upload-button-functionality
+    - text: 'App Web statica: Pulsante di accesso/disconnessione'
+      url: tutorial/single-page-application-azure-login-button-sdk-msal.md#5-add-login-and-logoff-buttons
+    - text: 'Express.js: Aggiungere la registrazione in Application Insights'
+      url: tutorial/nodejs-virtual-machine-vm/azure-monitor-application-insights-nodejs-expressjs-code.md#edit-indexjs-for-logging-with-azure-monitor-application-insights
 - title: Data
   linkLists:
   - linkListType: quickstart
