@@ -3,17 +3,24 @@ title: 'Novità della documentazione di JavaScript: '
 description: Novità della documentazione di JavaScript per ottobre 2020
 ms.topic: conceptual
 ms.date: 11/13/2020
-ms.openlocfilehash: db784cead94e66fd69232abd782039891ab7e63e
-ms.sourcegitcommit: 4dac39849ba2e48034ecc91ef578d11aab796e58
+ms.openlocfilehash: f54af7f5f89b38cc32191fc2acd4f32e386c29fb
+ms.sourcegitcommit: 0cda024089784b92c1db3a4506c1dccd6bfe6339
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94983670"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96759288"
 ---
 # <a name="javascript-docs-whats-new-for-october-2020"></a>Documentazione di JavaScript: novità di ottobre 2020
 
 Contenuti nuovi e aggiornati disponibili per sviluppatori JavaScript e TypeScript.
 
+## <a name="2020-december"></a>Dicembre 2020
+
+### <a name="whats-new"></a>Novità
+
+|Nome|Note|
+|---------------------------------------|--|
+|[Esercitazione: Aggiungere il pulsante di accesso all'app Web statica React per l'autenticazione Microsoft](./tutorial/single-page-application-azure-login-button-sdk-msal.md)|L'autenticazione di Azure presentata in questa esercitazione è un pulsante di accesso e disconnessione e fornisce l'accesso all'account di un utente. Sviluppare l'applicazione con un SDK lato client di Azure, `@azure/msal-browser`, per gestire l'interazione dell'utente nell'applicazione a pagina singola.|
 
 ## <a name="2020-november"></a>Novembre 2020
 
@@ -40,8 +47,8 @@ Novità della documentazione di JavaScript di ottobre 2020. Questo articolo elen
 
 |Nome|Note|
 |---------------------------------------|--|
-|[Esercitazione: Caricare un'immagine in Archiviazione BLOB](./tutorial/browser-file-upload.yml?preview=tutorialFeedback)|In questa esercitazione si usa un'**app React** per caricare un file in un BLOB di **Archiviazione di Azure**. L'attività di programmazione viene eseguita automaticamente. Questa esercitazione è incentrata sull'uso corretto degli ambienti di Azure locali e remoti all'interno Visual Studio Code con le estensioni di Azure.|
-|[Esercitazione: Distribuire l'app MongoDB Node.js nel servizio app da Visual Studio Code](./tutorial/web-app-mongodb.yml?preview=tutorialFeedback)|In questa esercitazione si usa un'app Node.js **Express** con un database **MongoDB** tramite l'API nativa MongoDB. Distribuire l'applicazione Node.js nel servizio app di Azure (in Linux), quindi verificare che l'app basata sul cloud funzioni. L'attività di programmazione viene eseguita automaticamente. Questa esercitazione è incentrata sull'uso corretto degli ambienti di Azure locali e remoti all'interno Visual Studio Code con le estensioni di Azure.|
+|[Esercitazione: Caricare un'immagine in Archiviazione BLOB](./tutorial/browser-file-upload-azure-storage-blob.md)|In questa esercitazione si usa un'**app React** per caricare un file in un BLOB di **Archiviazione di Azure**. L'attività di programmazione viene eseguita automaticamente. Questa esercitazione è incentrata sull'uso corretto degli ambienti di Azure locali e remoti all'interno Visual Studio Code con le estensioni di Azure.|
+|[Esercitazione: Distribuire Node.js con l'app di database nel Servizio app da Visual Studio Code](./tutorial/deploy-nodejs-mongodb-app-service-from-visual-studio-code.md)|In questa esercitazione si usa un'app Node.js **Express.js** con un database **MongoDB** tramite l'API nativa MongoDB. Distribuire l'applicazione Node.js nel servizio app di Azure (in Linux), quindi verificare che l'app basata sul cloud funzioni. L'attività di programmazione viene eseguita automaticamente. Questa esercitazione è incentrata sulla creazione delle risorse di Azure e sulla distribuzione in Azure da Visual Studio Code con le estensioni di Azure.|
 
 ### <a name="whats-updated"></a>Aggiornamenti
 
