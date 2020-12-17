@@ -3,13 +3,13 @@ title: Creare e distribuire funzioni JavaScript
 description: In questa esercitazione si crea una nuova app serverless in Visual Studio Code con estensioni e JavaScript, che viene quindi distribuita nel cloud di Azure per l'hosting con un endpoint HTTP pubblico.
 ms.topic: tutorial
 ms.date: 11/05/2020
-ms.custom: devx-track-js, contperfq2
-ms.openlocfilehash: ead5dffddff84a8c00f5087796e68c3d379b929d
-ms.sourcegitcommit: 0cda024089784b92c1db3a4506c1dccd6bfe6339
+ms.custom: devx-track-js, contperf-fy21q2
+ms.openlocfilehash: dba446d20b8300ea97b5186b2d4cc3a3006e8811
+ms.sourcegitcommit: c8330128d5d6a71859933a890ecdf047cb950996
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96759318"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97522366"
 ---
 # <a name="1-create-and-deploy-azure-functions-from-visual-studio-code"></a>1. Creare e distribuire Funzioni di Azure da Visual Studio Code
 

@@ -9,18 +9,16 @@ ms.topic: article
 ms.service: multiple
 ms.assetid: b1e10b79-f75e-4605-aecd-eed64873e2d3
 ms.custom: seo-java-august2019, devx-track-java, devx-track-azurecli
-ms.openlocfilehash: c98e9194d7c9b391206104f249f1356351938d32
-ms.sourcegitcommit: 709fa38a137b30184a7397e0bfa348822f3ea0a7
+ms.openlocfilehash: 7c34254cbe45fdb6e60f9f1a30ab409f72c2aee4
+ms.sourcegitcommit: c1ef7aa8ed2e88e98b190e42cffde52cf301958d
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96442287"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97034542"
 ---
 # <a name="get-started-with-cloud-development-using-java-on-azure"></a>Introduzione allo sviluppo per il cloud con Java in Azure
 
 Questo articolo illustra come configurare un ambiente per lo sviluppo di Azure in Java. Verranno quindi create alcune risorse di Azure a cui ci si connetterà per eseguire alcune attività di base, come il caricamento di un file o la distribuzione di un'applicazione Web. Al termine sarà possibile iniziare a usare i servizi di Azure nelle proprie applicazioni Java.
-
-[!INCLUDE [chrome-note](includes/chrome-note.md)]
 
 ## <a name="prerequisites"></a>Prerequisiti
 

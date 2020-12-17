@@ -4,12 +4,12 @@ description: Eseguire l'autenticazione con un'entità servizio nei moduli di ges
 ms.topic: how-to
 ms.date: 10/19/2020
 ms.custom: devx-track-js
-ms.openlocfilehash: a3f51cd40f1f1029fbdd6e8e806cb1f7c3cd02c7
-ms.sourcegitcommit: 3c904d8d89d0cb4f13209cde3425c5307b83237c
+ms.openlocfilehash: 58acb71741f7e3b381e492b9ac3c06d6a94c331b
+ms.sourcegitcommit: c1ef7aa8ed2e88e98b190e42cffde52cf301958d
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "93024065"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97034532"
 ---
 # <a name="authenticate-with-the-azure-management-modules-for-javascript"></a>Eseguire l'autenticazione con i moduli di gestione di Azure per JavaScript
 
@@ -109,8 +109,6 @@ Metodi comuni per creare le credenziali necessarie nel codice di produzione:
 |[@azure/ms-rest-nodeauth](https://www.npmjs.com/package/@azure/ms-rest-nodeauth) <br>(scelta consigliata)|[Entità servizio con certificato](https://github.com/Azure/ms-rest-nodeauth/blob/master/samples/authFileWithSpCert.ts)<br>[Entità servizio dal file](https://github.com/Azure/ms-rest-nodeauth/blob/master/samples/authFileWithSpSecret.ts)<br>[Interattivo](https://github.com/Azure/ms-rest-nodeauth/blob/master/samples/interactivePersonalAccount.ts)<br>[Base](https://github.com/Azure/ms-rest-nodeauth/blob/master/samples/usernamePassword.ts)|
 |[@azure/ms-rest-browserauth](https://www.npmjs.com/package/@azure/ms-rest-browserauth)<br>(scelta consigliata)|[Autenticazione con popup (create-react-app)](https://github.com/Azure/ms-rest-browserauth/tree/master/samples/authentication-with-popup)<br>[React senza popup](https://github.com/Azure/ms-rest-browserauth/tree/master/samples/react-app)<br>[HTML con pulsante di accesso](https://github.com/Azure/ms-rest-browserauth/tree/master/samples/vanilla)|
 |[ms-rest-azure](https://www.npmjs.com/package/ms-rest-azure)|[Entità servizio](https://github.com/Azure/azure-sdk-for-node/blob/master/Documentation/Authentication.md#service-principal-authentication)<br>[Interattivo](https://github.com/Azure/azure-sdk-for-node/blob/master/Documentation/Authentication.md#interactive-login)<br>[Base](https://github.com/Azure/azure-sdk-for-node/blob/master/Documentation/Authentication.md#basic-authentication)|
-
-[!INCLUDE [chrome-note](../includes/chrome-note.md)]
 
 ## <a name="next-steps"></a>Passaggi successivi   
 

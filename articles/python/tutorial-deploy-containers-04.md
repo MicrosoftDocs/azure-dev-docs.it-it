@@ -2,14 +2,14 @@
 title: 'Passaggio 4: Streaming dei log in Visual Studio Code dal servizio app di Azure per un contenitore'
 description: Parte 4 dell'esercitazione, visualizzazione dei log del servizio app di Azure per monitorarne il comportamento.
 ms.topic: conceptual
-ms.date: 09/12/2019
+ms.date: 12/09/2020
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: 47316324010d5a74568bb55be508128917702780
-ms.sourcegitcommit: 69933dcce571b2686897b295b7822e207d944617
+ms.openlocfilehash: b4e380fa556f6cc806205e8fb446545328e35976
+ms.sourcegitcommit: c8330128d5d6a71859933a890ecdf047cb950996
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/18/2020
-ms.locfileid: "90772644"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97522020"
 ---
 # <a name="4-stream-logs-from-azure-app-service-for-a-container"></a>4: Streaming dei log dal Servizio app di Azure per un contenitore
 
@@ -21,7 +21,7 @@ In VS Code è possibile visualizzare i log del sito in esecuzione nel servizio a
 
 1. Trovare l'app nell'area **Azure: Servizio app**, fare clic su di essa con il pulsante destro del mouse e scegliere **Start Streaming Logs** (Avvia lo streaming dei log).
 
-1. Quando viene richiesto, scegliere**Yes** (Sì) per abilitare la registrazione e riavviare l'app. Una volta riavviata l'app, verrà aperto il pannello Output di VS Code con una connessione al flusso di log.
+1. Quando viene richiesto, scegliere **Yes** (Sì) per abilitare la registrazione e riavviare l'app. Una volta riavviata l'app, verrà aperto il pannello Output di VS Code con una connessione al flusso di log.
 
 1. Dopo alcuni secondi nell'output verrà visualizzato un messaggio che indica che si è connessi al servizio di streaming di log:
 

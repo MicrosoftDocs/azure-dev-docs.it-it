@@ -4,12 +4,12 @@ description: Breve elenco dei termini e concetti più importanti che è necessar
 ms.date: 12/07/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 0be44d246af0f34b60b9ca1403f1889cc5708e9c
-ms.sourcegitcommit: 1901759f41adfac3c3f2ff135bcf72206543b639
+ms.openlocfilehash: f79864b39bb70c7ae703468f205e420417698200
+ms.sourcegitcommit: c8330128d5d6a71859933a890ecdf047cb950996
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96934300"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97521982"
 ---
 # <a name="azure-terminology-in-brief"></a>Terminologia di Azure in breve
 
@@ -73,7 +73,7 @@ Il [portale di Azure](https://portal.azure.com) è l'interfaccia utente basata s
 
 ## <a name="azure-command-line-interface-cli"></a>interfaccia della riga di comando di Azure (CLI)
 
-L'[interfaccia della riga di comando di Azure](/azure/what-is-azure-cli) è un set di comandi che consente di creare e gestire le risorse di Azure ed è particolarmente utile per l'automazione. L'interfaccia della riga di comando di Azure è disponibile in tutti i sistemi operativi ed è compatibile con la maggior parte dei servizi di Azure.
+L'[interfaccia della riga di comando di Azure](/cli/azure/what-is-azure-cli) è un set di comandi che consente di creare e gestire le risorse di Azure ed è particolarmente utile per l'automazione. L'interfaccia della riga di comando di Azure è disponibile in tutti i sistemi operativi ed è compatibile con la maggior parte dei servizi di Azure.
 
 Se si preferisce usare PowerShell, è possibile usare in alternativa il [modulo di Azure PowerShell](/powershell/azure).
 

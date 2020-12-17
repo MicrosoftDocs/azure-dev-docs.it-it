@@ -3,13 +3,13 @@ title: Rimuovere le costose risorse remote di Azure dopo la distribuzione dell'a
 description: Rimuovere (pulire) le risorse remote di Azure per evitare di incorrere in costi. Per pulire le risorse, fare clic con il pulsante destro del mouse sull'app per le funzioni nell'area Funzioni di Azure, quindi scegliere **Delete Function App** (Elimina app per le funzioni).
 ms.topic: tutorial
 ms.date: 08/31/2020
-ms.custom: devx-track-js, contperfq2
-ms.openlocfilehash: 7d2a0b73a831535a006808973c1a021ef9dec343
-ms.sourcegitcommit: 801682d3fc9651bf95d44e58574d5a4564be6feb
+ms.custom: devx-track-js, contperf-fy21q2
+ms.openlocfilehash: 428330b34b3c315d01c2209840de62001caa747a
+ms.sourcegitcommit: c8330128d5d6a71859933a890ecdf047cb950996
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "94338509"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97522049"
 ---
 # <a name="5-clean-up-azure-resources-for-azure-functions-tutorial"></a>5. Pulire le risorse di Azure per l'esercitazione su Funzioni di Azure
 

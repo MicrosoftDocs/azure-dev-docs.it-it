@@ -3,13 +3,13 @@ title: Creare l'applicazione di Funzioni di Azure da Visual Studio Code
 description: Creare un'applicazione locale di Funzioni di Azure (serverless) contenente una funzione che usa un trigger HTTP. Un'app di Funzioni di Azure può contenere molte funzioni con trigger diversi. Il trigger HTTP in particolare gestisce il traffico HTTP in ingresso.
 ms.topic: tutorial
 ms.date: 11/05/2020
-ms.custom: devx-track-js, contperfq2
-ms.openlocfilehash: 3c5d747245314029a12b1c502c066324efd70dc8
-ms.sourcegitcommit: 550b165d0b910f4ea9652d8401dd4fc93f057f05
+ms.custom: devx-track-js, contperf-fy21q2
+ms.openlocfilehash: b1e357bc3329c2dc19fdf4988b22182576575cf5
+ms.sourcegitcommit: c8330128d5d6a71859933a890ecdf047cb950996
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/04/2020
-ms.locfileid: "96605931"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97522087"
 ---
 # <a name="2-create-the-local-functions-app-with-the-visual-studio-code-_functions_-extension"></a>2. Creare l'app per le funzioni locale con l'estensione _Funzioni_ di Visual Studio Code
 
