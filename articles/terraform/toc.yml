@@ -4,7 +4,7 @@
   items:
     - name: Informazioni su Terraform in Azure
       href: overview.md
-- name: Avvii rapidi
+- name: Avvi rapidi
   expanded: true
   items:
     - name: Configurare Terraform con Azure Cloud Shell
@@ -49,6 +49,10 @@
           href: create-vm-scaleset-network-disks-hcl.md
         - name: Set di scalabilità di macchine virtuali da immagine Packer
           href: create-vm-scaleset-network-disks-using-packer-hcl.md
+    - name: Sicurezza
+      items:
+        - name: Attestazione di Azure
+          href: create-attestation-provider.md
 - name: Esercitazioni
   items:
     - name: Reti
