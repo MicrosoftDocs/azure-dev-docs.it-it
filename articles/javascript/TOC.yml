@@ -17,6 +17,8 @@
           href: core/node-sdk-azure-authenticate-principal.md
         - name: Eseguire l'autenticazione ad Azure
           href: core/node-sdk-azure-authenticate.md
+        - name: Automatizzare le operazioni con l'interfaccia della riga di comando di Azure
+          href: core/automate-tasks-with-azure-cli.md
     - name: Esercitazioni
       items:
         - name: Distribuire e ospitare
@@ -42,17 +44,17 @@
             - name: 'App client: Ospitare da Archiviazione di Azure'
               items:
                 - name: Introduzione e prerequisiti
-                  href: tutorial-vscode-static-website-node-01.md
+                  href: tutorial/tutorial-vscode-static-website-node/tutorial-vscode-static-website-node-01.md
                 - name: Creare il codice dell'app
-                  href: tutorial-vscode-static-website-node-02.md
+                  href: tutorial/tutorial-vscode-static-website-node/tutorial-vscode-static-website-node-02.md
                 - name: Creare un account di archiviazione
-                  href: tutorial-vscode-static-website-node-03.md
+                  href: tutorial/tutorial-vscode-static-website-node/tutorial-vscode-static-website-node-03.md
                 - name: Eseguire la distribuzione in Archiviazione di Azure
-                  href: tutorial-vscode-static-website-node-04.md
+                  href: tutorial/tutorial-vscode-static-website-node/tutorial-vscode-static-website-node-04.md
                 - name: Apportare modifiche e ripetere la distribuzione
-                  href: tutorial-vscode-static-website-node-05.md
+                  href: tutorial/tutorial-vscode-static-website-node/tutorial-vscode-static-website-node-05.md
                 - name: Pulire le risorse
-                  href: tutorial-vscode-static-website-node-06.md
+                  href: tutorial/tutorial-vscode-static-website-node/tutorial-vscode-static-website-node-06.md
             - name: 'Serverless: Creazione e distribuzione'
               items:
                 - name: 1. Introduzione e prerequisiti
@@ -72,39 +74,39 @@
             - name: 'Server:  Distribuire con l''interfaccia della riga di comando di Azure'
               items:
                 - name: Introduzione e prerequisiti
-                  href: tutorial-vscode-azure-cli-node-01.md
+                  href: tutorial/tutorial-vscode-azure-cli-node/tutorial-vscode-azure-cli-node-01.md
                 - name: Creare l'app
-                  href: tutorial-vscode-azure-cli-node-02.md
+                  href: tutorial/tutorial-vscode-azure-cli-node/tutorial-vscode-azure-cli-node-02.md
                 - name: Creare il servizio app
-                  href: tutorial-vscode-azure-cli-node-03.md
+                  href: tutorial/tutorial-vscode-azure-cli-node/tutorial-vscode-azure-cli-node-03.md
                 - name: Distribuire l'app
-                  href: tutorial-vscode-azure-cli-node-04.md
+                  href: tutorial/tutorial-vscode-azure-cli-node/tutorial-vscode-azure-cli-node-04.md
                 - name: Eseguire lo streaming dei log
-                  href: tutorial-vscode-azure-cli-node-05.md
+                  href: tutorial/tutorial-vscode-azure-cli-node/tutorial-vscode-azure-cli-node-05.md
                 - name: Apportare modifiche e ripetere la distribuzione
-                  href: tutorial-vscode-azure-cli-node-06.md
+                  href: tutorial/tutorial-vscode-azure-cli-node/tutorial-vscode-azure-cli-node-06.md
                 - name: Pulire le risorse
-                  href: tutorial-vscode-azure-cli-node-07.md
+                  href: tutorial/tutorial-vscode-azure-cli-node/tutorial-vscode-azure-cli-node-07.md
             - name: 'Server:  Distribuire Deno con l''interfaccia della riga di comando di Azure'
               href: tutorial/deploy-deno-app-azure-app-service-azure-cli.md
             - name: 'Contenitore: Distribuire Express.js con VS Code'
               items:
                 - name: Introduzione e prerequisiti
-                  href: tutorial-vscode-docker-node-01.md
+                  href: tutorial/tutorial-vscode-docker-node/tutorial-vscode-docker-node-01.md
                 - name: Usare un registro contenitori
-                  href: tutorial-vscode-docker-node-02.md
+                  href: tutorial/tutorial-vscode-docker-node/tutorial-vscode-docker-node-02.md
                 - name: Creare un'app Node.js locale
-                  href: tutorial-vscode-docker-node-03.md
+                  href: tutorial/tutorial-vscode-docker-node/tutorial-vscode-docker-node-03.md
                 - name: Creare l'immagine dell'app
-                  href: tutorial-vscode-docker-node-04.md
+                  href: tutorial/tutorial-vscode-docker-node/tutorial-vscode-docker-node-04.md
                 - name: Distribuire l'immagine dell'app
-                  href: tutorial-vscode-docker-node-05.md
+                  href: tutorial/tutorial-vscode-docker-node/tutorial-vscode-docker-node-05.md
                 - name: Apportare modifiche e ripetere la distribuzione
-                  href: tutorial-vscode-docker-node-06.md
+                  href: tutorial/tutorial-vscode-docker-node/tutorial-vscode-docker-node-06.md
                 - name: Eseguire lo streaming dei log
-                  href: tutorial-vscode-docker-node-07.md
+                  href: tutorial/tutorial-vscode-docker-node/tutorial-vscode-docker-node-07.md
                 - name: Pulire le risorse
-                  href: tutorial-vscode-docker-node-08.md
+                  href: tutorial/tutorial-vscode-docker-node/tutorial-vscode-docker-node-08.md
             - name: 'VM: Distribuire un contenitore con registrazione'
               items:
                 - name: 1. Introduzione e prerequisiti
@@ -143,7 +145,7 @@
           href: how-to/create-static-site.md
         - name: Registrazione e metriche
           href: how-to/node-sdk-logging.md
-    - name: Learn
+    - name: Informazioni
       href: learn-azure-javascript.md
     - name: Esempi
       href: 'https://docs.microsoft.com/samples/browse/?languages=javascript%2Cnodejs%2Ctypescript'
