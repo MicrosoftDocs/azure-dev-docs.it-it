@@ -4,12 +4,12 @@ description: Le opzioni di hosting e gli scenari di distribuzione includono dive
 ms.topic: how-to
 ms.date: 12/09/2020
 ms.custom: seo-javascript-september2019, seo-javascript-october2019, devx-track-js, contperf-fy21q2
-ms.openlocfilehash: 9f9f28204abf8537aeda933083ca5802210b6c20
-ms.sourcegitcommit: c8330128d5d6a71859933a890ecdf047cb950996
+ms.openlocfilehash: e2020d90260af4fbab8d6a37ef475eddb7754b90
+ms.sourcegitcommit: 1dfcc022a3098b1a1505e9458eada35f527ef070
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97522326"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97636526"
 ---
 # <a name="deploy-and-host-your-nodejs-apps-on-azure"></a>Distribuire e ospitare le app Node.js in Azure
 
@@ -57,7 +57,7 @@ Sono disponibili molti metodi comuni di spostamento di file sul cloud di Azure, 
 |--|--|
 |[GitHub Actions](/azure/app-service/deploy-github-actions?tabs=applevel)|Usarlo per le distribuzioni continue automatizzate o attivate.|
 |[Estensioni per Visual Studio Code](https://marketplace.visualstudio.com/search?term=azure&target=VSCode&category=All%20categories&sortBy=Relevance)|Usarlo per le distribuzioni manuali, di test o rare. Richiede che l'estensione per il servizio sia installata localmente.|
-|[Interfaccia della riga di comando di Azure](../tutorial-vscode-azure-cli-node-04.md)|Usarlo per le distribuzioni manuali o rare. Richiede che l'estensione per il servizio sia installata localmente.|
+|[Interfaccia della riga di comando di Azure](../tutorial/tutorial-vscode-azure-cli-node/tutorial-vscode-azure-cli-node-04.md)|Usarlo per le distribuzioni manuali o rare. Richiede che l'estensione per il servizio sia installata localmente.|
 
 Potrebbero esistere altri metodi di distribuzione, in base al servizio specifico. Il servizio app di Azure, ad esempio, supporta un'ampia gamma di metodi di distribuzione:
 * [Da file ZIP](/azure/app-service/deploy-zip)

@@ -4,12 +4,12 @@ description: Informazioni su come configurare un ambiente di sviluppo JavaScript
 ms.date: 11/05/2020
 ms.topic: conceptual
 ms.custom: devx-track-js, azure-sdk-javascript-ai-text-analytics-5.0.0
-ms.openlocfilehash: 0da3357fc24f65a43303f6c23d5aa6b679f211d4
-ms.sourcegitcommit: 801682d3fc9651bf95d44e58574d5a4564be6feb
+ms.openlocfilehash: 9d542d188205b305a0909e229ed2e71e003e95f7
+ms.sourcegitcommit: 525c4b41d85aae9c3026a070b07e00c2241ea716
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "94333833"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97393870"
 ---
 # <a name="configure-your-local-javascript-dev-environment-for-azure"></a>Configurare l'ambiente di sviluppo JavaScript locale per Azure
 
@@ -33,8 +33,8 @@ Per sviluppare usando una risorsa di Azure con JavaScript nella workstation loca
 
 |Nome/Programma di installazione|Descrizione|
 |--|--|
-[!INCLUDE [Node.js](../includes/environment-nodejs-table-row-2-columns.md)]
-|[Visual Studio Code](https://code.visualstudio.com/)| Visual Studio Code offre un'eccellente esperienza di integrazione e scrittura di codice JavaScript, ma non è obbligatorio. È infatti possibile usare qualsiasi editor di codice. Se per questo documento si usa un editor diverso, verificare l'integrazione con Azure o usare l'interfaccia della riga di comando di Azure.|
+|[Node.js 8 e versioni successive](https://www.npmjs.com/)|Installare l'ambiente di runtime LTS (Long-Term Support) più recente per lo sviluppo in workstation locali. È necessario anche un sistema di gestione pacchetti. Node.js installa NPM nella versione 8.x. Azure SDK richiede in genere almeno la versione 8.x di Node.js. I servizi di hosting di Azure, ad esempio il servizio app di Azure, forniscono runtime con le versioni più recenti di Node.js. Se la destinazione è almeno la versione 8.x per lo sviluppo locale e remoto, il codice dovrebbe essere eseguito correttamente.|
+|[Visual Studio Code](https://code.visualstudio.com/)| Visual Studio Code offre un'ottima esperienza di integrazione e scrittura di codice per JavaScript, ma non è obbligatorio. È infatti possibile usare qualsiasi editor di codice. Se per questo documento si usa un editor diverso, verificare l'integrazione con Azure o usare l'interfaccia della riga di comando di Azure.|
 
 > [!CAUTION]
 > Se si prevede di usare una risorsa di Azure come ambiente di runtime per il codice, ad esempio un'app Web di Azure o un'istanza di contenitore di Azure, è opportuno verificare che l'ambiente di sviluppo Node.js locale corrisponda al runtime della risorsa di Azure che si intende usare.
@@ -65,12 +65,12 @@ Ogni nuovo progetto che usa Azure deve:
 ## <a name="securing-configuration-information"></a>Protezione delle informazioni di configurazione
 
 Sono disponibili diverse opzioni per archiviare le informazioni di configurazione:
-- [Dotenv](https://www.npmjs.com/package/dotenv) è un noto pacchetto npm usato per leggere le variabili di ambiente da un file `.env`. Assicurarsi di aggiungere il file `.env` al file `.gitignore` in modo che il file `.env` non venga archiviato nel controllo del codice sorgente.
+- [Dotenv](https://www.npmjs.com/package/dotenv) è un noto pacchetto npm usato per leggere le variabili di ambiente da un file `.env`. Assicurarsi di aggiungere il file `.env` al file `.gitignore` in modo che il file `.env` non venga archiviato nel controllo del codice sorgente. Vedere altre informazioni sulle [variabili di ambiente](../how-to/configure-web-app-settings.md) nelle app Web per Azure. 
 - Azure [Key Vault](/azure/key-vault/) consente di creare e gestire chiavi per accedere e crittografare risorse, app e soluzioni cloud.
 
 ### <a name="create-environment-variables-for-the-azure-libraries"></a>Creare variabili di ambiente per le librerie di Azure
 
-Per usare le impostazioni di Azure richieste dalle librerie di Azure SDK per accedere al cloud di Azure, impostare i valori più comuni per le variabili di ambiente. I comandi seguenti consentono di impostare le variabili di ambiente nella workstation locale. Un altro meccanismo comune consiste nell'usare il pacchetto npm `DOTENV` per creare un file `.env` per queste impostazioni. Se si prevede di usare un file `.env`, assicurarsi di non archiviare il file nel controllo del codice sorgente. Per assicurarsi che tali impostazioni vengano archiviate nel controllo del codice sorgente, il modo più semplice consiste nell'aggiungere il file `.env` al file `.ignore` di git.
+Per usare le impostazioni di Azure richieste dalle librerie di Azure SDK per accedere al cloud di Azure, impostare i valori più comuni per le [variabili di ambiente](../how-to/configure-web-app-settings.md). I comandi seguenti consentono di impostare le variabili di ambiente nella workstation locale. Un altro meccanismo comune consiste nell'usare il pacchetto npm `DOTENV` per creare un file `.env` per queste impostazioni. Se si prevede di usare un file `.env`, assicurarsi di non archiviare il file nel controllo del codice sorgente. Per assicurarsi che tali impostazioni vengano archiviate nel controllo del codice sorgente, il modo più semplice consiste nell'aggiungere il file `.env` al file `.ignore` di git.
 
 Negli esempi seguenti l'ID client corrisponde all'ID e al segreto dell'entità servizio.
 

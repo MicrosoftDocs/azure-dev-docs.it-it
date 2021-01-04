@@ -4,13 +4,13 @@ description: Informazioni su come usare Ansible per creare e configurare set di 
 keywords: ansible, azure, devops, bash, playbook, macchina virtuale, set di scalabilità di macchine virtuali, vmss
 ms.topic: tutorial
 ms.date: 04/30/2019
-ms.custom: devx-track-ansible, devx-track-azurecli
-ms.openlocfilehash: 64bf3cbd79f2b2b1e68a3019669bce1115ac7333
-ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
+ms.custom: devx-track-ansible
+ms.openlocfilehash: e8f2db42ee43db5fa9b8a61acb3f60119f84145d
+ms.sourcegitcommit: e43be891c643ba2ddc3189ad98e4a49f03dfeedc
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92689225"
+ms.lasthandoff: 12/30/2020
+ms.locfileid: "97824401"
 ---
 # <a name="tutorial-configure-virtual-machine-scale-sets-in-azure-using-ansible"></a>Esercitazione: Configurare set di scalabilità di macchine virtuali in Azure tramite Ansible
 

@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 7d669a92b4e08f6f8207f10f2b33a49b1685d324
-ms.sourcegitcommit: 1901759f41adfac3c3f2ff135bcf72206543b639
+ms.openlocfilehash: 42d27a5bce063f82638fc48f3f269ec734a3042f
+ms.sourcegitcommit: 0d2ea78f18430c845a32e0d2311427ab81033465
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96933356"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97758220"
 ---
 | Nome | Pacchetto | Docs | Source (Sorgente) |
 | ---- | ------- | ---- | ------ |
@@ -70,7 +70,7 @@ ms.locfileid: "96933356"
 | AutoRest - Interfaccia della riga di comando comune | npm [0.5.8](https://www.npmjs.com/package/@autorest/clicommon/v/0.5.8) |  | GitHub [0.5.8](https://github.com/Azure/autorest.clicommon/tree/0.4.12) |
 | AutoRest - Modello di codice | npm [3.0.137](https://www.npmjs.com/package/@azure/autorest.codemodel-v3/v/3.0.137) |  |  |
 | AutoRest - Confronto | npm [0.3.1](https://www.npmjs.com/package/@autorest/compare/v/0.3.1) |  | GitHub [0.3.1](https://github.com/Azure/autorest.compare) |
-| AutoRest - Core | npm [3.0.6320](https://www.npmjs.com/package/@autorest/core/v/3.0.6320) |  | GitHub [3.0.6320](https://github.com/Azure/autorest/tree/master/core) |
+| AutoRest - Core | npm [3.0.6320](https://www.npmjs.com/package/@autorest/core/v/3.0.6320) |  | GitHub [3.0.6320](https://github.com/Azure/autorest/tree/master/packages/extensions/core) |
 | AutoRest - Funzioni C# | npm [0.2.0-preview-dev.321054549](https://www.npmjs.com/package/@autorest/azure-functions-csharp/v/0.2.0-preview-dev.321054549) |  |  |
 | AutoRest - Funzioni Java | npm [0.0.2-Preview](https://www.npmjs.com/package/@autorest/azure-functions-java/v/0.0.2-Preview) |  |  |
 | AutoRest - Funzioni Python | npm [0.1.0-preview](https://www.npmjs.com/package/@autorest/azure-functions-python/v/0.1.0-preview) |  |  |

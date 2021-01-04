@@ -4,12 +4,12 @@ description: Informazioni su come impostare configurazioni comuni per l'app Web.
 ms.topic: conceptual
 ms.date: 12/08/2020
 ms.custom: devx-track-js
-ms.openlocfilehash: 271c2b916062d9cbd2b905fb937c9fb216eb43e5
-ms.sourcegitcommit: 1901759f41adfac3c3f2ff135bcf72206543b639
+ms.openlocfilehash: 29c79317d5ccd2f65db6c23e28a852164c74b743
+ms.sourcegitcommit: 525c4b41d85aae9c3026a070b07e00c2241ea716
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96934295"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97394044"
 ---
 # <a name="hosting-web-apps-on-azure"></a>Hosting di app Web in Azure
 
@@ -80,7 +80,7 @@ Se l'app richiede immediatamente i certificati, sono disponibili diverse opzioni
 I segreti vengono in genere forniti nei modi seguenti:
 
 * Azure Key Vault - Creare una risorsa per questo servizio, che fornisce [segreti dell'app](/azure/app-service/app-service-key-vault-references). 
-* Impostazioni dell'app - Se si vuole usare una soluzione più leggera, è possibile fornire i segreti come impostazioni dell'app e fare riferimento a tali impostazioni usando `process.env.VARNAME` tipico. 
+* Impostazioni dell'app - Per una soluzione più leggera, è possibile fornire i segreti come impostazioni dell'app e farvi riferimento con le tipiche [variabili di ambiente](/azure/app-service/configure-language-nodejs?pivots=platform-windows), `process.env.VARNAME`. 
 
 ## <a name="configure-logging"></a>Configurare la registrazione
 

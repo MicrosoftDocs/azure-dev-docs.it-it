@@ -4,12 +4,12 @@ description: In questa esercitazione si distribuisce un'applicazione Deno nel se
 ms.topic: tutorial
 ms.date: 10/13/2020
 ms.custom: scenarios:getting-started, languages:JavaScript, devx-track-javascript
-ms.openlocfilehash: ba2e0a42b6d2dedd2192629562a8415a0d6d7167
-ms.sourcegitcommit: 0cda024089784b92c1db3a4506c1dccd6bfe6339
+ms.openlocfilehash: 16cb388a9a61b0141f04364dc1489607565156a3
+ms.sourcegitcommit: c8330128d5d6a71859933a890ecdf047cb950996
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96772616"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97522395"
 ---
 # <a name="deploy-deno-apps-to-azure-app-service-from-the-azure-cli"></a>Distribuire app Deno nel servizio app di Azure dall'interfaccia della riga di comando di Azure
 
@@ -22,13 +22,8 @@ Distribuire un'applicazione Deno nel Servizio app di Azure (in Linux o Windows) 
 - Un account Azure con una sottoscrizione attiva. [Crearne uno gratuito](https://azure.microsoft.com/free/?utm_source=campaign&utm_campaign=vscode-tutorial-appservice-deno&mktingSource=vscode-tutorial-appservice-deno)
 - Installare [Visual Studio Code](https://code.visualstudio.com/)
 - Installare [Deno](https://deno.land/#installation)
-- Usare [Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/quickstart) tramite l'ambiente bash.
+[!INCLUDE [Azure CLI](../../includes/azure-cli-prepare-your-environment-no-header.md)]
 
-   [![Incorpora avvio](https://shell.azure.com/images/launchcloudshell.png "Avviare Azure Cloud Shell")](https://shell.azure.com)   
-- Se si preferisce, [installare](/cli/azure/install-azure-cli) l'interfaccia della riga di comando di Azure per eseguire i relativi comandi di riferimento.
-   - Se si usa un'installazione locale, accedere all'interfaccia della riga di comando usando il comando [az login](/cli/azure/reference-index#az-login).  Per completare il processo di autenticazione, seguire la procedura visualizzata nel terminale.  Per altre opzioni di accesso, vedere [Accedere tramite l'interfaccia della riga di comando di Azure](/cli/azure/authenticate-azure-cli).
-  - Quando richiesto, installare le estensioni dell'interfaccia della riga di comando di Azure al primo utilizzo.  Per altre informazioni sulle estensioni, vedere [Usare le estensioni con l'interfaccia della riga di comando di Azure](/cli/azure/azure-cli-extensions-overview).
-  - Eseguire [az version](/cli/azure/reference-index?#az_version) per trovare la versione e le librerie dipendenti installate. Per eseguire l'aggiornamento alla versione più recente, eseguire [az upgrade](/cli/azure/reference-index?#az_upgrade).
 
 ## <a name="2-sign-in-to-azure-cli"></a>2. Accedere all'interfaccia della riga di comando di Azure
 
@@ -162,6 +157,7 @@ az group delete deno-quickstart
 ## <a name="next-steps"></a>Passaggi successivi
 
 Altre informazioni su:
+* [Informazioni su come configurare le impostazioni dell'app](../how-to/configure-web-app-settings.md)
 * [Eseguire la distribuzione nel Servizio app](../tutorial-vscode-azure-app-service-node-01.md) con le estensioni di Visual Studio Code
 * [Eseguire la distribuzione in una macchina virtuale](./nodejs-virtual-machine-vm/introduction.md)
 * [Distribuire la funzione Deno](https://github.com/anthonychu/azure-functions-deno-worker) come [gestore personalizzato](/azure/azure-functions/functions-custom-handlers)

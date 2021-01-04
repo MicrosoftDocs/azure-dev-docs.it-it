@@ -4,12 +4,12 @@ description: Panoramica delle caratteristiche e delle funzionalità delle librer
 ms.date: 09/19/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 276230cf5e5999f7d188d138e3b4e7361c3e4114
-ms.sourcegitcommit: b70a38d46616f5e519d5b9c1a1eaf3fe0ecb9605
+ms.openlocfilehash: d610099b3b877f0916079ca2000a5268f3f08c2a
+ms.sourcegitcommit: c8330128d5d6a71859933a890ecdf047cb950996
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94932385"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97522005"
 ---
 # <a name="use-the-azure-libraries-sdk-for-python"></a>Usare le librerie di Azure (SDK) per Python
 
@@ -75,6 +75,8 @@ I seguenti esempi illustrano come usare alcune delle librerie di gestione primar
 - [Effettuare il provisioning di una macchina virtuale](azure-sdk-example-virtual-machines.md)
 
 Per informazioni dettagliate sull'uso di ogni libreria di gestione, vedere il file *README.md* o *README.rst* disponibile nella cartella di progetto della libreria nel [repository GitHub dell'SDK](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk). È anche possibile trovare frammenti di codice aggiuntivi nella [documentazione di riferimento](/python/api) e negli [esempi di Azure](/samples/browse/?languages=python&term=Getting%20started%20-%20Managing).
+
+### <a name="migrating-from-older-management-libraries"></a>Migrazione dalle librerie di gestione precedenti
 
 Se si esegue la migrazione del codice da versioni precedenti delle librerie di gestione, vedere i dettagli seguenti:
 

@@ -1,19 +1,19 @@
 ---
 title: "Esercitazione: Aggiungere il pulsante di accesso Microsoft all'applicazione a pagina singola React"
-description: L'autenticazione di Azure Active Directory presentata in questa esercitazione è un pulsante di accesso e disconnessione e fornisce l'accesso al nome di un utente (indirizzo di posta elettronica). Sviluppare l'applicazione con un SDK lato client di Azure, `@azure/msal-browser`, per gestire l'interazione dell'utente nell'applicazione a pagina singola.
+description: L'autenticazione di Azure Active Directory presentata in questa esercitazione è un pulsante di accesso e disconnessione e fornisce l'accesso al nome di un utente (indirizzo di posta elettronica). Sviluppare l'applicazione TypeScript con un SDK lato client di Azure, `@azure/msal-browser`, per gestire l'interazione dell'utente nell'applicazione a pagina singola.
 ms.topic: tutorial
 ms.date: 12/01/2020
 ms.custom: devx-track-js, "azure-sdk-javascript-@azure/msal-browser-2.7.0"
-ms.openlocfilehash: a5c07696c6c774408bf2772542234e59f5c0b58c
-ms.sourcegitcommit: 09b4a2dbe13601fdf16fcc4082a5075b46ad3459
+ms.openlocfilehash: e6d91f1654b14d7b83c7ae2fa2c0a313914314b2
+ms.sourcegitcommit: 525c4b41d85aae9c3026a070b07e00c2241ea716
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96563724"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97393890"
 ---
 # <a name="add-microsoft-login-button-to-a-single-page-application-for-authentication"></a>Aggiungere un pulsante di accesso Microsoft a un'applicazione a pagina singola per l'autenticazione
 
-L'autenticazione di Azure presentata in questa esercitazione è un pulsante di accesso e disconnessione e fornisce l'accesso all'account di un utente. Sviluppare l'applicazione con un SDK lato client di Azure, `@azure/msal-browser`, per gestire l'interazione dell'utente nell'applicazione a pagina singola.
+L'autenticazione di Azure presentata in questa esercitazione su TypeScript è un pulsante di accesso e disconnessione e fornisce l'accesso all'account di un utente. Sviluppare l'applicazione con un SDK lato client di Azure, `@azure/msal-browser`, per gestire l'interazione dell'utente nell'applicazione a pagina singola.
 
 * [Codice sorgente](https://github.com/Azure-Samples/js-e2e-client-azure-login-button)
 
