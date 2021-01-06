@@ -4,12 +4,12 @@ description: "Passaggio 1 dell'esercitazione: configurare l'ambiente per il serv
 ms.topic: conceptual
 ms.date: 11/20/2020
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: 31695cb929188723cc608547849eb88a76b2d003
-ms.sourcegitcommit: 29930f1593563c5e968b86117945c3452bdefac1
+ms.openlocfilehash: bdbfd1ceaab01141bd32ec0c7d97309e2ce5e641
+ms.sourcegitcommit: 1dfcc022a3098b1a1505e9458eada35f527ef070
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "96035514"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97636496"
 ---
 # <a name="tutorial-deploy-python-apps-to-azure-app-service-on-linux-from-visual-studio-code"></a>Esercitazione: Distribuire app Python nel Servizio app di Azure in Linux da Visual Studio Code
 

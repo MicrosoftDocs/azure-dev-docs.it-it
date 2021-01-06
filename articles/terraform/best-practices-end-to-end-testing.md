@@ -4,12 +4,12 @@ description: Altre informazioni sul test end-to-end con Terratest in un progetto
 ms.topic: tutorial
 ms.date: 07/31/2020
 ms.custom: devx-track-terraform
-ms.openlocfilehash: b760908bf1950751b93ba1787f444ca37ee8bf83
-ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
+ms.openlocfilehash: a70352f5ff6826dc7d07537cf773e76b6d1a6f49
+ms.sourcegitcommit: 485a88d1671a66df34493545488ab34e434f40d8
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/28/2020
-ms.locfileid: "91401711"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97809759"
 ---
 # <a name="tutorial-setup-end-to-end-terratest-testing-on-terraform-projects"></a>Esercitazione: Configurare il test Terratest end-to-end nei progetti Terraform
 

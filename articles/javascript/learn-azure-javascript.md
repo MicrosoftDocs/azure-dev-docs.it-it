@@ -2,14 +2,14 @@
 title: Imparare a sviluppare con Azure e JavaScript
 description: Usare la piattaforma di Microsoft Learn per espandere la comprensione di Azure con JavaScript
 ms.topic: reference
-ms.date: 11/20/2020
+ms.date: 12/16/2020
 ms.custom: devx-track-js
-ms.openlocfilehash: dd09feba608e9483597a60554f7c53e88565ffab
-ms.sourcegitcommit: 4dac39849ba2e48034ecc91ef578d11aab796e58
+ms.openlocfilehash: b126894943bf409439b965a631d07029281438f7
+ms.sourcegitcommit: 1dfcc022a3098b1a1505e9458eada35f527ef070
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94983960"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97636536"
 ---
 # <a name="learn-to-develop-with-azure-and-javascript"></a>Imparare a sviluppare con Azure e JavaScript 
 
@@ -28,14 +28,33 @@ Usare la piattaforma di Microsoft Learn o un Microsoft Learning Partner per espa
 
 I moduli di Microsoft Learn seguenti illustrano come usare Azure con JavaScript:
 
+### <a name="static-web-apps"></a>App Web statiche
+
+* [App Web statica, JavaScript, CodeTour: Usare le statistiche del basket per ottimizzare la riproduzione dei giochi con Visual Studio Code, su ispirazione di SPACE JAM NEW LEGENDS](https://docs.microsoft.com/learn/paths/optimize-basketball-games-with-machine-learning/)
 * [Pubblicare un'app JavaScript basata su Angular, React, Svelte o Vue con App Web statiche di Azure](/learn/modules/publish-app-service-static-web-app-api/)
-* [Effettuare il refactoring di API Node.js ed Express in API serverless con Funzioni di Azure](/learn/modules/shift-nodejs-express-apis-serverless/)
 * [Creare e pubblicare un'app Web statica con Gatsby e App Web statiche di Azure](/learn/modules/create-deploy-static-webapp-gatsby-app-service/)
-* [Automatizzare le distribuzioni Node.js con Azure Pipelines](/learn/modules/deploy-nodejs/)
-* [Creare un'app Node.js per Azure Cosmos DB in Visual Studio Code](/learn/modules/build-node-cosmos-app-vscode/)
-* [Compilare ed eseguire un'applicazione Web con lo stack MEAN in una macchina virtuale Linux in Azure](/learn/modules/build-a-web-app-with-mean-on-a-linux-vm/)
-* [Creare flussi di lavoro di integrazione continua con GitHub Actions](/learn/modules/github-actions-ci/)
+* [Creare un sito Web semplice con HTML, CSS e JavaScript](https://docs.microsoft.com/learn/modules/build-simple-website/)
+
+### <a name="serverless-apis"></a>API serverless
+
 * [Creare API serverless con Funzioni di Azure](/learn/modules/build-api-azure-functions/)
+* [Effettuare il refactoring di API Node.js ed Express in API serverless con Funzioni di Azure](/learn/modules/shift-nodejs-express-apis-serverless/)
+* [Usare Visual Studio Code per creare un dashboard JavaScript e Vue.js con un'API serverless basata su Funzioni di Azure e Node.js.](https://docs.microsoft.com/learn/modules/build-api-azure-functions)
+
+### <a name="devops-cicd"></a>DevOps (CI/CD)
+
+* [Creare flussi di lavoro di integrazione continua con GitHub Actions](/learn/modules/github-actions-ci/)
+* [Automatizzare le distribuzioni Node.js con Azure Pipelines](/learn/modules/deploy-nodejs/)
+
+### <a name="data-apps"></a>App di dati
+
+* [Creare un'app Node.js per Azure Cosmos DB in Visual Studio Code](/learn/modules/build-node-cosmos-app-vscode/)
+
+### <a name="virtual-machines"></a>Macchine virtuali
+* [Compilare ed eseguire un'applicazione Web con lo stack MEAN in una macchina virtuale Linux in Azure](/learn/modules/build-a-web-app-with-mean-on-a-linux-vm/)
+
+
+
 
 Cercare [altre risorse di Learn](/search/?category=Learn&terms=JavaScript).
 
@@ -59,6 +78,10 @@ Scegliere un'offerta di un [partner](/learn/certifications/partners).
 
 * [MTA: Introduzione alla programmazione con JavaScript](/learn/certifications/mta-introduction-to-programming-using-javascript)
 * [MCSA: Applicazioni Web](/learn/certifications/mcsa-web-applications-certification)
+
+## <a name="rss-feed"></a>Feed RSS
+
+* [Nuove versioni](https://aka.ms/mslearn-rss)
 
 ## <a name="next-steps"></a>Passaggi successivi
 

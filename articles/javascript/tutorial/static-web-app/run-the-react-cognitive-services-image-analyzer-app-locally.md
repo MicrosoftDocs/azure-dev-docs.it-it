@@ -4,14 +4,14 @@ description: L'app di esempio completa viene fornita in un repository GitHub. Cr
 ms.topic: tutorial
 ms.date: 11/13/2020
 ms.custom: devx-track-js
-ms.openlocfilehash: 5ddfd00be1c6160ec8c0c9630a8e950f13677bdd
-ms.sourcegitcommit: 4dac39849ba2e48034ecc91ef578d11aab796e58
+ms.openlocfilehash: 5050aca4c34f20f8b4c7cb7a8460815516abd7c7
+ms.sourcegitcommit: 1c508f5ba73a12e4baeacc88ad9a8359301acb50
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94993560"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97687458"
 ---
-# <a name="2-download-and-run-the-react-cognitive-services-image-analyzer-app"></a>2. Scaricare ed eseguire l'app React Image Analyzer di Servizi cognitivi
+# <a name="3-download-and-run-the-react-cognitive-services-image-analyzer-app"></a>3. Scaricare ed eseguire l'app React Image Analyzer di Servizi cognitivi
 
 L'app di esempio completa viene fornita in un repository GitHub. Creare una copia tramite fork del repository, installare le dipendenze ed eseguire localmente.
 

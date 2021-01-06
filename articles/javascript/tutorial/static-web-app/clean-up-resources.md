@@ -4,14 +4,14 @@ description: Pulire le risorse fatturabili rimuovendo il gruppo di risorse con u
 ms.topic: tutorial
 ms.date: 11/13/2020
 ms.custom: devx-track-js
-ms.openlocfilehash: 0b425ce873c53ca95628cfe8c3f68ea4b010aba3
-ms.sourcegitcommit: 4dac39849ba2e48034ecc91ef578d11aab796e58
+ms.openlocfilehash: 132ccc26a4ddf17eb38be1573f462492fe1f7f0c
+ms.sourcegitcommit: 1c508f5ba73a12e4baeacc88ad9a8359301acb50
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94993464"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97687494"
 ---
-# <a name="6-clean-up-resources"></a>6. Pulire le risorse
+# <a name="7-clean-up-resources-for-static-web-app"></a>7. Pulire le risorse per l'app Web statica
 
 Al termine di questa esercitazione, è necessario rimuovere il gruppo di risorse, incluse la risorsa Visione artificiale e l'app Web statica, per evitare di ricevere addebiti per ulteriori utilizzi. 
 

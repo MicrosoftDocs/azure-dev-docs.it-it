@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.service: azure
 ms.date: 10/30/2020
 ms.custom: github-actions-azure
-ms.openlocfilehash: bbb87890f4db4b744ae4b2794c86e86a18c0e352
-ms.sourcegitcommit: 12f80b1e0fe08db707c198271d0c399c3aba343a
+ms.openlocfilehash: c952410231ae57b0d127e1b6fb05e03f88403640
+ms.sourcegitcommit: 0d2ea78f18430c845a32e0d2311427ab81033465
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94515122"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97754067"
 ---
 # <a name="what-is-github-actions-for-azure"></a>Che cos'è la funzionalità GitHub Actions per Azure?
 
@@ -25,6 +25,10 @@ Ogni flusso di lavoro è costituito da singole [azioni](https://docs.github.com/
 Con GitHub Actions per Azure è possibile creare flussi di lavoro configurabili nel repository per compilare, testare, assemblare, rilasciare e distribuire software in Azure. GitHub Actions per Azure supporta servizi di Azure come il servizio app di Azure, Funzioni di Azure e Azure Key Vault.
 
 GitHub Actions include anche il supporto per utilità come i modelli di Azure Resource Manager, l'interfaccia della riga di comando di Azure e Criteri di Azure.
+
+Guardare questo video di GitHub Universe 2020 per altre informazioni sulla distribuzione continua con GitHub Actions.  
+
+> [!VIDEO https://www.youtube.com/embed/36hY0-O4STg]
 
 ## <a name="why-should-i-use-github-actions-for-azure"></a>Perché usare GitHub Actions per Azure?
 

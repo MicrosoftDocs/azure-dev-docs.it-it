@@ -2,13 +2,13 @@
 title: 'Novità della documentazione di JavaScript: '
 description: Novità della documentazione di JavaScript per ottobre 2020
 ms.topic: conceptual
-ms.date: 11/13/2020
-ms.openlocfilehash: f54af7f5f89b38cc32191fc2acd4f32e386c29fb
-ms.sourcegitcommit: 0cda024089784b92c1db3a4506c1dccd6bfe6339
+ms.date: 12/18/2020
+ms.openlocfilehash: ccc38a8dae86527650342e16e30da9fa7f28c0a7
+ms.sourcegitcommit: 28bed3dead87528796bdd76f3e94e66f4bd5e197
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96759288"
+ms.lasthandoff: 12/21/2020
+ms.locfileid: "97710388"
 ---
 # <a name="javascript-docs-whats-new-for-october-2020"></a>Documentazione di JavaScript: novità di ottobre 2020
 
@@ -21,6 +21,21 @@ Contenuti nuovi e aggiornati disponibili per sviluppatori JavaScript e TypeScrip
 |Nome|Note|
 |---------------------------------------|--|
 |[Esercitazione: Aggiungere il pulsante di accesso all'app Web statica React per l'autenticazione Microsoft](./tutorial/single-page-application-azure-login-button-sdk-msal.md)|L'autenticazione di Azure presentata in questa esercitazione è un pulsante di accesso e disconnessione e fornisce l'accesso all'account di un utente. Sviluppare l'applicazione con un SDK lato client di Azure, `@azure/msal-browser`, per gestire l'interazione dell'utente nell'applicazione a pagina singola.|
+|[Che cos'è Azure per sviluppatori JavaScript?](core/what-is-azure-for-javascript-development.md)|Concetti di Azure che gli sviluppatori JavaScript devono conoscere per avere successo.|
+|[Installare Node.js](core/install-nodejs-develop-azure-sdk-project.md)|Installare e gestire Node.js per scenari di sviluppo comuni di Azure|
+|[Configurare le app Web in Azure](how-to/configure-web-app-settings.md)|Informazioni su come impostare configurazioni comuni per l'app Web.|
+|[Identità, autenticazione e utenti](concepts/identity-authentication-users.md)|Questo articolo è incentrato sui concetti principali che uno sviluppatore JavaScript deve comprendere.|
+|[Principali attività comuni per sviluppatori JavaScript](how-to/common-javascript-tasks.md)|Un esempio delle attività correnti.|
+|[Automatizzare le attività con l'interfaccia della riga di comando di Azure](core/automate-tasks-with-azure-cli.md)|L'automazione delle attività di Azure è un requisito comune per la distribuzione continua negli ambienti host. L'interfaccia della riga di comando di Azure è la scelta consigliata per gli sviluppatori JavaScript che gestiscono le attività ed eseguono distribuzioni da qualsiasi posizione.|
+
+### <a name="whats-new-in-learn"></a>Novità di Learn
+
+
+|Nome|
+|---------------------------------------|
+|App Web statica, JavaScript, CodeTour: Usare le statistiche del basket per ottimizzare la riproduzione dei giochi con Visual Studio Code, su ispirazione di SPACE JAM NEW LEGENDS - [Learn](https://docs.microsoft.com/learn/paths/optimize-basketball-games-with-machine-learning/)|
+|Creare un semplice sito Web con HTML, CSS e JavaScript - [Learn](https://docs.microsoft.com/learn/modules/build-simple-website/)|
+|Usare Visual Studio Code per creare un dashboard JavaScript e Vue.js con un'API serverless basata su Funzioni di Azure e Node.js. - [Learn](https://docs.microsoft.com/learn/modules/build-api-azure-functions)|
 
 ## <a name="2020-november"></a>Novembre 2020
 

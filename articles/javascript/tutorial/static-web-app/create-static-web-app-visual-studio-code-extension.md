@@ -4,14 +4,14 @@ description: Creare la risorsa App Web statica con l'estensione di codice di Vis
 ms.date: 10/13/2020
 ms.topic: include
 ms.custom: devx-track-javascript
-ms.openlocfilehash: c6daa3f2a7ceb7f981cdaf57bdba61a722edbaa3
-ms.sourcegitcommit: 4dac39849ba2e48034ecc91ef578d11aab796e58
+ms.openlocfilehash: dac91157531b3d26dddebe411d2c79883f77d4b9
+ms.sourcegitcommit: 1c508f5ba73a12e4baeacc88ad9a8359301acb50
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94993589"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97687469"
 ---
-# <a name="4-create-azure-static-web-app-resource"></a>4. Creare la risorsa App Web statica di Azure
+# <a name="5-create-azure-static-web-app-resource"></a>5. Creare la risorsa App Web statica di Azure
 
 In questa sezione dell'esercitazione creare la risorsa App Web statica con un'estensione di Visual Studio Code per tale servizio ed eseguire il push del codice locale nel repository remoto per compilare, quindi distribuire l'app in Azure.
 

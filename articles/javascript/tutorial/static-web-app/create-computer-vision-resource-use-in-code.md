@@ -2,16 +2,16 @@
 title: Creare una risorsa di Visione artificiale
 description: Creare la risorsa di Visione artificiale di Servizi cognitivi e impostarla su variabili di ambiente.
 ms.topic: tutorial
-ms.date: 11/13/2020
+ms.date: 12/16/2020
 ms.custom: devx-track-js
-ms.openlocfilehash: 4ac324171f47ab8795169c5dd453d1e6451e8906
-ms.sourcegitcommit: 4dac39849ba2e48034ecc91ef578d11aab796e58
+ms.openlocfilehash: 338a3040381768e5987e84676339e8ee46c49fc7
+ms.sourcegitcommit: 1c508f5ba73a12e4baeacc88ad9a8359301acb50
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94993440"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97687471"
 ---
-# <a name="3-create-computer-vision-resource-and-use-in-code"></a>3. Creare una risorsa di Visione artificiale e usarla nel codice
+# <a name="4-create-computer-vision-resource-and-use-in-code"></a>4. Creare una risorsa di Visione artificiale e usarla nel codice
 
 In questo passaggio, creare la risorsa di Visione artificiale e impostarla su variabili di ambiente. 
 
@@ -108,13 +108,15 @@ Quando si usano app Web statiche di Azure, le variabili di ambiente, come i segr
 
 ## <a name="run-react-app-with-computervision-resource"></a>Eseguire l'app React con la risorsa Visione artificiale
 
-Questa app React controlla le modifiche per ricompilare ed eseguire nuovamente l'app. Apportare una modifica per forzare una ricompilazione.
+1. Avviare di nuovo l'app alla riga di comando:
 
-1. **Immettere una nuova riga** in `./src/VisualAi.js` subito dopo la prima riga vuota (riga 4). Questa modifica provoca una ricompilazione del sito Web in esecuzione localmente.
+    ```bash
+    npm start
+    ```
 
     :::image type="content" source="../../media/static-web-app/browser-screenshot-react-computervision-app-start-up.png" alt-text="Screenshot parziale del browser dell'esempio di Visione artificiale di Servizi cognitivi dell'app React pronto per l'immissione dell'URL o la selezione di INVIO.":::
 
-1. Lasciare vuoto il campo di testo e **selezionare il pulsante Analyze**. 
+1. Lasciare vuoto il campo di testo per selezionare un'immagine del catalogo predefinito, quindi selezionare il pulsante **Analizza**. 
 
     :::image type="content" source="../../media/static-web-app/browser-screenshot-react-computervision-app-image-analysis-result.png" alt-text="Screenshot parziale del browser dei risultati dell'esempio di Visione artificiale di Servizi cognitivi dell'app React.":::
 
