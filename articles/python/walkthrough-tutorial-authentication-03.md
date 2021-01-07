@@ -4,12 +4,12 @@ description: Esame dell'implementazione dell'API di terze parti di esempio con F
 ms.date: 08/24/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 7c0098988265fef5b6b0f5e4a654f54c9bed4594
-ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
+ms.openlocfilehash: ce6fbefc52c36bcd5e002cf1e6c8ca7ca4814062
+ms.sourcegitcommit: 075f39972e390e79ed09a3fcfdbfc776727e08fc
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91764504"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97952443"
 ---
 # <a name="part-3-example-third-party-api-implementation"></a>Parte 3: Implementazione dell'API di terze parti di esempio
 
@@ -17,7 +17,7 @@ ms.locfileid: "91764504"
 
 Nello scenario di esempio, l'endpoint pubblico dell'app principale usa un'API di terze parti protetta da una chiave di accesso. Questa sezione illustra un'implementazione dell'API di terze parti con Funzioni di Azure, ma l'API può essere implementata in altri modi e distribuita in un server cloud o in un host Web diverso. L'unico aspetto importante è che l'endpoint sia protetto da una chiave di accesso specifica che deve essere inclusa in ogni richiesta client. Qualsiasi app che richiama questa API, quindi, deve gestire in modo sicuro tale chiave.
 
-A scopo dimostrativo, questa API viene distribuita all'endpoint `https://msdocs-api-example.azurewebsites.net/api/RandomNumber`. Per chiamare l'API, tuttavia, è necessario specificare la chiave di accesso `d0c5atM1cr0s0ft` in un parametro URL `?code=` o in una proprietà `'x-functions-key'` dell'intestazione HTTP. Ad esempio, provare questo URL in un browser o curl: [https://msdocs-api-example.azurewebsites.net/api/RandomNumber?code=d0c5atM1cr0s0ft](https://msdocs-api-example.azurewebsites.net/api/RandomNumber?code=d0c5atM1cr0s0ft).
+A scopo dimostrativo, questa API viene distribuita all'endpoint `https://msdocs-example-api.azurewebsites.net/api/RandomNumber`. Per chiamare l'API, tuttavia, è necessario specificare la chiave di accesso `d0c5atM1cr0s0ft` in un parametro URL `?code=` o in una proprietà `'x-functions-key'` dell'intestazione HTTP. Ad esempio, provare questo URL in un browser o curl: [https://msdocs-example-api.azurewebsites.net/api/RandomNumber?code=d0c5atM1cr0s0ft](https://msdocs-example-api.azurewebsites.net/api/RandomNumber?code=d0c5atM1cr0s0ft).
 
 Se la chiave di accesso è valida, l'endpoint restituisce una risposta JSON che contiene una singola proprietà, ovvero "value", il cui valore è un numero compreso tra 1 e 999, ad esempio `{"value": 959}`.
 

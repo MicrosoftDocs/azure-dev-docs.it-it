@@ -12,12 +12,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: identity
 ms.custom: devx-track-java
-ms.openlocfilehash: aa2d60f969895acbcb56f74e909993ceb9b0d7d5
-ms.sourcegitcommit: 5c7f5fef798413b1a304cc9ee31c8518b73f27eb
+ms.openlocfilehash: 55b5926ade03280419d03d317df04f5d984ec46b
+ms.sourcegitcommit: 4f9ce09cbf9663203c56f5b12ecbf70ea68090ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93066302"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97911451"
 ---
 # <a name="tutorial-secure-a-java-web-app-using-the-spring-boot-starter-for-azure-active-directory-b2c"></a>Esercitazione: Proteggere un'app Web Java con Spring Boot Starter per Azure Active Directory B2C
 
@@ -53,8 +53,6 @@ In questa esercitazione verranno illustrate le procedure per:
 
    ![Immettere i valori per generare il progetto](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/fill-in-the-values-to-generate-the-project.png)
 
-    > [!NOTE]
-    > Spring Initializr usa Java 11 come versione predefinita. Per usare le utilità di avvio di Spring Boot descritte in questo argomento, è necessario selezionare invece Java 8.
 
 
 3. Selezionare **Genera progetto** e, quando richiesto, scaricare il progetto in un percorso nel computer locale. Spostare il file scaricato in una directory con lo stesso nome del progetto e decomprimerlo. Il layout del file avrà un aspetto simile al seguente, con il valore immesso per **Gruppo** al posto di `yourProject`.
@@ -240,7 +238,7 @@ A questo punto, dopo aver creato l'istanza di Azure AD B2C e alcuni flussi utent
 
 7. Salvare e chiudere il file *application.yml*.
 
-8. Creare una cartella denominata *controller* in *src/main/Java/<yourGroupId>/<yourGroupId>* , sostituendo `<yourGroupId>` con il valore immesso per **Gruppo**.
+8. Creare una cartella denominata *controller* in *src/main/Java/\<yourGroupId\>/\<yourGroupId\>* , sostituendo `<yourGroupId>` con il valore immesso per **Gruppo**.
 
 9. Creare un nuovo file Java denominato *WebController.java* nella cartella *controller* e aprirlo in un editor di testo.
 
@@ -292,7 +290,7 @@ A questo punto, dopo aver creato l'istanza di Azure AD B2C e alcuni flussi utent
 
     Poiché ogni metodo nel controller chiama `initializeModel()` e tale metodo chiama `model.addAllAttributes(user.getAttributes());`, qualsiasi pagina HTML in *src/main/resources/templates* è in grado di accedere a uno di questi attributi, ad esempio `${name}`, `${grant_type}` o `${auth_time}`. I valori restituiti da `user.getAttributes()` sono in effetti le attestazioni di `id_token` per l'autenticazione. L'elenco completo delle attestazioni disponibili è elencato in [Token ID di Microsoft Identity Platform](/azure/active-directory/develop/id-tokens#payload-claims).
 
-11. Creare una cartella denominata *security* in *src/main/Java/<yourGroupId>/<yourGroupId>* , sostituendo `yourGroupId` con il valore immesso per **Gruppo**.
+11. Creare una cartella denominata *security* in *src/main/Java/\<yourGroupId\>/\<yourGroupId\>* , sostituendo `yourGroupId` con il valore immesso per **Gruppo**.
 
 12. Creare un nuovo file Java denominato *WebSecurityConfiguration.java* nella cartella *security* e aprirlo in un editor di testo.
 

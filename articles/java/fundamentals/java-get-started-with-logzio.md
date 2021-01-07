@@ -7,12 +7,12 @@ ms.topic: tutorial
 ms.date: 11/05/2019
 ms.author: judubois
 ms.custom: devx-track-java
-ms.openlocfilehash: 89dc2a40e39a417d33e59b22f28202c61f036c79
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: 88dc420b594a50f3a82462552427c2d838e3a2ce
+ms.sourcegitcommit: 84f64dec74b4b041b8830a4e7489e22f0e943440
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831487"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97864279"
 ---
 # <a name="tutorial-getting-started-with-monitoring-and-logging-using-logzio-for-java-apps-running-on-azure"></a>Esercitazione: Introduzione al monitoraggio e alla registrazione con Logz.io per app Java in esecuzione in Azure
 
@@ -173,7 +173,7 @@ Accettare le condizioni nella parte inferiore della pagina e quindi selezionare 
 
 Per esaminare le risorse distribuite, è possibile visitare il gruppo di risorse definito.
 
-Per informazioni su come configurare logzio-azure-serverless per eseguire il backup dei dati in Archiviazione BLOB di Azure, vedere [Inviare i log attività di Azure](https://docs.logz.io/shipping/log-sources/azure-activity-logs.html).
+Per informazioni su come configurare logzio-azure-serverless per eseguire il backup dei dati in Archiviazione BLOB di Azure, vedere [Inviare i log attività di Azure](https://docs.logz.io/shipping/log-sources/azure-diagnostic-logs.html).
 
 ### <a name="stream-azure-logs-and-metrics-to-logzio"></a>Trasmettere log e metriche di Azure a Logz.io
 

@@ -4,12 +4,12 @@ description: Panoramica dell'implementazione dell'app principale, incluso tutto 
 ms.date: 08/24/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: e2a43f7e204ba3f077beea7cc878076111f71313
-ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
+ms.openlocfilehash: 62514474e2eb4517669029058526a39d3a4f3442
+ms.sourcegitcommit: 075f39972e390e79ed09a3fcfdbfc776727e08fc
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91764740"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97952433"
 ---
 # <a name="part-4-example-main-application-implementation"></a>Parte 4: Esempio di implementazione dell'applicazione principale
 
@@ -17,9 +17,9 @@ ms.locfileid: "91764740"
 
 L'app principale in questo scenario è una semplice app Flask distribuita nel Servizio app di Azure. L'app fornisce un endpoint API pubblico denominato */api/v1/getcode*, che genera un codice per altri scopi nell'app (ad indicare, con autenticazione a due fattori per gli utenti umani).
 
-Per visualizzare l'endpoint in azione, visitare [https://msdocs-main-app-example.azurewebsites.net/api/v1/getcode](https://msdocs-main-app-example.azurewebsites.net/api/v1/getcode) in un browser o effettuare una richiesta usando curl.
+Per visualizzare l'endpoint in azione, visitare [https://msdocs-example-main-app.azurewebsites.net/api/v1/getcode](https://msdocs-example-main-app.azurewebsites.net/api/v1/getcode) in un browser o effettuare una richiesta usando curl.
 
-L'app principale fornisce anche una semplice home page che visualizza un collegamento all'endpoint API. Questa parte dell'app può essere visualizzata in [https://msdocs-main-app-example.azurewebsites.net](https://msdocs-main-app-example.azurewebsites.net).
+L'app principale fornisce anche una semplice home page che visualizza un collegamento all'endpoint API. Questa parte dell'app può essere visualizzata in [https://msdocs-example-main-app.azurewebsites.net](https://msdocs-example-main-app.azurewebsites.net).
 
 Lo script di provisioning dell'esempio esegue le operazioni seguenti:
 

@@ -4,12 +4,12 @@ description: Informazioni sulle dipendenze dell'app principale (prevalentemente 
 ms.date: 08/24/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 9c6204afd17d86cd8677022a59641e5343c6a543
-ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
+ms.openlocfilehash: 666ddd3222e724c316c6cf975bbb1e292f4525cd
+ms.sourcegitcommit: 075f39972e390e79ed09a3fcfdbfc776727e08fc
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91764726"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97952463"
 ---
 # <a name="part-5-main-app-dependencies-import-statements-and-environment-variables"></a>Parte 5: Dipendenze dell'app principale, istruzioni import e variabili di ambiente
 
@@ -48,7 +48,7 @@ Il codice dell'app dipende da quattro variabili di ambiente:
 
 | Variabile | valore |
 | --- | --- |
-| THIRD_PARTY_API_ENDPOINT | L'URL dell'API di terze parti, ad esempio `https://msdocs-api-example.azurewebsites.net/api/RandomNumber` descritto nella [Parte 3](walkthrough-tutorial-authentication-03.md). |
+| THIRD_PARTY_API_ENDPOINT | L'URL dell'API di terze parti, ad esempio `https://msdocs-example-api.azurewebsites.net/api/RandomNumber` descritto nella [Parte 3](walkthrough-tutorial-authentication-03.md). |
 | KEY_VAULT_URL | L'URL dell'istanza di Azure Key Vault in cui è stata archiviata la chiave di accesso per l'API di terze parti. |
 | THIRD_PARTY_API_SECRET_NAME | Il nome del segreto in Key Vault che contiene la chiave di accesso per l'API di terze parti. |
 | STORAGE_QUEUE_URL | L'URL di una coda di archiviazione di Azure configurata in Azure, ad esempio `https://msdocsmainappexample.queue.core.windows.net/code-requests` (vedere la [parte 4](walkthrough-tutorial-authentication-04.md)). Poiché il nome della coda è incluso alla fine dell'URL, non viene visualizzato in nessun punto del codice. |
