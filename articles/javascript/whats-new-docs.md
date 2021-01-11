@@ -1,18 +1,27 @@
 ---
-title: 'Novità della documentazione di JavaScript: '
-description: Novità della documentazione di JavaScript per ottobre 2020
+title: Novità della documentazione di JavaScript
+description: Novità della documentazione di JavaScript nel Developer Center
 ms.topic: conceptual
-ms.date: 12/18/2020
-ms.openlocfilehash: ccc38a8dae86527650342e16e30da9fa7f28c0a7
-ms.sourcegitcommit: 28bed3dead87528796bdd76f3e94e66f4bd5e197
+ms.date: 01/05/2021
+ms.openlocfilehash: 507c52491784a508535ae07f4a9b2755fa68cc1b
+ms.sourcegitcommit: 075f39972e390e79ed09a3fcfdbfc776727e08fc
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/21/2020
-ms.locfileid: "97710388"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97952453"
 ---
-# <a name="javascript-docs-whats-new-for-october-2020"></a>Documentazione di JavaScript: novità di ottobre 2020
+# <a name="javascript-docs-whats-new"></a>Documentazione di JavaScript: Novità
 
 Contenuti nuovi e aggiornati disponibili per sviluppatori JavaScript e TypeScript.
+
+## <a name="2021-january"></a>Gennaio 2021
+
+### <a name="whats-updated"></a>Aggiornamenti
+
+|Nome|Note|
+|---------------------------------------|--|
+|[**Per principianti**](learn-azure-javascript.md#getting-started)|Varie raccolte di materiali online per iniziare a usare JavaScript, Node.js, sviluppo Web e altre aree di interesse per gli sviluppatori JavaScript.|
+|[Principali attività comuni per sviluppatori JavaScript](how-to/common-javascript-tasks.md)|Un esempio delle attività correnti.|
 
 ## <a name="2020-december"></a>Dicembre 2020
 

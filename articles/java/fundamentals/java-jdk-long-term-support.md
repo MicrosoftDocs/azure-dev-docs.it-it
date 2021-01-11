@@ -4,12 +4,12 @@ description: Questo articolo include i download e una dichiarazione del supporto
 ms.date: 04/09/2019
 ms.topic: conceptual
 ms.custom: seo-java-september2019, devx-track-java
-ms.openlocfilehash: 7df92d62afa57677e4985231a621257bd6b9031f
-ms.sourcegitcommit: 12f80b1e0fe08db707c198271d0c399c3aba343a
+ms.openlocfilehash: 165fcf08089690685067a694a2f813b67a50ed33
+ms.sourcegitcommit: 84f64dec74b4b041b8830a4e7489e22f0e943440
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94515137"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97864270"
 ---
 # <a name="java-long-term-support-and-medium-term-support-on-azure-and-azure-stack"></a>Supporto a lungo e medio termine di Java in Azure e Azure Stack
 

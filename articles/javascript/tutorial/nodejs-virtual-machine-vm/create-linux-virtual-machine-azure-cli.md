@@ -2,14 +2,14 @@
 title: Creare una macchina virtuale Linux
 description: Usare l'interfaccia della riga di comando di Azure per creare e configurare la macchina virtuale. A questo punto dell'esercitazione, l'utente dovrebbe aver aperto una finestra del terminale ed eseguito l'accesso al cloud di Azure con l'interfaccia della riga di comando di Azure nella sottoscrizione in cui intende creare la macchina virtuale.
 ms.topic: tutorial
-ms.date: 11/13/2020
+ms.date: 01/05/2021
 ms.custom: devx-track-js
-ms.openlocfilehash: d2da4cac2a93ad953ada9cd98de679abba034908
-ms.sourcegitcommit: a2a51e0c6530eb5794a2fe667cf4c9a60b2a7470
+ms.openlocfilehash: a618c9584775a7c384f05ef01a563943c48f2b3a
+ms.sourcegitcommit: 075f39972e390e79ed09a3fcfdbfc776727e08fc
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94625030"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97952503"
 ---
 # <a name="3-create-linux-virtual-machine-using-azure-cli"></a>3. Creare una macchina virtuale Linux usando l'interfaccia della riga di comando di Azure
 
@@ -33,30 +33,34 @@ Il comando `runcmd` ha diverse attività:
 
 ## <a name="create-a-virtual-machine-resource"></a>Creare una risorsa di macchina virtuale 
 
-1. Immettere il [comando dell'interfaccia della riga di comando di Azure](/cli/azure/vm?view=azure-cli-latest#az_vm_create) in un terminale per creare una risorsa di Azure di una macchina virtuale Linux. Il comando crea la macchina virtuale dal file cloud-init e genera le chiavi SSH. Il comando in esecuzione visualizza la posizione di archiviazione delle chiavi. 
+Immettere il [comando dell'interfaccia della riga di comando di Azure](/cli/azure/vm?view=azure-cli-latest#az_vm_create) in un terminale per creare una risorsa di Azure di una macchina virtuale Linux. Il comando crea la macchina virtuale dal file cloud-init e genera le chiavi SSH. Il comando in esecuzione visualizza la posizione di archiviazione delle chiavi. 
 
-    ```azurecli
-    az vm create \
-      --resource-group rg-demo-vm-eastus \
-      --name demo-vm \
-      --location eastus \
-      --image UbuntuLTS \
-      --admin-username azureuser \
-      --generate-ssh-keys \
-      --custom-data cloud-init-github.txt
-    ```
+```azurecli
+az vm create \
+  --resource-group rg-demo-vm-eastus \
+  --name demo-vm \
+  --location eastus \
+  --image UbuntuLTS \
+  --admin-username azureuser \
+  --generate-ssh-keys \
+  --custom-data cloud-init-github.txt
+```
 
-    Il processo potrebbe richiedere alcuni minuti. Al termine del processo, l'interfaccia della riga di comando di Azure restituisce le informazioni sulla nuova risorsa. Mantenere il valore `publicIpAddress`, necessario per visualizzare l'app Web in un browser e per connettersi alla macchina virtuale. 
+Il processo potrebbe richiedere alcuni minuti. Al termine del processo, l'interfaccia della riga di comando di Azure restituisce le informazioni sulla nuova risorsa. Mantenere il valore `publicIpAddress`, necessario per visualizzare l'app Web in un browser e per connettersi alla macchina virtuale. 
      
 
-1. Al momento della creazione, la macchina virtuale _non_ ha porte aperte. Aprire la porta 80 con il [comando dell'interfaccia della riga di comando di Azure](/cli/azure/vm?view=azure-cli-latest#az_vm_open_port) seguente in modo che l'app Web sia disponibile pubblicamente:
+## <a name="open-port-for-virtual-machine"></a>Aprire la porta per la macchina virtuale
 
-    ```azurecli
-    az vm open-port \
-      --port 80 \
-      --resource-group rg-demo-vm-eastus \
-      --name demo-vm
-    ```
+Al momento della creazione, la macchina virtuale _non_ ha porte aperte. Aprire la porta 80 con il [comando dell'interfaccia della riga di comando di Azure](/cli/azure/vm?view=azure-cli-latest#az_vm_open_port) seguente in modo che l'app Web sia disponibile pubblicamente:
+
+```azurecli
+az vm open-port \
+  --port 80 \
+  --resource-group rg-demo-vm-eastus \
+  --name demo-vm
+```
+
+## <a name="browse-to-web-site"></a>Passare al sito Web
 
 1. Usare l'indirizzo IP pubblico in un Web browser per assicurarsi che la macchina virtuale sia disponibile e in esecuzione. Modificare l'URL in modo da usare il valore di `publicIpAddress`.
 

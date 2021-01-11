@@ -1,15 +1,15 @@
 ---
 title: Configurare l'ambiente Python locale per lo sviluppo di Azure
 description: Come configurare un ambiente di sviluppo Python locale per l'uso con Azure, tra cui Visual Studio Code, le librerie di Azure SDK e le credenziali necessarie per l'autenticazione delle librerie.
-ms.date: 05/29/2020
+ms.date: 01/04/2021
 ms.topic: conceptual
 ms.custom: devx-track-python, devx-track-azurecli
-ms.openlocfilehash: b9e3c36199cfe9fa94fa518587b6065f4d9ef9b0
-ms.sourcegitcommit: 12f80b1e0fe08db707c198271d0c399c3aba343a
+ms.openlocfilehash: fcad7c614ae27c8b1b3ccf081d85292549cfcee3
+ms.sourcegitcommit: 4f9ce09cbf9663203c56f5b12ecbf70ea68090ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94515152"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97911471"
 ---
 # <a name="configure-your-local-python-dev-environment-for-azure"></a>Configurare l'ambiente di sviluppo Python locale per Azure
 
@@ -23,7 +23,7 @@ Questo articolo include le istruzioni di installazione da seguire una sola volta
 
 Una volta configurata la workstation, sarà necessario aggiungere solo una configurazione minima per completare varie guide di avvio rapido ed esercitazioni altrove in questo centro per sviluppatori e nella documentazione di Azure.
 
-Questa configurazione per lo sviluppo locale è una questione diversa rispetto alle [risorse di provisioning](cloud-development-flow.md) che costituiscono l' *ambiente cloud* dell'applicazione in Azure. Nel processo di sviluppo viene eseguito codice nell'ambiente di sviluppo locale in grado di accedere a tali risorse nel cloud, ma il codice non è ancora distribuito in un [servizio di hosting appropriato](quickstarts-app-hosting.md) nel cloud. Il passaggio di distribuzione avviene in seguito, come descritto nell'articolo sul [flusso di sviluppo di Azure](cloud-development-flow.md).
+Questa configurazione per lo sviluppo locale è una questione diversa rispetto alle [risorse di provisioning](cloud-development-flow.md) che costituiscono l'*ambiente cloud* dell'applicazione in Azure. Nel processo di sviluppo viene eseguito codice nell'ambiente di sviluppo locale in grado di accedere a tali risorse nel cloud, ma il codice non è ancora distribuito in un [servizio di hosting appropriato](quickstarts-app-hosting.md) nel cloud. Il passaggio di distribuzione avviene in seguito, come descritto nell'articolo sul [flusso di sviluppo di Azure](cloud-development-flow.md).
 
 ## <a name="install-components"></a>Installazione dei componenti
 
@@ -136,13 +136,13 @@ Ogni sviluppatore dell'organizzazione dovrà eseguire questi passaggi singolarme
 
 #### <a name="what-the-create-for-rbac-command-does"></a>Funzioni del comando create-for-rbac
 
-Il `az ad create-for-rbac` comando crea un'entità servizio per l'autenticazione in base al ruolo (Controllo degli accessi in base al ruolo).
+Il `az ad create-for-rbac` comando crea un'entità servizio per l'autenticazione in base al ruolo (Controllo degli accessi in base al ruolo). Per altre informazioni sulle entità servizio, vedere [Come autenticare e autorizzare le app Python in Azure](azure-sdk-authenticate.md).
 
 - `ad` indica Azure Active Directory, `sp` significa "entità servizio" e `create-for-rbac` significa "crea per il controllo degli accessi in base al ruolo", il tipo principale di autorizzazione di Azure. Vedere le informazioni di riferimento del comando [az ad sp create-for-rbac](/cli/azure/ad/sp#az-ad-sp-create-for-rbac).
 
 - L'argomento `--name` deve essere univoco all'interno dell'organizzazione e in genere corrisponde al nome dello sviluppatore che usa l'entità servizio. Se si omette questo argomento, l'interfaccia della riga di comando di Azure usa un nome generico in formato `azure-cli-<timestamp>`. Se si preferisce, è possibile rinominare l'entità servizio nel portale di Azure.
 
-- L'argomento `--skip-assignment` crea un'entità servizio senza autorizzazioni predefinite. È quindi necessario assegnare autorizzazioni specifiche all'entità servizio per consentire al codice in esecuzione in locale di accedere alle risorse. Diverse guide di avvio rapido ed esercitazioni forniscono informazioni dettagliate su come autorizzare un'entità servizio per le risorse necessarie.
+- L'argomento `--skip-assignment` crea un'entità servizio senza autorizzazioni predefinite. È quindi necessario assegnare autorizzazioni specifiche all'entità servizio per consentire al codice in esecuzione in locale di accedere alle risorse. Per altre informazioni, vedere [Che cos'è il controllo degli accessi in base al ruolo di Azure?](/azure/role-based-access-control/overview) e [Procedura per aggiungere un'assegnazione di ruolo](/azure/role-based-access-control/role-assignments-steps). Diverse guide di avvio rapido ed esercitazioni forniscono inoltre informazioni dettagliate su come autorizzare un'entità servizio per le risorse specifiche coinvolte.
 
 - Il comando genera un output JSON, che viene salvato in un file denominato *local-sp.json*.
 
@@ -176,6 +176,11 @@ Il `az ad create-for-rbac` comando crea un'entità servizio per l'autenticazione
     </pre>
 
     In questo caso, `tenant` è l'ID tenant, `appId` è l'ID client e `password` è il segreto client.
+
+    > [!WARNING]
+    >  Quando si crea un'entità servizio con il comando `az ad sp create-for-rbac`, l'output include credenziali che è necessario proteggere, ad esempio una password, un segreto client o un certificato. Non archiviare queste credenziali nel codice o in un file di cui viene eseguito il commit nel controllo del codice sorgente.
+    > Per impostazione predefinita, `az ad sp create-for-rbac` assegna il ruolo di [Collaboratore](/azure/role-based-access-control/built-in-roles#contributor) all'entità servizio nell'ambito della sottoscrizione. Per ridurre il rischio che un'entità servizio venga compromessa, assegnare un ruolo più specifico e limitare l'ambito a una risorsa o a un gruppo di risorse.
+    > Per il codice di produzione, piuttosto che per lo sviluppo locale, usare [identità gestite](/azure/active-directory/managed-identities-azure-resources/overview) quando possibile invece di una specifica entità servizio.
 
     > [!IMPORTANT]
     > L'output di questo comando è l'unico punto in cui sarà visibile la password o il segreto client. Non è possibile recuperare la password o il segreto in un secondo momento. È tuttavia possibile aggiungere un nuovo segreto, se necessario, senza invalidare l'entità servizio o i segreti esistenti.
@@ -226,7 +231,7 @@ Per ogni progetto, è consigliabile creare e attivare sempre un *ambiente virtua
 
 Un ambiente virtuale è una cartella all'interno di un progetto che isola una copia di un interprete Python specifico. Una volta attivato l'ambiente (cosa che Visual Studio Code fa automaticamente), l'esecuzione di `pip install` installa una libreria solo al suo interno. Quindi il codice Python verrà eseguito nel contesto esatto dell'ambiente con le versioni specifiche di ogni libreria. Eseguendo `pip freeze`, si ottiene l'elenco esatto di tali librerie. In molti esempi di questa documentazione si crea un file *requirements.txt* per le librerie necessarie, quindi si usa `pip install -r requirements.txt`. Un file dei requisiti è in genere necessario quando si distribuisce il codice in Azure.
 
-Se non si usa un ambiente virtuale, Python viene eseguito nell' *ambiente globale*. Pur essendo rapido e pratico da usare, l'ambiente globale tende a riempirsi a dismisura nel corso del tempo con tutte le librerie installate per qualsiasi progetto o esperimento. Inoltre, se si aggiorna una raccolta per un progetto, si potrebbero danneggiare altri progetti che dipendono da versioni diverse della libreria. E poiché l'ambiente è condiviso da un numero qualsiasi di progetti, non è possibile usare `pip freeze` per recuperare un elenco di dipendenze di un progetto specifico.
+Se non si usa un ambiente virtuale, Python viene eseguito nell'*ambiente globale*. Pur essendo rapido e pratico da usare, l'ambiente globale tende a riempirsi a dismisura nel corso del tempo con tutte le librerie installate per qualsiasi progetto o esperimento. Inoltre, se si aggiorna una raccolta per un progetto, si potrebbero danneggiare altri progetti che dipendono da versioni diverse della libreria. E poiché l'ambiente è condiviso da un numero qualsiasi di progetti, non è possibile usare `pip freeze` per recuperare un elenco di dipendenze di un progetto specifico.
 
 Nell'ambiente globale è consigliabile installare i pacchetti di strumenti da usare in più progetti. Ad esempio, è possibile eseguire `pip install gunicorn` nell'ambiente globale per rendere disponibile il server Web gunicorn ovunque.
 

@@ -4,18 +4,20 @@ description: In questa esercitazione si usa un'app Node.js con un database Mongo
 ms.topic: tutorial
 ms.date: 12/03/2020
 ms.custom: scenarios:getting-started, languages:JavaScript, devx-track-javascript
-ms.openlocfilehash: 1ddbe6a463f877e86a0c46da1ffb17c6a3094c0a
-ms.sourcegitcommit: c8330128d5d6a71859933a890ecdf047cb950996
+ms.openlocfilehash: 6c295c305f2882c4a97a34ffa288738112ee9600
+ms.sourcegitcommit: 4f9ce09cbf9663203c56f5b12ecbf70ea68090ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97522401"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97911501"
 ---
 # <a name="deploy-expressjs-mongodb-app-to-app-service-from-visual-studio-code"></a>Distribuire l'app MongoDB Express.js nel servizio app da Visual Studio Code
 
 Distribuire l'applicazione Express.js che si connette a MongoDB nel Servizio app di Azure (in Linux) e in un'istanza di CosmosDB. 
 
 L'attività di programmazione viene eseguita automaticamente. Questa esercitazione è incentrata sull'uso corretto degli ambienti di Azure locali e remoti all'interno Visual Studio Code con le estensioni di Azure.
+
+* **[Codice di esempio](https://github.com/Azure-Samples/js-e2e-express-mongo)**
 
 ## <a name="top-tasks"></a>Attività principali
 

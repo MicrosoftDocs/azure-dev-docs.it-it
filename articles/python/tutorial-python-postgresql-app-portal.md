@@ -3,14 +3,14 @@ title: "Esercitazione: Distribuire un'app Django con PostgreSQL tramite il porta
 description: Effettuare il provisioning di un'app Web e di un database PostgreSQL in Azure e distribuire il codice dell'app da GitHub.
 ms.devlang: python
 ms.topic: tutorial
-ms.date: 11/02/2020
+ms.date: 01/04/2021
 ms.custom: devx-track-python
-ms.openlocfilehash: 503a899150edc3f8dc22d7e0361a4888590ab61c
-ms.sourcegitcommit: 10d4133c8abb3e7473dcdf6418ebadd3e08275f7
+ms.openlocfilehash: 65f8558aa81e839b3701669a0274419cd2143e49
+ms.sourcegitcommit: 4f9ce09cbf9663203c56f5b12ecbf70ea68090ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93284528"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97911461"
 ---
 # <a name="tutorial-deploy-a-django-web-app-with-postgresql-using-the-azure-portal"></a>Esercitazione: Distribuire un'app Web Django con PostgreSQL tramite il portale di Azure
 
@@ -48,7 +48,7 @@ In un browser passare a [https://github.com/Azure-Samples/djangoapp](https://git
 
 1. Selezionare **Crea una risorsa**. Verrà aperta una pagina **Nuova**.
 
-1. Cercare e selezionare **App Web**.
+1. Cercare e selezionare **App Web**, quindi selezionare **Crea**.
 
 1. Nella pagina **Crea app Web** immettere le informazioni seguenti:
 
@@ -61,7 +61,7 @@ In un browser passare a [https://github.com/Azure-Samples/djangoapp](https://git
     | Stack di runtime | Selezionare **Python 3.8** nell'elenco a discesa. |
     | Region | Selezionare una località nelle vicinanze. |
     | Piano Linux | Il portale popola questo campo con un nome di piano del servizio app in base al gruppo di risorse. Se si vuole cambiare il nome, selezionare **Crea nuovo**. |
-    | SKU e dimensioni | Per ottenere prestazioni ottimali, usare il piano predefinito, anche se implica addebiti nella sottoscrizione. Per evitare addebiti, selezionare **Modifica dimensioni** , quindi **Sviluppo/test** , **B1** (gratuito per 30 giorni) e infine **Applica**. È possibile aggiornare il piano in seguito per migliorare le prestazioni. |
+    | SKU e dimensioni | Per ottenere prestazioni ottimali, usare il piano predefinito, anche se implica addebiti nella sottoscrizione. Per evitare addebiti, selezionare **Modifica dimensioni**, quindi **Sviluppo/test**, **B1** (gratuito per 30 giorni) e infine **Applica**. È possibile aggiornare il piano in seguito per migliorare le prestazioni. |
 
 1. Selezionare **Rivedi e crea** e quindi **Crea**. Il provisioning dell'app Web in Azure richiede alcuni minuti.
 
@@ -75,7 +75,7 @@ In un browser passare a [https://github.com/Azure-Samples/djangoapp](https://git
 
 1. Selezionare **Crea una risorsa**. Verrà aperta una pagina **Nuova**.
 
-1. Cercare e selezionare **Database di Azure per PostgreSQL**.
+1. Cercare e selezionare **Server di Database di Azure per PostgreSQL**, quindi selezionare **Crea**.
 
 1. Nella pagina successiva selezionare **Crea** in **Server singolo**.
 
@@ -89,7 +89,7 @@ In un browser passare a [https://github.com/Azure-Samples/djangoapp](https://git
     | Origine dati | **Nessuno** |
     | Location | Selezionare una località nelle vicinanze. |
     | Versione | Mantenere il valore predefinito, ovvero l'ultima versione. |
-    | Calcolo e archiviazione | Selezionare **Configura server** , quindi selezionare **Basic** e **Generazione 5**. Impostare **vCore** su 1 e **Archiviazione** su 5 GB, quindi selezionare **OK**. Queste scelte consentono di effettuare il provisioning del server meno costoso disponibile per PostgreSQL in Azure. È anche possibile che nell'account Azure sia disponibile credito sufficiente per coprire il costo del server. |
+    | Calcolo e archiviazione | Selezionare **Configura server**, quindi selezionare **Basic** e **Generazione 5**. Impostare **vCore** su 1 e **Archiviazione** su 5 GB, quindi selezionare **OK**. Queste scelte consentono di effettuare il provisioning del server meno costoso disponibile per PostgreSQL in Azure. È anche possibile che nell'account Azure sia disponibile credito sufficiente per coprire il costo del server. |
     | Nome utente amministratore, Password, Conferma password | Immettere le credenziali per un account amministratore nel server di database. Prendere nota di queste credenziali, perché saranno necessarie più avanti nell'esercitazione. Nota: non usare il carattere `$` nel nome utente o nella password. Successivamente, si creano variabili di ambiente con questi valori, in cui il carattere `$` ha un significato speciale all'interno del contenitore Linux usato per eseguire le app Python. |
 
 1. Selezionare **Rivedi e crea** e quindi **Crea**. Il provisioning dell'app Web in Azure richiede alcuni minuti.
@@ -106,7 +106,7 @@ In questa sezione ci si connette al server di database in Azure Cloud Shell e si
 
     ![Pagina Sicurezza connessione portale per le regole del firewall](media/tutorial-python-postgresql-app-portal/server-firewall-rules.png)
 
-1. Selezionare il pulsante **Aggiungi 0.0.0.0 - 255.255.255.255** , quindi selezionare **Continua** nel messaggio popup visualizzato e poi **Salva** nella parte superiore della pagina. Queste azioni aggiungono una regola che consente di connettersi al server di database da Cloud Shell e da SSH (come si farà in una sezione successiva per eseguire le migrazioni dei modelli di dati Django).
+1. Selezionare il pulsante **Aggiungi 0.0.0.0 - 255.255.255.255**, quindi selezionare **Continua** nel messaggio popup visualizzato e poi **Salva** nella parte superiore della pagina. Queste azioni aggiungono una regola che consente di connettersi al server di database da Cloud Shell e da SSH (come si farà in una sezione successiva per eseguire le migrazioni dei modelli di dati Django).
 
 1. Aprire Azure Cloud Shell dal portale di Azure selezionando l'icona corrispondente nella parte superiore della finestra:
 
@@ -170,7 +170,9 @@ Una volta specificate le impostazioni del database e della connessione, è ora p
 
 1. Nel passaggio **Controllo del codice sorgente** selezionare **GitHub** e quindi **Autorizza** (se necessario). Seguire quindi le istruzioni per l'accesso oppure selezionare **Continua** per usare l'account di accesso di GitHub corrente.
 
-1. Nel passaggio **Provider di compilazione** selezionare **Servizio di compilazione del servizio app** , quindi selezionare **Continua**.
+    Se viene visualizzata una finestra popup che indica che l'autenticazione è stata completata, ma il portale mostra ancora il pulsante Autorizza, aggiornare la pagina, quindi nella casella GitHub dovrebbe comparire l'account di accesso GitHub. Selezionare di nuovo la casella GitHub, quindi selezionare **Continua**.
+
+1. Nel passaggio **Provider di compilazione** selezionare **Servizio di compilazione del servizio app**, quindi selezionare **Continua**.
 
 1. Nel passaggio **Configura** selezionare i valori seguenti:
 
@@ -195,19 +197,13 @@ Con il codice distribuito e il database implementato, l'app è quasi pronta per 
 1. Nella console passare alla cartella dell'app Web:
 
     ```bash
-    cd site/wwwroot
+    cd $APP_PATH
     ```
 
-1. Attivare l'ambiente virtuale del contenitore:
+1. Attivare l'ambiente virtuale
 
     ```bash
     source /antenv/bin/activate
-    ```
-
-1. Installare i pacchetti Python:
-
-    ```bash
-    pip install -r requirements.txt
     ```
 
 1. Eseguire le migrazioni del database:
@@ -215,6 +211,8 @@ Con il codice distribuito e il database implementato, l'app è quasi pronta per 
     ```bash
     python manage.py migrate
     ```
+
+    Se si verificano errori relativi alla connessione al database, verificare i valori delle impostazioni dell'applicazione create in [Connettere il database](#connect-the-database).
 
 1. Creare un account di accesso dell'amministratore per l'app:
 
@@ -230,11 +228,11 @@ Con il codice distribuito e il database implementato, l'app è quasi pronta per 
 
 A questo punto è possibile eseguire un rapido test dell'app per verificare che funzioni con il database PostgreSQL.
 
-1. Nella finestra o nella scheda del browser per l'app Web tornare alla pagina **Panoramica** , quindi selezionare l' **URL** per l'app Web nel formato `http://<app-name>.azurewebsites.net`.
+1. Nella finestra o nella scheda del browser per l'app Web tornare alla pagina **Panoramica**, quindi selezionare l'**URL** per l'app Web nel formato `http://<app-name>.azurewebsites.net`.
 
 1. L'app dovrebbe visualizzare un messaggio che indica che non sono disponibili sondaggi perché nel database non sono ancora presenti sondaggi specifici.
 
-1. Passare a `http://<app-name>.azurewebsites.net/admin`, la pagina di amministrazione di Django, e accedere usando le credenziali di utente con privilegi avanzati della sezione precedente (`root` e `Pollsdb1`).
+1. Passare a `http://<app-name>.azurewebsites.net/admin`, la pagina di amministrazione di Django, e accedere usando le credenziali di utente Django con privilegi avanzati della sezione precedente (`root` e `Pollsdb1`).
 
 1. In **Polls** (Sondaggi) selezionare **Add** (Aggiungi) accanto a **Questions** (Domande) e creare una domanda del sondaggio con alcune scelte.
 
@@ -252,7 +250,7 @@ Se si cambiano i modelli di dati dell'app Django, tuttavia, è necessario esegui
 
 1. Connettersi di nuovo all'app Web tramite SSH, come descritto in [Eseguire le migrazioni del database Django](#run-django-database-migrations).
 
-1. Passare alla cartella dell'app con `cd site/wwwroot`.
+1. Passare alla cartella dell'app con `cd $APP_PATH`.
 
 1. Attivare l'ambiente virtuale con `source /antenv/bin/activate`.
 

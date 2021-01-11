@@ -4,18 +4,18 @@ description: L'autenticazione di Azure Active Directory presentata in questa ese
 ms.topic: tutorial
 ms.date: 12/01/2020
 ms.custom: devx-track-js, "azure-sdk-javascript-@azure/msal-browser-2.7.0"
-ms.openlocfilehash: e6d91f1654b14d7b83c7ae2fa2c0a313914314b2
-ms.sourcegitcommit: 525c4b41d85aae9c3026a070b07e00c2241ea716
+ms.openlocfilehash: 0128d773a2bbc79b22b3ce3424e7133942053597
+ms.sourcegitcommit: 4f9ce09cbf9663203c56f5b12ecbf70ea68090ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97393890"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97911491"
 ---
 # <a name="add-microsoft-login-button-to-a-single-page-application-for-authentication"></a>Aggiungere un pulsante di accesso Microsoft a un'applicazione a pagina singola per l'autenticazione
 
 L'autenticazione di Azure presentata in questa esercitazione su TypeScript è un pulsante di accesso e disconnessione e fornisce l'accesso all'account di un utente. Sviluppare l'applicazione con un SDK lato client di Azure, `@azure/msal-browser`, per gestire l'interazione dell'utente nell'applicazione a pagina singola.
 
-* [Codice sorgente](https://github.com/Azure-Samples/js-e2e-client-azure-login-button)
+* [Codice di esempio](https://github.com/Azure-Samples/js-e2e-client-azure-login-button)
 
 ## <a name="application-architecture-and-functionality"></a>Architettura e funzionalità dell'applicazione
 
@@ -39,7 +39,7 @@ Verificare che gli elementi seguenti siano installati nel computer locale.
 
 ## <a name="2-keep-value-for-environment-variable"></a>2. Mantenere il valore per la variabile di ambiente
 
-Definire una posizione per la copia del valore dell'ID client dell'app. 
+Riservare una posizione in cui copiare il valore dell'ID client della registrazione dell'app, ad esempio un file di testo. Questo ID client verrà recuperato nel passaggio 5 della sezione successiva. Il valore verrà usato come variabile di ambiente per l'app Web.  
 
 ## <a name="3-create-app-registration-for-authentication"></a>3. Creare una registrazione app per l'autenticazione
 
@@ -47,7 +47,7 @@ Definire una posizione per la copia del valore dell'ID client dell'app.
 1. Selezionare **+ Nuova registrazione**.
 1. **Immettere i dati di registrazione dell'app** usando la tabella seguente:
 
-   | Campo                   | valore                                                                                                                                                                      |Descrizione|
+   | Campo                   | Valore                                                                                                                                                                      |Description|
    | ----------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |--|
    | Nome                    | `Simple Auth Tutorial`|Questo è il nome dell'app che verrà visualizzato agli utenti nel modulo di autorizzazione quando eseguono l'accesso all'app.                                                 |
    | Tipi di account supportati | **Gli account presenti in qualsiasi directory dell'organizzazione (qualsiasi directory Azure AD - Multi-tenant) e gli account Microsoft personali**|Include la maggior parte dei tipi di account. |
@@ -67,17 +67,17 @@ Definire una posizione per la copia del valore dell'ID client dell'app.
    npx create-react-app tutorial-demo-login-button --template typescript
    ```
 
-1. Passare alla nuova directory e installare il pacchetto `@azure/msal-browser`:
+1. Passare alla nuova directory e installare il pacchetto di autenticazione `@azure/msal-browser`:
 
    ```bash
    cd tutorial-demo-login-button && npm install @azure/msal-browser
    ```
 
-1. Creare un `.env` a livello di file radice e aggiungere le righe seguenti:
+1. Creare un file `.env` al livello radice e aggiungere la riga seguente:
 
     :::code language="env" source="~/../js-e2e-client-azure-login-button/.env"  :::
 
-    Il file `.env` viene letto come parte del framework create-react-app.
+    Il file `.env` viene letto come parte del framework create-react-app. Questo è il file in cui è possibile archiviare l'ID client per lo sviluppo locale. 
 
 1. Copiare l'ID (client) applicazione nel secondo valore.
 

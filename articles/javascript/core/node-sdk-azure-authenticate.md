@@ -2,18 +2,18 @@
 title: Eseguire l'autenticazione con i moduli di gestione di Azure per Node.js
 description: Eseguire l'autenticazione con un'entità servizio nei moduli di gestione di Azure per Node.js
 ms.topic: how-to
-ms.date: 10/19/2020
+ms.date: 01/04/2021
 ms.custom: devx-track-js
-ms.openlocfilehash: 58acb71741f7e3b381e492b9ac3c06d6a94c331b
-ms.sourcegitcommit: c1ef7aa8ed2e88e98b190e42cffde52cf301958d
+ms.openlocfilehash: 413357533d5ddf8e41bc2e33d929074df4f2ac12
+ms.sourcegitcommit: 84f64dec74b4b041b8830a4e7489e22f0e943440
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97034532"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97864256"
 ---
 # <a name="authenticate-with-the-azure-management-modules-for-javascript"></a>Eseguire l'autenticazione con i moduli di gestione di Azure per JavaScript
 
-Tutte le [librerie del client SDK](../azure-sdk-library-package-index.md) richiedono l'autenticazione tramite un oggetto `credentials` durante la creazione di un'istanza. Esistono più modi per autenticare e creare le credenziali necessarie.
+Tutte le [librerie client SDK](../azure-sdk-library-package-index.md) richiedono l'autenticazione tramite un oggetto `credentials`. Esistono più modi per autenticare e creare le credenziali necessarie.
 
 L'autenticazione, come tutti i software e i servizi, è stata migliorata nel corso degli anni. È importante stabilire quale libreria di autenticazione sia usata dal servizio o dai servizi. 
 
@@ -23,7 +23,7 @@ Le librerie di autenticazione includono quanto segue:
 * @azure/ms-rest-nodeauth
 * @azure/ms-rest-browserauth
 
-Sono in uso pacchetti di autenticazione precedenti. Se si usano questi pacchetti, è consigliabile prendere in considerazione la migrazione dei metodi di autenticazione meno recenti per una maggiore sicurezza e un'esperienza affidabile. 
+Sono in uso pacchetti di autenticazione precedenti. Se si usano questi pacchetti, è consigliabile abbandonare i metodi di autenticazione meno recenti per un'esperienza più sicura e affidabile. 
 
 ## <a name="best-practices-with-azure-sdk-client-library-authentication"></a>Procedure consigliate per l'autenticazione della libreria client di Azure SDK
 
@@ -49,19 +49,22 @@ const blobServiceClient = new BlobServiceClient(
 );
 ```
 
+Il codice di esempio JavaScript precedente illustra come usare la libreria di identità di Azure per creare credenziali di Azure predefinite, da usare quindi per accedere a una risorsa di Archiviazione di Azure.
+
 ## <a name="azure-ms-rest--libraries"></a>Librerie ms-rest-* di Azure
-Con le [librerie client](../azure-sdk-library-package-index.md#modern-javascripttypescript-libraries) con ambito di `@azure` è necessario un token per usare un servizio. Il token si ottiene usando un metodo di autenticazione client di Azure SDK, che restituisce una credenziale. 
+Con le [librerie client](../azure-sdk-library-package-index.md#modern-javascripttypescript-libraries) moderne con ambito `@azure`, è necessario un token per usare un servizio. Il token si ottiene usando un metodo di autenticazione client di Azure SDK, che restituisce una credenziale. 
 
 ```javascript
 const msRestNodeAuth = require("@azure/ms-rest-nodeauth");
 msRestNodeAuth.interactiveLogin().then((credential) => {
-}).catch((err) => {
     // service code goes here
+}).catch((err) => {
+    // error code goes here
     console.error(err);
 });
 ```
 
-Le credenziali vengono trasmesse a una specifica libreria client del servizio di Azure, ad esempio il servizio di archiviazione usato nell'esempio di codice seguente. La libreria client accetta le credenziali e genera un token per l'utente. Il servizio usa il token per convalidare le richieste. 
+Il codice di esempio JavaScript precedente illustra come usare la moderna libreria di autenticazione di Azure con un account di accesso interattivo per ottenere le credenziali.
 
 ```javascript
 // service code - this is an example only and not best practices for code flow
@@ -73,6 +76,8 @@ billingManagementClient.enrollmentAccounts.list().then((enrollmentList) => {
 })
 ```
 
+Il codice di esempio JavaScript recedente illustra come passare le credenziali a una libreria client di uno specifico servizio di Azure, ad esempio il servizio di archiviazione usato nell'esempio di codice seguente. La libreria client accetta le credenziali e genera un token per l'utente. Il servizio usa il token per convalidare l'autenticazione a livello di servizio per le richieste. 
+
 La libreria client gestisce il token e sa quando aggiornare il token. Lo sviluppatore con una codebase personalizzata non deve necessariamente gestirlo.
 
 ## <a name="older-azure-sdk-client-authentication"></a>Autenticazione client Azure SDK precedente 
@@ -80,8 +85,10 @@ La libreria client gestisce il token e sa quando aggiornare il token. Lo svilupp
 I client Azure SDK precedenti verranno infine migrati alla nuova autenticazione moderna usata nell'esempio precedente. Fino a quel momento, le librerie client precedenti useranno client di autenticazione diversi o potranno eseguire l'autenticazione con un meccanismo completamente separato, come le chiavi di risorsa. 
 
 Per ottenere risultati ottimali con le librerie client precedenti: 
-* Ogni pacchetto npm mostrerà l'autenticazione per tale esatta libreria client. 
-* Se il codice corrente usa @azure/ms
+* Ogni pacchetto npm mostrerà l'autenticazione per tale esatta libreria client.  
+* Se il codice corrente usa le moderne librerie `@azure/ms-*` e le librerie di autenticazione meno recenti nella stessa codebase:
+    * Assicurarsi che la libreria con ambito non Azure sia la più recente per il servizio. Questa informazione è indicata nella documentazione del servizio. 
+    * Se è necessario continuare a usare una combinazione di librerie di autenticazione moderne e meno recenti, può essere necessario fornire la scadenza e l'aggiornamento delle credenziali per la libreria precedente in base alla logica dell'applicazione nella codebase. 
 
 ## <a name="authentication-with-azure-services-while-developing"></a>Autenticazione con i servizi di Azure durante lo sviluppo
 

@@ -2,14 +2,14 @@
 title: Da SSH a macchina virtuale
 description: Usare SSH per connettersi alla macchina virtuale Linux.  Se si usa un sistema operativo Mac, Windows o Linux moderno, è necessario che sia già installato il client SSH basato su terminale.
 ms.topic: tutorial
-ms.date: 11/13/2020
+ms.date: 01/05/2021
 ms.custom: devx-track-js
-ms.openlocfilehash: 7c496a907b6cbac894e92d0ecccdf32411a370ab
-ms.sourcegitcommit: ed749b136f0d6b876fd5866ba4a151c73af5b71f
+ms.openlocfilehash: c4b9577c93e37c28145abe8e976a93cd6ff39197
+ms.sourcegitcommit: 075f39972e390e79ed09a3fcfdbfc776727e08fc
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94674721"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97952493"
 ---
 # <a name="4-connect-to-linux-virtual-machine-using-ssh"></a>4. Connettersi a una macchina virtuale Linux con SSH
 
@@ -51,11 +51,15 @@ Usare la stessa finestra del terminale o della shell come nei passaggi precedent
     -rw-r--r--   1 root root   697 Nov 11 20:23 readme.md
     ```
 
-1. Installare la [libreria client di Azure SDK per Application Insights](https://www.npmjs.com/package/applicationinsights).
+## <a name="install-monitoring-sdk"></a>Installare Monitoring SDK
 
-    ```bash
-    sudo npm install --save applicationinsights
-    ```
+Installare la [libreria client di Azure SDK per Application Insights](https://www.npmjs.com/package/applicationinsights).
+
+```bash
+sudo npm install --save applicationinsights
+```
+
+## <a name="add-monitoring-instrumentation-key"></a>Aggiungere la chiave di strumentazione di Monitoraggio
 
 1. Usare l'editor [Nano](https://www.nano-editor.org/dist/latest/nano.html#Editor-Basics) per modificare il file `package.json`.
 

@@ -2,14 +2,14 @@
 title: Imparare a sviluppare con Azure e JavaScript
 description: Usare la piattaforma di Microsoft Learn per espandere la comprensione di Azure con JavaScript
 ms.topic: reference
-ms.date: 12/16/2020
+ms.date: 01/05/2021
 ms.custom: devx-track-js
-ms.openlocfilehash: b126894943bf409439b965a631d07029281438f7
-ms.sourcegitcommit: 1dfcc022a3098b1a1505e9458eada35f527ef070
+ms.openlocfilehash: 3b37f31d9df4c152874f4c913fbc59a369636640
+ms.sourcegitcommit: 075f39972e390e79ed09a3fcfdbfc776727e08fc
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97636536"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97952473"
 ---
 # <a name="learn-to-develop-with-azure-and-javascript"></a>Imparare a sviluppare con Azure e JavaScript 
 
@@ -23,6 +23,13 @@ Usare la piattaforma di Microsoft Learn o un Microsoft Learning Partner per espa
 * [Compilare un'API Web con Node.js ed Express](/learn/modules/build-web-api-nodejs-express/) 
 * [Operare su file e directory in un'app Node.js](/learn/modules/nodejs-files/)
 * [Eseguire il debug di app Node.js in modo interattivo con il debugger predefinito e quello di Visual Studio Code](/learn/modules/debug-nodejs/)
+
+## <a name="getting-started"></a>Guida introduttiva
+
+* [JavaScript per principianti](https://techcommunity.microsoft.com/t5/apps-on-azure/learn-javascript-with-this-series-of-videos-for-beginners/ba-p/1764635)
+* [Sviluppo Web per principianti](https://github.com/microsoft/Web-Dev-For-Beginners)
+* [App 3D con Babylon.js](https://techcommunity.microsoft.com/t5/apps-on-azure/a-first-introduction-to-building-3d-applications-with-javascript/ba-p/1877650)
+* [Node.js per principianti](https://techcommunity.microsoft.com/t5/apps-on-azure/learn-node-js-with-this-series-of-short-videos-for-beginners/ba-p/1771830)
 
 ## <a name="javascript-on-azure"></a>JavaScript in Azure
 
