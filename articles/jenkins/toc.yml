@@ -15,7 +15,6 @@
       items:
         - name: Scalabilità con Istanze di Azure Container
           href: azure-container-instances-as-jenkins-build-agent.md
-          maintainContext: true
         - name: Scalabilità con gli agenti di macchine virtuali di Azure
           href: scale-deployments-using-vm-agents.md
     - name: Implementare il processo CI/CD
@@ -28,27 +27,20 @@
           items:
             - name: Integrazione continua e distribuzione continua per Kubernetes
               href: deploy-from-github-to-aks.md
-              maintainContext: true
-            - name: Eseguire la distribuzione nel servizio Azure Kubernetes con un modello di tipo blu-verde
-              href: deploy-to-aks-using-blue-green-deployment-pattern.md
         - name: Servizio app
           items:
             - name: Creare risorse di Azure in un processo della pipeline
               href: deploy-to-azure-app-service-using-azure-cli.md
         - name: Usare Jenkins con Azure DevOps
           href: deploy-to-linux-vm-using-azure-devops-services.md
-          maintainContext: true
         - name: Distribuire in Funzioni di Azure
           href: deploy-to-azure-functions.md
         - name: Pubblicare in Archiviazione di Azure
           href: azure-storage-blobs-as-build-artifact-repository.md
-          maintainContext: true
         - name: Integrazione continua e distribuzione continua per le VM Linux
           href: pipeline-with-github-and-docker.md
-          maintainContext: true
         - name: CI/CD per Service Fabric
           href: deploy-to-service-fabric-cluster.md
-          maintainContext: true
 - name: Esempi
   items:
     - name: Processi e script di esempio
