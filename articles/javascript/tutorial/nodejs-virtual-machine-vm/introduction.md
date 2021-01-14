@@ -4,16 +4,18 @@ description: Creare una macchina virtuale Linux di Azure con un clone di un'app 
 ms.topic: tutorial
 ms.date: 11/13/2020
 ms.custom: devx-track-js
-ms.openlocfilehash: 674bf37acda9fcd9f6df7b84602600ad65ada3d9
-ms.sourcegitcommit: c8330128d5d6a71859933a890ecdf047cb950996
+ms.openlocfilehash: c68a8442862eb03291f80609bb9767fb1c9b1b6b
+ms.sourcegitcommit: ed31f841fa9680335658df6708f107e170d47ff0
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97522121"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97974548"
 ---
 # <a name="1-create-linux-virtual-machine-with-expressjs-app-using-azure-cli"></a>1. Creare una macchina virtuale Linux con l'app Express.js usando l'interfaccia della riga di comando di Azure
 
 In questa esercitazione verrà creata una macchina virtuale Linux per un'app Express.js. La macchina virtuale è configurata con un file di configurazione cloud-init e include NGINX e un repository GitHub per un'app Express.js. Quando la macchina virtuale è in esecuzione, è possibile connettersi alla macchina virtuale con SSH, modificare l'app Web in modo da includere la registrazione della traccia e visualizzare l'app server Express.js pubblica in un Web browser.
+
+* [**Codice di esempio**](https://github.com/Azure-Samples/js-e2e-vm)
 
 Questa esercitazione include le attività seguenti:
 
