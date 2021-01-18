@@ -2,14 +2,14 @@
 title: Distribuire l'app Express.js/MongoDB con Visual Studio Code - Servizio app/CosmosDB
 description: In questa esercitazione si usa un'app Node.js con un database MongoDB tramite l'API nativa MongoDB. Distribuire l'applicazione Node.js nel servizio app di Azure (in Linux), quindi verificare che l'app ospitata funzioni.
 ms.topic: tutorial
-ms.date: 12/03/2020
+ms.date: 01/12/2020
 ms.custom: scenarios:getting-started, languages:JavaScript, devx-track-javascript
-ms.openlocfilehash: 6c295c305f2882c4a97a34ffa288738112ee9600
-ms.sourcegitcommit: 4f9ce09cbf9663203c56f5b12ecbf70ea68090ed
+ms.openlocfilehash: e9c9b6cf624f646b3b41f9af95fcef95fa5841e6
+ms.sourcegitcommit: 657f43a5048cd17b080b40b5090d575c8d7f5eaf
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97911501"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98173201"
 ---
 # <a name="deploy-expressjs-mongodb-app-to-app-service-from-visual-studio-code"></a>Distribuire l'app MongoDB Express.js nel servizio app da Visual Studio Code
 
@@ -142,6 +142,10 @@ Usare l'estensione per Visual Studio Code per il Servizio app per creare una ris
 
 1. Aprire il sito Web in un browser, sostituire il testo `YOUR-RESOURCE_NAME` con il nome della risorsa: `https://YOUR-RESOURCE_NAME.azurewebsites.net`.
 1. Usare l'app Web, aggiungendo ed eliminando elementi. 
+
+## <a name="make-changes-and-redeploy"></a>Apportare modifiche e ripetere la distribuzione
+
+Apportare alcune modifiche e [ridistribuire](../how-to/deploy-web-app.md#deploy-or-redeploy-to-app-service-with-visual-studio-code) l'app usando l'estensione del servizio app. 
 
 ## <a name="clean-up-resources"></a>Pulire le risorse 
 

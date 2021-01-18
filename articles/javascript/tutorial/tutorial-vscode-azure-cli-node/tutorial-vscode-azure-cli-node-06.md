@@ -4,12 +4,12 @@ description: Parte 6 dell'esercitazione, apportare modifiche e ripetere la distr
 ms.topic: tutorial
 ms.date: 09/24/2019
 ms.custom: devx-track-js, devx-track-azurecli
-ms.openlocfilehash: ddd03bb06d1b6b91626e4db979f0a0ca8ea7f124
-ms.sourcegitcommit: 1dfcc022a3098b1a1505e9458eada35f527ef070
+ms.openlocfilehash: 1c80c76759d22195fc7268d4b072a7a25c3a1745
+ms.sourcegitcommit: 75a1f26aaff48a89631805df4b4a0c006de6a271
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97658407"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98128173"
 ---
 # <a name="part-6-make-changes-and-redeploy"></a>Parte 6: Apportare modifiche e ripetere la distribuzione
 
@@ -17,9 +17,9 @@ ms.locfileid: "97658407"
 
 In questo passaggio si apportano modifiche al codice dell'app, se ne esegue il commit nel repository Git locale e quindi si ridistribuisce il sito eseguendo il push in Azure.
 
-1. Nella cartella `myExpressApp` aprire il file *views/index.pug* e sostituire il messaggio della riga 5 con `p Welcome to Azure!`.
+1. Nella cartella `myExpressApp` aprire il file *src/server.js* e modificare il messaggio, `Welcome to Azure!`.
 
-    ![Modifica del file index.pug](../../media/azure-cli/editpugfile.png)
+    ![Modifica del file src/server.js](../../media/azure-cli/edit-server-file.png)
 
 1. Salvare il file.
 
@@ -52,7 +52,7 @@ In questo passaggio si apportano modifiche al codice dell'app, se ne esegue il c
     remote: Handling node.js deployment.
     remote: Creating app_offline.htm
     remote: KuduSync.NET from: 'D:\home\site\repository' to: 'D:\home\site\wwwroot'
-    remote: Copying file: 'views\index.pug'
+    remote: Copying file: 'src\server.js'
     remote: Deleting app_offline.htm
     remote: Using start-up script bin/www from package.json.
     remote: Generated web.config.

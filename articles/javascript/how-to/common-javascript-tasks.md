@@ -2,14 +2,14 @@
 title: Principali attività di Azure per sviluppatori JavaScript
 description: Un esempio delle attività correnti.
 ms.topic: reference
-ms.date: 01/05/2021
+ms.date: 01/06/2021
 ms.custom: devx-track-js
-ms.openlocfilehash: 2f19a660a60e91601dc31b829bb8fbc82f04b37d
-ms.sourcegitcommit: 075f39972e390e79ed09a3fcfdbfc776727e08fc
+ms.openlocfilehash: 4c17b95cb5acc9f04227c8ccc9ea91d6d8aa1829
+ms.sourcegitcommit: ed31f841fa9680335658df6708f107e170d47ff0
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97952483"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97974568"
 ---
 # <a name="common-top-tasks-for-javascript-developers"></a>Principali attività comuni per sviluppatori JavaScript
 
@@ -197,10 +197,13 @@ Se non si trova l'opzione desiderata, vedere le [attività di Contenitori](#cont
 
 |Nome | Description|
 |--|--|
-|Compilare e distribuire un'app Web statica in Azure|Compilare e distribuire localmente un'applicazione client React/TypeScript in un'app Web statica di Azure con un'azione GitHub.<br>[Esercitazione](../tutorial/static-web-app/introduction.md) - [Codice di esempio](https://github.com/Azure-Samples/js-e2e-client-cognitive-services)|
-|Caricare file nei BLOB del servizio di archiviazione di Azure|Questo progetto di esempio è un'app client del framework React (create-react-app) TypeScript, con un modulo HTML per selezionare un file da caricare nei BLOB del servizio di archiviazione di Azure.<br>[Esercitazione](../tutorial/browser-file-upload-azure-storage-blob.md) - [Codice di esempio](https://github.com/Azure-Samples/js-e2e-browser-file-upload-storage-blob)|
-|Aggiungere un pulsante di accesso all'applicazione client|L'applicazione a pagina singola creata in questa esercitazione è un'app React (create-react-app) con le attività seguenti:<br>* Eseguire l'accesso usando un account di accesso supportato da Microsoft, ad esempio Office 365 oppure Outlook.com<br>* Disconnettersi dall'applicazione<br>[Esercitazione](../tutorial/single-page-application-azure-login-button-sdk-msal.md) - [Codice di esempio](https://github.com/Azure-Samples/js-e2e-client-azure-login-button)|
-|App CosmosDB (MongoDB)/Express.js distribuita nel servizio app|L'esercitazione illustra come caricare ed eseguire il progetto in locale con VSCode, usando le estensioni, e come eseguire il codice in remoto in un servizio app. L'esercitazione include la creazione di una risorsa CosmosDB per l'API Mongo, con il recupero delle informazioni di connessione che verranno incluse nell'impostazione di configurazione del servizio app per connettersi a un database cloud.<br>[Esercitazione](../tutorial/deploy-nodejs-mongodb-app-service-from-visual-studio-code.md#get-cosmosdb-connection-string) - [Codice di esempio](https://github.com/Azure-Samples/js-e2e-express-mongo)|
+|App React che usa Servizi cognitivi|Compilare e distribuire localmente un'applicazione client React/TypeScript in un'app Web statica di Azure con un'azione GitHub.<br>[Esercitazione](../tutorial/static-web-app/introduction.md) - [Codice di esempio](https://github.com/Azure-Samples/js-e2e-client-cognitive-services)|
+|App React che carica un file in BLOB del servizio di archiviazione di Azure|Questo progetto di esempio è un'app client del framework React (create-react-app) TypeScript, con un modulo HTML per selezionare un file da caricare nei BLOB del servizio di archiviazione di Azure.<br>[Esercitazione](../tutorial/browser-file-upload-azure-storage-blob.md) - [Codice di esempio](https://github.com/Azure-Samples/js-e2e-browser-file-upload-storage-blob)|
+|App React con pulsante di accesso|L'applicazione a pagina singola creata in questa esercitazione è un'app React (create-react-app) con le attività seguenti:<br>* Eseguire l'accesso usando un account di accesso supportato da Microsoft, ad esempio Office 365 oppure Outlook.com<br>* Disconnettersi dall'applicazione<br>[Esercitazione](../tutorial/single-page-application-azure-login-button-sdk-msal.md) - [Codice di esempio](https://github.com/Azure-Samples/js-e2e-client-azure-login-button)|
+|App Express.js con database MongoDB|L'esercitazione illustra come caricare ed eseguire il progetto in locale con VSCode, usando le estensioni, e come eseguire il codice in remoto in un servizio app. L'esercitazione include la creazione di una risorsa CosmosDB per l'API Mongo, con il recupero delle informazioni di connessione che verranno incluse nell'impostazione di configurazione del servizio app per connettersi a un database cloud.<br>[Esercitazione](../tutorial/deploy-nodejs-mongodb-app-service-from-visual-studio-code.md) - [Codice di esempio](https://github.com/Azure-Samples/js-e2e-express-mongo)|
+|App Express.js distribuita in una VM con il file cloud-init|Illustra come creare una macchina virtuale Linux per un'app Express.js. La macchina virtuale è configurata con un file di configurazione cloud-init e include NGINX e un repository GitHub per un'app Express.js. Quando la macchina virtuale è in esecuzione, è possibile connettersi alla macchina virtuale con SSH, modificare l'app Web in modo da includere la registrazione della traccia e visualizzare l'app server Express.js pubblica in un Web browser.<br>[Esercitazione](../tutorial/nodejs-virtual-machine-vm/introduction.md) - [Codice di esempio](https://github.com/Azure-Samples/js-e2e-express-mongo)|
+
+Vedere [Esplora gli esempi di codice](https://docs.microsoft.com/samples/browse/?languages=javascript%2Cnodejs%2Ctypescript) per trovare altri esempi che supportano il caso d'uso specifico. 
 
 ## <a name="next-steps"></a>Passaggi successivi
 

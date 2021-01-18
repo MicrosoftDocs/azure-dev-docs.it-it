@@ -2,14 +2,14 @@
 title: Distribuire le applicazioni JavaScript in Azure
 description: Le opzioni di hosting e gli scenari di distribuzione includono diversi servizi e strumenti per Azure. Pubblicare l'app e gestirla su Azure.
 ms.topic: how-to
-ms.date: 12/09/2020
+ms.date: 01/12/2021
 ms.custom: seo-javascript-september2019, seo-javascript-october2019, devx-track-js, contperf-fy21q2
-ms.openlocfilehash: e2020d90260af4fbab8d6a37ef475eddb7754b90
-ms.sourcegitcommit: 1dfcc022a3098b1a1505e9458eada35f527ef070
+ms.openlocfilehash: c1ca1f3dcf99ce96c52eec7ebccee9860608b273
+ms.sourcegitcommit: 657f43a5048cd17b080b40b5090d575c8d7f5eaf
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97636526"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98173211"
 ---
 # <a name="deploy-and-host-your-nodejs-apps-on-azure"></a>Distribuire e ospitare le app Node.js in Azure
 
@@ -67,6 +67,14 @@ Potrebbero esistere altri metodi di distribuzione, in base al servizio specifico
 * [cURL](/azure/app-service/deploy-zip#with-curl)
 * [SSH](/azure/app-service/configure-linux-open-ssh-session)
 
+È possibile eseguire di nuovo la distribuzione nel servizio app usando uno dei [metodi forniti](#deploy-your-web-app-to-azure), anche se diverso dal metodo usato per la distribuzione originale. Se si cambia metodo, prima di eseguire di nuovo la distribuzione potrebbe essere necessario eseguire una configurazione. 
+
+### <a name="deploy-or-redeploy-to-app-service-with-visual-studio-code"></a>Eseguire la distribuzione o la ridistribuzione nel Servizio app con Visual Studio Code
+
+Per eseguire la distribuzione o la ridistribuzione dell'app del servizio app con Visual Studio Code, fare clic con il pulsante destro del mouse sul servizio app nell'elenco dei servizi nell'estensione del servizio app, quindi scegliere **Distribuisci nell'app Web**. 
+
+:::image type="content" source="../media/azure-app-service-vscode-extensions/deploy-or-redeploy-app-service.png" alt-text="Eseguire la distribuzione o la ridistribuzione nel Servizio app con Visual Studio Code":::
+
 ## <a name="verify-your-deployment-with-your-http-endpoint"></a>Verificare la distribuzione con l'endpoint HTTP
 
 Per verificare la distribuzione, accedere all'endpoint HTTP. L'endpoint HTTP è visibile in tutti i servizi nella pagina **Panoramica**. 
@@ -80,3 +88,4 @@ Visualizzare l'endpoint HTTP dalla pagina Panoramica del servizio nel portale di
 ## <a name="next-steps"></a>Passaggi successivi
 
 * [Distribuire con i contenitori](deploy-containers.md)
+* [Altre esercitazioni sulla distribuzione con Visual Studio Code](https://code.visualstudio.com/docs/azure/deployment)
