@@ -81,7 +81,7 @@
                   href: tutorial/tutorial-vscode-azure-cli-node/tutorial-vscode-azure-cli-node-02.md
                 - name: Creare il servizio app
                   href: tutorial/tutorial-vscode-azure-cli-node/tutorial-vscode-azure-cli-node-03.md
-                - name: Distribuire l'app
+                - name: Eseguire la distribuzione con git push
                   href: tutorial/tutorial-vscode-azure-cli-node/tutorial-vscode-azure-cli-node-04.md
                 - name: Eseguire lo streaming dei log
                   href: tutorial/tutorial-vscode-azure-cli-node/tutorial-vscode-azure-cli-node-05.md
@@ -149,7 +149,7 @@
           href: how-to/create-static-site.md
         - name: Registrazione e metriche
           href: how-to/node-sdk-logging.md
-    - name: Informazioni
+    - name: Learn
       href: learn-azure-javascript.md
     - name: Esempi
       href: 'https://docs.microsoft.com/samples/browse/?languages=javascript%2Cnodejs%2Ctypescript'
