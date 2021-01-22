@@ -4,12 +4,12 @@ description: In questa esercitazione si distribuisce un'applicazione Deno nel se
 ms.topic: tutorial
 ms.date: 10/13/2020
 ms.custom: scenarios:getting-started, languages:JavaScript, devx-track-javascript
-ms.openlocfilehash: 16cb388a9a61b0141f04364dc1489607565156a3
-ms.sourcegitcommit: c8330128d5d6a71859933a890ecdf047cb950996
-ms.translationtype: HT
+ms.openlocfilehash: f1f8c93954d2e4cbb8f5bd525a518aae03ec9667
+ms.sourcegitcommit: 593d177cfb5f56f236ea59389e43a984da30f104
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97522395"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98561074"
 ---
 # <a name="deploy-deno-apps-to-azure-app-service-from-the-azure-cli"></a>Distribuire app Deno nel servizio app di Azure dall'interfaccia della riga di comando di Azure
 
@@ -95,7 +95,7 @@ Distribuire l'app Deno in Azure usando l'interfaccia della riga di comando di Az
 
     Questo servizio app esegue l'immagine Docker `anthonychu/azure-webapps-deno:1.0.2`, che fornisce la funzionalità di base per l'esecuzione di qualsiasi codice Deno. Il completamento di questo processo può richiedere alcuni secondi.
 
-## <a name="5-configure-the-azure-app-service-webapp"></a>5. Configurare l'app Web del Servizio app di Azure
+## <a name="5-configure-app-service-deno-container"></a>5. configurare il contenitore deno del servizio app
 
 1. Indicare all'app Web dove ottenere l'immagine del contenitore Docker per il nome dell'immagine Deno sperimentale:
 
@@ -158,6 +158,6 @@ az group delete deno-quickstart
 
 Altre informazioni su:
 * [Informazioni su come configurare le impostazioni dell'app](../how-to/configure-web-app-settings.md)
-* [Eseguire la distribuzione nel Servizio app](../tutorial-vscode-azure-app-service-node-01.md) con le estensioni di Visual Studio Code
+* [Eseguire la distribuzione nel Servizio app](./deploy-nodejs-azure-app-service-with-visual-studio-code.md) con le estensioni di Visual Studio Code
 * [Eseguire la distribuzione in una macchina virtuale](./nodejs-virtual-machine-vm/introduction.md)
 * [Distribuire la funzione Deno](https://github.com/anthonychu/azure-functions-deno-worker) come [gestore personalizzato](/azure/azure-functions/functions-custom-handlers)

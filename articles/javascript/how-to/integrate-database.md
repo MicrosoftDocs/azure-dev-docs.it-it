@@ -4,12 +4,12 @@ description: Azure offre diversi database che è possibile usare con le app Web 
 ms.topic: how-to
 ms.date: 12/08/2020
 ms.custom: devx-track-js
-ms.openlocfilehash: 2aae93a85ca505967f0c999be4addc78ac31ad02
-ms.sourcegitcommit: 1901759f41adfac3c3f2ff135bcf72206543b639
-ms.translationtype: HT
+ms.openlocfilehash: b39a7d3e39600081148893a68d3dbc064c1db380
+ms.sourcegitcommit: 593d177cfb5f56f236ea59389e43a984da30f104
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96933284"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98561687"
 ---
 # <a name="integrate-databases-in-nodejs-apps"></a>Integrare database nelle app Node.js
 
@@ -32,7 +32,7 @@ La tabella seguente contiene collegamenti a diversi articoli per la connessione 
 
 ## <a name="cosmos-db-connection-strings-with-azure-cli"></a>Stringhe di connessione di Cosmos DB con l'interfaccia della riga di comando di Azure
 
-Usare il comando seguente, [az cosmosdb keys list](/cli/azure/cosmosdb?view=azure-cli-latest#az-cosmosdb-list-connection-strings):
+Usare il comando seguente, [az cosmosdb keys list](/cli/azure/cosmosdb#az-cosmosdb-list-connection-strings):
 
 ```azurecli-interactive
 az cosmosdb keys list \
@@ -43,7 +43,7 @@ az cosmosdb keys list \
 
 ## <a name="sql-connection-strings-with-azure-cli"></a>Stringhe di connessione di SQL con l'interfaccia della riga di comando di Azure
 
-Usare il comando seguente, [az sql db show-connection-string](/cli/azure/sql/db?view=azure-cli-latest#az_sql_db_show_connection_string):
+Usare il comando seguente, [az sql db show-connection-string](/cli/azure/sql/db#az_sql_db_show_connection_string):
 
 ```azurecli-interactive
 az sql db show-connection-string \
@@ -57,11 +57,11 @@ az sql db show-connection-string \
 
 ## <a name="mysql-username-and-password-with-azure-cli"></a>Nome utente e password di MySQL con l'interfaccia della riga di comando di Azure
 
-Questi valori vengono impostati al [momento della creazione della risorsa](/cli/azure/mysql/server?view=azure-cli-latest#az_mysql_server_create). 
+Questi valori vengono impostati al [momento della creazione della risorsa](/cli/azure/mysql/server#az_mysql_server_create). 
 
 ## <a name="postgresql-username-and-password-with-azure-cli"></a>Nome utente e password di PostgreSQL con l'interfaccia della riga di comando di Azure
 
-Questi valori vengono impostati al [momento della creazione della risorsa](/cli/azure/postgres/server?view=azure-cli-latest#az_postgres_server_create). 
+Questi valori vengono impostati al [momento della creazione della risorsa](/cli/azure/postgres/server#az_postgres_server_create). 
 
 ## <a name="azure-storage-solutions-for-files-and-data"></a>Soluzioni di Archiviazione di Azure per file e dati
 

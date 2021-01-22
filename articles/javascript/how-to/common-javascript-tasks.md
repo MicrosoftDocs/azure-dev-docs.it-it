@@ -2,16 +2,16 @@
 title: Principali attività di Azure per sviluppatori JavaScript
 description: Un esempio delle attività correnti.
 ms.topic: reference
-ms.date: 01/06/2021
+ms.date: 01/20/2021
 ms.custom: devx-track-js
-ms.openlocfilehash: 4c17b95cb5acc9f04227c8ccc9ea91d6d8aa1829
-ms.sourcegitcommit: ed31f841fa9680335658df6708f107e170d47ff0
-ms.translationtype: HT
+ms.openlocfilehash: 2d7a3091529adb530af76069d9f70880a68e40d3
+ms.sourcegitcommit: 681ea211dc8e1809dd299b5cd64eebd974c073d7
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/07/2021
-ms.locfileid: "97974568"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98669190"
 ---
-# <a name="common-top-tasks-for-javascript-developers"></a>Principali attività comuni per sviluppatori JavaScript
+# <a name="top-tasks-for-javascript-developers"></a>Attività principali per sviluppatori JavaScript
 
 Un esempio delle attività correnti. Se non si riesce a trovare un'attività, lasciare un feedback per richiederla. 
 
@@ -87,12 +87,10 @@ Un esempio delle attività correnti. Se non si riesce a trovare un'attività, la
 |Creare un'app Express.js locale|[Bash](../tutorial/deploy-nodejs-azure-app-service-with-visual-studio-code.md?tabs=bash#3-create-a-local-expressjs-app)|
 |Creare una risorsa app: distribuire l'app Express.js, trasmettere i log|[Estensione di Visual Studio Code](../tutorial/deploy-nodejs-mongodb-app-service-from-visual-studio-code.md#create-web-app-resource-and-deploy-expressjs-app)|
 |Creare una risorsa app: distribuire l'app Express.js, configurare le impostazioni dell'app, eseguire npm install, passare al sito Web distribuito|[Estensione di Visual Studio Code](../tutorial/deploy-nodejs-azure-app-service-with-visual-studio-code.md?tabs=bash#6-create-app-service-resource-in-visual-studio-code)|
-|Creare un piano per la risorsa app|[Interfaccia della riga di comando di Azure](../tutorial/tutorial-vscode-azure-cli-node/tutorial-vscode-azure-cli-node-03.md#create-app-service-plan)|
 |Creare una risorsa app|[Interfaccia della riga di comando di Azure](../tutorial/tutorial-vscode-azure-cli-node/tutorial-vscode-azure-cli-node-03.md)|
-|Configurazione distribuzione|[Interfaccia della riga di comando di Azure](../tutorial/deploy-deno-app-azure-app-service-azure-cli.md#5-configure-the-azure-app-service-webapp)
-|Distribuire l'app|[Interfaccia della riga di comando di Azure](../tutorial/tutorial-vscode-azure-cli-node/tutorial-vscode-azure-cli-node-04.md)|
-|Visualizzare l'app nel browser|[Interfaccia della riga di comando di Azure](../tutorial/tutorial-vscode-azure-cli-node/tutorial-vscode-azure-cli-node-03.md#browse-web-app)|
+|Crea app, Distribuisci, app browser, Visualizza log|[Interfaccia della riga di comando di Azure](../tutorial/tutorial-vscode-azure-cli-node/tutorial-vscode-azure-cli-node-03.md)|
 |Eliminare la risorsa app|[Estensione di Visual Studio Code](../tutorial/deploy-nodejs-mongodb-app-service-from-visual-studio-code.md#clean-up-resources)<br>[Interfaccia della riga di comando di Azure](../tutorial/tutorial-vscode-azure-cli-node/tutorial-vscode-azure-cli-node-07.md)|
+|Distribuire o riorganizzare l'app|[Estensione di Visual Studio Code](deploy-web-app.md#deploy-or-redeploy-to-app-service-with-visual-studio-code)|
 |Trasmettere i log remoti|[Estensione di Visual Studio Code](../tutorial/deploy-nodejs-azure-app-service-with-visual-studio-code.md?tabs=bash#7-stream-remote-service-logs-in-visual-studio-code)<br>[Interfaccia della riga di comando di Azure](../tutorial/tutorial-vscode-azure-cli-node/tutorial-vscode-azure-cli-node-05.md)|
 
 ## <a name="cognitive-services"></a>Servizi cognitivi
@@ -203,7 +201,7 @@ Se non si trova l'opzione desiderata, vedere le [attività di Contenitori](#cont
 |App Express.js con database MongoDB|L'esercitazione illustra come caricare ed eseguire il progetto in locale con VSCode, usando le estensioni, e come eseguire il codice in remoto in un servizio app. L'esercitazione include la creazione di una risorsa CosmosDB per l'API Mongo, con il recupero delle informazioni di connessione che verranno incluse nell'impostazione di configurazione del servizio app per connettersi a un database cloud.<br>[Esercitazione](../tutorial/deploy-nodejs-mongodb-app-service-from-visual-studio-code.md) - [Codice di esempio](https://github.com/Azure-Samples/js-e2e-express-mongo)|
 |App Express.js distribuita in una VM con il file cloud-init|Illustra come creare una macchina virtuale Linux per un'app Express.js. La macchina virtuale è configurata con un file di configurazione cloud-init e include NGINX e un repository GitHub per un'app Express.js. Quando la macchina virtuale è in esecuzione, è possibile connettersi alla macchina virtuale con SSH, modificare l'app Web in modo da includere la registrazione della traccia e visualizzare l'app server Express.js pubblica in un Web browser.<br>[Esercitazione](../tutorial/nodejs-virtual-machine-vm/introduction.md) - [Codice di esempio](https://github.com/Azure-Samples/js-e2e-express-mongo)|
 
-Vedere [Esplora gli esempi di codice](https://docs.microsoft.com/samples/browse/?languages=javascript%2Cnodejs%2Ctypescript) per trovare altri esempi che supportano il caso d'uso specifico. 
+Vedere [Esplora gli esempi di codice](/samples/browse/?languages=javascript%2cnodejs%2ctypescript) per trovare altri esempi che supportano il caso d'uso specifico. 
 
 ## <a name="next-steps"></a>Passaggi successivi
 

@@ -11,18 +11,18 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: data-services
 ms.custom: devx-track-java
-ms.openlocfilehash: fdc0892298c18e3be5db1b97b1ad5fe77ac6a537
-ms.sourcegitcommit: 76f1a47c58810486856e0d128bd154cf7d355e65
-ms.translationtype: HT
+ms.openlocfilehash: 10f85c7d1208ff77f2c85ec14e77ced450d5fcc8
+ms.sourcegitcommit: 593d177cfb5f56f236ea59389e43a984da30f104
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92200624"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98561306"
 ---
 # <a name="how-to-use-the-spring-boot-starter-with-the-azure-cosmos-db-sql-api"></a>Come usare Spring Boot Starter con l'API SQL di Azure Cosmos DB
 
-Azure Cosmos DB è un servizio di database distribuito a livello globale che consente agli sviluppatori di usare i dati usando un'ampia gamma di API standard, come SQL, MongoDB, Graph e Table. Microsoft Spring Boot Starter consente agli sviluppatori di usare applicazioni Spring Boot che si integrano facilmente con Azure Cosmos DB usando l'API SQL.
+Azure Cosmos DB è un servizio di database distribuito a livello globale che consente agli sviluppatori di lavorare con i dati usando varie API standard, ad esempio le API SQL, MongoDB, Graph e Table. Microsoft Spring Boot Starter consente agli sviluppatori di usare applicazioni Spring Boot che si integrano facilmente con Azure Cosmos DB usando l'API SQL.
 
-Questo articolo descrive la creazione di un database di Azure Cosmos DB con il portale di Azure, l'uso di **[Spring Initializr]** per creare un'applicazione Spring Boot personalizzata e quindi l'aggiunta delle funzionalità di [Spring Boot Cosmos DB Starter per Azure] all'applicazione personalizzata per l'archiviazione e il recupero di dati da Azure Cosmos DB usando Spring Data e l'API SQL di Cosmos DB.
+Questo articolo illustra la creazione di un Azure Cosmos DB usando il portale di Azure, quindi l'uso di **[Spring Initializr]** per creare un'applicazione Spring boot personalizzata e quindi aggiungere l' [Starter di Azure spring boot per Azure Cosmos DB] all'applicazione personalizzata per archiviare i dati in e recuperare i dati dal Azure Cosmos DB usando Spring data e l'API SQL di Cosmos DB.
 
 ## <a name="prerequisites"></a>Prerequisiti
 
@@ -31,9 +31,9 @@ Questo articolo descrive la creazione di un database di Azure Cosmos DB con il p
 
 ## <a name="create-an-azure-cosmos-db-by-using-the-azure-portal"></a>Creare un Azure Cosmos DB usando il portale di Azure
 
-1. Passare al portale di Azure all'indirizzo <https://portal.azure.com/> e fare clic su **Crea una risorsa** .
+1. Passare alla portale di Azure in <https://portal.azure.com/> e selezionare **Crea una risorsa**.
 
-1. Fare clic su **Database** e quindi su **Azure Cosmos DB** .
+1. Selezionare **Database** e quindi selezionare **Azure Cosmos DB**.
 
     ![Selezione di Azure Cosmos DB nel portale di Azure.][AZ02]
 
@@ -41,21 +41,21 @@ Questo articolo descrive la creazione di un database di Azure Cosmos DB con il p
 
     * Selezionare la **sottoscrizione** da usare per il database.
     * Specificare se creare un nuovo **gruppo di risorse** per il database o sceglierne uno esistente.
-    * Immettere un **nome account** univoco, che verrà usato come URI per il database, ad esempio *wingtiptoysdata* .
+    * Immettere un **nome account** univoco, che verrà usato come URI per il database, Ad esempio: *contosoaccount*.
     * Scegliere **Core (SQL)** come API.
     * Specificare il **percorso** per il database.
 
-    Dopo aver specificato queste opzioni, fare clic su **Rivedi e crea** , verificare le specifiche, quindi fare clic su **Crea** .
+    Dopo aver specificato queste opzioni, selezionare **Verifica + crea**, verificare le specifiche e selezionare **Crea**.
 
     ![Selezionare Rivedi e crea per continuare.][AZ03]
 
-1. Al termine della creazione, il database viene elencato nel **Dashboard** di Azure e nelle pagine **Tutte le risorse** e **Azure Cosmos DB** . È possibile fare clic sul database in una di queste posizioni per aprire la pagina delle proprietà per la cache.
+1. Quando il database è stato creato, viene elencato nel **Dashboard** di Azure e nelle pagine tutte le **risorse** e **Azure Cosmos DB** . È possibile selezionare il database per una di queste posizioni per aprire la pagina delle proprietà per la cache.
 
-1. Quando viene visualizzata la pagina delle proprietà per il database, fare clic su **Chiavi** e copiare le chiavi di accesso e l'URI per il database. Questi valori verranno usati nell'applicazione Spring Boot.
+1. Quando viene visualizzata la pagina delle proprietà per il database, selezionare **Chiavi** e copiare le chiavi di accesso e l'URI per il database. Questi valori verranno usati nell'applicazione Spring Boot.
 
     ![Copiare l'URI e le chiavi di accesso nella sezione Chiavi.][AZ05]
 
-## <a name="create-a-simple-spring-boot-application-with-the-spring-initializr"></a>Creare un'applicazione Spring Boot semplice con Spring Initializr
+## <a name="create-a-spring-boot-application-with-the-spring-initializr"></a>Creare un'applicazione Spring boot con Spring Initializr
 
 Usare la procedura seguente per creare un nuovo progetto di applicazione Spring Boot con il supporto di Azure. In alternativa, è possibile usare l'esempio [azure-spring-boot-sample-cosmosdb](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/spring/azure-spring-boot-samples/azure-spring-boot-sample-cosmos) nel repository [azure-sdk-for-java](https://github.com/Azure/azure-sdk-for-java). Quindi, è possibile passare direttamente alla sezione [Compilare e testare l'app](#build-and-test-your-app).
 
@@ -63,19 +63,20 @@ Usare la procedura seguente per creare un nuovo progetto di applicazione Spring 
 
 1. Specificare le opzioni seguenti:
 
-   * Generare un progetto **Maven** con **Java** .
+   * Generare un progetto **Maven** con **Java**.
    * Specificare la versione di **Spring Boot** in uso.
    * Specificare i nomi di **Group** (Gruppo) e **Artifact** (Artefatto) per l'applicazione.
-   * Selezionare **8** per la versione di Java.
+   * Selezionare **11** per la versione di Java.
    * Aggiungere **Supporto di Azure** nelle dipendenze.
 
    >[!div class="mx-imgBorder"]
    >![Opzioni di base di Spring Initializr][SI01]
 
    > [!NOTE]
-   > Spring Initializr usa i nomi in **Group** (Gruppo) e **Artifact** (Artefatto) per creare il nome del pacchetto, ad esempio *com.example.wingtiptoysdata* .
+   > 1. Spring Initializr usa i nomi in **Group** (Gruppo) e **Artifact** (Artefatto) per creare il nome del pacchetto, ad esempio *com.example.wingtiptoysdata*.
+   > 1. La versione di Spring boot può essere superiore alla versione supportata dal supporto tecnico di Azure. Dopo che il progetto è stato generato automaticamente, è possibile modificare manualmente la versione di Spring boot con la versione più recente supportata da Azure, che è possibile trovare [qui][azure-spring-boot-version-matrix].
 
-1. Dopo aver specificato le opzioni elencate sopra, selezionare **GENERA** .
+1. Dopo aver specificato le opzioni elencate sopra, selezionare **GENERA**.
 
 1. Quando richiesto, scaricare il progetto in un percorso nel computer locale ed estrarre i file.
 
@@ -95,9 +96,9 @@ La semplice applicazione Spring Boot è ora pronta per la modifica.
 
     ```xml
     <dependency>
-        <groupId>com.microsoft.azure</groupId>
-        <artifactId>azure-cosmosdb-spring-boot-starter</artifactId>
-        <version>2.3.3</version>
+        <groupId>com.azure.spring</groupId>
+        <artifactId>azure-spring-boot-starter-cosmos</artifactId>
+        <version>3.0.0</version>
     </dependency>
     ```
 
@@ -105,12 +106,12 @@ La semplice applicazione Spring Boot è ora pronta per la modifica.
 
     ```xml
     <properties>
-       <java.version>1.8</java.version>
-       <azure.version>2.2.0</azure.version>
+        <java.version>11</java.version>
+        <azure.version>3.0.0</azure.version>
     </properties>
     ```
 
-1. Salvare e chiudere il file *pom.xml* .
+1. Salvare e chiudere il file *pom.xml*.
 
 ## <a name="configure-your-spring-boot-application-to-use-your-azure-cosmos-db"></a>Configurare l'applicazione Spring Boot per l'uso di Azure Cosmos DB
 
@@ -124,18 +125,19 @@ La semplice applicazione Spring Boot è ora pronta per la modifica.
 
 1. Aprire il file *application.properties* in un editor di testo, quindi aggiungere le righe seguenti al file e sostituire i valori di esempio con le proprietà appropriate per il database:
 
-    ```text
+    ```properties
     # Specify the DNS URI of your Azure Cosmos DB.
-    azure.cosmosdb.uri=https://wingtiptoys.documents.azure.com:443/
-
+    azure.cosmos.uri=https://contosoaccount.documents.azure.com:443/
+    
     # Specify the access key for your database.
-    azure.cosmosdb.key=57686f6120447564652c20426f6220526f636b73==
-
-    # Specify the name of your database.
-    azure.cosmosdb.database=wingtiptoysdata
+    azure.cosmos.key=replace-your-access-key-here
+    
+    # Specify the name of your database. 
+    azure.cosmos.database=contosoaccount
+    azure.cosmos.populateQueryMetrics=true
     ```
 
-1. Salvare e chiudere il file *application.properties* .
+1. Salvare e chiudere il file *application.properties*.
 
 ## <a name="add-sample-code-to-implement-basic-database-functionality"></a>Aggiungere il codice di esempio per implementare le funzionalità di base del database
 
@@ -149,64 +151,63 @@ In questa sezione si creano due classi Java per l'archiviazione dei dati utente,
 
     ```java
     package com.example.wingtiptoysdata;
-
-    import com.microsoft.azure.spring.data.cosmosdb.core.mapping.Document;
-    import com.microsoft.azure.spring.data.cosmosdb.core.mapping.PartitionKey;
+    
+    import com.azure.spring.data.cosmos.core.mapping.Container;
+    import com.azure.spring.data.cosmos.core.mapping.PartitionKey;
     import org.springframework.data.annotation.Id;
-
-    @Document(collection = "mycollection")
+    
+    @Container(containerName = "mycollection")
     public class User {
-
         @Id
         private String id;
         private String firstName;
-
         @PartitionKey
         private String lastName;
         private String address;
-
+    
+        public User() {
+    
+        }
+    
         public User(String id, String firstName, String lastName, String address) {
             this.id = id;
             this.firstName = firstName;
             this.lastName = lastName;
             this.address = address;
         }
-
-        public User() {
-        }
-
+    
         public String getId() {
             return id;
         }
-
+    
         public void setId(String id) {
             this.id = id;
         }
-
+    
         public String getFirstName() {
             return firstName;
         }
-
+    
         public void setFirstName(String firstName) {
             this.firstName = firstName;
         }
-
+    
         public String getLastName() {
             return lastName;
         }
-
+    
         public void setLastName(String lastName) {
             this.lastName = lastName;
         }
-
+    
         public String getAddress() {
             return address;
         }
-
+    
         public void setAddress(String address) {
             this.address = address;
         }
-
+    
         @Override
         public String toString() {
             return String.format("%s %s, %s", firstName, lastName, address);
@@ -214,7 +215,7 @@ In questa sezione si creano due classi Java per l'archiviazione dei dati utente,
     }
     ```
 
-1. Salvare e chiudere il file *User.java* .
+1. Salvare e chiudere il file *User.java*.
 
 ### <a name="define-a-data-repository-interface"></a>Definire un'interfaccia del repository di dati
 
@@ -224,11 +225,11 @@ In questa sezione si creano due classi Java per l'archiviazione dei dati utente,
 
     ```java
     package com.example.wingtiptoysdata;
-
-    import com.microsoft.azure.spring.data.cosmosdb.repository.ReactiveCosmosRepository;
+    
+    import com.azure.spring.data.cosmos.repository.ReactiveCosmosRepository;
     import org.springframework.stereotype.Repository;
     import reactor.core.publisher.Flux;
-
+    
     @Repository
     public interface UserRepository extends ReactiveCosmosRepository<User, String> {
         Flux<User> findByFirstName(String firstName);
@@ -237,7 +238,7 @@ In questa sezione si creano due classi Java per l'archiviazione dei dati utente,
 
     L'interfaccia `ReactiveCosmosRepository` sostituisce l'interfaccia `DocumentDbRepository` della versione precedente di Starter. La nuova interfaccia include API sincrone e reattive per operazioni di base di salvataggio, eliminazione e ricerca.
 
-1. Salvare e chiudere il file *UserRepository.java* .
+1. Salvare e chiudere il file *UserRepository.java*.
 
 ### <a name="modify-the-main-application-class"></a>Modificare la classe dell'applicazione main
 
@@ -253,77 +254,63 @@ In questa sezione si creano due classi Java per l'archiviazione dei dati utente,
 
     ```java
     package com.example.wingtiptoysdata;
-
+    
+    import org.springframework.boot.SpringApplication;
+    import org.springframework.boot.autoconfigure.SpringBootApplication;
+    
     import org.slf4j.Logger;
     import org.slf4j.LoggerFactory;
     import org.springframework.beans.factory.annotation.Autowired;
     import org.springframework.boot.CommandLineRunner;
-    import org.springframework.boot.SpringApplication;
-    import org.springframework.boot.autoconfigure.SpringBootApplication;
     import org.springframework.util.Assert;
     import reactor.core.publisher.Flux;
     import reactor.core.publisher.Mono;
-
-    import javax.annotation.PostConstruct;
-    import javax.annotation.PreDestroy;
+    
     import java.util.Optional;
-
+    
     @SpringBootApplication
     public class WingtiptoysdataApplication implements CommandLineRunner {
-
+    
         private static final Logger LOGGER = LoggerFactory.getLogger(WingtiptoysdataApplication.class);
-
+    
         @Autowired
         private UserRepository repository;
-
+    
         public static void main(String[] args) {
             SpringApplication.run(WingtiptoysdataApplication.class, args);
         }
-
-        public void run(String... var1) throws Exception {
-            final User testUser = new User("1", "Tasha", "Calderon", "4567 Main St Buffalo, NY 98052");
-
-            LOGGER.info("Saving user: {}", testUser);
-
-            // Save the User class to Azure CosmosDB database.
+    
+        public void run(String... var1) {
+            this.repository.deleteAll().block();
+            LOGGER.info("Deleted all data in container.");
+    
+            final User testUser = new User("testId", "testFirstName", "testLastName", "test address line one");
+    
+            // Save the User class to Azure Cosmos DB database.
             final Mono<User> saveUserMono = repository.save(testUser);
-
+    
             final Flux<User> firstNameUserFlux = repository.findByFirstName("testFirstName");
-
+    
             //  Nothing happens until we subscribe to these Monos.
             //  findById will not return the user as user is not present.
             final Mono<User> findByIdMono = repository.findById(testUser.getId());
             final User findByIdUser = findByIdMono.block();
             Assert.isNull(findByIdUser, "User must be null");
-
+    
             final User savedUser = saveUserMono.block();
             Assert.state(savedUser != null, "Saved user must not be null");
             Assert.state(savedUser.getFirstName().equals(testUser.getFirstName()), "Saved user first name doesn't match");
-
-            LOGGER.info("Saved user");
-
+    
             firstNameUserFlux.collectList().block();
-
+    
             final Optional<User> optionalUserResult = repository.findById(testUser.getId()).blockOptional();
             Assert.isTrue(optionalUserResult.isPresent(), "Cannot find user.");
-
+    
             final User result = optionalUserResult.get();
             Assert.state(result.getFirstName().equals(testUser.getFirstName()), "query result firstName doesn't match!");
             Assert.state(result.getLastName().equals(testUser.getLastName()), "query result lastName doesn't match!");
-
-            LOGGER.info("Found user by findById : {}", result);
-        }
-
-        @PostConstruct
-        public void setup() {
-            LOGGER.info("Clear the database");
-            this.repository.deleteAll().block();
-        }
-
-        @PreDestroy
-        public void cleanup() {
-            LOGGER.info("Cleaning up users");
-            this.repository.deleteAll().block();
+    
+            LOGGER.info("findOne in User collection get result: {}", result.toString());
         }
     }
     ```
@@ -332,7 +319,7 @@ In questa sezione si creano due classi Java per l'archiviazione dei dati utente,
 
 ## <a name="build-and-test-your-app"></a>Compilare e testare l'app
 
-1. Aprire un prompt dei comandi e passare alla cartella in cui si trova il file *pom.xml* , ad esempio:
+1. Aprire un prompt dei comandi e passare alla cartella in cui si trova il file *pom.xml*, ad esempio:
 
     `cd C:\SpringBoot\wingtiptoysdata`
 
@@ -343,65 +330,26 @@ In questa sezione si creano due classi Java per l'archiviazione dei dati utente,
 1. Usare il comando seguente per compilare ed eseguire l'applicazione:
 
     ```console
-    mvnw clean test
+    mvnw clean
     ```
 
     Questo comando esegue l'applicazione automaticamente come parte della fase di test. È anche possibile usare:
 
     ```console
-    mvnw clean spring-boot:run
+    mvnw spring-boot:run
     ```
 
     Dopo l'output di compilazione e test, la finestra della console visualizzerà un messaggio simile al seguente:
 
     ```console
-      .   ____          _            __ _ _
-     /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
-    ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
-     \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
-      '  |____| .__|_| |_|_| |_\__, | / / / /
-     =========|_|==============|___/=/_/_/_/
-     :: Spring Boot ::            (v2.2.0.RC1)
-    >
-    > 2019-10-04 15:19:06.817  INFO 30013 --- [           main] c.e.w.WingtiptoysdataApplicationTests    : Starting WingtiptoysdataApplicationTests on devmachine03 with PID 30013 (started by <user> in /d/source/repos/wingtiptoysdata)
-    > 2019-10-04 15:19:06.818  INFO 30013 --- [           main] c.e.w.WingtiptoysdataApplicationTests    : No active profile set, falling back to default profiles: default
-    > 2019-10-04 15:19:08.329  INFO 30013 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
-    > 2019-10-04 15:19:09.720  INFO 30013 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 1369ms. Found 1 repository interfaces.
-    > 2019-10-04 15:19:09.734  INFO 30013 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
-    > 2019-10-04 15:19:09.748  INFO 30013 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 13ms. Found 0 repository interfaces.
-
-    ... (omitting Cosmos DB connection output) ...
-
-    > 2019-10-04 15:19:46.584  INFO 30013 --- [           main] c.e.w.WingtiptoysdataApplicationTests    : Started WingtiptoysdataApplicationTests in 40.702 seconds (JVM running for 44.647)
-    > 2019-10-04 15:19:46.587  INFO 30013 --- [           main] c.e.w.WingtiptoysdataApplication         : Saving user: Tasha Calderon, 4567 Main St Buffalo, NY 98052
-    > 2019-10-04 15:19:47.122  INFO 30013 --- [           main] c.e.w.WingtiptoysdataApplication         : Saved user
-    > 2019-10-04 15:19:47.289  INFO 30013 --- [           main] c.e.w.WingtiptoysdataApplication         : Found user by findById : Tasha Calderon, 4567 Main St Buffalo, NY 98052
-    > [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 44.003 s - in com.example.wingtiptoysdata.WingtiptoysdataApplicationTests
-    > 2019-10-04 15:19:48.124  INFO 30013 --- [extShutdownHook] c.a.d.c.internal.RxDocumentClientImpl    : Shutting down ...
-    > 2019-10-04 15:19:48.194  INFO 30013 --- [extShutdownHook] c.a.d.c.internal.RxDocumentClientImpl    : Shutting down ...
-    > 2019-10-04 15:19:48.200  INFO 30013 --- [extShutdownHook] c.e.w.WingtiptoysdataApplication         : Cleaning up users
-    > [INFO]
-    > [INFO] Results:
-    > [INFO]
-    > [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
-    > [INFO]
-    > [INFO]
-    > [INFO] --- maven-jar-plugin:3.1.2:jar (default-jar) @ wingtiptoysdata ---
-    > [INFO] Building jar: /d/source/repos/wingtiptoysdata/target/wingtiptoysdata-0.0.1-SNAPSHOT.jar
-    > [INFO]
-    > [INFO] --- spring-boot-maven-plugin:2.2.0.RC1:repackage (repackage) @ wingtiptoysdata ---
-    > [INFO] Replacing main artifact with repackaged archive
-    > [INFO] ------------------------------------------------------------------------
-    > [INFO] BUILD SUCCESS
-    > [INFO] ------------------------------------------------------------------------
-    > [INFO] Total time:  02:18 min
-    > [INFO] Finished at: 2019-10-04T15:20:05-07:00
-    > [INFO] ------------------------------------------------------------------------
+    INFO 1365 --- [           main] c.e.w.WingtiptoysdataApplication         : Deleted all data in container.
+    
+    ... (omitting connection and diagnostics output) ...
+    
+    INFO 1365 --- [           main] c.e.w.WingtiptoysdataApplication         : findOne in User collection get result: testFirstName testLastName, test address line one
     ```
 
-    ![Output positivo dall'applicazione][JV02]
-
-    I messaggi `Saved user` e `Found user` indicano che i dati sono stati salvati in Cosmos DB e quindi recuperati correttamente.
+    I messaggi di output precedenti indicano che i dati sono stati salvati correttamente in Cosmos DB e quindi recuperati nuovamente.
 
 ## <a name="clean-up-resources"></a>Pulire le risorse
 
@@ -414,7 +362,7 @@ Per altre informazioni su Spring e Azure, passare al centro di documentazione di
 > [!div class="nextstepaction"]
 > [Spring in Azure](./index.yml)
 
-### <a name="additional-resources"></a>Risorse aggiuntive
+### <a name="more-resources"></a>Altre risorse
 
 Per altre informazioni sull'utilizzo di Azure Cosmos DB e Java, vedere gli articoli seguenti:
 
@@ -426,7 +374,7 @@ Per altre informazioni sull'utilizzo di Azure Cosmos DB e Java, vedere gli artic
 
 Per altre informazioni sull'uso delle applicazioni Spring Boot in Azure, vedere gli articoli seguenti:
 
-* [Spring Boot Cosmos DB Starter per Azure]
+* [Starter di Azure Spring boot per Azure Cosmos DB]
 
 * [Distribuire un'applicazione Spring Boot in Linux nel Servizio app di Azure](deploy-spring-boot-java-app-on-linux.md)
 
@@ -442,22 +390,18 @@ Per altre informazioni sull'uso di Azure con Java, vedere [Azure per sviluppator
 [Azure per sviluppatori Java]: ../index.yml
 [Build a SQL API app with Java]: /azure/cosmos-db/create-sql-api-java
 [Spring Data per l'API SQL Azure Cosmos DB]: https://azure.microsoft.com/blog/spring-data-azure-cosmos-db-nosql-data-access-on-azure/
-[Spring Boot Cosmos DB Starter per Azure]: https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/spring/azure-spring-boot-starter-cosmos
+[Starter di Azure Spring boot per Azure Cosmos DB]: https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/spring/azure-spring-boot-starter-cosmos
 [Account Azure gratuito]: https://azure.microsoft.com/pricing/free-trial/
 [Uso di Azure DevOps e Java]: https://azure.microsoft.com/services/devops/java/
 [vantaggi per i sottoscrittori di MSDN]: https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/
 [Spring Boot]: http://projects.spring.io/spring-boot/
 [Spring Initializr]: https://start.spring.io/
 [Spring Framework]: https://spring.io/ (Framework di Spring)
+[azure-spring-boot-version-matrix]: https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/spring#azure-spring-boot
 
 <!-- IMG List -->
-
-[AZ01]: media/configure-spring-boot-starter-java-app-with-cosmos-db/AZ01.png
 [AZ02]: media/configure-spring-boot-starter-java-app-with-cosmos-db/AZ02.png
 [AZ03]: media/configure-spring-boot-starter-java-app-with-cosmos-db/AZ03.png
-[AZ04]: media/configure-spring-boot-starter-java-app-with-cosmos-db/AZ04.png
 [AZ05]: media/configure-spring-boot-starter-java-app-with-cosmos-db/AZ05.png
 
 [SI01]: media/configure-spring-boot-starter-java-app-with-cosmos-db/SI01.png
-
-[JV02]: media/configure-spring-boot-starter-java-app-with-cosmos-db/JV02.png

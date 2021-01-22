@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.service: azure
 ms.date: 10/30/2020
 ms.custom: github-actions-azure
-ms.openlocfilehash: c952410231ae57b0d127e1b6fb05e03f88403640
-ms.sourcegitcommit: 0d2ea78f18430c845a32e0d2311427ab81033465
-ms.translationtype: HT
+ms.openlocfilehash: b5b3192d1d65515dc3741be80bbab018f9cf5f09
+ms.sourcegitcommit: 593d177cfb5f56f236ea59389e43a984da30f104
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/23/2020
-ms.locfileid: "97754067"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98561737"
 ---
 # <a name="what-is-github-actions-for-azure"></a>Che cos'è la funzionalità GitHub Actions per Azure?
 
@@ -47,7 +47,7 @@ Sono necessari account Azure e GitHub:
 
 ## <a name="how-do-i-connect-github-actions-and-azure"></a>Come si connette GitHub Actions ad Azure?
 
-A seconda dell'azione, si userà un'entità servizio o un profilo di pubblicazione per connettersi ad Azure da GitHub. Si userà un'entità servizio ogni volta che si usa l'azione di [accesso di Azure](https://github.com/marketplace/actions/azure-login). L'azione del [servizio app di Azure](https://github.com/marketplace/actions/azure-webapp) supporta l'uso di un profilo di pubblicazione o di un'entità servizio. Per altre informazioni sulle entità servizio, vedere [Oggetti applicazione e oggetti entità servizio in Azure Active Directory](https://docs.microsoft.com/azure/active-directory/develop/app-objects-and-service-principals#service-principal-object).  
+A seconda dell'azione, si userà un'entità servizio o un profilo di pubblicazione per connettersi ad Azure da GitHub. Si userà un'entità servizio ogni volta che si usa l'azione di [accesso di Azure](https://github.com/marketplace/actions/azure-login). L'azione del [servizio app di Azure](https://github.com/marketplace/actions/azure-webapp) supporta l'uso di un profilo di pubblicazione o di un'entità servizio. Per altre informazioni sulle entità servizio, vedere [Oggetti applicazione e oggetti entità servizio in Azure Active Directory](/azure/active-directory/develop/app-objects-and-service-principals#service-principal-object).  
 
 È possibile usare l'azione di accesso di Azure in combinazione con le azioni dell'[interfaccia della riga di comando di Azure](https://github.com/marketplace/actions/azure-cli-action) e di [Azure PowerShell](https://github.com/marketplace/actions/azure-powershell-action). L'azione di accesso di Azure funziona anche con la maggior parte delle altre azioni di GitHub per Azure, tra cui la [distribuzione in app Web](https://github.com/marketplace/actions/azure-webapp) e l'[accesso ai segreti dell'insieme di credenziali delle chiavi](https://github.com/marketplace/actions/azure-key-vault-get-secrets).
 
@@ -91,7 +91,7 @@ Per vedere tutte le azioni di GitHub Actions disponibili per Azure, visitare il 
 ## <a name="next-steps"></a>Passaggi successivi
 
 > [!div class="nextstepaction"]
-> [Percorso di apprendimento: Automatizzare il flusso di lavoro con GitHub Actions](https://docs.microsoft.com/learn/modules/github-actions-automate-tasks/)
+> [Percorso di apprendimento: Automatizzare il flusso di lavoro con GitHub Actions](/learn/modules/github-actions-automate-tasks/)
 
 > [!div class="nextstepaction"]
 > [Laboratorio di formazione - Recapito continuo con Azure](https://lab.github.com/githubtraining/github-actions:-continuous-delivery-with-azure)

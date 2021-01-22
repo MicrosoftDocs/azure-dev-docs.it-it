@@ -6,12 +6,12 @@ ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 01/22/2019
 ms.custom: devx-track-java
-ms.openlocfilehash: a8e9f883e76f3c79a9b5470c18907276d9262d03
-ms.sourcegitcommit: bfaeacc2fb68f861a9403585d744e51a8f99829c
-ms.translationtype: HT
+ms.openlocfilehash: 047b4a07c56e29d51ae4234bd2aefcb1936d8059
+ms.sourcegitcommit: 593d177cfb5f56f236ea59389e43a984da30f104
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "90682156"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98561777"
 ---
 # <a name="migrate-spring-boot-applications-to-azure-app-service"></a>Eseguire la migrazione di applicazioni Spring Boot a Servizio app di Azure
 
@@ -120,7 +120,7 @@ Se l'applicazione viene compilata da un file POM Maven, usare il plug-in Webapp 
 Se non è possibile usare il plug-in Maven, sarà necessario effettuare il provisioning dell'app Web tramite altri meccanismi, ad esempio:
 
 * [Azure portal](https://portal.azure.com/#create/Microsoft.WebSite)
-* [Interfaccia della riga di comando di Azure](/cli/azure/webapp?view=azure-cli-latest#az-webapp-create)
+* [Interfaccia della riga di comando di Azure](/cli/azure/webapp#az-webapp-create)
 * [Azure PowerShell](/powershell/module/az.websites/new-azwebapp)
 
 Una volta creata l'app Web, usare uno dei [meccanismi di distribuzione disponibili](/azure/app-service/deploy-ftp) per distribuire l'applicazione. Se possibile, l'applicazione deve essere caricata in */home/site/wwwroot/app.jar*. Se non si vuole rinominare il file JAR in *app.jar*, è possibile caricare uno script della shell con il comando per eseguire il file JAR. Incollare quindi il percorso completo di questo script nella casella di testo [File di avvio](/azure/app-service/containers/app-service-linux-faq#built-in-images) nella sezione Configurazione del portale. Lo script di avvio non viene eseguito dalla directory in cui si trova. Pertanto, usare sempre percorsi assoluti per fare riferimento ai file dello script di avvio, ad esempio `java -jar /home/myapp/myapp.jar`.
@@ -168,6 +168,6 @@ Ora che è stata eseguita la migrazione dell'applicazione al servizio app di Azu
 
 * Provare a [usare gli slot di distribuzione](/azure/app-service/deploy-staging-slots) per distribuzioni affidabili senza tempi di inattività.
 
-* Progettare e implementare una strategia DevOps. Per mantenere l'affidabilità aumentando al tempo stesso la velocità di sviluppo, è consigliabile [automatizzare le distribuzioni e i test con Azure Pipelines](/azure/devops/pipelines/ecosystems/java-webapp). Se si usano gli slot di distribuzione, è possibile [automatizzare la distribuzione in uno slot](/azure/devops/pipelines/targets/webapp?view=azure-devops&tabs=yaml#deploy-to-a-slot), seguita dallo scambio di slot.
+* Progettare e implementare una strategia DevOps. Per mantenere l'affidabilità aumentando al tempo stesso la velocità di sviluppo, è consigliabile [automatizzare le distribuzioni e i test con Azure Pipelines](/azure/devops/pipelines/ecosystems/java-webapp). Se si usano gli slot di distribuzione, è possibile [automatizzare la distribuzione in uno slot](/azure/devops/pipelines/targets/webapp?tabs=yaml#deploy-to-a-slot), seguita dallo scambio di slot.
 
 * Progettare e implementare una strategia di continuità aziendale e ripristino di emergenza. Per le applicazioni cruciali, considerare un'[architettura di distribuzione in più aree](/azure/architecture/reference-architectures/app-service-web-app/multi-region).

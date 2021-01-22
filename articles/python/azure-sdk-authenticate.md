@@ -1,15 +1,15 @@
 ---
 title: Come autenticare le applicazioni Python con i servizi di Azure
 description: Come acquisire gli oggetti credenziali necessari per autenticare un'app Python con i servizi di Azure usando le librerie di Azure
-ms.date: 11/12/2020
+ms.date: 01/19/2021
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 7c609c7e218be1fd5e7c259a5aa7c5bec3e507d2
-ms.sourcegitcommit: 6514a061ba5b8003ce29d67c81a9f0795c3e3e09
-ms.translationtype: HT
+ms.openlocfilehash: 51b7a074bef81999f17f3a5fa51d243e64a33f3c
+ms.sourcegitcommit: 0eb25e1fdafcd64118843748dc061f60e7e48332
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94601363"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98669172"
 ---
 # <a name="how-to-authenticate-and-authorize-python-apps-on-azure"></a>Come autenticare e autorizzare le app Python in Azure
 
@@ -34,7 +34,7 @@ L'entità servizio interessata dipende dalla posizione in cui è viene eseguita 
 
 ### <a name="identity-when-running-the-app-on-azure"></a>Identità quando l'app viene eseguita in Azure
 
-Quando è in esecuzione nel cloud, ad esempio nell'ambiente di produzione, un'app in genere usa un'**identità gestita assegnata dal sistema**. Con un'[identità gestita](/azure/active-directory/managed-identities-azure-resources/overview), quando si assegnano ruoli e autorizzazioni per le risorse viene usato il nome dell'app. Azure gestisce automaticamente l'entità servizio sottostante ed esegue automaticamente l'autenticazione dell'app con le altre risorse di Azure. Di conseguenza, non è necessario gestire direttamente l'entità servizio. Inoltre, dal momento che il codice dell'app non deve mai gestire i token di accesso, i segreti o le stringhe di connessione per le risorse di Azure, il rischio che tali informazioni possano essere divulgate o compromesse in altro modo risulta ridotto.
+Quando è in esecuzione nel cloud (ad esempio, in produzione), un'app usa in genere un' **identità gestita assegnata dal sistema** (in precedenza denominata "MSI"). Con un'[identità gestita](/azure/active-directory/managed-identities-azure-resources/overview), quando si assegnano ruoli e autorizzazioni per le risorse viene usato il nome dell'app. Azure gestisce automaticamente l'entità servizio sottostante ed esegue automaticamente l'autenticazione dell'app con le altre risorse di Azure. Di conseguenza, non è necessario gestire direttamente l'entità servizio. Inoltre, dal momento che il codice dell'app non deve mai gestire i token di accesso, i segreti o le stringhe di connessione per le risorse di Azure, il rischio che tali informazioni possano essere divulgate o compromesse in altro modo risulta ridotto.
 
 La configurazione dell'identità gestita dipende dal servizio usato per ospitare l'app. Per i collegamenti alle istruzioni relative a ogni servizio, vedere l'articolo [Servizi che supportano identità gestite](/azure/active-directory/managed-identities-azure-resources/services-support-managed-identities). Per le app Web distribuite nel Servizio app di Azure, ad esempio, l'identità gestita viene abilitata tramite l'opzione **Identità** > **Assegnata dal sistema** nel portale di Azure oppure usando il comando `az webapp identity assign` nell'interfaccia della riga di comando di Azure.
 
@@ -79,7 +79,7 @@ vault_url = os.environ["KEY_VAULT_URL"]
 
 
 # Acquire a credential object for the app identity. When running in the cloud,
-# DefaultAzureCredential uses the app's managed identity or user-assigned service principal.
+# DefaultAzureCredential uses the app's managed identity (MSI) or user-assigned service principal.
 # When run locally, DefaultAzureCredential relies on environment variables named
 # AZURE_CLIENT_ID, AZURE_CLIENT_SECRET, and AZURE_TENANT_ID.
 
@@ -116,7 +116,9 @@ La creazione dell'oggetto [`SecretClient`](/python/api/azure-keyvault-secrets/az
 
 ## <a name="authenticate-with-defaultazurecredential"></a>Eseguire l'autenticazione con DefaultAzureCredential
 
-Per la maggior parte delle applicazioni, la classe [`DefaultAzureCredential`](/python/api/azure-identity/azure.identity.defaultazurecredential) della libreria [`azure-identity`](/python/api/azure-identity/azure.identity) fornisce il metodo di autenticazione più semplice e consigliato. `DefaultAzureCredential` usa automaticamente l'identità gestita dell'app nel cloud e carica automaticamente un'entità servizio locale dalle variabili di ambiente durante l'esecuzione in locale.
+Per la maggior parte delle applicazioni, la classe [`DefaultAzureCredential`](/python/api/azure-identity/azure.identity.defaultazurecredential) della libreria [`azure-identity`](/python/api/azure-identity/azure.identity) fornisce il metodo di autenticazione più semplice e consigliato.
+
+`DefaultAzureCredential` Usa automaticamente l'identità gestita dell'app (MSI) nel cloud e carica automaticamente un'entità servizio locale dalle variabili di ambiente durante l'esecuzione in locale, come descritto in [configurare l'ambiente di sviluppo Python locale per Azure: configurare l'autenticazione](configure-local-development-environment.md#configure-authentication).
 
 ```python
 import os
@@ -138,7 +140,7 @@ retrieved_secret = secret_client.get_secret("secret-name-01")
 
 Il codice precedente usa un oggetto `DefaultAzureCredential` per l'accesso ad Azure Key Vault, il cui URL è disponibile in una variabile di ambiente denominata `KEY_VAULT_URL`. Il codice implementa chiaramente il criterio di utilizzo tipico della libreria: acquisire un oggetto credenziali, creare un oggetto client appropriato per la risorsa di Azure e quindi tentare di eseguire un'operazione su tale risorsa usando l'oggetto client. Anche in questo caso, l'autenticazione e l'autorizzazione non avvengono fino al passaggio finale.
 
-Quando il codice viene distribuito ed eseguito in Azure, `DefaultAzureCredential` usa automaticamente l'identità gestita assegnata dal sistema che è possibile abilitare per l'app all'interno di qualsiasi servizio la ospiti. Le autorizzazioni per risorse specifiche, ad esempio Archiviazione di Azure o Azure Key Vault, vengono assegnate a tale identità tramite il portale di Azure o l'interfaccia della riga di comando di Azure. In questi casi, questa identità gestita da Azure ottimizza la sicurezza, perché non si dovrà mai gestire un'entità servizio esplicita nel codice.
+Quando il codice viene distribuito in e in esecuzione in Azure, `DefaultAzureCredential` Usa automaticamente l'identità gestita assegnata dal sistema (MSI) che è possibile abilitare per l'app all'interno di qualsiasi servizio che lo ospita. Le autorizzazioni per risorse specifiche, ad esempio Archiviazione di Azure o Azure Key Vault, vengono assegnate a tale identità tramite il portale di Azure o l'interfaccia della riga di comando di Azure. In questi casi, questa identità gestita da Azure ottimizza la sicurezza, perché non si dovrà mai gestire un'entità servizio esplicita nel codice.
 
 Quando si esegue il codice in locale, `DefaultAzureCredential` usa automaticamente l'entità servizio descritta dalle variabili di ambiente denominate `AZURE_TENANT_ID`, `AZURE_CLIENT_ID` e `AZURE_CLIENT_SECRET`. L'oggetto client include quindi questi valori (in modo sicuro) nell'intestazione della richiesta HTTP quando chiama l'endpoint API. Non è necessaria alcuna modifica al codice durante l'esecuzione in locale o nel cloud. Per informazioni dettagliate sulla creazione dell'entità servizio e sulla configurazione delle variabili di ambiente, vedere [Configurare l'ambiente di sviluppo Python locale per Azure - Configurare l'autenticazione](configure-local-development-environment.md#configure-authentication).
 

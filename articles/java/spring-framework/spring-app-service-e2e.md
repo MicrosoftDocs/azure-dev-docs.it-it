@@ -7,12 +7,12 @@ ms.date: 11/12/2019
 ms.service: app-service
 ms.topic: article
 ms.custom: devx-track-java, devx-track-azurecli
-ms.openlocfilehash: 24b023469e4557a62a83f35a3fe6475daed1b3b0
-ms.sourcegitcommit: 0d2ea78f18430c845a32e0d2311427ab81033465
-ms.translationtype: HT
+ms.openlocfilehash: 7ed013fd5856c446d6836183fcbc8f1e9cc01d88
+ms.sourcegitcommit: 593d177cfb5f56f236ea59389e43a984da30f104
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/23/2020
-ms.locfileid: "97754157"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98561157"
 ---
 # <a name="deploy-a-spring-app-to-app-service-with-mysql"></a>Distribuire un'app Spring nel servizio app con MySQL
 
@@ -268,7 +268,7 @@ set DOLLAR=$
 ```
 ---
 
-Creare e inizializzare quindi il server di database. Usare [az mysql up](/cli/azure/ext/db-up/mysql?view=azure-cli-latest#ext-db-up-az-mysql-up) per la configurazione iniziale. Usare quindi [az mysql server configuration set](/cli/azure/mysql/server/configuration?view=azure-cli-latest#az-mysql-server-configuration-set) per aumentare il timeout della connessione e impostare il fuso orario del server.
+Creare e inizializzare quindi il server di database. Usare [az mysql up](/cli/azure/ext/db-up/mysql#ext-db-up-az-mysql-up) per la configurazione iniziale. Usare quindi [az mysql server configuration set](/cli/azure/mysql/server/configuration#az-mysql-server-configuration-set) per aumentare il timeout della connessione e impostare il fuso orario del server.
 
 # <a name="bash"></a>[Bash](#tab/bash)
 
@@ -569,6 +569,6 @@ Successivamente, vedere le altre opzioni di configurazione e CI/CD disponibili p
 > [!div class="nextstepaction"]
 > [Configurare un'app Java in Linux per il servizio app di Azure](/azure/app-service/containers/configure-language-java)
 > [!div class="nextstepaction"]
-> [Compilare e distribuire un'app Web Java con Azure Pipelines](/azure/devops/pipelines/ecosystems/java-webapp?view=azure-devops&tabs=java-tomcat)
+> [Compilare e distribuire un'app Web Java con Azure Pipelines](/azure/devops/pipelines/ecosystems/java-webapp?tabs=java-tomcat)
 > [!div class="nextstepaction"]
 > [Eseguire la distribuzione nel servizio app di Azure con il plug-in Jenkins](/azure/jenkins/deploy-jenkins-app-service-plugin)

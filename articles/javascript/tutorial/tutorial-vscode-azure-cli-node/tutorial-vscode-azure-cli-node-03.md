@@ -2,14 +2,14 @@
 title: Creare il Servizio app di Azure dall'interfaccia della riga di comando di Azure per ospitare l'app
 description: Parte 3 dell'esercitazione, creare il servizio app con l'interfaccia della riga di comando di Azure
 ms.topic: tutorial
-ms.date: 12/18/2020
+ms.date: 01/13/2021
 ms.custom: devx-track-js, devx-track-azurecli
-ms.openlocfilehash: 24b64c5b618d06083ddf5eee3be7c6e53923a99d
-ms.sourcegitcommit: 4f9ce09cbf9663203c56f5b12ecbf70ea68090ed
-ms.translationtype: HT
+ms.openlocfilehash: ad8e0836d62102521b557fd45b24291d52db447c
+ms.sourcegitcommit: 593d177cfb5f56f236ea59389e43a984da30f104
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97911401"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98561517"
 ---
 # <a name="create-the-app-service"></a>Creare il servizio app
 
@@ -17,7 +17,9 @@ ms.locfileid: "97911401"
 
 In questo passaggio si usa l'interfaccia della riga di comando di Azure per creare il Servizio app di Azure per ospitare il codice dell'app.
 
-## <a name="create-resource-group"></a>Creare un gruppo di risorse
+<a name="create-resource-group"></a>
+
+## <a name="create-resource-group-and-set-as-default-value"></a>Crea gruppo di risorse e imposta come valore predefinito
 
 1. In un terminale o al prompt dei comandi usare il comando seguente per creare un **gruppo di risorse** per il Servizio app. Un gruppo di risorse è essenzialmente una raccolta denominata delle risorse di un'app in Azure, ad esempio un sito Web, un database, Funzioni di Azure e così via.
 
@@ -25,49 +27,33 @@ In questo passaggio si usa l'interfaccia della riga di comando di Azure per crea
     az group create --name myResourceGroup --location westus
     ```
 
-    Il comando [`az group create`](/cli/azure/group?view=azure-cli-latest#az_group_create) precedente dell'interfaccia della riga di comando di Azure crea un gruppo di risorse denominato `myResourceGroup` nel data center `westus`. È possibile cambiare questi valori come si desidera.
+    Il comando [`az group create`](/cli/azure/group#az_group_create) precedente dell'interfaccia della riga di comando di Azure crea un gruppo di risorse denominato `myResourceGroup` nel data center `westus`. È possibile cambiare questi valori come si desidera.
 
     Una volta eseguito, il comando visualizza un output JSON con i dettagli del gruppo di risorse.
 
-1. Eseguire il comando [`az configure`](/cli/azure/config?view=azure-cli-latest) seguente dell'interfaccia della riga di comando di Azure per impostare i valori predefiniti di gruppo di risorse e area per i comandi successivi. In questo modo si evita di specificare questi valori ogni volta. L'esecuzione di questo comando non venera un output.
+1. Eseguire il comando [`az configure`](/cli/azure/config) seguente dell'interfaccia della riga di comando di Azure per impostare i valori predefiniti di gruppo di risorse e area per i comandi successivi. In questo modo si evita di specificare questi valori ogni volta. L'esecuzione di questo comando non venera un output.
 
     ```azurecli
     az configure --defaults group=myResourceGroup location=westus
     ```
 
-## <a name="create-app-service-plan"></a>Creare un piano di servizio app
+## <a name="create-and-deploy-web-app-service-with-azure-cli-command"></a>Creare e distribuire il servizio app Web con il comando CLI di Azure
 
-Eseguire il comando [`az appservice plan create`](/cli/azure/appservice/plan?view=azure-cli-latest#az_appservice_plan_create) seguente dell'interfaccia della riga di comando di Azure per creare un **piano di servizio app** che definisce la macchina virtuale sottostante usata dal servizio app:
-
-```azurecli
-az appservice plan create --name myPlan --sku F1
-```
-
-Il comando precedente specifica un [piano di hosting gratuito](../../core/what-is-azure-for-javascript-development.md#free-tier-resources) (`--sku F1`), denominato `myPlan`, che usa una macchina virtuale condivisa. 
-
-## <a name="create-web-app-service"></a>Creare un servizio app Web
-
-Eseguire il comando [`az webapp create`](/cli/azure/webapp?view=azure-cli-latest#az_webapp_create) seguente dell'interfaccia della riga di comando di Azure per creare il servizio app, sostituendo `<your_app_name>` con un nome univoco che diventa l'URL `http://<your_app_name>.azurewebsites.net`, con la [versione più recente del runtime Node.js](/cli/azure/webapp?view=azure-cli-latest#az_webapp_list_runtimes&preserve-view=false). 
+Eseguire il comando dell'interfaccia della riga di comando di Azure seguente,  [`az webapp up`](/cli/azure/webapp#az_webapp_up) , per creare e distribuire l'app del servizio app. Sostituire `<your_app_name>` con un nome univoco che diventa l'URL `http://<your_app_name>.azurewebsites.net` . 
 
 ```azurecli
-az webapp create --name <your_app_name> --plan myPlan -g --runtime "node|12-lts"
+az webapp up --name <your_app_name> --logs --launch-browser
 ```
 
-## <a name="browse-web-app"></a>Sfogliare l'app Web
-
-1. Eseguire il comando [`az webapp browse`](/cli/azure/webapp?view=azure-cli-latest#az_webapp_browse) seguente dell'interfaccia della riga di comando di Azure per aprire un browser con il servizio app appena creato, anche in questo caso sostituendo `<your_app_name>` con il nome usato:
-
-    ```azurecli
-    az webapp browse --name <your_app_name>
-    ```
-
-1. Poiché per l'app non è stato distribuito codice personalizzato, il browser dovrebbe visualizzare una pagina predefinita:
-
-    ![Pagina predefinita del Servizio app](../../media/azure-cli/azure-default-page.png)
+Il `--logs` comando Visualizza il flusso di log subito dopo l'avvio del webapp. Il `--launch-browser` comando apre il browser predefinito per la nuova app. È possibile usare lo stesso comando per ridistribuire l'intera app. 
 
 ## <a name="troubleshooting"></a>Risoluzione dei problemi
 
 * Se si riceve un messaggio di errore relativo a un parametro necessario ma mancante, `--resource-group`, tornare all'inizio dell'articolo e impostare i valori predefiniti oppure specificare il parametro e il valore. 
+
+## <a name="next-steps"></a>Passaggi successivi
+
+Altre informazioni sui comandi per la webapp con il gruppo di comandi Azure [webapp](/cli/azure/webapp) o il gruppo di comandi del [servizio app](/cli/azure/appservice) di Azure. 
 
 > [!div class="nextstepaction"]
 > [Il Servizio app è stato creato](tutorial-vscode-azure-cli-node-04.md) [Si è verificato un problema](https://www.research.net/r/PWZWZ52?tutorial=node-deployment&step=create-website)

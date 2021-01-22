@@ -139,7 +139,7 @@
       items:
         - name: Configurazione dell'app
           href: how-to/configure-web-app-settings.md
-        - name: Attività JavaScript comuni
+        - name: Attività per sviluppatori JavaScript
           href: how-to/common-javascript-tasks.md
         - name: Sviluppo end-to-end in Node.js con VS Code
           href: how-to/develop-nodejs-on-azure.md

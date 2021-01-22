@@ -4,12 +4,12 @@ description: Pulire le risorse di Azure rimuovendo il gruppo di risorse con un c
 ms.topic: tutorial
 ms.date: 11/13/2020
 ms.custom: devx-track-js
-ms.openlocfilehash: 5c8c0bb8a1413da72cb2c32d9ce541bee1c36cac
-ms.sourcegitcommit: dc74b60217abce66fe6cc93923e869e63ac86a8f
-ms.translationtype: HT
+ms.openlocfilehash: ac61f1b73e873ee1c1c6cd343792a79a88e76123
+ms.sourcegitcommit: 593d177cfb5f56f236ea59389e43a984da30f104
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94872822"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98560987"
 ---
 # <a name="7-clean-up-resources"></a>7. Pulire le risorse
 
@@ -17,7 +17,7 @@ Al termine di questa esercitazione, è necessario rimuovere l'intero gruppo di r
 
 ## <a name="remove-all-the-resources-by-removing-resource-group"></a>Rimuovere tutte le risorse eliminando il gruppo di risorse
 
-Nello stesso terminale, usare il [comando dell'interfaccia della riga di comando di Azure](/cli/azure/group?view=azure-cli-latest#az_group_delete) per eliminare il gruppo di risorse:
+Nello stesso terminale, usare il [comando dell'interfaccia della riga di comando di Azure](/cli/azure/group#az_group_delete) per eliminare il gruppo di risorse:
 
 ```azurecli
 az group delete --name rg-demo-vm-eastus -y

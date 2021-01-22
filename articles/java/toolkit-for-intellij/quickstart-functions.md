@@ -4,12 +4,12 @@ description: Creare e pubblicare in Azure una semplice funzione attivata tramite
 ms.topic: quickstart
 ms.date: 03/26/2020
 ms.custom: devx-track-java
-ms.openlocfilehash: d796d6974d9591ae9df79d37c48f47d7e1cb5a72
-ms.sourcegitcommit: 5541f993c01ce356e1b0eaa8f95aea9051c3c21e
-ms.translationtype: HT
+ms.openlocfilehash: 8276b7de4425cb4eb5630116c59803118d3002b0
+ms.sourcegitcommit: 593d177cfb5f56f236ea59389e43a984da30f104
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93278466"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98561787"
 ---
 # <a name="quickstart-create-an-azure-functions-project-using-intellij-idea"></a>Avvio rapido: Creare un progetto di Funzioni di Azure con IntelliJ IDEA
 
@@ -35,7 +35,7 @@ Prima di iniziare, verificare che siano soddisfatti i requisiti seguenti:
 
    ![Comando di accesso ad Azure in IntelliJ][I01]
 
-3. Nella finestra **Azure Sign In** (Accesso ad Azure) selezionare **Device Login** (Accesso dispositivo) e quindi fare clic su **Sign in** (Accedi) ( [altre opzioni di accesso](sign-in-instructions.md)).
+3. Nella finestra **Azure Sign In** (Accesso ad Azure) selezionare **Device Login** (Accesso dispositivo) e quindi fare clic su **Sign in** (Accedi) ([altre opzioni di accesso](sign-in-instructions.md)).
 
    ![Finestra di accesso ad Azure con l'accesso dispositivo selezionato][I02]
 
@@ -85,7 +85,7 @@ In questa sezione si userà Azure Toolkit for IntelliJ per creare un progetto lo
 
     ![Pulsante debug per le funzioni in locale](media/quickstart-functions/local-debug-functions-button.png)
 
-1. Fare clic su riga *20* del file `src/main/java/org/example/functions/HttpTriggerFunction.java` per aggiungere un punto di interruzione, accedere nuovamente all'endpoint `http://localhost:7071/api/HttpTrigger-Java?name=Azure`. Si noterà che il punto di interruzione viene raggiunto. È possibile provare altre funzionalità di debug, ad esempio *step* , *watch* , *evaluation*. Arrestare la sessione di debug facendo clic sul pulsante stop.
+1. Fare clic su riga *20* del file `src/main/java/org/example/functions/HttpTriggerFunction.java` per aggiungere un punto di interruzione, accedere nuovamente all'endpoint `http://localhost:7071/api/HttpTrigger-Java?name=Azure`. Si noterà che il punto di interruzione viene raggiunto. È possibile provare altre funzionalità di debug, ad esempio *step*, *watch*, *evaluation*. Arrestare la sessione di debug facendo clic sul pulsante stop.
 
     ![Interruzione delle funzioni con il debug in locale](media/quickstart-functions/local-debug-functions-break.png)
 
@@ -121,7 +121,7 @@ In questa sezione si userà Azure Toolkit for IntelliJ per creare un progetto lo
 
 1. Fare clic con il pulsante destro del mouse sulla funzione *HttpTrigger-Java* e scegliere *Funzione di trigger*. Il browser viene aperto all'URL del trigger.
 
-    ![Esecuzione della distribuzione di funzioni in Azure](media/quickstart-functions/explorer-trigger-functions.png)
+    ![Barra degli indirizzi del browser che mostra l'URL del trigger](media/quickstart-functions/explorer-trigger-functions.png)
 
 ## <a name="add-more-functions-to-the-project"></a>Aggiungere altre funzioni al progetto
 
@@ -139,7 +139,7 @@ In questa sezione si userà Azure Toolkit for IntelliJ per creare un progetto lo
 
 1. Eliminazione di Funzioni di Azure in Azure Explorer
       
-      ![Aggiungere funzioni al progetto, selezionare trigger](media/quickstart-functions/delete-function.png)
+      ![Funzione Delete in Azure Explorer](media/quickstart-functions/delete-function.png)
       
 
 ## <a name="next-steps"></a>Passaggi successivi

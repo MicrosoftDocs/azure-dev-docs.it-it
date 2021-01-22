@@ -4,12 +4,12 @@ description: Questa sezione dell'esercitazione _esamina_ le procedure e il codic
 ms.topic: tutorial
 ms.date: 12/17/2020
 ms.custom: devx-track-js
-ms.openlocfilehash: 84140472c4bb57e208cc0e2c0665e72680664a2f
-ms.sourcegitcommit: 1c508f5ba73a12e4baeacc88ad9a8359301acb50
-ms.translationtype: HT
+ms.openlocfilehash: 95486bd7551b87e0db9e01d372888bbaefb02443
+ms.sourcegitcommit: 593d177cfb5f56f236ea59389e43a984da30f104
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97687487"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98560977"
 ---
 # <a name="6-review-how-to-add-computer-vision-to-the-react-app"></a>6. Esaminare come aggiungere Visione artificiale all'app React
 
@@ -17,8 +17,8 @@ Questo esempio include tutto il codice TypeScript necessario per aggiungere Visi
 
 * [Codice di esempio](https://github.com/Azure-Samples/js-e2e-client-cognitive-services)
 * Servizi di Azure
-    * [App Web statica](https://docs.microsoft.com/azure/static-web-apps)
-    * [Visione artificiale di Servizi cognitivi](https://docs.microsoft.com/azure/cognitive-services/computer-vision/)
+    * [App Web statica](/azure/static-web-apps)
+    * [Visione artificiale di Servizi cognitivi](/azure/cognitive-services/computer-vision/)
 
 ## <a name="add-computer-vision-to-local-react-app"></a>Aggiungere Visione artificiale all'app React locale
 
@@ -49,4 +49,4 @@ Aggiungere metodi al file `app.js` dell'app React. L'analisi delle immagini e la
 ## <a name="next-step"></a>Passaggio successivo
 
 > [!div class="nextstepaction"]
-> [Pulire le risorse](clean-up-resources.md) 
+> [Pulire le risorse](clean-up-resources.md)

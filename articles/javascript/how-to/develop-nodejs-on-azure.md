@@ -4,12 +4,12 @@ description: Completare l'esercitazione end-to-end che illustra come creare un'a
 ms.topic: how-to
 ms.date: 06/25/2017
 ms.custom: seo-javascript-september2019, seo-javascript-october2019, devx-track-js, devx-track-azurecli
-ms.openlocfilehash: de07137ca6fd21aaf3d5dfe33bf6d599a745555d
-ms.sourcegitcommit: ae2fa266a36958c04625bb0ab212e6f2db98e026
-ms.translationtype: HT
+ms.openlocfilehash: e549ef0cf5baaf003788a55bf2549e9c3f2fbe5c
+ms.sourcegitcommit: 0eb25e1fdafcd64118843748dc061f60e7e48332
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96857819"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98669175"
 ---
 # <a name="develop-and-deploy-a-containerized-nodejs-app-with-visual-studio-code-and-azure"></a>Sviluppare e distribuire un'app Node.js in contenitore con Visual Studio Code e Azure
 
@@ -325,21 +325,21 @@ Per iniziare, aprire il terminale di Visual Studio. Si userà la nuova interfacc
 
 1. Creare un gruppo di risorse, che può essere considerato uno *spazio dei nomi* o una *directory* per organizzare le risorse di Azure. L'opzione `-n` viene usata per specificare il nome del gruppo e può essere un valore qualsiasi.
 
-    ```shell
+    ```azurecli
     az group create -n nina-demo -l westus
     ```
 
     L'opzione `-l` indica la posizione del gruppo di risorse. Nell'anteprima, il supporto del servizio app in Linux è disponibile solo in alcune aree. Se quindi non ci si trova negli Stati Uniti occidentali e si vuole verificare quali altre aree sono disponibili, eseguire `az appservice list-locations --linux-workers-enabled` dall'interfaccia della riga di comando per visualizzare le opzioni per i data center.
 
-1. Impostare il gruppo di risorse appena creato come gruppo di risorse predefinito, per poter continuare a usare l'interfaccia della riga di comando senza dover specificare esplicitamente il gruppo di risorse a ogni chiamata dell'interfaccia stessa:
+1. Impostare il gruppo di risorse appena creato come gruppo di risorse predefinito in modo che sia possibile continuare a usare l'interfaccia della riga di comando senza dover specificare in modo esplicito il gruppo di risorse con ogni chiamata dell'interfaccia della riga di comando di Azure:
 
-   ```shell
+   ```azurecli
    az configure -d group=nina-demo
    ```
 
 1. Creare il *piano* del servizio app, che gestisce la creazione e il ridimensionamento delle macchine virtuali sottostanti nelle quali viene distribuita l'app. Anche in questo caso, specificare un valore qualsiasi per l'opzione `n`.
 
-    ```shell
+    ```azurecli
     az appservice plan create -n nina-demo-plan --is-linux
     ```
 
@@ -347,7 +347,7 @@ Per iniziare, aprire il terminale di Visual Studio. Si userà la nuova interfacc
 
 1. Creare l'app Web del servizio app, che rappresenta l'app Todo effettiva che verrà eseguita nel piano e nel gruppo di risorse appena creati. Un'app Web può essere considerata un sinonimo di processo o contenitore, mentre il piano può essere considerato l'host della macchina virtuale/contenitore su cui questi elementi vengono eseguiti. Nell'ambito della creazione dell'app Web sarà anche necessario configurare l'app per l'uso dell'immagine Docker pubblicata in DockerHub:
 
-    ```shell
+    ```azurecli
     az webapp create -n nina-demo-app -p nina-demo-plan -i lostintangent/node
     ```
 
@@ -356,13 +356,13 @@ Per iniziare, aprire il terminale di Visual Studio. Si userà la nuova interfacc
 
 1. Impostare l'app Web come istanza Web predefinita:
 
-    ```shell
+    ```azurecli
     az configure -d web=nina-demo-app
     ```
 
 1. Avviare l'app per visualizzare il contenitore distribuito, che sarà disponibile a un URL `*.azurewebsites.net`:
 
-    ```shell
+    ```azurecli
     az webapp browse
     ```
 
@@ -378,20 +378,20 @@ Anche se è possibile configurare un server di MongoDB o un set di repliche e ge
 
 1. Dal terminale di Visual Studio Code eseguire questo comando per creare un'istanza del servizio Cosmos DB compatibile con MongoDB. Sostituire il segnaposto **<NAME** con un valore univoco globale. Cosmos DB usa questo nome per generare l'URL del server di database:
 
-   ```shell
+   ```azurecli
    COSMOSDB_NAME=<NAME>
    az cosmosdb create -n $COSMOSDB_NAME --kind MongoDB
    ```
 
 1. Recuperare la stringa di connessione MongoDB per questa istanza:
 
-   ```shell
+   ```bash
    MONGODB_URL=$(az cosmosdb list-connection-strings -n $COSMOSDB_NAME -otsv --query "connectionStrings[0].connectionString")
    ```
 
 1. Aggiornare la variabile di ambiente **MONGODB_URL** dell'app Web in modo che si connetta all'istanza di Cosmos DB della quale è stato appena effettuato il provisioning, invece di provare a connettersi a un server di MongoDB eseguito in locale, che in realtà è inesistente:
 
-    ```shell
+    ```azurecli
     az webapp config appsettings set --settings MONGODB_URL=$MONGODB_URL
     ```
 
@@ -409,7 +409,7 @@ DockerHub offre un'esperienza eccellente per la distribuzione delle immagini del
 
 Il provisioning di un registro personalizzato può essere eseguito con il comando seguente. Sostituire il segnaposto **<NAME** con un valore univoco globale, perché Registro Azure Container usa il valore specificato per generare l'URL del server di accesso del registro.
 
-```shell
+```azurecli
 ACR_NAME=<NAME>
 az acr create -n $ACR_NAME -l westus --admin-enabled
 ```
@@ -419,31 +419,31 @@ az acr create -n $ACR_NAME -l westus --admin-enabled
 
 Il comando `az acr create` visualizza l'URL del server di accesso (tramite la colonna `LOGIN SERVER`) usato per accedere con l'interfaccia della riga di comando di Docker, ad esempio `ninademo.azurecr.io`. Il comando genera anche le credenziali di amministratore usate per l'autenticazione. Per recuperare tali credenziali, eseguire questo comando e annotare il nome utente e la password visualizzati:
 
-```shell
+```azurecli
 az acr credential show -n $ACR_NAME
 ```
 
 Usando le credenziali del passaggio precedente e il proprio server di accesso è possibile accedere al registro tramite il flusso di lavoro standard dell'interfaccia della riga di comando di Docker.
 
-```shell
+```console
 docker login <LOGIN_SERVER> -u <USERNAME> -p <PASSWORD>
 ```
 
 È ora possibile contrassegnare il contenitore Docker per indicare che è associato al registro privato usando il comando seguente, in cui è necessario sostituire `lostintangent/node` con il nome assegnato all'immagine del contenitore.
 
-```shell
+```console
 docker tag lostintangent/node <LOGIN_SERVER>/lostintangent/node
 ```
 
 Eseguire infine il push dell'immagine contrassegnata nel registro Docker privato.
 
-```shell
+```console
 docker push <LOGIN_SERVER>/lostintangent/node
 ```
 
 Il contenitore è ora archiviato nel proprio registro privato e l'interfaccia della riga di comando di Docker consente di continuare a lavorare esattamente come quando si usa DockerHub. Per indicare all'app Web del servizio app di effettuare il pull dal registro privato, è sufficiente eseguire questo comando:
 
-```shell
+```azurecli
 az appservice web config container set \
     -r <LOGIN_SERVER> \
     -c <LOGIN_SERVER>/lostintangent/node \
@@ -459,7 +459,7 @@ Aggiornando l'app nel browser, l'aspetto e il funzionamento rimarranno invariati
 
 Anche se l'URL `*.azurewebsites.net` è un'ottima opzione per i test, può essere successivamente opportuno aggiungere un nome di dominio personalizzato all'app Web. Dopo aver ottenuto un nome di dominio da un registrar, è sufficiente aggiungere al nome un record `A` che punti all'indirizzo IP esterno dell'app Web, che è in realtà un bilanciamento del carico. Questo indirizzo IP può essere recuperato con il comando seguente:
 
-```shell
+```azurecli
 az webapp config hostname get-external-ip
 ```
 
@@ -467,7 +467,7 @@ Oltre ad aggiungere un record `A` è necessario aggiungere al dominio un record 
 
 Dopo aver creato i record e aver propagato le modifiche DNS, registrare il dominio personalizzato con Azure per indicare l'origine corretta del traffico in ingresso.
 
-```shell
+```azurecli
 az webapp config hostname add --hostname <DOMAIN>
 ```
 
@@ -480,7 +480,7 @@ Aprire un browser e passare al dominio personalizzato per verificare che ora si 
 
 A un certo punto, l'app Web può diventare talmente diffusa che le risorse allocate (CPU e RAM) non sono più sufficienti a gestire l'aumento del traffico e delle esigenze operative. Il piano del servizio app creato in precedenza (**B1**) prevede un core di CPU e 1,75 GB di RAM, che possono diventare rapidamente sovraccarichi. Il piano **B2** offre il doppio di RAM e CPU, quindi se si nota che l'app inizia a esaurire queste risorse è possibile aumentare le prestazioni della macchina virtuale sottostante eseguendo questo comando:
 
-```shell
+```azurecli
 az appservice plan update -n nina-demo-plan --sku B2
 ```
 
@@ -491,7 +491,7 @@ Dopo pochi istanti verrà eseguita la migrazione dell'app Web all'hardware richi
 
 Oltre ad aumentare le prestazioni per le macchine virtuali, finché l'app Web è senza stato, è anche possibile *aumentare il numero di istanze* aggiungendo più istanze di macchina virtuale sottostanti. Il piano del servizio app creato in precedenza include una sola macchina virtuale (un *ruolo di lavoro*) e quindi tutto il traffico in ingresso è vincolato ai limiti delle risorse disponibili per quella sola istanza. Se si vuole aggiungere una seconda istanza di macchina virtuale, è possibile eseguire lo stesso comando eseguito in precedenza, ma invece di aumentare lo SKU si aumenta il numero di macchine virtuali di lavoro.
 
-```shell
+```azurecli
 az appservice plan update -n nina-demo-plan --number-of-workers 2
 ```
 
@@ -506,7 +506,7 @@ Le app Web senza stato sono considerate procedure consigliate perché rendono la
 
 Per evitare che vengano addebitate risorse di Azure non usate, eseguire questo comando dal terminale di Visual Studio Code per eliminare tutte le risorse delle quali è stato effettuato il provisioning durante questa esercitazione.
 
-```shell
+```azurecli
 az group delete
 ```
 

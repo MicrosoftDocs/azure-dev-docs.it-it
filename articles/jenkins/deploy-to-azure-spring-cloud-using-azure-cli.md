@@ -5,12 +5,12 @@ keywords: jenkins, azure, devops, azure spring cloud, interfaccia della riga di 
 ms.topic: tutorial
 ms.date: 11/10/2020
 ms.custom: devx-track-jenkins,devx-track-azurecli
-ms.openlocfilehash: e0b98f31ac7f7b079f655c4cb795fe7b38af4508
-ms.sourcegitcommit: 4dac39849ba2e48034ecc91ef578d11aab796e58
-ms.translationtype: HT
+ms.openlocfilehash: ef078589506af95fc05bfd7a85f48757f3cb0242
+ms.sourcegitcommit: 0eb25e1fdafcd64118843748dc061f60e7e48332
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94983970"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98669169"
 ---
 # <a name="tutorial-deploy-apps-to-azure-spring-cloud-using-jenkins-and-the-azure-cli"></a>Esercitazione: Distribuire app in Azure Spring Cloud con Jenkins e l'interfaccia della riga di comando di Azure
 
@@ -129,7 +129,7 @@ In questa sezione verrà preparato il server Jenkins per eseguire una compilazio
 
 ### <a name="add-your-azure-service-principal-credential-in-jenkins-credential-store"></a>Aggiungere le credenziali dell'entità servizio di Azure nell'archivio delle credenziali di Jenkins
 
-1. Per eseguire la distribuzione in Azure, è necessaria un'entità servizio di Azure. Per altre informazioni, vedere la sezione [Creare l'entità servizio](deploy-from-github-to-azure-app-service.md#create-service-principal) dell'esercitazione Eseguire la distribuzione in Servizio app di Azure. L'output di `az ad sp create-for-rbac` è simile al seguente:
+1. Per eseguire la distribuzione in Azure, è necessaria un'entità servizio di Azure. Per altre informazioni, vedere la sezione [Creare l'entità servizio](./deploy-to-azure-app-service-using-azure-cli.md#add-azure-service-principal-to-a-jenkins-credential) dell'esercitazione Eseguire la distribuzione in Servizio app di Azure. L'output di `az ad sp create-for-rbac` è simile al seguente:
 
     ```
     {
@@ -161,7 +161,7 @@ In questa sezione verrà preparato il server Jenkins per eseguire una compilazio
 
 La pipeline di esempio usa Maven per la compilazione e l'interfaccia della riga di comando di Azure per la distribuzione nell'istanza del servizio. Quando viene installato, Jenkins crea un account amministratore denominato *jenkins*. Verificare che l'utente *jenkins* abbia l'autorizzazione per eseguire l'estensione spring-cloud.
 
-1. Connettersi al master Jenkins tramite SSH.
+1. Connettersi al controller Jenkins tramite SSH.
 
 1. Installare Maven.
 

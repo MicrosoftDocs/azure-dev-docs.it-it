@@ -8,18 +8,18 @@ ms.date: 03/25/2020
 ms.topic: article
 ms.service: multiple
 ms.custom: devx-track-java
-ms.openlocfilehash: 927f20601ded9a0ea6b2793ef1b0c8e1b5e6ac19
-ms.sourcegitcommit: ae2fa266a36958c04625bb0ab212e6f2db98e026
-ms.translationtype: HT
+ms.openlocfilehash: b1128860ea5a159a62b42dc176e5a572c524c2e4
+ms.sourcegitcommit: 593d177cfb5f56f236ea59389e43a984da30f104
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96857769"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98561257"
 ---
 # <a name="configure-logging-with-the-azure-sdk-for-java"></a>Configurare la registrazione con Azure SDK per Java
 
 Questo articolo fornisce le configurazioni di registrazione di esempio per [Azure SDK](https://azure.microsoft.com/downloads/) per Java. Per informazioni più dettagliate sulle opzioni di configurazione, ad esempio l'impostazione dei livelli di log o la registrazione personalizzata per classe, vedere la documentazione relativa al framework di registrazione scelto.
 
-Le librerie client di Azure SDK per Java usano [Simple Logging Facade for Java](https://www.slf4j.org/) (SLF4J). SLF4J consente di usare il framework di registrazione preferito, che viene chiamato al momento della distribuzione dell'applicazione. Se un generatore di client offre la possibilità di impostare [HttpLogOptions](/java/api/com.azure.core.http.policy.httplogoptions?view=azure-java-stable), sarà necessario specificare anche [HttpLogDetailLevel](/java/api/com.azure.core.http.policy.httplogdetaillevel?view=azure-java-stable) e tutte le intestazioni consentite e i parametri della query per consentire la restituzione di log.
+Le librerie client di Azure SDK per Java usano [Simple Logging Facade for Java](https://www.slf4j.org/) (SLF4J). SLF4J consente di usare il framework di registrazione preferito, che viene chiamato al momento della distribuzione dell'applicazione. Se un generatore di client offre la possibilità di impostare [HttpLogOptions](/java/api/com.azure.core.http.policy.httplogoptions), sarà necessario specificare anche [HttpLogDetailLevel](/java/api/com.azure.core.http.policy.httplogdetaillevel) e tutte le intestazioni consentite e i parametri della query per consentire la restituzione di log.
 
 > [!NOTE]
 > Questo articolo si applica alle versioni più recenti delle librerie client di Azure SDK. Per verificare se una libreria è supportata, vedere l'elenco delle versioni più recenti di [Azure SDK](https://azure.github.io/azure-sdk/releases/latest/java.html). Se l'applicazione usa una versione precedente delle librerie client di Azure SDK, fare riferimento a istruzioni specifiche nella documentazione del servizio applicabile.
@@ -251,7 +251,7 @@ La tabella seguente mostra i valori consentiti per questa variabile di ambiente.
 |ERRORE    |"err", "error"  |
 
 ## <a name="setting-an-httplogdetaillevel"></a>Impostazione di HttpLogDetailLevel
-Indipendentemente dal meccanismo di registrazione usato, se un generatore di client offre la possibilità di impostare [HttpLogOptions](/java/api/com.azure.core.http.policy.httplogoptions?view=azure-java-stable), sarà necessario configurare anche queste opzioni per consentire la restituzione di log. È necessario specificare [HttpLogDetailLevel](/java/api/com.azure.core.http.policy.httplogdetaillevel?view=azure-java-stable) per indicare quali informazioni devono essere registrate.  Per questo valore viene usata l'impostazione predefinita `NONE`, quindi se non viene specificato non verranno restituiti log anche se il framework di registrazione o la registrazione di fallback sono configurati correttamente. Per motivi di sicurezza, le intestazioni e i parametri della query sono oscurati per impostazione predefinita, quindi è necessario specificare anche le opzioni di log con un valore `Set<String>` che indica quali intestazioni e quali parametri di query possono essere stampati in tutta sicurezza. Questi valori possono essere configurati come illustrato di seguito. La registrazione è configurata per stampare il contenuto del corpo e i valori di intestazione. Tutti i valori di intestazione verranno oscurati, ad eccezione del valore per i metadati specificati dall'utente corrispondenti alla chiave `"foo"`, e tutti i parametri della query verranno oscurati ad eccezione del parametro `"sv"` della query del token di firma di accesso condiviso, che indica la versione firmata di eventuali firme di accesso condiviso presenti. 
+Indipendentemente dal meccanismo di registrazione usato, se un generatore di client offre la possibilità di impostare [HttpLogOptions](/java/api/com.azure.core.http.policy.httplogoptions), sarà necessario configurare anche queste opzioni per consentire la restituzione di log. È necessario specificare [HttpLogDetailLevel](/java/api/com.azure.core.http.policy.httplogdetaillevel) per indicare quali informazioni devono essere registrate.  Per questo valore viene usata l'impostazione predefinita `NONE`, quindi se non viene specificato non verranno restituiti log anche se il framework di registrazione o la registrazione di fallback sono configurati correttamente. Per motivi di sicurezza, le intestazioni e i parametri della query sono oscurati per impostazione predefinita, quindi è necessario specificare anche le opzioni di log con un valore `Set<String>` che indica quali intestazioni e quali parametri di query possono essere stampati in tutta sicurezza. Questi valori possono essere configurati come illustrato di seguito. La registrazione è configurata per stampare il contenuto del corpo e i valori di intestazione. Tutti i valori di intestazione verranno oscurati, ad eccezione del valore per i metadati specificati dall'utente corrispondenti alla chiave `"foo"`, e tutti i parametri della query verranno oscurati ad eccezione del parametro `"sv"` della query del token di firma di accesso condiviso, che indica la versione firmata di eventuali firme di accesso condiviso presenti. 
 
 ```
 new BlobClientBuilder().endpoint(<endpoint>)

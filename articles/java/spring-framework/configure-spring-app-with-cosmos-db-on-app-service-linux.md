@@ -7,12 +7,12 @@ ms.date: 10/06/2020
 ms.service: cosmos-db
 ms.topic: article
 ms.custom: devx-track-java, devx-track-azurecli
-ms.openlocfilehash: d3343940cd35767aa6887244d8ae9d7cca221646
-ms.sourcegitcommit: 723441eda0eb4ff893123201a9e029b7becf5ecc
-ms.translationtype: HT
+ms.openlocfilehash: d07447301dc721d8fd9179e0830f49143387e819
+ms.sourcegitcommit: 0eb25e1fdafcd64118843748dc061f60e7e48332
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/08/2020
-ms.locfileid: "91846522"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98669181"
 ---
 # <a name="how-to-use-spring-and-cosmos-db-with-app-service-on-linux"></a>Come usare Spring e Cosmos DB con Servizio app in Linux
 
@@ -29,7 +29,7 @@ Verrà dimostrato l'utilizzo dei componenti seguenti:
 I prerequisiti seguenti sono necessari per seguire le procedure disponibili in questo articolo:
 
 - Per distribuire un'app Web Java nel cloud, è necessaria una sottoscrizione di Azure. Se non si ha già una sottoscrizione di Azure, è possibile attivare i [vantaggi per i sottoscrittori di MSDN](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/) oppure iscriversi per ottenere un [account Azure gratuito](https://azure.microsoft.com/pricing/free-trial/).
-- [Interfaccia della riga di comando di Azure 2.0](/cli/azure/install-azure-cli?view=azure-cli-latest)
+- [Interfaccia della riga di comando di Azure 2.0](/cli/azure/install-azure-cli)
 - [Java 8 JDK](../fundamentals/java-jdk-install.md)
 - [Maven 3](http://maven.apache.org/)
 
@@ -39,12 +39,14 @@ Per questa esercitazione si userà l'app Spring Todo, un'applicazione Java creat
 1. Per inizializzare il progetto, clonare l'app Spring Todo e copiare il contenuto della cartella con estensione **prep**:
 
     Per Bash:
+
     ```bash
     git clone --recurse-submodules https://github.com/Azure-Samples/e2e-java-experience-in-app-service-linux-part-2.git
     yes | cp -rf .prep/* .
     ```
 
     Per Windows:
+
     ```cmd
     git clone --recurse-submodules https://github.com/Azure-Samples/e2e-java-experience-in-app-service-linux-part-2.git
     cd e2e-java-experience-in-app-service-linux-part-2
@@ -63,19 +65,19 @@ La procedura seguente crea un database Azure Cosmos database tramite l'interfacc
 
 1. Accedere all'interfaccia della riga di comando di Azure e impostare l'ID sottoscrizione.
 
-    ```bash
+    ```azurecli
     az login
     ```
 
 2. Se necessario, impostare l'ID sottoscrizione.
 
-    ```bash
+    ```azurecli
     az account set -s <your-subscription-id>
     ```
 
 3. Creare un gruppo di risorse di Azure e prendere nota del relativo nome per uso futuro.
 
-    ```bash
+    ```azurecli
     az group create -n <your-azure-group-name> \
     -l <your-resource-group-region>
     ```
@@ -83,7 +85,7 @@ La procedura seguente crea un database Azure Cosmos database tramite l'interfacc
 4. Creare l'istanza di Cosmos DB e specificare GlobalDocumentDB come tipo.
 Il nome dell'istanza di Cosmos DB deve contenere solo lettere minuscole. Assicurarsi di prendere nota del contenuto del campo `documentEndpoint` nella risposta, che sarà necessario più avanti.
 
-    ```bash
+    ```azurecli
     az cosmosdb create --kind GlobalDocumentDB \
         -g <your-azure-group-name> \
         -n <your-azure-COSMOS-DB-name-in-lower-case-letters>
@@ -91,7 +93,7 @@ Il nome dell'istanza di Cosmos DB deve contenere solo lettere minuscole. Assicur
 
 5. Ottenere le chiavi di Azure Cosmos DB e prendere nota del valore di `primaryMasterKey` per uso futuro.
 
-    ```bash
+    ```azurecli
     az cosmosdb keys list -g <your-azure-group-name> -n <your-azure-COSMOSDB-name>
     ```
 
@@ -113,6 +115,7 @@ export REGION=<put-your-REGION-here>
 ```
 
 Per Windows (prompt dei comandi):
+
 ```cmd
 set COSMOSDB_URI=<put-your-COSMOS-DB-documentEndpoint-URI-here>
 set COSMOSDB_KEY=<put-your-COSMOS-DB-primaryMasterKey-here>
@@ -240,14 +243,14 @@ La procedura seguente apre i file di log in Azure.
 
 1. Configurare i log per l'app Web Java distribuita in Servizio app di Azure in Linux:
 
-    ```bash
+    ```azurecli
     az webapp log config --name ${WEBAPP_NAME} \
      --resource-group ${RESOURCEGROUP_NAME} \
      --web-server-logging filesystem
     ```
 2. Aprire il flusso di log remoti dell'app Web Java da un computer locale:
 
-    ```bash
+    ```azurecli
     az webapp log tail --name ${WEBAPP_NAME} \
      --resource-group ${RESOURCEGROUP_NAME}
      ```
@@ -294,7 +297,7 @@ Usare la procedura seguente per ridimensionare l'applicazione.
 
 1. Aumentare le istanze dell'app Web Java con l'interfaccia della riga di comando di Azure:
 
-    ```bash
+    ```azurecli
     az appservice plan update --number-of-workers 2 \
       --name ${WEBAPP_PLAN_NAME} \
       --resource-group ${RESOURCEGROUP_NAME}

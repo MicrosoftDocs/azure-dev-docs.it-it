@@ -11,12 +11,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
 ms.custom: devx-track-java, devx-track-azurecli
-ms.openlocfilehash: 82b37db48c1ae0013972ae2c1522eac7c149fd1e
-ms.sourcegitcommit: dc74b60217abce66fe6cc93923e869e63ac86a8f
-ms.translationtype: HT
+ms.openlocfilehash: a2f39a13012a2ec1422ddf1f620ddd3e8f6e482d
+ms.sourcegitcommit: 0eb25e1fdafcd64118843748dc061f60e7e48332
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94872812"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98669166"
 ---
 # <a name="configure-microprofile-with-azure-key-vault"></a>Configurare MicroProfile con Azure Key Vault
 
@@ -55,7 +55,7 @@ Si userà l'interfaccia della riga di comando di Azure per creare la risorsa di 
 
 1. Verrà prima creata un'entità servizio di Azure per ottenere l'ID client e la chiave per l'accesso a Key Vault:
 
-```bash
+```azurecli
 az login
 az account set --subscription <subscription_id>
 
@@ -78,7 +78,7 @@ Di particolare importanza sono i valori `appID` e `password`, che in seguito ver
 
 Ora che è stata creata l'entità servizio, è facoltativamente possibile creare un gruppo di risorse. Se è già disponibile un gruppo di risorse, è possibile omettere questo passaggio. Si noti che per ottenere un elenco di posizioni di gruppi di risorse è possibile chiamare `az account list-locations` e usare il valore `name` di tale elenco per specificare la posizione in cui creare il gruppo di risorse.
 
-```bash
+```azurecli
 # For this tutorial, the author chose to use `westus`
 # and `jg-test` for the resource group name.
 az group create -l <resource_group_location> -n <resource_group_name>
@@ -86,7 +86,7 @@ az group create -l <resource_group_location> -n <resource_group_name>
 
 Verrà ora creata una risorsa di Azure Key Vault. Si noti che il nome dell'istanza di Key Vault verrà usato per fare riferimento all'istanza in seguito, quindi scegliere un nome facile da ricordare.
 
-```bash
+```azurecli
 az keyvault create --name <your_keyvault_name>            \
                    --resource-group <your_resource_group> \
                    --location <location>                  \
@@ -98,7 +98,7 @@ az keyvault create --name <your_keyvault_name>            \
 
 È anche necessario concedere le autorizzazioni appropriate all'entità servizio creata in precedenza, affinché possa accedere ai segreti di Key Vault. Si noti che il valore appID è il valore `appId` del passaggio in cui è stata creata l'entità servizio, ovvero `5292398e-XXXX-40ce-XXXX-d49fXXXX9e79`. Usare tuttavia l'output del terminale.
 
-```bash
+```azurecli
 az keyvault set-policy --name <your_keyvault_name>   \
                        --secret-permission get list  \
                        --spn <your_sp_appId_created_in_step1>
@@ -106,7 +106,7 @@ az keyvault set-policy --name <your_keyvault_name>   \
 
 Ora è possibile eseguire il push di un segreto in Key Vault. Si userà il nome chiave `demo-key` e il valore della chiave sarà `demo-value`:
 
-```bash
+```azurecli
 az keyvault secret set --name demo-key      \
                        --value demo-value   \
                        --vault-name <your_keyvault_name>  

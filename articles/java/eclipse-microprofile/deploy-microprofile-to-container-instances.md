@@ -11,12 +11,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
 ms.custom: devx-track-java, devx-track-azurecli
-ms.openlocfilehash: 72bb601c87e66c6ad95d046154fa6f6db4e5169d
-ms.sourcegitcommit: dc74b60217abce66fe6cc93923e869e63ac86a8f
-ms.translationtype: HT
+ms.openlocfilehash: 4aa168ddb38937ee8aeba0269c9dc3e50484717f
+ms.sourcegitcommit: 0eb25e1fdafcd64118843748dc061f60e7e48332
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94872832"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98669185"
 ---
 # <a name="deploy-a-microprofile-application-to-the-cloud-with-docker-and-azure"></a>Distribuire un'applicazione MicroProfile nel cloud con Docker e Azure
 
@@ -81,15 +81,15 @@ Per compilare l'immagine e predisporre l'esecuzione in Azure, è necessario segu
 
 #### <a name="set-up-azure-cli"></a>Configurare l'interfaccia della riga di comando di Azure
 
-Assicurarsi di avere una sottoscrizione di Azure, di aver installato l'[interfaccia della riga di comando di Azure](/cli/azure/install-azure-cli?view=azure-cli-latest) e di aver eseguito l'autenticazione all'account:
+Assicurarsi di avere una sottoscrizione di Azure, di aver installato l'[interfaccia della riga di comando di Azure](/cli/azure/install-azure-cli) e di aver eseguito l'autenticazione all'account:
 
-```bash
+```azurecli
 az login
 ```
 
 #### <a name="create-a-resource-group"></a>Creare un gruppo di risorse
 
-```bash
+```azurecli
 export ARG=microprofileRG
 export ADCL=eastus
 az group create --name $ARG --location $ADCL
@@ -99,7 +99,7 @@ az group create --name $ARG --location $ADCL
 
 Questo comando creerà un registro contenitori auspicabilmente univoco a livello globale con un nome di base e un numero casuale.
 
-```bash
+```azurecli
 export RANDINT=`date +"%m%d%y$RANDOM"`
 export ACR=mydockerrepo$RANDINT
 az acr create --name $ACR -g $ARG --sku Basic --admin-enabled
@@ -116,7 +116,7 @@ Anche se si può facilmente creare l'immagine Docker in locale usando Docker ste
 
 Per queste ragioni, l'immagine verrà creata con la funzionalità di [compilazione di Registro Azure Container]:
 
-```bash
+```azurecli
 export IMG_NAME="mympapp:latest"
 az acr build -r $ACR -t $IMG_NAME -g $ARG .
 ...
@@ -128,7 +128,7 @@ Build ID: aa1 was successful after 1m2.674577892s
 
 Ora che l'immagine è disponibile in Registro Azure Container, eseguire il push di un'istanza di contenitore in Istanze di Azure Container. Prima di tutto occorre tuttavia verificare che sia possibile eseguire l'autenticazione in Registro Azure Container:
 
-```bash
+```azurecli
 export ACR_REPO=`az acr show --name $ACR -g $ARG --query loginServer -o tsv`
 export ACR_PASS=`az acr credential show --name $ACR -g $ARG --query "passwords[0].value" -o tsv`
 export ACI_INSTANCE=myapp`date +"%m%d%y$RANDOM"`

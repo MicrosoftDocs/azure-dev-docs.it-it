@@ -2,14 +2,14 @@
 title: Distribuire app Node.js nel Servizio app di Azure da Visual Studio Code
 description: Distribuire un'applicazione Express.js Node.js nel servizio app di Azure con l'estensione Servizio app di Visual Studio Code.
 ms.topic: tutorial
-ms.date: 01/11/2021
+ms.date: 01/20/2021
 ms.custom: devx-track-js
-ms.openlocfilehash: 2c019cc9ae13b81ecde934faee6d7d7a9fadf07a
-ms.sourcegitcommit: 657f43a5048cd17b080b40b5090d575c8d7f5eaf
-ms.translationtype: HT
+ms.openlocfilehash: 8f6ab806262bee9684cc2c37d05aa1f21695c806
+ms.sourcegitcommit: 681ea211dc8e1809dd299b5cd64eebd974c073d7
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "98173251"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98669189"
 ---
 # <a name="deploy-nodejs-to-azure-app-service-using-visual-studio-code"></a>Distribuire Node.js nel Servizio app di Azure con Visual Studio Code
 
@@ -141,7 +141,12 @@ Visualizzare l'output generato dall'app in esecuzione tramite chiamate a `consol
 
 ## <a name="8-make-changes-and-redeploy"></a>8. Apportare modifiche e ripetere la distribuzione
 
-Apportare alcune modifiche e [ridistribuire](../how-to/deploy-web-app.md#deploy-or-redeploy-to-app-service-with-visual-studio-code) l'app usando l'estensione del servizio app. 
+1. Apportare una piccola modifica all'app. Cambiare `Welcome to Express` in `Welcome to Express with Visual Studio Code`. 
+
+1. Fare clic con il pulsante destro del mouse sul servizio app dall'elenco dei servizi app nell'estensione del servizio app, quindi scegliere **Distribuisci in app Web**. 
+
+    :::image type="content" source="../media/deploy-azure/deploy-or-redeploy-app-service.png" alt-text="Eseguire la distribuzione o la ridistribuzione nel Servizio app con Visual Studio Code":::
+
 
 ## <a name="9-clean-up-resources"></a>9. Pulire le risorse
 

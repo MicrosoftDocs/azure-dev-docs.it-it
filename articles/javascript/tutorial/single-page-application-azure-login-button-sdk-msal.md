@@ -4,12 +4,12 @@ description: L'autenticazione di Azure Active Directory presentata in questa ese
 ms.topic: tutorial
 ms.date: 12/01/2020
 ms.custom: devx-track-js, "azure-sdk-javascript-@azure/msal-browser-2.7.0"
-ms.openlocfilehash: 0128d773a2bbc79b22b3ce3424e7133942053597
-ms.sourcegitcommit: 4f9ce09cbf9663203c56f5b12ecbf70ea68090ed
-ms.translationtype: HT
+ms.openlocfilehash: ffbc8ea2824f7bbfaef3a3ae3579537633f9455b
+ms.sourcegitcommit: 593d177cfb5f56f236ea59389e43a984da30f104
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97911491"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98561657"
 ---
 # <a name="add-microsoft-login-button-to-a-single-page-application-for-authentication"></a>Aggiungere un pulsante di accesso Microsoft a un'applicazione a pagina singola per l'autenticazione
 
@@ -157,5 +157,5 @@ La gestione degli utenti può essere archiviata in un database di Azure Active D
 
 L'autorizzazione degli utenti può essere fornita da Azure oppure è possibile sviluppare un'autorizzazione senza Azure o combinare le due opzioni per un'esperienza personalizzata di autorizzazione, ruoli e funzionalità dell'app. 
 
-* Continuare a usare la [libreria MSAL](https://docs.microsoft.com/azure/active-directory/develop/msal-overview) per ottenere il profilo utente e fornire l'accesso non interattivo
-* Aggiungere [Microsoft Graph](https://docs.microsoft.com/graph/overview) per accedere ad account utente in Microsoft 365 e includere funzionalità di posta elettronica e appuntamenti del calendario
+* Continuare a usare la [libreria MSAL](/azure/active-directory/develop/msal-overview) per ottenere il profilo utente e fornire l'accesso non interattivo
+* Aggiungere [Microsoft Graph](/graph/overview) per accedere ad account utente in Microsoft 365 e includere funzionalità di posta elettronica e appuntamenti del calendario

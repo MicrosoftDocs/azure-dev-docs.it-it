@@ -4,12 +4,12 @@ description: Creare la risorsa di Visione artificiale di Servizi cognitivi e imp
 ms.topic: tutorial
 ms.date: 12/16/2020
 ms.custom: devx-track-js
-ms.openlocfilehash: 338a3040381768e5987e84676339e8ee46c49fc7
-ms.sourcegitcommit: 1c508f5ba73a12e4baeacc88ad9a8359301acb50
-ms.translationtype: HT
+ms.openlocfilehash: 12d55ab384fc7a6a387d832a78883f62de9f38ea
+ms.sourcegitcommit: 593d177cfb5f56f236ea59389e43a984da30f104
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97687471"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98561027"
 ---
 # <a name="4-create-computer-vision-resource-and-use-in-code"></a>4. Creare una risorsa di Visione artificiale e usarla nel codice
 
@@ -21,14 +21,14 @@ La creazione di un gruppo di risorse consente di trovare facilmente le risorse e
 
 Al termine di questa procedura, è necessario avere **la chiave e l'endpoint** per la risorsa.
 
-1. In un terminale o in una shell Bash, immettere il [comando dell'interfaccia della riga di comando di Azure per creare un gruppo di risorse di Azure](/cli/azure/group?view=azure-cli-latest#az_group_create) con il nome `rg-demo`:
+1. In un terminale o in una shell Bash, immettere il [comando dell'interfaccia della riga di comando di Azure per creare un gruppo di risorse di Azure](/cli/azure/group#az_group_create) con il nome `rg-demo`:
 
     ```azurecli
     az group create \
         --location eastus \
         --name rg-demo 
     ```
-1. Eseguire il comando seguente per [creare una risorsa di Visione artificiale](/cli/azure/cognitiveservices/account?view=azure-cli-latest#az-cognitiveservices-account-create):
+1. Eseguire il comando seguente per [creare una risorsa di Visione artificiale](/cli/azure/cognitiveservices/account#az-cognitiveservices-account-create):
 
 
     ```azurecli
@@ -53,7 +53,7 @@ Al termine di questa procedura, è necessario avere **la chiave e l'endpoint** p
     ...
     ```
 
-1. Eseguire il [comando](/cli/azure/cognitiveservices/account/keys?view=azure-cli-latest#az-cognitiveservices-account-keys-list) seguente per ottenere le chiavi. 
+1. Eseguire il [comando](/cli/azure/cognitiveservices/account/keys#az-cognitiveservices-account-keys-list) seguente per ottenere le chiavi. 
 
     ```azurecli
     az cognitiveservices account keys list \

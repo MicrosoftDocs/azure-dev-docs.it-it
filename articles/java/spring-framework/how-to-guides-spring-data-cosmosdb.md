@@ -6,18 +6,18 @@ ms.author: anfeldma
 ms.topic: conceptual
 ms.date: 11/23/2020
 ms.custom: devx-track-java
-ms.openlocfilehash: 725754dc55198c38e6a9148ed0e37b83bf8a294e
-ms.sourcegitcommit: 525c4b41d85aae9c3026a070b07e00c2241ea716
-ms.translationtype: HT
+ms.openlocfilehash: ebec3cdc6a1f16534132a333b4c6119c5e6208bd
+ms.sourcegitcommit: 593d177cfb5f56f236ea59389e43a984da30f104
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97394008"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98561817"
 ---
 # <a name="spring-data-azure-cosmos-db-developers-guide"></a>Guida per sviluppatori di Spring Data Azure Cosmos DB
 
 Questo articolo descrive le funzionalità di [Spring Data Azure Cosmos DB](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/cosmos/azure-spring-data-cosmos) che usa l'API SQL. Include anche indicazioni sui problemi comuni, le soluzioni alternative e le procedure di diagnostica.
 
-Con [Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/introduction), un servizio di database distribuito a livello globale, gli sviluppatori possono lavorare con i dati usando un'ampia varietà di API standard. Spring Data Azure Cosmos DB SDK è basato sul framework [Spring Data](https://spring.io/projects/spring-data) e prevede l'integrazione con Azure Cosmos DB tramite l'API SQL. Per informazioni sul supporto di altre API, vedere:
+Con [Azure Cosmos DB](/azure/cosmos-db/introduction), un servizio di database distribuito a livello globale, gli sviluppatori possono lavorare con i dati usando un'ampia varietà di API standard. Spring Data Azure Cosmos DB SDK è basato sul framework [Spring Data](https://spring.io/projects/spring-data) e prevede l'integrazione con Azure Cosmos DB tramite l'API SQL. Per informazioni sul supporto di altre API, vedere:
 
 - [Usare l'API MongoDB per Spring Data con Azure Cosmos DB](./configure-spring-data-mongodb-with-cosmos-db.md)
 - [Usare l'API Apache Cassandra per Spring Data con Azure Cosmos DB](./configure-spring-data-apache-cassandra-with-cosmos-db.md)
@@ -97,7 +97,7 @@ String[] includePaths; // The included paths for indexing.
 String[] excludePaths; // The excluded paths for indexing.
 ```
 
-L'SDK supporta il partizionamento. Per altre informazioni, vedere [Partizionamento e scalabilità orizzontale in Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/partitioning-overview). Per specificare un campo di una classe di dominio da usare come campo della chiave di partizione, annotarlo con `@PartitionKey`. Quindi, quando si eseguono operazioni CRUD, specificare il valore della partizione.
+L'SDK supporta il partizionamento. Per altre informazioni, vedere [Partizionamento e scalabilità orizzontale in Azure Cosmos DB](/azure/cosmos-db/partitioning-overview). Per specificare un campo di una classe di dominio da usare come campo della chiave di partizione, annotarlo con `@PartitionKey`. Quindi, quando si eseguono operazioni CRUD, specificare il valore della partizione.
 
 L'esempio seguente illustra come usare l'annotazione `@PartitionKey` durante l'esecuzione di operazioni CRUD.
 

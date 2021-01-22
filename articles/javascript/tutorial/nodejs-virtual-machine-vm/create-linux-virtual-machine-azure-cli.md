@@ -4,12 +4,12 @@ description: Usare l'interfaccia della riga di comando di Azure per creare e con
 ms.topic: tutorial
 ms.date: 01/05/2021
 ms.custom: devx-track-js
-ms.openlocfilehash: a618c9584775a7c384f05ef01a563943c48f2b3a
-ms.sourcegitcommit: 075f39972e390e79ed09a3fcfdbfc776727e08fc
-ms.translationtype: HT
+ms.openlocfilehash: baed6874a89a8291e3a1b03c45db43565428ff20
+ms.sourcegitcommit: 593d177cfb5f56f236ea59389e43a984da30f104
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97952503"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98561667"
 ---
 # <a name="3-create-linux-virtual-machine-using-azure-cli"></a>3. Creare una macchina virtuale Linux usando l'interfaccia della riga di comando di Azure
 
@@ -33,7 +33,7 @@ Il comando `runcmd` ha diverse attività:
 
 ## <a name="create-a-virtual-machine-resource"></a>Creare una risorsa di macchina virtuale 
 
-Immettere il [comando dell'interfaccia della riga di comando di Azure](/cli/azure/vm?view=azure-cli-latest#az_vm_create) in un terminale per creare una risorsa di Azure di una macchina virtuale Linux. Il comando crea la macchina virtuale dal file cloud-init e genera le chiavi SSH. Il comando in esecuzione visualizza la posizione di archiviazione delle chiavi. 
+Immettere il [comando dell'interfaccia della riga di comando di Azure](/cli/azure/vm#az_vm_create) in un terminale per creare una risorsa di Azure di una macchina virtuale Linux. Il comando crea la macchina virtuale dal file cloud-init e genera le chiavi SSH. Il comando in esecuzione visualizza la posizione di archiviazione delle chiavi. 
 
 ```azurecli
 az vm create \
@@ -51,7 +51,7 @@ Il processo potrebbe richiedere alcuni minuti. Al termine del processo, l'interf
 
 ## <a name="open-port-for-virtual-machine"></a>Aprire la porta per la macchina virtuale
 
-Al momento della creazione, la macchina virtuale _non_ ha porte aperte. Aprire la porta 80 con il [comando dell'interfaccia della riga di comando di Azure](/cli/azure/vm?view=azure-cli-latest#az_vm_open_port) seguente in modo che l'app Web sia disponibile pubblicamente:
+Al momento della creazione, la macchina virtuale _non_ ha porte aperte. Aprire la porta 80 con il [comando dell'interfaccia della riga di comando di Azure](/cli/azure/vm#az_vm_open_port) seguente in modo che l'app Web sia disponibile pubblicamente:
 
 ```azurecli
 az vm open-port \

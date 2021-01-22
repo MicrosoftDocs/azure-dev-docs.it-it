@@ -5,12 +5,12 @@ keywords: jenkins, azure, devops, java, funzioni di azure
 ms.topic: tutorial
 ms.date: 01/11/2021
 ms.custom: devx-track-jenkins,devx-track-cli
-ms.openlocfilehash: 51807b1a3038d17278a6015d387b84e68aac71f5
-ms.sourcegitcommit: 347bfa3b6c34579c567d1324efc63c1d6672a75b
-ms.translationtype: HT
+ms.openlocfilehash: b2c616dd6d0a2a659a25527072358e8f1095e414
+ms.sourcegitcommit: 593d177cfb5f56f236ea59389e43a984da30f104
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98109030"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98561057"
 ---
 # <a name="tutorial-deploy-to-azure-functions-using-jenkins"></a>Esercitazione: Eseguire la distribuzione in Funzioni di Azure con Jenkins
 
@@ -78,7 +78,7 @@ La procedura seguente descrive come preparare il server Jenkins:
     sudo apt-get install azure-functions-core-tools-3
     ```
 
-1. Jenkins richiede un'entità servizio di Azure per l'autenticazione e l'accesso alle risorse di Azure. Per istruzioni dettagliate, fare riferimento a [Eseguire la distribuzione in Servizio app di Azure](./deploy-from-github-to-azure-app-service.md).
+1. Jenkins richiede un'entità servizio di Azure per l'autenticazione e l'accesso alle risorse di Azure. Per istruzioni dettagliate, fare riferimento a [Eseguire la distribuzione in Servizio app di Azure](./deploy-to-azure-app-service-using-azure-cli.md).
 
 1. Verificare che il [plug-in Credentials](https://plugins.jenkins.io/credentials/) sia installato.
 

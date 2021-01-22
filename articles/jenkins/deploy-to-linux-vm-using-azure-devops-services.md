@@ -5,12 +5,12 @@ keywords: jenkins, azure, devops, macchina virtuale, cicd, azure devops services
 ms.topic: tutorial
 ms.date: 07/31/2018
 ms.custom: devx-track-jenkins
-ms.openlocfilehash: e1c5c9b06cff7419ac98b08553d143c7449746b8
-ms.sourcegitcommit: 4dac39849ba2e48034ecc91ef578d11aab796e58
-ms.translationtype: HT
+ms.openlocfilehash: 66890b5284179f3417295f477b8dc576258c2367
+ms.sourcegitcommit: 0eb25e1fdafcd64118843748dc061f60e7e48332
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94983650"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98669168"
 ---
 # <a name="tutorial-deploy-to-linux-virtual-machine-using-jenkins-and-azure-devops-services"></a>Esercitazione: Eseguire la distribuzione in macchine virtuali Linux con Jenkins e Azure DevOps Services
 
@@ -30,12 +30,10 @@ in un [gruppo di distribuzione](/azure/devops/pipelines/release/deployment-group
 > * Creare una pipeline di versione in Azure Pipelines.
 > * Eseguire distribuzioni manuali e attivate da CI.
 
-## <a name="before-you-begin"></a>Prima di iniziare
+## <a name="prerequisites"></a>Prerequisiti
 
-* È necessario l'accesso a un server Jenkins. Se non si è ancora creato un server Jenkins, vedere [Creare un master Jenkins in una macchina virtuale di Azure](/azure/jenkins/install-jenkins-solution-template). 
-
-* Accedere all'organizzazione di Azure DevOps Services (**https://{yourorganization}.visualstudio.com**). 
-  È possibile ottenere un'[organizzazione di Azure DevOps Services gratuita](https://go.microsoft.com/fwlink/?LinkId=307137&clcid=0x409&wt.mc_id=o~msft~vscom~home-vsts-hero~27308&campaign=o~msft~vscom~home-vsts-hero~27308).
+- **Sottoscrizione di Azure**: Se non si ha una sottoscrizione di Azure, [creare un account Azure gratuito](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio) prima di iniziare.
+- **Server Jenkins**: se non è installato un server Jenkins, [creare un server Jenkins in Azure](./configure-on-linux-vm.md).
 
   > [!NOTE]
   > Per altre informazioni, vedere [Connettersi ad Azure DevOps Services](/azure/devops/organizations/projects/connect-to-projects).

@@ -4,12 +4,12 @@ description: Parte 4 dell'esercitazione, distribuire il sito Web con l'interfacc
 ms.topic: tutorial
 ms.date: 12/14/2020
 ms.custom: devx-track-js, devx-track-azurecli
-ms.openlocfilehash: 7dc0369615f58e8677b479b28c2223d3fa865b19
-ms.sourcegitcommit: 1dfcc022a3098b1a1505e9458eada35f527ef070
-ms.translationtype: HT
+ms.openlocfilehash: 368597fb10397f7e7ba8feb82b29d031c292dab0
+ms.sourcegitcommit: 593d177cfb5f56f236ea59389e43a984da30f104
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97658410"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98561007"
 ---
 # <a name="deploy-the-app-to-app-service"></a>Distribuire l'app nel Servizio app
 
@@ -31,7 +31,7 @@ In questo passaggio il codice dell'app Node.js viene distribuito nel Servizio ap
     az webapp deployment user set --user-name <username> --password <password>
     ```
 
-1. Eseguire il comando seguente per [recuperare l'endpoint Git con l'interfaccia della riga di comando di Azure](/cli/azure/webapp/deployment/source?view=azure-cli-latest&preserve-view=false) in cui eseguire il push del codice dell'app, sostituendo `<your_app_name>` con il nome usato per creare il servizio app nel passaggio precedente:
+1. Eseguire il comando seguente per [recuperare l'endpoint Git con l'interfaccia della riga di comando di Azure](/cli/azure/webapp/deployment/source) in cui eseguire il push del codice dell'app, sostituendo `<your_app_name>` con il nome usato per creare il servizio app nel passaggio precedente:
 
     ```azurecli
     az webapp deployment source config-local-git --name <your_app_name>

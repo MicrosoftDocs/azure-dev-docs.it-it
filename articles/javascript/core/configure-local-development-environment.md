@@ -4,12 +4,12 @@ description: Informazioni su come configurare un ambiente di sviluppo JavaScript
 ms.date: 11/05/2020
 ms.topic: conceptual
 ms.custom: devx-track-js, azure-sdk-javascript-ai-text-analytics-5.0.0
-ms.openlocfilehash: 9d542d188205b305a0909e229ed2e71e003e95f7
-ms.sourcegitcommit: 525c4b41d85aae9c3026a070b07e00c2241ea716
-ms.translationtype: HT
+ms.openlocfilehash: 9cc5cde0d16c4d5ec51395656ada591dd02345f1
+ms.sourcegitcommit: 593d177cfb5f56f236ea59389e43a984da30f104
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97393870"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98561707"
 ---
 # <a name="configure-your-local-javascript-dev-environment-for-azure"></a>Configurare l'ambiente di sviluppo JavaScript locale per Azure
 
@@ -45,7 +45,7 @@ Le installazioni comuni seguenti in workstation locali sono consigliate per semp
 
 |Nome/Programma di installazione|Descrizione|
 |--|--|
-|[Interfaccia della riga di comando di Azure](/cli/azure/get-started-with-azure-cli?view=azure-cli-latest) o [estensioni di Visual Studio Code per Azure](https://marketplace.visualstudio.com/search?term=azure&target=VSCode&category=All%20categories&sortBy=Relevance) |Azure viene in genere usato tramite il [portale di Azure](https://ms.portal.azure.com/), l'interfaccia della riga di comando di Azure o specifiche estensioni di Visual Studio Code per Azure. Anche se non è necessario avere l'interfaccia della riga di comando di Azure, se non diversamente specificato in una guida di avvio rapido o in un'esercitazione, si tratta di un singolo strumento per l'uso di Azure, mentre Visual Studio Code fornisce la stessa funzionalità con una specifica estensione per ogni singolo servizio.|
+|[Interfaccia della riga di comando di Azure](/cli/azure/get-started-with-azure-cli) o [estensioni di Visual Studio Code per Azure](https://marketplace.visualstudio.com/search?term=azure&target=VSCode&category=All%20categories&sortBy=Relevance) |Azure viene in genere usato tramite il [portale di Azure](https://ms.portal.azure.com/), l'interfaccia della riga di comando di Azure o specifiche estensioni di Visual Studio Code per Azure. Anche se non è necessario avere l'interfaccia della riga di comando di Azure, se non diversamente specificato in una guida di avvio rapido o in un'esercitazione, si tratta di un singolo strumento per l'uso di Azure, mentre Visual Studio Code fornisce la stessa funzionalità con una specifica estensione per ogni singolo servizio.|
 | [git](https://git-scm.com/downloads) | Strumenti da riga di comando per il controllo del codice sorgente. Se si preferisce, è possibile usare uno strumento diverso per il controllo del codice sorgente. |
 
 
@@ -130,7 +130,7 @@ git init
 
 Da qui è possibile usare comandi come `git add` e `git commit` per eseguire il commit delle modifiche. Eseguendo regolarmente il commit delle modifiche, viene creata una cronologia di commit con cui è possibile ripristinare uno stato precedente.
 
-Per eseguire un backup online del progetto, è anche consigliabile caricare il repository in [GitHub](https://github.com) o in [Azure DevOps](/azure/devops/user-guide/code-with-git?view=azure-devops). Se è già stato inizializzato un repository locale, usare `git remote add` per collegarlo a GitHub o ad Azure DevOps.
+Per eseguire un backup online del progetto, è anche consigliabile caricare il repository in [GitHub](https://github.com) o in [Azure DevOps](/azure/devops/user-guide/code-with-git). Se è già stato inizializzato un repository locale, usare `git remote add` per collegarlo a GitHub o ad Azure DevOps.
 
 La documentazione per Git è disponibile all'indirizzo [git-scm.com/docs](https://git-scm.com/docs) e ovunque su Internet.
 
@@ -142,4 +142,4 @@ Visual Studio Code include una serie di funzionalità Git predefinite. Per altre
 
 * [Creare e usare un'entità servizio](node-sdk-azure-authenticate-principal.md)
 * [Eseguire l'autenticazione con i moduli di Azure per Node.js](node-sdk-azure-authenticate.md)
-* [Distribuire un sito Web statico in Azure da Visual Studio Code](../tutorial-vscode-static-website-node-01.md)
+* [Distribuire un sito Web statico in Azure da Visual Studio Code](../tutorial/tutorial-vscode-static-website-node/tutorial-vscode-static-website-node-01.md)

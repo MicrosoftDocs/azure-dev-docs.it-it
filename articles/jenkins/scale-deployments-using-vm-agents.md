@@ -5,12 +5,12 @@ keywords: jenkins, azure, devops, macchina virtuale, agenti
 ms.topic: tutorial
 ms.date: 01/08/2021
 ms.custom: devx-track-jenkins,devx-track-jenkins
-ms.openlocfilehash: c498a43d5a8d57a75a5592de279b79a75b8e6360
-ms.sourcegitcommit: 347bfa3b6c34579c567d1324efc63c1d6672a75b
-ms.translationtype: HT
+ms.openlocfilehash: 599fe9875d1f9ffd107cca80f9445bba18100f42
+ms.sourcegitcommit: 593d177cfb5f56f236ea59389e43a984da30f104
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98109093"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98561037"
 ---
 # <a name="tutorial-scale-jenkins-deployments-with-vm-running-in-azure"></a>Esercitazione: Ridimensionare le distribuzioni di Jenkins con macchine virtuali in esecuzione in Azure
 
@@ -169,4 +169,4 @@ Una volta definite le configurazioni, Jenkins aggiunge la macchina virtuale come
 ## <a name="next-steps"></a>Passaggi successivi
 
 > [!div class="nextstepaction"]
-> [Integrazione continua e distribuzione continua per i Siti Web di Microsoft Azure](deploy-from-github-to-azure-app-service.md)
+> [Integrazione continua e distribuzione continua per i Siti Web di Microsoft Azure](./deploy-to-azure-app-service-using-azure-cli.md)

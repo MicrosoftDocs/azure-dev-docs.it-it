@@ -5,14 +5,14 @@ author: dbradish-microsoft
 ms.author: dbradish
 manager: barbkess
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 7a920e9f9e88b1f9a20d71ee149ca5b827d16ad8
-ms.sourcegitcommit: 75a1f26aaff48a89631805df4b4a0c006de6a271
-ms.translationtype: HT
+ms.openlocfilehash: c6b48d006c0e0fea2260f9f310ed161ddf98ab54
+ms.sourcegitcommit: 593d177cfb5f56f236ea59389e43a984da30f104
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98147452"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98561073"
 ---
-- Usare [Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/quickstart) tramite l'ambiente bash.
+- Usare [Azure Cloud Shell](/azure/cloud-shell/quickstart) tramite l'ambiente bash.
 
    [![Avviare Cloud Shell in una nuova finestra](./media/hdi-launch-cloud-shell.png)](https://shell.azure.com)   
 - Se si preferisce, [installare](/cli/azure/install-azure-cli) l'interfaccia della riga di comando di Azure per eseguire i relativi comandi di riferimento.

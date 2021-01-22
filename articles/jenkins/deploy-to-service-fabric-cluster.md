@@ -5,12 +5,12 @@ keywords: jenkins, azure, devops, cicd, linux, service fabric, cluster
 ms.topic: tutorial
 ms.date: 07/31/2018
 ms.custom: devx-track-jenkins
-ms.openlocfilehash: 012a827870d648b7a50e1685b5fab8b2730eb548
-ms.sourcegitcommit: 4dac39849ba2e48034ecc91ef578d11aab796e58
-ms.translationtype: HT
+ms.openlocfilehash: a995ba92202955628f39b2c26fe7a158c470d971
+ms.sourcegitcommit: 0eb25e1fdafcd64118843748dc061f60e7e48332
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94983980"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98669170"
 ---
 # <a name="tutorial-deploy-to-a-service-fabric-cluster"></a>Esercitazione: Eseguire la distribuzione in un cluster di Service Fabric
 
@@ -303,7 +303,7 @@ Per gli ambienti di sviluppo e test, è possibile configurare le credenziali di 
 1. Tornando in **Service Fabric Cluster Configuration** (Configurazione cluster di Service Fabric), assicurarsi che le nuove credenziali siano selezionate per **Azure Credentials** (Credenziali di Azure). 
 1. Nell'elenco a discesa **Resource Group** (Gruppo di risorse) selezionare il gruppo di risorse del cluster in cui si vuole distribuire l'applicazione.
 1. Nell'elenco a discesa **Service Fabric** selezionare il cluster in cui si vuole distribuire l'applicazione.
-1. Per **Client Key** (Chiave client) e **Client Cert** (Certificato client), immettere il percorso del file PEM nel contenitore di Jenkins. Ad esempio `/var/jenkins_home/clustercert.pem`. 
+1. Per **Client Key** (Chiave client) e **Client Cert** (Certificato client), immettere il percorso del file PEM nel contenitore di Jenkins. Ad esempio `/var/jenkins_home/clustercert.pem`.
 1. In **Application Configuration** (Configurazione applicazione) configurare i campi **Application Name** (Nome applicazione), **Application Type** (Tipo applicazione) e **Path to Application Manifest** (Percorso manifesto dell'applicazione) (relativo).
     ![Azione di post-compilazione di Jenkins per Service Fabric - Configurare le credenziali di Azure](./media/deploy-to-service-fabric-cluster/post-build-credentials.png)
 1. Fare clic su **Verify configuration**. Se la verifica ha esito positivo, fare clic su **Save** (Salva). La pipeline di processo Jenkins è ora completamente configurata. Continuare con [Passaggi successivi](#next-steps) per testare la distribuzione.

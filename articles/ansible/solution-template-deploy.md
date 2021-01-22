@@ -5,19 +5,19 @@ keywords: ansible, azure, devops, modello di soluzione, macchina virtuale, Ident
 ms.topic: quickstart
 ms.date: 04/30/2019
 ms.custom: devx-track-ansible
-ms.openlocfilehash: cae15f8a69151b7692edde3c8fb36a9818a0e305
-ms.sourcegitcommit: 2f832baf90c208a8a69e66badef5f126d23bbaaf
-ms.translationtype: HT
+ms.openlocfilehash: 1cad21fb3cebe9675032fa399aefb7ca329d9733
+ms.sourcegitcommit: 593d177cfb5f56f236ea59389e43a984da30f104
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88725185"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98561757"
 ---
 # <a name="quickstart-deploy-the-ansible-solution-template-for-azure-to-centos"></a>Guida introduttiva: Distribuire il modello di soluzione Ansible per Azure in CentOS
 
 Il modello di soluzione Ansible per Azure è progettato per configurare un'istanza di Ansible in una macchina virtuale CentOS insieme ad Ansible e a una suite di strumenti configurati per funzionare con Azure. Gli strumenti comprendono:
 
 - **Moduli Ansible per Azure**: i [moduli Ansible per Azure](./module-version-matrix.md) sono una suite di moduli che consente di creare e gestire l'infrastruttura in Azure. Per impostazione predefinita viene restituita la versione più recente di questi moduli. Tuttavia, durante il processo di distribuzione del modello di soluzione, è possibile specificare un numero di versione appropriato per l'ambiente.
-- **Interfaccia della riga di comando di Azure 2.0 (CLI)** : l'[interfaccia della riga di comando di Azure 2.0](/cli/azure/?view=azure-cli-latest) è un comando multipiattaforma per la gestione delle risorse di Azure. 
+- **Interfaccia della riga di comando di Azure 2.0 (CLI)** : l'[interfaccia della riga di comando di Azure 2.0](/cli/azure/) è un comando multipiattaforma per la gestione delle risorse di Azure. 
 - **Identità gestite per le risorse di Azure**: la funzionalità delle [identità gestite per le risorse di Azure](/azure/active-directory/managed-identities-azure-resources/overview) risolve il problema della sicurezza delle credenziali dell'applicazione cloud.
 
 ## <a name="prerequisites"></a>Prerequisiti
@@ -79,7 +79,7 @@ Il modello di soluzione Ansible per Azure è progettato per configurare un'istan
 
 1. Selezionare l'icona **Notifiche** in alto nella pagina del sito per tenere traccia della distribuzione di Ansible. Una volta completata la distribuzione, selezionare **Vai al gruppo di risorse**. 
 
-     ![Scheda Riepilogo di Ansible nel portale di Azure](./media/solution-template-deploy/portal-ansible-setup-complete.png)
+     ![Notifica di portale di Azure per la distribuzione di Ansible](./media/solution-template-deploy/portal-ansible-setup-complete.png)
 
 1. Nella pagina del gruppo di risorse, ottenere l'indirizzo IP dell'host di Ansible e accedere per gestire le risorse di Azure con Ansible.
 

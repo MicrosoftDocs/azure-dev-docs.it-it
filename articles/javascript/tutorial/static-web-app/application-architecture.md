@@ -4,12 +4,12 @@ description: Questa sezione dell'esercitazione descrive l'app client e il proces
 ms.topic: tutorial
 ms.date: 12/17/2020
 ms.custom: devx-track-js
-ms.openlocfilehash: 12d156591393607f4cb40094fa00dda1a0f947fd
-ms.sourcegitcommit: 1c508f5ba73a12e4baeacc88ad9a8359301acb50
-ms.translationtype: HT
+ms.openlocfilehash: b8949b355ec30775dfacf5ea77db53edb595578c
+ms.sourcegitcommit: 593d177cfb5f56f236ea59389e43a984da30f104
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97690793"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98561647"
 ---
 # <a name="2-application-architecture-for-static-web-app-with-computer-vision"></a>2. Architettura dell'app Web statica con Visione artificiale
 
@@ -22,7 +22,7 @@ Quando si compilano app Web statiche, sono disponibili diverse opzioni in Azure,
 ## <a name="client-application-architecture"></a>Architettura dell'applicazione client
 
 Il client React (create-react-app) fornisce le funzionalità seguenti: 
-* Visualizza un messaggio se la chiave e l'endpoint di Azure per [**Visione artificiale**](https://docs.microsoft.com/azure/cognitive-services/computer-vision/) di Servizi cognitivi non sono stati trovati
+* Visualizza un messaggio se la chiave e l'endpoint di Azure per [**Visione artificiale**](/azure/cognitive-services/computer-vision/) di Servizi cognitivi non sono stati trovati
 * Consente di analizzare un'immagine con Visione artificiale di Servizi cognitivi
     * Immettere un URL di immagine pubblico o analizzare l'immagine dalla raccolta
     * Al termine dell'analisi
@@ -36,7 +36,7 @@ Il client React (create-react-app) fornisce le funzionalità seguenti:
 L'azione GitHub inizia quando viene eseguito un push in un ramo specifico:
 * Inserisce i segreti GitHub per la chiave e l'endpoint di Visione artificiale nella build
 * Compila il client React (create-react-app)
-* Sposta i file risultanti nella risorsa [**app Web statica**](https://docs.microsoft.com/azure/static-web-apps) di Azure
+* Sposta i file risultanti nella risorsa [**app Web statica**](/azure/static-web-apps) di Azure
 
 > [!div class="nextstepaction"]
-> [Scaricare ed eseguire l'app React Image Analyzer di Servizi cognitivi in locale](run-the-react-cognitive-services-image-analyzer-app-locally.md) 
+> [Scaricare ed eseguire l'app React Image Analyzer di Servizi cognitivi in locale](run-the-react-cognitive-services-image-analyzer-app-locally.md)

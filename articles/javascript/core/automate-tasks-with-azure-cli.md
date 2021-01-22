@@ -4,12 +4,12 @@ description: L'automazione delle attività di Azure è un requisito comune per l
 ms.topic: conceptual
 ms.date: 12/16/2020
 ms.custom: devx-track-js
-ms.openlocfilehash: 7cfce90d8d0daf861dab9ba02e46ce489ae10742
-ms.sourcegitcommit: 0d2ea78f18430c845a32e0d2311427ab81033465
-ms.translationtype: HT
+ms.openlocfilehash: c2df54b23baab71cbdedb03fe5990f53dd0c807a
+ms.sourcegitcommit: 593d177cfb5f56f236ea59389e43a984da30f104
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/23/2020
-ms.locfileid: "97754057"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98561137"
 ---
 # <a name="automate-tasks-with-azure-cli"></a>Automatizzare le attività con l'interfaccia della riga di comando di Azure
 
@@ -33,7 +33,7 @@ Per l'automazione, è necessario che l'interfaccia della riga di comando di Azur
 
 Una volta installata l'interfaccia della riga di comando di Azure, è necessario accedere per continuare a eseguire i relativi comandi. Per l'automazione, è possibile eseguire l'autenticazione con l'interfaccia della riga di comando di Azure.
 
-**Documentazione di riferimento**: [az login](/cli/azure/reference-index?view=azure-cli-latest#az-login)
+**Documentazione di riferimento**: [az login](/cli/azure/reference-index#az-login)
 
 L'[identità gestita](/cli/azure/authenticate-azure-cli#sign-in-with-a-managed-identity) è la scelta consigliata per l'autenticazione.
 
@@ -62,7 +62,7 @@ az login -u <MY_AZURE_USERNAME> -p <MY_AZURE_PASSWORD>
 
 Un gruppo di risorse è una raccolta logica delle risorse di Azure. Il raggruppamento logico è basato sui servizi necessari in un'area specifica per un progetto. Vedere informazioni sulle [convenzioni di denominazione](/azure/cloud-adoption-framework/ready/azure-best-practices/resource-naming).
 
-**Documentazione di riferimento**: [az group create](/cli/azure/group?view=azure-cli-latest#az_group_create)
+**Documentazione di riferimento**: [az group create](/cli/azure/group#az_group_create)
 
 ```azurecli
 az group create \
@@ -79,11 +79,11 @@ Un'app Web statica contiene codice per:
 
 L'app può usare funzioni di Azure per le API serverless, ma questo non è un requisito per le app Web statiche. 
 
-**Documentazione di riferimento**: [az staticwebapp](/cli/azure/staticwebapp?view=azure-cli-latest)
+**Documentazione di riferimento**: [az staticwebapp](/cli/azure/staticwebapp)
 
 ### <a name="create-azure-static-web-app"></a>Creare l'app Web statica di Azure 
 
-**Documentazione di riferimento**: [az staticwebapp create](/cli/azure/staticwebapp?view=azure-cli-latest#az_staticwebapp_create)
+**Documentazione di riferimento**: [az staticwebapp create](/cli/azure/staticwebapp#az_staticwebapp_create)
 
 ```azurecli
 az staticwebapp create \
@@ -112,7 +112,7 @@ git push origin main
 
 ### <a name="delete-static-web-app"></a>Eliminare un'app Web statica 
 
-**Documentazione di riferimento**: [az staticwebapp delete](/cli/azure/staticwebapp?view=azure-cli-latest#az_staticwebapp_delete)
+**Documentazione di riferimento**: [az staticwebapp delete](/cli/azure/staticwebapp#az_staticwebapp_delete)
 
 ```azurecli
 az staticwebapp delete && \

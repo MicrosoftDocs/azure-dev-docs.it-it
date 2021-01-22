@@ -4,16 +4,16 @@ description: Parte 1 dell'esercitazione, introduzione e prerequisiti dell'interf
 ms.topic: tutorial
 ms.date: 09/24/2019
 ms.custom: devx-track-js, devx-track-azurecli
-ms.openlocfilehash: c2cb0bad794a80370b544c2817a3c7f602a19451
-ms.sourcegitcommit: 1dfcc022a3098b1a1505e9458eada35f527ef070
-ms.translationtype: HT
+ms.openlocfilehash: 0acd3fd910055615ce148ecdee594240df42a558
+ms.sourcegitcommit: 593d177cfb5f56f236ea59389e43a984da30f104
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97658415"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98561607"
 ---
 # <a name="deploy-to-azure-app-service-using-the-azure-cli"></a>Eseguire la distribuzione nel Servizio app di Azure tramite l'interfaccia della riga di comando di Azure
 
-In questa esercitazione si distribuisce un'applicazione Node.js nel Servizio app di Azure tramite l'[interfaccia della riga di comando di Azure](/cli/azure/overview?view=azure-cli-latest&preserve-view=false), che può essere eseguita in tutti i sistemi operativi. Con l'interfaccia della riga di comando è possibile creare risorse di Azure, configurare una pipeline di distribuzione tra un repository Git e Azure e visualizzare l'output `console.log` dell'app.
+In questa esercitazione si distribuisce un'applicazione Node.js nel Servizio app di Azure tramite l'[interfaccia della riga di comando di Azure](/cli/azure/overview), che può essere eseguita in tutti i sistemi operativi. Con l'interfaccia della riga di comando è possibile creare risorse di Azure, configurare una pipeline di distribuzione tra un repository Git e Azure e visualizzare l'output `console.log` dell'app.
 
 ## <a name="prerequisites"></a>Prerequisites
 

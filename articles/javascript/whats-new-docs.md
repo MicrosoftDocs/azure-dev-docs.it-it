@@ -3,12 +3,12 @@ title: Novità della documentazione di JavaScript
 description: Novità della documentazione di JavaScript nel Developer Center
 ms.topic: conceptual
 ms.date: 01/05/2021
-ms.openlocfilehash: 507c52491784a508535ae07f4a9b2755fa68cc1b
-ms.sourcegitcommit: 075f39972e390e79ed09a3fcfdbfc776727e08fc
-ms.translationtype: HT
+ms.openlocfilehash: 71f4db11833d0c5346ee6204c94ecd943bb4f126
+ms.sourcegitcommit: 0eb25e1fdafcd64118843748dc061f60e7e48332
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97952453"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98669150"
 ---
 # <a name="javascript-docs-whats-new"></a>Documentazione di JavaScript: Novità
 
@@ -21,7 +21,7 @@ Contenuti nuovi e aggiornati disponibili per sviluppatori JavaScript e TypeScrip
 |Nome|Note|
 |---------------------------------------|--|
 |[**Per principianti**](learn-azure-javascript.md#getting-started)|Varie raccolte di materiali online per iniziare a usare JavaScript, Node.js, sviluppo Web e altre aree di interesse per gli sviluppatori JavaScript.|
-|[Principali attività comuni per sviluppatori JavaScript](how-to/common-javascript-tasks.md)|Un esempio delle attività correnti.|
+|[Attività principali per sviluppatori JavaScript](how-to/common-javascript-tasks.md)|Un esempio delle attività correnti.|
 
 ## <a name="2020-december"></a>Dicembre 2020
 
@@ -42,9 +42,9 @@ Contenuti nuovi e aggiornati disponibili per sviluppatori JavaScript e TypeScrip
 
 |Nome|
 |---------------------------------------|
-|App Web statica, JavaScript, CodeTour: Usare le statistiche del basket per ottimizzare la riproduzione dei giochi con Visual Studio Code, su ispirazione di SPACE JAM NEW LEGENDS - [Learn](https://docs.microsoft.com/learn/paths/optimize-basketball-games-with-machine-learning/)|
-|Creare un semplice sito Web con HTML, CSS e JavaScript - [Learn](https://docs.microsoft.com/learn/modules/build-simple-website/)|
-|Usare Visual Studio Code per creare un dashboard JavaScript e Vue.js con un'API serverless basata su Funzioni di Azure e Node.js. - [Learn](https://docs.microsoft.com/learn/modules/build-api-azure-functions)|
+|App Web statica, JavaScript, CodeTour: Usare le statistiche del basket per ottimizzare la riproduzione dei giochi con Visual Studio Code, su ispirazione di SPACE JAM NEW LEGENDS - [Learn](/learn/paths/optimize-basketball-games-with-machine-learning/)|
+|Creare un semplice sito Web con HTML, CSS e JavaScript - [Learn](/learn/modules/build-simple-website/)|
+|Usare Visual Studio Code per creare un dashboard JavaScript e Vue.js con un'API serverless basata su Funzioni di Azure e Node.js. - [Learn](/learn/modules/build-api-azure-functions)|
 
 ## <a name="2020-november"></a>Novembre 2020
 
