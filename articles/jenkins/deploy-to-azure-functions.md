@@ -5,12 +5,12 @@ keywords: jenkins, azure, devops, java, funzioni di azure
 ms.topic: tutorial
 ms.date: 01/11/2021
 ms.custom: devx-track-jenkins,devx-track-cli
-ms.openlocfilehash: b2c616dd6d0a2a659a25527072358e8f1095e414
-ms.sourcegitcommit: 593d177cfb5f56f236ea59389e43a984da30f104
+ms.openlocfilehash: 5e246b21f44de9ccb9b876827b44d01f456e60fd
+ms.sourcegitcommit: 3d906f265b748fbc0a070fce252098675674c8d9
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/18/2021
-ms.locfileid: "98561057"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98699949"
 ---
 # <a name="tutorial-deploy-to-azure-functions-using-jenkins"></a>Esercitazione: Eseguire la distribuzione in Funzioni di Azure con Jenkins
 
@@ -80,19 +80,19 @@ La procedura seguente descrive come preparare il server Jenkins:
 
 1. Jenkins richiede un'entità servizio di Azure per l'autenticazione e l'accesso alle risorse di Azure. Per istruzioni dettagliate, fare riferimento a [Eseguire la distribuzione in Servizio app di Azure](./deploy-to-azure-app-service-using-azure-cli.md).
 
-1. Verificare che il [plug-in Credentials](https://plugins.jenkins.io/credentials/) sia installato.
+1. Verificare che il [plug-in delle credenziali](https://plugins.jenkins.io/credentials/) sia installato.
 
     1. Nel menu selezionare **Manage Jenkins** (Gestisci Jenkins).
 
-    1. In **System Configuration** (Configurazione del sistema) selezionare **Manage Plugins** (Gestisci plug-in).
+    1. In **configurazione sistema** selezionare **Gestisci plug-in**.
 
     1. Selezionare la scheda **Installati**.
 
     1. Nel campo del **filtro** immettere `credentials`.
     
-    1. Verificare che il **plug-in Credentials** sia installato. Se non lo è, occorre installarlo dalla scheda **Available** (Disponibili).
+    1. Verificare che il **plug-in delle credenziali** sia installato. Se non lo è, occorre installarlo dalla scheda **Available** (Disponibili).
 
-    ![Il plug-in Credentials deve essere installato.](./media/deploy-to-azure-functions/credentials-plugin.png)
+    ![È necessario installare il plug-in delle credenziali.](./media/deploy-to-azure-functions/credentials-plugin.png)
 
 1. Nel menu selezionare **Manage Jenkins** (Gestisci Jenkins).
 

@@ -5,12 +5,12 @@ keywords: jenkins, azure, devops, cicd, linux, service fabric, cluster
 ms.topic: tutorial
 ms.date: 07/31/2018
 ms.custom: devx-track-jenkins
-ms.openlocfilehash: a995ba92202955628f39b2c26fe7a158c470d971
-ms.sourcegitcommit: 0eb25e1fdafcd64118843748dc061f60e7e48332
+ms.openlocfilehash: 91e4602184ab1351c935a083841e045f9b764308
+ms.sourcegitcommit: 3d906f265b748fbc0a070fce252098675674c8d9
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98669170"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98699929"
 ---
 # <a name="tutorial-deploy-to-a-service-fabric-cluster"></a>Esercitazione: Eseguire la distribuzione in un cluster di Service Fabric
 
@@ -20,7 +20,7 @@ Questa esercitazione illustra le diverse modalità di configurazione possibili p
 1. Seguire quindi i passaggi descritti in una di queste sezioni per configurare Jenkins:
    * [Configurare Jenkins all'interno di un cluster di Service Fabric](#set-up-jenkins-inside-a-service-fabric-cluster), 
    * [Configurare Jenkins all'esterno di un cluster di Service Fabric](#set-up-jenkins-outside-a-service-fabric-cluster) o
-   * [Installare il plug-in Service Fabric in un ambiente Jenkins esistente](#install-service-fabric-plugin-in-an-existing-jenkins-environment).
+   * [Installare il plug-in Service fabric in un ambiente Jenkins esistente](#install-service-fabric-plug-in-in-an-existing-jenkins-environment).
 1. Dopo avere configurato Jenkins, seguire i passaggi descritti in [Creare e configurare un processo Jenkins](#create-and-configure-a-jenkins-job) per impostare GitHub in modo da attivare Jenkins quando vengono apportate modifiche all'applicazione e configurare la pipeline di processo Jenkins tramite l'istruzione di compilazione per eseguire il pull delle modifiche da GitHub e compilare l'applicazione. 
 1. Configurare infine l'istruzione di post-compilazione del processo Jenkins per distribuire l'applicazione al cluster di Service Fabric. Esistono due modi per configurare Jenkins per la distribuzione dell'applicazione a un cluster:    
    * Per gli ambienti di sviluppo e test, andare a [Configurare la distribuzione tramite l'endpoint di gestione del cluster](#configure-deployment-using-cluster-management-endpoint). Si tratta del metodo di distribuzione più semplice da configurare.
@@ -32,17 +32,17 @@ Questa esercitazione illustra le diverse modalità di configurazione possibili p
 - Questo articolo usa l'*esempio di introduzione a Service Fabric* in GitHub: [https://github.com/Azure-Samples/service-fabric-java-getting-started](https://github.com/Azure-Samples/service-fabric-java-getting-started) per l'applicazione da compilare e distribuire. È possibile creare una copia tramite fork del repository per proseguire la procedura o, con alcune modifiche alle istruzioni, usare un progetto GitHub personalizzato.
 
 
-## <a name="install-service-fabric-plugin-in-an-existing-jenkins-environment"></a>Installare il plug-in Service Fabric in un ambiente Jenkins esistente
+## <a name="install-service-fabric-plug-in-in-an-existing-jenkins-environment"></a>Installare Service Fabric plug-in in un ambiente Jenkins esistente
 
-Se si aggiunge il plug-in Service Fabric in un ambiente Jenkins esistente, è necessario seguire questa procedura:
+Se si aggiunge il plug-in Service Fabric a un ambiente Jenkins esistente, è necessario eseguire i passaggi seguenti:
 
 - [Interfaccia della riga di comando di Service Fabric (sfctl)](/azure/service-fabric/service-fabric-cli). Installare l'interfaccia della riga di comando a livello di sistema anziché a livello di utente, in modo che Jenkins possa eseguire i comandi dell'interfaccia della riga di comando. 
 - Per distribuire applicazioni Java, installare [Gradle e Open JDK 8.0](/azure/service-fabric/service-fabric-get-started-linux#set-up-java-development). 
 - Per distribuire applicazioni .NET Core 2.0, installare [.NET Core 2.0 SDK](/azure/service-fabric/service-fabric-get-started-linux#set-up-net-core-20-development). 
 
-Dopo avere installato i prerequisiti richiesti per l'ambiente, è possibile cercare il plug-in Azure Service Fabric nel Marketplace per Jenkins e installarlo.
+Dopo aver installato i prerequisiti necessari per l'ambiente, è possibile cercare il plug-in Azure Service Fabric in Jenkins Marketplace e installarlo.
 
-Dopo avere installato il plug-in, passare direttamente a [Creare e configurare un processo Jenkins](#create-and-configure-a-jenkins-job).
+Dopo aver installato il plug-in, passare a [creare e configurare un processo Jenkins](#create-and-configure-a-jenkins-job).
 
 ## <a name="set-up-jenkins-inside-a-service-fabric-cluster"></a>Configurare Jenkins all'interno di un cluster di Service Fabric
 
@@ -139,7 +139,7 @@ Dopo avere installato il plug-in, passare direttamente a [Creare e configurare u
    ```sh
    cat PATH_TO_INITIAL_ADMIN_PASSWORD # This displays the password value
    ```
-1. Nella pagina Jenkins Getting Started (Introduzione a Jenkins) selezionare l'opzione Select plugins to install (Seleziona plug-in da installare), selezionare la casella di controllo **None** (Nessuno) e quindi fare clic su Install (Installa).
+1. Nella pagina Introduzione di Jenkins scegliere l'opzione selezionare il plug-in da installare, selezionare la casella di controllo **nessuno** , quindi fare clic su Installa.
 1. Creare un utente o selezionare questa opzione per continuare come amministratore.
 
 Dopo avere configurato Jenkins, passare direttamente a [Creare e configurare un processo Jenkins](#create-and-configure-a-jenkins-job).  
@@ -157,7 +157,7 @@ Dopo avere configurato Jenkins, passare direttamente a [Creare e configurare un 
     wget -qO- https://get.docker.io/ | sh
     ```
 
-1. Eseguire il pull dell'immagine del contenitore di Jenkins per Service Fabric: `docker pull rapatchi/jenkins:latest`. Questa immagine viene fornita con il plug-in di Jenkins per Service Fabric preinstallato.
+1. Eseguire il pull dell'immagine del contenitore di Jenkins per Service Fabric: `docker pull rapatchi/jenkins:latest`. Questa immagine viene fornita con Service Fabric plug-in Jenkins pre-installato.
 1. Eseguire l'immagine del contenitore: `docker run -itd -p 8080:8080 rapatchi/jenkins:latest`
 1. Ottenere l'ID istanza dell'immagine del contenitore. È possibile elencare tutti i contenitori Docker con il comando `docker ps –a`
 1. Accedere al portale di Jenkins con questa procedura:
@@ -202,7 +202,7 @@ I passaggi descritti in questa sezione mostrano come configurare un processo Jen
 
    1. Nella pagina del repository GitHub passare a **Settings** (Impostazioni) > **Integrations and Services** (Integrazioni e servizi).
 
-   1. Selezionare **Add Service** (Aggiungi servizio), digitare **Jenkins** e selezionare il **plug-in GitHub per Jenkins**.
+   1. Selezionare **Aggiungi servizio**, digitare **Jenkins** e selezionare il **plug-in Jenkins-GitHub**.
 
    1. Immettere l'URL webhook di Jenkins (per impostazione predefinita, `http://<PublicIPorFQDN>:8081/github-webhook/`). Fare clic su **add/update service** (aggiungi/aggiorna il servizio).
 
@@ -308,9 +308,9 @@ Per gli ambienti di sviluppo e test, è possibile configurare le credenziali di 
     ![Azione di post-compilazione di Jenkins per Service Fabric - Configurare le credenziali di Azure](./media/deploy-to-service-fabric-cluster/post-build-credentials.png)
 1. Fare clic su **Verify configuration**. Se la verifica ha esito positivo, fare clic su **Save** (Salva). La pipeline di processo Jenkins è ora completamente configurata. Continuare con [Passaggi successivi](#next-steps) per testare la distribuzione.
 
-## <a name="troubleshooting-the-jenkins-plugin"></a>Risoluzione dei problemi del plug-in Jenkins
+## <a name="troubleshooting-the-jenkins-plug-in"></a>Risoluzione dei problemi del plug-in Jenkins
 
-Se si rilevano bug con i plug-in Jenkins, segnalare un problema in [Jenkins JIRA](https://issues.jenkins-ci.org/) per il componente specifico.
+Se si verificano bug con il plug-in Jenkins, archiviare un problema nel [JIRA Jenkins](https://issues.jenkins-ci.org/) per il componente specifico.
 
 ## <a name="ideas-to-try"></a>Idee da provare
 

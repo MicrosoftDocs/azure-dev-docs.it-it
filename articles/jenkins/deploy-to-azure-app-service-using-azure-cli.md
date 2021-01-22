@@ -5,12 +5,12 @@ keywords: jenkins, azure, devops, servizio app, interfaccia della riga di comand
 ms.topic: tutorial
 ms.date: 01/06/2021
 ms.custom: devx-track-jenkins, devx-track-azurecli
-ms.openlocfilehash: 1f73da29b6b1bff2abf92383d672afd5af92abe4
-ms.sourcegitcommit: 0eb25e1fdafcd64118843748dc061f60e7e48332
+ms.openlocfilehash: cc73127ad780b42a6dd82058052a9749f86f3f3c
+ms.sourcegitcommit: 3d906f265b748fbc0a070fce252098675674c8d9
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98669167"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98699959"
 ---
 # <a name="tutorial-deploy-to-azure-app-service-with-jenkins-and-the-azure-cli"></a>Esercitazione: Distribuire nel servizio app di Azure con Jenkins e l'interfaccia della riga di comando di Azure
 
@@ -58,9 +58,9 @@ I passaggi seguenti illustrano come installare il pacchetto Java JDK e Maven nec
 
 La procedura seguente illustra come specificare le credenziali di Azure:
 
-1. Verificare che il [plug-in Credentials](https://plugins.jenkins.io/credentials/) sia installato.
+1. Verificare che il [plug-in delle credenziali](https://plugins.jenkins.io/credentials/) sia installato.
 
-1. Nel dashboard di Jenkins selezionare **Credentials -> System ->** (Credenziali -> Sistema). 
+1. Nel dashboard di Jenkins selezionare **Credentials -> System ->** (Credenziali -> Sistema).
 
 1. Selezionare **Global credentials (unrestricted)** (Credenziali globali - senza restrizioni).
 
@@ -215,7 +215,7 @@ Il servizio app può anche ospitare le app Web in modo nativo in Linux per gli s
 
 1. [Installare Docker in Jenkins](https://docs.docker.com/engine/installation/linux/ubuntu/).
 
-1. Verificare che il [plug-in Docker Pipeline](https://plugins.jenkins.io/docker-workflow/) sia installato.
+1. Verificare che sia installato il [plug-in della pipeline Docker](https://plugins.jenkins.io/docker-workflow/) .
 
 1. Nello stesso repository [Simple Java Web App for Azure](https://github.com/azure-devops/javawebappsample) copiato tramite fork modificare il file **Jenkinsfile2** come segue:
 

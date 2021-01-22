@@ -4,12 +4,12 @@ description: Concetti di Azure per sviluppatori JavaScript, TypeScript e Node.js
 ms.topic: conceptual
 ms.date: 12/15/2020
 ms.custom: devx-track-js
-ms.openlocfilehash: 155add5f2c1119f028cfae966438bda4ead3e758
-ms.sourcegitcommit: f723980ade4cbc13548a5d8ac3f3fa681b8a2dbd
-ms.translationtype: HT
+ms.openlocfilehash: b6d0e54bdaf1b0ea9adba9800de58fe664df8324
+ms.sourcegitcommit: 3d906f265b748fbc0a070fce252098675674c8d9
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97601002"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98699799"
 ---
 # <a name="what-is-azure-for-javascript-developers"></a>Che cos'è Azure per sviluppatori JavaScript?
 
@@ -111,7 +111,7 @@ Gli [**SDK di Azure**](../azure-sdk-library-package-index.md) costituiscono la s
 
 Le risorse di Azure sono anche disponibili in:
 * [Interfaccia della riga di comando di Azure](/cli/azure/install-azure-cli) e [Azure Cloud Shell](https://shell.azure.com/)
-* [Azure PowerShell](/powershell/azure/?view=azps-5.2.0&preserve-view=true)
+* [Azure PowerShell](/powershell/azure/)
 * [API REST](/rest/api/azure/)
 
 ## <a name="deploy-web-apps-to-hosting-options"></a>Distribuire app Web in opzioni di hosting

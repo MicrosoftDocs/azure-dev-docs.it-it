@@ -6,12 +6,12 @@ ms.author: edburns
 ms.topic: conceptual
 ms.date: 1/27/2020
 ms.custom: devx-track-java
-ms.openlocfilehash: 3b6d9847cc72f246587a36b74173521736a6cc9a
-ms.sourcegitcommit: b923aee828cd4b309ef92fe1f8d8b3092b2ffc5a
-ms.translationtype: HT
+ms.openlocfilehash: 58ed07c18fdb8492cf7f2c19883f3cf0288d9cc1
+ms.sourcegitcommit: 3d906f265b748fbc0a070fce252098675674c8d9
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88052260"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98699979"
 ---
 # <a name="migrate-weblogic-server-applications-to-azure-virtual-machines"></a>Eseguire la migrazione di applicazioni WebLogic Server alle macchine virtuali di Azure
 
@@ -159,7 +159,7 @@ Una volta raggiunti gli obiettivi di migrazione definiti nel passaggio di [pre-m
 
 * Uso di Archiviazione di Azure per gestire il contenuto statico montato nelle macchine virtuali. Per altre informazioni, vedere [Collegare o scollegare un disco dati da una macchina virtuale](/azure/lab-services/devtest-lab-attach-detach-data-disk).
 
-* Distribuire le applicazioni con Azure DevOps nel cluster WebLogic dopo la migrazione. Per altre informazioni, vedere la [documentazione introduttiva di Azure DevOps](/azure/devops/get-started/?view=azure-devops).
+* Distribuire le applicazioni con Azure DevOps nel cluster WebLogic dopo la migrazione. Per altre informazioni, vedere la [documentazione introduttiva di Azure DevOps](/azure/devops/get-started).
 
 * Se WebLogic Server è stato distribuito con Gateway applicazione di Azure seguendo la procedura disponibile in [Esercitazione: Eseguire la migrazione di un cluster di WebLogic Server ad Azure con Gateway applicazione di Azure come servizio di bilanciamento del carico](migrate-weblogic-with-app-gateway.md), è possibile che si vogliano eseguire operazioni di configurazione aggiuntive in Gateway applicazione.  Per altre informazioni, vedere [Panoramica della configurazione del gateway applicazione](/azure/application-gateway/configuration-overview).
 

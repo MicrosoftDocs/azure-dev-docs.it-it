@@ -5,12 +5,12 @@ keywords: jenkins, azure, devops, aks, servizio azure kubernetes, github
 ms.topic: article
 ms.date: 10/29/2019
 ms.custom: devx-track-jenkins, devx-track-azurecli
-ms.openlocfilehash: 51b0531946d4fde0e9141744e62bab35a3e1a734
-ms.sourcegitcommit: e1175aa94709b14b283645986a34a385999fb3f7
-ms.translationtype: HT
+ms.openlocfilehash: 137f7cf050c9d31adc9e56a70fbb98e29342e142
+ms.sourcegitcommit: 3d906f265b748fbc0a070fce252098675674c8d9
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93192503"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98699969"
 ---
 # <a name="tutorial-deploy-from-github-to-azure-kubernetes-service-using-jenkins"></a>Esercitazione: Eseguire la distribuzione da GitHub nel servizio Azure Kubernetes con Jenkins
 
@@ -81,7 +81,7 @@ redis                        latest     a1b99da73d05        7 days ago          
 tiangolo/uwsgi-nginx-flask   flask      788ca94b2313        9 months ago        694MB
 ```
 
-Prima di eseguire il push dell'immagine del contenitore *azure-vote-front* in Registro Azure Container, ottenere il server di accesso del servizio Registro Azure Container con il comando [az acr list](/cli/azure/acr#az-acr-list). L'esempio seguente ottiene l'indirizzo del server di accesso di Registro Azure Container in un gruppo di risorse denominato *myResourceGroup* :
+Prima di eseguire il push dell'immagine del contenitore *azure-vote-front* in Registro Azure Container, ottenere il server di accesso del servizio Registro Azure Container con il comando [az acr list](/cli/azure/acr#az-acr-list). L'esempio seguente ottiene l'indirizzo del server di accesso di Registro Azure Container in un gruppo di risorse denominato *myResourceGroup*:
 
 ```azurecli
 az acr list --resource-group myResourceGroup --query "[].{acrLoginServer:loginServer}" --output table
@@ -115,7 +115,7 @@ Successivamente, usare il comando [kubectl apply](https://kubernetes.io/docs/ref
 kubectl apply -f azure-vote-all-in-one-redis.yaml
 ```
 
-Viene creato un servizio di bilanciamento del carico di Kubernetes per esporre l'applicazione a Internet. Il processo potrebbe richiedere alcuni minuti. Per monitorare l'avanzamento della distribuzione del servizio di bilanciamento del carico, usare il comando [kubectl get service](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#get) con l'argomento `--watch`. Dopo il passaggio di *EXTERNAL-IP* da *pending* a un *indirizzo IP* , usare `Control + C` per arrestare il processo kubectl watch.
+Viene creato un servizio di bilanciamento del carico di Kubernetes per esporre l'applicazione a Internet. Il processo potrebbe richiedere alcuni minuti. Per monitorare l'avanzamento della distribuzione del servizio di bilanciamento del carico, usare il comando [kubectl get service](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#get) con l'argomento `--watch`. Dopo il passaggio di *EXTERNAL-IP* da *pending* a un *indirizzo IP*, usare `Control + C` per arrestare il processo kubectl watch.
 
 ```console
 $ kubectl get service azure-vote-front --watch
@@ -153,8 +153,8 @@ Enter the following to Unlock Jenkins:
 
 Aprire un browser Web all'URL visualizzato e immettere la chiave di sblocco. Seguire le istruzioni visualizzate per completare la configurazione di Jenkins:
 
-- Scegliere **Install suggested plugins** (Installa plug-in consigliati)
-- Creare il primo utente amministratore. Immettere un nome utente, ad esempio *azureuser* , quindi specificare una password sicura. Digitare infine un nome completo e un indirizzo di posta elettronica.
+- Scegliere **Installa plug-in consigliati**
+- Creare il primo utente amministratore. Immettere un nome utente, ad esempio *azureuser*, quindi specificare una password sicura. Digitare infine un nome completo e un indirizzo di posta elettronica.
 - Selezionare **Save and Finish** (Salva e completa).
 - Quando Jenkins è pronto, selezionare **Start using Jenkins** (Inizia a usare Jenkins).
     - Se il Web browser visualizza una pagina vuota quando si inizia a usare Jenkins, riavviare il servizio Jenkins. Per riavviare il servizio, eseguire SSH nell'indirizzo IP pubblico dell'istanza di Jenkins e digitare `sudo service jenkins restart`. Dopo il riavvio del servizio, aggiornare il Web browser.
@@ -238,7 +238,7 @@ Nella home page del portale di Jenkins selezionare **New item** (Nuovo elemento)
 
      ![Associazioni di Jenkins](media/deploy-from-github-to-aks/bindings.png)
 
-1. Aggiungere un' **istruzione di compilazione** di tipo **Execute shell** (Esegui shell) e usare il testo seguente. Questo script compila una nuova immagine del contenitore e la inserisce nel Registro Azure Container.
+1. Aggiungere un'**istruzione di compilazione** di tipo **Execute shell** (Esegui shell) e usare il testo seguente. Questo script compila una nuova immagine del contenitore e la inserisce nel Registro Azure Container.
 
     ```bash
     # Build new image and push to ACR.

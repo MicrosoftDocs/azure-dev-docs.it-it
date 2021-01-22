@@ -5,16 +5,16 @@ keywords: jenkins, azure, devops, panoramica
 ms.topic: overview
 ms.date: 11/10/2020
 ms.custom: devx-track-jenkins
-ms.openlocfilehash: d7de868651c50b7c3e39f1a0286ddd3ebf740b21
-ms.sourcegitcommit: 4dac39849ba2e48034ecc91ef578d11aab796e58
-ms.translationtype: HT
+ms.openlocfilehash: 38703bbd857c1990571f6255ab3a4d9089ad7a46
+ms.sourcegitcommit: 3d906f265b748fbc0a070fce252098675674c8d9
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94983560"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98699829"
 ---
 # <a name="azure-and-jenkins"></a>Azure e Jenkins
 
-[Jenkins](https://jenkins.io/) è un server di automazione open source molto diffuso usato per configurare l'integrazione continua e la distribuzione continua per i progetti software. È possibile ospitare la distribuzione di Jenkins in Azure oppure estendere la configurazione di Jenkins esistente usando le risorse di Azure. Sono anche disponibili plug-in di Jenkins per semplificare l'integrazione continua e la distribuzione continua delle applicazioni in Azure.
+[Jenkins](https://jenkins.io/) è un server di automazione open source molto diffuso usato per configurare l'integrazione continua e la distribuzione continua per i progetti software. È possibile ospitare la distribuzione di Jenkins in Azure oppure estendere la configurazione di Jenkins esistente usando le risorse di Azure. I plug-in Jenkins sono disponibili anche per semplificare l'integrazione continua e la distribuzione continua delle applicazioni in Azure.
 
 Questo articolo offre un'introduzione all'uso di Azure con Jenkins, con dettagli delle principali funzionalità di Azure disponibili per gli utenti di Jenkins. Per altre informazioni sulle operazioni preliminari con il server Jenkins in Azure, vedere [Creare un server Jenkins in Azure](configure-on-linux-vm.md).
 
@@ -33,7 +33,7 @@ Una volta configurati con un'[entità servizio di Azure](/azure/azure-resource-m
 
 ## <a name="deploy-your-code-into-azure-services"></a>Distribuire il codice nei servizi di Azure
 
-Usare i plug-in di Jenkins per distribuire le applicazioni in Azure nell'ambito delle pipeline di integrazione continua e distribuzione continua. La distribuzione in [Servizio app di Azure](/azure/app-service/) e nel [servizio Azure Container](/azure/container-service/kubernetes/) consente di inserire temporaneamente, testare e rilasciare aggiornamenti delle applicazioni senza gestire l'infrastruttura sottostante.
+Usare i plug-in Jenkins per distribuire le applicazioni in Azure come parte delle pipeline CI/CD di Jenkins. La distribuzione in [Servizio app di Azure](/azure/app-service/) e nel [servizio Azure Container](/azure/container-service/kubernetes/) consente di inserire temporaneamente, testare e rilasciare aggiornamenti delle applicazioni senza gestire l'infrastruttura sottostante.
 
  Sono disponibili plug-in per la distribuzione nei servizi e negli ambienti seguenti:
 

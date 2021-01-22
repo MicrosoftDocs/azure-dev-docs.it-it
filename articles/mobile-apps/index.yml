@@ -11,12 +11,12 @@ metadata:
   author: codemillmatt
   ms.author: masoucou
   ms.date: 07/27/2020
-  ms.openlocfilehash: f7f7948f16d6d72f963f91cbf7121f02ddb528cc
-  ms.sourcegitcommit: e97cb81a245ce7dcabeac3260abc3db7c30edd79
-  ms.translationtype: HT
+  ms.openlocfilehash: 780b09cc1094373bfab38cb4c13e348125a3e2a8
+  ms.sourcegitcommit: 3d906f265b748fbc0a070fce252098675674c8d9
+  ms.translationtype: MT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 09/29/2020
-  ms.locfileid: "91493087"
+  ms.lasthandoff: 01/22/2021
+  ms.locfileid: "98699879"
 landingContent:
 - title: Introduzione all'uso dei dispositivi mobili in Azure
   linkLists:
@@ -117,7 +117,7 @@ landingContent:
     - text: Automatizzare il ciclo di vita delle app con compilazione e integrazione continue
       url: continuous-integration.md
     - text: Concetti chiave per nuovi utenti di Azure Pipelines
-      url: /azure/devops/pipelines/get-started/key-pipelines-concepts?view=azure-devops
+      url: /azure/devops/pipelines/get-started/key-pipelines-concepts
   - linkListType: overview
     links:
     - text: Rilasciare una build con App Center
