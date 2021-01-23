@@ -4,18 +4,18 @@ description: Elenco di articoli introduttivi della documentazione di Azure su De
 ms.date: 04/09/2020
 ms.topic: conceptual
 ms.custom: devx-track-java
-ms.openlocfilehash: 62c755665008f83cc6a644f8bf702d6b1486cf6a
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
-ms.translationtype: HT
+ms.openlocfilehash: b7093021d206cc011efd18afb00302d54f54f685
+ms.sourcegitcommit: 3d906f265b748fbc0a070fce252098675674c8d9
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86379635"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98699669"
 ---
 # <a name="devops-for-java-apps-on-azure"></a>DevOps per le app Java in Azure
 
 Gli articoli seguenti contengono informazioni introduttive su varie opzioni per DevOps disponibili in Azure:
 
-- [Azure Pipelines](/azure/devops/pipelines/targets/webapp-linux?view=azure-devops&tabs=java%2Cyaml)
+- [Azure Pipelines](/azure/devops/pipelines/targets/webapp-linux?tabs=java%2Cyaml)
 - [Azure DevOps Projects](/azure/devops-project/azure-devops-project-java)
 - [Modelli di Azure Resource Manager con IntelliJ](/azure/azure-resource-manager/templates/create-templates-use-intellij)
 - [GitHub Actions](https://github.com/actions/setup-java)

@@ -4,12 +4,12 @@ description: Indice di articoli introduttivi della documentazione di Azure su Ma
 ms.date: 05/28/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 6f36d3059f616a3b149113108f8dfd922abcf57e
-ms.sourcegitcommit: a5a47f96602996f2867ac1405f9ea18daed23a23
-ms.translationtype: HT
+ms.openlocfilehash: 960ab460eb12641f61f071d53f2ead1a811472fb
+ms.sourcegitcommit: 3d906f265b748fbc0a070fce252098675674c8d9
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88200591"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98699639"
 ---
 # <a name="machine-learning-for-python-apps-on-azure"></a>Machine Learning per le app Python in Azure
 
@@ -21,5 +21,5 @@ Gli articoli seguenti contengono informazioni introduttive su varie opzioni di M
 - [Eseguire il training automatico di un modello di Machine Learning](/azure/machine-learning/tutorial-auto-train-models)
 - [Accedere a set di dati con Python con la libreria client Python di Azure Machine Learning](/azure/machine-learning/team-data-science-process/python-data-access)
 - [Configurare esperimenti di ML automatizzato in Python](/azure/machine-learning/how-to-configure-auto-train)
-- [Distribuire una pipeline di dati con Azure DevOps](/azure/devops/pipelines/apps/cd/azure/cicd-data-overview?view=azure-devops)
+- [Distribuire una pipeline di dati con Azure DevOps](/azure/devops/pipelines/apps/cd/azure/cicd-data-overview)
 - [Creare ed eseguire le pipeline di Machine Learning con Azure Machine Learning SDK](/azure/machine-learning/how-to-create-your-first-pipeline)

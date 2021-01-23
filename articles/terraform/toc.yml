@@ -4,7 +4,7 @@
   items:
     - name: Informazioni su Terraform in Azure
       href: overview.md
-- name: Avvi rapidi
+- name: Avvii rapidi
   expanded: true
   items:
     - name: Configurare Terraform con Azure Cloud Shell
@@ -21,6 +21,10 @@
       items:
         - name: Terraform e slot di distribuzione per provider di Azure
           href: provision-infrastructure-using-azure-deployment-slots.md
+    - name: Reti
+      items:
+        - name: Configurare Network Watcher di Azure
+          href: create-network-watcher-nsg-flow-logs.md
     - name: Contenitori
       items:
         - name: Creare un cluster Kubernetes con il servizio Azure Kubernetes

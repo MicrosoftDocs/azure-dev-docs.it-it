@@ -5,12 +5,12 @@ keywords: jenkins, azure, devops, portale, linux, macchina virtuale
 ms.topic: quickstart
 ms.date: 08/21/2020
 ms.custom: devx-track-jenkins, devx-track-azurecli
-ms.openlocfilehash: 6fc5eafbec8917b517b38d7a02c3149512675ac9
-ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
-ms.translationtype: HT
+ms.openlocfilehash: 3ec8c309bfb88d1735bc523dca54bf71195f5c26
+ms.sourcegitcommit: 3d906f265b748fbc0a070fce252098675674c8d9
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92689137"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98699899"
 ---
 # <a name="quickstart-configure-jenkins-using-azure-cli"></a>Avvio rapido: Configurare Jenkins con l'interfaccia della riga di comando di Azure
 
@@ -39,7 +39,7 @@ Se si verificano problemi durante la configurazione di Jenkins, vedere la [pagin
 
 1. Accedere al [portale di Azure](https://portal.azure.com).
 
-1. Aprire [Azure Cloud Shell](/azure/cloud-shell/overview) e, se non è già stato fatto, passare a **Bash** .
+1. Aprire [Azure Cloud Shell](/azure/cloud-shell/overview) e, se non è già stato fatto, passare a **Bash**.
 
 1. Creare un file denominato `cloud-init-jenkins.txt`.
 
@@ -60,7 +60,7 @@ Se si verificano problemi durante la configurazione di Jenkins, vedere la [pagin
       - service jenkins restart
     ```
 
-1. Salvare il file ( **&lt;CTRL+S** ) e uscire dall'editor ( **&lt;CTRL+Q** ).
+1. Salvare il file ( **&lt;CTRL+S**) e uscire dall'editor ( **&lt;CTRL+Q**).
 
 1. Creare un gruppo di risorse usando [az group create](/cli/azure/group#az-group-create). Potrebbe essere necessario sostituire il parametro `--location` con il valore appropriato per l'ambiente.
 
@@ -109,7 +109,7 @@ Se si verificano problemi durante la configurazione di Jenkins, vedere la [pagin
     --output tsv
     ```
 
-    **Note** :
+    **Note**:
 
     - Il parametro `--query` limita l'output agli indirizzi IP pubblici per la macchina virtuale.
 
@@ -119,7 +119,7 @@ Se si verificano problemi durante la configurazione di Jenkins, vedere la [pagin
     ssh azureuser@<ip_address>
     ```
 
-    **Note** :
+    **Note**:
 
     - quando la connessione viene stabilita, il prompt di Cloud Shell include il nome utente e il nome macchina virtuale: `azureuser@QuickstartJenkins-vm`.
 
@@ -141,11 +141,11 @@ Se si verificano problemi durante la configurazione di Jenkins, vedere la [pagin
 
     ![Pagina iniziale per sbloccare Jenkins](./media/configure-on-linux-vm/unlock-jenkins.png)
 
-1. Selezionare **Select plugins to install** (Selezionare i plug-in da installare).
+1. Selezionare **selezionare il plug-in per installare**.
 
     ![Selezionare l'opzione per installare i plug-in selezionati](./media/configure-on-linux-vm/select-plugins.png)
 
-1. Nella casella del filtro nella parte superiore della pagina immettere `github`. Selezionare il plug-in di GitHub e quindi selezionare **Install** (Installa).
+1. Nella casella del filtro nella parte superiore della pagina immettere `github`. Selezionare il plug-in GitHub e selezionare **Installa**.
 
     ![Installare i plug-in di GitHub](./media/configure-on-linux-vm/install-github-plugin.png)
 
@@ -167,7 +167,7 @@ Se si verificano problemi durante la configurazione di Jenkins, vedere la [pagin
 
     ![Home page della console di Jenkins](./media/configure-on-linux-vm/jenkins-home-page.png)
 
-1. Immettere il nome `mySampleApp` per il processo, selezionare **Freestyle project** (Progetto Freestyle) e quindi selezionare **OK** .
+1. Immettere il nome `mySampleApp` per il processo, selezionare **Freestyle project** (Progetto Freestyle) e quindi selezionare **OK**.
 
     ![Creazione di un nuovo processo](./media/configure-on-linux-vm/new-job.png)
 
