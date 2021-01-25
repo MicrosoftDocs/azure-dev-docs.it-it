@@ -1,15 +1,15 @@
 ---
 title: Come installare i pacchetti di librerie di Azure SDK per Python
 description: Informazioni su come installare, disinstallare e verificare Azure SDK per le librerie Python tramite pip. Sono inclusi i dettagli per l'installazione di versioni specifiche e pacchetti di anteprima.
-ms.date: 05/26/2020
+ms.date: 01/22/2021
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 310a4327029f808a5e09136aa77956ed8810f5b2
-ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
-ms.translationtype: HT
+ms.openlocfilehash: 109631849b94f79530c93a8984813c424968f199
+ms.sourcegitcommit: 6fbf9e489b194586887a2c11152044be5b3a2b99
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87983373"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98759553"
 ---
 # <a name="how-to-install-azure-library-packages-for-python"></a>Come installare i pacchetti di librerie di Azure per Python
 
@@ -78,4 +78,3 @@ pip uninstall azure-storage-blob
 ```
 
 Per disinstallare una libreria, usare `pip uninstall <library>`.
-

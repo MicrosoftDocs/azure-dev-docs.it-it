@@ -4,12 +4,12 @@ description: Usare le librerie di Azure SDK per Python per effettuare il provisi
 ms.date: 10/05/2020
 ms.topic: conceptual
 ms.custom: devx-track-python, devx-track-azurecli
-ms.openlocfilehash: f3b27dd0a09bbf17c5797e3a5c0be9bc7d48b416
-ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
-ms.translationtype: HT
+ms.openlocfilehash: 56d40c013456cb56e38970afb9d72933b5fa1f26
+ms.sourcegitcommit: 6fbf9e489b194586887a2c11152044be5b3a2b99
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92689026"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98759394"
 ---
 # <a name="example-provision-azure-storage-using-the-azure-libraries-for-python"></a>Esempio: Effettuare il provisioning di Archiviazione di Azure con le librerie di Azure per Python
 
@@ -243,3 +243,5 @@ az group delete -n PythonAzureExample-Storage-rg  --no-wait
 - [Esempio: Effettuare il provisioning di un'app Web e distribuire il codice](azure-sdk-example-web-app.md)
 - [Esempio: Effettuare il provisioning ed eseguire query su un database](azure-sdk-example-database.md)
 - [Esempio: Effettuare il provisioning di una macchina virtuale](azure-sdk-example-virtual-machines.md)
+- [Usare Azure Managed Disks con le macchine virtuali](azure-sdk-samples-managed-disks.md)
+- [Completa un breve sondaggio su Azure SDK per Python](https://microsoft.qualtrics.com/jfe/form/SV_bNFX0HECjzPWMiG?Q_CHL=docs)

@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.service: azure
 ms.date: 10/30/2020
 ms.custom: github-actions-azure
-ms.openlocfilehash: b5b3192d1d65515dc3741be80bbab018f9cf5f09
-ms.sourcegitcommit: 593d177cfb5f56f236ea59389e43a984da30f104
+ms.openlocfilehash: 494cfd8a5695b81c370d63ffc821c49ac15d34f2
+ms.sourcegitcommit: 6fbf9e489b194586887a2c11152044be5b3a2b99
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/18/2021
-ms.locfileid: "98561737"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98759457"
 ---
 # <a name="what-is-github-actions-for-azure"></a>Che cos'è la funzionalità GitHub Actions per Azure?
 
@@ -20,7 +20,7 @@ ms.locfileid: "98561737"
 
 In GitHub Actions un [flusso di lavoro](https://help.github.com/articles/about-github-actions#workflow) è un processo automatizzato che si configura nel repository GitHub. Con un flusso di lavoro è possibile compilare, testare, assemblare o distribuire qualsiasi progetto in GitHub.
 
-Ogni flusso di lavoro è costituito da singole [azioni](https://docs.github.com/en/free-pro-team@latest/actions/learn-github-actions/introduction-to-github-actions) eseguite dopo un evento specifico, ad esempio una richiesta pull.  Le singole azioni sono script inseriti in un pacchetto che automatizzano le attività di sviluppo di software.
+Ogni flusso di lavoro è costituito da singole [azioni](https://docs.github.com/en/actions/learn-github-actions/introduction-to-github-actions) eseguite dopo un evento specifico, ad esempio una richiesta pull.  Le singole azioni sono script inseriti in un pacchetto che automatizzano le attività di sviluppo di software.
 
 Con GitHub Actions per Azure è possibile creare flussi di lavoro configurabili nel repository per compilare, testare, assemblare, rilasciare e distribuire software in Azure. GitHub Actions per Azure supporta servizi di Azure come il servizio app di Azure, Funzioni di Azure e Azure Key Vault.
 
@@ -32,11 +32,11 @@ Guardare questo video di GitHub Universe 2020 per altre informazioni sulla distr
 
 ## <a name="why-should-i-use-github-actions-for-azure"></a>Perché usare GitHub Actions per Azure?
 
-Le azioni di GitHub Actions sono sviluppate da Microsoft e progettate per essere usate con Azure. È possibile visualizzare tutte le azioni di GitHub Actions in [GitHub Marketplace](https://github.com/marketplace?query=Azure&type=actions). Per altre informazioni su come incorporare le azioni nei flussi di lavoro, vedere [Ricerca e personalizzazione di azioni](https://docs.github.com/en/free-pro-team@latest/actions/learn-github-actions/finding-and-customizing-actions).
+Le azioni di GitHub Actions sono sviluppate da Microsoft e progettate per essere usate con Azure. È possibile visualizzare tutte le azioni di GitHub Actions in [GitHub Marketplace](https://github.com/marketplace?query=Azure&type=actions). Per altre informazioni su come incorporare le azioni nei flussi di lavoro, vedere [Ricerca e personalizzazione di azioni](https://docs.github.com/en/actions/learn-github-actions/finding-and-customizing-actions).
 
 ## <a name="what-is-the-difference-between-github-actions-and-azure-pipelines"></a>Qual è la differenza tra GitHub Actions e Azure Pipelines?
 
-Azure Pipelines e GitHub Actions consentono di automatizzare i flussi di lavoro di sviluppo di software. Per altre informazioni sulle differenze tra i servizi e su come eseguire la migrazione da Azure Pipelines a GitHub Actions, vedere [qui](https://docs.github.com/en/free-pro-team@latest/actions/learn-github-actions/migrating-from-azure-pipelines-to-github-actions).
+Azure Pipelines e GitHub Actions consentono di automatizzare i flussi di lavoro di sviluppo di software. Per altre informazioni sulle differenze tra i servizi e su come eseguire la migrazione da Azure Pipelines a GitHub Actions, vedere [qui](https://docs.github.com/en/actions/learn-github-actions/migrating-from-azure-pipelines-to-github-actions).
 
 ## <a name="what-do-i-need-to-use-github-actions-for-azure"></a>Quali sono i requisiti per usare GitHub Actions per Azure?
 
@@ -53,7 +53,7 @@ A seconda dell'azione, si userà un'entità servizio o un profilo di pubblicazio
 
 ## <a name="what-is-included-in-a-github-actions-workflow"></a>Che cosa è incluso in un flusso di lavoro di GitHub Actions?
 
-I flussi di lavoro sono costituiti da uno o più processi. Un processo include passaggi costituiti da singole azioni. Per altre informazioni sui concetti relativi a GitHub Actions, vedere [Introduzione a GitHub Actions](https://docs.github.com/en/free-pro-team@latest/actions/learn-github-actions/introduction-to-github-actions).  
+I flussi di lavoro sono costituiti da uno o più processi. Un processo include passaggi costituiti da singole azioni. Per altre informazioni sui concetti relativi a GitHub Actions, vedere [Introduzione a GitHub Actions](https://docs.github.com/en/actions/learn-github-actions/introduction-to-github-actions).  
 
 ## <a name="where-can-i-see-complete-workflow-examples"></a>Dove è possibile trovare esempi completi di flussi di lavoro?
 

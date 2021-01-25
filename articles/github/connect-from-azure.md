@@ -7,12 +7,12 @@ ms.topic: reference
 ms.service: azure
 ms.date: 11/17/2020
 ms.custom: github-actions-azure, devx-track-azurecli
-ms.openlocfilehash: d835fb755a2acecba3e7ad173ef9d6c036d59546
-ms.sourcegitcommit: 593d177cfb5f56f236ea59389e43a984da30f104
+ms.openlocfilehash: 6310254e450c7e0fc648459ddad2c08b1bba555b
+ms.sourcegitcommit: 6fbf9e489b194586887a2c11152044be5b3a2b99
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/18/2021
-ms.locfileid: "98561747"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98759513"
 ---
 # <a name="use-github-actions-to-connect-to-azure"></a>Usare GitHub Actions per connettersi ad Azure
 
@@ -80,7 +80,7 @@ In questo esempio verrà creato un segreto denominato `AZURE_CREDENTIALS` che è
 
 Usare il segreto dell'entità servizio con l'[azione di accesso di Azure](https://github.com/Azure/login) per eseguire l'autenticazione con Azure.
 
-In questo flusso di lavoro l'autenticazione viene eseguita usando l'azione di accesso di Azure con i dettagli dell'entità servizio archiviati in `secrets.AZURE_CREDENTIALS`. Quindi, eseguire un'azione dell'interfaccia della riga di comando di Azure. Per altre informazioni su come fare riferimento ai segreti di GitHub in un file del flusso di lavoro, vedere [Uso di segreti crittografati in un flusso di lavoro](https://docs.github.com/en/free-pro-team@latest/actions/reference/encrypted-secrets#using-encrypted-secrets-in-a-workflow) nella documentazione di GitHub.
+In questo flusso di lavoro l'autenticazione viene eseguita usando l'azione di accesso di Azure con i dettagli dell'entità servizio archiviati in `secrets.AZURE_CREDENTIALS`. Quindi, eseguire un'azione dell'interfaccia della riga di comando di Azure. Per altre informazioni su come fare riferimento ai segreti di GitHub in un file del flusso di lavoro, vedere [Uso di segreti crittografati in un flusso di lavoro](https://docs.github.com/en/actions/reference/encrypted-secrets#using-encrypted-secrets-in-a-workflow) nella documentazione di GitHub.
 
 Una volta configurato un passaggio di accesso di Azure funzionante, è possibile usare le azioni di [Azure PowerShell](https://github.com/Azure/PowerShell) o dell'[interfaccia della riga di comando di Azure](https://github.com/Azure/CLI). È anche possibile usare altre azioni di Azure, ad esempio la [distribuzione in app Web di Azure](https://github.com/Azure/webapps-deploy) e [Funzioni di Azure](https://github.com/Azure/functions-action).
 

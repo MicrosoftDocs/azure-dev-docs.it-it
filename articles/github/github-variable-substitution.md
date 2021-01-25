@@ -5,22 +5,22 @@ author: juliakm
 ms.author: jukullam
 ms.topic: conceptual
 ms.service: azure
-ms.date: 11/18/2020
+ms.date: 01/25/2021
 ms.custom: github-actions-azure
-ms.openlocfilehash: 0e3f3b11980c987ef4f7a288380b9517ad88d777
-ms.sourcegitcommit: 418e446e6ada5d50df283401df4f6b6370a356b9
-ms.translationtype: HT
+ms.openlocfilehash: e2a82fbcbe48269339dc672d46aca4cc3601ae12
+ms.sourcegitcommit: 6fbf9e489b194586887a2c11152044be5b3a2b99
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96120547"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98759494"
 ---
 # <a name="use-variable-substitution-with-github-actions"></a>Usare la sostituzione delle variabili con GitHub Actions
 
 Informazioni su come usare l'[azione di sostituzione delle variabili](https://github.com/marketplace/actions/variable-substitution) per sostituire i valori nei file di configurazione e dei parametri XML, JSON e YAML.
 
-La sostituzione delle variabili consente di inserire i valori, inclusi i [segreti GitHub](https://docs.github.com/en/free-pro-team@latest/actions/reference/encrypted-secrets), nei file nel repository durante l'esecuzione del flusso di lavoro. Ad esempio, è possibile inserire credenziali accesso e password dell'API in un file JSON durante l'esecuzione del flusso di lavoro.
+La sostituzione delle variabili consente di inserire i valori, inclusi i [segreti GitHub](https://docs.github.com/en/actions/reference/encrypted-secrets), nei file nel repository durante l'esecuzione del flusso di lavoro. Ad esempio, è possibile inserire credenziali accesso e password dell'API in un file JSON durante l'esecuzione del flusso di lavoro.
 
-La sostituzione delle variabili funziona solo per le chiavi predefinite nella gerarchia di oggetti. Non è possibile creare nuove chiavi con la sostituzione delle variabili. Inoltre, solo le variabili definite come [variabili di ambiente](https://docs.github.com/en/free-pro-team@latest/actions/reference/environment-variables) nel flusso di lavoro o variabili di sistema già disponibili possono essere usate per la sostituzione.
+La sostituzione delle variabili funziona solo per le chiavi predefinite nella gerarchia di oggetti. Non è possibile creare nuove chiavi con la sostituzione delle variabili. Inoltre, solo le variabili definite come [variabili di ambiente](https://docs.github.com/en/actions/reference/environment-variables) nel flusso di lavoro o variabili di sistema già disponibili possono essere usate per la sostituzione.
 
 ## <a name="prerequisites"></a>Prerequisiti
 

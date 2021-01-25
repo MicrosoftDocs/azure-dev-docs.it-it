@@ -3,13 +3,13 @@ title: Effettuare il provisioning di un gruppo di risorse con le librerie di Azu
 description: Usare la libreria di gestione delle risorse di Azure SDK per Python per creare un gruppo di risorse dal codice Python.
 ms.date: 11/12/2020
 ms.topic: conceptual
-ms.custom: devx-track-python, devx-track-azurecli
-ms.openlocfilehash: 65c78e480336f689096ccbd9f75420febf732f20
-ms.sourcegitcommit: dc74b60217abce66fe6cc93923e869e63ac86a8f
-ms.translationtype: HT
+ms.custom: devx-track-python
+ms.openlocfilehash: 3bda14cd52f55d25e3669662765aa8f27c3dc939
+ms.sourcegitcommit: 6fbf9e489b194586887a2c11152044be5b3a2b99
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94872842"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98759436"
 ---
 # <a name="example-use-the-azure-libraries-to-provision-a-resource-group"></a>Esempio: Usare le librerie di Azure per effettuare il provisioning di un gruppo di risorse
 
@@ -148,3 +148,5 @@ az group create -n PythonAzureExample-rg -l centralus
 - [Esempio: Effettuare il provisioning di un'app Web e distribuire il codice](azure-sdk-example-web-app.md)
 - [Esempio: Effettuare il provisioning ed eseguire query su un database](azure-sdk-example-database.md)
 - [Esempio: Effettuare il provisioning di una macchina virtuale](azure-sdk-example-virtual-machines.md)
+- [Usare Azure Managed Disks con le macchine virtuali](azure-sdk-samples-managed-disks.md)
+- [Completa un breve sondaggio su Azure SDK per Python](https://microsoft.qualtrics.com/jfe/form/SV_bNFX0HECjzPWMiG?Q_CHL=docs)

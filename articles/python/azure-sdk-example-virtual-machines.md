@@ -4,12 +4,12 @@ description: Come effettuare il provisioning di una macchina virtuale di Azure u
 ms.date: 10/05/2020
 ms.topic: conceptual
 ms.custom: devx-track-python, devx-track-azurecli
-ms.openlocfilehash: d22f403195fd3cba143d9539220ec3376a7f2509
-ms.sourcegitcommit: b70a38d46616f5e519d5b9c1a1eaf3fe0ecb9605
-ms.translationtype: HT
+ms.openlocfilehash: 276c345c6fe07a117adb6622ae8bb36bc5ce9a83
+ms.sourcegitcommit: 6fbf9e489b194586887a2c11152044be5b3a2b99
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94932435"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98759580"
 ---
 # <a name="example-use-the-azure-libraries-to-provision-a-virtual-machine"></a>Esempio: Usare le librerie di Azure per effettuare il provisioning di una macchina virtuale
 
@@ -316,7 +316,8 @@ Eseguire questo comando se non è necessario mantenere le risorse create in ques
 - [Esempio: Effettuare il provisioning di un'app Web e distribuire il codice](azure-sdk-example-web-app.md)
 - [Esempio: Effettuare il provisioning ed eseguire query su un database](azure-sdk-example-database.md)
 - [Usare Azure Managed Disks con le macchine virtuali](azure-sdk-samples-managed-disks.md)
-
+- [Completa un breve sondaggio su Azure SDK per Python](https://microsoft.qualtrics.com/jfe/form/SV_bNFX0HECjzPWMiG?Q_CHL=docs)
+- 
 Il contenitore di risorse seguente illustra esempi più completi che usano Python per creare una macchina virtuale:
 
 - [Creare e gestire macchine virtuali Windows in Azure usando Python](/azure/virtual-machines/windows/python). È possibile usare questo esempio per creare VM Linux cambiando il parametro `storage_profile`.

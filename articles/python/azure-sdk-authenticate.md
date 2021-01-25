@@ -4,12 +4,12 @@ description: Come acquisire gli oggetti credenziali necessari per autenticare un
 ms.date: 01/19/2021
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 51b7a074bef81999f17f3a5fa51d243e64a33f3c
-ms.sourcegitcommit: 0eb25e1fdafcd64118843748dc061f60e7e48332
+ms.openlocfilehash: 19a69cf0379dd290893724db6527ebd30b5bab63
+ms.sourcegitcommit: 6fbf9e489b194586887a2c11152044be5b3a2b99
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98669172"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98759470"
 ---
 # <a name="how-to-authenticate-and-authorize-python-apps-on-azure"></a>Come autenticare e autorizzare le app Python in Azure
 
@@ -470,3 +470,5 @@ Quando [Azure Active Directory Authentication Library (ADAL) per Python](https:/
 - [Esempio: Effettuare il provisioning di un'app Web e distribuire il codice](azure-sdk-example-web-app.md)
 - [Esempio: Effettuare il provisioning e usare un database MySQL](azure-sdk-example-database.md)
 - [Esempio: Effettuare il provisioning di una macchina virtuale](azure-sdk-example-virtual-machines.md)
+- [Usare Azure Managed Disks con le macchine virtuali](azure-sdk-samples-managed-disks.md)
+- [Completa un breve sondaggio su Azure SDK per Python](https://microsoft.qualtrics.com/jfe/form/SV_bNFX0HECjzPWMiG?Q_CHL=docs)

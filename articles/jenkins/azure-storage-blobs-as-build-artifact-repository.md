@@ -5,12 +5,12 @@ keywords: jenkins, azure, devops, archiviazione, cicd, artefatti di compilazione
 ms.topic: article
 ms.date: 01/12/2021
 ms.custom: devx-track-jenkins, devx-track-azurecli
-ms.openlocfilehash: 31c86da8f861e4295967007cb1b885325feb93dc
-ms.sourcegitcommit: 75a1f26aaff48a89631805df4b4a0c006de6a271
-ms.translationtype: HT
+ms.openlocfilehash: 0f7f9bd8ca7997064745a5be431e17f4e3d3fc13
+ms.sourcegitcommit: 6fbf9e489b194586887a2c11152044be5b3a2b99
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98128158"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98759523"
 ---
 # <a name="tutorial-use-azure-storage-for-build-artifacts"></a>Esercitazione: Usare Archiviazione di Azure per gli artefatti di compilazione
 
@@ -123,9 +123,9 @@ La procedura seguente illustra in dettaglio la creazione di un processo della pi
 
     - In Archiviazione di Azure i nomi di contenitori e i nomi di BLOB sono riportati in lettere minuscole (e si applica la distinzione maiuscole/minuscole).
 
-## <a name="create-a-pipeline-job-to-download-from-azure-blob-storage"></a>Creare un processo della pipeline per il download dall'archivio BLOB di Azure
+## <a name="create-a-pipeline-job-to-download-from-azure-blob-storage"></a>Creare un processo della pipeline da scaricare dall'archiviazione BLOB di Azure
 
-La procedura seguente illustra come configurare un processo della pipeline per il download di elementi dall'archivio BLOB di Azure.
+I passaggi seguenti illustrano come configurare un processo della pipeline per scaricare gli elementi dall'archivio BLOB di Azure.
 
 1. Nella sezione **Pipeline** della configurazione del processo selezionare **Pipeline script** (Script pipeline) e incollare il codice seguente in **Script**. Modificare i segnaposto in modo che corrispondano ai valori dell'ambiente.
 

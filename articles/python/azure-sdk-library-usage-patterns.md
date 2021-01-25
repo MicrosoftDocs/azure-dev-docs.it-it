@@ -4,12 +4,12 @@ description: Panoramica dei modelli di utilizzo comuni delle librerie di Azure S
 ms.date: 11/12/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 6f1a2c07bbda4ebe409722d2381e046ee45f7902
-ms.sourcegitcommit: 6514a061ba5b8003ce29d67c81a9f0795c3e3e09
-ms.translationtype: HT
+ms.openlocfilehash: 28c2013245765d6829e46f564f7a7a3c74cb996d
+ms.sourcegitcommit: 6fbf9e489b194586887a2c11152044be5b3a2b99
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94601393"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98759539"
 ---
 # <a name="azure-libraries-for-python-usage-patterns"></a>Modelli di utilizzo delle librerie di Azure per Python
 
@@ -197,12 +197,13 @@ Se il formato JSON non è corretto, si riceve in genere un messaggio di errore a
 
 ## <a name="next-steps"></a>Passaggi successivi
 
-Ora che si conoscono i modelli di utilizzo comuni delle librerie di Azure per Python, vedere gli esempi autonomi seguenti per esplorare scenari specifici di gestione e librerie client:
+Ora che si conoscono i modelli comuni per l'uso delle librerie di Azure per Python, vedere gli esempi autonomi seguenti per esplorare scenari di gestione e libreria client specifici. È possibile provare questi esempi in qualsiasi ordine, perché non sono sequenziali né interdipendenti.
 
 - [Esempio: Creare un gruppo di risorse](azure-sdk-example-resource-group.md)
 - [Esempio: Usare Archiviazione di Azure](azure-sdk-example-storage.md)
 - [Esempio: Effettuare il provisioning di un'app Web e distribuire il codice](azure-sdk-example-web-app.md)
 - [Esempio: Effettuare il provisioning ed eseguire query su un database](azure-sdk-example-database.md)
 - [Esempio: Effettuare il provisioning di una macchina virtuale](azure-sdk-example-virtual-machines.md)
+- [Usare Azure Managed Disks con le macchine virtuali](azure-sdk-samples-managed-disks.md)
 
-È possibile provare questi esempi in qualsiasi ordine, perché non sono sequenziali né interdipendenti.
+- [Completa un breve sondaggio su Azure SDK per Python](https://microsoft.qualtrics.com/jfe/form/SV_bNFX0HECjzPWMiG?Q_CHL=docs)

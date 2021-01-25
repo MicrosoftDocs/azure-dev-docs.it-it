@@ -4,12 +4,12 @@ description: Usare Azure SDK per creare, ridimensionare e aggiornare i dischi ge
 ms.topic: conceptual
 ms.date: 11/18/2020
 ms.custom: devx-track-python
-ms.openlocfilehash: fe2378bcb836dbfc52ad1d5d3e88f048d6ef117e
-ms.sourcegitcommit: b70a38d46616f5e519d5b9c1a1eaf3fe0ecb9605
-ms.translationtype: HT
+ms.openlocfilehash: b8d45f3d4b5ccd2c8a1c2850d496b9f68625ef46
+ms.sourcegitcommit: 6fbf9e489b194586887a2c11152044be5b3a2b99
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94932415"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98759324"
 ---
 # <a name="use-azure-managed-disks-with-the-azure-libraries-sdk-for-python"></a>Usare Azure Managed Disks con le librerie di Azure (SDK) per Python
 
@@ -308,4 +308,10 @@ snapshot = async_snapshot_creation.result()
 
 ## <a name="see-also"></a>Vedi anche
 
-- [Esempio - Effettuare il provisioning di una macchina virtuale](azure-sdk-example-virtual-machines.md)
+- [Esempio: Effettuare il provisioning di una macchina virtuale](azure-sdk-example-virtual-machines.md)
+- [Esempio: Effettuare il provisioning di un gruppo di risorse](azure-sdk-example-resource-group.md)
+- [Esempio: Elencare i gruppi di risorse in una sottoscrizione](azure-sdk-example-list-resource-groups.md)
+- [Esempio: Effettuare il provisioning di Archiviazione di Azure](azure-sdk-example-storage.md)
+- [Esempio: Usare Archiviazione di Azure](azure-sdk-example-storage-use.md)
+- [Esempio: Effettuare il provisioning e usare un database MySQL](azure-sdk-example-database.md)
+- [Completa un breve sondaggio su Azure SDK per Python](https://microsoft.qualtrics.com/jfe/form/SV_bNFX0HECjzPWMiG?Q_CHL=docs)
