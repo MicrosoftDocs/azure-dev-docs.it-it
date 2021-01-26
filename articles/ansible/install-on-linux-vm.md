@@ -5,12 +5,12 @@ keywords: ansible, azure, devops, bash, cloudshell, playbook, interfaccia della 
 ms.topic: quickstart
 ms.date: 09/30/2020
 ms.custom: devx-track-ansible, devx-track-azurecli
-ms.openlocfilehash: b01cf6925f19ae6dc561358546f9ee3b945cad4f
-ms.sourcegitcommit: 5c7f5fef798413b1a304cc9ee31c8518b73f27eb
-ms.translationtype: HT
+ms.openlocfilehash: a16e9affb6153d1defea2f5233a62f78d3b85ae8
+ms.sourcegitcommit: 8eb1c379b2bbc2acdd82fc9d24d8ed948e5a6847
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93066250"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98811126"
 ---
 # <a name="quickstart-configure-ansible-using-azure-cli"></a>Avvio rapido: Configurare Ansible con l'interfaccia della riga di comando di Azure
 
@@ -30,7 +30,7 @@ In questo avvio rapido verranno completate le attività seguenti:
 
 [!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
 [!INCLUDE [open-source-devops-prereqs-create-sp.md](../includes/open-source-devops-prereqs-create-service-principal.md)]
-- **Accesso a Linux o a una macchina virtuale Linux** : in assenza di un computer Linux, creare una [macchina virtuale Linux](/azure/virtual-network/quick-create-cli).
+- **Accesso a Linux o a una macchina virtuale Linux**: in assenza di un computer Linux, creare una [macchina virtuale Linux](/azure/virtual-network/quick-create-cli).
 
 ## <a name="create-an-ssh-key-pair"></a>Creare una coppia di chiavi SSH
 
@@ -38,8 +38,8 @@ Per la connessione alle macchine virtuali Linux è possibile usare l'autenticazi
 
 Con l'autenticazione basata su chiave sono presenti due chiavi:
 
-- **Chiave pubblica** : la chiave pubblica è archiviata nell'host, ad esempio nella macchina virtuale (come in questo articolo)
-- **Chiave privata** : la chiave privata consente di connettersi in modo sicuro all'host. La chiave privata è la password vera e propria e deve quindi essere protetta.
+- **Chiave pubblica**: la chiave pubblica è archiviata nell'host, ad esempio nella macchina virtuale (come in questo articolo)
+- **Chiave privata**: la chiave privata consente di connettersi in modo sicuro all'host. La chiave privata è la password vera e propria e deve quindi essere protetta.
         
 La procedura seguente illustra in dettaglio la creazione di una coppia di chiavi SSH.
 
@@ -53,7 +53,7 @@ La procedura seguente illustra in dettaglio la creazione di una coppia di chiavi
     ssh-keygen -m PEM -t rsa -b 2048 -C "azureuser@azure" -f ~/.ssh/ansible_rsa -N ""
     ```
 
-    **Note** :
+    **Note**:
 
     - Il comando `ssh-keygen` visualizza il percorso dei file di chiave generati. Questo nome di directory sarà necessario quando si crea la macchina virtuale.
     - La chiave pubblica è archiviata in `ansible_rsa.pub` e la chiave privata in `ansible_rsa`.
@@ -83,7 +83,7 @@ La procedura seguente illustra in dettaglio la creazione di una coppia di chiavi
     az vm list -d -o table --query "[?name=='QuickstartAnsible-vm']"
     ```
 
-    **Note** :
+    **Note**:
 
     - L'output del comando `az vm list` include l'indirizzo IP pubblico usato per connettersi tramite SSH alla macchina virtuale.
 
@@ -132,7 +132,7 @@ Configurare le credenziali di Ansible con una delle tecniche seguenti:
 
 In questa sezione viene creato un file di credenziali locale per fornire credenziali ad Ansible.
 
-Per altre informazioni su come definire le credenziali di Ansible, vedere [Providing Credentials to Azure Modules](https://docs.ansible.com/ansible/guide_azure.html#providing-credentials-to-azure-modules) (Fornire le credenziali ai moduli di Azure).
+Per altre informazioni su come definire le credenziali di Ansible, vedere [Providing Credentials to Azure Modules](https://docs.ansible.com/ansible/latest/scenario_guides/guide_azure.html) (Fornire le credenziali ai moduli di Azure).
 
 1. Dopo avere completato correttamente la connessione alla macchina virtuale host, creare e aprire un file denominato `credentials`:
 

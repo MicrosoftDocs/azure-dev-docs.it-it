@@ -5,12 +5,12 @@ keywords: ansible, azure, devops, panoramica, provisioning cloud, gestione della
 ms.topic: overview
 ms.date: 08/13/2020
 ms.custom: devx-track-ansible
-ms.openlocfilehash: 9eb90921a0d44e138c331eb716700feb85e8aa9d
-ms.sourcegitcommit: 717e32b68fc5f4c986f16b2790f4211967c0524b
-ms.translationtype: HT
+ms.openlocfilehash: 9943dd0dbdd1b352d245bc471538e1a05d464c99
+ms.sourcegitcommit: 8eb1c379b2bbc2acdd82fc9d24d8ed948e5a6847
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91586102"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98811095"
 ---
 # <a name="using-ansible-with-azure"></a>Uso di Ansible con Azure
 
@@ -38,7 +38,7 @@ Ansible consente di automatizzare le applicazioni native del cloud in Azure tram
 
 ## <a name="manage-deployments-with-dynamic-inventory"></a>Gestire le distribuzioni con un inventario dinamico
 
-Tramite il relativo [inventario dinamico](https://docs.ansible.com/ansible/intro_dynamic_inventory.html) Ansible consente di eseguire il pull dell'inventario dalle risorse di Azure. È quindi possibile contrassegnare le distribuzioni di Azure esistenti e gestire tali le distribuzioni con tag tramite Ansible.
+Tramite il relativo [inventario dinamico](https://docs.ansible.com/ansible/latest/user_guide/intro_dynamic_inventory.html) Ansible consente di eseguire il pull dell'inventario dalle risorse di Azure. È quindi possibile contrassegnare le distribuzioni di Azure esistenti e gestire tali le distribuzioni con tag tramite Ansible.
 
 ## <a name="additional-azure-marketplace-options"></a>Opzioni aggiuntive di Azure Marketplace
 

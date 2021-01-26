@@ -4,12 +4,12 @@ description: Panoramica dello sviluppo di applicazioni cloud in Microsoft Azure,
 ms.date: 10/06/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: f2bf8c0c8b35881c31fcf88c0faf38669cb261b3
-ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
-ms.translationtype: HT
+ms.openlocfilehash: d4bac0b041e1f2fddfcca113d39fea04e6610195
+ms.sourcegitcommit: 8eb1c379b2bbc2acdd82fc9d24d8ed948e5a6847
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91764533"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98811124"
 ---
 # <a name="cloud-development-on-azure"></a>Sviluppo cloud in Azure
 
@@ -19,7 +19,9 @@ Per gli sviluppatori Python che vogliono sviluppare applicazioni cloud per Micro
 
 Satya Nadella, CEO di Microsoft, si riferisce spesso ad Azure come "computer del mondo". Un computer, come è noto, è un insieme di componenti hardware gestiti da un sistema operativo, che offre una piattaforma su cui è possibile creare software per consentire agli utenti di applicare la potenza di calcolo del sistema a un numero qualsiasi di attività. È per questo motivo che si usa il termine "applicazione" per descrivere tale software.
 
-Nel caso di Azure l'hardware del computer non è costituito da un singolo computer, ma da un enorme pool di computer server virtualizzati contenuti in [decine di data center di grandi dimensioni in tutto il mondo](https://azure.microsoft.com/global-infrastructure/regions/). Il "sistema operativo" di Azure è quindi costituito da *servizi* che allocano e deallocano in modo dinamico parti diverse del pool di risorse in base alle esigenze delle applicazioni. Ogni allocazione, sia essa potenza di calcolo (memoria e core CPU), spazio di archiviazione, database, reti e così via, corrisponde a una *risorsa*. A ogni risorsa discreta vengono quindi assegnati un *identificatore oggetto* univoco (GUID) e un URL univoco.
+Nel caso di Azure l'hardware del computer non è costituito da un singolo computer, ma da un enorme pool di computer server virtualizzati contenuti in [decine di data center di grandi dimensioni in tutto il mondo](https://azure.microsoft.com/global-infrastructure/regions/). Il "sistema operativo" di Azure è quindi costituito da *servizi* che allocano e deallocano in modo dinamico parti diverse del pool di risorse in base alle esigenze delle applicazioni. Queste allocazioni dinamiche consentono alle applicazioni di rispondere rapidamente a un numero qualsiasi di condizioni mutevoli, ad esempio la domanda dei clienti.
+
+Ogni allocazione, sia essa potenza di calcolo (memoria e core CPU), spazio di archiviazione, database, reti e così via, corrisponde a una *risorsa*. A ogni risorsa discreta vengono quindi assegnati un *identificatore oggetto* univoco (GUID) e un URL univoco.
 
 ![Livelli di Azure, dal data center ai servizi di Azure per l'allocazione delle risorse](media/cloud-development/azure-layers.png)
 
@@ -32,12 +34,19 @@ Il processo di creazione dell'ambiente per l'applicazione implica quindi l'ident
 Trovare i servizi appropriati per l'applicazione e bilanciare i costi relativi può risultare complesso, ma fa anche parte del divertimento creativo dello sviluppo cloud. Per informazioni sulle numerose opzioni disponibili, vedere la [guida per gli sviluppatori di Azure](/azure/guides/developer/azure-developer-guide). In questa sede verrà illustrato come usare tutti questi servizi e queste risorse.
 
 > [!NOTE]
-> Probabilmente si conoscono già i termini "IaaS" (infrastruttura distribuita come servizio), "PaaS" (piattaforma distribuita come servizio) e così via. L'espressione "come servizio" indica proprio che in genere queste soluzioni non prevedono in genere l'accesso fisico ai data center. Si usano invece strumenti come il portale di Azure, l'interfaccia della riga di comando di Azure o l'API REST di Azure per effettuare il provisioning di risorse di tipo "infrastruttura", "piattaforma" e così via. In quanto "servizio", Azure è sempre in attesa di ricevere le richieste degli utenti.
+> Probabilmente si è visto che è possibile che si sia cresciuta l'usura dei termini *IaaS* (Infrastructure-as-a-Service), *PaaS* (piattaforma distribuita come servizio) e così via. La parte *As-a-Service* riflette la realtà che in genere non si ha accesso fisico ai Data Center. Si usano invece strumenti come il portale di Azure, l'interfaccia della riga di comando di Azure o l'API REST di Azure per eseguire il provisioning di risorse di *infrastruttura* , risorse della *piattaforma* e così via. Azure è sempre in attesa di ricevere le richieste.
 >
 > In questo centro per sviluppatori non verranno usati i termini IaaS, PaaS e così via perché l'espressione "come servizio" è riferita esclusivamente al cloud.
 
 > [!NOTE]
-> Per "cloud ibrido" si intende la combinazione di computer privati e data center con risorse cloud come Azure. Tale soluzione implica considerazioni che esulano da quanto trattato nella discussione precedente. Questa discussione presuppone inoltre lo sviluppo di nuove applicazioni, di conseguenza in questa sede non vengono trattati gli scenari che prevedono la riprogettazione e la migrazione di applicazioni locali esistenti.
+> Un *cloud ibrido* si riferisce alla combinazione di computer privati e data center con risorse cloud come Azure e presenta le proprie considerazioni oltre a quanto descritto nella discussione precedente. Questa discussione presuppone inoltre lo sviluppo di nuove applicazioni, di conseguenza in questa sede non vengono trattati gli scenari che prevedono la riprogettazione e la migrazione di applicazioni locali esistenti.
+
+> [!NOTE]
+> Si potrebbero sentire i termini applicazioni *cloud native* e *abilitate* per il cloud, spesso discusse come la stessa cosa. Esistono tuttavia alcune differenze. Un'applicazione abilitata per il cloud è spesso una migrata, nel suo complesso, da un data center locale a server basati su cloud. Spesso, tali applicazioni mantengono la struttura originale e vengono semplicemente distribuite alle macchine virtuali nel cloud (e quindi in tutte le aree geografiche). Tale migrazione consente la scalabilità dell'applicazione in modo da soddisfare la domanda globale senza dover effettuare il provisioning di un nuovo hardware nel proprio data center. Tuttavia, il ridimensionamento deve essere eseguito a livello di macchina virtuale (o di infrastruttura), anche se solo una parte dell'applicazione richiede un miglioramento delle prestazioni.
+>
+> Un'applicazione cloud *nativa* , d'altra parte, viene scritta dall'inizio per sfruttare i numerosi servizi scalabili indipendenti disponibili in un cloud, ad esempio Azure. Le applicazioni cloud native sono, ad esempio, strutturate in modo più flessibile (usando le architetture di microservizi), che consente di configurare più precisamente la distribuzione e il ridimensionamento per ogni parte. Tale struttura semplifica la manutenzione e spesso riduce i costi perché è necessario pagare per i servizi Premium solo se necessario.
+>
+> Per ulteriori informazioni, vedere la pagina relativa alla [compilazione di applicazioni native del cloud in Azure](https://azure.microsoft.com/overview/cloudnative/) e all' [architettura di applicazioni .NET native cloud per Azure](/dotnet/architecture/cloud-native/), i cui principi si applicano alle applicazioni scritte in qualsiasi linguaggio.
 
 ## <a name="next-step"></a>Passaggio successivo
 

@@ -7,18 +7,18 @@ ms.topic: conceptual
 ms.service: azure
 ms.date: 10/30/2020
 ms.custom: github-actions-azure
-ms.openlocfilehash: 494cfd8a5695b81c370d63ffc821c49ac15d34f2
-ms.sourcegitcommit: 6fbf9e489b194586887a2c11152044be5b3a2b99
+ms.openlocfilehash: 7309bd16cdecf8b148b89eb40649864590b552a6
+ms.sourcegitcommit: 8eb1c379b2bbc2acdd82fc9d24d8ed948e5a6847
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98759457"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98811090"
 ---
 # <a name="what-is-github-actions-for-azure"></a>Che cos'è la funzionalità GitHub Actions per Azure?
 
-[GitHub Actions](https://help.github.com/articles/about-github-actions) consente di automatizzare i flussi di lavoro dello sviluppo di software all'interno di GitHub. È possibile distribuire i flussi di lavoro nella stessa posizione in cui si archivia il codice, oltre a collaborare alle richieste pull e ai problemi.
+[GitHub Actions](https://docs.github.com/en/free-pro-team@latest/actions) consente di automatizzare i flussi di lavoro dello sviluppo di software all'interno di GitHub. È possibile distribuire i flussi di lavoro nella stessa posizione in cui si archivia il codice, oltre a collaborare alle richieste pull e ai problemi.
 
-In GitHub Actions un [flusso di lavoro](https://help.github.com/articles/about-github-actions#workflow) è un processo automatizzato che si configura nel repository GitHub. Con un flusso di lavoro è possibile compilare, testare, assemblare o distribuire qualsiasi progetto in GitHub.
+In GitHub Actions un [flusso di lavoro](https://docs.github.com/en/free-pro-team@latest/actions/learn-github-actions/introduction-to-github-actions) è un processo automatizzato che si configura nel repository GitHub. Con un flusso di lavoro è possibile compilare, testare, assemblare o distribuire qualsiasi progetto in GitHub.
 
 Ogni flusso di lavoro è costituito da singole [azioni](https://docs.github.com/en/actions/learn-github-actions/introduction-to-github-actions) eseguite dopo un evento specifico, ad esempio una richiesta pull.  Le singole azioni sono script inseriti in un pacchetto che automatizzano le attività di sviluppo di software.
 
