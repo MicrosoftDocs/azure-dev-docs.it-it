@@ -4,12 +4,12 @@ description: Come configurare un ambiente di sviluppo Python locale per l'uso co
 ms.date: 01/04/2021
 ms.topic: conceptual
 ms.custom: devx-track-python, devx-track-azurecli
-ms.openlocfilehash: fcad7c614ae27c8b1b3ccf081d85292549cfcee3
-ms.sourcegitcommit: 4f9ce09cbf9663203c56f5b12ecbf70ea68090ed
-ms.translationtype: HT
+ms.openlocfilehash: 184996eca52c096602863beb1c73ae4337695829
+ms.sourcegitcommit: 3843092e47691fbd32452c93d51f894a0cab31db
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97911471"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99069078"
 ---
 # <a name="configure-your-local-python-dev-environment-for-azure"></a>Configurare l'ambiente di sviluppo Python locale per Azure
 
@@ -53,7 +53,7 @@ Note:
 
 | Nome/Programma di installazione | Descrizione |
 | --- | --- |
-| [Estensione di Docker per VS Code](https://marketplace.visualstudio.com/items?itemName=ms-python.python) | Aggiunge il supporto per Docker a VS Code, che risulta utile se si lavora regolarmente con i contenitori. |
+| [Estensione di Docker per VS Code](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker) | Aggiunge il supporto per Docker a VS Code, che risulta utile se si lavora regolarmente con i contenitori. |
 
 ### <a name="verify-components"></a>Verificare i componenti
 
@@ -136,7 +136,7 @@ Ogni sviluppatore dell'organizzazione dovrà eseguire questi passaggi singolarme
 
 #### <a name="what-the-create-for-rbac-command-does"></a>Funzioni del comando create-for-rbac
 
-Il `az ad create-for-rbac` comando crea un'entità servizio per l'autenticazione in base al ruolo (Controllo degli accessi in base al ruolo). Per altre informazioni sulle entità servizio, vedere [Come autenticare e autorizzare le app Python in Azure](azure-sdk-authenticate.md).
+Il `az ad sp create-for-rbac` comando crea un'entità servizio per l'autenticazione in base al ruolo (Controllo degli accessi in base al ruolo). Per altre informazioni sulle entità servizio, vedere [Come autenticare e autorizzare le app Python in Azure](azure-sdk-authenticate.md).
 
 - `ad` indica Azure Active Directory, `sp` significa "entità servizio" e `create-for-rbac` significa "crea per il controllo degli accessi in base al ruolo", il tipo principale di autorizzazione di Azure. Vedere le informazioni di riferimento del comando [az ad sp create-for-rbac](/cli/azure/ad/sp#az-ad-sp-create-for-rbac).
 

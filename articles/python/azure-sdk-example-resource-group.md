@@ -1,15 +1,15 @@
 ---
 title: Effettuare il provisioning di un gruppo di risorse con le librerie di Azure per Python
 description: Usare la libreria di gestione delle risorse di Azure SDK per Python per creare un gruppo di risorse dal codice Python.
-ms.date: 11/12/2020
+ms.date: 01/28/2021
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 3bda14cd52f55d25e3669662765aa8f27c3dc939
-ms.sourcegitcommit: 6fbf9e489b194586887a2c11152044be5b3a2b99
+ms.openlocfilehash: 37e912e9fed6edabc966034a6411e7786875bf3f
+ms.sourcegitcommit: 3843092e47691fbd32452c93d51f894a0cab31db
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98759436"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99069088"
 ---
 # <a name="example-use-the-azure-libraries-to-provision-a-resource-group"></a>Esempio: Usare le librerie di Azure per effettuare il provisioning di un gruppo di risorse
 
@@ -28,8 +28,8 @@ Assicurarsi di creare e attivare un ambiente virtuale per questo progetto.
 Creare un file denominato *requirements.txt* con il contenuto seguente:
 
 ```text
-azure-mgmt-resource
-azure-identity
+azure-mgmt-resource>=1.15.0
+azure-identity>=1.5.0
 ```
 
 In un terminale o da un prompt dei comandi con l'ambiente virtuale attivato, installare i requisiti:

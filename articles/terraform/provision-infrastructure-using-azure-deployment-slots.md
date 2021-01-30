@@ -5,12 +5,12 @@ keywords: azure devops terraform slot di distribuzione
 ms.topic: how-to
 ms.date: 01/07/2021
 ms.custom: devx-track-terraform
-ms.openlocfilehash: 0a7bb2fa3e5a0251b6a441ef8312726d93d29e07
-ms.sourcegitcommit: 347bfa3b6c34579c567d1324efc63c1d6672a75b
-ms.translationtype: HT
+ms.openlocfilehash: 5464764dbfbe7ff52b7f0b47f8f15e2c7af629ae
+ms.sourcegitcommit: 3843092e47691fbd32452c93d51f894a0cab31db
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98109134"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99069108"
 ---
 # <a name="provision-infrastructure-with-azure-deployment-slots-using-terraform"></a>Effettuare il provisioning dell'infrastruttura con slot di distribuzione di Azure tramite Terraform
 
@@ -195,7 +195,7 @@ Dopo aver creato una copia tramite fork del repository del progetto di test, con
 
 1. Nella scheda **Scegliere il ramo** selezionare **master**.
 
-    ![Scegliere il ramo master](./media/provision-infrastructure-using-azure-deployment-slots/choose-branch-master.png)
+    ![Scegliere il ramo](./media/provision-infrastructure-using-azure-deployment-slots/choose-branch-master.png)
 
 1. Nella scheda **Opzione di distribuzione** selezionare **OK**.
 
@@ -203,7 +203,7 @@ A questo punto, è stato distribuito lo slot di produzione. Per distribuire lo s
 
 - Nel passaggio 3 selezionare la risorsa **slotAppServiceSlotOne**.
 
-- Nel passaggio 13 selezionare il ramo di lavoro invece del ramo master.
+- Nel passaggio 13 selezionare il ramo di lavoro.
 
     ![Scegliere il ramo di lavoro](./media/provision-infrastructure-using-azure-deployment-slots/choose-branch-working.png)
 

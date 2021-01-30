@@ -1,15 +1,15 @@
 ---
 title: Elencare i gruppi di risorse e le risorse usando le librerie di Azure per Python
 description: Usare la libreria di gestione delle risorse di Azure SDK per Python per elencare i gruppi di risorse e le risorse in un gruppo.
-ms.date: 10/12/2020
+ms.date: 01/28/2021
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 2867ea550ce233594d30b3de2be744d20a1e96de
-ms.sourcegitcommit: 6fbf9e489b194586887a2c11152044be5b3a2b99
+ms.openlocfilehash: c44698fb7fee0e7f736c51fbf11f664b8642e946
+ms.sourcegitcommit: 3843092e47691fbd32452c93d51f894a0cab31db
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98759592"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99069098"
 ---
 # <a name="example-use-the-azure-libraries-to-list-resource-groups-and-resources"></a>Esempio: usare le librerie di Azure per elencare i gruppi di risorse e le risorse
 
@@ -17,7 +17,7 @@ Questo esempio illustra come usare le librerie di gestione di Azure SDK in uno s
 
 - Elencare tutti i gruppi di risorse in una sottoscrizione di Azure.
 - Elencare le risorse entro un gruppo di risorse specifico.
- 
+
 Se non diversamente specificato, tutti i comandi di questo articolo funzionano allo stesso modo nella shell Bash Linux/macOS e nella shell dei comandi di Windows.
 
 Il [comando equivalente dell'interfaccia della riga di comando di Azure](#for-reference-equivalent-azure-cli-commands) viene descritto più avanti in questo articolo.
@@ -33,8 +33,8 @@ Assicurarsi di creare e attivare un ambiente virtuale per questo progetto.
 Creare un file denominato *requirements.txt* con il contenuto seguente:
 
 ```text
-azure-mgmt-resource
-azure-identity
+azure-mgmt-resource>=1.15.0
+azure-identity>=1.5.0
 ```
 
 In un terminale o da un prompt dei comandi con l'ambiente virtuale attivato, installare i requisiti:

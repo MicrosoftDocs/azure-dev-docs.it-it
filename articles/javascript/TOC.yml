@@ -143,6 +143,8 @@
           href: how-to/configure-web-app-settings.md
         - name: Attività per sviluppatori JavaScript
           href: how-to/common-javascript-tasks.md
+        - name: Clonare un repository GitHub per le modifiche
+          href: how-to/with-visual-studio-code/clone-github-repository.md
         - name: Sviluppo end-to-end in Node.js con VS Code
           href: how-to/develop-nodejs-on-azure.md
         - name: Distribuire un'app Web
