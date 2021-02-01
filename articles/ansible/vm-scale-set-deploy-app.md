@@ -5,12 +5,12 @@ keywords: ansible, azure, devops, bash, playbook, macchina virtuale, set di scal
 ms.topic: tutorial
 ms.date: 01/13/2020
 ms.custom: devx-track-ansible
-ms.openlocfilehash: 2ea2dbf740025797e6dd8514330e5b0c0de0df84
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
-ms.translationtype: HT
+ms.openlocfilehash: 9e562f034f14f45ece55247f1cda6ec19e9c6b09
+ms.sourcegitcommit: 3f8aa923e4626b31cc533584fe3b66940d384351
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831097"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "99224765"
 ---
 # <a name="tutorial-deploy-apps-to-virtual-machine-scale-sets-in-azure-using-ansible"></a>Esercitazione: Distribuire app in set di scalabilità di macchine virtuali in Azure tramite Ansible
 
@@ -44,12 +44,12 @@ Salvare il playbook di esempio seguente come `get-hosts-tasks.yml`:
 
   ```yml
   - name: Get facts for all Public IPs within a resource groups
-    azure_rm_publicipaddress_facts:
+    azure_rm_publicipaddress_info:
       resource_group: "{{ resource_group }}"
     register: output_ip_address
 
   - name: Get loadbalancer info
-    azure_rm_loadbalancer_facts:
+    azure_rm_loadbalancer_info:
       resource_group: "{{ resource_group }}"
       name: "{{ loadbalancer_name }}"
     register: output

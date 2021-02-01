@@ -2,13 +2,13 @@
 title: Novità della documentazione di JavaScript
 description: Novità della documentazione di JavaScript nel Developer Center
 ms.topic: conceptual
-ms.date: 01/05/2021
-ms.openlocfilehash: 71f4db11833d0c5346ee6204c94ecd943bb4f126
-ms.sourcegitcommit: 0eb25e1fdafcd64118843748dc061f60e7e48332
+ms.date: 01/29/2021
+ms.openlocfilehash: 15e556d741ee94675932942c6235863fab79a084
+ms.sourcegitcommit: 3f8aa923e4626b31cc533584fe3b66940d384351
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98669150"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "99224695"
 ---
 # <a name="javascript-docs-whats-new"></a>Documentazione di JavaScript: Novità
 
@@ -16,12 +16,22 @@ Contenuti nuovi e aggiornati disponibili per sviluppatori JavaScript e TypeScrip
 
 ## <a name="2021-january"></a>Gennaio 2021
 
+### <a name="whats-new"></a>Novità
+
+|Nome|Note|
+|---------------------------------------|--|
+|[Novità dei sostenitori degli sviluppatori](whats-new-developer-advocacy.md)|Blog, video, informazioni sui moduli|
+|[Esercitazione: convertire il testo in sintesi vocale](./tutorial/convert-text-to-speech-cognitive-services.md)|In questa esercitazione aggiungere il riconoscimento vocale di servizi cognitivi a un'app Express.js esistente per aggiungere la conversione da testo a riconoscimento vocale usando il servizio di riconoscimento vocale di servizi cognitivi. La conversione di testo in sintesi vocale consente di fornire audio senza il costo di generare manualmente l'audio.|
+|Guida alle procedure con l'interfaccia della riga di comando di Azure|* [Creare e usare il registro contenitori](./how-to/with-azure-cli/create-container-registry-resource.md)<br>* [Configurazione di un nome di dominio personalizzato](./how-to/with-azure-cli/configure-app-service-custom-domain-name.md)<br>* [Creare e usare MongoDB in Azure con Cosmos DB](./how-to/with-azure-cli/create-mongodb-cosmosdb.md) |
+|Guida alle procedure con Visual Studio Code|* [Sviluppare ed eseguire il debug di Node.js](./how-to/with-visual-studio-code/install-run-debug-nodejs.md)<br>* [Clonare e usare un repository GitHub](./how-to/with-visual-studio-code/clone-github-repository.md)<br>* [Creare un'immagine del contenitore dal progetto JavaScript locale](./how-to/with-visual-studio-code/containerize-local-project.md)|
+
 ### <a name="whats-updated"></a>Aggiornamenti
 
 |Nome|Note|
 |---------------------------------------|--|
 |[**Per principianti**](learn-azure-javascript.md#getting-started)|Varie raccolte di materiali online per iniziare a usare JavaScript, Node.js, sviluppo Web e altre aree di interesse per gli sviluppatori JavaScript.|
 |[Attività principali per sviluppatori JavaScript](how-to/common-javascript-tasks.md)|Un esempio delle attività correnti.|
+|[Configurare il file di avvio Visual Studio Code](./how-to/configure-web-app-settings.md#configure-browser-for-cors-to-connect-with-server)|Se è necessario connettersi al proprio server e occorre ignorare la sicurezza CORS durante l'esecuzione e il debug con il client in locale, la soluzione consigliata consiste nel configurare questa impostazione nel file di debug di Visual Studio Code, `launch.json`, per passare le impostazioni al browser in modo da disabilitare la sicurezza.|
 
 ## <a name="2020-december"></a>Dicembre 2020
 

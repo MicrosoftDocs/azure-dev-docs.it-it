@@ -5,12 +5,12 @@ author: edburns
 ms.author: edburns
 ms.topic: tutorial
 ms.date: 08/10/2020
-ms.openlocfilehash: 277f34fecfd976135077243252bc31aace11dd61
-ms.sourcegitcommit: 4dd392ea864be52421d0239e59198bc44b0a5a16
-ms.translationtype: HT
+ms.openlocfilehash: f97d9d57b85550c1e28f58fb24a27a4da4205266
+ms.sourcegitcommit: 3f8aa923e4626b31cc533584fe3b66940d384351
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91365014"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "99224725"
 ---
 # <a name="end-user-authorization-and-authentication-for-migrating-java-apps-on-weblogic-server-to-azure"></a>Autorizzazione e autenticazione degli utenti finali per la migrazione di app Java in WebLogic Server ad Azure
 
@@ -198,7 +198,7 @@ Dopo aver distribuito WLS e configurato LDAP con uno dei due metodi precedenti, 
 
 ### <a name="lock-down-and-secure-ldap-access-over-the-internet"></a>Bloccare l'accesso LDAP sicuro su Internet
 
-Durante la configurazione di LDAP sicuro nei passaggi precedenti, l'origine è stata impostata su **Qualsiasi** per la regola `AllowLDAPS` nel gruppo di sicurezza di rete.  Ora che il server di amministrazione di WLS è stato distribuito e connesso a LDAP, ottenere il relativo indirizzo IP pubblico usando il portale di Azure.  Vedere [Bloccare l'accesso LDAP sicuro tramite Internet](/azure/active-directory-domain-services/tutorial-configure-ldaps?branch=pr-en-us-778#lock-down-secure-ldap-access-over-the-internet) e sostituire **Qualsiasi** con l'indirizzo IP specifico del server di amministrazione di WLS.
+Durante la configurazione di LDAP sicuro nei passaggi precedenti, l'origine è stata impostata su **Qualsiasi** per la regola `AllowLDAPS` nel gruppo di sicurezza di rete.  Ora che il server di amministrazione di WLS è stato distribuito e connesso a LDAP, ottenere il relativo indirizzo IP pubblico usando il portale di Azure.  Vedere [Bloccare l'accesso LDAP sicuro tramite Internet](/azure/active-directory-domain-services/tutorial-configure-ldaps#lock-down-secure-ldap-access-over-the-internet) e sostituire **Qualsiasi** con l'indirizzo IP specifico del server di amministrazione di WLS.
 
 ## <a name="clean-up-resources"></a>Pulire le risorse
 

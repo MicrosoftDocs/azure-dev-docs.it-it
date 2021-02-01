@@ -3,6 +3,8 @@
   items:
     - name: Novità della documentazione
       href: whats-new-docs.md
+    - name: Novità dei sostenitori degli sviluppatori
+      href: whats-new-developer-advocacy.md
     - name: Introduzione ad Azure con JavaScript
       items:
         - name: Che cos'è Azure per sviluppatori JavaScript?
@@ -143,10 +145,22 @@
           href: how-to/configure-web-app-settings.md
         - name: Attività per sviluppatori JavaScript
           href: how-to/common-javascript-tasks.md
-        - name: Clonare un repository GitHub per le modifiche
-          href: how-to/with-visual-studio-code/clone-github-repository.md
-        - name: Sviluppo end-to-end in Node.js con VS Code
-          href: how-to/develop-nodejs-on-azure.md
+        - name: Con Visual Studio Code
+          items:
+            - name: Installare ed eseguire il debug del progetto locale
+              href: how-to/with-visual-studio-code/install-run-debug-nodejs.md
+            - name: Clonare un repository GitHub per le modifiche
+              href: how-to/with-visual-studio-code/clone-github-repository.md
+            - name: Crea il contenitore dal progetto locale
+              href: how-to/with-visual-studio-code/containerize-local-project.md
+        - name: Con l'interfaccia della riga di comando di Azure
+          items:
+            - name: Creare e usare il registro contenitori
+              href: how-to/with-azure-cli/create-container-registry-resource.md
+            - name: Configurare il nome di dominio dell'app Web
+              href: how-to/with-azure-cli/configure-app-service-custom-domain-name.md
+            - name: Usare la risorsa Cosmos DB MongoDB
+              href: how-to/with-azure-cli/create-mongodb-cosmosdb.md
         - name: Distribuire un'app Web
           href: how-to/deploy-web-app.md
         - name: Distribuire contenitori

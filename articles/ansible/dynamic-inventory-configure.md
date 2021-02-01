@@ -5,12 +5,12 @@ keywords: ansible, azure, devops, bash, cloud shell, inventario dinamico
 ms.topic: tutorial
 ms.date: 10/30/2020
 ms.custom: devx-track-ansible, devx-track-azurecli
-ms.openlocfilehash: dd9a6f2b76c6d653eba9542d3b5dfdda4cb75ba5
-ms.sourcegitcommit: e1175aa94709b14b283645986a34a385999fb3f7
-ms.translationtype: HT
+ms.openlocfilehash: d5d3095384fb3f192f7e8cd74b2a49b41b47f239
+ms.sourcegitcommit: 3f8aa923e4626b31cc533584fe3b66940d384351
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93192353"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "99224735"
 ---
 # <a name="tutorial-configure-dynamic-inventories-of-your-azure-resources-using-ansible"></a>Esercitazione: Configurare gli inventari dinamici delle risorse di Azure tramite Ansible
 
@@ -48,9 +48,9 @@ Ansible può essere usato per eseguire il pull delle informazioni degli inventar
 
 1. Creare due macchine virtuali Linux in Azure con una delle tecniche seguenti:
 
-    - **Playbook di Ansible** : l'articolo [Creare una macchina virtuale di base in Azure con Ansible](./vm-configure.md) illustra come creare una macchina virtuale da un playbook di Ansible. Se si usa un playbook per definire una o entrambe le macchine virtuali, verificare che venga usata la connessione SSH invece di una password.
+    - **Playbook di Ansible**: l'articolo [Creare una macchina virtuale di base in Azure con Ansible](./vm-configure.md) illustra come creare una macchina virtuale da un playbook di Ansible. Se si usa un playbook per definire una o entrambe le macchine virtuali, verificare che venga usata la connessione SSH invece di una password.
 
-    - **Interfaccia della riga di comando di Azure** : eseguire ognuno dei comandi seguenti in Cloud Shell per creare le due macchine virtuali:
+    - **Interfaccia della riga di comando di Azure**: eseguire ognuno dei comandi seguenti in Cloud Shell per creare le due macchine virtuali:
 
         ```azurecli
         az vm create --resource-group ansible-inventory-test-rg \
@@ -133,16 +133,16 @@ A partire da Ansible 2.8, Ansible include un [plug-in per inventari dinamici di 
     ansible all -m ping -i ./myazure_rm.yml
     ```
 
-1. Quando si esegue il comando precedente, si potrebbe ricevere un errore. Potrebbe trattarsi di un errore di connessione all'host a causa di un 
+1. Per impostazione predefinita, il controllo della chiave host è abilitato, che può causare l'errore seguente.
 
     ```output
     Failed to connect to the host via ssh: Host key verification failed.
     ```
-    
-    Se viene visualizzato l'errore di verifica della chiave dell'host, aggiungere la riga seguente al file di configurazione di Ansible. Il file di configurazione di Ansible si trova in `/etc/ansible/ansible.cfg` o `~/.ansible.cfg`.
+
+    Disabilitare la verifica della chiave host impostando la `ANSIBLE_HOST_KEY_CHECKING` variabile di ambiente su `False` .
 
     ```bash
-    host_key_checking = False
+    export ANSIBLE_HOST_KEY_CHECKING=False
     ```
 
 1. Quando si esegue il playbook viene visualizzato un output simile al seguente:

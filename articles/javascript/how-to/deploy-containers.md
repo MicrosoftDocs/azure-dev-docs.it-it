@@ -4,12 +4,12 @@ description: Usare contenitori Docker per distribuire app Node.js in Azure
 ms.topic: how-to
 ms.date: 12/07/2020
 ms.custom: seo-javascript-september2019, devx-track-js
-ms.openlocfilehash: 6bf8acb66a708433966bdfe90cc358a56d2d3b42
-ms.sourcegitcommit: ae2fa266a36958c04625bb0ab212e6f2db98e026
-ms.translationtype: HT
+ms.openlocfilehash: 50c26c26fffc0c9377b661d79858dd97318bd3c2
+ms.sourcegitcommit: 3f8aa923e4626b31cc533584fe3b66940d384351
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96857809"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "99224785"
 ---
 # <a name="deploy-nodejs-container-to-azure"></a>Distribuire un contenitore Node.js in Azure 
 
@@ -29,18 +29,9 @@ Le opzioni di hosting seguenti consentono di distribuire le applicazioni in cont
 
 ## <a name="build-containerize-and-deploy-app-to-azure"></a>Creare, inserire in contenitori e distribuire app in Azure
 
-Per iniziare, seguire questa [esercitazione](develop-nodejs-on-azure.md) per imparare a eseguire queste operazioni:
-
-* Scaricare il codice di esempio
-* Eseguire l'app Node.js
-* Eseguire il debug dell'app in Visual Studio Code
-* Inserire l'app MEAN Node.js in contenitori
-* Distribuire l'app usando comandi dell'interfaccia della riga di comando di Azure
-* Creare un server MongoDB in una risorsa di CosmosDB
-* Aggiungere l'immagine del contenitore al registro contenitori privato
-* Aggiungere nomi di dominio personalizzati all'app Web
-* Specificare dimensioni superiori per l'app Web
-* Creare ed eliminare un gruppo di risorse per tutte le risorse
+Per iniziare, selezionare nell'elenco:
+* Esercitazione: [Express.js](../tutorial/tutorial-vscode-docker-node/tutorial-vscode-docker-node-01.md)
+* Esercitazione: [deno](../tutorial/deploy-deno-app-azure-app-service-azure-cli.md)
 
 ## <a name="next-steps"></a>Passaggi successivi
 

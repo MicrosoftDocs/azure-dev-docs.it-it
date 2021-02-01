@@ -4,26 +4,26 @@ description: Clonare un repository pubblico da GitHub nel computer locale usando
 ms.topic: how-to
 ms.date: 01/28/2021
 ms.custom: devx-track-js
-ms.openlocfilehash: d47dfe7a7f0cee694e04d5f88098543db1e0ee0a
-ms.sourcegitcommit: 3843092e47691fbd32452c93d51f894a0cab31db
+ms.openlocfilehash: f3bf194f7520779b92d4cfb5966eedb0f599edea
+ms.sourcegitcommit: 3f8aa923e4626b31cc533584fe3b66940d384351
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99072975"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "99224805"
 ---
-# <a name="clone-and-work-with-a-github-repository-with-visual-studio-code"></a>Clonare e usare un repository GitHub con Visual Studio Code
+# <a name="clone-and-use-a-github-repository-in-visual-studio-code"></a>Clonare e usare un repository GitHub in Visual Studio Code
 
 Informazioni sui passaggi per clonare un repository pubblico da GitHub nel computer locale usando Visual Studio Code.
 
 L'uso di Visual Studio Code con un repository usa strumenti distinti:
 
-|Icona|Informazioni|Accesso da|
+|Icona|Informazioni|[Accesso da](https://code.visualstudio.com/docs/getstarted/userinterface)|
 |--|--|--|
 || [INTERFACCIA della riga di comando git](https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette)|riquadro comandi-F1|
 |:::image type="content" source="../../media/how-to-clone-github-repo/git-commit-icon-activity-bar.png" alt-text="Icona per il controllo del codice sorgente.":::|Estensione del controllo del codice sorgente|Barra attività|
 |:::image type="content" source="../../media/how-to-clone-github-repo/github-icon-activity-bar.png" alt-text="Icona per le richieste pull e i problemi di GitHub":::|Estensione GitHub|Barra attività|
 
-Questi strumenti sono concepiti per eseguire rapidamente attività comuni. Nelle procedure riportate di seguito vengono utilizzate le parti denominate dell' [interfaccia utente di Visual Studio Code](https://code.visualstudio.com/docs/getstarted/userinterface). 
+Nelle procedure riportate di seguito vengono utilizzate le parti denominate dell' [interfaccia utente di Visual Studio Code](https://code.visualstudio.com/docs/getstarted/userinterface). 
 
 ## <a name="use-command-palette-to-clone-repository"></a>Usare il riquadro comandi per clonare il repository
 
@@ -84,7 +84,7 @@ Dopo aver apportato modifiche al ramo, eseguire il commit delle modifiche
 
 ## <a name="push-a-local-branch-to-remote-from-the-source-control-extension"></a>Eseguire il push di un branch locale in remoto dall'estensione del controllo del codice sorgente
 1. Selezionare l'icona del controllo del codice sorgente nella barra attività. 
-1. Selezionare i puntini di sospensione (...), quindi selezionare **pull, push**, quindi selezionare **push in...*. 
+1. Selezionare i puntini di sospensione (...) e quindi selezionare **pull, push**, quindi selezionare **push a...**. 
 1. Selezionare il nome remoto nella casella popup. Se si dispone di un solo remoto, non verrà chiesto di selezionare il nome remoto. 
 
 ## <a name="next-steps"></a>Passaggi successivi
