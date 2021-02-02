@@ -1,25 +1,27 @@
 ---
 title: Configurare la registrazione nelle librerie di Azure per Python
 description: Le librerie di Azure usano il modulo di registrazione Python standard, che è configurato per singola libreria o per singola operazione.
-ms.date: 06/04/2020
+ms.date: 02/01/2021
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 0c08ba9c514bf9bca3c982ccf3ef3182f203e247
-ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
-ms.translationtype: HT
+ms.openlocfilehash: f42941ec54876fec5854a0a82cee1cbcf30506ce
+ms.sourcegitcommit: b09d3aa79113af04a245b05cec2f810e43062152
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87983315"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99476447"
 ---
 # <a name="configure-logging-in-the-azure-libraries-for-python"></a>Configurare la registrazione nelle librerie di Azure per Python
 
 Le librerie di Azure per Python [basate su azure.core](azure-sdk-library-package-index.md#libraries-using-azurecore) forniscono l'output di registrazione usando la libreria [logging](https://docs.python.org/3/library/logging.html) di Python standard.
 
-L'output del logger non è abilitato per impostazione predefinita. Per abilitare la registrazione:
+Il processo generale per lavorare con la registrazione è il seguente:
 
 1. Acquisire l'oggetto di registrazione per la libreria desiderata e impostare il livello di registrazione.
 1. Registrare un gestore per il flusso di registrazione.
-1. Abilitare la registrazione passando un parametro `logging_enable=True` a un costruttore di oggetti client o a un metodo specifico.
+1. Per includere informazioni HTTP, passare un `logging_enable=True` parametro a un costruttore di oggetto client, un costruttore di oggetto credenziale o a un metodo specifico.
+
+I dettagli sono disponibili nelle sezioni rimanenti di questo articolo.
 
 Come regola generale, la risorsa migliore per comprendere l'utilizzo della registrazione all'interno delle librerie è il codice sorgente dell'SDK disponibile all'indirizzo [github.com/Azure/azure-sdk-for-python](https://github.com/Azure/azure-sdk-for-python). È consigliabile clonare il repository in locale, in modo da poter cercare facilmente i dettagli quando necessario, come suggerito nelle sezioni seguenti.
 
@@ -73,7 +75,7 @@ I livelli di registrazione corrispondono ai [livelli della libreria logging stan
 | logging.ERROR             | Errori da cui è improbabile che venga ripristinato lo stato normale dell'applicazione (ad esempio memoria insufficiente). |
 | logging.WARNING (predefinito) | Una funzione non riesce a eseguire l'attività prevista (ma non quando la funzione può essere ripristinata, come nel caso di un nuovo tentativo di chiamata all'API REST). In genere le funzioni registrano un avviso in caso di generazione di eccezioni. Il livello di avviso abilita automaticamente il livello di errore. |
 | logging.INFO              | La funzione funziona normalmente o una chiamata al servizio viene annullata. Gli eventi informativi includono in genere richieste, risposte e intestazioni. Il livello di informazioni abilita automaticamente i livelli di errore e avviso. |
-| logging.DEBUG             | Informazioni dettagliate comunemente usate per la risoluzione dei problemi. Debug è l'unico livello di registrazione che include informazioni sensibili come le chiavi degli account nelle intestazioni. L'output di debug include in genere un'analisi dello stack per le eccezioni. Il livello di debug abilita automaticamente i livelli di informazioni, avviso ed errore. |
+| logging.DEBUG             | Informazioni dettagliate comunemente utilizzate per la risoluzione dei problemi e che includono un'analisi dello stack per le eccezioni. Il livello di debug abilita automaticamente i livelli di informazioni, avviso ed errore. Attenzione: se si imposta anche `logging_enable=True` , il livello di debug include informazioni riservate, ad esempio le chiavi dell'account nelle intestazioni e altre credenziali. Assicurarsi di proteggere questi log per evitare di compromettere la sicurezza. |
 | logging.NOTSET            | Disabilita tutte le registrazioni. |
 
 ### <a name="library-specific-logging-level-behavior"></a>Comportamento del livello di registrazione specifico della libreria
@@ -104,41 +106,58 @@ handler = logging.StreamHandler(stream=sys.stdout)
 logger.addHandler(handler)
 ```
 
-Questo esempio registra un gestore che indirizza l'output di registrazione a stdout. È possibile usare altri tipi di gestori, come descritto in [logging.handlers](https://docs.python.org/3/library/logging.handlers.html) nella documentazione di Python.
+Questo esempio registra un gestore che indirizza l'output di registrazione a stdout. È possibile usare altri tipi di gestori come descritto in [Logging. Handlers](https://docs.python.org/3/library/logging.handlers.html) nella documentazione di Python o usare il metodo standard [Logging. basicConfig](https://docs.python.org/3/library/logging.html#logging.basicConfig) .
 
-## <a name="enable-logging-for-a-client-object-or-operation"></a>Abilitare la registrazione per un oggetto client o un'operazione
+## <a name="enable-http-logging-for-a-client-object-or-operation"></a>Abilitare la registrazione HTTP per un oggetto o un'operazione client
 
-Anche dopo aver impostato un set di livelli di registrazione e aver registrato un gestore, è comunque necessario indicare alle librerie di Azure di abilitare la registrazione per un costruttore di oggetti client o per un metodo di operazione.
+Per impostazione predefinita, la registrazione nelle librerie di Azure non include informazioni HTTP. Per includere informazioni HTTP nell'output del log, ad esempio il livello di DEBUG, è necessario passare in modo specifico `logging_enable=True` a un costruttore di oggetti client o credenziali o a un metodo specifico.
 
-### <a name="enable-logging-for-a-client-object"></a>Abilitare la registrazione per un oggetto client
+**Attenzione**: la registrazione http può rivelare le informazioni riservate, ad esempio le chiavi dell'account nelle intestazioni e altre credenziali. Assicurarsi di proteggere questi log per evitare di compromettere la sicurezza.
+
+### <a name="enable-http-logging-for-a-client-object-debug-level"></a>Abilitare la registrazione HTTP per un oggetto client (livello di DEBUG)
 
 ```python
 from azure.storage.blob import BlobClient
 from azure.identity import DefaultAzureCredential
 
+# Enable HTTP logging on the client object when using DEBUG level
 # endpoint is the Blob storage URL.
 client = BlobClient(endpoint, DefaultAzureCredential(), logging_enable=True)
 ```
 
-Abilitando la registrazione per un oggetto client viene abilitata la registrazione di tutte le operazioni richiamate tramite tale oggetto.
+L'abilitazione della registrazione HTTP per un oggetto client consente la registrazione per tutte le operazioni richiamate tramite tale oggetto.
 
-### <a name="enable-logging-for-an-operation"></a>Abilitare la registrazione per un'operazione
+### <a name="enable-http-logging-for-a-credential-object-debug-level"></a>Abilitare la registrazione HTTP per un oggetto credenziale (livello di DEBUG)
 
 ```python
 from azure.storage.blob import BlobClient
 from azure.identity import DefaultAzureCredential
 
-# Logging is not enabled on this client.
+# Enable HTTP logging on the credential object when using DEBUG level
+credential = DefaultAzureCredential(logging_enable=True)
+
+# endpoint is the Blob storage URL.
+client = BlobClient(endpoint, credential)
+```
+
+L'abilitazione della registrazione HTTP per un oggetto credenziale consente la registrazione per tutte le operazioni richiamate tramite tale oggetto, in particolare, ma non per le operazioni in un oggetto client che non implicano l'autenticazione.
+
+### <a name="enable-logging-for-an-individual-method-debug-level"></a>Abilitare la registrazione per un singolo metodo (livello di DEBUG)
+
+```python
+from azure.storage.blob import BlobClient
+from azure.identity import DefaultAzureCredential
+
 # endpoint is the Blob storage URL.
 client = BlobClient(endpoint, DefaultAzureCredential())
 
-# Enable logging for only this operation
+# Enable HTTP logging for only this operation when using DEBUG level
 client.create_container("container01", logging_enable=True)
 ```
 
 ## <a name="example-logging-output"></a>Esempio di output di registrazione
 
-Il codice seguente è quello illustrato in [Esempio: Usare le librerie di Azure con Archiviazione di Azure](azure-sdk-example-storage-use.md) con l'aggiunta dell'abilitazione della registrazione di livello DEBUG (commenti omessi per brevità):
+Il codice seguente è illustrato nell' [esempio: usare un account di archiviazione](azure-sdk-example-storage-use.md) con l'aggiunta di abilitazione del debug e della registrazione http (Commenti omessi per brevità):
 
 ```python
 import os, sys, logging

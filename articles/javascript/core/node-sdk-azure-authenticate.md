@@ -4,12 +4,12 @@ description: Eseguire l'autenticazione con un'entità servizio nei moduli di ges
 ms.topic: how-to
 ms.date: 01/04/2021
 ms.custom: devx-track-js
-ms.openlocfilehash: b0e39b14e8f96c58e1e5fb4f2bbf12f07180db8b
-ms.sourcegitcommit: 3d906f265b748fbc0a070fce252098675674c8d9
+ms.openlocfilehash: e5774f0453960b41679a01170882fad1d9f50bad
+ms.sourcegitcommit: b09d3aa79113af04a245b05cec2f810e43062152
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98699909"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99476437"
 ---
 # <a name="authenticate-with-the-azure-management-modules-for-javascript"></a>Eseguire l'autenticazione con i moduli di gestione di Azure per JavaScript
 
@@ -31,7 +31,7 @@ Ogni pacchetto npm mostrerà l'autenticazione per tale esatta libreria client. N
 
 ## <a name="azure-identity-library"></a>Libreria di identità di Azure
 
-La libreria di identità di Azure è il pacchetto di autenticazione più recente per Azure. Esaminare l'[elenco di delle librerie supportate](https://www.npmjs.com/package/@azure/identity#client-libraries-supporting-authentication-with-azure-identity) usando Identità di Azure.
+La libreria di identità di Azure è il pacchetto di autenticazione più recente per Azure. Controllare il file Leggimi della libreria client utilizzata per verificare se supporta l'utilizzo della nuova libreria.
 
 La libreria [@azure/identity](https://www.npmjs.com/package/@azure/identity) semplifica l'autenticazione rispetto ad Azure Active Directory per le librerie di Azure SDK. Fornisce un set di implementazioni di TokenCredential, che possono essere passate nelle librerie SDK per autenticare le richieste API. Supporta l'autenticazione token usando un'entità servizio o un'identità gestita di Azure Active Directory.
 
