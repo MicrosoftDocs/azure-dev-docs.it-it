@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: fe73a2c6b6f18a5e85d342f8fed7ed547b272be9
-ms.sourcegitcommit: cbcde17e91e7262a596d813243fd713ce5e97d06
-ms.translationtype: HT
+ms.openlocfilehash: 9731f0504dd654b5fdb617b7b82cbd1afc4e2414
+ms.sourcegitcommit: 71847ee0a1fee3f3320503629d9a8c82319a1f6a
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93406641"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99522067"
 ---
 | Esempio  | Descrizione |
 |---|---|
@@ -16,8 +16,6 @@ ms.locfileid: "93406641"
 | [Creare macchine virtuali in diverse aree in parallelo][5] | Creare e applicare il bilanciamento del carico a un set di macchine virtuali in diverse aree di Azure. |
 | **Macchine virtuali di rete** || 
 | [Gestire le reti virtuali][6] | Configurare una rete virtuale con due subnet e limitare l'accesso Internet a tali subnet. |
-| **Creare set di scalabilità** ||
-| [Creare un set di scalabilità di macchine virtuali con un servizio di bilanciamento del carico][7] | Creare un set di scalabilità di macchine virtuali, configurare un servizio di bilanciamento del carico e ottenere le stringhe di connessione SSH per le VM del set di scalabilità. |
 
 [1]: ../index.yml
 [2]: https://github.com/Azure-Samples/managed-disk-java-create-virtual-machine-using-custom-image/
@@ -25,4 +23,3 @@ ms.locfileid: "93406641"
 [4]: https://github.com/Azure-Samples/compute-java-manage-virtual-machines-in-parallel/
 [5]: ../index.yml
 [6]: ../index.yml
-[7]: ../java-sdk-manage-vm-scalesets.md

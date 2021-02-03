@@ -3,14 +3,14 @@ title: "Esercitazione: Distribuire un'app Django con PostgreSQL tramite il porta
 description: Effettuare il provisioning di un'app Web e di un database PostgreSQL in Azure e distribuire il codice dell'app da GitHub.
 ms.devlang: python
 ms.topic: tutorial
-ms.date: 01/04/2021
+ms.date: 02/02/2021
 ms.custom: devx-track-python
-ms.openlocfilehash: 65f8558aa81e839b3701669a0274419cd2143e49
-ms.sourcegitcommit: 4f9ce09cbf9663203c56f5b12ecbf70ea68090ed
-ms.translationtype: HT
+ms.openlocfilehash: e3ee95a80d833ce9e99ebc1c5a3fbc6f14166e19
+ms.sourcegitcommit: 71847ee0a1fee3f3320503629d9a8c82319a1f6a
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97911461"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99511121"
 ---
 # <a name="tutorial-deploy-a-django-web-app-with-postgresql-using-the-azure-portal"></a>Esercitazione: Distribuire un'app Web Django con PostgreSQL tramite il portale di Azure
 
@@ -206,6 +206,12 @@ Con il codice distribuito e il database implementato, l'app è quasi pronta per 
     source /antenv/bin/activate
     ```
 
+1. Installare le dipendenze:
+
+    ```bash
+    pip install -r requirements.txt
+    ```
+
 1. Eseguire le migrazioni del database:
 
     ```bash
@@ -253,6 +259,8 @@ Se si cambiano i modelli di dati dell'app Django, tuttavia, è necessario esegui
 1. Passare alla cartella dell'app con `cd $APP_PATH`.
 
 1. Attivare l'ambiente virtuale con `source /antenv/bin/activate`.
+
+1. Installare i requisiti con `pip install -r requirements.txt` .
 
 1. Eseguire di nuovo le migrazioni con `python manage.py migrate`.
 

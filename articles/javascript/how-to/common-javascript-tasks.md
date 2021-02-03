@@ -4,12 +4,12 @@ description: Un esempio delle attività correnti.
 ms.topic: reference
 ms.date: 01/20/2021
 ms.custom: devx-track-js
-ms.openlocfilehash: 7e095bbcd1ce792da827c42e46b8abd1f5aaa72c
-ms.sourcegitcommit: 3f8aa923e4626b31cc533584fe3b66940d384351
+ms.openlocfilehash: cc5ca751b8d22612c63d26a46934eb5b4c057c69
+ms.sourcegitcommit: 71847ee0a1fee3f3320503629d9a8c82319a1f6a
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/01/2021
-ms.locfileid: "99224835"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99510999"
 ---
 # <a name="top-tasks-for-javascript-developers"></a>Attività principali per sviluppatori JavaScript
 
@@ -89,7 +89,7 @@ Un esempio delle attività correnti. Se non si riesce a trovare un'attività, la
 |Creare una risorsa app: distribuire l'app Express.js, configurare le impostazioni dell'app, eseguire npm install, passare al sito Web distribuito|[Estensione di Visual Studio Code](../tutorial/deploy-nodejs-azure-app-service-with-visual-studio-code.md?tabs=bash#6-create-app-service-resource-in-visual-studio-code)|
 |Creare una risorsa app|[Interfaccia della riga di comando di Azure](../tutorial/tutorial-vscode-azure-cli-node/tutorial-vscode-azure-cli-node-03.md)|
 |Crea app, Distribuisci, app browser, Visualizza log|[Interfaccia della riga di comando di Azure](../tutorial/tutorial-vscode-azure-cli-node/tutorial-vscode-azure-cli-node-03.md)|
-|Configurare l'app Web per l'uso della stringa di connessione del database|[Interfaccia della riga di comando di Azure](./with-azure-cli/create-mongodb-cosmosdb.md#configure-your-web-app-with-the-connection-string)|
+|Configurare l'app Web per l'uso della stringa di connessione del database|[Interfaccia della riga di comando di Azure](./with-azure-cli/create-mongodb-cosmosdb.md#configure-your-azure-web-app-with-the-connection-string)|
 |Configurare l'app Web per l'uso del contenitore|[Interfaccia della riga di comando di Azure](./with-azure-cli/create-container-registry-resource.md#configure-web-app-to-use-container)|
 |Configurare il nome di dominio personalizzato dell'app Web|[Interfaccia della riga di comando di Azure](./with-azure-cli/configure-app-service-custom-domain-name.md#register-a-domain-name-with-your-azure-app)|
 |Eliminare la risorsa app|[Estensione di Visual Studio Code](../tutorial/deploy-nodejs-mongodb-app-service-from-visual-studio-code.md#clean-up-resources)<br>[Interfaccia della riga di comando di Azure](../tutorial/tutorial-vscode-azure-cli-node/tutorial-vscode-azure-cli-node-07.md)|
@@ -130,8 +130,10 @@ Un esempio delle attività correnti. Se non si riesce a trovare un'attività, la
 
 |Attività|using|
 |--|--|
-|Creare una risorsa CosmosDB - MongoDB|[Estensione di Visual Studio Code](../tutorial/deploy-nodejs-mongodb-app-service-from-visual-studio-code.md)|
-|Ottenere la stringa di connessione di CosmosDB|[Estensione di Visual Studio Code](../tutorial/deploy-nodejs-mongodb-app-service-from-visual-studio-code.md#get-cosmosdb-connection-string)|
+|Creare una risorsa Cosmos DB-MongoDB|[Estensione di Visual Studio Code](../tutorial/deploy-nodejs-mongodb-app-service-from-visual-studio-code.md)<br>[Interfaccia della riga di comando di Azure](./with-azure-cli/create-mongodb-cosmosdb.md#create-a-cosmos-db-resource-for-mongodb)|
+|Ottenere la stringa di connessione di CosmosDB|[Estensione di Visual Studio Code](../tutorial/deploy-nodejs-mongodb-app-service-from-visual-studio-code.md#get-cosmosdb-connection-string)<br>[Interfaccia della riga di comando di Azure](./with-azure-cli/create-mongodb-cosmosdb.md#get-the-mongodb-connection-string-for-your-resource)|
+|Visualizza Cosmos DB|[Esplora Cosmos DB](https://cosmos.azure.com/)|
+|Usare l'API mangusta per mongoDB in Cosmos DB|[JavaScript](./with-database/use-mongodb-as-cosmosdb.md#use-mongoose-sdk-to-connect-to-mongodb-on-azure)
 
 ## <a name="git"></a>Git
 

@@ -1,37 +1,49 @@
 ### YamlMime:Landing
 title: Documentazione di Azure SDK per Java
-summary: Sviluppo per il cloud con Java in Azure.
+summary: Sviluppo cloud con Java in Azure.
 metadata:
   title: Documentazione di Azure SDK per Java
-  description: Sviluppo per il cloud con Java in Azure
-  ms.date: 04/03/2020
+  description: Sviluppo cloud con Java in Azure
+  ms.date: 02/02/2021
   ms.topic: landing-page
-  ms.openlocfilehash: 2380696b801927bc842278b1b8604825feda0984
-  ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
-  ms.translationtype: HT
+  ms.openlocfilehash: cde5054104f4331e48078b5854d61dca2c36f6cf
+  ms.sourcegitcommit: 71847ee0a1fee3f3320503629d9a8c82319a1f6a
+  ms.translationtype: MT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 05/05/2020
-  ms.locfileid: "81675147"
+  ms.lasthandoff: 02/03/2021
+  ms.locfileid: "99511073"
 landingContent:
-- title: Azure per sviluppatori cloud Java
+- title: Azure per sviluppatori Java
   linkLists:
   - linkListType: get-started
     links:
     - text: Sviluppo di Azure con Java
-      url: java-sdk-azure-get-started.md
+      url: get-started.md
+    - text: Usare Azure SDK per Java
+      url: overview.md
   - linkListType: reference
     links:
     - text: Browser API Java
-      url: /java/api/?view=azure-java
+      url: /java/api
   - linkListType: how-to-guide
     links:
-    - text: Aggiungere un certificato radice
-      url: java-sdk-add-certificate-ca-store.md
-    - text: Authenticate
-      url: java-sdk-azure-authenticate.md
+    - text: Identità e autenticazione
+      url: identity.md
     - text: Configurare la registrazione
-      url: java-sdk-azure-log.md
+      url: logging-overview.md
+- title: Concetti comuni
+  linkLists:
   - linkListType: learn
     links:
-    - text: Modelli e procedure consigliate
-      url: java-sdk-azure-concepts.md
+    - text: Client e pipeline HTTP
+      url: http-client-pipeline.md
+    - text: Programmazione asincrona
+      url: async-programming.md
+    - text: Impaginazione e iterazione
+      url: pagination.md
+    - text: Operazioni a esecuzione prolungata
+      url: lro.md
+    - text: Inoltro
+      url: proxying.md
+    - text: Traccia
+      url: tracing.md

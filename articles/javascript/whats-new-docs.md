@@ -2,17 +2,25 @@
 title: Novità della documentazione di JavaScript
 description: Novità della documentazione di JavaScript nel Developer Center
 ms.topic: conceptual
-ms.date: 01/29/2021
-ms.openlocfilehash: 15e556d741ee94675932942c6235863fab79a084
-ms.sourcegitcommit: 3f8aa923e4626b31cc533584fe3b66940d384351
+ms.date: 02/02/2021
+ms.openlocfilehash: 9bfb3b8b05861a50d82fc878b74e14ddd3402dae
+ms.sourcegitcommit: 71847ee0a1fee3f3320503629d9a8c82319a1f6a
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/01/2021
-ms.locfileid: "99224695"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99510962"
 ---
 # <a name="javascript-docs-whats-new"></a>Documentazione di JavaScript: Novità
 
 Contenuti nuovi e aggiornati disponibili per sviluppatori JavaScript e TypeScript.
+
+## <a name="2021-february"></a>2021 febbraio
+
+### <a name="whats-new"></a>Novità
+
+|Nome|Note|
+|---------------------------------------|--|
+|[Come usare MongoDB in Azure Cosmos DB](./how-to/with-database/use-mongodb-as-cosmosdb.md)|Per creare, spostare o usare un database mongoDB in Azure, è necessario disporre di una risorsa Cosmos DB. Informazioni su come creare la risorsa e usare il database. |
 
 ## <a name="2021-january"></a>Gennaio 2021
 
