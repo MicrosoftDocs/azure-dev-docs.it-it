@@ -4,12 +4,12 @@ ms.author: miparker
 ms.date: 07/27/2020
 ms.service: mobile-services
 ms.topic: include
-ms.openlocfilehash: 4dba0dcf6fe960b80e445f865644997669ce9b36
-ms.sourcegitcommit: 84f64dec74b4b041b8830a4e7489e22f0e943440
-ms.translationtype: HT
+ms.openlocfilehash: 8712d7ac624c158ce2a0b1afd7529fe6048b6224
+ms.sourcegitcommit: 54f976887d218aaabd94371e24809716da8cf86e
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/04/2021
-ms.locfileid: "97866087"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99554306"
 ---
 ### <a name="configure-infoplist-and-entitlementsplist"></a>Configurare Info.plist e Entitlements.plist
 
@@ -96,7 +96,7 @@ ms.locfileid: "97866087"
     ```
 
     > [!NOTE]
-    > Questa classe fornisce un ID univoco (con il valore [UIDevice.IdentifierForVendor](/dotnet/api/uikit.uidevice.identifierforvendor?view=xamarin-ios-sdk-12)) e il payload di registrazione dell'hub di notifica.
+    > Questa classe fornisce un ID univoco (con il valore [UIDevice.IdentifierForVendor](/dotnet/api/uikit.uidevice.identifierforvendor)) e il payload di registrazione dell'hub di notifica.
 
 1. Aggiungere al progetto **PushDemo.iOS** una nuova cartella denominata *Extensions*, quindi aggiungere alla cartella una **classe vuota** denominata *NSDataExtensions.cs* con l'implementazione seguente.
 

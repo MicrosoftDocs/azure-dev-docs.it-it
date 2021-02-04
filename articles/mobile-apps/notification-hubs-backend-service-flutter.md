@@ -6,12 +6,12 @@ ms.service: mobile-services
 ms.topic: tutorial
 ms.date: 07/27/2020
 ms.author: miparker
-ms.openlocfilehash: af55486c50addd678f1527f4dff996a9b499596f
-ms.sourcegitcommit: e97cb81a245ce7dcabeac3260abc3db7c30edd79
-ms.translationtype: HT
+ms.openlocfilehash: 9ce42296a1cc1b7ad3cdb0a522880ee40f2897a9
+ms.sourcegitcommit: 54f976887d218aaabd94371e24809716da8cf86e
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91493155"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99554299"
 ---
 # <a name="tutorial-send-push-notifications-to-flutter-apps-using-azure-notification-hubs-via-a-backend-service"></a>Esercitazione: Inviare notifiche push alle app Flutter con Hub di notifica di Azure tramite un servizio back-end  
 
@@ -64,7 +64,7 @@ Per iOS, è necessario avere:
 Non occorre avere un'esperienza precedente per seguire i passaggi di questo esempio. È tuttavia utile avere familiarità con gli aspetti seguenti.
 
 * [Portale per sviluppatori Apple](https://developer.apple.com).
-* [ASP.NET Core](/aspnet/core/introduction-to-aspnet-core?view=aspnetcore-3.1).
+* [ASP.NET Core](/aspnet/core/introduction-to-aspnet-core).
 * [Google Firebase Console](https://console.firebase.google.com/u/0/).
 * [Microsoft Azure](https://portal.azure.com) e [Inviare notifiche push alle app iOS con Hub di notifica di Azure](/azure/notification-hubs/ios-sdk-get-started).
 * [Flutter](https://flutter.dev) e [Dart](https://dart.dev) per lo sviluppo multipiattaforma.
