@@ -7,12 +7,12 @@ ms.topic: reference
 ms.service: azure
 ms.date: 11/19/2020
 ms.custom: github-actions-azure
-ms.openlocfilehash: 0d83e0d2b0e36fea0d54f176744a797352d11085
-ms.sourcegitcommit: 709fa38a137b30184a7397e0bfa348822f3ea0a7
-ms.translationtype: HT
+ms.openlocfilehash: b77386d4fe688c67d448f3f0d5835e697f90313b
+ms.sourcegitcommit: 7287dff6bf4b30c2033924702c941bf520403e07
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96442155"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99589407"
 ---
 # <a name="deploy-apps-from-github-to-azure"></a>Distribuire app da GitHub ad Azure
 
@@ -33,9 +33,9 @@ Gli articoli seguenti forniscono supporto per la distribuzione di app da GitHub 
 
 - [Sincronizzare il repository GitHub con Configurazione app](/azure/azure-app-configuration/concept-github-action)
 
-## <a name="azure-key-vault"></a>Azure Key Vault
+## <a name="azure-key-vault"></a>Insieme di credenziali chiave di Azure
 
-- [Usare i segreti di Azure Key Vault nei flussi di lavoro di GitHub Actions](/azure/key-vault/secrets/quick-create-github-secret)
+- [Usare i segreti di Azure Key Vault nei flussi di lavoro di GitHub Actions](github-key-vault.md)
 
 ## <a name="azure-storage"></a>Archiviazione di Azure
 

@@ -14,6 +14,8 @@
           href: database-actions-deploy.md
         - name: Usare la sostituzione di variabili
           href: github-variable-substitution.md
+        - name: Uso dei segreti dell'insieme di credenziali delle chiavi
+          href: github-key-vault.md
         - name: Gestire Criteri di Azure
           href: manage-azure-policy.md
     - name: Azure DevOps e GitHub

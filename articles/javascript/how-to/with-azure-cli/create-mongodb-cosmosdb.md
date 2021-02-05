@@ -3,13 +3,13 @@ title: Creare e usare MongoDB in Azure
 description: Creare una risorsa Cosmos DB e usarla per il database MongoDB.
 ms.topic: how-to
 ms.date: 01/28/2021
-ms.custom: seo-javascript-october2019, devx-track-js
-ms.openlocfilehash: 70dff7fc3caed5f7047e6a3d4d5afe2cc5a67374
-ms.sourcegitcommit: 71847ee0a1fee3f3320503629d9a8c82319a1f6a
+ms.custom: devx-track-js
+ms.openlocfilehash: f75d935050b971d11dc1c98f5d046cf3939bebb1
+ms.sourcegitcommit: 7287dff6bf4b30c2033924702c941bf520403e07
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99554220"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99589417"
 ---
 # <a name="create-and-use-mongodb-on-azure-with-cosmos-db"></a>Creare e usare MongoDB in Azure con Cosmos DB
 
