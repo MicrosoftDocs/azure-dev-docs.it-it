@@ -3,17 +3,17 @@ title: Come creare un'applicazione Spring Cloud Stream Binder con Hub eventi di 
 description: Informazioni su come configurare un'applicazione Spring Cloud Stream Binder basata su Java creata con Spring Boot Initializr con Hub eventi di Azure.
 services: event-hubs
 documentationcenter: java
-ms.date: 10/13/2020
+ms.date: 02/08/2021
 ms.service: event-hubs
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.custom: devx-track-java, devx-track-azurecli
-ms.openlocfilehash: 0cc3289243c1a146cf59ecb15c5150327f49c236
-ms.sourcegitcommit: 8e1d3a384ccb0e083589418d65a70b3a01afebff
-ms.translationtype: HT
+ms.openlocfilehash: d0c87ce32caddc0100b91abd800a18179ba4101e
+ms.sourcegitcommit: bccbab4883e6b6b4926fc194c35ad948b11ccc3f
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94560304"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99822719"
 ---
 # <a name="how-to-create-a-spring-cloud-stream-binder-application-with-azure-event-hubs"></a>Come creare un'applicazione Spring Cloud Stream Binder con Hub eventi di Azure
 
@@ -26,7 +26,7 @@ Questo articolo illustra come configurare un'applicazione Spring Cloud Stream Bi
 * [Apache Maven](http://maven.apache.org/), versione 3.0 o versione successiva.
 
 > [!IMPORTANT]
-> Per completare i passaggi contenuti in questo articolo, è necessario Spring Boot versione 2.2 o successiva.
+> Per completare i passaggi descritti in questo articolo, è necessaria la versione Spring Boot 2,2 o 2,3.
 
 ## <a name="create-an-azure-event-hub-using-the-azure-portal"></a>Creare un hub eventi di Azure con il portale di Azure
 
@@ -103,7 +103,7 @@ La procedura seguente crea un'applicazione Spring Boot.
 1. Specificare le opzioni seguenti:
 
    * Generare un progetto **Maven** con **Java**.
-   * Specificare **Spring Boot** versione 2.2 o successiva.
+   * Specificare una versione di **Spring boot** uguale a **2,3**.
    * Specificare i nomi di **Group** (Gruppo) e **Artifact** (Artefatto) per l'applicazione.
    * Selezionare **8** per la versione di Java.
    * Aggiungere la dipendenza *Web*.
@@ -134,9 +134,9 @@ La procedura seguente crea un'applicazione Spring Boot.
 
    ```xml
    <dependency>
-      <groupId>com.microsoft.azure</groupId>
-      <artifactId>spring-cloud-azure-eventhubs-stream-binder</artifactId>
-      <version>1.2.7</version>
+     <groupId>com.azure.spring</groupId>
+     <artifactId>azure-spring-cloud-stream-binder-eventhubs</artifactId>
+     <version>2.1.0</version>
    </dependency>
    ```
 
@@ -158,118 +158,65 @@ La procedura seguente crea un'applicazione Spring Boot.
 
 1. Salvare e chiudere il file *pom.xml*.
 
-## <a name="create-an-azure-credential-file"></a>Creare un file di credenziali di Azure
-
-1. Aprire un prompt dei comandi.
-
-1. Passare alla directory *resources* dell'app Spring Boot, ad esempio:
-
-   ```cmd
-   cd C:\SpringBoot\eventhubs-sample\src\main\resources
-   ```
-
-   -oppure-
-
-   ```bash
-   cd /users/example/home/eventhubs-sample/src/main/resources
-   ```
-
-1. Accedere all'account Azure:
-
-   ```azurecli
-   az login
-   ```
-
-1. Elencare le sottoscrizioni:
-
-   ```azurecli
-   az account list
-   ```
-   Azure restituirà un elenco delle sottoscrizioni e sarà necessario copiare il GUID per la sottoscrizione che si vuole usare, ad esempio:
-
-   ```json
-   [
-     {
-       "cloudName": "AzureCloud",
-       "id": "11111111-1111-1111-1111-111111111111",
-       "isDefault": true,
-       "name": "Converted Windows Azure MSDN - Visual Studio Ultimate",
-       "state": "Enabled",
-       "tenantId": "22222222-2222-2222-2222-222222222222",
-       "user": {
-         "name": "user@contoso.com",
-         "type": "user"
-       }
-     }
-   ]
-   ```
-   
-1. Specificare il GUID per la sottoscrizione che si vuole usare con Azure, ad esempio:
-
-   ```azurecli
-   az account set -s 11111111-1111-1111-1111-111111111111
-   ```
-
-1. Creare il file di credenziali di Azure:
-
-   ```azurecli
-   az ad sp create-for-rbac --sdk-auth > my.azureauth
-   ```
-
-   Questo comando creerà un file *my.azureauth* nella directory *resources* con contenuto simile all'esempio seguente:
-
-   ```json
-   {
-     "clientId": "33333333-3333-3333-3333-333333333333",
-     "clientSecret": "44444444-4444-4444-4444-444444444444",
-     "subscriptionId": "11111111-1111-1111-1111-111111111111",
-     "tenantId": "22222222-2222-2222-2222-222222222222",
-     "activeDirectoryEndpointUrl": "https://login.microsoftonline.com",
-     "resourceManagerEndpointUrl": "https://management.azure.com/",
-     "activeDirectoryGraphResourceId": "https://graph.windows.net/",
-     "sqlManagementEndpointUrl": "https://management.core.windows.net:8443/",
-     "galleryEndpointUrl": "https://gallery.azure.com/",
-     "managementEndpointUrl": "https://management.core.windows.net/"
-   }
-   ```
-
 ## <a name="configure-your-spring-boot-app-to-use-your-azure-event-hub"></a>Configurare l'app Spring Boot per l'uso dell'hub eventi di Azure
 
-1. Individuare *application.properties* nella directory *resources* dell'app, ad esempio:
+1. Individuare l' *applicazione. YAML* nella directory *Resources* dell'app; Per esempio:
 
-   *C:\SpringBoot\eventhubs-sample\src\main\resources\application.properties*
+   *C:\SpringBoot\eventhubs-sample\src\main\resources\application.yaml*
 
    -oppure-
 
-   */users/example/home/eventhubs-sample/src/main/resources/application.properties*
+   */users/example/home/eventhubs-sample/src/main/resources/application.yaml*
 
-2. Aprire il file *application.properties* in un editor di testo, aggiungere le righe seguenti e quindi sostituire i valori di esempio con le proprietà appropriate per l'hub eventi:
+2. Aprire il file *Application. YAML* in un editor di testo, aggiungere le righe seguenti e quindi sostituire i valori di esempio con le proprietà appropriate per l'hub eventi:
 
    ```yaml
-   spring.cloud.azure.credential-file-path=my.azureauth
-   spring.cloud.azure.resource-group=wingtiptoysresources
-   spring.cloud.azure.region=West US
-   spring.cloud.azure.eventhub.namespace=wingtiptoysnamespace
-   spring.cloud.azure.eventhub.checkpoint-storage-account=wingtiptoysstorage
-   spring.cloud.stream.bindings.input.destination=wingtiptoyshub
-   spring.cloud.stream.bindings.input.group=$Default
-   spring.cloud.stream.eventhub.bindings.input.consumer.checkpoint-mode=MANUAL
-   spring.cloud.stream.bindings.output.destination=wingtiptoyshub
+    spring:
+      cloud:
+        azure:
+          eventhub:
+            connection-string: [eventhub-namespace-connection-string]
+            checkpoint-storage-account: wingtiptoysstorage
+            checkpoint-access-key: [checkpoint-access-key]
+            checkpoint-container: wingtiptoyscontainer
+            
+        stream:
+          bindings:
+            consume-in-0:
+              destination: wingtiptoyshub
+              group: $Default
+            supply-out-0:
+              destination: wingtiptoyshub
+   
+          eventhub:
+            bindings:
+              consume-in-0:
+                consumer:
+                  checkpoint-mode: MANUAL
+          function:
+            definition: consume;supply;
+          poller:
+            initial-delay: 0
+            fixed-delay: 1000
    ```
+
    Dove:
 
    |                          Campo                           |                                                                                   Descrizione                                                                                    |
    |----------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-   |        `spring.cloud.azure.credential-file-path`         |                                                    Specifica il file di credenziali di Azure creato in precedenza in questa esercitazione.                                                    |
-   |           `spring.cloud.azure.resource-group`            |                                                      Specifica il gruppo di risorse di Azure contenente l'hub eventi di Azure.                                                      |
-   |               `spring.cloud.azure.region`                |                                           Specifica l'area geografica indicata al momento della creazione dell'hub eventi di Azure.                                            |
-   |         `spring.cloud.azure.eventhub.namespace`          |                                          Specifica il nome univoco fornito al momento della creazione dello spazio dei nomi dell'hub eventi di Azure.                                           |
-   | `spring.cloud.azure.eventhub.checkpoint-storage-account` |                                                    Specifica l'account di archiviazione di Azure creato in precedenza in questa esercitazione.                                                    |
-   |     `spring.cloud.stream.bindings.input.destination`     |                            Specifica l'hub eventi di Azure destinazione di input, che in questo caso è l'hub creato in precedenza in questa esercitazione.                            |
-   |       `spring.cloud.stream.bindings.input.group `        | Specifica un gruppo di consumer dell'hub eventi di Azure, che è possibile impostare su "$Default" per usare il gruppo di consumer di base creato al momento della creazione dell'hub eventi di Azure. |
-   |    `spring.cloud.stream.bindings.output.destination`     |                               Specifica l'hub eventi di Azure destinazione di output, che per questa esercitazione è uguale alla destinazione di input.                               |
+   |               `spring.cloud.azure.eventhub.connection-string`                |                                        Specificare la stringa di connessione ottenuta nello spazio dei nomi dell'hub eventi dalla portale di Azure.                                   |
+   |               `spring.cloud.azure.function.definition`                |                                        Specificare il fagiolo funzionale da associare alle destinazioni esterne esposte dalle associazioni.                                   |
+   |               `spring.cloud.azure.poller.fixed-delay`                |                                        Specificare un ritardo fisso per il polling predefinito in millisecondi, valore predefinito di 1000.                                   |
+   |               `spring.cloud.azure.poller.initial-delay`                |                                       Specificare il ritardo iniziale per i trigger periodici, valore predefinito 0.                                   |
+   |               `spring.cloud.stream.bindings.consume-in-0.destination`                 |                            Specificare l'hub eventi usato in questa esercitazione.                         |
+   |               `spring.cloud.stream.bindings.consume-in-0.group`                    |                               Specificare i gruppi di consumer nell'istanza di hub eventi.                                |
+   |               `spring.cloud.stream.bindings.supply-out-0.destination`                |                             Specificare lo stesso hub eventi usato in questa esercitazione.                        |
+   | `spring.cloud.stream.eventhub.bindings.consume-in-0.consumer.checkpoint-mode` |                                                       Specificare `MANUAL`.                                                   |
+   |               `spring.cloud.stream.eventhub.checkpoint-access-key` |                                                      Specificare la chiave di accesso dell'account di archiviazione.                                                   |
+   |               `spring.cloud.stream.eventhub.checkpoint-container` |                                                       Specificare il contenitore dell'account di archiviazione.                                                   |
+   |               `spring.cloud.stream.eventhub.checkpoint-storage-account` |                                                 Specificare l'account di archiviazione creato in questa esercitazione.                                               |
 
-3. Salvare e chiudere il file *application.properties*.
+3. Salvare e chiudere il file *Application. YAML* .
 
 ## <a name="add-sample-code-to-implement-basic-event-hub-functionality"></a>Aggiungere codice di esempio per implementare le funzionalità di base dell'hub eventi
 
@@ -279,25 +226,48 @@ In questa sezione si creano le classi Java necessarie per inviare eventi all'hub
 
 1. Individuare il file Java dell'applicazione main nella directory del pacchetto dell'app, ad esempio:
 
-   *C:\SpringBoot\eventhubs-sample\src\main\java\com\wingtiptoys\eventhub\EventhubApplication.java*
+   *C:\SpringBoot\eventhubs-sample\src\main\java\com\contoso\eventhubs\sample\EventhubSampleApplication.java*
 
    -oppure-
 
-   */users/example/home/eventhubs-sample/src/main/java/com/wingtiptoys/eventhub/EventhubApplication.java*
+   */users/example/home/eventhubs-sample/src/main/java/com/contoso/eventhubs/sample/EventhubSampleApplication.java*
 
 1. Aprire il file Java dell'applicazione main in un editor di testo e aggiungere le righe seguenti al file:
 
    ```java
     package com.contoso.eventhubs.sample;
     
+    import com.azure.spring.integration.core.api.reactor.Checkpointer;
+    import org.slf4j.Logger;
+    import org.slf4j.LoggerFactory;
     import org.springframework.boot.SpringApplication;
     import org.springframework.boot.autoconfigure.SpringBootApplication;
+    import org.springframework.context.annotation.Bean;
+    import org.springframework.messaging.Message;
+    
+    import java.util.function.Consumer;
+    
+    import static com.azure.spring.integration.core.AzureHeaders.CHECKPOINTER;
     
     @SpringBootApplication
-    public class EventhubsSampleApplication {
+    public class EventhubSampleApplication {
+    
+        public static final Logger LOGGER = LoggerFactory.getLogger(EventhubSampleApplication.class);
     
         public static void main(String[] args) {
-            SpringApplication.run(EventhubsSampleApplication.class, args);
+            SpringApplication.run(EventhubSampleApplication.class, args);
+        }
+    
+        @Bean
+        public Consumer<Message<String>> consume() {
+            return message -> {
+                Checkpointer checkpointer = (Checkpointer) message.getHeaders().get(CHECKPOINTER);
+                LOGGER.info("New message received: '{}'", message);
+                checkpointer.success()
+                            .doOnSuccess(success -> LOGGER.info("Message '{}' successfully checkpointed", message))
+                            .doOnError(error -> LOGGER.error("Exception: {}", error.getMessage()))
+                            .subscribe();
+            };
         }
     
     }
@@ -305,72 +275,79 @@ In questa sezione si creano le classi Java necessarie per inviare eventi all'hub
 
 1. Salvare e chiudere il file Java dell'applicazione main.
 
-### <a name="create-a-new-class-for-the-source-connector"></a>Creare una nuova classe per il connettore di origine
+### <a name="create-a-new-configuration-class"></a>Creare una nuova classe di configurazione
 
-1. Creare un nuovo file Java denominato *EventhubSource.java* nella directory del pacchetto dell'app, quindi aprire il file in un editor di testo e aggiungere le righe seguenti:
+1. Creare un nuovo file Java denominato *EventProducerConfiguration. Java* nella directory del pacchetto dell'app, quindi aprire il file in un editor di testo e aggiungere le righe seguenti:
 
     ```java
     package com.contoso.eventhubs.sample;
     
-    import org.springframework.beans.factory.annotation.Autowired;
-    import org.springframework.cloud.stream.annotation.EnableBinding;
-    import org.springframework.cloud.stream.messaging.Source;
-    import org.springframework.messaging.support.GenericMessage;
-    import org.springframework.web.bind.annotation.PostMapping;
-    import org.springframework.web.bind.annotation.RequestBody;
-    import org.springframework.web.bind.annotation.RestController;
+    import org.slf4j.Logger;
+    import org.slf4j.LoggerFactory;
+    import org.springframework.context.annotation.Bean;
+    import org.springframework.context.annotation.Configuration;
+    import org.springframework.messaging.Message;
+    import reactor.core.publisher.EmitterProcessor;
+    import reactor.core.publisher.Flux;
     
-    @EnableBinding(Source.class)
-    @RestController
-    public class EventhubSource {
+    import java.util.function.Supplier;
     
-        @Autowired
-        private Source source;
+    @Configuration
+    public class EventProducerConfiguration {
     
-        @PostMapping("/messages")
-        public String postMessage(@RequestBody String message) {
-            this.source.output().send(new GenericMessage<>(message));
-            return message;
+        private static final Logger LOGGER = LoggerFactory.getLogger(EventProducerConfiguration.class);
+    
+        @Bean
+        public EmitterProcessor<Message<String>> emitter() {
+            return EmitterProcessor.create();
+        }
+    
+        @Bean
+        public Supplier<Flux<Message<String>>> supply(EmitterProcessor<Message<String>> emitter) {
+            return () -> Flux.from(emitter)
+                             .doOnNext(m -> LOGGER.info("Manually sending message {}", m))
+                             .doOnError(t -> LOGGER.error("Error encountered", t));
         }
     }
     ```
-1. Salvare e chiudere il file *EventhubSource.java*.
+1. Salvare e chiudere il file *EventProducerConfiguration. Java* .
 
-### <a name="create-a-new-class-for-the-sink-connector"></a>Creare una nuova classe per il connettore sink
+### <a name="create-a-new-controller-class"></a>Creare una nuova classe controller
 
-1. Creare un nuovo file Java denominato *EventhubSink.java* nella directory del pacchetto dell'app, quindi aprire il file in un editor di testo e aggiungere le righe seguenti:
+1. Creare un nuovo file Java denominato *EventProducerController. Java* nella directory del pacchetto dell'app, quindi aprire il file in un editor di testo e aggiungere le righe seguenti:
 
    ```java
    package com.contoso.eventhubs.sample;
-
-   import com.microsoft.azure.spring.integration.core.AzureHeaders;
-   import com.microsoft.azure.spring.integration.core.api.reactor.Checkpointer;
+   
    import org.slf4j.Logger;
    import org.slf4j.LoggerFactory;
-   import org.springframework.cloud.stream.annotation.EnableBinding;
-   import org.springframework.cloud.stream.annotation.StreamListener;
-   import org.springframework.cloud.stream.messaging.Sink;
-   import org.springframework.messaging.handler.annotation.Header;
-
-   @EnableBinding(Sink.class)
-   public class EventhubSink {
-
-      private static final Logger LOGGER = LoggerFactory.getLogger(EventhubSink.class);
-
-      @StreamListener(Sink.INPUT)
-      public void handleMessage(String message, @Header(AzureHeaders.CHECKPOINTER) Checkpointer checkpointer) {
-        LOGGER.info("New message received: '{}'", message);
-        checkpointer.success()
-                .doOnSuccess(s -> LOGGER.info("Message '{}' successfully checkpointed", message))
-                .doOnError((msg) -> {
-                    LOGGER.error(String.valueOf(msg));
-                })
-                .subscribe();
-      }
+   import org.springframework.beans.factory.annotation.Autowired;
+   import org.springframework.http.ResponseEntity;
+   import org.springframework.messaging.Message;
+   import org.springframework.messaging.support.MessageBuilder;
+   import org.springframework.web.bind.annotation.PostMapping;
+   import org.springframework.web.bind.annotation.RequestBody;
+   import org.springframework.web.bind.annotation.RestController;
+   import reactor.core.publisher.EmitterProcessor;
+   
+   @RestController
+   public class EventProducerController {
+   
+       public static final Logger LOGGER = LoggerFactory.getLogger(EventProducerController.class);
+   
+       @Autowired
+       private EmitterProcessor<Message<String>> emitterProcessor;
+   
+       @PostMapping("/messages")
+       public ResponseEntity<String> sendMessage(@RequestBody String message) {
+           LOGGER.info("Going to add message {} to emitter", message);
+           emitterProcessor.onNext(MessageBuilder.withPayload(message).build());
+           return ResponseEntity.ok("Sent!");
+       }
    }
    ```
 
-1. Salvare e chiudere il file *EventhubSink.java*.
+1. Salvare e chiudere il file *EventProducerController. Java* .
 
 ## <a name="build-and-test-your-application"></a>Compilare e testare l'applicazione
 
@@ -402,8 +379,8 @@ Usare le procedure seguenti per compilare ed eseguire l'applicazione.
    Verrà visualizzato l'inserimento di "hello" nei log dell'applicazione. Ad esempio:
 
    ```output
-   2020-09-11 15:11:12.138  INFO 7616 --- [      elastic-4] c.contoso.eventhubs.sample.EventhubSink  : New message received: 'hello'
-   2020-09-11 15:11:12.406  INFO 7616 --- [ctor-http-nio-1] c.contoso.eventhubs.sample.EventhubSink  : Message 'hello' successfully checkpointed
+   2020-09-11 15:11:12.138  INFO 7616 --- [      elastic-4] c.contoso.eventhubs.sample.EventhubSampleApplication  : New message received: 'hello'
+   2020-09-11 15:11:12.406  INFO 7616 --- [ctor-http-nio-1] c.contoso.eventhubs.sample.EventhubSampleApplication  : Message 'hello' successfully checkpointed
    ```
 
 ## <a name="next-steps"></a>Passaggi successivi

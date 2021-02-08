@@ -3,16 +3,18 @@ title: 'Esercitazione: Eseguire la distribuzione da GitHub nel servizio Azure Ku
 description: Informazioni su come configurare Jenkins per l'integrazione continua (CI) da GitHub e la distribuzione continua (CD) nel servizio Azure Kubernetes
 keywords: jenkins, azure, devops, aks, servizio azure kubernetes, github
 ms.topic: article
-ms.date: 10/29/2019
+ms.date: 02/05/2021
 ms.custom: devx-track-jenkins, devx-track-azurecli
-ms.openlocfilehash: 137f7cf050c9d31adc9e56a70fbb98e29342e142
-ms.sourcegitcommit: 3d906f265b748fbc0a070fce252098675674c8d9
+ms.openlocfilehash: b64037f6a6113208182fa6c9f28e53005928dbab
+ms.sourcegitcommit: bccbab4883e6b6b4926fc194c35ad948b11ccc3f
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98699969"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99822754"
 ---
 # <a name="tutorial-deploy-from-github-to-azure-kubernetes-service-using-jenkins"></a>Esercitazione: Eseguire la distribuzione da GitHub nel servizio Azure Kubernetes con Jenkins
+
+[!INCLUDE [jenkins-integration-with-azure.md](includes/jenkins-integration-with-azure.md)]
 
 Questa esercitazione distribuisce un'app di esempio da GitHub in un cluster del [servizio Azure Kubernetes (AKS)](/azure/aks/intro-kubernetes) configurando l'integrazione continua (CI) e la distribuzione continua (CD) in Jenkins. In questo modo, quando si aggiorna l'app eseguendo il push dei commit in GitHub, Jenkins esegue automaticamente una nuova compilazione dei contenitori, esegue il push delle immagini dei contenitori in Registro Azure Container e quindi esegue l'app in servizio Azure Kubernetes. 
 

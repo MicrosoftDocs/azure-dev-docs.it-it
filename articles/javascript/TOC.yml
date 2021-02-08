@@ -163,6 +163,8 @@
               href: how-to/with-azure-cli/create-mongodb-cosmosdb.md
             - name: Usare la risorsa MariaDB
               href: how-to/with-azure-cli/create-mariadb.md
+            - name: USA risorsa MySQL
+              href: how-to/with-azure-cli/create-mysql-db.md
         - name: Con i database
           items:
             - name: MongoDB in CosmosDB
