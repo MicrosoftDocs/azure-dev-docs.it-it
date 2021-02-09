@@ -4,12 +4,12 @@ ms.author: miparker
 ms.date: 07/27/2020
 ms.service: mobile-services
 ms.topic: include
-ms.openlocfilehash: efe92c02486855c0cde470ff20265a8eebc43a12
-ms.sourcegitcommit: 54f976887d218aaabd94371e24809716da8cf86e
+ms.openlocfilehash: f69c6287d0d4904c1c19ba7e9a115b85bc621185
+ms.sourcegitcommit: bccbab4883e6b6b4926fc194c35ad948b11ccc3f
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99554330"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99974464"
 ---
 ### <a name="validate-package-name-and-permissions"></a>Convalidare il nome del pacchetto e le autorizzazioni
 
@@ -80,7 +80,7 @@ ms.locfileid: "99554330"
                 if (!NotificationsSupported)
                     throw new Exception(GetPlayServicesError());
 
-                if (string.IsNullOrWhitespace(Token))
+                if (string.IsNullOrWhiteSpace(Token))
                     throw new Exception("Unable to resolve token for FCM");
 
                 var installation = new DeviceInstallation
