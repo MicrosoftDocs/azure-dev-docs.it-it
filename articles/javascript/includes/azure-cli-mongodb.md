@@ -1,13 +1,13 @@
 ---
 ms.custom: devx-track-js
 ms.topic: include
-ms.date: 02/02/2021
-ms.openlocfilehash: fa874c825531f75bda57cb1e98f66b71b7b8a4ca
-ms.sourcegitcommit: 54f976887d218aaabd94371e24809716da8cf86e
+ms.date: 02/08/2021
+ms.openlocfilehash: b2877a43eda86868eb3ee2841cedfd8c4d242340
+ms.sourcegitcommit: 98a7e855206ff463c1d95f93c23dd665b26a0aa1
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99554217"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "100019261"
 ---
 ## <a name="create-a-cosmos-db-resource-for-mongodb"></a>Creare una risorsa Cosmos DB per MongoDB
 
@@ -18,12 +18,125 @@ az cosmosdb create \
     --subscription YOUR-SUBSCRIPTION-ID-OR-NAME \
     --resource-group YOUR-RESOURCE-GROUP \
     --name YOUR-RESOURCE_NAME \
-    --enable-public-network true \
     --locations regionName=eastus \
-    --kind MongoDB
+    --kind MongoDB \
+    --enable-public-network true \
+    --ip-range-filter 123.123.123.123 
 ```
 
+Sostituire `123.123.123.123` con l'indirizzo IP del client o rimuovere completamente il parametro. 
+
 Il completamento di questo comando può richiedere alcuni minuti e creare una risorsa disponibile pubblicamente nell' `eastus` area. 
+
+```text
+{
+  "apiProperties": {
+    "serverVersion": "3.6"
+  },
+  "capabilities": [
+    {
+      "name": "EnableMongo"
+    }
+  ],
+  "connectorOffer": null,
+  "consistencyPolicy": {
+    "defaultConsistencyLevel": "Session",
+    "maxIntervalInSeconds": 5,
+    "maxStalenessPrefix": 100
+  },
+  "cors": [],
+  "databaseAccountOfferType": "Standard",
+  "disableKeyBasedMetadataWriteAccess": false,
+  "documentEndpoint": "https://mongo-2.documents.azure.com:443/",
+  "enableAnalyticalStorage": false,
+  "enableAutomaticFailover": false,
+  "enableCassandraConnector": null,
+  "enableFreeTier": false,
+  "enableMultipleWriteLocations": false,
+  "failoverPolicies": [
+    {
+      "failoverPriority": 0,
+      "id": "mongodb-2",
+      "locationName": "East US"
+    }
+  ],
+  "id": "/subscriptions/.../resourceGroups/my-resource-group/providers/Microsoft.DocumentDB/databaseAccounts/mongo-2",
+  "ipRules": [
+    {
+      "ipAddressOrRange": "123.123.123.123"
+    }
+  ],
+  "isVirtualNetworkFilterEnabled": false,
+  "keyVaultKeyUri": null,
+  "kind": "MongoDB",
+  "location": "Central US",
+  "locations": [
+    {
+      "documentEndpoint": "https://mongodb-2.documents.azure.com:443/",
+      "failoverPriority": 0,
+      "id": "mongodb-2",
+      "isZoneRedundant": false,
+      "locationName": "East US",
+      "provisioningState": "Succeeded"
+    }
+  ],
+  "name": "mongo-2",
+  "privateEndpointConnections": null,
+  "provisioningState": "Succeeded",
+  "publicNetworkAccess": "Enabled",
+  "readLocations": [
+    {
+      "documentEndpoint": "https://mongodb-2.documents.azure.com:443/",
+      "failoverPriority": 0,
+      "id": "mongodb-2",
+      "isZoneRedundant": false,
+      "locationName": "East US",
+      "provisioningState": "Succeeded"
+    }
+  ],
+  "resourceGroup": "my-resource-group",
+  "systemData": {
+    "createdAt": "2021-02-08T20:21:05.9519342Z"
+  },
+  "tags": {},
+  "type": "Microsoft.DocumentDB/databaseAccounts",
+  "virtualNetworkRules": [],
+  "writeLocations": [
+    {
+      "documentEndpoint": "https://mongodb-2.documents.azure.com:443/",
+      "failoverPriority": 0,
+      "id": "mongodb-2",
+      "isZoneRedundant": false,
+      "locationName": "East US",
+      "provisioningState": "Succeeded"
+    }
+  ]
+}
+```
+
+## <a name="add-firewall-rule-for-your-client-ip-address-to-mongodb-resource"></a>Aggiungere una regola del firewall per l'indirizzo IP del client alla risorsa MongoDB
+
+Per impostazione predefinita, le regole del firewall non sono configurate. È necessario aggiungere l'indirizzo IP del client in modo che la connessione client al server con JavaScript abbia esito positivo.
+
+Usare il comando [AZ cosmosdb Update](/cli/azure/cosmosdb#az_cosmosdb_update) per aggiornare le regole del firewall.
+
+```azurecli
+az cosmosdb update \
+    --subscription YOUR-SUBSCRIPTION-ID-OR-NAME \
+    --resource-group YOUR-RESOURCE-GROUP \
+    --name YOUR-RESOURCE_NAME \
+    --ip-range-filter 123.123.123.123
+```
+
+Per configurare più indirizzi IP, usare un elenco delimitato da virgole.
+
+```azurecli
+az cosmosdb update \
+    --subscription YOUR-SUBSCRIPTION-ID-OR-NAME \
+    --resource-group YOUR-RESOURCE-GROUP \
+    --name YOUR-RESOURCE_NAME \
+    --ip-range-filter 123.123.123.123,456.456.456.456
+```
 
 ## <a name="get-the-mongodb-connection-string-for-your-resource"></a>Ottenere la stringa di connessione MongoDB per la risorsa
 

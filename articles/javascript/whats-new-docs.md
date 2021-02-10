@@ -2,13 +2,13 @@
 title: Novità della documentazione di JavaScript
 description: Novità della documentazione di JavaScript nel Developer Center
 ms.topic: conceptual
-ms.date: 02/04/2021
-ms.openlocfilehash: 45e0a835a0fb669b9573cc956bf77cd86f0b33f0
-ms.sourcegitcommit: 7287dff6bf4b30c2033924702c941bf520403e07
+ms.date: 02/08/2021
+ms.openlocfilehash: 37d68d713c4b6ba51d35efb033f68fe2b2e60680
+ms.sourcegitcommit: 98a7e855206ff463c1d95f93c23dd665b26a0aa1
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99589447"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "100004714"
 ---
 # <a name="javascript-docs-whats-new"></a>Documentazione di JavaScript: Novità
 
@@ -22,6 +22,8 @@ Contenuti nuovi e aggiornati disponibili per sviluppatori JavaScript e TypeScrip
 |---------------------------------------|--|
 |[Come usare MongoDB in Azure Cosmos DB](./how-to/with-database/use-mongodb-as-cosmosdb.md)|Per creare, spostare o usare un database mongoDB in Azure, è necessario disporre di una risorsa Cosmos DB. Informazioni su come creare la risorsa e usare il database. |
 |[Come usare MariaDb in Azure](./how-to/with-database/use-mariadb.md)|Per creare, spostare o usare un database MariaDB in Azure, è necessaria una risorsa **database di Azure per MariaDB** . Informazioni su come creare la risorsa e usare il database.|
+|[Come usare MySql in Azure](./how-to/with-database/use-mysql-db.md)|Per creare, spostare o usare un database MySQL in Azure, è necessaria una risorsa **database di Azure per MySQL** . Informazioni su come creare la risorsa e usare il database.|
+|[Come usare PostgreSQL in Azure](./how-to/with-database/use-postgresql-db.md)|Per creare, spostare o usare un database PostgreSQL in Azure, è necessaria una risorsa **del server database di Azure per PostgreSQL** . Informazioni su come creare la risorsa e usare il database.|
 
 ## <a name="2021-january"></a>Gennaio 2021
 

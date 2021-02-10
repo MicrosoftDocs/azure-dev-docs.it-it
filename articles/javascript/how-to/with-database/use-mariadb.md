@@ -4,12 +4,12 @@ description: Per creare o spostare il database MariaDB in Azure, è necessaria u
 ms.topic: how-to
 ms.date: 02/04/2021
 ms.custom: devx-track-js
-ms.openlocfilehash: eab3f4c0e2ce1a3c1b1650ea46981c71f0cddcc1
-ms.sourcegitcommit: 7287dff6bf4b30c2033924702c941bf520403e07
+ms.openlocfilehash: 320397584f78809e39e7eeaf7c1c6805755a82de
+ms.sourcegitcommit: 98a7e855206ff463c1d95f93c23dd665b26a0aa1
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99590860"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "100004748"
 ---
 # <a name="develop-a-javascript-application-with-mariadb-on-azure"></a>Sviluppare un'applicazione JavaScript con MariaDB in Azure
 
@@ -180,7 +180,7 @@ Per connettersi e usare MariaDB in Azure con JavaScript, seguire questa procedur
       ]
     ]
     [
-      { User: 'azurediberry' },
+      { User: 'azureAdmin' },
       { User: 'azure_superuser' },
       { User: 'azure_superuser' },
       { User: 'azure_superuser' },
