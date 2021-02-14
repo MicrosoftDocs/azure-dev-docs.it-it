@@ -4,12 +4,13 @@ description: Informazioni su come usare Terraform per semplificare la distribuzi
 ms.topic: overview
 ms.date: 10/26/2019
 ms.custom: devx-track-terraform
-ms.openlocfilehash: 883242a09129bbc864185786ccf99888e7d3d842
-ms.sourcegitcommit: 709fa38a137b30184a7397e0bfa348822f3ea0a7
-ms.translationtype: HT
+adobe-target: true
+ms.openlocfilehash: 0857586db7fdac0f4decd515c3a6a71026d2d375
+ms.sourcegitcommit: b380f6e637b47e6e3822b364136853e1d342d5cd
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96442163"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100395316"
 ---
 # <a name="terraform-with-azure"></a>Utilizzo di Terraform con Azure
 

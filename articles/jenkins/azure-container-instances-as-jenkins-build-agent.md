@@ -5,12 +5,12 @@ keywords: jenkins, azure, devops, istanze di contenitore, agente di compilazione
 ms.topic: article
 ms.date: 01/08/2021
 ms.custom: devx-track-jenkins,devx-track-azurecli
-ms.openlocfilehash: 7633d88897d76f4ed75fa1d7d6c5b0c620db4919
-ms.sourcegitcommit: 593d177cfb5f56f236ea59389e43a984da30f104
+ms.openlocfilehash: 6a7578818eb1f59fa2ce2bd46003f799045fc154
+ms.sourcegitcommit: b380f6e637b47e6e3822b364136853e1d342d5cd
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/18/2021
-ms.locfileid: "98561597"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100395383"
 ---
 # <a name="tutorial-use-azure-container-instances-as-a-jenkins-build-agent"></a>Esercitazione: Usare Istanze di Azure Container come agente di compilazione Jenkins
 
@@ -63,7 +63,7 @@ Per altre informazioni su Istanze di Azure Container, vedere [Informazioni su Is
 
 1. Immettere un valore per **Remote root directory** (Directory radice remota). Ad esempio: `/home/jenkins/work`
 
-1. Se si vuole, immettere un'etichetta. Le etichette vengono usate per raggruppare più agenti in un unico gruppo logico. Ad esempio, si può usare l'etichetta `linux` per raggruppare gli agenti Linux.
+1. Aggiungi <abbr title="Le etichette vengono usate per raggruppare più agenti in un unico gruppo logico. Ad esempio, si può usare l'etichetta `linux` per raggruppare gli agenti Linux.">**Etichetta**</abbr> con il valore di `linux` .
 
 1. Impostare **Launch method** (Metodo di avvio) su **Launch agent by connecting to the master** (Avvia agente tramite connessione al master).
 
@@ -97,9 +97,14 @@ Per altre informazioni su Istanze di Azure Container, vedere [Informazioni su Is
       --command-line "jenkins-agent -url http://jenkinsserver:port <JENKINS_SECRET> <AGENT_NAME>"
     ```
 
-    Dopo l'avvio, il contenitore si connetterà automaticamente al server del controller Jenkins.
+    Sostituire `http://jenkinsserver:port` , `<JENKINS_SECRET>` e `<AGENT_NAME>` con le informazioni sul controller Jenkins e sull'agente. Dopo l'avvio, il contenitore si connetterà automaticamente al server del controller Jenkins.
+
+1. Tornare al dashboard di Jenkins e controllare lo stato dell'agente.
 
     ![L'agente è stato avviato correttamente](./media/azure-container-instances-as-jenkins-build-agent/agent-start.png)
+
+    > [!NOTE]
+    > Gli agenti Jenkins si connettono al controller tramite la porta `5000` , assicurarsi che la porta sia consentita in ingresso per il controller Jenkins.
 
 ## <a name="create-a-build-job"></a>Creare un'attività di compilazione
 
@@ -109,35 +114,31 @@ A questo punto, viene creato un processo di compilazione Jenkins per illustrare 
 
    ![Finestra per il nome del processo di compilazione e l'elenco dei tipi di progetto](./media/azure-container-instances-as-jenkins-build-agent/jenkins-new-job.png)
 
-2. In **General** (Generale) verificare che sia selezionata l'opzione **Restrict where this project can be run** (Limita i casi in cui eseguire il progetto). Immettere **linux** per Label Expression (Espressione etichetta). Questa configurazione assicura che il processo di compilazione venga eseguito nel cloud delle istanze di contenitore di Azure.
+1. In **General** (Generale) verificare che sia selezionata l'opzione **Restrict where this project can be run** (Limita i casi in cui eseguire il progetto). Immettere **linux** per Label Expression (Espressione etichetta). Questa configurazione assicura che il processo di compilazione venga eseguito nel cloud delle istanze di contenitore di Azure.
 
    ![Scheda "General" (Generale) con i dettagli di configurazione](./media/azure-container-instances-as-jenkins-build-agent/jenkins-job-01.png)
 
-3. In **Build** (Compilazione) selezionare **Add build step** (Aggiungi passaggio di compilazione) e quindi selezionare **Execute Shell** (Esegui shell). Immettere `echo "aci-demo"` come comando.
+1. In **Build** (Compilazione) selezionare **Add build step** (Aggiungi passaggio di compilazione) e quindi selezionare **Execute Shell** (Esegui shell). Immettere `echo "aci-demo"` come comando.
 
    ![Scheda "Build" (Compilazione) con le selezioni per l'istruzione di compilazione](./media/azure-container-instances-as-jenkins-build-agent/jenkins-job-02.png)
 
-5. Selezionare **Salva**.
+1. Selezionare **Salva**.
 
 ## <a name="run-the-build-job"></a>Eseguire il processo di compilazione
 
-Per testare il processo di compilazione e osservare Istanze di Azure Container come piattaforma di compilazione, avviare manualmente una compilazione.
+Per testare il processo di compilazione e osservare le istanze di contenitore di Azure, avviare manualmente una compilazione.
 
-1. Selezionare **Build Now** (Compila) per avviare un processo di compilazione. Per avviare il processo sono necessari alcuni minuti. Verrà visualizzato uno stato simile all'immagine seguente:
+1. Selezionare **Build Now** (Compila) per avviare un processo di compilazione. Una volta avviato il processo, viene visualizzato uno stato simile all'immagine seguente:
 
    ![Informazione sulla "Build History" (Cronologia di compilazione) con lo stato del processo](./media/azure-container-instances-as-jenkins-build-agent/jenkins-job-status.png)
 
-2. Durante l'esecuzione del processo, aprire il portale di Azure ed esaminare il gruppo di risorse Jenkins. Si noterà che è stata creata un'istanza di contenitore. Il processo Jenkins viene eseguito all'interno di questa istanza.
+1. Fare clic su Compila **#1** nella **cronologia di compilazione**.
 
-   ![Istanza di contenitore nel gruppo di risorse](./media/azure-container-instances-as-jenkins-build-agent/jenkins-aci.png)
+    !["Output console" visualizzare l'output di compilazione dalla console](./media/azure-container-instances-as-jenkins-build-agent/build-history.png)
 
-3. Poiché Jenkins esegue più processi rispetto al numero configurato di executor Jenkins (2 per impostazione predefinita), vengono create più istanze di contenitore.
+1. Selezionare **output console** per visualizzare l'output delle compilazioni.
 
-   ![Istanze di contenitore appena create](./media/azure-container-instances-as-jenkins-build-agent/jenkins-aci-multi.png)
-
-4. Dopo aver completato tutti i processi di compilazione, le istanze di contenitore vengono rimosse.
-
-   ![Gruppo di risorse con istanze di contenitore rimosse](./media/azure-container-instances-as-jenkins-build-agent/jenkins-aci-none.png)
+    !["Output console" visualizzare l'output di compilazione dalla console](./media/azure-container-instances-as-jenkins-build-agent/build-console-output.png)
 
 ## <a name="next-steps"></a>Passaggi successivi
 

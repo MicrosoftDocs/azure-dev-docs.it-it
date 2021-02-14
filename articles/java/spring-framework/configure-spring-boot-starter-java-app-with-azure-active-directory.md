@@ -9,12 +9,13 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: identity
 ms.custom: devx-track-java
-ms.openlocfilehash: 3d4262d7009004d177b38bf9f4cb3fb8c9b02259
-ms.sourcegitcommit: 8eb1c379b2bbc2acdd82fc9d24d8ed948e5a6847
+adobe-target: true
+ms.openlocfilehash: d98355c37767c3d39de5cfc1f8b47030ad4f53be
+ms.sourcegitcommit: b380f6e637b47e6e3822b364136853e1d342d5cd
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98811138"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100395306"
 ---
 # <a name="tutorial-secure-a-java-web-app-using-the-spring-boot-starter-for-azure-active-directory"></a>Esercitazione: Proteggere un'app Web Java con l'utilità di avvio Spring Boot per Azure Active Directory
 

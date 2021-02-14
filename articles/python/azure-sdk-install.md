@@ -4,12 +4,13 @@ description: Informazioni su come installare, disinstallare e verificare Azure S
 ms.date: 01/22/2021
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 109631849b94f79530c93a8984813c424968f199
-ms.sourcegitcommit: 6fbf9e489b194586887a2c11152044be5b3a2b99
+adobe-target: true
+ms.openlocfilehash: 7c29e9793fbf995276ea2b860d8c8743bd40d3b3
+ms.sourcegitcommit: b380f6e637b47e6e3822b364136853e1d342d5cd
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98759553"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100395206"
 ---
 # <a name="how-to-install-azure-library-packages-for-python"></a>Come installare i pacchetti di librerie di Azure per Python
 

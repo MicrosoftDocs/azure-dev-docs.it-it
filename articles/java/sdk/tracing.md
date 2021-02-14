@@ -6,12 +6,12 @@ ms.date: 02/02/2021
 ms.topic: conceptual
 ms.custom: devx-track-java
 ms.author: savaity
-ms.openlocfilehash: 2dc2085ac71167cefd8fed5475dc9744cf520fea
-ms.sourcegitcommit: 71847ee0a1fee3f3320503629d9a8c82319a1f6a
+ms.openlocfilehash: e5ead01c22fdb80e7c5fc49c3a980add883eb6d9
+ms.sourcegitcommit: b380f6e637b47e6e3822b364136853e1d342d5cd
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99522071"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100395216"
 ---
 # <a name="configure-tracing-in-the-azure-sdk-for-java"></a>Configurare la traccia in Azure SDK per Java
 
@@ -85,7 +85,7 @@ Ad esempio, una richiesta del client di configurazione dell'app per impostare l'
 
 ### <a name="configure-tracing-exports"></a>Configurare le esportazioni della traccia
 
-Le applicazioni che desiderano utilizzare le informazioni di traccia devono esportare le tracce in un archivio di analisi distribuito, ad esempio [Zipkin](https://zipkin.io/), [Jaeger](https://www.jaegertracing.io/)e [monitoraggio di Azure](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/monitor/microsoft-opentelemetry-exporter-azuremonitor#azure-monitor-opentelemetry-exporter-client-library-for-java). Nell'esempio seguente viene configurata l'esportazione delle informazioni di traccia in un archivio di traccia distribuito Jaeger in esecuzione sulla porta localhost 14250, usando le API specifiche di Jaeger:
+Le applicazioni che desiderano utilizzare le informazioni di traccia devono esportare le tracce in un archivio di analisi distribuito, ad esempio [Zipkin](https://zipkin.io/), [Jaeger](https://www.jaegertracing.io/)e [monitoraggio di Azure](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/monitor/azure-monitor-opentelemetry-exporter#azure-monitor-opentelemetry-exporter-client-library-for-java). Nell'esempio seguente viene configurata l'esportazione delle informazioni di traccia in un archivio di traccia distribuito Jaeger in esecuzione sulla porta localhost 14250, usando le API specifiche di Jaeger:
 
 ```java
 ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", 14250).usePlaintext().build();

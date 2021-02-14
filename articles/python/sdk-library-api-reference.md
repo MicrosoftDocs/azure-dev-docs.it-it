@@ -4,12 +4,13 @@ description: Puntatori alla documentazione di riferimento dell'API Python
 ms.date: 05/26/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: f1a30c02059179f21694d716bcb5e063ae20956d
-ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
-ms.translationtype: HT
+adobe-target: true
+ms.openlocfilehash: a7d462bf903c1893403addd30c1adda70f89108a
+ms.sourcegitcommit: b380f6e637b47e6e3822b364136853e1d342d5cd
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91764818"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100395176"
 ---
 # <a name="azure-libraries-for-python-api-reference"></a>Informazioni di riferimento sulle librerie di Azure per le API Python
 
