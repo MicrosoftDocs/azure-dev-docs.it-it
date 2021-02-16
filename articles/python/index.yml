@@ -14,12 +14,12 @@ metadata:
   ms.service: multiple
   ms.devlang: python
   ms.custom: devx-track-python
-  ms.openlocfilehash: 2dbd633555e7841eb28f58813a9ba292da989dd6
-  ms.sourcegitcommit: 324da872a9dfd4c55b34739824fc6a6598f2ae12
-  ms.translationtype: HT
+  ms.openlocfilehash: b242630cbc9b2e352e857704402dbac84f1564a5
+  ms.sourcegitcommit: 450cfb580f0fef7aabd38a7db17ecf7502126ce4
+  ms.translationtype: MT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 09/02/2020
-  ms.locfileid: "89374542"
+  ms.lasthandoff: 02/16/2021
+  ms.locfileid: "100548832"
 landingContent:
 - title: Funzioni senza server
   linkLists:
@@ -39,16 +39,32 @@ landingContent:
     links:
     - text: Flask con Visual Studio Code
       url: tutorial-deploy-app-service-on-linux-01.md
-    - text: Flask con la riga di comando
+    - text: Flask con interfaccia della riga di comando
       url: /azure/app-service/quickstart-python
-    - text: Django e PostgreSQL con il portale di Azure
+    - text: Django + PostgreSQL con il portale di Azure
       url: tutorial-python-postgresql-app-portal.md
-    - text: Django e PostgreSQL con la riga di comando
+    - text: Django + PostgreSQL con l'interfaccia della riga di comando
       url: /azure/app-service/tutorial-python-postgresql-app
     - text: Contenitori con Visual Studio Code
       url: tutorial-deploy-containers-01.md
     - text: Pipeline CI/CD
       url: /azure/devops/pipelines/ecosystems/python-webapp
+- title: Che ne pensi?
+  linkLists:
+  - linkListType: whats-new
+    links:
+    - text: Inviaci le tue opinioni sulla pagina
+      url: https://ux.microsoft.com/Talk/PythonDevCenterDocumentation
+- title: Dati e risorse di archiviazione
+  linkLists:
+  - linkListType: deploy
+    links:
+    - text: Database SQL
+      url: quickstarts-data-solutions.md#sql-databases
+    - text: Tabelle, BLOB, file, NoSQL
+      url: quickstarts-data-solutions.md#tables-blobs-files-nosql
+    - text: Big Data e analisi
+      url: quickstarts-data-solutions.md#big-data-and-analytics
 - title: Machine Learning
   linkLists:
   - linkListType: how-to-guide
@@ -63,16 +79,6 @@ landingContent:
       url: quickstarts-cognitive-services.md
     - text: Altro...
       url: quickstarts-machine-learning.md
-- title: Dati e risorse di archiviazione
-  linkLists:
-  - linkListType: deploy
-    links:
-    - text: Database SQL
-      url: quickstarts-data-solutions.md#sql-databases
-    - text: Tabelle, BLOB, file, NoSQL
-      url: quickstarts-data-solutions.md#tables-blobs-files-nosql
-    - text: Big Data e analisi
-      url: quickstarts-data-solutions.md#big-data-and-analytics
 - title: Librerie di Azure (SDK)
   linkLists:
   - linkListType: get-started

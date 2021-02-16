@@ -2,14 +2,16 @@
 title: "Esercitazione: Aggiungere il pulsante di accesso Microsoft all'applicazione a pagina singola React"
 description: L'autenticazione di Azure Active Directory presentata in questa esercitazione è un pulsante di accesso e disconnessione e fornisce l'accesso al nome di un utente (indirizzo di posta elettronica). Sviluppare l'applicazione TypeScript con un SDK lato client di Azure, `@azure/msal-browser`, per gestire l'interazione dell'utente nell'applicazione a pagina singola.
 ms.topic: tutorial
-ms.date: 12/01/2020
+ms.date: 02/16/2020
 ms.custom: devx-track-js, "azure-sdk-javascript-@azure/msal-browser-2.7.0"
-ms.openlocfilehash: ffbc8ea2824f7bbfaef3a3ae3579537633f9455b
-ms.sourcegitcommit: 593d177cfb5f56f236ea59389e43a984da30f104
+ms.history:
+- 20210216:fix public issue 443
+ms.openlocfilehash: d5d64f1de3637c79a081e64dbf3cd632e15a3ef3
+ms.sourcegitcommit: 450cfb580f0fef7aabd38a7db17ecf7502126ce4
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/18/2021
-ms.locfileid: "98561657"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100548842"
 ---
 # <a name="add-microsoft-login-button-to-a-single-page-application-for-authentication"></a>Aggiungere un pulsante di accesso Microsoft a un'applicazione a pagina singola per l'autenticazione
 
@@ -31,7 +33,7 @@ Per fornire un'applicazione a pagina singola rapida e semplice, l'esempio usa **
 
 ## <a name="1-set-up-development-environment"></a>1. Configurare l'ambiente di sviluppo
 
-Verificare che gli elementi seguenti siano installati nel computer locale.
+Verificare che nel computer locale sia installato il seguente software.
 
 - Un account utente di Azure con una sottoscrizione attiva. [È possibile crearne uno gratuitamente](https://azure.microsoft.com/free/).
 - [Node.js e npm](https://nodejs.org/en/download): installati nel computer locale.

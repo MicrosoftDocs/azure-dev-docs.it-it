@@ -4,7 +4,7 @@
     - name: Descrizione comando
       items:
         - name: Guida introduttiva di Python con descrizione comando
-          href: tool-tip-metric.md
+          href: tool-tip-metrics.md
     - name: Lab in formato esercitazione
       items:
         - name: Python Flask - pagina singola
