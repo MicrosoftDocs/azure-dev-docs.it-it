@@ -4,12 +4,12 @@ description: Informazioni sui test di integrazione e su come usare Azure DevOps 
 ms.topic: tutorial
 ms.date: 10/08/2020
 ms.custom: devx-track-terraform
-ms.openlocfilehash: b9a533475bd291cc0d1fd9fffa418b0ce4498fb0
-ms.sourcegitcommit: 4dac39849ba2e48034ecc91ef578d11aab796e58
-ms.translationtype: HT
+ms.openlocfilehash: 7b10693907feedf94db60315d8819d45fdd47412
+ms.sourcegitcommit: b19420d1a8d526a81e0835012cccc46717fadd69
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94983990"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "100524896"
 ---
 # <a name="tutorial-configure-integration-tests-for-terraform-projects-in-azure"></a>Esercitazione: Configurare i test di integrazione per i progetti Terraform in Azure
 
@@ -72,7 +72,7 @@ Il comando [terraform validate](https://www.terraform.io/docs/commands/validate.
 
 Come si può notare, Terraform ha rilevato un problema nella sintassi del codice di configurazione. Questo problema impedisce la distribuzione della configurazione.
 
-È consigliabile eseguire sempre `terraform validate` nei file di Terraform prima di eseguirne il push nel sistema di controllo della versione. È inoltre consigliabile includere questo livello di convalida nella pipeline di integrazione continua. Più avanti in questa esercitazione verrà illustrato come [configurare una pipeline di Azure per la convalida automatica](#automate-integration-tests-using-azure-pipeline).
+È consigliabile eseguire sempre i `terraform validate` file di bonifica prima di eseguirne il push nel sistema di controllo della versione. È inoltre consigliabile includere questo livello di convalida nella pipeline di integrazione continua. Più avanti in questa esercitazione verrà illustrato come [configurare una pipeline di Azure per la convalida automatica](#automate-integration-tests-using-azure-pipeline).
 
 ## <a name="validate-terraform-configuration-can-be-deployed-on-azure"></a>Convalidare la configurazione di Terraform che può essere distribuita in Azure
 

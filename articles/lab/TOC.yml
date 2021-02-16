@@ -1,6 +1,10 @@
 - name: Developer Experience Labs
   href: index.yml
   items:
+    - name: Descrizione comando
+      items:
+        - name: Guida introduttiva di Python con descrizione comando
+          href: tool-tip-metric.md
     - name: Lab in formato esercitazione
       items:
         - name: Python Flask - pagina singola
