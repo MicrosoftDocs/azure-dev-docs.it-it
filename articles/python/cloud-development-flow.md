@@ -1,21 +1,21 @@
 ---
 title: Flusso di sviluppo di Azure
 description: Panoramica del ciclo di sviluppo per il cloud in Azure, che include provisioning, scrittura di codice, test, distribuzione e gestione.
-ms.date: 10/06/2020
+ms.date: 02/16/2021
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 149bf0c56de95d2f1230e2bc527c64da780bd5ad
-ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
-ms.translationtype: HT
+ms.openlocfilehash: c2187f43da3159cc623e2ace671561ece2cf1758
+ms.sourcegitcommit: b882128a763f81dba83913bfff1e9cd1ec70818f
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91764775"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100642287"
 ---
 # <a name="the-azure-development-flow-provision-code-test-deploy-and-manage"></a>Flusso di sviluppo di Azure: effettuare il provisioning, scrivere codice, testare, distribuire e gestire
 
 [Articolo precedente: provisioning, accesso e gestione delle risorse](cloud-development-provisioning.md)
 
-Ora che si conosce il modello di servizi e risorse di Azure, è possibile capire il flusso complessivo dello sviluppo di applicazioni cloud con Azure: **provisioning**, **scrittura di codice**, **test**, **distribuzione**e **gestione**.
+Ora che si conosce il modello di servizi e risorse di Azure, è possibile capire il flusso complessivo dello sviluppo di applicazioni cloud con Azure: **provisioning**, **scrittura di codice**, **test**, **distribuzione** e **gestione**.
 
 | Passaggio | Strumenti principali | attività |
 | --- | --- | --- |

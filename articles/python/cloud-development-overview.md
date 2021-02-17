@@ -1,15 +1,15 @@
 ---
 title: Sviluppo cloud con Azure - Che cos'è Azure?
 description: Panoramica dello sviluppo di applicazioni cloud in Microsoft Azure, a partire dalla correlazione tra data center, servizi e risorse.
-ms.date: 10/06/2020
+ms.date: 02/16/2021
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: d4bac0b041e1f2fddfcca113d39fea04e6610195
-ms.sourcegitcommit: 8eb1c379b2bbc2acdd82fc9d24d8ed948e5a6847
+ms.openlocfilehash: c6bfc9a9de48ab474b5bf99d5804a111ea10f62d
+ms.sourcegitcommit: b882128a763f81dba83913bfff1e9cd1ec70818f
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98811124"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100642297"
 ---
 # <a name="cloud-development-on-azure"></a>Sviluppo cloud in Azure
 
@@ -17,17 +17,17 @@ Per gli sviluppatori Python che vogliono sviluppare applicazioni cloud per Micro
 
 ## <a name="what-is-azure-data-centers-services-and-resources"></a>Cos'è Azure? Data center, servizi e risorse
 
-Satya Nadella, CEO di Microsoft, si riferisce spesso ad Azure come "computer del mondo". Un computer, come è noto, è un insieme di componenti hardware gestiti da un sistema operativo, che offre una piattaforma su cui è possibile creare software per consentire agli utenti di applicare la potenza di calcolo del sistema a un numero qualsiasi di attività. È per questo motivo che si usa il termine "applicazione" per descrivere tale software.
+Satya Nadella, CEO di Microsoft, si riferisce spesso ad Azure come "computer del mondo". Un computer, come è noto, è una raccolta di hardware gestito da un sistema operativo, che fornisce una piattaforma su cui è possibile creare software che consente agli utenti di *applicare* la potenza di calcolo del sistema a un numero qualsiasi di attività. È per questo motivo che si usa il termine "applicazione" per descrivere tale software.
 
 Nel caso di Azure l'hardware del computer non è costituito da un singolo computer, ma da un enorme pool di computer server virtualizzati contenuti in [decine di data center di grandi dimensioni in tutto il mondo](https://azure.microsoft.com/global-infrastructure/regions/). Il "sistema operativo" di Azure è quindi costituito da *servizi* che allocano e deallocano in modo dinamico parti diverse del pool di risorse in base alle esigenze delle applicazioni. Queste allocazioni dinamiche consentono alle applicazioni di rispondere rapidamente a un numero qualsiasi di condizioni mutevoli, ad esempio la domanda dei clienti.
 
-Ogni allocazione, sia essa potenza di calcolo (memoria e core CPU), spazio di archiviazione, database, reti e così via, corrisponde a una *risorsa*. A ogni risorsa discreta vengono quindi assegnati un *identificatore oggetto* univoco (GUID) e un URL univoco.
+Ogni allocazione è denominata *risorsa* e a ogni risorsa viene assegnato un identificatore di *oggetto* univoco (Guid) e un URL univoco. I tipi di risorse includono macchine virtuali (core CPU e memoria), archiviazione, database, reti virtuali, registri contenitori, agenti di orchestrazione dei contenitori, host Web, motori di AI e analisi e così via.
 
 ![Livelli di Azure, dal data center ai servizi di Azure per l'allocazione delle risorse](media/cloud-development/azure-layers.png)
 
-Le risorse rappresentano gli elementi costitutivi di un'applicazione cloud. Il processo di sviluppo cloud inizia quindi con la creazione dell'ambiente appropriato in cui è possibile distribuire le diverse parti dell'applicazione. In poche parole, non è possibile distribuire codice o dati in Azure finché non si esegue l'allocazione e la configurazione, ovvero il *provisioning*, di una risorsa di destinazione appropriata, ad esempio una macchina virtuale, un database, un account di archiviazione, un registro contenitori, un agente di orchestrazione dei contenitori, un host Web, una rete virtuale, i motori di analisi e intelligenza artificiale e così via.
+Le risorse rappresentano gli elementi costitutivi di un'applicazione cloud. Il processo di sviluppo cloud inizia quindi con la creazione dell'ambiente appropriato in cui è possibile distribuire le diverse parti dell'applicazione. In poche parole, non è possibile distribuire codice o dati in Azure finché non è stato allocato e configurato &mdash; il *provisioning* &mdash; delle risorse di destinazione appropriate.
 
-Il processo di creazione dell'ambiente per l'applicazione implica quindi l'identificazione dei servizi e dei tipi di risorse pertinenti coinvolti e di conseguenza il provisioning di tali risorse, ovvero quando si inizia ad affittarle da Azure. Per processo di provisioning si intende essenzialmente la modalità di costruzione del sistema di elaborazione in cui si distribuisce l'applicazione.
+Il processo di creazione dell'ambiente per l'applicazione, quindi, comporta l'identificazione dei servizi e dei tipi di risorse rilevanti coinvolti, quindi il provisioning di tali risorse. Per processo di provisioning si intende essenzialmente la modalità di costruzione del sistema di elaborazione in cui si distribuisce l'applicazione. Il provisioning è anche il punto in cui si inizia a noleggiare tali risorse da Azure.
 
 È possibile scegliere tra centinaia di tipi di risorse diversi, dalle risorse di base per l'"infrastruttura", come le macchine virtuali, in cui si mantiene il controllo completo e la responsabilità del software distribuito, fino a servizi della "piattaforma" di livello superiore che forniscono un ambiente più gestito in cui è necessario preoccuparsi solo dei dati e del codice delle applicazioni.
 
