@@ -4,12 +4,12 @@ description: Informazioni sui passaggi per lo sviluppo e il debug del progetto d
 ms.topic: how-to
 ms.date: 01/28/2021
 ms.custom: devx-track-js
-ms.openlocfilehash: 4a0aa42a51d76a8d4aaa9ae703e0ff3aa8b15fc0
-ms.sourcegitcommit: 3f8aa923e4626b31cc533584fe3b66940d384351
+ms.openlocfilehash: b61bfaf9cc6b57a8a481e56841b584550e9a9b99
+ms.sourcegitcommit: 576c878c338d286060010646b96f3ad0fdbcb814
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/01/2021
-ms.locfileid: "99231543"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102118229"
 ---
 # <a name="how-to-develop-and-debug-nodejs-with-visual-studio-code"></a>Come sviluppare ed eseguire il debug di Node.js con Visual Studio Code
 
@@ -24,7 +24,7 @@ Informazioni sui passaggi per lo sviluppo e il debug del progetto di Node.js Jav
 
     Se non si dispone di un database mongoDB disponibile, è possibile:
     * Scegliere di eseguire questo progetto locale in una configurazione a più contenitori in cui uno dei contenitori è un database mongoDB. Installare l'estensione [Docker](https://www.docker.com/) e [Remote-Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) per ottenere una configurazione a più contenitori con uno dei contenitori che eseguono un database MongoDB locale. 
-    * Scegliere di creare una risorsa [CosmosDB di Azure](/azure/cosmos-db/) per un database MongoDB. Scopri di più con questa [esercitazione](../../tutorial/deploy-nodejs-mongodb-app-service-from-visual-studio-code.md#create-a-cosmosdb-database-resource-for-mongodb).
+    * Scegliere di creare una risorsa [Azure Cosmos DB](/azure/cosmos-db/) per un database MongoDB. Scopri di più con questa [esercitazione](../../tutorial/deploy-nodejs-mongodb-app-service-from-visual-studio-code.md#create-a-cosmos-db-database-resource-for-mongodb).
 
 ## <a name="clone-sample-project-to-local-computer"></a>Clonare il progetto di esempio nel computer locale
 

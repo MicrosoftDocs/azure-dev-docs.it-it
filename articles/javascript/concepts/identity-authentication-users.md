@@ -1,15 +1,15 @@
 ---
 title: Autenticazione e autorizzazione - JavaScript - Azure
 description: Informazioni su come sviluppare app JavaScript con identità, autenticazione e utenti con Azure.
-ms.topic: reference
+ms.topic: conceptual
 ms.date: 12/09/2020
 ms.custom: devx-track-js
-ms.openlocfilehash: b43ebd5a9c782b2abd83033a8ce0bee038655f80
-ms.sourcegitcommit: c8330128d5d6a71859933a890ecdf047cb950996
-ms.translationtype: HT
+ms.openlocfilehash: 68f53743d001b44aa1495ece36d0c2764ec749d4
+ms.sourcegitcommit: 576c878c338d286060010646b96f3ad0fdbcb814
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97529441"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102118463"
 ---
 # <a name="identity-authentication-and-users"></a>Identità, autenticazione e utenti
 

@@ -1,19 +1,19 @@
 ---
-title: Distribuire l'app Express.js/MongoDB con Visual Studio Code - Servizio app/CosmosDB
+title: Distribuire Express.jsapp/MongoDB con VSCode-servizio app/Cosmos DB
 description: In questa esercitazione si usa un'app Node.js con un database MongoDB tramite l'API nativa MongoDB. Distribuire l'applicazione Node.js nel servizio app di Azure (in Linux), quindi verificare che l'app ospitata funzioni.
 ms.topic: tutorial
 ms.date: 01/12/2020
 ms.custom: scenarios:getting-started, languages:JavaScript, devx-track-javascript
-ms.openlocfilehash: e9c9b6cf624f646b3b41f9af95fcef95fa5841e6
-ms.sourcegitcommit: 657f43a5048cd17b080b40b5090d575c8d7f5eaf
-ms.translationtype: HT
+ms.openlocfilehash: 9765078f6afa79bf42b722784401f20b8e51b4bc
+ms.sourcegitcommit: 576c878c338d286060010646b96f3ad0fdbcb814
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "98173201"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102117905"
 ---
 # <a name="deploy-expressjs-mongodb-app-to-app-service-from-visual-studio-code"></a>Distribuire l'app MongoDB Express.js nel servizio app da Visual Studio Code
 
-Distribuire l'applicazione Express.js che si connette a MongoDB nel Servizio app di Azure (in Linux) e in un'istanza di CosmosDB. 
+Distribuire l'applicazione Express.js che si connette a MongoDB al servizio app Azure (in Linux) e a un Cosmos DB. 
 
 L'attività di programmazione viene eseguita automaticamente. Questa esercitazione è incentrata sull'uso corretto degli ambienti di Azure locali e remoti all'interno Visual Studio Code con le estensioni di Azure.
 
@@ -23,7 +23,7 @@ L'attività di programmazione viene eseguita automaticamente. Questa esercitazio
 
 Questa esercitazione include diverse **attività principali di Azure** per sviluppatori JavaScript:
 
-* Creare una risorsa di CosmosDB per l'hosting del database di MongoDB
+* Creare Cosmos DB risorsa per ospitare il database MongoDB
 * Creare una risorsa del Servizio app per l'hosting dell'app Express.js
 * Distribuire l'app Express.js nel Servizio app
 
@@ -49,7 +49,7 @@ L'[app Express.js di esempio](https://github.com/Azure-Samples/js-e2e-express-mo
     - [Estensione del servizio app di Azure](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azureappservice) per Visual Studio Code (installata da Visual Studio Code).
     - [Database di Azure](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-cosmosdb)
 
-## <a name="create-a-cosmosdb-database-resource-for-mongodb"></a>Creare una risorsa di database di CosmosDB per MongoDB
+## <a name="create-a-cosmos-db-database-resource-for-mongodb"></a>Creare una risorsa di database Cosmos DB per MongoDB
 
 Creare prima di tutto una risorsa di Cosmos perché questa operazione richiederà qualche minuto. 
 
@@ -71,7 +71,7 @@ Creare prima di tutto una risorsa di Cosmos perché questa operazione richieder�
 
     La creazione della risorsa può richiedere fino a 15 minuti. È possibile ignorare la sezione successiva se il tempo a disposizione è limitato, ma occorre ricordare di completare tale sezione dopo qualche minuto.
 
-## <a name="get-cosmosdb-connection-string"></a>Ottenere la stringa di connessione di CosmosDB
+## <a name="get-cosmos-db-connection-string"></a>Ottenere Cosmos DB stringa di connessione
 
 Sempre nella finestra di esplorazione Database di Azure fare clic con il pulsante destro del mouse sul nome della risorsa, quindi scegliere **Copy Connection String** (Copia stringa di connessione) per copiare la stringa di connessione. Sarà necessaria in seguito nell'esercitazione per il file della variabile di ambiente.
 
@@ -88,7 +88,7 @@ L'app Web Express.js viene fornita all'utente. Scaricare l'app, installare le di
     code .
     ```
 
-1. Modificare il file di ambiente, `.env`, aggiungendo la proprietà della stringa di connessione per CosmosDB come valore `DATABASE_URL` della proprietà. 
+1. Modificare il file dell'ambiente, `.env` aggiungendo la proprietà della stringa di connessione per il Cosmos DB come `DATABASE_URL` valore della proprietà. 
 
     ```bash
     ENVIRONMENT=development
@@ -156,8 +156,8 @@ Al termine di questa esercitazione, è necessario rimuovere le due risorse creat
 
 ## <a name="next-steps"></a>Passaggi successivi
 
-Continuare a ottenere informazioni sul Servizio app e CosmosDB:
+Continua a conoscere il servizio app e Cosmos DB:
 * [Informazioni su come configurare le impostazioni dell'app](../how-to/configure-web-app-settings.md)
 * [Configurare un'app Node.js per il Servizio app di Azure](/azure/app-service/configure-language-nodejs?pivots=platform-linux)
 * [Connettersi tramite SSH](/azure/app-service/configure-linux-open-ssh-session)
-* [Eseguire la migrazione di dati a CosmosDB](/azure/dms/tutorial-mongodb-cosmos-db?toc=/azure/cosmos-db/toc.json?toc=/azure/cosmos-db/toc.json)
+* [Eseguire la migrazione di dati a Cosmos DB](/azure/dms/tutorial-mongodb-cosmos-db?toc=/azure/cosmos-db/toc.json?toc=/azure/cosmos-db/toc.json)

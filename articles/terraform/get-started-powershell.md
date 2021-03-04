@@ -3,14 +3,14 @@ title: Avvio rapido - Configurare Terraform con Azure PowerShell
 description: Questo argomento di avvio rapido illustra come installare e configurare Terraform usando Azure PowerShell.
 keywords: azure devops terraform installazione configurazione windows inizializzazione piano applicare esecuzione portale accesso controllo degli accessi in base al ruolo entità servizio script automatizzato powershell
 ms.topic: quickstart
-ms.date: 09/27/2020
+ms.date: 02/18/2021
 ms.custom: devx-track-terraform
-ms.openlocfilehash: 8f95d0bb09d7e9e7ea789b90a27178cdf5426d74
-ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
-ms.translationtype: HT
+ms.openlocfilehash: c89689c53251010d37245cafdb61cfa60729cd47
+ms.sourcegitcommit: 576c878c338d286060010646b96f3ad0fdbcb814
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/28/2020
-ms.locfileid: "91401551"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102117995"
 ---
 # <a name="quickstart-configure-terraform-using-azure-powershell"></a>Avvio rapido: Configurare Terraform con Azure PowerShell
  
@@ -43,24 +43,23 @@ In questo articolo vengono illustrate le operazioni seguenti:
     $PSVersionTable.PSVersion
     ```
 
-1. [Installare PowerShell](/powershell/scripting/install/installing-powershell-core-on-windows). Questa demo è stata testata con PowerShell 7.0.2 in Windows 10.
+1. [Installare PowerShell](/powershell/scripting/install/installing-powershell-core-on-windows). Questa demo è stata testata con PowerShell 7.1.2 in Windows 10.
 
-1. Per eseguire l'[autenticazione di Terraform in Azure](https://www.terraform.io/docs/providers/azurerm/guides/azure_cli.html), è necessario [installare l'interfaccia della riga di comando di Azure](/cli/azure/install-azure-cli-windows). Questa demo è stata testata con la versione 2.9.1 dell'interfaccia della riga di comando di Azure.
+1. Per eseguire l'[autenticazione di Terraform in Azure](https://www.terraform.io/docs/providers/azurerm/guides/azure_cli.html), è necessario [installare l'interfaccia della riga di comando di Azure](/cli/azure/install-azure-cli-windows). Questa demo è stata testata usando l'interfaccia della riga di comando di Azure 2.19.1.
 
-1. [Scaricare Terraform](https://www.terraform.io/downloads.html).
+1. [Scaricare Terraform](https://www.terraform.io/downloads.html). Questa demo è stata testata usando la versione 0.14.7.
 
-1. Dal download estrarre il file eseguibile in una directory a scelta.
+1. Dal Download, estrarre il file eseguibile in una directory di propria scelta (ad esempio, `c:\terraform` ).
 
 1. [Aggiornare il percorso globale del sistema](https://stackoverflow.com/questions/1618280/where-can-i-set-path-to-make-exe-on-windows) con il file eseguibile.
+
+1. Dopo aver impostato il percorso globale, chiudere e riaprire PowerShell.
 
 1. Verificare la configurazione del percorso globale con il comando `terraform`.
 
     ```powershell
-    terraform
+    terraform -version
     ```
-
-    **Note**:
-    - Se viene trovato l'eseguibile di Terraform, viene elencata la sintassi insieme ai comandi disponibili.
 
 ## <a name="authenticate-to-azure"></a>Eseguire l'autenticazione ad Azure
 
@@ -86,22 +85,18 @@ Chiamando [New-AzADServicePrincipal](/powershell/module/Az.Resources/New-AzADSer
 
 1. Avviare PowerShell.
 
-1. Creare una nuova entità servizio usando [New-AzADServicePrincipal](/powershell/module/az.resources/new-azadserviceprincipal). Sostituire `<azure_subscription_id>` con l'ID della sottoscrizione di Azure da usare.
+1. Creare una nuova entità servizio usando [New-AzADServicePrincipal](/powershell/module/az.resources/new-azadserviceprincipal). Sostituire `<azure_subscription_id>` con l'ID della sottoscrizione di Azure da usare. Sostituire `<service_principal_name>` con il nome che si desidera assegnare al server principale.
 
     ```powershell
-    $sp = New-AzADServicePrincipal -Scope /subscriptions/<azure_subscription_id>
+    $sp = New-AzADServicePrincipal -Scope /subscriptions/<azure_subscription_id> -DisplayName <service_principal_name>
     ```
 
-1. Visualizzare i nomi dell'entità servizio.
+1. Convertire la password generata automaticamente in testo e visualizzarla.
 
     ```powershell
-    $sp.ServicePrincipalNames
-    ```
-
-1. Visualizzare la password generata automaticamente come testo, [ConvertFrom-SecureString](/powershell/module/microsoft.powershell.security/convertfrom-securestring).
-
-    ```powershell
-    $UnsecureSecret = ConvertFrom-SecureString -SecureString $sp.Secret -AsPlainText
+    $BSTR = [System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($sp.Secret)
+    $UnsecureSecret = [System.Runtime.InteropServices.Marshal]::PtrToStringAuto($BSTR)
+    $UnsecureSecret
     ```
 
 **Note**:
@@ -120,32 +115,58 @@ Per accedere a una sottoscrizione di Azure tramite un'entità servizio, chiamare
     1. Chiamare [Get-Credential](/powershell/module/microsoft.powershell.security/get-credential) e immettere il nome e la password di un'entità servizio quando richiesto:
 
         ```powershell
-        $spCredential = Get-Credential
+        $spCredentials = Get-Credential
         ```
 
     1. Creare un oggetto `PsCredential` in memoria. Sostituire i segnaposto con i valori appropriati per l'entità servizio. Questo modello è il modo in cui si accede da uno script.
 
         ```powershell
-        $spName = "<service_principal_name>"
+        $spApplicationId = "<service_principal_application_id"
         $spPassword = ConvertTo-SecureString "<service_principal_password>" -AsPlainText -Force
-        $spCredential = New-Object System.Management.Automation.PSCredential($spName , $spPassword)
+        $spCredentials = New-Object System.Management.Automation.PSCredential($spApplicationId , $spPassword)
         ```
 
-1. Chiamare `Connect-AzAccount` passando l'oggetto `PsCredential`. Sostituire il segnaposto `<azure_subscription_tenant_id>` con l'ID tenant della sottoscrizione di Azure.
+1. Chiamare `Connect-AzAccount` passando l'oggetto `PsCredential`. Sostituire il segnaposto `<azure_subscription_tenant_id>` con l'ID tenant della sottoscrizione di Azure. Se non si conosce l'ID tenant, vedere [come trovare l'ID tenant di Azure Active Directory](/azure/active-directory/fundamentals/active-directory-how-to-find-tenant) per istruzioni.
 
     ```powershell
-    Connect-AzAccount -Credential $spCredential -Tenant "<azure_subscription_tenant_id>" -ServicePrincipal
+    Connect-AzAccount -ServicePrincipal -Credential $spCredentials -Tenant "<azure_subscription_tenant_id>" 
+    ```
+
+1. Accedere ad Azure usando l'interfaccia della riga di comando di Azure:
+
+    ```azurecli
+    az login
     ```
 
 ## <a name="set-environment-variables"></a>Impostare le variabili di ambiente
 
-Affinché Terraform usi la sottoscrizione di Azure prevista, impostare le variabili di ambiente. È possibile impostare le variabili di ambiente a livello di sistema Windows o all'interno di una sessione di PowerShell specifica. Per impostare le variabili di ambiente per una sessione specifica, usare il codice seguente. Sostituire i segnaposto con i valori appropriati per l'ambiente.
+L'impostazione delle variabili di ambiente consente di usare la sottoscrizione di Azure prevista senza che sia necessario inserire le informazioni in ogni file di configurazione di bonifica.
 
-```powershell
-$env:ARM_CLIENT_ID="<service_principal_app_id>"
-$env:ARM_SUBSCRIPTION_ID="<azure_subscription_id>"
-$env:ARM_TENANT_ID="<azure_subscription_tenant_id>"
-```
+1. Per impostare le variabili di ambiente per ogni istanza di PowerShell, creare le variabili di ambiente seguenti. Sostituire i segnaposto con i valori appropriati per l'ambiente.
+
+    ```
+    ARM_CLIENT_ID = "<service_principal_app_id>"
+    ARM_SUBSCRIPTION_ID = "<azure_subscription_id>"
+    ARM_TENANT_ID = "<azure_subscription_tenant_id>"
+    ARM_CLIENT_PASSWORD = "<service_principal_password>"
+    ```
+
+    **Nota**: se si dispone di una sessione di PowerShell aperta, chiudere la sessione e riaprirla dopo avere creato le variabili di ambiente.
+
+1. Per impostare le variabili di ambiente all'interno di una sessione di PowerShell specifica, usare il codice seguente. Sostituire i segnaposto con i valori appropriati per l'ambiente.
+
+    ```powershell
+    $env:ARM_CLIENT_ID="<service_principal_app_id>"
+    $env:ARM_SUBSCRIPTION_ID="<azure_subscription_id>"
+    $env:ARM_TENANT_ID="<azure_subscription_tenant_id>"
+    $env:ARM_CLIENT_SECRET="<service_principal_password>"
+    ```
+
+1. Per verificare le variabili di ambiente, usare il comando di PowerShell seguente:
+
+    ```powershell
+    gci env:ARM_*
+    ```
 
 [!INCLUDE [terraform-create-base-config-file.md](includes/terraform-create-base-config-file.md)]
 

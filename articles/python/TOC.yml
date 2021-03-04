@@ -50,6 +50,8 @@
           href: tutorial-python-postgresql-app-portal.md
         - name: Con l'interfaccia della riga di comando di Azure
           href: /azure/app-service/tutorial-python-postgresql-app
+    - name: Siti Web statici
+      href: how-to-create-static-sites.md
     - name: Configurare l'integrazione continua/distribuzione continua
       href: /azure/devops/pipelines/languages/python-webapp
     - name: Configurare l'host Linux

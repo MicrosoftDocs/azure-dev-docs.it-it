@@ -1,15 +1,15 @@
 ---
-title: Caricare l'immagine nell'archiviazione BLOB con Visual Studio Code - Servizio app/CosmosDB
+title: Caricare l'immagine nell'archivio BLOB con VSCode-servizio app/Cosmos DB
 description: Usare un'app React/TypeScript per caricare un file in BLOB del servizio di archiviazione di Azure. Questa esercitazione è incentrata sull'uso di ambienti locali e remoti con le estensioni di Visual Studio Code.
 ms.topic: tutorial
 ms.date: 12/17/2020
 ms.custom: scenarios:getting-started, languages:JavaScript, devx-track-javascript, azure-sdk-storage-blob-typescript-version-12.2.1
-ms.openlocfilehash: 19fc63272ff579ca0bb04802b04a7d44e9114ba4
-ms.sourcegitcommit: 6fbf9e489b194586887a2c11152044be5b3a2b99
+ms.openlocfilehash: 116ca6d03703e96631441a5e130d948065c5c5f1
+ms.sourcegitcommit: 576c878c338d286060010646b96f3ad0fdbcb814
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98759566"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102118543"
 ---
 # <a name="upload-an-image-to-an-azure-storage-blob"></a>Caricare un'immagine in un BLOB del servizio di archiviazione di Azure
 

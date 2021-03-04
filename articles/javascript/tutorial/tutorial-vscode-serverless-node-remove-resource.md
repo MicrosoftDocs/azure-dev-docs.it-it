@@ -4,12 +4,12 @@ description: Rimuovere (pulire) le risorse remote di Azure per evitare di incorr
 ms.topic: tutorial
 ms.date: 08/31/2020
 ms.custom: devx-track-js, contperf-fy21q2
-ms.openlocfilehash: 428330b34b3c315d01c2209840de62001caa747a
-ms.sourcegitcommit: c8330128d5d6a71859933a890ecdf047cb950996
-ms.translationtype: HT
+ms.openlocfilehash: cfb5941e6152a2919e3f2b7570d94df66e0c74f9
+ms.sourcegitcommit: 576c878c338d286060010646b96f3ad0fdbcb814
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97522049"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102117785"
 ---
 # <a name="5-clean-up-azure-resources-for-azure-functions-tutorial"></a>5. Pulire le risorse di Azure per l'esercitazione su Funzioni di Azure
 
@@ -17,9 +17,12 @@ ms.locfileid: "97522049"
 
 ## <a name="remove-remote-azure-resources"></a>Rimuovere le risorse remote di Azure
 
-L'app di Funzioni di Azure creata include risorse che possono comportare costi minimi (vedere [Prezzi di Funzioni di Azure](https://azure.microsoft.com/pricing/details/functions/)). Per pulire le risorse, fare clic con il pulsante destro del mouse sull'app per le funzioni nell'area **Azure: Funzioni** e scegliere **Delete Function App** (Elimina app per le funzioni).
+L'app di Funzioni di Azure creata include risorse che possono comportare costi minimi (vedere [Prezzi di Funzioni di Azure](https://azure.microsoft.com/pricing/details/functions/)). Usare l'estensione Visual Studio Code, i gruppi di risorse di Azure per eliminare il gruppo di risorse e tutte le risorse all'interno del gruppo. 
 
-È anche possibile visitare il [portale di Azure](https://portal.azure.com), selezionare **Gruppi di risorse** nel riquadro di spostamento sinistro, selezionare il gruppo di risorse creato nella procedura di questa esercitazione e quindi usare il comando **Elimina gruppo di risorse**.
+1. Trovare il nome del gruppo di risorse nell'elenco.
+1. Fare clic con il pulsante destro del mouse sul nome del gruppo di risorse e scegliere **Elimina**.
+
+    :::image type="content" source="../media/visual-studio-code-azure-resources-extension-remove-resource-group.png" alt-text="Usare l'estensione Visual Studio Code, i gruppi di risorse di Azure per eliminare il gruppo di risorse e tutte le risorse all'interno del gruppo.":::
 
 [!INCLUDE [Next steps for using VSCode extensions](../includes/tutorial-next-steps-vscode-extensions.md)]
 

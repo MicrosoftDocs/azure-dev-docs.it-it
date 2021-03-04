@@ -3,12 +3,12 @@ title: Novità di cloud Developer Advocates
 description: Novità di JavaScript cloud Developer Advocates (CDA)
 ms.topic: conceptual
 ms.date: 01/29/2021
-ms.openlocfilehash: 21ff40a548897011a191fb4139f53fb0c288ec9a
-ms.sourcegitcommit: 3f8aa923e4626b31cc533584fe3b66940d384351
+ms.openlocfilehash: bd223c6da65b3d7e20b5531543bdf7c208e11dad
+ms.sourcegitcommit: 576c878c338d286060010646b96f3ad0fdbcb814
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/01/2021
-ms.locfileid: "99231544"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102118453"
 ---
 # <a name="whats-new-with-javascript-developer-advocates"></a>Novità di JavaScript Developer Advocates
 
@@ -27,6 +27,6 @@ ms.locfileid: "99231544"
         * [#1 Vide0](https://youtu.be/JmUSx5wXU68)
         * [#2 video](https://youtu.be/Vr-UMoAv8pk)
         * [#3 video](https://youtu.be/6u4aM2eT-gg)
-    * YouTube: [migrazione back-end a un'architettura senza server & database locale PostgreSQL to CosmosDB-Day 01](https://youtu.be/nVbU9BlF5hs)
+    * YouTube: [migrazione back-end a un'architettura senza server & database locale PostgreSQL alla Cosmos DB-Day 01](https://youtu.be/nVbU9BlF5hs)
 * Chegham di:
     * Blog: [angolare, ruggine, webassembly, Node.js, senza server e... le nuove app Web statiche di Azure](https://dev.to/azure/angular-rust-webassembly-node-js-serverless-and-the-new-azure-static-web-apps-cnb) .

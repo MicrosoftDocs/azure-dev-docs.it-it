@@ -8,12 +8,12 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: be90cbf867cfbbb475e1a80655d2ef925069b90a
-ms.sourcegitcommit: f460914ac5843eb7392869a08e3a80af68ab227b
-ms.translationtype: HT
+ms.openlocfilehash: 57dbe81eb0ce2b8b7c8766934b765dd0f057e51b
+ms.sourcegitcommit: 576c878c338d286060010646b96f3ad0fdbcb814
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "92010206"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102118316"
 ---
 # <a name="installing-the-azure-toolkit-for-eclipse"></a>Installare il Toolkit di Azure per Eclipse.
 
@@ -68,9 +68,9 @@ La procedura guidata di Eclipse Marketplace disponibile nell'IDE di Eclipse cons
 
 1. Fare clic sul menu **Help** (?) e quindi scegliere **Install New Software** (Installa nuovo software).
 
-   :::image type="content" source="media/installation/eclipse-install-software-button.png" alt-text="Finestra del Marketplace, menu della Guida."::: 
+   :::image type="content" source="media/installation/eclipse-install-software-button.png" alt-text="Opzione Install new software, menu Help."::: 
 
-1. Nella finestra di dialogo **Available Software** (Software disponibile) digitare `http://dl.microsoft.com/eclipse/` nella casella di testo **Work with** (Compatibile con).
+1. Nella finestra di dialogo **Available Software** (Software disponibile) digitare `http://azuredownloads.blob.core.windows.net/eclipse/` nella casella di testo **Work with** (Compatibile con).
 
 1. Nel riquadro **Nome**, controllare il **Toolkit di Azure per Java** e deselezionare **Contattare tutti i siti di aggiornamento durante l'installazione per trovare il software richiesto**. Verrà visualizzata una schermata simile alla seguente:
 

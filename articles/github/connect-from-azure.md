@@ -5,14 +5,14 @@ author: N-Usha
 ms.author: ushan
 ms.topic: reference
 ms.service: azure
-ms.date: 11/17/2020
+ms.date: 02/17/2021
 ms.custom: github-actions-azure, devx-track-azurecli
-ms.openlocfilehash: 6310254e450c7e0fc648459ddad2c08b1bba555b
-ms.sourcegitcommit: 6fbf9e489b194586887a2c11152044be5b3a2b99
+ms.openlocfilehash: 136e11c6059ab8c25af85212f0f0f96b88652a56
+ms.sourcegitcommit: 576c878c338d286060010646b96f3ad0fdbcb814
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98759513"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102118239"
 ---
 # <a name="use-github-actions-to-connect-to-azure"></a>Usare GitHub Actions per connettersi ad Azure
 
@@ -21,9 +21,9 @@ Informazioni su come usare un [account di accesso di Azure](https://github.com/A
 Per usare Azure PowerShell o l'interfaccia della riga di comando di Azure in un flusso di lavoro di GitHub Actions, è necessario prima accedere con l'azione di [accesso di Azure](https://github.com/marketplace/actions/azure-login).
 L'azione di accesso di Azure consente di eseguire comandi in un flusso di lavoro nel contesto di un'[entità servizio di Azure AD](/azure/active-directory/develop/app-objects-and-service-principals#service-principal-object).
 
-Dopo aver configurato l'azione di accesso, è possibile usare l'interfaccia della riga di comando di Azure o Azure PowerShell.
+Per impostazione predefinita, l'azione esegue l'accesso con l'interfaccia della riga di comando di Azure e configura l'ambiente di Azure Action Runner per l'interfaccia della riga di comando È possibile usare Azure PowerShell con la proprietà `enable-AzPSSession` dell'azione di accesso di Azure. In questo modo l'ambiente dello strumento di esecuzione di GitHub Action viene configurato con il modulo di Azure PowerShell.
 
-Per impostazione predefinita, l'azione effettua l'accesso con l'interfaccia della riga di comando di Azure, configurando l'ambiente dello strumento di esecuzione di GitHub Actions per l'interfaccia della riga di comando di Azure. È possibile usare Azure PowerShell con la proprietà `enable-AzPSSession` dell'azione di accesso di Azure. In questo modo l'ambiente dello strumento di esecuzione di GitHub Action viene configurato con il modulo di Azure PowerShell.
+È possibile usare l'account di accesso di Azure per connettersi a cloud pubblici o sovrani, tra cui Azure per enti pubblici e hub Azure Stack.
 
 ## <a name="create-a-service-principal-and-add-it-to-github-secret"></a>Creare un'entità servizio e aggiungerla al segreto GitHub
 
@@ -42,14 +42,20 @@ In questo esempio verrà creato un segreto denominato `AZURE_CREDENTIALS` che è
         --identifier-uris http://localhost/$appName
     ```
 
-1. [Creare una nuova entità servizio](/cli/azure/create-an-azure-service-principal-azure-cli) nel portale di Azure per l'app. 
+1. Aprire [Azure cloud Shell](/azure/cloud-shell/overview) nel portale di Azure o nell' [interfaccia](/cli/azure/install-azure-cli) della riga di comando di Azure in locale.
+
+    > [!NOTE]
+    > Se si usa Azure Stack Hub, è necessario impostare l'endpoint di gestione SQL su `not supported` .
+    > `az cloud update -n {environmentName} --endpoint-sql-management https://notsupported`
+
+1. [Creare una nuova entità servizio](/cli/azure/create-an-azure-service-principal-azure-cli) nel portale di Azure per l'app. All'entità servizio deve essere assegnato il ruolo Collaboratore.
 
     ```azurecli-interactive
         az ad sp create-for-rbac --name "myApp" --role contributor \
                                     --scopes /subscriptions/{subscription-id}/resourceGroups/{resource-group} \
                                     --sdk-auth
     ```
-
+    
 1. Copiare l'oggetto JSON per l'entità servizio.
 
     ```json
@@ -151,6 +157,25 @@ build-and-deploy:
         inlineScript: |
             az account show
             az storage -h
+```
+
+## <a name="connect-to-azure-government-and-azure-stack-hub-clouds"></a>Connettersi ad Azure per enti pubblici e Cloud Hub Azure Stack
+
+Per accedere a uno dei cloud di Azure per enti pubblici, impostare l'ambiente dei parametri facoltativo con i nomi cloud supportati `AzureUSGovernment` o `AzureChinaCloud` . Se questo parametro non è specificato, accetta il valore predefinito `AzureCloud` e si connette al cloud pubblico di Azure.
+
+```yaml
+   - name: Login to Azure US Gov Cloud with CLI
+     uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_US_GOV_CREDENTIALS }}
+          environment: 'AzureUSGovernment'
+          enable-AzPSSession: false
+   - name: Login to Azure US Gov Cloud with Az Powershell
+      uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_US_GOV_CREDENTIALS }}
+          environment: 'AzureUSGovernment'
+          enable-AzPSSession: true
 ```
 
 ## <a name="connect-with-other-azure-services"></a>Connettersi con altri servizi di Azure

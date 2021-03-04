@@ -6,12 +6,12 @@ ms.date: 02/02/2021
 ms.topic: conceptual
 ms.custom: devx-track-java
 ms.author: srnagar
-ms.openlocfilehash: 537c030b81913c660b873ac028a7bed90c464b67
-ms.sourcegitcommit: 71847ee0a1fee3f3320503629d9a8c82319a1f6a
+ms.openlocfilehash: 0de76274b7f33f724c339eb0137a89d74f3e8678
+ms.sourcegitcommit: 576c878c338d286060010646b96f3ad0fdbcb814
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99522111"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102118473"
 ---
 # <a name="log-with-the-azure-sdk-for-java-and-log4j"></a>Eseguire la registrazione con Azure SDK per Java e log4j
 
@@ -85,4 +85,4 @@ rootLogger.appenderRef.stdout.ref = STDOUT
 
 Questo articolo ha illustrato la configurazione di Log4j e come fare in modo che Azure SDK per Java lo usi per la registrazione. Poiché Azure SDK per Java funziona con tutti i Framework di registrazione SLF4J, vedere la pagina relativa al [manuale dell'utente di SLF4J](http://www.slf4j.org/manual.html) per altri dettagli. Se si usa log4j, è disponibile anche una grande quantità di indicazioni sulla configurazione nel sito Web. Per altre informazioni, vedere [Welcome to log4j 2!](https://logging.apache.org/log4j/2.x/manual/index.html)
 
-Una volta completata la registrazione, provare a esaminare le integrazioni offerte da Azure in Framework come [Spring](/azure/developer/java/spring-framework/spring-boot-starters-for-azure) e [microprofile](/azure/developer/java/eclipse-microprofile/).
+Una volta completata la registrazione, provare a esaminare le integrazioni offerte da Azure in Framework come [Spring](../spring-framework/spring-boot-starters-for-azure.md) e [microprofile](../eclipse-microprofile/index.yml).

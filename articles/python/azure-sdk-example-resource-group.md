@@ -4,12 +4,12 @@ description: Usare la libreria di gestione delle risorse di Azure SDK per Python
 ms.date: 01/28/2021
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 37e912e9fed6edabc966034a6411e7786875bf3f
-ms.sourcegitcommit: 3843092e47691fbd32452c93d51f894a0cab31db
+ms.openlocfilehash: 503ed658fd216edb6308f39b7a721398d6d1fc3a
+ms.sourcegitcommit: 576c878c338d286060010646b96f3ad0fdbcb814
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99069088"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102117805"
 ---
 # <a name="example-use-the-azure-libraries-to-provision-a-resource-group"></a>Esempio: Usare le librerie di Azure per effettuare il provisioning di un gruppo di risorse
 
@@ -31,6 +31,8 @@ Creare un file denominato *requirements.txt* con il contenuto seguente:
 azure-mgmt-resource>=1.15.0
 azure-identity>=1.5.0
 ```
+
+Assicurarsi di usare queste versioni delle librerie. Se si usano versioni precedenti, si verificano errori come l'oggetto oggetto "AzureCliCredential" senza attributo "signed_session".
 
 In un terminale o da un prompt dei comandi con l'ambiente virtuale attivato, installare i requisiti:
 

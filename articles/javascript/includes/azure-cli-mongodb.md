@@ -2,16 +2,16 @@
 ms.custom: devx-track-js
 ms.topic: include
 ms.date: 02/08/2021
-ms.openlocfilehash: b2877a43eda86868eb3ee2841cedfd8c4d242340
-ms.sourcegitcommit: 98a7e855206ff463c1d95f93c23dd665b26a0aa1
+ms.openlocfilehash: e820cb17038a5251e658c9b7286cec65ddc40fca
+ms.sourcegitcommit: 576c878c338d286060010646b96f3ad0fdbcb814
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "100019261"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102118269"
 ---
 ## <a name="create-a-cosmos-db-resource-for-mongodb"></a>Creare una risorsa Cosmos DB per MongoDB
 
-Usare il comando [AZ cosmosdb create](/cli/azure/cosmosdb#az_cosmosdb_create) dell'interfaccia della riga di comando di Azure seguente nel [Azure cloud Shell](https://shell.azure.com) per creare una nuova risorsa Cosmosdb per un database MongoDB. 
+Usare il comando [AZ cosmosdb create](/cli/azure/cosmosdb#az_cosmosdb_create) dell'interfaccia della riga di comando di Azure seguente nel [Azure cloud Shell](https://shell.azure.com) per creare una nuova risorsa Cosmos DB per un database MongoDB. 
 
 ```azurecli
 az cosmosdb create \
@@ -114,7 +114,7 @@ Il completamento di questo comando può richiedere alcuni minuti e creare una ri
 }
 ```
 
-## <a name="add-firewall-rule-for-your-client-ip-address-to-mongodb-resource"></a>Aggiungere una regola del firewall per l'indirizzo IP del client alla risorsa MongoDB
+## <a name="add-firewall-rule-for-your-client-ip-address"></a>Aggiungere una regola del firewall per l'indirizzo IP del client
 
 Per impostazione predefinita, le regole del firewall non sono configurate. È necessario aggiungere l'indirizzo IP del client in modo che la connessione client al server con JavaScript abbia esito positivo.
 

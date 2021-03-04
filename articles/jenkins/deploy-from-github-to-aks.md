@@ -5,18 +5,18 @@ keywords: jenkins, azure, devops, aks, servizio azure kubernetes, github
 ms.topic: article
 ms.date: 02/05/2021
 ms.custom: devx-track-jenkins, devx-track-azurecli
-ms.openlocfilehash: b64037f6a6113208182fa6c9f28e53005928dbab
-ms.sourcegitcommit: bccbab4883e6b6b4926fc194c35ad948b11ccc3f
+ms.openlocfilehash: 2cd8db66d11798171c8e16fc102d11f2915fc2b9
+ms.sourcegitcommit: 576c878c338d286060010646b96f3ad0fdbcb814
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/08/2021
-ms.locfileid: "99822754"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102117875"
 ---
 # <a name="tutorial-deploy-from-github-to-azure-kubernetes-service-using-jenkins"></a>Esercitazione: Eseguire la distribuzione da GitHub nel servizio Azure Kubernetes con Jenkins
 
 [!INCLUDE [jenkins-integration-with-azure.md](includes/jenkins-integration-with-azure.md)]
 
-Questa esercitazione distribuisce un'app di esempio da GitHub in un cluster del [servizio Azure Kubernetes (AKS)](/azure/aks/intro-kubernetes) configurando l'integrazione continua (CI) e la distribuzione continua (CD) in Jenkins. In questo modo, quando si aggiorna l'app eseguendo il push dei commit in GitHub, Jenkins esegue automaticamente una nuova compilazione dei contenitori, esegue il push delle immagini dei contenitori in Registro Azure Container e quindi esegue l'app in servizio Azure Kubernetes. 
+Questa esercitazione distribuisce un'app di esempio da GitHub in un cluster del [servizio Azure Kubernetes (AKS)](/azure/aks/intro-kubernetes) configurando l'integrazione continua (CI) e la distribuzione continua (CD) in Jenkins.
 
 In questa esercitazione si completeranno le attività seguenti:
 
@@ -37,6 +37,8 @@ Per completare questa esercitazione, è necessario quanto segue:
 
 - Un [registro del servizio Registro Azure Container](/azure/container-registry/container-registry-get-started-azure-cli), il nome del server di accesso al servizio Registro Azure Container e il cluster del servizio Azure Kubernetes configurati per [eseguire l'autenticazione con il registro del servizio Registro Azure Container](/azure/aks/cluster-container-registry-integration).
 
+- Un [controller Jenkins](https://docs.microsoft.com/azure/developer/jenkins/configure-on-linux-vm) distribuito in una macchina virtuale di Azure.
+
 - Interfaccia della riga di comando di Azure versione 2.0.46 o successiva installata e configurata. Eseguire `az --version` per trovare la versione. Se è necessario eseguire l'installazione o l'aggiornamento, vedere [Installare l'interfaccia della riga di comando di Azure](/cli/azure/install-azure-cli).
 
 - [Docker installato](https://docs.docker.com/install/) nel sistema di distribuzione in uso
@@ -47,7 +49,9 @@ Per completare questa esercitazione, è necessario quanto segue:
 
 ## <a name="prepare-your-app"></a>Preparare l'app
 
-In questo articolo si usa un'applicazione di voto di Azure di esempio che contiene un'interfaccia Web ospitata in uno o più pod e un secondo pod che ospita Redis per l'archiviazione temporanea dei dati. Prima di integrare Jenkins e il servizio Azure Kubernetes per le distribuzioni automatizzate, preparare e distribuire l'applicazione di voto di Azure nel cluster servizio Azure Kubernetes. Questa distribuzione manuale può essere considerata come la prima versione dell'applicazione e consente di visualizzare l'applicazione in azione.
+In questo articolo si usa un'applicazione Azure vote di esempio che contiene un'interfaccia Web e Redis per l'archiviazione di dati temporanei.
+
+Prima di integrare Jenkins e il servizio Azure Kubernetes per le distribuzioni automatizzate, preparare e distribuire l'applicazione di voto di Azure nel cluster servizio Azure Kubernetes. Questa distribuzione manuale consente di visualizzare l'applicazione in azione.
 
 > [!NOTE]
 > L'applicazione di voto di Azure di esempio usa un pod di Linux pianificato per l'esecuzione in un nodo di Linux. Il flusso descritto in questo articolo funziona anche per un pod di Windows Server pianificato in un nodo di Windows Server.
@@ -83,13 +87,15 @@ redis                        latest     a1b99da73d05        7 days ago          
 tiangolo/uwsgi-nginx-flask   flask      788ca94b2313        9 months ago        694MB
 ```
 
-Prima di eseguire il push dell'immagine del contenitore *azure-vote-front* in Registro Azure Container, ottenere il server di accesso del servizio Registro Azure Container con il comando [az acr list](/cli/azure/acr#az-acr-list). L'esempio seguente ottiene l'indirizzo del server di accesso di Registro Azure Container in un gruppo di risorse denominato *myResourceGroup*:
+Accedere all'istanza di contenitore di Azure.
 
 ```azurecli
-az acr list --resource-group myResourceGroup --query "[].{acrLoginServer:loginServer}" --output table
+az login -n <acrLoginServer>
 ```
 
-Usare il comando [docker tag](https://docs.docker.com/engine/reference/commandline/tag/) per assegnare tag all'immagine con il nome del server di accesso di Registro Azure Container e il numero di versione `v1`. Specificare il nome `<acrLoginServer>` ottenuto nel passaggio precedente:
+Sostituire `<acrLoginServer>` con il server di accesso di ACR.
+
+Usare il comando [docker tag](https://docs.docker.com/engine/reference/commandline/tag/) per assegnare tag all'immagine con il nome del server di accesso di Registro Azure Container e il numero di versione `v1`. Usare il proprio `<acrLoginServer>` nome ottenuto nel passaggio precedente:
 
 ```console
 docker tag azure-vote-front <acrLoginServer>/azure-vote-front:v1
@@ -103,7 +109,7 @@ docker push <acrLoginServer>/azure-vote-front:v1
 
 ## <a name="deploy-the-sample-application-to-aks"></a>Distribuire l'applicazione di esempio nel servizio Azure Kubernetes
 
-Per distribuire l'applicazione di esempio nel cluster servizio Azure Kubernetes, è possibile usare il file manifesto Kubernetes nella radice del repository di voto di Azure. Aprire il file manifesto *azure-vote-all-in-one-redis.yaml* con un editor, ad esempio `vi`. Sostituire `microsoft` con il nome del server di accesso di Registro Azure Container. Tale valore è presente nella riga **47** del file manifesto:
+Per distribuire l'applicazione di esempio nel cluster servizio Azure Kubernetes, è possibile usare il file manifesto Kubernetes nella radice del repository di voto di Azure. Aprire il `azure-vote-all-in-one-redis.yaml` file manifesto con un editor, ad esempio `vi` . Sostituire `microsoft` con il nome del server di accesso di Registro Azure Container. Questo valore è disponibile nella riga **60** del file manifesto:
 
 ```yaml
 containers:
@@ -131,36 +137,73 @@ Per vedere l'applicazione in azione, aprire un Web browser all'indirizzo IP este
 
 ![Applicazione di voto di Azure di esempio in esecuzione nel servizio Azure Kubernetes](media/deploy-from-github-to-aks/azure-vote.png)
 
-## <a name="deploy-jenkins-to-an-azure-vm"></a>Distribuire Jenkins in una macchina virtuale di Azure
+## <a name="configure-jenkins-controller"></a>Configurare il controller Jenkins
 
-Per distribuire rapidamente Jenkins per l'uso in questo articolo, è possibile usare lo script seguente per distribuire una macchina virtuale di Azure, configurare l'accesso alla rete e completare un'installazione di base di Jenkins. Per eseguire l'autenticazione tra Jenkins e il cluster servizio Azure Kubernetes e Jenkins, lo script copia il file di configurazione di Kubernetes dal sistema di sviluppo al sistema Jenkins.
+Applicare le seguenti modifiche per abilitare le distribuzioni AKS dal controller Jenkins:
 
-> [!WARNING]
-> Questo script di esempio è a scopo dimostrativo per effettuare rapidamente il provisioning di un ambiente Jenkins eseguito su una macchina virtuale Azure. Sfrutta l'estensione script personalizzata di Azure per configurare una macchina virtuale e quindi visualizzare le credenziali necessarie. *~/.kube/config* viene copiato sulla macchina virtuale di Jenkins.
+Aprire la porta in `80` ingresso.
 
-Eseguire i comandi seguenti per scaricare ed eseguire lo script. È necessario rivedere il contenuto di tutti gli script prima di eseguirli - [https://raw.githubusercontent.com/Azure-Samples/azure-voting-app-redis/master/jenkins-tutorial/deploy-jenkins-vm.sh](https://raw.githubusercontent.com/Azure-Samples/azure-voting-app-redis/master/jenkins-tutorial/deploy-jenkins-vm.sh).
-
-```console
-curl https://raw.githubusercontent.com/Azure-Samples/azure-voting-app-redis/master/jenkins-tutorial/deploy-jenkins-vm.sh > azure-jenkins.sh
-sh azure-jenkins.sh
+```azurecli
+az vm open-port \
+--resource-group <Resource_Group_name> \
+--name <Jenkins_Controller_VM>  \
+--port 80 --priority 1020
 ```
 
-Sono necessari alcuni minuti per creare la macchina virtuale e distribuire i componenti necessari per Docker e Jenkins. Quando lo script è stato completato, restituisce un indirizzo per il server Jenkins e una chiave per sbloccare il dashboard, come illustrato nell'output di esempio seguente:
+Sostituire `<Resource_Group_name>` e `<Jenkins_Controller_VM>` con i valori appropriati.
 
+SSH nel controller Jenkins
+
+```azurecli
+ssh azureuser@<PublicIPAddres>
 ```
-Open a browser to http://40.115.43.83:8080
-Enter the following to Unlock Jenkins:
-667e24bba78f4de6b51d330ad89ec6c6
+
+Sostituire `<PublicIPAddress>` con l'indirizzo IP del controller Jenkins.
+
+### <a name="install--log-into-azcli"></a>Installare & accedere a AzCLI
+
+```azurecli
+curl -L https://aka.ms/InstallAzureCli | bash
+``````
+
+```azurecli
+az login
 ```
 
-Aprire un browser Web all'URL visualizzato e immettere la chiave di sblocco. Seguire le istruzioni visualizzate per completare la configurazione di Jenkins:
+   > [!NOTE]
+   > Per installare manualmente AzCLI, seguire queste [istruzioni](https://docs.microsoft.com/cli/azure/install-azure-cli).
 
-- Scegliere **Installa plug-in consigliati**
-- Creare il primo utente amministratore. Immettere un nome utente, ad esempio *azureuser*, quindi specificare una password sicura. Digitare infine un nome completo e un indirizzo di posta elettronica.
-- Selezionare **Save and Finish** (Salva e completa).
-- Quando Jenkins è pronto, selezionare **Start using Jenkins** (Inizia a usare Jenkins).
-    - Se il Web browser visualizza una pagina vuota quando si inizia a usare Jenkins, riavviare il servizio Jenkins. Per riavviare il servizio, eseguire SSH nell'indirizzo IP pubblico dell'istanza di Jenkins e digitare `sudo service jenkins restart`. Dopo il riavvio del servizio, aggiornare il Web browser.
-- Accedere a Jenkins con il nome utente e la password create nel processo di installazione.
+### <a name="install-docker"></a>Installazione di Docker
+
+```bash
+sudo apt-get install apt-transport-https ca-certificates curl software-properties-common -y;
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -;
+sudo apt-key fingerprint 0EBFCD88;
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable";
+sudo apt-get update;
+sudo apt-get install docker-ce -y;
+```
+
+### <a name="install-kubectl-and-connect-to-aks"></a>Installare Kubectl e connettersi a AKS
+
+```azurecli
+sudo az aks install-cli
+sudo az aks get-credentials --resource-group <Resource_Group> --name <AKS_Name>
+```
+
+Sostituire `<Resource_Group>` e `<AKS_Name>` con i valori appropriati.
+
+### <a name="configure-access"></a>Configurare l'accesso
+
+```bash
+sudo usermod -aG docker jenkins;
+sudo usermod -aG docker azureuser;
+sudo touch /var/lib/jenkins/jenkins.install.InstallUtil.lastExecVersion;
+sudo service jenkins restart;
+sudo cp ~/.kube/config /var/lib/jenkins/config
+sudo chmod 777 /var/lib/jenkins/
+sudo chmod 777 /var/lib/jenkins/config
+```
 
 ## <a name="create-a-jenkins-environment-variable"></a>Creare una variabile di ambiente di Jenkins
 
@@ -171,19 +214,25 @@ Per contenere il nome del server di accesso di Registro Azure Container, viene u
 
     ![Variabili di ambiente di Jenkins](media/deploy-from-github-to-aks/env-variables.png)
 
-- Al termine, fare clic su **Save** (Salva) nella parte inferiore della pagina di configurazione di Jenkins.
+- Al termine, selezionare **Salva** nella parte inferiore della pagina.
 
 ## <a name="create-a-jenkins-credential-for-acr"></a>Creare una credenziale di Jenkins per il Registro Azure Container
 
-Per consentire a Jenkins di compilare e quindi di eseguire il push delle immagini del contenitore aggiornate in Registro Azure Container, è necessario specificare le credenziali per tale registro. Questa autenticazione può usare le entità servizio di Azure Active Directory. Nei prerequisiti è stata configurata l'entità servizio per il cluster servizio Azure Kubernetes in uso con le autorizzazione di *lettore* in Registro Azure Container. Tali autorizzazioni consentono al cluster di servizio Azure Kubernetes di eseguire il *pull* delle immagini da Registro Azure Container. Durante il processo CI/CD, Jenkins compila nuovi immagini del contenitore in base agli aggiornamenti delle applicazioni e deve quindi eseguire il *push* di tali immagini in Registro Azure Container. Per la separazione di ruoli e autorizzazioni, configurare un'entità servizio per Jenkins con le autorizzazioni di *collaboratore* in Registro Azure Container.
+Durante il processo CI/CD, Jenkins compila nuovi immagini del contenitore in base agli aggiornamenti delle applicazioni e deve quindi eseguire il *push* di tali immagini in Registro Azure Container.
+
+Per consentire a Jenkins di inserire le immagini del contenitore aggiornate in ACR, è necessario specificare le credenziali per ACR. 
+
+Per la separazione dei ruoli e delle autorizzazioni, configurare un'entità servizio per Jenkins con le autorizzazioni di *collaboratore* per il registro ACR.
 
 ### <a name="create-a-service-principal-for-jenkins-to-use-acr"></a>Creare un'entità servizio per Jenkins per usare il Registro Azure Container
 
 Creare in primo luogo un'entità servizio usando il comando [az ad sp create-for-rbac](/cli/azure/ad/sp#az-ad-sp-create-for-rbac):
 
 ```azurecli
-$ az ad sp create-for-rbac --skip-assignment
+az ad sp create-for-rbac --skip-assignment
+```
 
+```bash
 {
   "appId": "626dd8ea-042d-4043-a8df-4ef56273670f",
   "displayName": "azure-cli-2018-09-28-22-19-34",
@@ -193,25 +242,29 @@ $ az ad sp create-for-rbac --skip-assignment
 }
 ```
 
-Annotare i valori di *appId* e *password* visualizzati nell'output. Tali valori vengono usati nella procedura seguente per configurare la risorsa credenziale in Jenkins.
+Prendere nota di *appId* e *password*. Tali valori vengono usati nella procedura seguente per configurare la risorsa credenziale in Jenkins.
 
-Ottenere l'ID risorsa di Registro Azure Container usando il comando [az acr show](/cli/azure/acr#az-acr-show) e archiviarlo come variabile. Specificare il nome del gruppo di risorse e il nome di Registro Azure Container:
-
-```azurecli
-ACR_ID=$(az acr show --resource-group myResourceGroup --name <acrLoginServer> --query "id" --output tsv)
-```
-
-A questo punto creare un'assegnazione di ruolo per assegnare i diritti dell'entità servizio *collaboratore* al Registro Azure Container. Nell'esempio seguente specificare il proprio *appId* illustrato nell'output di un comando precedente per creare l'entità servizio:
+Ottenere l'ID risorsa di Registro Azure Container usando il comando [az acr show](/cli/azure/acr#az-acr-show) e archiviarlo come variabile.
 
 ```azurecli
-az role assignment create --assignee 626dd8ea-042d-4043-a8df-4ef56273670f --role Contributor --scope $ACR_ID
+ACR_ID=$(az acr show --resource-group <Resource_Group> --name <acrLoginServer> --query "id" --output tsv)
 ```
+
+Sostituire `<Resource_Group>` e `<acrLoginServer>` con i valori appropriati.
+
+Creare un'assegnazione di ruolo per assegnare i diritti di *collaboratore* dell'entità servizio al registro ACR.
+
+```azurecli
+az role assignment create --assignee <appID> --role Contributor --scope $ACR_ID
+```
+
+Sostituire `<appId>` con il valore specificato nell'output del comando precedente usare per creare l'entità servizio.
 
 ### <a name="create-a-credential-resource-in-jenkins-for-the-acr-service-principal"></a>Creare una risorsa credenziale in Jenkins per l'entità servizio del servizio Registro Azure Container
 
 Con l'assegnazione di ruolo creata in Azure, archiviare le credenziali di Registro Azure Container in un oggetto credenziale di Jenkins. Durante il processo di compilazione di Jenkins si farà riferimento a queste credenziali.
 
-Tornare nella parte sinistra del portale di Jenkins, fare clic su **Credentials** > **Jenkins** > **Global credentials (unrestricted)**  > **Add Credentials** (Credenziali > Jenkins > Credenziali globali senza restrizioni > Aggiungi credenziali)
+Tornare al lato sinistro del portale di Jenkins, selezionare **Manage Jenkins**  >  **Manage Credentials**  >  **Jenkins Store**  >  **Global Credentials (Unrestricted)**  >  **Add Credentials**
 
 Verificare che il tipo di credenziali sia **Username with password** (Nome utente con password) e immettere gli elementi seguenti:
 
@@ -223,7 +276,7 @@ Al termine, il modulo delle credenziali è analogo all'esempio seguente:
 
 ![Creare un oggetto credenziale di Jenkins con le informazioni dell'entità servizio](media/deploy-from-github-to-aks/acr-credentials.png)
 
-Fare clic su **OK** e tornare al portale di Jenkins.
+Selezionare **OK** e tornare al portale di Jenkins.
 
 ## <a name="create-a-jenkins-project"></a>Creare un progetto di Jenkins
 
@@ -231,7 +284,7 @@ Nella home page del portale di Jenkins selezionare **New item** (Nuovo elemento)
 
 1. Immettere *azure-vote* come nome del processo. Scegliere **Freestyle project** (Progetto Freestyle) e quindi selezionare **OK**
 1. Nella sezione **General** (Generale) selezionare **GitHub project** (Progetto GitHub) e immettere l'URL del repository copiato tramite fork, ad esempio *https:\//github.com/\<your-github-account\>/azure-voting-app-redis*
-1. Nella sezione **Source code management** (Gestione del codice sorgente) selezionare **Git** e immettere l'URL con estensione *.git* del repository copiato tramite fork, ad esempio *https:\//github.com/\<your-github-account\>/azure-voting-app-redis.git*
+1. Nella sezione **gestione del codice sorgente** selezionare **git**, immettere l'URL del repository con fork `.git` , ad esempio *https: \/ /github.com/ \<your-github-account\> /Azure-voting-app-Redis.git*
 
 1. Nella sezione **Build Triggers** (Trigger di compilazione) selezionare **GitHub hook trigger for GITScm polling** (Trigger di hook GitHub per polling GITScm).
 1. In **Build Environment** (Ambiente di compilazione) selezionare **Use secret texts or files** (Usa testi o file segreti).
@@ -255,32 +308,43 @@ Nella home page del portale di Jenkins selezionare **New item** (Nuovo elemento)
     ```bash
     # Update kubernetes deployment with new image.
     WEB_IMAGE_NAME="${ACR_LOGINSERVER}/azure-vote-front:kube${BUILD_NUMBER}"
-    kubectl set image deployment/azure-vote-front azure-vote-front=$WEB_IMAGE_NAME --kubeconfig /var/lib/jenkins/config
+    kubectl set image deployment/azure-vote-front azure-vote-front=$WEB_IMAGE_NAME
     ```
 
 1. Al termine, fare clic su **Save** (Salva).
 
 ## <a name="test-the-jenkins-build"></a>Testare la build di Jenkins
 
-Prima di automatizzare il processo in base ai commit di GitHub, testare manualmente la compilazione di Jenkins. Tale compilazione manuale verifica che il processo sia stato configurato correttamente, che il file di autenticazione Kubernetes corretto sia presente e che l'autenticazione con il Registro Azure Container funzioni.
+Prima di automatizzare il processo in base ai commit di GitHub, testare manualmente la compilazione di Jenkins.
+
+Questa compilazione convalida che il processo è stato configurato correttamente. Conferma che è presente il file di autenticazione di Kubernetes appropriato e che l'autenticazione per il registro di sistema ACR funziona.
 
 Nel menu a sinistra del progetto selezionare **Build Now** (Compila).
 
 ![Build di test di Jenkins](media/deploy-from-github-to-aks/test-build.png)
 
-La prima compilazione richiede un minuto o due perché i livelli dell'immagine Docker vengono scaricati nel server Jenkins. Le compilazioni successive possono usare i livelli di immagine memorizzati nella cache per migliorare i tempi di compilazione.
+La prima build è più lunga perché i livelli di immagine Docker vengono estratti nel server Jenkins.
 
-Durante questo processo, il repository di GitHub viene clonato nel server di compilazione di Jenkins. Viene compilata una nuova immagine del contenitore, che viene inserita nel Registro Azure Container. Infine l'applicazione di voto di Azure in esecuzione nel cluster di servizio Azure Kubernetes viene aggiornata per usare la nuova immagine. Poiché non sono state apportate modifiche al codice dell'applicazione, quest'ultima non viene modificata se si visualizza l'app di esempio in un Web browser.
+Le compilazioni eseguono le attività seguenti:
 
-Dopo che il processo di compilazione è stato completato, fare clic su **build #1** (compilazione 1) nella cronologia delle compilazioni. Selezionare **Console output** (Output console) e visualizzare l'output del processo di compilazione. La riga finale deve indicare che la build ha avuto esito positivo.
+1. Clona il repository GitHub
+1. Compila una nuova immagine del contenitore
+1. Inserisce l'immagine del contenitore nel registro ACR
+1. Aggiorna l'immagine usata dalla distribuzione di AKS
+
+Poiché non sono state apportate modifiche al codice dell'applicazione, l'interfaccia utente Web è invariata.
+
+Al termine del processo di compilazione, selezionare **compila #1** in cronologia di compilazione. Selezionare **Console output** (Output console) e visualizzare l'output del processo di compilazione. La riga finale deve indicare che la build ha avuto esito positivo.
 
 ## <a name="create-a-github-webhook"></a>Creare un webhook GitHub
 
-Dopo aver completato la compilazione manuale, integrare GitHub nella compilazione Jenkins. Per eseguire il processo di compilazione di Jenkins ogni volta che viene eseguito un commit di codice in GitHub, è possibile usare un webhook. Per creare il webhook GitHub, completare questi passaggi:
+Dopo aver completato la compilazione manuale, integrare GitHub nella compilazione Jenkins. Usare un webhook per eseguire il processo di compilazione Jenkins ogni volta che viene eseguito il commit del codice in GitHub.
+
+Per creare il webhook GitHub, completare questi passaggi:
 
 1. Passare al repository GitHub con fork in un Web browser.
 1. Selezionare **Impostazioni** e quindi **Webhook** sul lato sinistro.
-1. Scegli **Aggiungi webhook**. Come valore per *Payload URL* (URL di payload) immettere `http://<publicIp:8080>/github-webhook/` dove `<publicIp>` è l'indirizzo IP del server di Jenkins. Assicurarsi di includere la barra finale (/). Lasciare le altre impostazioni predefinite per il tipo di contenuto e attivare gli eventi *push*.
+1. Scegli **Aggiungi webhook**. Come valore per *Payload URL* (URL di payload) immettere `http://<publicIp:8080>/github-webhook/` dove `<publicIp>` è l'indirizzo IP del server di Jenkins. Assicurarsi di includere l'oggetto finale `/` . Lasciare le altre impostazioni predefinite per il tipo di contenuto e attivare gli eventi *push*.
 1. Selezionare **Aggiungi webhook**.
 
     ![Creare un webhook GitHub per Jenkins](media/deploy-from-github-to-aks/webhook.png)
@@ -289,11 +353,11 @@ Dopo aver completato la compilazione manuale, integrare GitHub nella compilazion
 
 È ora possibile testare l'intera pipeline di integrazione CI/CD. Quando si esegue il push di un commit di codice da GitHub, vengono eseguite queste operazioni:
 
-1. Il webhook GitHub contatta Jenkins.
+1. Il webhook GitHub informa Jenkins.
 1. Jenkins avvia il processo di compilazione ed esegue il pull del commit di codice più recente da GitHub.
 1. Viene avviata una compilazione di Docker usando il codice aggiornato e la nuova immagine di contenitore è contrassegnata con il numero di build più recente.
 1. Viene eseguito il push di tale immagine in Registro Azure Container.
-1. L'applicazione viene distribuita negli aggiornamenti del servizio Azure Kubernetes con l'immagine del contenitore più recente di Registro Azure Container.
+1. L'applicazione in esecuzione in Azure Kubernetes Service viene aggiornata con l'immagine più recente di Azure Container Registry.
 
 Nel computer di sviluppo aprire l'applicazione clonata con un editor di codice. Nella directory */azure-vote/azure-vote* aprire il file denominato **config_file.cfg**. Aggiornare i valori di voto in questo file su un valore rilevante, come illustrato nell'esempio seguente:
 
@@ -305,7 +369,7 @@ VOTE2VALUE = 'Purple'
 SHOWHOST = 'false'
 ```
 
-Al termine dell'aggiornamento, salvare il file, eseguire il commit delle modifiche ed eseguirne il push nel fork del repository di GitHub. Il webhook GitHub attiva un nuovo processo di compilazione in Jenkins. Nel dashboard Web di Jenkins monitorare il processo di compilazione. Sono necessari pochi secondi per eseguire il pull del codice più recente, creare ed eseguire il push dell'immagine aggiornata e distribuire l'applicazione aggiornata nel servizio Azure Kubernetes.
+Al termine dell'aggiornamento, salvare il file, eseguire il commit delle modifiche ed eseguirne il push nel fork del repository GitHub. Il webhook GitHub attiva un nuovo processo di compilazione in Jenkins. Nel dashboard Web di Jenkins monitorare il processo di compilazione. Sono necessari pochi secondi per eseguire il pull del codice più recente, creare ed eseguire il push dell'immagine aggiornata e distribuire l'applicazione aggiornata nel servizio Azure Kubernetes.
 
 Al termine della compilazione, aggiornare il Web browser dell'applicazione di voto di Azure di esempio. Le modifiche vengono visualizzate, come illustrato nell'esempio seguente:
 

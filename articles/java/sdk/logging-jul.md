@@ -6,12 +6,12 @@ ms.date: 02/02/2021
 ms.topic: conceptual
 ms.custom: devx-track-java
 ms.author: srnagar
-ms.openlocfilehash: 48fa4dac679e8b39139e03ae65f331072a063710
-ms.sourcegitcommit: 71847ee0a1fee3f3320503629d9a8c82319a1f6a
+ms.openlocfilehash: ca3a431debec21bad2099371e711c1df73d9b344
+ms.sourcegitcommit: 576c878c338d286060010646b96f3ad0fdbcb814
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99522114"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102118583"
 ---
 # <a name="log-with-the-azure-sdk-for-java-and-javautillogging"></a>Log con Azure SDK per Java e Java. util. Logging
 
@@ -74,4 +74,4 @@ Questo codice creerà un file denominato *MyApplication. log* nella Home Directo
 
 Questo articolo ha illustrato la configurazione di `java.util.logging` e come fare in modo che Azure SDK per Java lo usi per la registrazione. Poiché Azure SDK per Java funziona con tutti i Framework di registrazione SLF4J, vedere la pagina relativa al [manuale dell'utente di SLF4J](http://www.slf4j.org/manual.html) per altri dettagli.
 
-Una volta completata la registrazione, provare a esaminare le integrazioni offerte da Azure in Framework come [Spring](/azure/developer/java/spring-framework/spring-boot-starters-for-azure) e [microprofile](/azure/developer/java/eclipse-microprofile/).
+Una volta completata la registrazione, provare a esaminare le integrazioni offerte da Azure in Framework come [Spring](../spring-framework/spring-boot-starters-for-azure.md) e [microprofile](../eclipse-microprofile/index.yml).

@@ -8,12 +8,12 @@ ms.date: 02/04/2021
 ms.service: key-vault
 ms.subservice: secrets
 ms.topic: quickstart
-ms.openlocfilehash: 385889e067b375c80744c8f798d62c1b05468aab
-ms.sourcegitcommit: 7287dff6bf4b30c2033924702c941bf520403e07
+ms.openlocfilehash: 157439b0405f86fa8940e4500e1a43257e5e83eb
+ms.sourcegitcommit: 576c878c338d286060010646b96f3ad0fdbcb814
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99590863"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102118373"
 ---
 # <a name="use-key-vault-secrets-in-github-actions-workflows"></a>Usare i segreti di Azure Key Vault nei flussi di lavoro di GitHub Actions
 
@@ -25,7 +25,7 @@ Con Key Vault e GitHub Actions, si ottengono i vantaggi di uno strumento central
 ## <a name="prerequisites"></a>Prerequisiti 
 - Un account GitHub. Se non è disponibile, iscriversi per riceverne uno [gratuito](https://github.com/join).  
 - Un account Azure con una sottoscrizione attiva. [Creare un account gratuitamente](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-- Un'app Azure connessa a un repository GitHub. Questo esempio si basa sull'articolo [Distribuire contenitori nel servizio app di Azure](/azure/developer/javascript/tutorial-vscode-docker-node-01). 
+- Un'app Azure connessa a un repository GitHub. Questo esempio si basa sull'articolo [Distribuire contenitori nel servizio app di Azure](../javascript/tutorial/tutorial-vscode-docker-node/tutorial-vscode-docker-node-01.md). 
 - Un insieme di credenziali delle chiavi di Azure.  È possibile creare un'istanza di Azure Key Vault con il portale di Azure, l'interfaccia della riga di comando di Azure o Azure PowerShell.
 
 ## <a name="workflow-file-overview"></a>Panoramica dei file del flusso di lavoro

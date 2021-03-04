@@ -1,15 +1,15 @@
 ---
 title: Imparare a sviluppare con Azure e JavaScript
 description: Usare la piattaforma di Microsoft Learn per espandere la comprensione di Azure con JavaScript
-ms.topic: reference
+ms.topic: conceptual
 ms.date: 01/14/2021
 ms.custom: devx-track-js
-ms.openlocfilehash: 80c0a9d285c1701369f8c7518f42220662759d86
-ms.sourcegitcommit: 3f8aa923e4626b31cc533584fe3b66940d384351
+ms.openlocfilehash: 7647c4503457d53ccae30021c847ae3057702542
+ms.sourcegitcommit: 576c878c338d286060010646b96f3ad0fdbcb814
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/01/2021
-ms.locfileid: "99224825"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102118383"
 ---
 # <a name="learn-to-develop-with-azure-and-javascript"></a>Imparare a sviluppare con Azure e JavaScript 
 

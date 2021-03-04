@@ -6,12 +6,12 @@ ms.date: 02/02/2021
 ms.topic: conceptual
 ms.custom: devx-track-java
 ms.author: alzimmer
-ms.openlocfilehash: 63852f253a648e473ba91ac361bc5d9d0629b8f1
-ms.sourcegitcommit: 71847ee0a1fee3f3320503629d9a8c82319a1f6a
+ms.openlocfilehash: 868f15d7f8e0791ea190b77a6679f88c59d363e4
+ms.sourcegitcommit: 576c878c338d286060010646b96f3ad0fdbcb814
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99522070"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102118209"
 ---
 # <a name="troubleshoot-networking-issues"></a>Risolvere i problemi di rete
 
@@ -49,16 +49,22 @@ Nelle procedure seguenti viene descritto come utilizzare il Java Runtime Environ
 
 **Windows**
 
-1. Esporta il certificato del Fiddler.
+1. Esporta il certificato del Fiddler. Il certificato viene in genere esportato sul desktop.
 1. Trovare lo strumento di ricerca di JRE (in genere `jre\bin` ).
 1. Trovare il CAcert di JRE (in genere `jre\lib\security` ).
-1. Aprire un prompt dei comandi ed eseguire il comando seguente per importare il certificato:
+1. Aprire una finestra di PowerShell in modalità amministratore ed eseguire il comando seguente per importare il certificato:
 
    ```cmd
-   keytool.exe -import -file <location of Fiddler certificate> -keystore <location of cacert> -alias Fiddler
+   keytool.exe -import -trustcacerts -file <location of Fiddler certificate> -keystore <location of cacert> -alias Fiddler
    ```
 
-1. Immettere una password.
+   Ad esempio, il comando seguente usa alcuni valori comuni:
+
+   ```cmd
+   keytool.exe -import -trustcacerts -file "C:\Users\username\Desktop\FiddlerRootCertificate.crt" -keystore "C:\Program Files\AdoptOpenJDK\jdk-8.0.275.1-hotspot\jre\lib\security\cacerts" -alias Fiddler
+   ```
+
+1. Immettere una password. Se la password non è stata impostata in precedenza, il valore predefinito è "changeit". Per ulteriori informazioni, vedere [utilizzo di certificati e SSL](https://docs.oracle.com/cd/E19830-01/819-4712/ablqw/index.html) nella documentazione di Oracle.
 1. Considerare attendibile il certificato.
 
 ## <a name="wireshark"></a>Wireshark

@@ -1,15 +1,15 @@
 ---
 title: Principali attività di Azure per sviluppatori JavaScript
 description: Un esempio delle attività correnti.
-ms.topic: reference
-ms.date: 01/20/2021
+ms.topic: how-to
+ms.date: 03/03/2021
 ms.custom: devx-track-js
-ms.openlocfilehash: 9da8ede8dfbf7ffc54fce9531f4b490ae9db1942
-ms.sourcegitcommit: 7287dff6bf4b30c2033924702c941bf520403e07
+ms.openlocfilehash: 22196c4e31c184748408dbbb340c59533ca8811f
+ms.sourcegitcommit: 576c878c338d286060010646b96f3ad0fdbcb814
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99589437"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102118179"
 ---
 # <a name="top-tasks-for-javascript-developers"></a>Attività principali per sviluppatori JavaScript
 
@@ -138,6 +138,18 @@ Un esempio delle attività correnti. Se non si riesce a trovare un'attività, la
 
 ## <a name="databases"></a>Database
 
+### <a name="cassandra-api-on-cosmos-db"></a>API Cassandra Cosmos DB
+
+[Documentazione del servizio](/azure/cosmos-db/)
+
+|Attività|Con|
+|--|--|
+|Crea risorsa|[Azure portal](https://ms.portal.azure.com/#create/Microsoft.DocumentDB)<br>[Interfaccia della riga di comando di Azure](./with-azure-cli/create-cassandra-db.md#create-a-cosmos-db-resource-for-cassandra-db)|
+|Crea archivio chiavi sulla risorsa|[Interfaccia della riga di comando di Azure](./with-azure-cli/create-cassandra-db.md#create-a-keyspace-on-the-server-with-azure-cli)|
+|Crea tabella nell'archivio chiavi|[Interfaccia della riga di comando di Azure](./with-azure-cli/create-cassandra-db.md#create-a-table-on-the-keyspace-with-azure-cli)|
+|Ottenere informazioni di connessione|[Interfaccia della riga di comando di Azure](./with-azure-cli/create-cassandra-db.md#get-the-cassandra-connection-string-with-azure-cli)|
+|Usare Cassandra-driver API su Cosmos DB|[JavaScript](/azure/developer/javascript/how-to/with-database/use-cassandra-as-cosmos-db.md#use-cassandra-driver-sdk-to-connect-to-cassandra-db-on-azure)|
+
 ### <a name="mariadb"></a>MariaDB
 
 [Documentazione del servizio](/azure/mariadb/)
@@ -149,16 +161,53 @@ Un esempio delle attività correnti. Se non si riesce a trovare un'attività, la
 |Ottenere la stringa di connessione|[Interfaccia della riga di comando di Azure](./with-azure-cli/create-mariadb.md#get-the-mariadb-connection-string-with-azure-cli)|
 |Usare e visualizzare il database|Interfaccia della riga di comando di _MySQL_ di [Azure cloud Shell](https://shell.azure.com/)<br>[MySQL Workbench](https://www.mysql.com/products/workbench/)<br>[Estensione di Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=mtxr.sqltools-driver-mysql)<br>[MariaDB NPM](https://www.npmjs.com/package/mariadb)<br>[JavaScript](./with-database/use-mariadb.md#use-mariadb-sdk-to-connect-to-mariadb-on-azure)|
 
-### <a name="mongodb-on-cosmos-db"></a>MongoDB in Cosmos DB
+### <a name="mongodb-api-on-cosmos-db"></a>API MongoDB su Cosmos DB
 
 [Documentazione del servizio](/azure/cosmos-db/)
 
 |Attività|using|
 |--|--|
 |Creare una risorsa Cosmos DB-MongoDB|[Estensione di Visual Studio Code](../tutorial/deploy-nodejs-mongodb-app-service-from-visual-studio-code.md)<br>[Interfaccia della riga di comando di Azure](./with-azure-cli/create-mongodb-cosmosdb.md#create-a-cosmos-db-resource-for-mongodb)|
-|Ottenere la stringa di connessione di CosmosDB|[Estensione di Visual Studio Code](../tutorial/deploy-nodejs-mongodb-app-service-from-visual-studio-code.md#get-cosmosdb-connection-string)<br>[Interfaccia della riga di comando di Azure](./with-azure-cli/create-mongodb-cosmosdb.md#get-the-mongodb-connection-string-for-your-resource)|
+|Ottenere Cosmos DB stringa di connessione|[Estensione di Visual Studio Code](../tutorial/deploy-nodejs-mongodb-app-service-from-visual-studio-code.md#get-cosmos-db-connection-string)<br>[Interfaccia della riga di comando di Azure](./with-azure-cli/create-mongodb-cosmosdb.md#get-the-mongodb-connection-string-for-your-resource)|
 |Visualizza Cosmos DB|[Esplora Cosmos DB](https://cosmos.azure.com/)|
 |Usare l'API mangusta per mongoDB in Cosmos DB|[JavaScript](./with-database/use-mongodb-as-cosmosdb.md#use-mongoose-sdk-to-connect-to-mongodb-on-azure)
+
+### <a name="mysql"></a>MySQL
+
+[Documentazione del servizio](/azure/mysql/)
+
+|Attività|Con|
+|--|--|
+|Crea risorsa|[Azure portal](https://ms.portal.azure.com/#create/Microsoft.MySQLServer)<br>[Interfaccia della riga di comando di Azure](./with-azure-cli/create-mysql-db.md#create-an-azure-database-for-mysql-resource-with-azure-cli)<br>[@azure/arm-mysql](https://www.npmjs.com/package/@azure/arm-mysql)|
+|Crea database per risorsa|[Interfaccia della riga di comando di Azure](./with-database/use-mysql-db.md#create-a-database-on-the-server-with-azure-cli)|
+|Ottenere la stringa di connessione|[Interfaccia della riga di comando di Azure](./with-database/use-mysql-db.md#get-the-mysql-connection-string-with-azure-cli)|
+|Usare e visualizzare il database|[MySQL Workbench](https://www.mysql.com/products/workbench/)<br>[Estensione di Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=mtxr.sqltools-driver-mysql)<br>[npm mysql](https://www.npmjs.com/package/MySQL)<br>[promessa NPM-MySQL](https://www.npmjs.com/package/promise-mysql)|
+|Usare l'API Promise-MySQL|[JavaScript](./with-database/use-mysql-db.md#use-promise-mysql-sdk-to-connect-to-mysql-on-azure)|
+
+### <a name="postgresql"></a>PostgreSQL
+
+[Documentazione del servizio](/azure/postgresql/)
+
+|Attività|using|
+|--|--|
+|Crea risorsa|[Estensione di Visual Studio Code](./with-visual-studio-code/create-azure-database.md#create-a-postgresql-database)<br>[Interfaccia della riga di comando di Azure](./with-azure-cli/create-postgresql-server-resource.md#create-an-azure-database-for-postgresql-server-resource-with-azure-cli)<br>[Azure portal](https://ms.portal.azure.com/#create/Microsoft.PostgreSQLServer)<br>[@azure/arm-postgresql](https://www.npmjs.com/package/@azure/arm-postgresql)|
+|Ottenere una stringa di connessione|[Interfaccia della riga di comando di Azure](./with-azure-cli/create-postgresql-server-resource.md#get-the-postgresql-connection-string-with-azure-cli)|
+|Visualizza database|[Estensione di Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-cosmosdb)<br>[PSQL di Azure Cloud Shell](https://shell.azure.com/)|
+|Usare l'API PG per il database|[JavaScript](./with-database/use-postgresql-db.md#use-pg-sdk-to-connect-to-postgresql-on-azure)
+
+### <a name="sql-api-on-cosmos-db"></a>API SQL su Cosmos DB
+
+* [Documentazione del servizio](/azure/cosmos-db/)
+* [@azure/cosmosdb](https://www.npmjs.com/package/@azure/cosmos) pacchetto NPM
+
+|Attività|using|
+|--|--|
+|Aggiungere una regola del firewall per l'indirizzo IP del client|[Interfaccia della riga di comando di Azure](./with-database/use-sql-api-as-cosmos-db.md#add-firewall-rule-for-your-client-ip-address)
+|Creare una risorsa API Cosmos DB-SQL|[Estensione di Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-cosmosdb)<br>[Interfaccia della riga di comando di Azure](./with-database/use-sql-api-as-cosmos-db.md#create-a-cosmos-db-resource-for-sql-api)|
+|Ottenere chiavi Cosmos DB|[Interfaccia della riga di comando di Azure](./with-database/use-sql-api-as-cosmos-db.md#get-the-cosmos-db-keys-for-your-resource)|
+|Ottenere Cosmos DB stringa di connessione|[Estensione di Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-cosmosdb)|
+|Visualizza Cosmos DB|[Esplora Cosmos DB](https://cosmos.azure.com/)|
+|Usare l'API SQL per su Cosmos DB|[JavaScript](./with-database/use-sql-api-as-cosmos-db.md#use--sdk-to-connect-to-database)
 
 
 
@@ -248,7 +297,7 @@ Un esempio delle attività correnti. Se non si riesce a trovare un'attività, la
 |App React che usa Servizi cognitivi|Compilare e distribuire localmente un'applicazione client React/TypeScript in un'app Web statica di Azure con un'azione GitHub.<br>[Esercitazione](../tutorial/static-web-app/introduction.md) - [Codice di esempio](https://github.com/Azure-Samples/js-e2e-client-cognitive-services)|
 |App React che carica un file in BLOB del servizio di archiviazione di Azure|Questo progetto di esempio è un'app client del framework React (create-react-app) TypeScript, con un modulo HTML per selezionare un file da caricare nei BLOB del servizio di archiviazione di Azure.<br>[Esercitazione](../tutorial/browser-file-upload-azure-storage-blob.md) - [Codice di esempio](https://github.com/Azure-Samples/js-e2e-browser-file-upload-storage-blob)|
 |App React con pulsante di accesso|L'applicazione a pagina singola creata in questa esercitazione è un'app React (create-react-app) con le attività seguenti:<br>* Eseguire l'accesso usando un account di accesso supportato da Microsoft, ad esempio Office 365 oppure Outlook.com<br>* Disconnettersi dall'applicazione<br>[Esercitazione](../tutorial/single-page-application-azure-login-button-sdk-msal.md) - [Codice di esempio](https://github.com/Azure-Samples/js-e2e-client-azure-login-button)|
-|App Express.js con database MongoDB|L'esercitazione illustra come caricare ed eseguire il progetto in locale con VSCode, usando le estensioni, e come eseguire il codice in remoto in un servizio app. L'esercitazione include la creazione di una risorsa CosmosDB per l'API Mongo, con il recupero delle informazioni di connessione che verranno incluse nell'impostazione di configurazione del servizio app per connettersi a un database cloud.<br>[Esercitazione](../tutorial/deploy-nodejs-mongodb-app-service-from-visual-studio-code.md) - [Codice di esempio](https://github.com/Azure-Samples/js-e2e-express-mongo)|
+|App Express.js con database MongoDB|L'esercitazione illustra come caricare ed eseguire il progetto in locale con VSCode, usando le estensioni, e come eseguire il codice in remoto in un servizio app. L'esercitazione include la creazione di una risorsa Cosmos DB per l'API Mongo, per ottenere le informazioni di connessione e impostarle nell'impostazione di configurazione del servizio app per connettersi a un database cloud.<br>[Esercitazione](../tutorial/deploy-nodejs-mongodb-app-service-from-visual-studio-code.md) - [Codice di esempio](https://github.com/Azure-Samples/js-e2e-express-mongo)|
 |App Express.js distribuita in una VM con il file cloud-init|Illustra come creare una macchina virtuale Linux per un'app Express.js. La macchina virtuale è configurata con un file di configurazione cloud-init e include NGINX e un repository GitHub per un'app Express.js. Quando la macchina virtuale è in esecuzione, è possibile connettersi alla macchina virtuale con SSH, modificare l'app Web in modo da includere la registrazione della traccia e visualizzare l'app server Express.js pubblica in un Web browser.<br>[Esercitazione](../tutorial/nodejs-virtual-machine-vm/introduction.md) - [Codice di esempio](https://github.com/Azure-Samples/js-e2e-express-mongo)|
 
 Vedere [Esplora gli esempi di codice](/samples/browse/?languages=javascript%2cnodejs%2ctypescript) per trovare altri esempi che supportano il caso d'uso specifico. 

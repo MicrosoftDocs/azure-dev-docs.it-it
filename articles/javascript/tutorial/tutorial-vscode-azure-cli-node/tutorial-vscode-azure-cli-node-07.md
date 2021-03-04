@@ -4,12 +4,12 @@ description: Parte 7 dell'esercitazione, pulire le risorse con l'interfaccia del
 ms.topic: tutorial
 ms.date: 09/24/2019
 ms.custom: devx-track-js, devx-track-azurecli
-ms.openlocfilehash: 247edae2c61b8c42f9ed99932ce8bdf567e0cb1e
-ms.sourcegitcommit: 1dfcc022a3098b1a1505e9458eada35f527ef070
-ms.translationtype: HT
+ms.openlocfilehash: d2b45ae60a7ad1270547289d1ea8480d14fedd95
+ms.sourcegitcommit: 576c878c338d286060010646b96f3ad0fdbcb814
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97658386"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102117965"
 ---
 # <a name="part-7-clean-up-resources"></a>Parte 7: Pulire le risorse
 
@@ -20,8 +20,6 @@ Il servizio app creato include un piano di servizio app sottostante che può com
 ```azurecli
 az group delete --name myResourceGroup
 ```
-
-È anche possibile visitare il [portale di Azure](https://portal.azure.com), selezionare **Gruppi di risorse** nel riquadro di spostamento sinistro, selezionare il gruppo di risorse creato nella procedura di questa esercitazione e quindi usare il comando **Elimina gruppo di risorse**.
 
 > [!div class="nextstepaction"]
 > [L'esercitazione è stata completata](../../how-to/deploy-web-app.md) [Si è verificato un problema](https://www.research.net/r/PWZWZ52?tutorial=node-deployment&step=clean-up-resources)

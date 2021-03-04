@@ -4,12 +4,12 @@ description: Come acquisire gli oggetti credenziali necessari per autenticare un
 ms.date: 01/19/2021
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 19a69cf0379dd290893724db6527ebd30b5bab63
-ms.sourcegitcommit: 6fbf9e489b194586887a2c11152044be5b3a2b99
+ms.openlocfilehash: 9a33dc8c98655f78e7e433081655d96137d9d8d8
+ms.sourcegitcommit: 576c878c338d286060010646b96f3ad0fdbcb814
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98759470"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102117845"
 ---
 # <a name="how-to-authenticate-and-authorize-python-apps-on-azure"></a>Come autenticare e autorizzare le app Python in Azure
 
@@ -165,11 +165,11 @@ print(list(sub_list))
 
 Se la libreria non è stata aggiornata, al codice che usa `DefaultAzureCredential` verrà assegnata la dicitura "All'oggetto 'DefaultAzureCredential' non è associato alcun attributo 'signed-session'", come descritto nella sezione successiva.
 
-### <a name="defaultazurecredential-object-has-no-attribute-signed-session"></a>"All'oggetto 'DefaultAzureCredential' non è associato alcun attributo 'signed-session'"
+### <a name="credential-object-has-no-attribute-signed_session"></a>Credential "l'oggetto non ha l'attributo" signed_session ""
 
-Se si prova a usare `DefaultAzureCredential` con una libreria che non è stata aggiornata per l'uso di azure.core, le chiamate non riescono e viene restituito un messaggio di errore vago, simile a "All'oggetto 'DefaultAzureCredential' non è associato alcun attributo 'signed_session'". Si verificherà, ad esempio, un errore di questo tipo se si usa il codice nella sezione precedente con una libreria azure-mgmt-resource di una versione inferiore alla 15.
+Se si tenta di usare `DefaultAzureCredential` (o `AzureCliCredential` e altri oggetti Credential da Azure. Identity) con una libreria che non è stata aggiornata per l'uso di Azure. Core, le chiamate tramite un oggetto client hanno esito negativo con un errore piuttosto vago. l'oggetto "DefaultAzureCredential" non ha l'attributo "signed_session" ". Si verificherà, ad esempio, un errore di questo tipo se si usa il codice nella sezione precedente con una libreria azure-mgmt-resource di una versione inferiore alla 15.
 
-Questo errore si verifica perché le versioni non azure.core delle librerie di gestione dell'SDK presuppongono che l'oggetto credenziali contenga una proprietà `signed_session`, che risulta mancante in `DefaultAzureCredential`.
+Questo errore si verifica perché le versioni non Azure. core delle librerie di gestione SDK presuppongono che l'oggetto credenziali contenga una `signed_session` proprietà, che non è presente in `DefaultAzureCredential` e altri oggetti Credential da Azure. Identity.
 
 Se la libreria di gestione che si vuole usare non è ancora stata aggiornata, è possibile usare i metodi alternativi seguenti:
 

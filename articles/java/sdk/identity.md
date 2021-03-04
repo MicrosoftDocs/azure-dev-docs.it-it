@@ -6,12 +6,12 @@ ms.date: 02/02/2021
 ms.topic: conceptual
 ms.custom: devx-track-java
 ms.author: vigera
-ms.openlocfilehash: 2a09b4ccaf39564c1cd2547417d722472ed9017c
-ms.sourcegitcommit: 71847ee0a1fee3f3320503629d9a8c82319a1f6a
+ms.openlocfilehash: e0349297bed9ee2e499c904483d9c3e018a6cddf
+ms.sourcegitcommit: 576c878c338d286060010646b96f3ad0fdbcb814
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99522120"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102118553"
 ---
 # <a name="azure-authentication-with-java-and-azure-identity"></a>Autenticazione di Azure con Java e identità di Azure
 
@@ -20,7 +20,7 @@ Questo articolo fornisce una panoramica di Java Azure Identity Library, che forn
 Azure Identity Library attualmente supporta:
 
 * [Autenticazione di Azure negli ambienti di sviluppo Java](identity-dev-env-auth.md), che consente di:
-  * IDEA di autenticazione IntelliJ con le informazioni di accesso recuperate dal [Azure Toolkit for IntelliJ](/azure/developer/java/toolkit-for-intellij/).
+  * IDEA di autenticazione IntelliJ con le informazioni di accesso recuperate dal [Azure Toolkit for IntelliJ](../toolkit-for-intellij/index.yml).
   * Visual Studio Code l'autenticazione, con le informazioni di accesso salvate nel plug-in [di Azure per Visual Studio Code](https://code.visualstudio.com/docs/azure/extensions).
   * Autenticazione dell'interfaccia della riga di comando di Azure con le informazioni di accesso salvate nell' [interfaccia](/cli/azure/what-is-azure-cli) della riga di comando
 * [Autenticazione delle applicazioni ospitate in Azure](identity-azure-hosted-auth.md), che consente di:

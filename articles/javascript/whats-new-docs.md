@@ -2,13 +2,13 @@
 title: Novità della documentazione di JavaScript
 description: Novità della documentazione di JavaScript nel Developer Center
 ms.topic: conceptual
-ms.date: 02/08/2021
-ms.openlocfilehash: 37d68d713c4b6ba51d35efb033f68fe2b2e60680
-ms.sourcegitcommit: 98a7e855206ff463c1d95f93c23dd665b26a0aa1
+ms.date: 02/17/2021
+ms.openlocfilehash: 1678fa459bc7f1eec808d5d95979156ad1109315
+ms.sourcegitcommit: 576c878c338d286060010646b96f3ad0fdbcb814
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "100004714"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102118423"
 ---
 # <a name="javascript-docs-whats-new"></a>Documentazione di JavaScript: Novità
 
@@ -20,10 +20,13 @@ Contenuti nuovi e aggiornati disponibili per sviluppatori JavaScript e TypeScrip
 
 |Nome|Note|
 |---------------------------------------|--|
+|[Come usare Cassandra in Azure Cosmos DB](./how-to/with-database/use-cassandra-as-cosmos-db.md)|Per creare, spostare o usare un database di Cassandra DB in Azure, è necessaria una risorsa Cosmos DB. Informazioni su come creare la risorsa e usare il database. |
 |[Come usare MongoDB in Azure Cosmos DB](./how-to/with-database/use-mongodb-as-cosmosdb.md)|Per creare, spostare o usare un database mongoDB in Azure, è necessario disporre di una risorsa Cosmos DB. Informazioni su come creare la risorsa e usare il database. |
 |[Come usare MariaDb in Azure](./how-to/with-database/use-mariadb.md)|Per creare, spostare o usare un database MariaDB in Azure, è necessaria una risorsa **database di Azure per MariaDB** . Informazioni su come creare la risorsa e usare il database.|
 |[Come usare MySql in Azure](./how-to/with-database/use-mysql-db.md)|Per creare, spostare o usare un database MySQL in Azure, è necessaria una risorsa **database di Azure per MySQL** . Informazioni su come creare la risorsa e usare il database.|
 |[Come usare PostgreSQL in Azure](./how-to/with-database/use-postgresql-db.md)|Per creare, spostare o usare un database PostgreSQL in Azure, è necessaria una risorsa **del server database di Azure per PostgreSQL** . Informazioni su come creare la risorsa e usare il database.|
+|[Sviluppare un'applicazione JavaScript per cache di Azure per Redis](.//how-to/with-database/use-azure-cache-for-redis-db.md)|Per creare, spostare o usare un database Redis in Azure, è necessaria una cache di Azure per la risorsa Redis. Informazioni su come creare la risorsa e usare il database.|
+|[Sviluppare un'applicazione JavaScript per Cosmos DB con l'API SQL](.//how-to/with-database/use-sql-api-as-cosmos-db.md)|Per creare o usare Cosmos DB con l'API SQL, usare una risorsa Cosmos DB. Informazioni su come creare la risorsa Cosmos e usare il database.|
 
 ## <a name="2021-january"></a>Gennaio 2021
 

@@ -6,12 +6,12 @@ ms.date: 02/02/2021
 ms.topic: conceptual
 ms.custom: devx-track-java
 ms.author: alzimmer
-ms.openlocfilehash: ce4305e1f76a15ab799523f67002315b0883c3e1
-ms.sourcegitcommit: 71847ee0a1fee3f3320503629d9a8c82319a1f6a
+ms.openlocfilehash: 03acb768d348505b03419eb132c1d9623633b442
+ms.sourcegitcommit: 576c878c338d286060010646b96f3ad0fdbcb814
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99522103"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102118169"
 ---
 # <a name="configure-proxies-in-the-azure-sdk-for-java"></a>Configurare proxy in Azure SDK per Java
 
@@ -102,14 +102,14 @@ Le librerie client Java vengono fornite con una `ProxyOptions` classe che funge 
 Nell'esempio seguente viene creata un' `ProxyOptions` istanza semplice che inoltra le richieste all'indirizzo Fiddler predefinito ( `localhost:8888` ):
 
 ```java
-ProxyOptions proxyOptions = new ProxyOptions(ProxyOptions.HTTP, new InetSocketAddress("localhost", 8888));
+ProxyOptions proxyOptions = new ProxyOptions(ProxyOptions.Type.HTTP, new InetSocketAddress("localhost", 8888));
 ```
 
 Nell'esempio seguente viene creato un oggetto autenticato `ProxyOptions` che proxy richieste a un'istanza di Fiddler che richiede l'autenticazione proxy:
 
 ```java
 // Fiddler uses username "1" and password "1" with basic authentication as its proxy authentication requirement.
-ProxyOptions proxyOptions = new ProxyOptions(ProxyOptions.HTTP, new InetSocketAddess("localhost", 8888))
+ProxyOptions proxyOptions = new ProxyOptions(ProxyOptions.Type.HTTP, new InetSocketAddress("localhost", 8888))
     .setCredentials("1", "1");
 ```
 
@@ -118,7 +118,7 @@ ProxyOptions proxyOptions = new ProxyOptions(ProxyOptions.HTTP, new InetSocketAd
 Nell'esempio seguente viene `ProxyOptions` usato per usare Fiddler come proxy:
 
 ```java
-ProxyOptions proxyOptions = new ProxyOptions(ProxyOptions.HTTP, new InetSocketAddress("localhost", 8888));
+ProxyOptions proxyOptions = new ProxyOptions(ProxyOptions.Type.HTTP, new InetSocketAddress("localhost", 8888));
 
 HttpClient nettyHttpClient = new NettyAsyncHttpClientBuilder()
     .proxy(proxyOptions)

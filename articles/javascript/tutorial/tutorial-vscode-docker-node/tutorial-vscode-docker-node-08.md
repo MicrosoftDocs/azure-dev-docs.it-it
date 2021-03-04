@@ -4,24 +4,27 @@ description: Parte 8 dell'esercitazione su Docker, pulire le risorse
 ms.topic: tutorial
 ms.date: 09/20/2019
 ms.custom: devx-track-js
-ms.openlocfilehash: 47f258ef2b6bb31e7b3a9ee47749c9b0bdd22aaf
-ms.sourcegitcommit: f723980ade4cbc13548a5d8ac3f3fa681b8a2dbd
-ms.translationtype: HT
+ms.openlocfilehash: 4a7ff0e9a84e10223bbe8b55f5309506593f6e07
+ms.sourcegitcommit: 576c878c338d286060010646b96f3ad0fdbcb814
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97609307"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102117895"
 ---
 # <a name="part-8-clean-up-resources"></a>Parte 8: Pulire le risorse
 
 [Passaggio precedente: Eseguire lo streaming dei log](tutorial-vscode-docker-node-07.md)
 
-## <a name="delete-app-service-resource-and-resource-group"></a>Eliminare una risorsa e un gruppo di risorse del servizio app
+## <a name="delete-resource-group"></a>Eliminare un gruppo di risorse
 
-Il Servizio app creato per il contenitore include un piano di Servizio app di supporto che può comportare costi. Per pulire le risorse, fare clic con il pulsante destro del mouse sul servizio app nell'area **Azure: App Service** (Azure: Servizio app) e selezionare **Delete** (Elimina).
+Il Servizio app creato per il contenitore include un piano di Servizio app di supporto che può comportare costi. Usare l'estensione Visual Studio Code, i gruppi di risorse di Azure per eliminare il gruppo di risorse e tutte le risorse all'interno del gruppo.
 
-È anche possibile visitare il [portale di Azure](https://portal.azure.com), selezionare **Gruppi di risorse** nel riquadro di spostamento sinistro, selezionare il gruppo di risorse creato nella procedura di questa esercitazione e quindi usare il comando **Elimina gruppo di risorse**.
+1. Trovare il nome del gruppo di risorse nell'elenco.
+1. Fare clic con il pulsante destro del mouse sul nome del gruppo di risorse e scegliere **Elimina**.
 
-### <a name="next-steps"></a>Passaggi successivi
+    :::image type="content" source="../../media/visual-studio-code-azure-resources-extension-remove-resource-group.png" alt-text="Usare l'estensione Visual Studio Code, i gruppi di risorse di Azure per eliminare il gruppo di risorse e tutte le risorse all'interno del gruppo.":::
+
+## <a name="next-steps"></a>Passaggi successivi
 
 [!INCLUDE [tutorial-next-steps](../../includes/tutorial-next-steps.md)]
 

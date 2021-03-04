@@ -2,14 +2,14 @@
 title: Distribuire contenitori Docker nel Servizio app di Azure da Visual Studio Code
 description: Parte 1 dell'esercitazione su Docker, introduzione e prerequisiti.
 ms.topic: tutorial
-ms.date: 09/20/2019
+ms.date: 03/04/2021
 ms.custom: devx-track-js
-ms.openlocfilehash: b2dfe0c42b7c0ae1afc34f431715031893afbaf1
-ms.sourcegitcommit: f723980ade4cbc13548a5d8ac3f3fa681b8a2dbd
-ms.translationtype: HT
+ms.openlocfilehash: a6058d682a8dec3b06d0854fed09534454270171
+ms.sourcegitcommit: 576c878c338d286060010646b96f3ad0fdbcb814
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97609380"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102117985"
 ---
 # <a name="deploy-containers-to-azure-app-service"></a>Distribuire contenitori nel servizio app di Azure
 
@@ -21,12 +21,15 @@ Guardare questo video per una procedura dettagliata completa del contenuto di qu
 
 > [!VIDEO https://channel9.msdn.com/Shows/Docs-Azure/Deploy-containers-Azure-App-Service/player]
 
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>Prerequisiti
 
 - Una [sottoscrizione di Azure](#azure-subscription).
 - [Visual Studio Code](https://code.visualstudio.com/).
-- L'[estensione Docker](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker).
-- L'[estensione Servizio app di Azure](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azureappservice).
+- Estensione di Visual Studio Code
+    - [Estensione account Azure](https://marketplace.visualstudio.com/items?itemName=ms-vscode.azure-account)
+    - [Estensione del servizio app Azure](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azureappservice).
+    - [Estensione risorse di Azure](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azureresourcegroups)
+    - [Docker](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker).
 - [Node.js e npm](https://nodejs.org/en/download), la gestione pacchetti Node.js.
 - [Docker](https://www.docker.com/community-edition).
 

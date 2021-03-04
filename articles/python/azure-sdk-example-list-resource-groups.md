@@ -4,12 +4,12 @@ description: Usare la libreria di gestione delle risorse di Azure SDK per Python
 ms.date: 01/28/2021
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: c44698fb7fee0e7f736c51fbf11f664b8642e946
-ms.sourcegitcommit: 3843092e47691fbd32452c93d51f894a0cab31db
+ms.openlocfilehash: ed5ada8332635b6d84a25dcfa70064ae3c9128b1
+ms.sourcegitcommit: 576c878c338d286060010646b96f3ad0fdbcb814
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99069098"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102117815"
 ---
 # <a name="example-use-the-azure-libraries-to-list-resource-groups-and-resources"></a>Esempio: usare le librerie di Azure per elencare i gruppi di risorse e le risorse
 
@@ -37,11 +37,15 @@ azure-mgmt-resource>=1.15.0
 azure-identity>=1.5.0
 ```
 
+Assicurarsi di usare queste versioni delle librerie. Se si usano versioni precedenti, si verificano errori come l'oggetto oggetto "AzureCliCredential" senza attributo "signed_session".
+
 In un terminale o da un prompt dei comandi con l'ambiente virtuale attivato, installare i requisiti:
 
 ```cmd
 pip install -r requirements.txt
 ```
+
+
 
 ## <a name="3-write-code-to-work-with-resource-groups"></a>3: Scrivere codice per usare i gruppi di risorse
 
