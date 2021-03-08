@@ -3,10 +3,10 @@ ms.custom: devx-track-js
 ms.topic: include
 ms.date: 02/08/2021
 ms.openlocfilehash: 4cca83242756b75161331116a4e0a563e0e0f073
-ms.sourcegitcommit: 576c878c338d286060010646b96f3ad0fdbcb814
+ms.sourcegitcommit: b0a119a624e9cb6b76d968951543a414bd08eaa0
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/04/2021
+ms.lasthandoff: 03/08/2021
 ms.locfileid: "102118616"
 ---
 ## <a name="create-a-cosmos-db-resource-for-sql-api"></a>Creare una risorsa Cosmos DB per l'API SQL
