@@ -6,7 +6,7 @@ ms.openlocfilehash: e37f278149f8173c3addddda085f37112929bf33
 ms.sourcegitcommit: b0a119a624e9cb6b76d968951543a414bd08eaa0
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/08/2021
+ms.lasthandoff: 03/09/2021
 ms.locfileid: "102118629"
 ---
 ## <a name="create-a-cosmos-db-resource-for-cassandra-db"></a>Creare una risorsa Cosmos DB per il database Cassandra

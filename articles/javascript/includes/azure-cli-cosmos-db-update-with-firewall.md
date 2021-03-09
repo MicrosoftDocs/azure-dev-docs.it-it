@@ -6,7 +6,7 @@ ms.openlocfilehash: 8353ffea6f141b2bf25c726bfadd7f8926e552ce
 ms.sourcegitcommit: b0a119a624e9cb6b76d968951543a414bd08eaa0
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/08/2021
+ms.lasthandoff: 03/09/2021
 ms.locfileid: "102118613"
 ---
 ## <a name="add-firewall-rule-for-your-client-ip-address"></a>Aggiungere una regola del firewall per l'indirizzo IP del client

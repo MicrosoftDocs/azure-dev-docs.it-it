@@ -6,7 +6,7 @@ ms.openlocfilehash: e3a7f10e6db4a805c136e0d04289da5333e77bc7
 ms.sourcegitcommit: b0a119a624e9cb6b76d968951543a414bd08eaa0
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/08/2021
+ms.lasthandoff: 03/09/2021
 ms.locfileid: "102118614"
 ---
 ## <a name="get-the-cosmos-db-keys-for-your-resource"></a>Ottenere le chiavi di Cosmos DB per la risorsa
