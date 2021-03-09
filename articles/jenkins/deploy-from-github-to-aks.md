@@ -5,12 +5,12 @@ keywords: jenkins, azure, devops, aks, servizio azure kubernetes, github
 ms.topic: article
 ms.date: 02/05/2021
 ms.custom: devx-track-jenkins, devx-track-azurecli
-ms.openlocfilehash: 2cd8db66d11798171c8e16fc102d11f2915fc2b9
-ms.sourcegitcommit: 576c878c338d286060010646b96f3ad0fdbcb814
+ms.openlocfilehash: d6a45e227436970fa34505ccfbf28dc6e8c2a5d8
+ms.sourcegitcommit: 5f4a041aede2a0b7e2cf479185f62885209eaf9f
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102117875"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102517175"
 ---
 # <a name="tutorial-deploy-from-github-to-azure-kubernetes-service-using-jenkins"></a>Esercitazione: Eseguire la distribuzione da GitHub nel servizio Azure Kubernetes con Jenkins
 
@@ -200,7 +200,7 @@ sudo usermod -aG docker jenkins;
 sudo usermod -aG docker azureuser;
 sudo touch /var/lib/jenkins/jenkins.install.InstallUtil.lastExecVersion;
 sudo service jenkins restart;
-sudo cp ~/.kube/config /var/lib/jenkins/config
+sudo cp ~/.kube/config /var/lib/jenkins/.kube/
 sudo chmod 777 /var/lib/jenkins/
 sudo chmod 777 /var/lib/jenkins/config
 ```
