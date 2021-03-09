@@ -6,12 +6,12 @@ ms.service: terraform
 ms.topic: include
 ms.date: 02/18/2021
 ms.author: tarcher
-ms.openlocfilehash: 7e677e33be4ea3f7a7f8b111968055b081b53fe8
-ms.sourcegitcommit: 576c878c338d286060010646b96f3ad0fdbcb814
+ms.openlocfilehash: 2cecafe9581835adf23ffffcc98c63fb6529cb7c
+ms.sourcegitcommit: b0a119a624e9cb6b76d968951543a414bd08eaa0
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102118005"
+ms.lasthandoff: 03/08/2021
+ms.locfileid: "102473783"
 ---
 ## <a name="create-a-base-terraform-configuration-file"></a>Creare un file di configurazione di base di Terraform
 
@@ -21,7 +21,7 @@ Un file di configurazione di Terraform inizia con la specifica del provider. Qua
 terraform {
   required_providers {
     azurerm = {
-      source  = "hashicorp/azurerm"
+      source = "hashicorp/azurerm"
       version = "~>2.0"
     }
   }
