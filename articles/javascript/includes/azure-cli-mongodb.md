@@ -6,7 +6,7 @@ ms.openlocfilehash: e820cb17038a5251e658c9b7286cec65ddc40fca
 ms.sourcegitcommit: b0a119a624e9cb6b76d968951543a414bd08eaa0
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/08/2021
+ms.lasthandoff: 03/09/2021
 ms.locfileid: "102118269"
 ---
 ## <a name="create-a-cosmos-db-resource-for-mongodb"></a>Creare una risorsa Cosmos DB per MongoDB
