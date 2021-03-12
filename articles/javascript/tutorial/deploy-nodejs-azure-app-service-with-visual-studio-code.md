@@ -1,19 +1,19 @@
 ---
-title: Distribuire app Node.js nel Servizio app di Azure da Visual Studio Code
-description: Distribuire un'applicazione Express.js Node.js nel servizio app di Azure con l'estensione Servizio app di Visual Studio Code.
+title: Distribuire Node.js Express.js al servizio app da Visual Studio Code
+description: Distribuire un'applicazione Web Express.js Node.js a app Azure servizio usando l'estensione del servizio app Visual Studio Code.
 ms.topic: tutorial
 ms.date: 01/20/2021
 ms.custom: devx-track-js
-ms.openlocfilehash: 8f6ab806262bee9684cc2c37d05aa1f21695c806
-ms.sourcegitcommit: 681ea211dc8e1809dd299b5cd64eebd974c073d7
+ms.openlocfilehash: 10b3462abcb466cf4e4ec57909f36e08dd50d77c
+ms.sourcegitcommit: 3536f174735cd3bb7da7e4b266fbf43349a22b67
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98669189"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103193550"
 ---
-# <a name="deploy-nodejs-to-azure-app-service-using-visual-studio-code"></a>Distribuire Node.js nel Servizio app di Azure con Visual Studio Code
+# <a name="deploy-nodejs-expressjs-to-azure-app-service-using-visual-studio-code"></a>Distribuire Node.js Express.js al servizio app Azure usando Visual Studio Code
 
-Distribuire un'applicazione Node.js nel servizio app di Azure (in Linux o Windows) con l'[estensione Servizio app](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azureappservice) di Visual Studio Code.
+Distribuire un'applicazione Express.js Node.js al servizio app Azure (in Linux o Windows) usando l' [estensione del servizio App](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azureappservice)Visual Studio Code.
 
 Distribuire un'app Node.js in Azure usando Git e l'estensione Servizio app di Azure. A tale scopo:
 
@@ -22,12 +22,6 @@ Distribuire un'app Node.js in Azure usando Git e l'estensione Servizio app di Az
 * Creare una risorsa app Web in cui ospitare l'app
 * Distribuire l'app nella risorsa
 * Visualizzare i log remoti in locale
-
-## <a name="walkthrough-video"></a>Video della procedura dettagliata
-
-Guardare questo video per una procedura dettagliata completa del contenuto di questo articolo.
-
-> [!VIDEO https://channel9.msdn.com/Shows/Docs-Azure/Deploy-to-Azure-App-Service-using-Visual-Studio-Code/player]
 
 ## <a name="1-set-up-your-development-environment"></a>1. Configurazione dell'ambiente di sviluppo
 

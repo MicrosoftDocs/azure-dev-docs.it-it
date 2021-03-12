@@ -2,14 +2,14 @@
 title: Usare JavaScript con Redis in Azure
 description: Per creare o spostare il database Redis in Azure, è necessaria una cache di Azure per la risorsa Redis.
 ms.topic: how-to
-ms.date: 02/17/2021
+ms.date: 03/04/2021
 ms.custom: devx-track-js
-ms.openlocfilehash: f28c6e0deae55e327494a33d0c9b71e98f08598c
-ms.sourcegitcommit: 576c878c338d286060010646b96f3ad0fdbcb814
+ms.openlocfilehash: cae27bea4326cb43e2f4c65590f9f2de46f02f7e
+ms.sourcegitcommit: 737d95fe31e9db55c2d42a93f194a3f3e4bd3c7d
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102118631"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102622269"
 ---
 # <a name="develop-a-javascript-application-with-azure-cache-for-redis"></a>Sviluppare un'applicazione JavaScript con cache di Azure per Redis
 
@@ -42,9 +42,9 @@ Il database Redis usa i pacchetti NPM, ad esempio:
 * [Redis](https://www.npmjs.com/package/redis)
 * [ioredis](https://www.npmjs.com/package/ioredis)
 
-## <a name="use-ioredis-sdk-to-connect-to-redis-database-on-azure"></a>Usare ioredis SDK per connettersi al database Redis in Azure
+## <a name="install-ioredis-sdk"></a>Installare ioredis SDK 
 
-Per connettersi e usare il database Redis in Azure con JavaScript e ioredis, seguire questa procedura.
+Utilizzare la procedura seguente per installare il `ioredis` pacchetto e inizializzare il progetto.
 
 1. Verificare che Node.js e NPM siano installati.
 1. Creare un progetto Node.js in una nuova cartella:
@@ -53,8 +53,7 @@ Per connettersi e usare il database Redis in Azure con JavaScript e ioredis, seg
     mkdir DataDemo && \
         cd DataDemo && \
         npm init -y && \
-        npm install ioredis && \
-        touch index.js && \
+        npm install ioredis \
         code .
     ```
 
@@ -63,8 +62,76 @@ Per connettersi e usare il database Redis in Azure con JavaScript e ioredis, seg
     * Modifica il terminale bash in tale cartella
     * Inizializza il progetto, che crea il `package.json` file
     * Aggiunge ioredis NPM SDK al progetto
-    * Crea il `index.js` file di script
     * Apre il progetto in Visual Studio Code
+
+## <a name="create-javascript-file-to-bulk-insert-data-into-redis"></a>Creare un file JavaScript per l'inserimento bulk dei dati in Redis
+
+1. In Visual Studio Code creare un `bulk_insert.js` file.
+
+1. Scaricare il file di [MOCK_DATA.csv](https://github.com/Azure-Samples/js-e2e/blob/main/database/redis/MOCK_DATA.csv) e posizionarlo nella stessa directory di `bulk_insert.js` .
+
+1. Copiare il codice JavaScript seguente in `bulk_insert.js` :
+
+    ```nodejs
+    const Redis = require('ioredis');
+    const fs = require('fs');
+    const parse = require('csv-parser')
+    const { finished } = require('stream/promises');
+    
+    const config = {
+        "HOST": "YOUR-RESOURCE-NAME.redis.cache.windows.net",
+        "KEY": "YOUR-RESOURCE-PASSWORD",
+    }
+    
+    // Create Redis config object
+    const configuration = {
+        host: config.HOST,
+        port: 6380,
+        password: config.KEY,
+        tls: {
+            servername: config.HOST
+        },
+        database: 0,
+        keyPrefix: config.prefix
+    }
+    var redis = new Redis(configuration);
+    
+    // insert each row into Redis
+    async function insertData(readable) {
+        for await (const row of readable) {
+            await redis.set(`bar2:${row.id}`, JSON.stringify(row))
+        }
+    }
+    
+    // read file, parse CSV, each row is a chunk
+    const readable = fs
+        .createReadStream('./MOCK_DATA.csv')
+        .pipe(parse());
+    
+    // Pipe rows to insert function
+    insertData(readable)
+    .then(() => {
+        console.log('succeeded');
+        redis.disconnect();
+    })
+    .catch(console.error);
+    ```
+
+1. Sostituire gli elementi seguenti nello script con le informazioni sulle risorse di redis:
+
+    * NOME DELLA RISORSA
+    * YOUR-AZURE-REDIS-RESOURCE-KEY
+
+1. Eseguire lo script.
+
+    ```bash
+    node bulk_insert.js
+    ```
+    
+## <a name="create-javascript-code-to-use-redis"></a>Creare codice JavaScript per l'uso di redis
+
+1. In Visual Studio Code creare un `index.js` file.
+
 
 1. Copiare il codice JavaScript seguente in `index.js` :
 
@@ -161,9 +228,11 @@ Per connettersi e usare il database Redis in Azure con JavaScript e ioredis, seg
     done
     ```
 
-1. Nella portale di Azure visualizzare la console della risorsa con il comando `SCAN 0 COUNT 1000 MATCH *` . 
+## <a name="use-redis-console-in-azure-portal-to-view-data"></a>Usare la console Redis in portale di Azure per visualizzare i dati
 
-    :::image type="content" source="../../media/howto-database/azure-cache-for-redis-azure-portal-console-scan.png" alt-text="Nella portale di Azure visualizzare la console della risorsa con il comando ' SCAN 0 COUNT 1000 MATCH *'.":::
+Nella portale di Azure visualizzare la console della risorsa con il comando `SCAN 0 COUNT 1000 MATCH *` . 
+
+:::image type="content" source="../../media/howto-database/azure-cache-for-redis-azure-portal-console-scan.png" alt-text="Nella portale di Azure visualizzare la console della risorsa con il comando ' SCAN 0 COUNT 1000 MATCH *'.":::
 
 ## <a name="next-steps"></a>Passaggi successivi
 

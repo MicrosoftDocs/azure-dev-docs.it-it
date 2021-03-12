@@ -4,12 +4,12 @@ description: Parte 1 dell'esercitazione, introduzione e prerequisiti dell'interf
 ms.topic: tutorial
 ms.date: 09/24/2019
 ms.custom: devx-track-js, devx-track-azurecli
-ms.openlocfilehash: 0acd3fd910055615ce148ecdee594240df42a558
-ms.sourcegitcommit: 593d177cfb5f56f236ea59389e43a984da30f104
+ms.openlocfilehash: 87dfa69c31eabffe12cd579127bfdf8b74a333e7
+ms.sourcegitcommit: 3536f174735cd3bb7da7e4b266fbf43349a22b67
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/18/2021
-ms.locfileid: "98561607"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103193480"
 ---
 # <a name="deploy-to-azure-app-service-using-the-azure-cli"></a>Eseguire la distribuzione nel Servizio app di Azure tramite l'interfaccia della riga di comando di Azure
 
@@ -18,7 +18,7 @@ In questa esercitazione si distribuisce un'applicazione Node.js nel Servizio app
 ## <a name="prerequisites"></a>Prerequisites
 
 - Una [sottoscrizione di Azure](#azure-subscription).
-- [Node.js e npm 6.x o versione successiva](https://nodejs.org/en/download), la gestione pacchetti Node.js.
+- [Node.js](https://nodejs.org/en/download)Node.js gestione pacchetti.
 - [Git](https://git-scm.com/downloads), dopo il quale il comando `git --version` dovrebbe mostrare un numero di versione.
 [!INCLUDE [Azure CLI](../../../includes/azure-cli-prepare-your-environment-no-header.md)]
 

@@ -1,17 +1,17 @@
 ---
 title: Esercitazione - Creare una rete spoke in Azure con Terraform
-description: Informazioni su come implementare due reti virtuali spoke connesse a un hub in una topologia hub-spoke.
+description: Informazioni su come implementare due reti virtuali spoke (reti virtuali) connesse a un hub in una topologia hub-spoke.
 ms.topic: tutorial
-ms.date: 10/26/2019
+ms.date: 03/08/2021
 ms.custom: devx-track-terraform
-ms.openlocfilehash: 265c410d8fc8bdb51803406cc8003e6e349014d9
-ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
-ms.translationtype: HT
+ms.openlocfilehash: 15f5c14af653354b7c741bc5fcf1a1d4c443e83c
+ms.sourcegitcommit: 7991f748720673d2dc50baaa8658348ff6cc1044
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/28/2020
-ms.locfileid: "91401481"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102604022"
 ---
-# <a name="tutorial-create-a-spoke-network-in-azure-using-terraform"></a>Esercitazione: Creare una rete spoke in Azure con Terraform
+# <a name="tutorial-create-a-spoke-network-in-azure-using-terraform"></a>Esercitazione: creare una rete spoke in Azure usando la bonifica
 
 In questa esercitazione si implementeranno due reti spoke separate per illustrare la separazione dei carichi di lavoro. Le reti condividono risorse comuni usando la rete virtuale hub. Gli spoke possono essere usati per isolare i carichi di lavoro nelle reti virtuali corrispondenti, gestite separatamente rispetto agli altri spoke. Ogni carico di lavoro può includere più livelli, con più subnet connesse tramite i servizi di bilanciamento del carico di Azure.
 
@@ -27,7 +27,7 @@ Questa esercitazione illustra le attività seguenti:
 1. [Creare una topologia di rete ibrida hub-spoke con Terraform in Azure](./hub-spoke-introduction.md).
 1. [Creare una rete virtuale locale con Terraform in Azure](./hub-spoke-on-prem.md).
 1. [Creare una rete virtuale hub con Terraform in Azure](./hub-spoke-hub-network.md).
-1. [Creare un'appliance di rete virtuale hub con Terraform in Azure](./hub-spoke-hub-nva.md).
+1. [Creare un'appliance di rete virtuale Hub con bonifica in Azure](./hub-spoke-hub-nva.md).
 
 ## <a name="create-the-directory-structure"></a>Creare la struttura di directory
 
@@ -63,7 +63,7 @@ In questa sezione vengono creati due script di spoke. Ogni script definisce una 
 
     ```hcl
     locals {
-      spoke1-location       = "CentralUS"
+      spoke1-location       = "eastus"
       spoke1-resource-group = "spoke1-vnet-rg"
       prefix-spoke1         = "spoke1"
     }
@@ -88,14 +88,14 @@ In questa sezione vengono creati due script di spoke. Ogni script definisce una 
       name                 = "mgmt"
       resource_group_name  = azurerm_resource_group.spoke1-vnet-rg.name
       virtual_network_name = azurerm_virtual_network.spoke1-vnet.name
-      address_prefix       = "10.1.0.64/27"
+      address_prefixes     = ["10.1.0.64/27"]
     }
 
     resource "azurerm_subnet" "spoke1-workload" {
       name                 = "workload"
       resource_group_name  = azurerm_resource_group.spoke1-vnet-rg.name
       virtual_network_name = azurerm_virtual_network.spoke1-vnet.name
-      address_prefix       = "10.1.1.0/24"
+      address_prefixes     = ["10.1.1.0/24"]
     }
 
     resource "azurerm_virtual_network_peering" "spoke1-hub-peer" {
@@ -185,7 +185,7 @@ In questa sezione vengono creati due script di spoke. Ogni script definisce una 
     
     ```hcl
     locals {
-      spoke2-location       = "CentralUS"
+      spoke2-location       = "eastus"
       spoke2-resource-group = "spoke2-vnet-rg"
       prefix-spoke2         = "spoke2"
     }
@@ -210,14 +210,14 @@ In questa sezione vengono creati due script di spoke. Ogni script definisce una 
       name                 = "mgmt"
       resource_group_name  = azurerm_resource_group.spoke2-vnet-rg.name
       virtual_network_name = azurerm_virtual_network.spoke2-vnet.name
-      address_prefix       = "10.2.0.64/27"
+      address_prefixes     = ["10.2.0.64/27"]
     }
 
     resource "azurerm_subnet" "spoke2-workload" {
       name                 = "workload"
       resource_group_name  = azurerm_resource_group.spoke2-vnet-rg.name
       virtual_network_name = azurerm_virtual_network.spoke2-vnet.name
-      address_prefix       = "10.2.1.0/24"
+      address_prefixes     = ["10.2.1.0/24"]
     }
 
     resource "azurerm_virtual_network_peering" "spoke2-hub-peer" {

@@ -1,17 +1,17 @@
 ---
 title: Esercitazione - Creare una topologia di rete ibrida hub-spoke con Terraform in Azure
-description: Informazioni su come creare un'intera architettura di riferimento di rete ibrida in Azure usando Terraform.
+description: Informazioni su come creare un'intera architettura di riferimento per la rete ibrida in Azure usando la bonifica.
 ms.topic: tutorial
-ms.date: 10/26/2019
+ms.date: 03/08/2021
 ms.custom: devx-track-terraform
-ms.openlocfilehash: 5a9c4541d0dc04413e088587791488133fe61ff9
-ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
-ms.translationtype: HT
+ms.openlocfilehash: 13c5d1a12ad0e2cf03c84c34c97ffac0a5d575bd
+ms.sourcegitcommit: 7991f748720673d2dc50baaa8658348ff6cc1044
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/28/2020
-ms.locfileid: "91401491"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102604152"
 ---
-# <a name="tutorial-create-a-hub-and-spoke-hybrid-network-topology-in-azure-using-terraform"></a>Esercitazione: Creare una topologia di rete ibrida hub-spoke con Terraform in Azure
+# <a name="tutorial-create-a-hub-and-spoke-hybrid-network-topology-in-azure-using-terraform"></a>Esercitazione: creare una topologia di rete ibrida Hub e spoke in Azure usando la bonifica
 
 Questa serie di esercitazioni illustra come usare Terraform per implementare in Azure una [topologia di rete hub-spoke](/azure/architecture/reference-architectures/hybrid-networking/hub-spoke). 
 
@@ -31,7 +31,7 @@ Questa esercitazione illustra le attività seguenti:
 
 [!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
 
-- **Installare e configurare Terraform**: per eseguire il provisioning di macchine virtuali e altra infrastruttura in Azure, [installare e configurare Terraform](get-started-cloud-shell.md).
+- **Installare e configurare la bonifica**: per eseguire il provisioning di macchine virtuali e altre infrastrutture in Azure, [installare e configurare la bonifica](get-started-cloud-shell.md)
 
 ## <a name="hub-and-spoke-topology-architecture"></a>Architettura della topologia hub-spoke
 
@@ -64,13 +64,13 @@ Mentre si eseguono le singole esercitazioni di questa serie, si usano vari compo
 
 - **Dispositivo VPN**. Un servizio o un dispositivo VPN offre connettività esterna alla rete locale. Il dispositivo VPN può essere un'appliance hardware o una soluzione software. 
 
-- **Rete virtuale dell'hub**. L'hub è il punto centrale di connettività alla rete locale e la posizione in cui vengono ospitati i servizi. Questi servizi possono essere usati dai diversi carichi di lavoro ospitati nelle reti virtuali spoke.
+- **VNet Hub**. L'hub è il punto centrale di connettività alla rete locale e la posizione in cui vengono ospitati i servizi. Questi servizi possono essere usati dai diversi carichi di lavoro ospitati nelle reti virtuali spoke.
 
-- **Subnet del gateway**: I gateway di rete virtuale vengono mantenuti nella stessa subnet.
+- **Subnet del gateway**. I gateway di rete virtuale vengono mantenuti nella stessa subnet.
 
-- **Reti virtuali spoke**. Gli spoke possono essere usati per isolare i carichi di lavoro nelle reti virtuali corrispondenti, gestite separatamente rispetto agli altri spoke. Ogni carico di lavoro può includere più livelli, con più subnet connesse tramite i servizi di bilanciamento del carico di Azure. 
+- **Spoke reti virtuali**. Gli spoke possono essere usati per isolare i carichi di lavoro nelle reti virtuali corrispondenti, gestite separatamente rispetto agli altri spoke. Ogni carico di lavoro può includere più livelli, con più subnet connesse tramite i servizi di bilanciamento del carico di Azure. 
 
-- **Peering reti virtuali**. È possibile connettere due reti virtuali tramite una connessione peering. Le connessioni peering sono connessioni non transitive a bassa latenza tra reti virtuali. Dopo il peering, le reti virtuali si scambiano traffico tramite il backbone di Azure, senza che sia necessario un router. In una topologia di rete hub-spoke viene usato il peering reti virtuali per connettere l'hub a ogni spoke. È possibile eseguire il peering di reti virtuali nella stessa area o in aree differenti.
+- **Peering VNet**. È possibile connettere due reti virtuali tramite una connessione peering. Le connessioni peering sono connessioni non transitive a bassa latenza tra reti virtuali. Dopo il peering, le reti virtuali si scambiano traffico tramite il backbone di Azure, senza che sia necessario un router. In una topologia di rete hub-spoke viene usato il peering reti virtuali per connettere l'hub a ogni spoke. È possibile eseguire il peering di reti virtuali nella stessa area o in aree differenti.
 
 ## <a name="create-the-directory-structure"></a>Creare la struttura di directory
 
@@ -113,8 +113,16 @@ Creare il file di configurazione Terraform che dichiara il provider di Azure.
 1. Incollare il codice seguente nell'editor:
 
     ```hcl
+    terraform {
+      required_providers {
+          azurerm = {
+            source  = "hashicorp/azurerm"
+            version = "~>2.0"
+          }
+      }
+    }
     provider "azurerm" {
-        version = "~>1.22"
+      features {}
     }
     ```
 
@@ -135,7 +143,7 @@ Creare il file di configurazione Terraform per le variabili comuni usate nei div
     ```hcl
     variable "location" {
       description = "Location of the network"
-      default     = "centralus"
+      default     = "eastus"
     }
     
     variable "username" {
@@ -154,6 +162,8 @@ Creare il file di configurazione Terraform per le variabili comuni usate nei div
     }
     ```
 
+    **Nota**: per semplicità, in questa esercitazione viene usata una password hardcoded nel file delle variabili. In un'app reale può essere opportuno prendere in considerazione l'uso di una coppia di chiavi SSH pubblica/privata. Per altre informazioni sulle chiavi SSH e su Azure, vedere [come usare le chiavi SSH con Windows in Azure](/azure/virtual-machines/linux/ssh-from-windows).
+
 1. Salvare il file e uscire dall'editor.
 
 [!INCLUDE [terraform-troubleshooting.md](includes/terraform-troubleshooting.md)]
@@ -161,4 +171,4 @@ Creare il file di configurazione Terraform per le variabili comuni usate nei div
 ## <a name="next-steps"></a>Passaggi successivi
 
 > [!div class="nextstepaction"] 
-> [Creare una rete virtuale locale con Terraform in Azure](./hub-spoke-on-prem.md)
+> [Creare una rete virtuale locale con bonifica in Azure](./hub-spoke-on-prem.md)

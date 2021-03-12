@@ -3,16 +3,25 @@ title: Novità della documentazione di JavaScript
 description: Novità della documentazione di JavaScript nel Developer Center
 ms.topic: conceptual
 ms.date: 02/17/2021
-ms.openlocfilehash: 1678fa459bc7f1eec808d5d95979156ad1109315
-ms.sourcegitcommit: 576c878c338d286060010646b96f3ad0fdbcb814
+ms.openlocfilehash: 3d091e8b734dbdf1ceeaca25617dbd0b9eb2ea5d
+ms.sourcegitcommit: 3536f174735cd3bb7da7e4b266fbf43349a22b67
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102118423"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103193453"
 ---
 # <a name="javascript-docs-whats-new"></a>Documentazione di JavaScript: Novità
 
 Contenuti nuovi e aggiornati disponibili per sviluppatori JavaScript e TypeScript.
+
+## <a name="2021-march"></a>2021 marzo
+
+### <a name="whats-updated"></a>Aggiornamenti
+
+|Nome|Note|
+|---------------------------------------|--|
+|[Installare e gestire Node.js per lo sviluppo in Azure](./core/install-nodejs-develop-azure-sdk-project.md)|
+
 
 ## <a name="2021-february"></a>2021 febbraio
 
@@ -27,6 +36,29 @@ Contenuti nuovi e aggiornati disponibili per sviluppatori JavaScript e TypeScrip
 |[Come usare PostgreSQL in Azure](./how-to/with-database/use-postgresql-db.md)|Per creare, spostare o usare un database PostgreSQL in Azure, è necessaria una risorsa **del server database di Azure per PostgreSQL** . Informazioni su come creare la risorsa e usare il database.|
 |[Sviluppare un'applicazione JavaScript per cache di Azure per Redis](.//how-to/with-database/use-azure-cache-for-redis-db.md)|Per creare, spostare o usare un database Redis in Azure, è necessaria una cache di Azure per la risorsa Redis. Informazioni su come creare la risorsa e usare il database.|
 |[Sviluppare un'applicazione JavaScript per Cosmos DB con l'API SQL](.//how-to/with-database/use-sql-api-as-cosmos-db.md)|Per creare o usare Cosmos DB con l'API SQL, usare una risorsa Cosmos DB. Informazioni su come creare la risorsa Cosmos e usare il database.|
+
+### <a name="whats-updated"></a>Aggiornamenti
+
+|Nome|Note|
+|---------------------------------------|--|
+|[Attività principali per sviluppatori JavaScript](/azure/azure-monitor/app/api-custom-events-metrics)|
+
+
+
+### <a name="top-10-documents-by-page-view-for-javascript-developers"></a><a name="top-10"></a>Primi 10 documenti, per visualizzazione pagina, per sviluppatori JavaScript
+
+|#|Nome|
+|---------------------------------------|--|
+|1|[API di Application Insights per metriche ed eventi personalizzati](how-to/common-javascript-tasks.md)|
+|2|[Hosting di siti Web statici in Archiviazione di Azure](/azure/storage/blobs/storage-blob-static-website)|
+|3|[Compilare, testare e distribuire app JavaScript e Node.js-Azure Pipelines](/azure/devops/pipelines/ecosystems/javascript?view=azure-devops&tabs=code)|
+|4|[Monitorare Funzioni di Azure](/azure/azure-functions/functions-monitoring)|
+|5|[Introduzione al riconoscimento vocale](/azure/cognitive-services/speech-service/get-started-speech-to-text?tabs=script%2Cbrowser%2Cwindowsinstall&pivots=programming-language-javascript)|
+|6|[Chiamare un'API Web ASP.NET Core con JavaScript](/aspnet/core/tutorials/web-api-javascript?view=aspnetcore-5.0)|
+|7|[Client JavaScript di SignalR per ASP.NET Core](/aspnet/core/signalr/javascript-client?view=aspnetcore-5.0)|
+|8|[Guida per gli sviluppatori JavaScript di Funzioni di Azure](/azure/azure-functions/functions-reference-node?tabs=v2)|
+|9|[Consentire agli utenti di accedere e chiamare l'API Microsoft Graph da un'applicazione a singola pagina angolare](/azure/active-directory/develop/tutorial-v2-angular)|
+|10|[Application Insights per pagine Web](/azure/azure-monitor/app/javascript)|
 
 ## <a name="2021-january"></a>Gennaio 2021
 

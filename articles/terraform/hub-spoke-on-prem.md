@@ -1,19 +1,19 @@
 ---
 title: Esercitazione - Creare una rete virtuale locale in Azure con Terraform
-description: Informazioni su come implementare in Azure una rete virtuale locale che ospita risorse locali.
+description: Informazioni su come implementare una rete virtuale locale (VNet) in Azure che ospita le risorse locali.
 ms.topic: tutorial
-ms.date: 10/26/2019
+ms.date: 03/08/2021
 ms.custom: devx-track-terraform
-ms.openlocfilehash: 4faf366a585c7652584e5b70cf10b150a91d1b0e
-ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
-ms.translationtype: HT
+ms.openlocfilehash: 08f6f7b9c3c3e73f0d240d568b4049c47d7c5796
+ms.sourcegitcommit: 7991f748720673d2dc50baaa8658348ff6cc1044
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/28/2020
-ms.locfileid: "91401471"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102604112"
 ---
-# <a name="tutorial-create-on-premises-virtual-network-in-azure-using-terraform"></a>Esercitazione: Creare una rete virtuale locale in Azure con Terraform
+# <a name="tutorial-create-on-premises-virtual-network-in-azure-using-terraform"></a>Esercitazione: creare una rete virtuale locale in Azure usando la bonifica
 
-In questa esercitazione viene illustrato come implementare una rete locale usando una rete virtuale di Azure. Una rete virtuale di Azure può essere sostituita dalla propria rete virtuale privata. A tale scopo, mappare gli indirizzi IP appropriati nelle subnet.
+Questa esercitazione illustra come implementare una rete locale in Azure. È possibile sostituire la rete di esempio con una rete virtuale privata. A tale scopo, modificare gli indirizzi IP della subnet in base all'ambiente in uso.
 
 Vengono illustrate le attività seguenti:
 
@@ -63,7 +63,7 @@ Creare il file di configurazione Terraform che dichiara una rete virtuale locale
 
     ```hcl
     locals {
-      onprem-location       = "SouthCentralUS"
+      onprem-location       = "eastus"
       onprem-resource-group = "onprem-vnet-rg"
       prefix-onprem         = "onprem"
     }
@@ -88,14 +88,14 @@ Creare il file di configurazione Terraform che dichiara una rete virtuale locale
       name                 = "GatewaySubnet"
       resource_group_name  = azurerm_resource_group.onprem-vnet-rg.name
       virtual_network_name = azurerm_virtual_network.onprem-vnet.name
-      address_prefix       = "192.168.255.224/27"
+      address_prefixes     = ["192.168.255.224/27"]
     }
 
     resource "azurerm_subnet" "onprem-mgmt" {
       name                 = "mgmt"
       resource_group_name  = azurerm_resource_group.onprem-vnet-rg.name
       virtual_network_name = azurerm_virtual_network.onprem-vnet.name
-      address_prefix       = "192.168.1.128/25"
+      address_prefixes     = ["192.168.1.128/25"]
     }
 
     resource "azurerm_public_ip" "onprem-pip" {
@@ -225,4 +225,4 @@ Creare il file di configurazione Terraform che dichiara una rete virtuale locale
 ## <a name="next-steps"></a>Passaggi successivi
 
 > [!div class="nextstepaction"]
-> [Creare una rete virtuale hub con Terraform in Azure](./hub-spoke-hub-network.md)
+> [Creare una rete virtuale Hub con bonifica in Azure](./hub-spoke-hub-network.md)

@@ -5,12 +5,12 @@ keywords: jenkins, azure, devops, istanze di contenitore, agente di compilazione
 ms.topic: article
 ms.date: 01/08/2021
 ms.custom: devx-track-jenkins,devx-track-azurecli
-ms.openlocfilehash: 6a7578818eb1f59fa2ce2bd46003f799045fc154
-ms.sourcegitcommit: b380f6e637b47e6e3822b364136853e1d342d5cd
+ms.openlocfilehash: cc0e38dbad8056f8c511f2c76713891d842dddb8
+ms.sourcegitcommit: 737d95fe31e9db55c2d42a93f194a3f3e4bd3c7d
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100395383"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102622309"
 ---
 # <a name="tutorial-use-azure-container-instances-as-a-jenkins-build-agent"></a>Esercitazione: Usare Istanze di Azure Container come agente di compilazione Jenkins
 
@@ -134,11 +134,11 @@ Per testare il processo di compilazione e osservare le istanze di contenitore di
 
 1. Fare clic su Compila **#1** nella **cronologia di compilazione**.
 
-    !["Output console" visualizzare l'output di compilazione dalla console](./media/azure-container-instances-as-jenkins-build-agent/build-history.png)
+    !["Output console" visualizzare l'output di compilazione dalla console di nella cronologia di compilazione](./media/azure-container-instances-as-jenkins-build-agent/build-history.png)
 
 1. Selezionare **output console** per visualizzare l'output delle compilazioni.
 
-    !["Output console" visualizzare l'output di compilazione dalla console](./media/azure-container-instances-as-jenkins-build-agent/build-console-output.png)
+    !["Output console" visualizzare l'output di compilazione dalla console nell'output delle compilazioni](./media/azure-container-instances-as-jenkins-build-agent/build-console-output.png)
 
 ## <a name="next-steps"></a>Passaggi successivi
 

@@ -1,17 +1,17 @@
 ---
 title: Esercitazione - Convalidare una rete hub-spoke in Azure con Terraform
-description: Informazioni su come convalidare la topologia di rete hub-spoke con tutte le reti virtuali connesse tra loro.
+description: Informazioni su come convalidare la topologia di rete Hub e spoke con tutte le reti virtuali connesse tra loro.
 ms.topic: tutorial
-ms.date: 10/26/2019
+ms.date: 03/08/2021
 ms.custom: devx-track-terraform
-ms.openlocfilehash: 684bca6b62847718f34ce799d0c1371b25fdd532
-ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
-ms.translationtype: HT
+ms.openlocfilehash: 71d764da80888326be9625a9e90c1aba164b6f55
+ms.sourcegitcommit: 7991f748720673d2dc50baaa8658348ff6cc1044
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/28/2020
-ms.locfileid: "91401501"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102604142"
 ---
-# <a name="tutorial-validate-a-hub-and-spoke-network-in-azure-using-terraform"></a>Esercitazione: Convalidare una rete hub-spoke in Azure con Terraform
+# <a name="tutorial-validate-a-hub-and-spoke-network-in-azure-using-terraform"></a>Esercitazione: convalidare una rete Hub e spoke in Azure usando la bonifica
 
 In questo articolo si eseguono i file Terraform creati nell'articolo precedente di questa serie. Il risultato è una convalida della connettività tra le reti virtuali della demo.
 
@@ -29,8 +29,8 @@ Questa esercitazione illustra le attività seguenti:
 1. [Creare una topologia di rete ibrida hub-spoke con Terraform in Azure](./hub-spoke-introduction.md).
 1. [Creare una rete virtuale locale con Terraform in Azure](./hub-spoke-on-prem.md).
 1. [Creare una rete virtuale hub con Terraform in Azure](./hub-spoke-hub-network.md).
-1. [Creare un'appliance di rete virtuale hub con Terraform in Azure](./hub-spoke-hub-nva.md).
-1. [Creare una rete virtuale spoke con Terraform in Azure](./hub-spoke-spoke-network.md).
+1. [Creare un'appliance di rete virtuale Hub con bonifica in Azure](./hub-spoke-hub-nva.md).
+1. [Creare reti virtuali spoke con bonifica in Azure](./hub-spoke-spoke-network.md).
 
 ## <a name="verify-your-configuration"></a>Verificare la configurazione
 
@@ -54,7 +54,7 @@ Dopo aver completato le operazioni indicate nei [prerequisiti](#prerequisites), 
     cd hub-spoke
     ```
 
-1. Eseguire il comando `ls` per verificare che vengano elencati i file di configurazione `.tf` creati nelle esercitazioni precedenti:
+1. Elencare i file nella directory di lavoro per verificare che i `.tf` file di configurazione creati nelle esercitazioni precedenti siano elencati. (Lo screenshot Visualizza gli altri file che non saranno disponibili fino a quando non si inizializza la bonifica nei passaggi successivi).
 
     ![File di configurazione per la demo Terraform](./media/hub-and-spoke-tutorial-series/hub-spoke-config-files.png)
 
@@ -94,13 +94,15 @@ Questa sezione illustra come testare la connettività dall'ambiente locale simul
 
 1. Nella scheda **onprem-vnet-rg** selezionare la macchina virtuale denominata **onprem-vm**.
 
-1. Selezionare **Connetti**.
+1. Prendere nota del valore dell' **indirizzo IP pubblico** .
 
-1. Accanto al testo **Accedi con l'account locale della macchina virtuale** copiare il comando **ssh** negli Appunti.
+1. Tornare alla riga di comando ed eseguire `ssh` per connettersi all'ambiente locale simulato. Usare la password specificata nel `variables.tf` file.
 
-1. Da un prompt di Linux, eseguire `ssh` per connettersi all'ambiente locale simulato. Usare la password specificata nel file dei parametri `on-prem.tf`.
+   ```bash
+   ssh testadmin@<onprem_vm_ip_address>
+   ```
 
-1. Eseguire il comando `ping` per testare la connettività alla macchina virtuale jumpbox nella rete virtuale hub:
+1. Dopo essersi connessi **alla macchina virtuale locale** , eseguire il `ping` comando per testare la connettività alla VM JumpBox nell'hub VNet:
 
    ```bash
    ping 10.0.0.68

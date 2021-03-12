@@ -2,14 +2,14 @@
 title: Esercitazione - Creare un'appliance di rete virtuale hub con Terraform in Azure
 description: Informazioni su come creare una rete virtuale hub in Azure che funge da punto di connessione comune tra altre reti.
 ms.topic: tutorial
-ms.date: 10/26/2019
+ms.date: 03/08/2021
 ms.custom: devx-track-terraform
-ms.openlocfilehash: b7276d3807f00e828c89ee00ffcde2e6e2f0b9a5
-ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
-ms.translationtype: HT
+ms.openlocfilehash: b8deb50c29a0fd1cdd317dc2edfe0bd3bf21d8da
+ms.sourcegitcommit: 7991f748720673d2dc50baaa8658348ff6cc1044
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/28/2020
-ms.locfileid: "91401457"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102604162"
 ---
 # <a name="tutorial-create-a-hub-virtual-network-appliance-in-azure-using-terraform"></a>Esercitazione: Creare un'appliance di rete virtuale hub con Terraform in Azure
 
@@ -66,7 +66,7 @@ Creare il file di configurazione Terraform che dichiara una rete virtuale locale
     ```hcl
     locals {
       prefix-hub-nva         = "hub-nva"
-      hub-nva-location       = "CentralUS"
+      hub-nva-location       = "eastus"
       hub-nva-resource-group = "hub-nva-rg"
     }
 
@@ -135,12 +135,11 @@ Creare il file di configurazione Terraform che dichiara una rete virtuale locale
 
     resource "azurerm_virtual_machine_extension" "enable-routes" {
       name                 = "enable-iptables-routes"
-      location             = azurerm_resource_group.hub-nva-rg.location
-      resource_group_name  = azurerm_resource_group.hub-nva-rg.name
-      virtual_machine_name = azurerm_virtual_machine.hub-nva-vm.name
+      virtual_machine_id   = azurerm_virtual_machine.hub-nva-vm.id
       publisher            = "Microsoft.Azure.Extensions"
       type                 = "CustomScript"
       type_handler_version = "2.0"
+
 
       settings = <<SETTINGS
         {
@@ -264,7 +263,6 @@ Creare il file di configurazione Terraform che dichiara una rete virtuale locale
       route_table_id = azurerm_route_table.spoke2-rt.id
       depends_on = [azurerm_subnet.spoke2-workload]
     }
-
     ```
 
 1. Salvare il file e uscire dall'editor.

@@ -10,8 +10,10 @@
           items:
             - name: Archiviazione di Azure
               href: configure-spring-boot-starter-java-app-with-azure-storage.md
-            - name: Azure Key Vault
+            - name: Segreti Azure Key Vault
               href: configure-spring-boot-starter-java-app-with-azure-key-vault.md
+            - name: Certificati Azure Key Vault
+              href: configure-spring-boot-starter-java-app-with-azure-key-vault-certificates.md
             - name: Bus di servizio di Azure
               href: configure-spring-boot-starter-java-app-with-azure-service-bus.md
         - name: Spring Data

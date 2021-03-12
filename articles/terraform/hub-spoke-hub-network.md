@@ -2,14 +2,14 @@
 title: 'Esercitazione: Creare una rete virtuale hub in Azure con Terraform'
 description: Informazioni su come creare una rete virtuale hub in Azure che funge da punto di connessione comune tra altre reti.
 ms.topic: tutorial
-ms.date: 10/26/2019
+ms.date: 03/08/2021
 ms.custom: devx-track-terraform
-ms.openlocfilehash: ee75fe6c7fe49463137f9e0a68e518290f78acce
-ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
-ms.translationtype: HT
+ms.openlocfilehash: 731af5b942ac02db3a191c37d84eeb28ceff55b3
+ms.sourcegitcommit: 7991f748720673d2dc50baaa8658348ff6cc1044
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/28/2020
-ms.locfileid: "91401511"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102604132"
 ---
 # <a name="tutorial-create-a-hub-virtual-network-in-azure-by-using-terraform"></a>Esercitazione: Creare una rete virtuale hub in Azure con Terraform
 
@@ -71,7 +71,7 @@ Creare il file di configurazione di Terraform che dichiara la rete virtuale hub.
     ```hcl
     locals {
       prefix-hub         = "hub"
-      hub-location       = "CentralUS"
+      hub-location       = "eastus"
       hub-resource-group = "hub-vnet-rg"
       shared-key         = "4-v3ry-53cr37-1p53c-5h4r3d-k3y"
     }
@@ -96,21 +96,21 @@ Creare il file di configurazione di Terraform che dichiara la rete virtuale hub.
       name                 = "GatewaySubnet"
       resource_group_name  = azurerm_resource_group.hub-vnet-rg.name
       virtual_network_name = azurerm_virtual_network.hub-vnet.name
-      address_prefix       = "10.0.255.224/27"
+      address_prefixes     = ["10.0.255.224/27"]
     }
 
     resource "azurerm_subnet" "hub-mgmt" {
       name                 = "mgmt"
       resource_group_name  = azurerm_resource_group.hub-vnet-rg.name
       virtual_network_name = azurerm_virtual_network.hub-vnet.name
-      address_prefix       = "10.0.0.64/27"
+      address_prefixes       = ["10.0.0.64/27"]
     }
 
     resource "azurerm_subnet" "hub-dmz" {
       name                 = "dmz"
       resource_group_name  = azurerm_resource_group.hub-vnet-rg.name
       virtual_network_name = azurerm_virtual_network.hub-vnet.name
-      address_prefix       = "10.0.0.32/27"
+      address_prefixes       = ["10.0.0.32/27"]
     }
 
     resource "azurerm_network_interface" "hub-nic" {
